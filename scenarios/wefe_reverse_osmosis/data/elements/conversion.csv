@@ -1,0 +1,3 @@
+name;type;carrier;tech;capacity;capacity_cost;marginal_cost;carrier_cost;efficiency;from_bus;to_bus;expandable
+inverter;conversion;electricity;inverter;0;10;0;0;0.9;dc-elec-bus;ac-elec-bus;true
+r-o-unit;

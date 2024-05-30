@@ -1,0 +1,7 @@
+name;type;balanced
+solar-energy-bus;bus;true
+dc-elec-bus;bus;true
+ac-elec-bus;bus;true
+water-bus;bus;true
+permeate-bus;bus;true
+brine-bus;bus;true
