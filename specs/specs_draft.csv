@@ -1,0 +1,8 @@
+﻿component,pv-panel,sunlight,electricty,battery,reverse_osmosis,feed _pump,sea water,drinking water,brine,drinking_water_demand
+type,transformer,flow,flow,storage,transformer,transformer,flow,flow ,flow,sink
+capex,400,0,0,1000,500,0,0,0,0,0
+opex_fix,20,0,0,40,10,0,0,0,0,0
+lifetime,20,1000,1000,10,10,20,1000,1000,1000,0
+land_requirement,1,0,0,0.5,2,0.5,0,0,0,0
+CO2_emission,0,0,0,0,0,0,0,0,0,0
+water_footprint,10,0,0,0,0,0,0,0,20,1
