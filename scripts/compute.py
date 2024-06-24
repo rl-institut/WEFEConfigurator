@@ -26,10 +26,13 @@ project_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir)
 
 # -------------- USER INPUTS --------------
 # list of scenarios to be evaluated
-scenarios = ["wefe_reverse_osmosis"]
+scenarios = [
+    "wefe_reverse_osmosis"
+]
 # weighted average cost of capital (WACC) - might move later
 # this parameter is needed if CAPEX, OPEX fix and lifetime are included
 wacc = 0.06
+
 # -------------- ADDITIONAL FUNCTIONALITIES (OEMOF-TABULAR-PLUGINS) --------------
 # include the custom attribute parameters to be included in the model
 # this can be moved somewhere and included in a dict or something similar with all possible additional attributes
@@ -70,6 +73,7 @@ for scenario in scenarios:
         attributemap={},
         typemap=TYPEMAP,
     )
+
     logger.info("Energy system created from datapackage")
 
     # create model from energy system (this is just oemof.solph)
@@ -91,7 +95,6 @@ for scenario in scenarios:
 
     # extract parameters and results
     params = parameter_as_dict(es)
-    results = m.results()
     es.results = processing.results(m)
 
     post_processing(
