@@ -1,2 +1,3 @@
-name;carrier;tech;storage_capacity;storage_capacity_potential;capacity;efficiency;capacity_cost;storage_capacity_cost;marginal_cost;type;bus;invest_relation_output_capacity;invest_relation_input_output;expandable
-battery-storage;lithium;battery;0;;0;0.92;0;100;0;storage;ac-elec-bus;0.1;1;True
+name;carrier;tech;storage_capacity;storage_capacity_potential;capacity;efficiency;capacity_cost;storage_capacity_cost;marginal_cost;type;bus;invest_relation_output_capacity;expandable;capex;opex_fix;lifetime;land_requirement;output_parameters
+battery-storage;electricity;battery;0;;0;0.92;0;44.04;0;storage;ac-elec-bus;1.0;True;350;8;15;2;"{""custom_attributes"": {""land_requirement"": 2}}"
+water-storage;water;storage;0;;0;0.99;0;8.1;0;storage;permeate-bus;1.0;True;70;2;20;2;"{""custom_attributes"": {""land_requirement"": 2}}"

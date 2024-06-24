@@ -1,0 +1,18 @@
+bus,direction,asset,carrier,facade_type,2021-01-01 00:00:00,2021-01-01 01:00:00,2021-01-01 02:00:00,2021-01-01 03:00:00,investments,flow_min,flow_max,aggregated_flow,marginal_cost,carrier_cost,capacity_cost,storage_capacity_cost,capacity,expandable,storage_capacity,efficiency,capex,opex_fix,lifetime,capacity_total,annuity_total,upfront_investment_costs,opex_fix_costs_total,variable_costs_total
+ac-elec-bus,in,battery-storage,electricity,storage,0.0,0.0,0.0,,0.0,0.0,0.0,0.0,0.0,,0.0,44.04,0.0,1.0,0.0,0.92,350.0,8.0,15.0,0.0,0.0,0.0,0.0,
+ac-elec-bus,in,elec-demand,electricity,load,20.0,40.0,60.0,,,20.0,60.0,120.0,,,,,,,,,,,,,,,,
+ac-elec-bus,in,electricity-excess,electricity,excess,0.0,0.0,0.0,,,0.0,0.0,0.0,0.0,,,,,,,,,,,,,,,
+ac-elec-bus,in,mimo,electricity,,100.33613,100.33613,100.33613,,,100.33613,100.33613,301.00838999999996,,,287.4,,0.0,1.0,,,1000.0,50.0,5.0,,,,,
+ac-elec-bus,out,backup-electricity-grid,electricity,dispatchable,120.33613,140.33613,160.33613,,160.33613,120.33613,160.33613,421.00838999999996,0.2,0.0,0.0,,0.0,1.0,,,,,,160.33613,0.0,,,84.20167925470277
+ac-elec-bus,out,battery-storage,electricity,storage,0.0,0.0,0.0,,0.0,0.0,0.0,0.0,0.0,,0.0,44.04,0.0,1.0,0.0,0.92,350.0,8.0,15.0,0.0,0.0,0.0,0.0,0.0
+ac-elec-bus,out,inverter,electricity,conversion,0.0,0.0,0.0,,0.0,0.0,0.0,0.0,0.0,0.0,9.72,,0.0,1.0,,0.9,100.0,1.0,20.0,0.0,0.0,0.0,0.0,0.0
+brine-bus,in,brine-excess,water,excess,30.100838,30.100838,30.100838,,,30.100838,30.100838,90.302514,0.0,,,,,,,,,,,,,,,
+brine-bus,out,mimo,water,,30.100838,30.100838,30.100838,,,30.100838,30.100838,90.302514,,,287.4,,0.0,1.0,,,1000.0,50.0,5.0,,,,,
+dc-elec-bus,in,inverter,electricity,conversion,0.0,0.0,0.0,,,0.0,0.0,0.0,0.0,0.0,9.72,,0.0,1.0,,0.9,100.0,1.0,20.0,,,,,0.0
+dc-elec-bus,out,pv,electricity,volatile,0.0,0.0,0.0,,0.0,0.0,0.0,0.0,0.0,,97.18,,0.0,1.0,,,1000.0,10.0,20.0,0.0,0.0,0.0,0.0,0.0
+permeate-bus,in,permeate-demand,water,load,10.0,20.0,30.0,,,10.0,30.0,60.0,,,,,,,,,,,,,,,,
+permeate-bus,in,water-storage,water,storage,10.067225,0.067225187,0.0,,10.067225,0.0,10.067225,10.134450187,0.0,,0.0,8.1,0.0,1.0,0.0,0.99,70.0,2.0,20.0,10.067225,81.54452634034158,704.7057500000001,20.13445,
+permeate-bus,out,mimo,water,,20.067225,20.067225,20.067225,,20.067225,20.067225,20.067225,60.201675,,,287.4,,0.0,1.0,,,1000.0,50.0,5.0,20.067225,5767.320342519379,20067.225000000002,1003.36125,
+permeate-bus,out,water-storage,water,storage,0.0,0.0,9.9327748,,10.067225,0.0,9.9327748,9.9327748,0.0,,0.0,8.1,0.0,1.0,0.0,0.99,70.0,2.0,20.0,10.067225,81.54452634034158,704.7057500000001,20.13445,0.0
+seawater-bus,in,mimo,water,,0.0,0.0,0.0,,,0.0,0.0,0.0,,,287.4,,0.0,1.0,,,1000.0,50.0,5.0,,,,,
+seawater-bus,out,seawater-source,water,dispatchable,0.0,0.0,0.0,,0.0,0.0,0.0,0.0,0.0,0.0,0.0,,0.0,1.0,,,,,,0.0,0.0,,,0.0

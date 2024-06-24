@@ -1,0 +1,18 @@
+bus,direction,asset,carrier,facade_type,Upfront Investment Costs
+ac-elec-bus,in,battery-storage,electricity,storage,0.0
+ac-elec-bus,in,elec-demand,electricity,load,
+ac-elec-bus,in,electricity-excess,electricity,excess,
+ac-elec-bus,in,mimo,electricity,,
+ac-elec-bus,out,backup-electricity-grid,electricity,dispatchable,
+ac-elec-bus,out,battery-storage,electricity,storage,0.0
+ac-elec-bus,out,inverter,electricity,conversion,0.0
+brine-bus,in,brine-excess,water,excess,
+brine-bus,out,mimo,water,,
+dc-elec-bus,in,inverter,electricity,conversion,
+dc-elec-bus,out,pv,electricity,volatile,0.0
+permeate-bus,in,permeate-demand,water,load,
+permeate-bus,in,water-storage,water,storage,704.7057500000001
+permeate-bus,out,mimo,water,,20067.225000000002
+permeate-bus,out,water-storage,water,storage,704.7057500000001
+seawater-bus,in,mimo,water,,
+seawater-bus,out,seawater-source,water,dispatchable,
