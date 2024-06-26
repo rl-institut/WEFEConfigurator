@@ -3,7 +3,7 @@ ac-elec-bus,in,battery-storage,electricity,storage,0.0,0.0,1.0,-0.0
 ac-elec-bus,in,elec-demand,electricity,load,,,,
 ac-elec-bus,in,electricity-excess,electricity,excess,,,,
 ac-elec-bus,in,mimo,electricity,,0.0,,1.0,
-ac-elec-bus,out,backup-electricity-grid,electricity,dispatchable,0.0,,1.0,210.0
+ac-elec-bus,out,backup-electricity-grid,electricity,dispatchable,0.0,,1.0,180.0
 ac-elec-bus,out,battery-storage,electricity,storage,0.0,0.0,1.0,-0.0
 ac-elec-bus,out,inverter,electricity,conversion,0.0,,1.0,-0.0
 brine-bus,in,brine-excess,water,excess,,,,
@@ -12,9 +12,9 @@ dc-elec-bus,in,inverter,electricity,conversion,0.0,,1.0,
 dc-elec-bus,out,pv-panel,electricity,conversion,0.0,,1.0,-0.0
 permeate-bus,in,permeate-demand,water,load,,,,
 permeate-bus,in,water-storage,water,storage,0.0,0.0,1.0,-0.0
-permeate-bus,out,mimo,water,,0.0,,1.0,30.0
+permeate-bus,out,mimo,water,,0.0,,1.0,
 permeate-bus,out,water-storage,water,storage,0.0,0.0,1.0,-0.0
-seawater-bus,in,mimo,water,,0.0,,1.0,
+seawater-bus,in,mimo,water,,0.0,,1.0,-0.0
 seawater-bus,out,seawater-source,water,dispatchable,0.0,,1.0,-0.0
 solar-bus,in,pv-panel,electricity,conversion,0.0,,1.0,
 solar-bus,out,solar-resource,electricity,dispatchable,0.0,,0.0,

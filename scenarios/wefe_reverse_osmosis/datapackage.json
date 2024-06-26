@@ -405,7 +405,7 @@
                     },
                     {
                         "name": "capacity",
-                        "type": "integer",
+                        "type": "number",
                         "format": "default"
                     },
                     {
@@ -470,7 +470,7 @@
                     },
                     {
                         "name": "land_requirement_factor",
-                        "type": "integer",
+                        "type": "number",
                         "format": "default"
                     }
                 ],

@@ -12,9 +12,9 @@ dc-elec-bus,in,inverter,electricity,conversion,
 dc-elec-bus,out,pv-panel,electricity,conversion,-0.0
 permeate-bus,in,permeate-demand,water,load,
 permeate-bus,in,water-storage,water,storage,-0.0
-permeate-bus,out,mimo,water,,30000.0
+permeate-bus,out,mimo,water,,
 permeate-bus,out,water-storage,water,storage,-0.0
-seawater-bus,in,mimo,water,,
+seawater-bus,in,mimo,water,,-0.0
 seawater-bus,out,seawater-source,water,dispatchable,
 solar-bus,in,pv-panel,electricity,conversion,
 solar-bus,out,solar-resource,electricity,dispatchable,
