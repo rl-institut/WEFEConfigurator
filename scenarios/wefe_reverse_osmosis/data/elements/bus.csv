@@ -4,3 +4,4 @@ ac-elec-bus;bus;True
 dc-elec-bus;bus;True
 permeate-bus;bus;True
 brine-bus;bus;True
+solar-bus;bus;True

@@ -66,7 +66,7 @@
                     },
                     {
                         "name": "capacity",
-                        "type": "integer",
+                        "type": "number",
                         "format": "default"
                     },
                     {
@@ -86,12 +86,12 @@
                     },
                     {
                         "name": "marginal_cost",
-                        "type": "integer",
+                        "type": "number",
                         "format": "default"
                     },
                     {
                         "name": "carrier_cost",
-                        "type": "integer",
+                        "type": "number",
                         "format": "default"
                     },
                     {
@@ -116,7 +116,7 @@
                     },
                     {
                         "name": "capex",
-                        "type": "integer",
+                        "type": "number",
                         "format": "default"
                     },
                     {
@@ -126,7 +126,22 @@
                     },
                     {
                         "name": "lifetime",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "land_requirement_factor",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "water_footprint_factor",
                         "type": "integer",
+                        "format": "default"
+                    },
+                    {
+                        "name": "output_parameters",
+                        "type": "object",
                         "format": "default"
                     }
                 ],
@@ -446,6 +461,11 @@
                         "name": "lifetime",
                         "type": "number",
                         "format": "default"
+                    },
+                    {
+                        "name": "land_requirement_factor",
+                        "type": "integer",
+                        "format": "default"
                     }
                 ],
                 "missingValues": [
@@ -510,7 +530,7 @@
                     },
                     {
                         "name": "storage_capacity",
-                        "type": "integer",
+                        "type": "number",
                         "format": "default"
                     },
                     {
@@ -520,7 +540,7 @@
                     },
                     {
                         "name": "capacity",
-                        "type": "integer",
+                        "type": "number",
                         "format": "default"
                     },
                     {
@@ -530,7 +550,7 @@
                     },
                     {
                         "name": "capacity_cost",
-                        "type": "integer",
+                        "type": "number",
                         "format": "default"
                     },
                     {
@@ -540,7 +560,7 @@
                     },
                     {
                         "name": "marginal_cost",
-                        "type": "integer",
+                        "type": "number",
                         "format": "default"
                     },
                     {
@@ -565,22 +585,22 @@
                     },
                     {
                         "name": "capex",
-                        "type": "integer",
+                        "type": "number",
                         "format": "default"
                     },
                     {
                         "name": "opex_fix",
-                        "type": "integer",
+                        "type": "number",
                         "format": "default"
                     },
                     {
                         "name": "lifetime",
-                        "type": "integer",
+                        "type": "number",
                         "format": "default"
                     },
                     {
                         "name": "land_requirement",
-                        "type": "integer",
+                        "type": "number",
                         "format": "default"
                     },
                     {
@@ -665,17 +685,27 @@
                     },
                     {
                         "name": "capex",
-                        "type": "number",
+                        "type": "integer",
                         "format": "default"
                     },
                     {
                         "name": "opex_fix",
-                        "type": "number",
+                        "type": "integer",
                         "format": "default"
                     },
                     {
                         "name": "lifetime",
+                        "type": "integer",
+                        "format": "default"
+                    },
+                    {
+                        "name": "land_requirement_factor",
                         "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "output_parameters",
+                        "type": "object",
                         "format": "default"
                     }
                 ],
@@ -746,6 +776,11 @@
                     },
                     {
                         "name": "pv-profile",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "solar-irradiance",
                         "type": "number",
                         "format": "default"
                     }

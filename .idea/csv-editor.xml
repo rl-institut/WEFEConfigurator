@@ -10,10 +10,87 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\results\wefe_reverse_osmosis\output\capacities.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\results\wefe_reverse_osmosis\output\kpis.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\scenarios\wefe_reverse_osmosis\data\elements\bus.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\scenarios\wefe_reverse_osmosis\data\elements\conversion.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\scenarios\wefe_reverse_osmosis\data\elements\dispatchable.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\scenarios\wefe_reverse_osmosis\data\elements\excess.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\scenarios\wefe_reverse_osmosis\data\elements\load.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\scenarios\wefe_reverse_osmosis\data\elements\mimo.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\scenarios\wefe_reverse_osmosis\data\elements\storage.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\scenarios\wefe_reverse_osmosis\data\elements\volatile.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\scenarios\wefe_reverse_osmosis\data\sequences\load_profile.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\scenarios\wefe_reverse_osmosis\data\sequences\volatile_profile.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=":" />
             </Attribute>
           </value>
         </entry>
