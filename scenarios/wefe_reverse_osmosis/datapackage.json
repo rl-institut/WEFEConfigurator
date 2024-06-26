@@ -223,7 +223,7 @@
                     },
                     {
                         "name": "profile",
-                        "type": "integer",
+                        "type": "string",
                         "format": "default"
                     },
                     {
@@ -242,6 +242,12 @@
                         "reference": {
                             "resource": "bus",
                             "fields": "name"
+                        }
+                    },
+                    {
+                        "fields": "profile",
+                        "reference": {
+                            "resource": "volatile_profile"
                         }
                     }
                 ]
@@ -625,112 +631,6 @@
             }
         },
         {
-            "path": "data/elements/volatile.csv",
-            "profile": "tabular-data-resource",
-            "name": "volatile",
-            "format": "csv",
-            "mediatype": "text/csv",
-            "encoding": "utf-8",
-            "schema": {
-                "fields": [
-                    {
-                        "name": "name",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "type",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "carrier",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "tech",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "capacity",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "capacity_cost",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "bus",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "marginal_cost",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "profile",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "expandable",
-                        "type": "boolean",
-                        "format": "default"
-                    },
-                    {
-                        "name": "capex",
-                        "type": "integer",
-                        "format": "default"
-                    },
-                    {
-                        "name": "opex_fix",
-                        "type": "integer",
-                        "format": "default"
-                    },
-                    {
-                        "name": "lifetime",
-                        "type": "integer",
-                        "format": "default"
-                    },
-                    {
-                        "name": "land_requirement_factor",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "output_parameters",
-                        "type": "object",
-                        "format": "default"
-                    }
-                ],
-                "missingValues": [
-                    ""
-                ],
-                "primaryKey": "name",
-                "foreignKeys": [
-                    {
-                        "fields": "bus",
-                        "reference": {
-                            "resource": "bus",
-                            "fields": "name"
-                        }
-                    },
-                    {
-                        "fields": "profile",
-                        "reference": {
-                            "resource": "volatile_profile"
-                        }
-                    }
-                ]
-            }
-        },
-        {
             "path": "data/sequences/load_profile.csv",
             "profile": "tabular-data-resource",
             "name": "load_profile",
@@ -772,11 +672,6 @@
                     {
                         "name": "timeindex",
                         "type": "datetime",
-                        "format": "default"
-                    },
-                    {
-                        "name": "pv-profile",
-                        "type": "number",
                         "format": "default"
                     },
                     {

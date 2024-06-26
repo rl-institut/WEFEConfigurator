@@ -1,2 +1,0 @@
-name;type;carrier;tech;capacity;capacity_cost;bus;marginal_cost;profile;expandable;capex;opex_fix;lifetime;land_requirement_factor;output_parameters
-pv;volatile;electricity;pv;0.0;127.8;dc-elec-bus;0.0;solar-irradiance;True;1378;18;24;9.29;"{""custom_attributes"": {""land_requirement_factor"": 9.29}}"
