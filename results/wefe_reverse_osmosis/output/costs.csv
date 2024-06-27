@@ -1,20 +1,20 @@
 bus,direction,asset,carrier,facade_type,Upfront Investment Costs
-ac-elec-bus,in,battery-storage,electricity,storage,-0.0
+ac-elec-bus,in,battery-storage,electricity,storage,0.0
 ac-elec-bus,in,elec-demand,electricity,load,
 ac-elec-bus,in,electricity-excess,electricity,excess,
 ac-elec-bus,in,mimo,electricity,,
 ac-elec-bus,out,backup-electricity-grid,electricity,dispatchable,
-ac-elec-bus,out,battery-storage,electricity,storage,-0.0
-ac-elec-bus,out,inverter,electricity,conversion,-0.0
+ac-elec-bus,out,battery-storage,electricity,storage,0.0
+ac-elec-bus,out,inverter,electricity,conversion,12040.335000000001
 brine-bus,in,brine-excess,water,excess,
 brine-bus,out,mimo,water,,
 dc-elec-bus,in,inverter,electricity,conversion,
-dc-elec-bus,out,pv-panel,electricity,conversion,-0.0
+dc-elec-bus,out,pv-panel,electricity,conversion,184350.90699999998
 permeate-bus,in,permeate-demand,water,load,
-permeate-bus,in,water-storage,water,storage,-0.0
+permeate-bus,in,water-storage,water,storage,1812.1005599999999
 permeate-bus,out,mimo,water,,
-permeate-bus,out,water-storage,water,storage,-0.0
-seawater-bus,in,mimo,water,,-0.0
+permeate-bus,out,water-storage,water,storage,1812.1005599999999
+seawater-bus,in,mimo,water,,0.0
 seawater-bus,out,seawater-source,water,dispatchable,
 solar-bus,in,pv-panel,electricity,conversion,
 solar-bus,out,solar-resource,electricity,dispatchable,

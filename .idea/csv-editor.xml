@@ -73,13 +73,6 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="\scenarios\wefe_reverse_osmosis\data\elements\volatile.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value=";" />
-            </Attribute>
-          </value>
-        </entry>
         <entry key="\scenarios\wefe_reverse_osmosis\data\sequences\load_profile.csv">
           <value>
             <Attribute>
