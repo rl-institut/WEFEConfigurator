@@ -98,7 +98,8 @@ for scenario in scenarios:
     es.results = processing.results(m)
 
     post_processing(
-        params, es, results_path, dp_path=os.path.join(scenario_dir, "datapackage.json")
+        params, es, results_path, dp_path=os.path.join(scenario_dir, "datapackage.json"),
+    #dash_app = True
     )
 
 print("done")

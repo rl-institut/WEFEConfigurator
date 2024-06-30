@@ -1,0 +1,2 @@
+type;name;carrier;tech;expandable;primary;capacity;capacity_cost;from_bus_0;from_bus_1;to_bus_0;to_bus_1;conversion_factor_seawater-bus;conversion_factor_ac-elec-bus;conversion_factor_permeate-bus;conversion_factor_brine-bus;capex;opex_fix;lifetime; land_requirement_factor
+mimo;mimo;water;mimo;True;seawater-bus;0.0;77.93;seawater-bus;ac-elec-bus;permeate-bus;brine-bus;1.0;1.8;0.45;0.55;500.0;10.0;10.0;10.0

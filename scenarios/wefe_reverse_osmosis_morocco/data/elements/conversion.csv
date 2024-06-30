@@ -1,0 +1,3 @@
+name;type;carrier;tech;capacity;capacity_potential;capacity_minimum;capacity_cost;marginal_cost;carrier_cost;efficiency;from_bus;to_bus;expandable;capex;opex_fix;lifetime;land_requirement_factor; water_footprint_factor;output_parameters
+inverter;conversion;energy;inverter;0.0;;;18.72;0.0;0.0;0.9;dc-elec-bus;ac-elec-bus;True;100.0;10;20.0;1.0;0;"{""custom_attributes"": {""land_requirement_factor"": 1.0}}"
+pv-panel;conversion;energy;pv_panel;0.0;;;127.8;0.0;0.0;0.2;solar-bus;dc-elec-bus;True;1378.0;18;24.0;9.29;10;"{""custom_attributes"": {""land_requirement_factor"": 9.29}}"

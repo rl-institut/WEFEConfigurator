@@ -1,0 +1,3 @@
+type;profile;name;region;year;bus;amount
+load;permeate;permeate-demand;DE;2021;permeate-bus;1
+load;elec;elec-demand;DE;2021;ac-elec-bus;1
