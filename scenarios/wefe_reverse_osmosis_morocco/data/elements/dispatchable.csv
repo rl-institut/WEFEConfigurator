@@ -1,0 +1,4 @@
+name;type;carrier;tech;capacity;capacity_cost;bus;marginal_cost;carrier_cost;profile;expandable
+seawater-source;dispatchable;water;source;0;0;seawater-bus;0.0;0;1;True
+backup-electricity-grid;dispatchable;energy;source;0;0;ac-elec-bus;100000.0;0;1;True
+solar-resource;dispatchable;energy;source;0;0;solar-bus;0.0;0;solar-irradiance;True

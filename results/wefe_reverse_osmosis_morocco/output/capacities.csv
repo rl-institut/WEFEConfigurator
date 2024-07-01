@@ -1,0 +1,20 @@
+bus,direction,asset,carrier,facade_type,Capacity,Storage Capacity,Expandable,Investments
+ac-elec-bus,in,battery-storage,energy,storage,0.0,0.0,1.0,89.51312
+ac-elec-bus,in,elec-demand,energy,load,,,,
+ac-elec-bus,in,electricity-excess,energy,excess,,,,
+ac-elec-bus,in,mimo,energy,,0.0,,1.0,
+ac-elec-bus,out,backup-electricity-grid,energy,dispatchable,0.0,,1.0,0.0
+ac-elec-bus,out,battery-storage,energy,storage,0.0,0.0,1.0,89.51312
+ac-elec-bus,out,inverter,energy,conversion,0.0,,1.0,18.528201
+brine-bus,in,brine-excess,water,excess,,,,
+brine-bus,out,mimo,water,,0.0,,1.0,
+dc-elec-bus,in,inverter,energy,conversion,0.0,,1.0,
+dc-elec-bus,out,pv-panel,energy,conversion,0.0,,1.0,20.58689
+permeate-bus,in,permeate-demand,water,load,,,,
+permeate-bus,in,water-storage,water,storage,0.0,0.0,1.0,3.656732
+permeate-bus,out,mimo,water,,0.0,,1.0,
+permeate-bus,out,water-storage,water,storage,0.0,0.0,1.0,3.656732
+seawater-bus,in,mimo,water,,0.0,,1.0,0.4604096
+seawater-bus,out,seawater-source,water,dispatchable,0.0,,1.0,0.4604096
+solar-bus,in,pv-panel,energy,conversion,0.0,,1.0,
+solar-bus,out,solar-resource,energy,dispatchable,0.0,,1.0,6515416.0
