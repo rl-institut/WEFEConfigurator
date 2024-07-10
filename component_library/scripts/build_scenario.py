@@ -3,6 +3,7 @@ import os
 from utils import AVAILABLE_COMPONENTS
 from analyse_survey import create_components_list
 
+# TODO this needs to work standalone as well as a service
 
 
 def create_scenario_folder(destination_folder):
@@ -27,6 +28,7 @@ def add_component(component_name, scenario_folder, timeseries=None):
 
     if component_name in AVAILABLE_COMPONENTS:
         # TODO copy the component template in the scenario_component_folder
+        # TODO strip the verbose and description columns
         if timeseries is not None:
             add_component_timeseries(component_name, scenario_folder, timeseries)
     else:
@@ -43,13 +45,17 @@ def add_component_timeseries(component_name, scenario_folder, timeseries):
 
 def create_scenario_from_survey_data(survey_data, scenario_name, scenario_path):
     component_list = create_components_list(survey_data)
-    scenario_folder = os.path.join(scenario_path, scenario_name)
 
+    # TODO scenario folder name could come from survey_data
+    scenario_folder = os.path.join(scenario_path, scenario_name)
     create_scenario_folder(scenario_folder)
 
 
     for component in component_list:
         add_component(component, scenario_folder)
+
+    # TODO read spec csv file and update the scenario values of the resources
+    # TODO the specs csv file must have the same component names and component attribute names
 
 if __name__=="__main__":
     repo_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "scenarios")

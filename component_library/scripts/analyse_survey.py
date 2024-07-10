@@ -3,8 +3,14 @@ import logging
 # TODO for now this is pseudo code for example purpose
 SURVEY_ANSWER_COMPONENT_MAPPING = {
     "question1": {"yes": "component_name"},
-    "question2": {"no": "component_name", "yes": "other_component_name"},
+    "question3": {"no": "component_name", "yes": "other_component_name"},
 }
+
+# TODO fill this
+SURVEY_STRUCTURE=[
+    {"question": "", "question_id": "", "possible_answers":["answer1", "answer2"]}
+]
+# This is output of KOBO toolbox or our own webapp
 
 def create_components_list(survey_data):
     """Extrapolate the component of the energy system from the survey answers
@@ -17,6 +23,7 @@ def create_components_list(survey_data):
         if question in SURVEY_ANSWER_COMPONENT_MAPPING:
             possible_answers = SURVEY_ANSWER_COMPONENT_MAPPING[question]
             if survey_answer in possible_answers:
+                # TODO check that component is available in our database
                 component_list.append(possible_answers[survey_answer])
         else:
             logging.info(f"Survey question '{question}' is not in the component mapping to build an energy system")
