@@ -1,11 +1,14 @@
 import logging
 import os
 import pandas as pd
+
+# TODO here the facades should only be imported from otp, to make sure they have
+# validate_datapackage and processing_raw_inputs methods
 from oemof_industry.mimo_converter import MIMO
 from oemof_tabular_plugins.wefe.facades import PVPanel
 import datapackage as dp
 
-COMPONENT_TEMPLATES_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data")
+COMPONENT_TEMPLATES_PATH = os.path.abspath(os.path.join(os.path.dirname(os.path.dirname(__file__)), "data"))
 
 
 COMPONENTS_TYPEMAP = {
@@ -28,7 +31,7 @@ def update_typemap(typemap, component_name):
 def list_available_components():
     """browse all components in all csv files and link component name to csv file name"""
 
-    path = os.path.abspath(COMPONENT_TEMPLATES_PATH)
+    path = COMPONENT_TEMPLATES_PATH
     p0 = dp.Package(base_path=path)
     p0.infer(os.path.join(path, "**" + os.sep + "*.csv"))
     p0.commit()
