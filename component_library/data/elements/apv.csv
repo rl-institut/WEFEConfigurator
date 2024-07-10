@@ -1,0 +1,5 @@
+type;name;carrier;tech;expandable;primary;capacity;capacity_cost;from_bus_0;from_bus_1;to_bus_0;to_bus_1;conversion_factor_seawater-bus;conversion_factor_ac-elec-bus;conversion_factor_permeate-bus;conversion_factor_brine-bus;capex;opex_fix;lifetime; land_requirement_factor
+type;name;carrier;tech;expandable;primary;capacity;capacity_cost;from_bus_0;from_bus_1;to_bus_0;to_bus_1;to_bus_2;capex;opex_fix;lifetime;lat;elevation;crop_type;sowing_date;minimal_crop_yield;tilt;pitch;xgap;area_apv;gcr;ler;conversion_factor_solar-energy-bus;conversion_factor_water-bus-in;conversion_factor_electricity-bus;conversion_factor_biomass-bus;conversion_factor_water-bus-out
+
+mimo;desalinator;water;mimo;True;seawater-bus;0.0;77.93;seawater-bus;ac-elec-bus;permeate-bus;brine-bus;1.0;1.8;0.45;0.55;500.0;10.0;10.0;10.0
+apv-system;apv-system;solar;mimo;False;solar-energy-bus;320.0;270.83;solar-energy-bus;water-bus-in;electricity-bus;biomass-bus;water-bus-out;2970.8;55.0;30.0;30.04;71.0;tomato_sunnysd;2022-07-15;0.8;30.0;2.68;2.8;10.27;0.15;1.07;1;irrigation;electricity_gen;biomass_gen;water_harvest

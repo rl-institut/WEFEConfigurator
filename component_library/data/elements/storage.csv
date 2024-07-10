@@ -1,0 +1,2 @@
+name;carrier;tech;storage_capacity;storage_capacity_potential;capacity;efficiency;capacity_cost;storage_capacity_cost;marginal_cost;type;bus;invest_relation_output_capacity;invest_relation_input_output;expandable
+battery-storage;lithium;battery;0;;0;0.92;0;100;0;storage;ac-elec-bus;0.1;1;True

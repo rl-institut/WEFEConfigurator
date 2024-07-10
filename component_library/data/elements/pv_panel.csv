@@ -1,0 +1,2 @@
+name;type;carrier;tech;capacity;capacity_cost;marginal_cost;carrier_cost;from_bus;to_bus;t_air;ghi;p_rpv;r_ref;n_t;t_c_ref;noct;expandable
+pv-panel;pv-panel;solar-energy;pv;0;100;0;0;solar-energy-bus;elec-bus;t-air;ghi;270;1000;-0.0037;25;48;true
