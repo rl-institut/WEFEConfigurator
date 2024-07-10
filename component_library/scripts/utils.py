@@ -1,10 +1,11 @@
 import logging
 import os
+import pandas as pd
 from oemof_industry.mimo_converter import MIMO
 from oemof_tabular_plugins.wefe.facades import PVPanel
 import datapackage as dp
 
-COMPONENT_TEMPLATES_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data","elements")
+COMPONENT_TEMPLATES_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), "data")
 
 
 COMPONENTS_TYPEMAP = {
@@ -26,22 +27,22 @@ def update_typemap(typemap, component_name):
 
 def list_available_components():
     """browse all components in all csv files and link component name to csv file name"""
+
+    path = os.path.abspath(COMPONENT_TEMPLATES_PATH)
+    p0 = dp.Package(base_path=path)
+    p0.infer(os.path.join(path, "**" + os.sep + "*.csv"))
+    p0.commit()
     component_to_csv_name_mappping = {}
-
-    # TODO collect all component names and their types
-
-    # TODO fill the mapping
+    for r in p0.resources:
+        category = r.name
+        resource_data = pd.DataFrame.from_records(r.read(keyed=True))
+        for component_name in resource_data.name.values:
+            if component_name not in component_to_csv_name_mappping:
+                component_to_csv_name_mappping[component_name] = category
+            else:
+                raise ValueError(
+                    f"The component {component_name} is listed under several categories: {component_to_csv_name_mappping[component_name]} and {category}")
 
     return component_to_csv_name_mappping
 
 AVAILABLE_COMPONENTS = list_available_components()
-
-if __name__=="__main__":
-    path = os.path.abspath(COMPONENT_TEMPLATES_PATH)
-    print(path)
-    p0 = dp.Package(base_path=path)
-    p0.infer(os.path.join(path, "**" + os.sep + "*.csv"))
-    p0.commit()
-    p0.save(os.path.join(path, "datapackage.json"))
-
-
