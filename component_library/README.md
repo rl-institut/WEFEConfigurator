@@ -9,3 +9,7 @@ The scripts in scripts/utils.update_typemap.py will be run to add the required c
 The following columns could be added to each component:
 - description
 - verbose name
+
+## Trying out locally
+1. install requirements in a virtual environement `pip install -r component_library/scripts/requirements.txt`
+2. run the example `python component_library/scripts/build_scenario.py`, you should see a new scenario folder named "test_scenario" under "scenarios"
