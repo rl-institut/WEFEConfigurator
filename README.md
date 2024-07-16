@@ -1,9 +1,40 @@
-## Introduction
+# WEFEConfigurator
 
-WEFEConfigurator is xyz. dsfd
+WEFEConfigurator is
+
+## Prerequisites
+
+Make sure a supported Python Version (3.9 or greater) and an interpreter (preferably PyCharm) is installed on your system. 
+Install CBC solver for oemof-solph using the installation instructions: https://oemof-solph.readthedocs.io/en/latest/readme.html#installing-a-solver
+
+## Installation
+
+For using the WEFEConfigurator, clone the repository to your local machine. Then create a new virtual environment with a supported Python Version (3.9 or greater). 
+Activate the new virtual environment and move to the repository folder to install the oemof-tabular-plugins package.
+
+    pip install oemof_tabular_plugins==0.0.2rc4 numpy==1.26.0 git+https://github.com/oemof/oemof-tabular.git@dev git+https://github.com/sedos-project/oemof.industry.git@saltwater
+
+Possible Errors: 
+1) Please copy and paste the whole statement, there are no line skips.
+2) For Windows users, an error might appear when installing oemof-tabular: 
+    
+    "ERROR: Could not build wheels for cchardet, which is required to install pyproject.toml-based projects"
+3) Guidelines on how to fix this error: https://github.com/twintproject/twint/issues/1407#issuecomment-1141734344
+
+Verify the installation of CBC solver by typing in the terminal: 
+
+    oemof_installation_test    
+
+If successful, the following message will appear: ![img.png](img.png)
+
+If unsuccessful, the message will say "cbc: not working", in which case an external executable "cbc.exe" file from a successful installation should be included in your path and your system restarted.
+
+Once all of these steps have been completed successfully, you are ready to run scenarios!
+
+## Get started
 
 
-# rli_template
+## Installation
 Template repository for creating new projects under the RLI's umbrella
 
 ## Get started
