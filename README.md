@@ -1,7 +1,13 @@
 # WEFEConfigurator
 
 WEFEConfigurator is a tool designed to set up and run energy system simulations for the case study analysis of 
-Water-Energy-Food-Environment (WEFE) mini-grids. It utilizes [oemof.solph](https://github.com/oemof/oemof-solph) and 
+Water-Energy-Food-Environment (WEFE) mini-grids. These combine different renewable energy (RE) technologies,
+such as photovoltaics, wind turbines, hydropower, and biogas plants, storage systems such as
+batteries, hydrogen, or water tanks, and productive uses, such as water pumping, water treatment,
+irrigation, cold storage, agricultural processing, via smart control systems. An example of such are agrivoltaics which 
+provide sustainable renewable energy production tapping WEFE synergies (e.g. reducing land competition
+between energy and food production and reducing evapotranspiration from the field, leading to less
+irrigation demand). It utilizes [oemof.solph](https://github.com/oemof/oemof-solph) and 
 [oemof.tabular](https://github.com/oemof/oemof-tabular) libraries, along with additional plugins for extended 
 functionality. Users can create and run scenarios using different technologies as components with their respective 
 demand and generation profiles as [csv](https://en.wikipedia.org/wiki/Comma-separated_values) files. Moreover, the user 
