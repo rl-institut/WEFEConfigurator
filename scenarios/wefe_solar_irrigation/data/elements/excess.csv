@@ -1,0 +1,2 @@
+name;type;bus;marginal_cost
+electricity-excess;excess;ac-elec-bus;0

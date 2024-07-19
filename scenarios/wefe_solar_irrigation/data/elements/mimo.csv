@@ -1,0 +1,2 @@
+type;name;carrier;tech;expandable;primary;capacity;capacity_cost;from_bus_0;from_bus_1;to_bus_0;conversion_factor_groundwater-bus;conversion_factor_ac-elec-bus;conversion_factor_irrigwater-bus;capex;opex_fix;lifetime;land_requirement_factor;output_parameters
+mimo;mimo;water;mimo;True;groundwater-bus;0.0;77.93;groundwater-bus;ac-elec-bus;irrigwater-bus;1.0;1.8;1.0;500.0;10.0;10.0;10.0;"{""custom_attributes"": {""land_requirement_factor"": 10.0}}"
