@@ -28,29 +28,26 @@ install the oemof-tabular-plugins package.
 
     pip install oemof_tabular_plugins==0.0.2rc4 numpy==1.26.0 git+https://github.com/oemof/oemof-tabular.git@dev git+https://github.com/sedos-project/oemof.industry.git@saltwater
 
-Possible Errors: 
-1) Please copy and paste the whole statement, there are no line skips.
-2) For Windows users, an error might appear when installing oemof-tabular: 
-    
-    "ERROR: Could not build wheels for cchardet, which is required to install pyproject.toml-based projects"
-3) Guidelines on how to fix this error: https://github.com/twintproject/twint/issues/1407#issuecomment-1141734344
-
 Verify the installation of CBC solver by typing in the terminal: 
 
     oemof_installation_test    
 
-If successful, the following message will appear: ![img.png](img.png)
+If successful, the following message will appear: 
+
+![img.png](img.png)
 
 If unsuccessful, the message will say "cbc: not working", in which case an external executable "cbc.exe" file from a 
 successful installation should be included in your path and your system restarted.
 
 Once all of these steps have been completed successfully, you are ready to run scenarios!
 
-## Get started
+## Troubleshooting
 
+For Windows users, an error might appear when installing oemof-tabular: 
+    
+    "ERROR: Could not build wheels for cchardet, which is required to install pyproject.toml-based projects"
+Guidelines on how to fix this error: https://github.com/twintproject/twint/issues/1407#issuecomment-1141734344
 
-## Installation
-Template repository for creating new projects under the RLI's umbrella
 
 ## Get started
 
