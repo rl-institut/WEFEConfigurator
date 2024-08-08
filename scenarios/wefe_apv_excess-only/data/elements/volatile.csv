@@ -1,0 +1,2 @@
+name;type;carrier;tech;capacity;capacity_cost;bus;marginal_cost;profile;expandable;capex;opex_fix;lifetime
+sun;volatile;energy;sun;320;0.0;solar-radiation-bus;0.0;ghi-profile;False;0.0;0.0;30

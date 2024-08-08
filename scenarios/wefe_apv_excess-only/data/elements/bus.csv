@@ -1,0 +1,7 @@
+name;type;balanced
+solar-radiation-bus;bus;True
+irrigation-bus;bus;True
+precipitation-bus;bus;True
+electricity-bus;bus;True
+biomass-bus;bus;True
+water-harvest-bus;bus;True

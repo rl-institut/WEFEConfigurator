@@ -1,0 +1,2 @@
+name;type;carrier;tech;capacity;capacity_cost;bus;marginal_cost;carrier_cost;profile;output_parameters;expandable
+back-up-water;dispatchable;water;source;0.0;0;water-bus-in;0.0;0;1;{};True

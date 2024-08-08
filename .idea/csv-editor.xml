@@ -3,48 +3,6 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
-        <entry key="\results\wefe_reverse_osmosis_ciara\output\all_results_by_flow.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\results\wefe_reverse_osmosis_ciara\output\all_scalars.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\results\wefe_reverse_osmosis_ciara\output\all_sequences.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\results\wefe_reverse_osmosis_ciara\output\capacities.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\results\wefe_reverse_osmosis_ciara\output\costs.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\results\wefe_reverse_osmosis_ciara\output\kpis.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
         <entry key="\results\wefe_reverse_osmosis_morocco\output\all_results_by_flow.csv">
           <value>
             <Attribute>
@@ -80,6 +38,118 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\scenarios\wefe_apv_excess-only\data\elements\bus.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\scenarios\wefe_apv_excess-only\data\elements\dispatchable.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\scenarios\wefe_apv_excess-only\data\elements\excess.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\scenarios\wefe_apv_excess-only\data\elements\mimo.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\scenarios\wefe_apv_excess-only\data\elements\volatile.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\scenarios\wefe_apv_excess-only\data\sequences\dispatchable_profile.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\scenarios\wefe_apv_light_busses_carrier\data\elements\bus.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\scenarios\wefe_apv_light_busses_carrier\data\elements\dispatchable.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\scenarios\wefe_apv_light_busses_carrier\data\elements\excess.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\scenarios\wefe_apv_light_busses_carrier\data\elements\mimo.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\scenarios\wefe_apv_light_busses_carrier\data\elements\volatile.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\scenarios\wefe_apv_light_excess-only\data\elements\bus.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\scenarios\wefe_apv_light_excess-only\data\elements\dispatchable.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\scenarios\wefe_apv_light_excess-only\data\elements\excess.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\scenarios\wefe_apv_light_excess-only\data\elements\mimo.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\scenarios\wefe_apv_light_excess-only\data\elements\volatile.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\scenarios\wefe_pv_panel\data\elements\pv_panel.csv">
           <value>
             <Attribute>
@@ -91,27 +161,6 @@
           <value>
             <Attribute>
               <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\scenarios\wefe_reverse_osmosis_ciara\data\elements\conversion.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value=";" />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\scenarios\wefe_reverse_osmosis_ciara\data\elements\dispatchable.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value=";" />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\scenarios\wefe_reverse_osmosis_ciara\data\elements\mimo.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value=";" />
             </Attribute>
           </value>
         </entry>

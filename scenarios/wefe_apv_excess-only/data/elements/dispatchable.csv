@@ -1,0 +1,3 @@
+name;type;carrier;tech;capacity;capacity_cost;bus;marginal_cost;carrier_cost;profile;expandable
+water-source;dispatchable;water;source;0.0;0;irrigation-bus;0.0;0;1;True
+atmosphere;dispatchable;water;source;0.0;0;precipitation-bus;0.0;0;1;True
