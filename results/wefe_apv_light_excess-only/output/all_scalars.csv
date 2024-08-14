@@ -1,0 +1,14 @@
+name,var_name,var_value,region,type,carrier,tech
+biomass-excess,flow_in_bus,16128.0,,excess,biomass,
+sun,flow_out_energy,53760.0,,volatile,energy,source
+electricity-excess,flow_in_bus,10752.0,,excess,energy,
+back-up-water,flow_out_bus,5376.0,,dispatchable,water,source
+back-up-water,invest_costs_out_bus,0.0,,dispatchable,water,source
+back-up-water,invest_out_bus,32.0,,dispatchable,water,source
+water-excess,flow_in_bus,21504.0,,excess,water,
+apv-system,flow_in_bus,5376.0,,,,mimo
+apv-system,flow_in_energy,53760.0,,,,mimo
+apv-system,flow_out_bus,16128.0,,,,mimo
+apv-system,flow_out_bus,10752.0,,,,mimo
+apv-system,flow_out_bus,21504.0,,,,mimo
+system,total_system_cost,0.0,,,,

@@ -1,0 +1,6 @@
+name;type;balanced
+solar-energy-bus;bus;True
+water-bus-in;bus;True
+electricity-bus;bus;True
+biomass-bus;bus;True
+water-bus-out;bus;True

@@ -27,7 +27,8 @@ project_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir)
 # -------------- USER INPUTS --------------
 # list of scenarios to be evaluated
 scenarios = [
-    "wefe_reverse_osmosis_morocco"
+    # "wefe_apv_light_excess-only"
+    "wefe_apv_excess-only"
 ]
 # weighted average cost of capital (WACC) - might move later
 # this parameter is needed if CAPEX, OPEX fix and lifetime are included
@@ -47,6 +48,7 @@ moo = False
 # add PV Panel (from oemof-tabular-plugins) to facades type map (from oemof-tabular) - might move later
 TYPEMAP["pv-panel"] = PVPanel
 TYPEMAP["mimo"] = MIMO
+TYPEMAP["apv-system"] = MIMO
 
 # -------------- RUNNING THE SCENARIOS --------------
 for scenario in scenarios:
