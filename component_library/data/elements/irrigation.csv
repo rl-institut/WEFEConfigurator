@@ -1,0 +1,12 @@
+name;type;carrier;tech;capacity;capacity_cost;marginal_cost;carrier_cost;efficiency;from_bus;to_bus;expandable; verbose_name
+surface_irrigation;conversion;water;irrigation;0;10;0;0;0.9;irrigation_bus;crop;true;"Surface Irrigation"
+center_pivot_irrigation;conversion;water;irrigation;0;10;0;0;0.9;irrigation_bus;crop;true;"Center-Pivot-Irrigation"
+irrigation_sprinkler;conversion;water;irrigation;0;10;0;0;0.9;irrigation_bus;crop;true;"Irrigation Sprinkler"
+subsurface_drip_irrigation;conversion;water;irrigation;0;10;0;0;0.9;irrigation_bus;crop;true;"Subsurface Drip Irrigation"
+drip_irrigation;conversion;water;irrigation;0;10;0;0;0.9;irrigation_bus;crop;true;"Drip Irrigation"
+furrow_irrigation;conversion;water;irrigation;0;10;0;0;0.9;irrigation_bus;crop;true;"Furrow Irrigation"
+boarder_irrigation;conversion;water;irrigation;0;10;0;0;0.9;irrigation_bus;crop;true;"Border Irrigation"
+smart_irrigation;conversion;water;irrigation;0;10;0;0;1.1;smart_irrigation_bus;crop;true;"Smart Irrigation"
+watering_can;conversion;water;irrigation;0,10;0;0;0.5;;irrigation_bus;irrigation_bus;true;"Watering Can"
+
+# TOOD find a solution to model smart irrigation

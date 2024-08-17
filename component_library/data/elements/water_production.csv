@@ -1,0 +1,3 @@
+name;type;carrier;tech;capacity;capacity_cost;marginal_cost;carrier_cost;efficiency;from_bus;to_bus;expandable; verbose_name
+rainwater_harvesting;conversion;water;water_production;0;10;0;0;0.9;precipitation-bus;service-water-bus;true;"Rainwater Harvesting"
+fog_net;conversion; water;water_production; 0;10;0;0;0.9;humidity-bus;drinking-water-bus;true;"Fog Net"
