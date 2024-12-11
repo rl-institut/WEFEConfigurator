@@ -120,6 +120,13 @@ class ScenarioBuilder:
                     category_df = pd.read_csv(ofname)
                     if component not in category_df.name.values:
                         category_df = pd.concat([category_df, component_params])
+                        # edit the attributes in the csv file if they have been set in the survey
+                        for attr in component:
+                            try:
+                                category_df.loc[component, attr] = component[attr]
+                            except ValueError:
+                                print(f"Attribute {attr} was not found in file containing {component}")
+
                         category_df.to_csv(ofname, index=False)
                     else:
                         logging.warning(f"The component {component} was already defined in the target scenario {ofname}, not overwriting")
