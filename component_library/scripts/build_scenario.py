@@ -9,56 +9,9 @@ from analyse_survey import create_components_list
 # TODO this needs to work standalone as well as a service
 
 
-def create_scenario_folder(destination_folder):
-    """Create a folder with the datapackage structure, the components and timeseries will be filled later on"""
-    if os.path.exists(destination_folder):
-        pass
-    else:
-        os.makedirs(destination_folder)
-        os.makedirs(os.path.join(destination_folder,"scripts"))
-        os.makedirs(os.path.join(destination_folder,"data","elements"))
-        os.makedirs(os.path.join(destination_folder,"data","sequences"))
 
 
-def add_component(component_name, scenario_folder, timeseries=None):
-    """Add a component in the corresponding data/elements csv file.
 
-    If timeseries is provided, then they will be append to related the data/sequences csv file
-    (the file will be created if not existing yet)
-    """
-
-    scenario_component_folder = os.path.join(scenario_folder, "data")
-
-    if component_name in AVAILABLE_COMPONENTS:
-        fname = f"{AVAILABLE_COMPONENTS[component_name]}.csv"
-        path = os.path.join(COMPONENT_TEMPLATES_PATH, "elements", fname)
-        df = pd.read_csv(path, delimiter=";") # TODO change this to , instead of ;
-
-        ofname = os.path.join(scenario_component_folder, "elements", fname)
-
-        #strip the component documentation columns
-        selected_columns = [col for col in df.columns if col not in ['verbose_name', 'description']]
-        component_params = df.loc[df.name == component_name]
-        component_params = component_params[selected_columns]
-
-        if os.path.exists(ofname):
-            category_df = pd.read_csv(ofname)
-            if component_name not in category_df.name.values:
-                category_df = pd.concat([category_df, component_params])
-                category_df.to_csv(ofname, index=False)
-            else:
-                logging.warning(f"The component {component_name} was already defined in the target scenario {ofname}, not overwriting")
-        else:
-            component_params.to_csv(ofname, index=False)
-
-        if timeseries is not None:
-            add_component_timeseries(component_name, scenario_folder, timeseries)
-    else:
-        raise ValueError(f"The component {component_name} is not in the available component list {', '.join([comp for comp in AVAILABLE_COMPONENTS])}")
-
-
-def add_component_timeseries(component_name, scenario_folder, timeseries):
-    """Timeseries will be append to related the data/sequences csv file under the destination folder
 
     The file will be created if not existing yet
     """
@@ -83,8 +36,24 @@ def create_scenario_from_survey_data(survey_data, scenario_name, scenario_path):
 
 class ScenarioBuilder:
     def __init__(self):
+        self.name = "some_scenario_name" # should be updated based on scenario
         self.mapping = SURVEY_ANSWER_COMPONENT_MAPPING
         self.components = {}
+        self.scenario_folder = self.create_scenario_folder()
+
+
+    def create_scenario_folder(self, destination_path=os.getcwd()):
+        """Create a folder with the datapackage structure, the components and timeseries will be filled later on"""
+        scenario_folder = os.path.join(destination_path, self.name)
+        if os.path.exists(scenario_folder):
+            pass
+        else:
+            os.makedirs(scenario_folder)
+            os.makedirs(os.path.join(scenario_folder, "scripts"))
+            os.makedirs(os.path.join(scenario_folder, "data", "elements"))
+            os.makedirs(os.path.join(scenario_folder, "data", "sequences"))
+
+        return scenario_folder
 
     def process_survey(self, survey):
         """
@@ -125,7 +94,52 @@ class ScenarioBuilder:
                                  print(f"Could not add attribute {attribute} to {component}, because {component} was not found")
 
 
+    def add_components(self, timeseries=None):
+        """Add a component in the corresponding data/elements csv file.
 
+        If timeseries is provided, then they will be appended to related the data/sequences csv file
+        (the file will be created if not existing yet)
+        """
+
+        scenario_component_folder = os.path.join(self.scenario_folder, "data")
+
+        for component in self.components:
+            if component in AVAILABLE_COMPONENTS:
+                fname = f"{AVAILABLE_COMPONENTS[component]}.csv"
+                path = os.path.join(COMPONENT_TEMPLATES_PATH, "elements", fname)
+                df = pd.read_csv(path, delimiter=";") # TODO change this to , instead of ;
+
+                ofname = os.path.join(scenario_component_folder, "elements", fname)
+
+                #strip the component documentation columns
+                selected_columns = [col for col in df.columns if col not in ['verbose_name', 'description']]
+                component_params = df.loc[df.name == component]
+                component_params = component_params[selected_columns]
+
+                if os.path.exists(ofname):
+                    category_df = pd.read_csv(ofname)
+                    if component not in category_df.name.values:
+                        category_df = pd.concat([category_df, component_params])
+                        category_df.to_csv(ofname, index=False)
+                    else:
+                        logging.warning(f"The component {component} was already defined in the target scenario {ofname}, not overwriting")
+                else:
+                    component_params.to_csv(ofname, index=False)
+
+                if timeseries is not None:
+                    self.add_component_timeseries(component, self.scenario_folder, timeseries)
+            else:
+                print(f"The component {component} is not in the available component list {', '.join([comp for comp in AVAILABLE_COMPONENTS])}")
+
+
+    def add_component_timeseries(self, component_name, timeseries):
+        """Timeseries will be append to related the data/sequences csv file under the destination folder
+
+        The file will be created if not existing yet
+        """
+        # TODO check the foreign keys between timeseries and component attributes are valid
+        # i.e. that each of the component attribute value correspond to a timeseries header
+        pass
 
 
 if __name__=="__main__":
