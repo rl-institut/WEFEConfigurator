@@ -94,11 +94,11 @@ class ScenarioBuilder:
                                  print(f"Could not add attribute {attribute} to {component}, because {component} was not found")
 
 
-    def add_components(self, timeseries=None):
-        """Add a component in the corresponding data/elements csv file.
-
-        If timeseries is provided, then they will be appended to related the data/sequences csv file
-        (the file will be created if not existing yet)
+    def add_components(self):
+        """
+        Add all components and their corresponding attributes from the survey to the corresponding csv files. If a
+        folder for the scenario doesn't exist, it will be created. If it does, the components and corresponding
+        attributes will be updated
         """
 
         scenario_component_folder = os.path.join(self.scenario_folder, "data")
@@ -107,36 +107,37 @@ class ScenarioBuilder:
             if component in AVAILABLE_COMPONENTS:
                 fname = f"{AVAILABLE_COMPONENTS[component]}.csv"
                 path = os.path.join(COMPONENT_TEMPLATES_PATH, "elements", fname)
-                df = pd.read_csv(path, delimiter=";") # TODO change this to , instead of ;
+                df = pd.read_csv(path, delimiter=";", index_col="name") # TODO change this to , instead of ;
 
                 ofname = os.path.join(scenario_component_folder, "elements", fname)
 
-                #strip the component documentation columns
+                # Strip the component documentation columns
                 selected_columns = [col for col in df.columns if col not in ['verbose_name', 'description']]
-                component_params = df.loc[df.name == component]
+                component_params = df.loc[component]
                 component_params = component_params[selected_columns]
 
                 if os.path.exists(ofname):
-                    category_df = pd.read_csv(ofname)
-                    if component not in category_df.name.values:
-                        category_df = pd.concat([category_df, component_params])
-                        # edit the attributes in the csv file if they have been set in the survey
-                        for attr in component:
-                            try:
-                                category_df.loc[component, attr] = component[attr]
-                            except ValueError:
-                                print(f"Attribute {attr} was not found in file containing {component}")
-
-                        category_df.to_csv(ofname, index=False)
+                    category_df = pd.read_csv(ofname, index_col="name")
+                    if component not in category_df.index:
+                        # If the component doesn't exist, add a row for the component
+                        component_df = component_params.to_frame().T
+                        category_df = pd.concat([category_df, component_df])
                     else:
-                        logging.warning(f"The component {component} was already defined in the target scenario {ofname}, not overwriting")
-                else:
-                    component_params.to_csv(ofname, index=False)
+                        # If the component already exists, only update the attributes
+                        component_params = category_df.loc[component]
+                        category_df.loc[component] = self.update_component_attributes(component_params)
+                    # Save the components back to the csv file
+                    category_df.to_csv(ofname, index_label="name")
 
-                if timeseries is not None:
-                    self.add_component_timeseries(component, self.scenario_folder, timeseries)
+
+                else:
+                    # Edit the attributes in the csv file if they have been set in the survey
+                    component_params = self.update_component_attributes(component_params)
+                    component_df = component_params.to_frame().T
+                    component_df.to_csv(ofname, index_label="name")
+
             else:
-                print(f"The component {component} is not in the available component list {', '.join([comp for comp in AVAILABLE_COMPONENTS])}")
+                logging.warning(f"The component {component} is not in the available component list {', '.join([comp for comp in AVAILABLE_COMPONENTS])}")
 
 
     def add_component_timeseries(self, component_name, timeseries):
