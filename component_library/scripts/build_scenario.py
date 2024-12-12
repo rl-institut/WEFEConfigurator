@@ -167,6 +167,34 @@ class ScenarioBuilder:
         pass
 
 
+    def add_buses(self):
+        """
+        Adds a bus.csv file to elements containing all the necessary buses. Looks through existing components to check
+        which buses should be in the system.
+        """
+        scenario_component_folder = os.path.join(self.scenario_folder, "data/elements")
+
+        if not os.path.exists(scenario_component_folder):
+            logging.warning("No components found to infer buses. Please add components to the system first.")
+
+        else:
+            buses = []
+            for filename in os.listdir(scenario_component_folder):
+                file = os.path.join(scenario_component_folder, filename)
+                components = pd.read_csv(file)
+                # Look for columns pertaining to bus connections
+                bus_cols = components.filter(regex="^(bus|from_bus_.*|to_bus_.*)$").columns
+                for col in bus_cols:
+                    buses.extend(components[col].tolist())
+
+            # Convert to set to keep only unique values (add each bus once)
+            buses = list(set(buses))
+            # Save to buses .csv file
+            filepath = os.path.join(scenario_component_folder, "bus.csv")
+            bus_df = pd.DataFrame({"bus": buses, "type": "bus", "balanced": "True"})
+            bus_df.to_csv(filepath, index=False)
+
+
 if __name__=="__main__":
     repo_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "scenarios")
     create_scenario_from_survey_data({}, "test_scenario", repo_path)
