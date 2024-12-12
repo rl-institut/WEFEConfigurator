@@ -140,6 +140,23 @@ class ScenarioBuilder:
                 logging.warning(f"The component {component} is not in the available component list {', '.join([comp for comp in AVAILABLE_COMPONENTS])}")
 
 
+    def update_component_attributes(self, component_params):
+        """
+        Edit the component attributes in the corresponding .csv file based on the component attributes set in
+        self.components.
+        :param component_params: DataSeries object containing the .csv row of parameters for the corresponding component
+        :returns: component_params DataSeries updated according to attributes in self.components[component]
+        """
+        component = component_params.name
+        for attr in self.components[component]:
+            try:
+                component_params[attr] = self.components[component][attr]
+            except KeyError:
+                logging.warning(f"Attribute {attr} was not found for {component}")
+
+        return component_params
+
+
     def add_component_timeseries(self, component_name, timeseries):
         """Timeseries will be append to related the data/sequences csv file under the destination folder
 
