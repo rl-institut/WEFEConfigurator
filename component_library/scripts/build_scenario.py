@@ -2,37 +2,56 @@ import os
 import pandas as pd
 import logging
 
-from app.survey.survey import SURVEY_ANSWER_COMPONENT_MAPPING
 from utils import AVAILABLE_COMPONENTS, COMPONENT_TEMPLATES_PATH
 from analyse_survey import create_components_list
 
 # TODO this needs to work standalone as well as a service
 
 
-
-
-
-
-    The file will be created if not existing yet
-    """
-    # TODO check the foreign keys between timeseries and component attributes are valid
-    # i.e. that each of the component attribute value correspond to a timeseries header
-    pass
-
-
-def create_scenario_from_survey_data(survey_data, scenario_name, scenario_path):
-    #component_list = create_components_list(survey_data) TODO update after survey data
-    component_list = ["water-source", "desalinator", "solar-radiation", "apv-system"]
-    # TODO scenario folder name could come from survey_data
-    scenario_folder = os.path.join(scenario_path, scenario_name)
-    create_scenario_folder(scenario_folder)
-
-    for component in component_list:
-        add_component(component, scenario_folder)
-
-    # TODO read spec csv file and update the scenario values of the resources
-    # TODO the specs csv file must have the same component names and component attribute names
-
+TYPE_FLOAT = "float"
+TYPE_INT = "int"
+TYPE_STRING = "string"
+TYPE_WATER = "string"
+INFOBOX = "description"
+SURVEY_ANSWER_COMPONENT_MAPPING = {
+    # "question_id": {"yes": "component_name"},
+    # "question_id": {"no": "component_name", "yes": "other_component_name"},
+    "1": {
+        "photovoltaic_system": "pv_ground_mounted",
+        "battery_system": "battery-storage",
+        "diesel_generator": "diesel_generator",
+        "wind_turbine": "wind_turbine",
+        "hydropower": "hydropower",
+        "national_grid": "grid",
+    },
+    "1.1": {"pv_ground_mounted/capacity": TYPE_FLOAT},
+    "1.2": {"battery_storage/capacity": TYPE_FLOAT},
+    "1.3": {"diesel_generator/capacity": TYPE_FLOAT},
+    "1.4": {"wind_turbine/capacity": TYPE_FLOAT},
+    "1.5": {"hydropower/capacity": TYPE_FLOAT},
+    "1.6": {"other_energy_production": TYPE_STRING},
+    "1.7": {"other_energy_production/capacity": TYPE_FLOAT},
+    # TODO "2" define water cycles considering WATER_TYPE_USE -> service water and drinking water cycle
+    "3": {
+        "well_with_hand_pump": ["groundwater_pump", "groundwater"],
+        "well_with_motorized_pump": ["groundwater_pump", "groundwater"],
+        "desalinated_seawater": ["desalinator", "seawater"],
+        "protected_spring": "groundwater",
+        "unprotected_spring": "groundwater",
+        "river/creek": ["surface_water", "hydropower"],
+        "rainwater_harvesting": [
+            "precipitation",
+            "rainwater harvesting",
+            "water_storage",
+        ],
+        "water_truck": "water_truck",
+        "public_tap_water": "tap_water",
+    },
+    "3.1": {"groundwater/head": TYPE_FLOAT},
+    "3.2": {"groundwater_pump/capacity": TYPE_FLOAT},
+    # TODO include question for specific throughput
+    "3.6": {"water_truck/marginal_cost": TYPE_FLOAT},
+}
 
 class ScenarioBuilder:
     def __init__(self):
@@ -197,4 +216,47 @@ class ScenarioBuilder:
 
 if __name__=="__main__":
     repo_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "scenarios")
-    create_scenario_from_survey_data({}, "test_scenario", repo_path)
+    # create_scenario_from_survey_data({}, "test_scenario", repo_path)
+    test_survey =  {'criteria_1': ['diesel_generator', 'wind_turbine'],
+                    'criteria_1.1': None, 'criteria_1.2': None,
+                    'criteria_1.3': 10.0, 'criteria_1.4': 5.0,
+                    'criteria_1.5': None, 'criteria_1.6': None,
+                    'criteria_1.7': None, 'criteria_2': 'yes',
+                    'criteria_3': None, 'criteria_3.1': None,
+                    'criteria_3.2': None, 'criteria_3.3': None,
+                    'criteria_3.4': None, 'criteria_3.5': None,
+                    'criteria_3.6': None, 'criteria_4': None,
+                    'criteria_4.1': None, 'criteria_4.2': None,
+                    'criteria_4.3': None, 'criteria_5': None,
+                    'criteria_5.1': None, 'criteria_5.2': None,
+                    'criteria_SEC_DW': None, 'criteria_5.3': None,
+                    'criteria_6': None, 'criteria_3a': ['well_with_hand_pump', 'unprotected_spring', 'desalinated_seawater'],
+                    'criteria_3.1a': 5.0, 'criteria_3.2a': None,
+                    'criteria_3.3a': None, 'criteria_3.4a': None,
+                    'criteria_3.5a': None, 'criteria_3.6a': None,
+                    'criteria_4a': ['hardness'], 'criteria_4.1a': None,
+                    'criteria_4.2a': None, 'criteria_4.3a': None,
+                    'criteria_5a': ['no'], 'criteria_5.1a': None,
+                    'criteria_5.2a': None, 'criteria_SEC_DWa': None,
+                    'criteria_5.3a': None, 'criteria_6a': None,
+                    'criteria_3b': ['well_with_hand_pump', 'unprotected_spring', 'river/creek'],
+                    'criteria_3.1b': 1.0, 'criteria_3.2b': None, 'criteria_3.3b': None,
+                    'criteria_3.4b': None, 'criteria_3.5b': None, 'criteria_3.6b': None,
+                    'criteria_4b': None, 'criteria_4.1b': None, 'criteria_4.2b': None,
+                    'criteria_4.3b': None, 'criteria_5b': ['boiling'],
+                    'criteria_5.1b': None, 'criteria_5.2b': 5.0,
+                    'criteria_SEC_DWb': 4.0, 'criteria_5.3b': None,
+                    'criteria_6b': 'no', 'criteria_7': ['septic_system', 'constructed_wetlands'],
+                    'criteria_7.1': 15.0, 'criteria_7.2': None,
+                    'criteria_8': 'yes', 'criteria_8.1': ['tomato', 'raspberry', 'wheat'],
+                    'criteria_8.2': None, 'criteria_9': 'yes', 'criteria_9.1': ['surface_irrigation'],
+                    'criteria_9.1.1': 1.5, 'criteria_9.1.2': None, 'criteria_9.1.3': None,
+                    'criteria_9.1.4': None, 'criteria_9.1.5': None, 'criteria_9.1.6': None,
+                    'criteria_9.1.7': None, 'criteria_9.1.8': None, 'criteria_9.1.9': None,
+                    'criteria_9.1.11': None, 'criteria_9.1.12': None, 'criteria_10': 'yes'}
+
+    scenario = ScenarioBuilder()
+    scenario.process_survey(test_survey)
+    scenario.add_components()
+    scenario.add_buses()
+
