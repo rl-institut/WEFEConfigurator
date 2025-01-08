@@ -1,4 +1,6 @@
 import os
+
+import numpy as np
 import pandas as pd
 import logging
 
@@ -176,11 +178,55 @@ class ScenarioBuilder:
         return component_params
 
 
-    def add_component_timeseries(self, component_name, timeseries):
-        """Timeseries will be append to related the data/sequences csv file under the destination folder
-
-        The file will be created if not existing yet
+    def add_sequences(self, custom_timeseries=None):
         """
+        Looks for the column "profile" within the elements .csv files. If existing, creates a *element*_profile file
+        in the sequences folder. If no custom timeseries are provided, default or previously retrieved timeseries (e.g.
+        for renewable energy output) will be used.
+        :param custom_timeseries: DataFrame with datetime index and elements as columns (should be uploaded as .csv or .xlsx
+        """
+        scenario_component_folder = os.path.join(self.scenario_folder, "data/elements")
+        scenario_sequences_folder = os.path.join(self.scenario_folder, "data/sequences")
+
+        if not os.path.exists(scenario_component_folder):
+            logging.warning("No components found to add timeseries. Please add components to the system first.")
+
+        else:
+            for filename in os.listdir(scenario_component_folder):
+                file = os.path.join(scenario_component_folder, filename)
+                components = pd.read_csv(file)
+                # Look for components that should have profiles
+                if "profile" in components.columns:
+                    # Create a file for the corresponding profiles if the elements file has a profiles column
+                    sequences_filename = f"{filename.replace('.csv', '')}_profile.csv"
+                    component_names = components.name.values.tolist()
+                    # TODO generate hourly timeseries based on scenario parameters (start, end, duration)
+                    timeindex = pd.date_range(start=f'2025-01-01', end=f'2025-12-31 23:00:00', freq='h')
+                    # Create a dataframe to store the profiles
+                    profile_df = pd.DataFrame(index=timeindex, columns=component_names)
+                    profile_df.index.rename("timeindex", inplace=True)
+                    for component in component_names:
+                        # If custom timeseries are provided, use these instead of the ones in database
+                        if custom_timeseries is not None and component in custom_timeseries.columns:
+                            # Check that the length of the custom data matches the index and does not contain NaN values
+                            if len(custom_timeseries.index) != len(profile_df.timeindex):
+                                logging.error(f"The uploaded timeseries should contain {len(profile_df.timeindex)} "
+                                              f"timesteps, but it contains {len(custom_timeseries.index)} ")
+                            elif custom_timeseries[component].isnan().any():
+                                logging.error(f"The uploaded timeseries contains NaN values. Please revise your input.")
+                            else:
+                                # Output a warning if the timeseries indexes do not match but save to sequences regardless
+                                if custom_timeseries.index != profile_df.timeindex:
+                                    logging.warning(f"The uploaded timeseries and the scenario do not have identical "
+                                                f"timestamps. Please make sure that the uploaded timeseries cover the correct period.")
+                                profile_df[component] = custom_timeseries[component]
+                        else:
+                            profile_df[component] = self.fetch_component_timeseries(component)
+
+                    # Save sequences to .csv file
+                    filepath = os.path.join(scenario_sequences_folder, sequences_filename)
+                    profile_df.to_csv(filepath)
+
         # TODO check the foreign keys between timeseries and component attributes are valid
         # i.e. that each of the component attribute value correspond to a timeseries header
         pass
@@ -212,6 +258,18 @@ class ScenarioBuilder:
             filepath = os.path.join(scenario_component_folder, "bus.csv")
             bus_df = pd.DataFrame({"bus": buses, "type": "bus", "balanced": "True"})
             bus_df.to_csv(filepath, index=False)
+
+
+    def fetch_component_timeseries(self, component):
+        """
+        Fetch the corresponding sequence for the component, e.g. potential output for volatile resources.
+        :param component: Component for which to fetch the timeseries from the database
+        :type component: str
+        :return timeseries: List with timeseries values corresponding to the component
+        """
+        # TODO connect to the database to get existing profiles gathered from renewables.ninja, CDS or inputs
+        dummy_timeseries = np.random.rand(8760)
+        return dummy_timeseries
 
 
 if __name__=="__main__":
@@ -259,4 +317,5 @@ if __name__=="__main__":
     scenario.process_survey(test_survey)
     scenario.add_components()
     scenario.add_buses()
+    scenario.add_sequences()
 
