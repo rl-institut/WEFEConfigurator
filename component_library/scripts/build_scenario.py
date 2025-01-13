@@ -3,6 +3,7 @@ import os
 import numpy as np
 import pandas as pd
 import logging
+import json
 
 from utils import AVAILABLE_COMPONENTS, COMPONENT_TEMPLATES_PATH
 from analyse_survey import create_components_list
@@ -275,43 +276,47 @@ class ScenarioBuilder:
 if __name__=="__main__":
     repo_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "scenarios")
     # create_scenario_from_survey_data({}, "test_scenario", repo_path)
-    test_survey =  {'criteria_1': ['diesel_generator', 'wind_turbine'],
-                    'criteria_1.1': None, 'criteria_1.2': None,
-                    'criteria_1.3': 10.0, 'criteria_1.4': 5.0,
-                    'criteria_1.5': None, 'criteria_1.6': None,
-                    'criteria_1.7': None, 'criteria_2': 'yes',
-                    'criteria_3': None, 'criteria_3.1': None,
-                    'criteria_3.2': None, 'criteria_3.3': None,
-                    'criteria_3.4': None, 'criteria_3.5': None,
-                    'criteria_3.6': None, 'criteria_4': None,
-                    'criteria_4.1': None, 'criteria_4.2': None,
-                    'criteria_4.3': None, 'criteria_5': None,
-                    'criteria_5.1': None, 'criteria_5.2': None,
-                    'criteria_SEC_DW': None, 'criteria_5.3': None,
-                    'criteria_6': None, 'criteria_3a': ['well_with_hand_pump', 'unprotected_spring', 'desalinated_seawater'],
-                    'criteria_3.1a': 5.0, 'criteria_3.2a': None,
-                    'criteria_3.3a': None, 'criteria_3.4a': None,
-                    'criteria_3.5a': None, 'criteria_3.6a': None,
-                    'criteria_4a': ['hardness'], 'criteria_4.1a': None,
-                    'criteria_4.2a': None, 'criteria_4.3a': None,
-                    'criteria_5a': ['no'], 'criteria_5.1a': None,
-                    'criteria_5.2a': None, 'criteria_SEC_DWa': None,
-                    'criteria_5.3a': None, 'criteria_6a': None,
-                    'criteria_3b': ['well_with_hand_pump', 'unprotected_spring', 'river/creek'],
-                    'criteria_3.1b': 1.0, 'criteria_3.2b': None, 'criteria_3.3b': None,
-                    'criteria_3.4b': None, 'criteria_3.5b': None, 'criteria_3.6b': None,
-                    'criteria_4b': None, 'criteria_4.1b': None, 'criteria_4.2b': None,
-                    'criteria_4.3b': None, 'criteria_5b': ['boiling'],
-                    'criteria_5.1b': None, 'criteria_5.2b': 5.0,
-                    'criteria_SEC_DWb': 4.0, 'criteria_5.3b': None,
-                    'criteria_6b': 'no', 'criteria_7': ['septic_system', 'constructed_wetlands'],
-                    'criteria_7.1': 15.0, 'criteria_7.2': None,
-                    'criteria_8': 'yes', 'criteria_8.1': ['tomato', 'raspberry', 'wheat'],
-                    'criteria_8.2': None, 'criteria_9': 'yes', 'criteria_9.1': ['surface_irrigation'],
-                    'criteria_9.1.1': 1.5, 'criteria_9.1.2': None, 'criteria_9.1.3': None,
-                    'criteria_9.1.4': None, 'criteria_9.1.5': None, 'criteria_9.1.6': None,
-                    'criteria_9.1.7': None, 'criteria_9.1.8': None, 'criteria_9.1.9': None,
-                    'criteria_9.1.11': None, 'criteria_9.1.12': None, 'criteria_10': 'yes'}
+
+    with open(f"test_survey.json", "r") as fp:
+        test_survey =  json.load(fp)
+
+    # test_survey =  {'criteria_1': ['diesel_generator', 'wind_turbine'],
+    #                 'criteria_1.1': None, 'criteria_1.2': None,
+    #                 'criteria_1.3': 10.0, 'criteria_1.4': 5.0,
+    #                 'criteria_1.5': None, 'criteria_1.6': None,
+    #                 'criteria_1.7': None, 'criteria_2': 'yes',
+    #                 'criteria_3': None, 'criteria_3.1': None,
+    #                 'criteria_3.2': None, 'criteria_3.3': None,
+    #                 'criteria_3.4': None, 'criteria_3.5': None,
+    #                 'criteria_3.6': None, 'criteria_4': None,
+    #                 'criteria_4.1': None, 'criteria_4.2': None,
+    #                 'criteria_4.3': None, 'criteria_5': None,
+    #                 'criteria_5.1': None, 'criteria_5.2': None,
+    #                 'criteria_SEC_DW': None, 'criteria_5.3': None,
+    #                 'criteria_6': None, 'criteria_3a': ['well_with_hand_pump', 'unprotected_spring', 'desalinated_seawater'],
+    #                 'criteria_3.1a': 5.0, 'criteria_3.2a': None,
+    #                 'criteria_3.3a': None, 'criteria_3.4a': None,
+    #                 'criteria_3.5a': None, 'criteria_3.6a': None,
+    #                 'criteria_4a': ['hardness'], 'criteria_4.1a': None,
+    #                 'criteria_4.2a': None, 'criteria_4.3a': None,
+    #                 'criteria_5a': ['no'], 'criteria_5.1a': None,
+    #                 'criteria_5.2a': None, 'criteria_SEC_DWa': None,
+    #                 'criteria_5.3a': None, 'criteria_6a': None,
+    #                 'criteria_3b': ['well_with_hand_pump', 'unprotected_spring', 'river/creek'],
+    #                 'criteria_3.1b': 1.0, 'criteria_3.2b': None, 'criteria_3.3b': None,
+    #                 'criteria_3.4b': None, 'criteria_3.5b': None, 'criteria_3.6b': None,
+    #                 'criteria_4b': None, 'criteria_4.1b': None, 'criteria_4.2b': None,
+    #                 'criteria_4.3b': None, 'criteria_5b': ['boiling'],
+    #                 'criteria_5.1b': None, 'criteria_5.2b': 5.0,
+    #                 'criteria_SEC_DWb': 4.0, 'criteria_5.3b': None,
+    #                 'criteria_6b': 'no', 'criteria_7': ['septic_system', 'constructed_wetlands'],
+    #                 'criteria_7.1': 15.0, 'criteria_7.2': None,
+    #                 'criteria_8': 'yes', 'criteria_8.1': ['tomato', 'raspberry', 'wheat'],
+    #                 'criteria_8.2': None, 'criteria_9': 'yes', 'criteria_9.1': ['surface_irrigation'],
+    #                 'criteria_9.1.1': 1.5, 'criteria_9.1.2': None, 'criteria_9.1.3': None,
+    #                 'criteria_9.1.4': None, 'criteria_9.1.5': None, 'criteria_9.1.6': None,
+    #                 'criteria_9.1.7': None, 'criteria_9.1.8': None, 'criteria_9.1.9': None,
+    #                 'criteria_9.1.11': None, 'criteria_9.1.12': None, 'criteria_10': 'yes'}
 
     scenario = ScenarioBuilder()
     scenario.process_survey(test_survey)
