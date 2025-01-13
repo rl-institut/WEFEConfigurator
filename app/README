@@ -1,0 +1,16 @@
+# Survey to help building WEFE system
+
+Right now it is a simple app to visualize the survey and test potential inputs for WEFE system builder
+
+## Getting started
+
+1. Create a virtual environment with python 3.10
+2. Install the requirements with `pip install -r requirements.txt`
+3. Apply the migration with `python manage.py migrate` (should only be runned once at initial setup)
+4. Populate the database with survey questions `python manage.py update_survey_questions` (should only be runned once at initial setup)
+5. Run the server `python manage.py runserver`
+
+The survey is then accessible at http://127.0.0.1:8000/view/survey/<integer id of scenario> (you can input any integer during the test phase)
+If you saved a survey visiting http://127.0.0.1:8000/view/survey/<integer id of scenario> will show you the answers, which you can then modify
+
+If you edit the questions in survey/survey.py then you need to run `python manage.py update_survey_questions --update` to edit within the app (if you create a new question, then the older saved surveys likely won't display it)

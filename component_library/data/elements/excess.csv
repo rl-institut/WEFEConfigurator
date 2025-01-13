@@ -1,0 +1,3 @@
+name;type;bus;marginal_cost
+electricity-excess;excess;elec-bus;0
+water-production;excess;water-bus;0

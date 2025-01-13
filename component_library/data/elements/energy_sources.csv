@@ -1,0 +1,9 @@
+name;type;carrier;tech;capacity;capacity_cost;bus;marginal_cost;carrier_cost;profile;output_parameters;expandable;verbose_name
+solar-radiation;dispatchable;energy;source;0;0;solar-energy-bus;0;0;ghi-profile;{};true;"Solar Radiation"
+lpg;dispatchable;energy;source;0;0;lpg-bus;0.5;0;1;{};true;"Liquified Petroleum Gas (LPG)"
+kerosene;dispatchable;energy;source;0;0;kerosene-bus;0.5;0;1;{};true;"Kerosene"
+biofuel;dispatchable;energy;source;0;0;biofuel-bus;0.5;0;1;{};true;"Biofuel"
+diesel;dispatchable;energy;source;;;diesel_bus;2;0;1;{};true;"Diesel"
+woody_biomass;dispatchable;energy;source;;;woody_bus;2;0;1;{};true;"Woody Biomass"
+grid;dispatchable;energy;source;;;grid_bus;2;0;1;{};true;"Electricity Grid"
+river_flow;dispatchable;energy;source;;;river_flow_bus;0;0;river-flow;{};true;"River Flow"

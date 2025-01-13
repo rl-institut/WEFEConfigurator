@@ -1,0 +1,14 @@
+.form-group{
+    margin-top:0.5rem;
+    margin-bottom:0.5rem;
+}
+
+.form-group.subquestion {
+padding-left: 4rem;
+}
+.form-group.subsubquestion {
+padding-left: 8rem;
+}
+//.sub_question.disabled {
+//display:none;
+//}
