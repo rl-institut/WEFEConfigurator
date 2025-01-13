@@ -1,0 +1,4 @@
+name;type;carrier;tech;capacity;capacity_cost;bus;marginal_cost;profile;expandable
+wind_turbine;volatile;electricity;onshore;0;161151;electricity-bus;0;wind-profile;True
+pv_ground_mounted;volatile;electricity;pv;0;99405;electricity-bus;0;pv-profile;True
+hydropower;volatile;electricity;hydro;0;218011;electricity-bus;0;1;True
