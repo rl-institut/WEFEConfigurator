@@ -1,0 +1,13 @@
+name;type;carrier;tech;capacity;capacity_cost;marginal_cost;carrier_cost;efficiency;from_bus;to_bus;expandable; verbose_name
+inverter;conversion;energy;energy_conversion;0;10;0;0;0.9;dc-elec-bus;ac-elec-bus;true;"Inverter"
+diesel_generator;conversion;energy;energy_conversion;0;10;0;0;0.9;diesel-bus;ac-elec-bus;true;"Diesel Generator"
+hydro_power; conversion; energy;energy_conversion; 0;10;0;0;0.9;riverflow-bus;ac-elec-bus;true;"Hydropower Plant"
+pv_rooftop;conversion;energy;energy_conversion;0;10;0;0;0.9;solar-bus;ac-elec-bus;true;"Rooftop Photovoltaic System"
+pv_ground_mounted;conversion;energy;energy_conversion;0;10;0;0;0.9;solar-bus;ac-elec-bus;true;"Ground-mounted Photovoltaic System"
+pv_floating;conversion;energy;energy_conversion;0;10;0;0;0.9;solar-bus;ac-elec-bus;true;"Floating Photovoltaic System"
+pv_canal_top;conversion;energy;energy_conversion;0;10;0;0;0.9;solar-bus;ac-elec-bus;true;"Canal-top Photovoltaic System"
+wind_turbine;conversion;energy;energy_conversion;0;10;0;0;0.9;wind-bus;ac-elec-bus;true;"Wind Turbine"
+electrolyzer;conversion;energy;energy_conversion;0;10;0;0;0.9;ac-elec-bus;hydrogen-bus;true;"Electrolyzer"
+fuel_cell;conversion;energy;energy_conversion;0;10;0;0;0.9;hydrogen_bus;ac_elec_bus;true;"Fuel Cell"
+
+# TODO add cattle types

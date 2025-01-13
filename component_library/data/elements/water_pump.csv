@@ -1,0 +1,12 @@
+name;type;carrier;tech;capacity;capacity_cost;marginal_cost;carrier_cost;efficiency;specific_energy_consumption;;primary_bus;from_bus_0;from_bus_1;to_bus;head;expandable; CO2_emissions; land_requirement_factor; water_footprint; verbose_name
+submersible_pump;water_pump;water;groundwater_pump;0;;0;0;;(head*1000*9.81)/(3.6*10^^6*efficiency);1;groundwater_bus;groundwater-bus;ac-elec-bus;water-distribution-bus;groundwater(head);true;;;;"Submersible Pump"
+jet_pump;water_pump;water;groundwater_pump;0;;0;0;;(head*1000*9.81)/(3.6*10^^6*efficiency);1;groundwater_bus;groundwater-bus;ac-elec-bus;water-distribution-bus;groundwater(head);true;;;;"Jet Pump"
+centrifugal_pump;water_pump;water;irrigation_pump;0;;0;0;;(head*1000*9.81)/(3.6*10^^6*efficiency);1;water-distribution-bus;water-distribution-bus;ac-elec-bus;crop-water-bus;groundwater(head);true;;;;"Centrifugal Pump"
+turbine_pump;water_pump;water;irrigation_pump;0;;0;0;;(head*1000*9.81)/(3.6*10^^6*efficiency);1;water-distribution-bus;water-distribution-bus;ac-elec-bus;crop-water-bus;groundwater(head);true;;;;"Turbine Pump"
+
+# water pumps are modeled as two inputs (electricity, water) - one output transformer (water)
+# from_bus_0 = primary bus
+# TODO find solution for case that various filtration nad desalination system are put in series..
+# specific energy consumption eqauls  conversion_factor_ac-elec-bus (some kind of efficiency)
+# conversion_rate_feed_bus always equals 1; could be omitted
+# include specific throughput of the pump, [m³/kW]
