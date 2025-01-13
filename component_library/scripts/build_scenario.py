@@ -36,8 +36,8 @@ SURVEY_ANSWER_COMPONENT_MAPPING = {
     "1.7": {"other_energy_production/capacity": TYPE_FLOAT},
     # TODO "2" define water cycles considering WATER_TYPE_USE -> service water and drinking water cycle
     "3": {
-        "well_with_hand_pump": ["groundwater_pump", "groundwater"],
-        "well_with_motorized_pump": ["groundwater_pump", "groundwater"],
+        "well_with_hand_pump": ["submersible_pump", "groundwater"],
+        "well_with_motorized_pump": ["submersible_pump", "groundwater"],
         "desalinated_seawater": ["desalinator", "seawater"],
         "protected_spring": "groundwater",
         "unprotected_spring": "groundwater",
@@ -51,7 +51,7 @@ SURVEY_ANSWER_COMPONENT_MAPPING = {
         "public_tap_water": "tap_water",
     },
     "3.1": {"groundwater/head": TYPE_FLOAT},
-    "3.2": {"groundwater_pump/capacity": TYPE_FLOAT},
+    "3.2": {"submersible_pump/capacity": TYPE_FLOAT},
     # TODO include question for specific throughput
     "3.6": {"water_truck/marginal_cost": TYPE_FLOAT},
 }
