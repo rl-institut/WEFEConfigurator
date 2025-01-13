@@ -10,12 +10,14 @@ from django.views.decorators.http import require_http_methods
 
 @require_http_methods(["GET", "POST"])
 def view_survey_questions(request, scen_id=None):
+
     if request.method == "POST":
         form = SurveyQuestionForm(request.POST, qs=SurveyAnswer.objects.filter(scenario_id=scen_id))
 
         if form.is_valid():
             qs = SurveyAnswer.objects.filter(scenario_id=scen_id)
-
+            with open(f"scenario_{scen_id}_survey_answers.json", "w") as fp:
+                json.dump(form.cleaned_data, fp, indent=4)
             for criteria_num, value in form.cleaned_data.items():
                 crit = qs.get(question_id=criteria_num.replace("criteria_", ""))
                 crit.value = value
