@@ -40,7 +40,9 @@ def view_survey_questions(request, scen_id=None):
         qs = SurveyAnswer.objects.filter(scenario_id=scenario_id)
         if qs.exists() is False:
             questions = SurveyQuestion.objects.all()
+            print(questions)
             for question in questions:
+                print(question)
                 answer_param = {}
                 answer_param["scenario_id"] = scenario_id
                 answer_param["question"] = question
@@ -48,7 +50,7 @@ def view_survey_questions(request, scen_id=None):
                 new_answer.save()
 
         categories = [cat for cat in SURVEY_QUESTIONS_CATEGORIES.keys()]
-
+        print(categories)
         form = SurveyQuestionForm(
             qs=SurveyAnswer.objects.filter(scenario_id=scenario_id)
         )

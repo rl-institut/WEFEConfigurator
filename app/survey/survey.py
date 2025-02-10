@@ -29,6 +29,7 @@ SURVEY_ANSWER_COMPONENT_MAPPING = {
         "diesel_generator": "diesel_generator",
         "wind_turbine": "wind_turbine",
         "hydropower": "hydropower",
+        "biogas_plant": "biogas_plant",
         "national_grid": "grid",
     },
     "1.1": {"capacity": TYPE_FLOAT},
@@ -36,8 +37,9 @@ SURVEY_ANSWER_COMPONENT_MAPPING = {
     "1.3": {"capacity": TYPE_FLOAT},
     "1.4": {"capacity": TYPE_FLOAT},
     "1.5": {"capacity": TYPE_FLOAT},
-    "1.6": {"other energy_conversion": TYPE_STRING},
-    "1.7": "capacity",
+    "1.6": {"capacity": TYPE_FLOAT},
+    "1.7": {"other energy_conversion": TYPE_STRING},
+    "1.8": "capacity",
     # TODO "2" define water cycles considering WATER_TYPE_USE -> service water and drinking water cycle
     "3": {
         "well with hand pump": ["groundwater_pump, groundwater"],
@@ -74,7 +76,7 @@ SURVEY_QUESTIONS_CATEGORIES = {
 COMPONENT_SURVEY_STRUCTURE = [
     # {"question": "", "question_id": "", "possible_answers":["answer1", "answer2"]}
     {
-        "question": "Which components do yoú use for electricity production? kjhsdkjsadhsa asdsaidu",
+        "question": "Which components do yoú use for electricity production?",
         "question_id": "1",
         "possible_answers": [
             "photovoltaic_system",
@@ -83,6 +85,7 @@ COMPONENT_SURVEY_STRUCTURE = [
             "wind_turbine",
             "hydropower",
             "national_grid",
+            "biogas_plant"
             "other",
         ],
         "display_type": "multiple_choice_tickbox",
@@ -92,7 +95,8 @@ COMPONENT_SURVEY_STRUCTURE = [
             "diesel_generator": "1.3",
             "wind_turbine": "1.4",
             "hydropower": "1.5",
-            "other": ["1.6", "1.7"],
+            "biogas_plant": "1.6",
+            "other": ["1.7", "1.8"],
         },
     },
     {
@@ -121,13 +125,18 @@ COMPONENT_SURVEY_STRUCTURE = [
         "possible_answers": TYPE_FLOAT,
     },
     {
-        "question": "Which other technology do you use for electricity supply?",
+        "question": "What ist the capacity [kW] of the installed biogas plant??",
         "question_id": "1.6",
         "possible_answers": TYPE_STRING,
     },
     {
-        "question": "What is the installed capacity [kW] of this electricity production technology",
+        "question": "Which other technology do you use for electricity supply?",
         "question_id": "1.7",
+        "possible_answers": TYPE_STRING,
+    },
+    {
+        "question": "What is the installed capacity [kW] of this other electricity production technology",
+        "question_id": "1.8",
         "possible_answers": TYPE_FLOAT,
     },
     ]
@@ -140,7 +149,7 @@ WATER_SUPPLY_SPECIFIC = {
 
 }
 
-WATER_SUPPLY_TEMPLATE =  [{
+WATER_SUPPLY_TEMPLATE = [{
         "question": "Which water source do you use for TYPE_WATER_USE",
         "question_id": "3",
         "possible_answers": [
