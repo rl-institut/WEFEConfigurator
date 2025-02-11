@@ -51,7 +51,7 @@ SURVEY_ANSWER_COMPONENT_MAPPING = {
         "rainwater harvesting": [
             "precipitation",
             "rainwater harvesting",
-            "water_storage",
+            "water_storage"
         ],
         "water truck": "water_truck",
         "public tap water": "tap_water",
@@ -153,10 +153,7 @@ WATER_SUPPLY_TEMPLATE = [{
         "question": "Which water source do you use for TYPE_WATER_USE",
         "question_id": "3",
         "possible_answers": [
-            "well_with_hand_pump",
-            "well_with_motorized_pump",
-            "protected_spring",
-            "unprotected_spring",
+            "groundwater well"
             "public_tap_water",
             "desalinated_seawater",
             "river/creek",
@@ -169,8 +166,7 @@ WATER_SUPPLY_TEMPLATE = [{
         "display_type": "multiple_choice_tickbox",
         "subquestion": {
             "well_with_hand_pump": "3.1",
-            "well_with_motorized_pump": "3.1",
-            "well_with_motorized_pump": ["3.2", "3.3", "3.4"],
+            "groundwater": ["3.1","3.2", "3.3", "3.4"],
             "water_truck": "3.5",
             "other": "3.6",
         },
@@ -515,7 +511,7 @@ CROPS_SURVEY_STRUCTURE = [
         "possible_answers": TYPE_FLOAT,
     },
     {
-        "question": "What is the maximum throughput [m³/h] of your installed center-pibot irrigation system?",
+        "question": "What is the maximum throughput [m³/h] of your installed center-plot irrigation system?",
         "question_id": "9.1.2",
         "possible_answers": TYPE_FLOAT,
     },
@@ -566,14 +562,14 @@ CROPS_SURVEY_STRUCTURE = [
     },
     {
         "question": "Are you interested to combine electricity and crop production on the same land in the form of"
-        " agrivoltaics, the combination of solar photovoltaic systems with agriculutral production"
+        " agrivoltaics, the combination of solar photovoltaic systems with agricultural production"
         " on the same land??",
         "question_id": "10",
         "possible_answers": ["yes", "no"],
     },
 ]
 
-SURVEY_STRUCTURE = COMPONENT_SURVEY_STRUCTURE + WATER_SUPPLY_SURVEY_STRUCTURE  + CROPS_SURVEY_STRUCTURE
+SURVEY_STRUCTURE = COMPONENT_SURVEY_STRUCTURE + WATER_SUPPLY_SURVEY_STRUCTURE + CROPS_SURVEY_STRUCTURE
 
 def infer_survey_categories():
     question_category_map = {}
