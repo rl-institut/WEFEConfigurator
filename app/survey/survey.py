@@ -42,11 +42,8 @@ SURVEY_ANSWER_COMPONENT_MAPPING = {
     "1.8": "capacity",
     # TODO "2" define water cycles considering WATER_TYPE_USE -> service water and drinking water cycle
     "3": {
-        "well with hand pump": ["groundwater_pump, groundwater"],
-        "well with motorized pump": ["groundwater_pump, groundwater"],
+        "groundwater_well": ["water_pump, groundwater"],
         "desalinated seawater": ["desalination", "seawater"],
-        "protected spring": "groundwater",
-        "unprotected spring": "groundwater",
         "river/creek": ["surface_water", "hydropower"],
         "rainwater harvesting": [
             "precipitation",
@@ -56,11 +53,12 @@ SURVEY_ANSWER_COMPONENT_MAPPING = {
         "water truck": "water_truck",
         "public tap water": "tap_water",
     },
-    "3.1": {"groundwater/head": TYPE_FLOAT},
-    "3.2": {"groundwater_pump/capacity": TYPE_FLOAT},
-    # TODO include question for specific throughput
-    "3.3": {"water_truck/marginal_cost": TYPE_FLOAT},
-}
+    "3.1.1": {"water_pump/head": TYPE_FLOAT},
+    "3.1.3": {"water_pump/capacity": TYPE_FLOAT},
+    "3.1.4": {"water_pump/flow_max": TYPE_FLOAT},
+    # TODO check whether flow max is the right column name for maximum throughput
+    "3.5": {"water_truck/marginal_cost": TYPE_FLOAT},
+},
 
 COMPONENT_CATEGORY = "components"
 WATER_CATEGORY = "water"
@@ -153,7 +151,7 @@ WATER_SUPPLY_TEMPLATE = [{
         "question": "Which water source do you use for TYPE_WATER_USE",
         "question_id": "3",
         "possible_answers": [
-            "groundwater well"
+            "groundwater_well"
             "public_tap_water",
             "desalinated_seawater",
             "river/creek",
@@ -165,50 +163,66 @@ WATER_SUPPLY_TEMPLATE = [{
         ],
         "display_type": "multiple_choice_tickbox",
         "subquestion": {
-            "well_with_hand_pump": "3.1",
-            "groundwater": ["3.1","3.2", "3.3", "3.4"],
-            "water_truck": "3.5",
-            "other": "3.6",
+            "groundwater_well": ["3.1"],
+            "desalinated_seawater": ["3.1"],
+            "river/creek": ["3.1"],
+            "lake": ["3.1"],
+            "water_truck": ["3.2"],
+            "other": ["3.3"],
         },
     },
     {
-        "question": "What is the depth to the groundwater table at site?",
-        "question_id": "3.1",
-        "possible_answers": TYPE_FLOAT,
+        "question": "Are water pumps required to convey water from the source to the point of consumption?",
+        "question_id":"3.1",
+        "possible_answers": ["Yes", "No"],
+        "subquestion": {
+            "Yes": ["3.1.1", "3.1.2", "3.1.3","3.1.4"],
+        },
     },
     {
-        "question": "What is the rated power of the motorized pump?",
-        "question_id": "3.2",
+        "question": "What is the height difference between the elevation of the water source"
+                    "and the elevation of the location where you are using the water (both above sea level)?",
+        INFOBOX: "Elevation of the water source refers to for example average elevation of the groundwater level,"
+                 " lake surface, or the elevation of the location of river water uptake. We require this information"
+                 "to obtain information regarding a potential water pump head",
+        "question_id": "3.1.1",
         "possible_answers": TYPE_FLOAT,
-    },
-    {
-        "question": "To which water system you are connected?",
-        "question_id": "3.2",
-        "possible_answers": ["drinking", "service"],
     },
     {
         "question": "Which energy source is the pump using?",
-        "question_id": "3.3",
+        "question_id": "3.1.2",
         "possible_answers": [
+            "manual",
             "diesel",
-            "electricity_(grid)",
-            "wind_energy",
+            "electricity (grid)",
+            "wind turbine",
             "photovoltaics",
         ],
+        "subquestion": {
+            "diesel": ["3.1.3"],
+            "electricity (grid)": ["3.1.3"],
+            "wind turbine": ["3.1.3"],
+            "photovoltaic system": ["3.1.3"],
+        },
     },
     {
-        "question": "What is the maximum throughput [m³/h] of the water pump",
-        "question_id": "3.4",
+        "question": "What is the rated power of the motorized pump?",
+        "question_id": "3.1.3",
         "possible_answers": TYPE_FLOAT,
     },
     {
-        "question": "Whhat is the price of the water delievered by the truck [$/m³]",
-        "question_id": "3.5",
+        "question": "What is the maximum throughput [m³/h] of the water pump",
+        "question_id": "3.1.4",
+        "possible_answers": TYPE_FLOAT,
+    },
+    {
+        "question": "What is the price of the water provided by truck [$/m³]",
+        "question_id": "3.2",
         "possible_answers": TYPE_STRING,
     },
     {
         "question": "Which other source do you use for TYPE_WATER_USE",
-        "question_id": "3.6",
+        "question_id": "3.3",
         "possible_answers": TYPE_STRING,
     },
     {
@@ -326,7 +340,7 @@ WATER_SUPPLY_TEMPLATE = [{
     {
         "question": "Do you typically experience TYPE_WATER_USE shortages from time to time?",
         "question_id": "6",
-        "possible_answers": ["yes", "no"],
+        "possible_answers": ["Yes", "No"],
     },
 ]
 
@@ -364,7 +378,7 @@ WATER_SUPPLY_SURVEY_STRUCTURE = [
                  " which meets drinking water standards, service water does not need to meet the same quality criteria. "
                  "Its primary function is to support specific activities without being directly consumed by humans.",
         "question_id": "2",
-        "possible_answers": ["yes", "no"],
+        "possible_answers": ["Yes", "No"],
         "subquestion": {
             "yes": ["3a", "4a", "5a", "6a", "3b", "4b", "5b", "6b"],
             "no": ["3", "4", "5", "6"]
@@ -411,8 +425,8 @@ CROPS_SURVEY_STRUCTURE = [
     {
         "question": "Are you cultivating crops?",
         "question_id": "8",
-        "possible_answers": ["yes", "no"],
-        "subquestion": {"yes": ["8.1", "9", "10"]},
+        "possible_answers": ["Yes", "No"],
+        "subquestion": {"Yes": ["8.1", "9", "10"]},
     },
     {
         "question": "Please list the crops types you are cultivating",
