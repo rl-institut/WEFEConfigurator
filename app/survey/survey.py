@@ -57,7 +57,7 @@ SURVEY_ANSWER_COMPONENT_MAPPING = {
     "3.1.3": {"water_pump/capacity": TYPE_FLOAT},
     "3.1.4": {"water_pump/flow_max": TYPE_FLOAT},
     # TODO check whether flow max is the right column name for maximum throughput
-    "3.5": {"water_truck/marginal_cost": TYPE_FLOAT},
+    "3.2": {"water_truck/marginal_cost": TYPE_FLOAT},
 },
 
 COMPONENT_CATEGORY = "components"
@@ -176,7 +176,7 @@ WATER_SUPPLY_TEMPLATE = [{
         "question_id":"3.1",
         "possible_answers": ["Yes", "No"],
         "subquestion": {
-            "Yes": ["3.1.1", "3.1.2", "3.1.3","3.1.4"],
+            "Yes": ["3.1.1", "3.1.2", "3.1.4"],
         },
     },
     {
@@ -206,7 +206,7 @@ WATER_SUPPLY_TEMPLATE = [{
         },
     },
     {
-        "question": "What is the rated power of the motorized pump?",
+        "question": "What is the rated power of the water pump?",
         "question_id": "3.1.3",
         "possible_answers": TYPE_FLOAT,
     },
@@ -482,6 +482,9 @@ CROPS_SURVEY_STRUCTURE = [
         "question_id": "8.2",
         "possible_answers": TYPE_STRING,
     },
+
+    #TODO define CROP_TYPE ask all the following question for the specific crop type: Cultivation area;
+    # annual crop production in [t], do you irrigate CROP_TYPE"
     {
         "question": "Do you irrigate your crops",
         "question_id": "9",
@@ -519,6 +522,7 @@ CROPS_SURVEY_STRUCTURE = [
             "other": ["9.1.11", "9.1.12"],
         },
     },
+    # TODO Simplify here ask question for specific irrigation type
     {
         "question": "What is the maximum throughput [m³/h] of your installed surface irrigation system?",
         "question_id": "9.1.1",
