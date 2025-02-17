@@ -52,10 +52,13 @@ SURVEY_ANSWER_COMPONENT_MAPPING = {
         ],
         "water truck": "water_truck",
         "public tap water": "tap_water",
+    "3.1": {
+        "Yes": ["water_pump"]
     },
-    "3.1.1": {"water_pump/head": TYPE_FLOAT},
-    "3.1.3": {"water_pump/capacity": TYPE_FLOAT},
-    "3.1.4": {"water_pump/flow_max": TYPE_FLOAT},
+    },
+    "3.1.1": {"head": TYPE_FLOAT},
+    "3.1.3": {"capacity": TYPE_FLOAT},
+    "3.1.4": {"flow_max": TYPE_FLOAT},
     # TODO check whether flow max is the right column name for maximum throughput
     "3.2": {"water_truck/marginal_cost": TYPE_FLOAT},
 },
@@ -139,6 +142,8 @@ COMPONENT_SURVEY_STRUCTURE = [
     },
     ]
 
+# CROP: The list should be crated on the fly a,b,c
+# IRRIGATION: The list should be crated on the fly
 
 WATER_SUPPLY_SPECIFIC = {
     "water": "",
@@ -486,11 +491,27 @@ CROPS_SURVEY_STRUCTURE = [
     #TODO define CROP_TYPE ask all the following question for the specific crop type: Cultivation area;
     # annual crop production in [t], do you irrigate CROP_TYPE"
     {
-        "question": "Do you irrigate your crops",
+        "question": "What is the size of the area on which you are cultivating [CROP_TYPE] [m²]?",
+        "question_id": "8.3",
+        "possible_answers": TYPE_STRING,
+    },
+    {
+        "question": "Are you interested to combine electricity and crop production on the same land in the form of"
+                    " agrivoltaics, the combination of solar photovoltaic systems with agricultural production"
+                    " on the same land??",
+        "question_id": "10",
+        "possible_answers": ["yes", "no"],
+    },
+]
+IRRIGATION_TYPE_SURVEY =[
+
+    {
+        "question": " Do you use irrigation systems?",
         "question_id": "9",
         "possible_answers": ["yes", "no"],
-        "subquestion": {"yes": "9.1"},
+        "subquestion": {"yes": ["9.1", "9.2"]},
     },
+
     {
         "question": "Please indicate the irrigation technologies you are using",
         "question_id": "9.1",
@@ -579,13 +600,12 @@ CROPS_SURVEY_STRUCTURE = [
         "possible_answers": TYPE_FLOAT,
     },
     {
-        "question": "Are you interested to combine electricity and crop production on the same land in the form of"
-        " agrivoltaics, the combination of solar photovoltaic systems with agricultural production"
-        " on the same land??",
-        "question_id": "10",
-        "possible_answers": ["yes", "no"],
+        "question": "Which of your crops are served by the irrigation system?",
+        "question_id": "9.2",
+        "possible_answers": TYPE_STRING,  # TODO: options shall be ticked crops above!
     },
-]
+],
+
 
 SURVEY_STRUCTURE = COMPONENT_SURVEY_STRUCTURE + WATER_SUPPLY_SURVEY_STRUCTURE + CROPS_SURVEY_STRUCTURE
 

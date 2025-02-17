@@ -59,7 +59,7 @@ def view_survey_questions(request, scen_id=None):
         for field in form.fields:
             question_id = field.split("criteria_")[1]
             # TODO: could be done from models "category" attribute
-            cat = SURVEY_CATEGORIES[question_id]
+            cat = SURVEY_CATEGORIES.get(question_id)
             # TODO: reassign cat after testing phase is over
             categories_map.append("components")
 
