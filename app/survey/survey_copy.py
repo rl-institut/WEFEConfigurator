@@ -24,13 +24,13 @@ SURVEY_ANSWER_COMPONENT_MAPPING = {
     # "question_id": {"yes": "component_name"},
     # "question_id": {"no": "component_name", "yes": "other_component_name"},
     "1": {
-        "photovoltaic system": "photovoltaics",
-        "battery system": "battery-storage",
-        "diesel generator": "diesel-generator",
-        "wind turbine": "wind-turbine",
+        "photovoltaics": "photovoltaics",
+        "battery": "battery-storage",
+        "diesel_generator": "diesel-generator",
+        "wind_turbine": "wind-turbine",
         "hydropower": "hydropower",
-        "biogas plant": "biogas_plant", #TODO: biogas model in csv. format has to be created (can be inspired by OWEFE)
-        "national grid": "electricity-grid",
+        "biogas_plant": "biogas_plant", #TODO: biogas model in csv. format has to be created (can be inspired by OWEFE)
+        "national_grid": "electricity-grid",
     },
     "1.1": {"capacity": TYPE_FLOAT},
     "1.2": {"capacity": TYPE_FLOAT},
@@ -40,11 +40,9 @@ SURVEY_ANSWER_COMPONENT_MAPPING = {
     "1.6": {"capacity": TYPE_FLOAT},
     "1.7": {"other energy_conversion": TYPE_STRING},
     "1.8": "capacity",
-    # TODO "2" define water cycles service and drinking water; in case there are both cycles
-    #  -> add a); and b) to each of the following mapping questions;
-    #  and connect accordingly to service and drinking water buses
+    # TODO "2" define water cycles considering WATER_TYPE_USE -> service water and drinking water cycle
     "3": {
-        "groundwater well": ["groundwater"],
+        "groundwater_well": ["groundwater"],
         "desalinated seawater": ["swro", "seawater"],
         "river/creek": ["river-water-uptake", "hydropower"],
         "rainwater harvesting": [
@@ -82,23 +80,23 @@ COMPONENT_SURVEY_STRUCTURE = [
         "question": "Which components do yoú use for electricity production?",
         "question_id": "1",
         "possible_answers": [
-            "photovoltaic system",
-            "battery system",
-            "diesel generator",
-            "wind turbine",
+            "photovoltaic_system",
+            "battery_system",
+            "diesel_generator",
+            "wind_turbine",
             "hydropower",
-            "national grid",
-            "biogas plant"
+            "national_grid",
+            "biogas_plant"
             "other",
         ],
         "display_type": "multiple_choice_tickbox",
         "subquestion": {
-            "photovoltaic system": "1.1",
-            "battery system": "1.2",
-            "diesel generator": "1.3",
-            "wind turbine": "1.4",
+            "photovoltaic_system": "1.1",
+            "battery_system": "1.2",
+            "diesel_generator": "1.3",
+            "wind_turbine": "1.4",
             "hydropower": "1.5",
-            "biogas plant": "1.6",
+            "biogas_plant": "1.6",
             "other": ["1.7", "1.8"],
         },
     },
@@ -158,29 +156,29 @@ WATER_SUPPLY_TEMPLATE = [{
         "question": "Which water source do you use for TYPE_WATER_USE",
         "question_id": "3",
         "possible_answers": [
-            "groundwater well"
-            "public tap water",
-            "desalinated seawater",
+            "groundwater_well"
+            "public_tap_water",
+            "desalinated_seawater",
             "river/creek",
             "lake",
-            "water truck",
-            "rainwater harvesting",
-            "bottled water",
+            "water_truck",
+            "rainwater_harvesting",
+            "bottled_water",
             "other",
         ],
         "display_type": "multiple_choice_tickbox",
         "subquestion": {
-            "groundwater well": ["3.1"],
-            "desalinated seawater": ["3.1"],
+            "groundwater_well": ["3.1"],
+            "desalinated_seawater": ["3.1"],
             "river/creek": ["3.1"],
             "lake": ["3.1"],
-            "water truck": ["3.2"],
+            "water_truck": ["3.2"],
             "other": ["3.3"],
         },
     },
     {
         "question": "Are water pumps required to convey water from the source to the point of consumption?",
-        "question_id": "3.1",
+        "question_id":"3.1",
         "possible_answers": ["Yes", "No"],
         "subquestion": {
             "Yes": ["3.1.1", "3.1.2", "3.1.4"],
@@ -237,18 +235,18 @@ WATER_SUPPLY_TEMPLATE = [{
         "question_id": "4",
         "possible_answers": [
             "salinity",
-            "heavy metals",
-            "chemical contamination",
-            "fecal contamination",
+            "heavy_metals",
+            "chemical_contamination",
+            "fecal_contamination",
             "hardness",
-            "sediments and turbidity",
-            "nitrates and nitrites",
+            "sediments_and_turbidity",
+            "nitrates_and_nitrites",
         ],
         "display_type": "multiple_choice_tickbox",
         "subquestion": {
             "salinity": "4.1",
-            "heavy metals": "4.2",
-            "chemical contamination": "4.3",
+            "heavy_metals": "4.2",
+            "chemical_contamination": "4.3",
         },
     },
     {
