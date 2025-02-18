@@ -1,8 +1,0 @@
-name;type;carrier;tech;capacity;capacity_cost;bus;marginal_cost;carrier_cost;head;profile;output_parameters;expandable; salinity; verbose_name
-groundwater;dispatchable;water;source;0;0;groundwater-bus;0.5;0;survey(head);;{};true;Survey(salinity);"Groundwater"
-seawater;dispatchable;water;source;0;0;seawater-bus;0.5;0;survey(head);;{};true;Survey(salinity);"Seawater"
-surface_water;dispatchable;water;source;0;0;seawater-bus;0.5;0;survey(head);;{};true;Survey(salinity);"Surface Water"
-precipitation;dispatchable;water;source;0;0;precipitation-bus;0;0;survey(head);precipitation-profile;{};true;0;"Rain"
-tap_water;dispatchable;water;source;0;0;tap-water-bus;0;0;;;{};true;0;"Tap Water"
-truck_water;dispatchable;water;source;0;0;tap-water-bus;0;0;;;{};true;0;"Water delievered by a Truck"
-bottled_water;dispatchable;water;source;0;0;tap-water-bus;0;0;;;{};true;0;"Bottled Water"

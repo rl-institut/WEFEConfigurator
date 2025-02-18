@@ -3,6 +3,13 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
+        <entry key="\component_library\data\elements\pv_panel.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\results\wefe_reverse_osmosis_morocco\output\all_results_by_flow.csv">
           <value>
             <Attribute>

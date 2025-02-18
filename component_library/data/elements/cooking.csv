@@ -1,8 +1,0 @@
-name;type;carrier;tech;capacity;capacity_cost;marginal_cost;carrier_cost;efficiency;from_bus;to_bus;expandable; verbose_name
-stove_unimproved;conversion;energy;cooking;0;10;0;0;0.9;woody-biomass-bus;cooking-bus;true;"Three Stone Wood Stove (unimproved)"
-stove_improved;conversion;energy;cooking;0;10;0;0;0.9;woody-biomass-bus;cooking-bus;true;"Improved Wood Stove"
-lpg_stove;conversion;energy;cooking;0;10;0;0;0.9;lpg-bus;cooking-bus;true;"Gas Stove (LPG)"
-biogas_cooker;conversion;energy;cooking;0;10;0;0;0.9;biogas-bus;cooking-bus;true;"Biogas Stove"
-ethanol_cooker;conversion;energy;cooking;0;10;0;0;0.9;ethanol-bus;cooking-bus;true;"Ethanol Cooker"
-solar_cooker;conversion;energy;cooking;0;10;0;0;0.9;solar-bus;cooking-bus;true;"Solar Cooker"
-electric_cooker;conversion;energy;cooking;0;10;0;0;0.9;ac-elec-bus;cooking-bus;true;"Electric Cooker"
