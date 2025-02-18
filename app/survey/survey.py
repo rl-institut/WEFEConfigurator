@@ -24,12 +24,12 @@ SURVEY_ANSWER_COMPONENT_MAPPING = {
     # "question_id": {"yes": "component_name"},
     # "question_id": {"no": "component_name", "yes": "other_component_name"},
     "1": {
-        "photovoltaics": "pv_ground_mounted",
+        "photovoltaics": "photovoltaics",
         "battery": "battery_storage",
         "diesel_generator": "diesel_generator",
         "wind_turbine": "wind_turbine",
         "hydropower": "hydropower",
-        "biogas_plant": "biogas_plant",
+        "biogas_plant": "biogas_plant", #TODO: biogas model in csv. format has to be created (can be inspired by OWEFE)
         "national_grid": "grid",
     },
     "1.1": {"capacity": TYPE_FLOAT},
