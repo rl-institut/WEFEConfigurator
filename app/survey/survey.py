@@ -40,9 +40,10 @@ SURVEY_ANSWER_COMPONENT_MAPPING = {
     "1.6": {"capacity": TYPE_FLOAT},
     "1.7": {"other energy_conversion": TYPE_STRING},
     "1.8": "capacity",
-    # TODO "2" define water cycles service and drinking water; in case there are both cycles
-    #  -> add a); and b) to each of the following mapping questions;
-    #  and connect accordingly to service and drinking water buses
+    # TODO Implement the following: TYPE_WATER_USE determines whether following components are connected to drinking water cycle
+    #  (drinking_water_bus; drinking_water_demand), or service water cycle (service_water_bus, service_water_demand),
+    #  note that often service water cycle and drinking water cycle are connected
+    #  via an additional water treatment component
     "3": {
         "groundwater well": ["groundwater"],
         "desalinated seawater": ["swro", "seawater"],
@@ -54,16 +55,38 @@ SURVEY_ANSWER_COMPONENT_MAPPING = {
         ],
         "water truck": "water-truck",
         "public tap water": "tap-water",
+    },
     "3.1": {
         "Yes": ["water-pump"]
-    },
     },
     "3.1.1": {"head": TYPE_FLOAT},
     "3.1.3": {"capacity": TYPE_FLOAT},
     "3.1.4": {"flow_max": TYPE_FLOAT},
     # TODO check whether flow max is the right column name for maximum throughput
     "3.2": {"water-truck/marginal_cost": TYPE_FLOAT},
+    "4": {"salinity": ["ro"],
+          "chemical contamination": ["Ion Exchange", "Membrane Filtration"],
+          },
+    #TODO Vviek: add (decentralized) Treatment options for "fecal contamination","hardness","sediments and turbidity",
+    # "nitrates and nitrites", pesticides, pharmaceutical_residues, fertilizers, industrial_chemicals
+    "4.1": {"source water of TYPE_WATER_USE (answer_question_id:3)/salinity": TYPE_FLOAT},
+
+    "5": {"reverse_osmosis": ["ro"]
+          # TODO add all water treatment techs from question 5, after the tech has been added as csv model
+          },
+    "7": {"septic system": ["septic_system"],
+          "constructed_wetland": ["constructed_wetland"],
+          "centralized waste water treatment plant": ["cWWTP"],
+          "decentralized waste water treatment plant": ["dWWTP"],
+          "recycling and reuse system": ["RR"],
+          "disposal to environment without treatment": ["direct_wastewater_disposal"]
+          },
+    "7.1": {"selected WWT_TYPE/capacity": TYPE_FLOAT}
+
 },
+
+
+
 
 COMPONENT_CATEGORY = "components"
 WATER_CATEGORY = "water"
@@ -325,17 +348,17 @@ WATER_SUPPLY_TEMPLATE = [{
         },
     },
     {
-        "question": "What is the recovery rate [%] of your TYPE_WATER_USE treatment system?",
+        "question": "What is the recovery rate [%] of your [name of ticked treatment technology] system?",
         "question_id": "5.1",
         "possible_answers": TYPE_FLOAT,
     },
     {
-        "question": "What is the maximum throughput rate [m³/h] of your TYPE_WATER_USE treatment system?",
+        "question": "What is the maximum throughput rate [m³/h] of your [name of ticked treatment technology] system?",
         "question_id": "5.2",
         "possible_answers": TYPE_FLOAT,
     },
     {
-        "question": "What is the specific energy consumption [kWh/m³] of your TYPE_WATER_USE treatment system",
+        "question": "What is the specific energy consumption [kWh/m³] of your [name of ticked treatment technology] system",
         "question_id": "SEC_DW",
         "possible_answers": TYPE_FLOAT,
     },
@@ -396,27 +419,27 @@ WATER_SUPPLY_SURVEY_STRUCTURE = [
         "question": "How are you treating your waste water?",
         "question_id": "7",
         "possible_answers": [
-            "septic_system",
-            "constructed_wetlands",
-            "centralized_waste_water_treatment_plant",
-            "decentralized_waste_water_treatment_plant",
-            "recycling_and_reuse_systems",
-            "no_treatment_disposal_to_environment",
+            "septic system",
+            "constructed wetland",
+            "centralized waste water treatment plant",
+            "decentralized waste water treatment plant",
+            "water recycling and reuse system",
+            "disposal to environment without treatment",
             "other",
         ],
         "display_type": "multiple_choice_tickbox",
         "subquestion": {
-            "septic_system": "7.1",
-            "constructed_wetlands": "7.1",
-            "centralized_waste_water_treatment_plant": "7.1",
-            "decentralized_waste_water_treatment_plant": "7.1",
-            "recycling_and_reuse_systems": "7.1",
+            "septic system": "7.1",
+            "constructed wetland": "7.1",
+            "centralized waste water treatment plant": "7.1",
+            "decentralized waste water treatment plant": "7.1",
+            "water recycling and reuse system": "7.1",
             "other": ["7.1", "7.2"],
         },
     },
     # should this question be repeated for each
     {
-        "question": "How much wastewater can be handled per day [m³/d] by this facility?",
+        "question": "How much wastewater can be handled per hour [m³/h] by this facility?",
         "question_id": "7.1",
         "possible_answers": TYPE_FLOAT,
     },
@@ -425,6 +448,17 @@ WATER_SUPPLY_SURVEY_STRUCTURE = [
         "question_id": "7.2",
         "possible_answers": TYPE_STRING,
     },
+    {
+        "question": "Which kind of toilet are you using?",
+        "question_id": "7.3",
+        "possible_answers": [
+            "flush toilet",
+            "latrine",
+            "dry toilet",
+            "composting toilet",
+            "open field"
+        ]
+    }
 ]
 
 CROPS_SURVEY_STRUCTURE = [

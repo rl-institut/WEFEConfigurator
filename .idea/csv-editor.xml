@@ -59,13 +59,6 @@
             </Attribute>
           </value>
         </entry>
-        <entry key="\component_library\data\elements\pv_panel.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value=";" />
-            </Attribute>
-          </value>
-        </entry>
         <entry key="\component_library\data\elements\storage.csv">
           <value>
             <Attribute>
