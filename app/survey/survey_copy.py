@@ -10,12 +10,6 @@ TYPE_WATER = "string"
 INFOBOX = "description"
 
 
-# TODO add existing capacities to the csv files
-# TODO add all components in component mapping in correct format
-# TODO probably subquestions have to be marked/named differently
-#  so that they not pop up if not induced by specific answers
-
-# TODO the answer from float does not need to be a dict {"capacity":TYPE_FLOAT}
 # case A --> a dict with component mapped to answers (in this case possible_answers is a list)
 # case B --> the column of the csv file which is concerned by this value (in this case possible_answers is not a list but one of TYPE_*
 
@@ -40,9 +34,10 @@ SURVEY_ANSWER_COMPONENT_MAPPING = {
     "1.6": {"capacity": TYPE_FLOAT},
     "1.7": {"other energy_conversion": TYPE_STRING},
     "1.8": "capacity",
-    # TODO "2" define water cycles service and drinking water; in case there are both cycles
-    #  -> add a); and b) to each of the following mapping questions;
-    #  and connect accordingly to service and drinking water buses
+    # TODO Implement the following: TYPE_WATER_USE determines whether following components are connected to drinking water cycle
+    #  (drinking_water_bus; drinking_water_demand), or service water cycle (service_water_bus, service_water_demand),
+    #  note that often service water cycle and drinking water cycle are connected
+    #  via an additional water treatment component
     "3": {
         "groundwater well": ["groundwater"],
         "desalinated seawater": ["swro", "seawater"],
@@ -54,16 +49,96 @@ SURVEY_ANSWER_COMPONENT_MAPPING = {
         ],
         "water truck": "water-truck",
         "public tap water": "tap-water",
+    },
     "3.1": {
         "Yes": ["water-pump"]
-    },
     },
     "3.1.1": {"head": TYPE_FLOAT},
     "3.1.3": {"capacity": TYPE_FLOAT},
     "3.1.4": {"flow_max": TYPE_FLOAT},
-    # TODO check whether flow max is the right column name for maximum throughput
     "3.2": {"water-truck/marginal_cost": TYPE_FLOAT},
-},
+    "4": {"salinity": ["ro"],
+          "chemical contamination": ["ion_exchange", "membrane_filtration"],
+          },
+    #TODO add (decentralized) Treatment options for "fecal contamination","hardness","sediments and turbidity",
+    # "nitrates and nitrites", pesticides, pharmaceutical_residues, fertilizers, industrial_chemicals
+    "4.1": {"SOURCE_WATER_TYPE/salinity": TYPE_FLOAT},
+
+    "5": {"reverse_osmosis": ["ro"],
+          "boiling": ["boiling_water"],
+          "distillation": ["water_distillation"],
+          "activated carbon filter": ["activated_carbon_filter"],
+          "chlorination": ["chlorination"],
+          "UV-disinfection": ["uv-disinfection"],
+          "cartridge filter": ["cartrdige_filter"],
+          "microfiltration": ["microfiltration"],
+          "ultrafilration": ["ultrafiltration"],
+          "ceramic filter": ["ceramic_filter"],
+          "nanofiltraion": ["nanofiltration"],
+          "slow sand filter": ["slow_sand_filter"],
+          "water softener": ["water_softener"],
+          "membrane distillation": ["membrane_distillation"],
+          "other": TYPE_STRING
+          },
+    "5.1": {"WT_TYPE/recovery_rate": TYPE_FLOAT},
+    "5.2": {"WT_TYPE/capacity": TYPE_FLOAT},
+    "SEC_DW": {"WT_TYPE/SEC": TYPE_FLOAT},
+
+
+    "7": {"septic system": ["septic_system"],
+          "constructed_wetland": ["constructed_wetland"],
+          "centralized waste water treatment plant": ["cWWTP"],
+          "decentralized waste water treatment plant": ["dWWTP"],
+          "recycling and reuse system": ["RR"],
+          "disposal to environment without treatment": ["direct_wastewater_disposal"]
+          },
+    "7.1": {"selected WWT_TYPE/capacity": TYPE_FLOAT},
+    "7.3": {"flush toilet": ["flush_toilet"],
+            "latrine": ["latrine"],
+            "dry toilet": ["dry_toilet"],
+            "composting toilet": ["composting_toilet"],
+            "open filed": ["open_field"],
+            },
+    "8": {"wheat": ["wheat"],
+          "rice": ["rice"],
+          "maize": ["maize"],
+          "soy bean": ["soy_bean"],
+          "dry bean": ["dry_bean"],
+          "peanut": ["peanut"],
+          "potato": ["potato"],
+          "cassava": ["cassava"],
+          "tomato": ["tomato"],
+          "sweetcorn": ["sweetcorn"],
+          "green bean": ["green_bean"],
+          "carrot": ["carrot"],
+          "cotton": ["cotton"],
+          "banana": ["banana"],
+          "lettuce": ["lettuce"],
+          "cucumber": ["cucumber"],
+          "pineapple": ["pineapple"],
+          "avocado": ["avocado"],
+          "quinoa": ["quinoa"],
+          "amaranth": ["amaranth"],
+          "guava": ["guava"],
+          "papaya": ["papaya"],
+          "mango": ["mango"],
+          "sorghum": ["sorghum"],
+          "millet": ["millet"],
+          "yam": ["yam"],
+          "plantain": ["plantain"],
+          "apple": ["apple"],
+          "sunflower": ["sunflower"],
+          "cacao": ["cacao"],
+          "cashew": ["cashew"],
+          "pumpkin": ["pumpkin"],
+          "black bean": ["black_bean"],
+          "oat": ["oat"],
+          "pepper": ["pepper"],
+          },
+
+    "10": {"yes": ["apv"]}
+}
+
 
 COMPONENT_CATEGORY = "components"
 WATER_CATEGORY = "water"
@@ -278,73 +353,62 @@ WATER_SUPPLY_TEMPLATE = [{
         "question_id": "5",
         "possible_answers": [
             "no",
-            "reverse_osmosis",
+            "reverse osmosis",
             "boiling",
             "distillation",
-            "activated_carbon_filter",
+            "activated carbon filter",
             "chlorination",
             "UV-disinfection",
-            "cartridge_filter",
+            "cartridge filter",
             "microfiltration",
             "ultrafiltration",
-            "ceramic_filter",
+            "ceramic filter",
             "nanofiltration",
             "electrodialyis",
-            "slow_sand_filter",
-            "water_softener",
-            "membrane_distillation",
+            "slow sand filter",
+            "water softener",
+            "membrane distillation",
             "other",
         ],
         "display_type": "multiple_choice_tickbox",
         "subquestion": {
-            "reverse_osmosis": [
-                "5.1",
-                "SEC_DW",
-            ],
-            "membrane_distillation": [
-                "5.1",
-                "SEC_DW",
-            ],
-            "ultrafiltration": [
-                "5.1",
-                "SEC_DW",
-            ],
-            "boiling": ["5.2", "SEC_DW"],
+            "reverse osmosis": ["5.1", "5.2", "SEC_DW"],
+            "membrane distillation": ["5.1", "5.2", "SEC_DW"],
+            "ultrafiltration": ["5.1", "5.2", "SEC_DW"],
+            "boiling water": ["5.2", "SEC_DW"],
             "distillation": ["5.2", "SEC_DW"],
-            "activated_carbon_filter": ["5.2", "SEC_DW"],
+            "activated carbon_filter": ["5.2", "SEC_DW"],
             "UV-disinfection": ["5.2", "SEC_DW"],
-            "cartridge_filter": ["5.2", "SEC_DW"],
+            "cartridge filter": ["5.2", "SEC_DW"],
             "microfiltration": ["5.2", "SEC_DW"],
-            "ultrafiltration": ["5.2", "SEC_DW"],
-            "ceramic_filter": ["5.2", "SEC_DW"],
+            "ceramic filter": ["5.2", "SEC_DW"],
             "nanofiltration": ["5.2", "SEC_DW"],
             "electrodialyis": ["5.2", "SEC_DW"],
-            "slow_sand_filter": ["5.2", "SEC_DW"],
-            "water_softener": ["5.2", "SEC_DW"],
-            "other": "5.3",
+            "slow sand filter": ["5.2", "SEC_DW"],
+            "water softener": ["5.2", "SEC_DW"],
+            "other": ["5.3", "5.1", "5.2", "SEC_DW"]
         },
     },
+    # TODO: map the ticked answers to WT_TYPE
     {
-        "question": "What is the recovery rate [%] of your [name of ticked treatment technology]?",
+        "question": "What is the recovery rate [%] of your WT_TYPE system?",
         "question_id": "5.1",
         "possible_answers": TYPE_FLOAT,
     },
     {
-        "question": "What is the maximum throughput rate [m³/h] of your [name of ticked treatment technology] system?",
+        "question": "What is the maximum flow rate [m³/h] of your WT_TYPE system?",
         "question_id": "5.2",
         "possible_answers": TYPE_FLOAT,
     },
     {
-        "question": "What is the specific energy consumption [kWh/m³] of your [name of ticket treatment technology]"
-                    " system",
-        "question_id": "SEC_DW",
-        "possible_answers": TYPE_FLOAT,
-    },
-    {
-        "question": "Which other water treatment technologies are you using to treat your "
-                    "[name of ticked treatment technology]",
+        "question": "Which other water treatment technologies are you using to treat your TYPE_WATER_USE?",
         "question_id": "5.3",
         "possible_answers": TYPE_STRING,
+    },
+    {
+        "question": "What is the specific energy consumption (SEC) [kWh/m³] of your WT_TYPE system",
+        "question_id": "SEC_DW",
+        "possible_answers": TYPE_FLOAT,
     },
     {
         "question": "Do you typically experience TYPE_WATER_USE shortages from time to time?",
@@ -399,34 +463,43 @@ WATER_SUPPLY_SURVEY_STRUCTURE = [
         "question_id": "7",
         "possible_answers": [
             "septic system",
-            "constructed_wetland",
-            "centralized_waste_water_treatment_plant",
-            "decentralized_waste_water_treatment_plant",
-            "recycling_and_reuse_systems",
-            "no_treatment_disposal_to_environment",
+            "constructed wetland",
+            "centralized waste water treatment plant",
+            "decentralized waste water treatment plant",
+            "water recycling and reuse system",
+            "disposal to environment without treatment",
             "other",
         ],
         "display_type": "multiple_choice_tickbox",
+        # TODO: map all ticked answers to WWT_TYPE (Wastewater Treatment Type)
+        #  and repeat the following questions for all of them
         "subquestion": {
-            "septic_system": "7.1",
-            "constructed_wetlands": "7.1",
-            "centralized_waste_water_treatment_plant": "7.1",
-            "decentralized_waste_water_treatment_plant": "7.1",
-            "recycling_and_reuse_systems": "7.1",
-            "other": ["7.1", "7.2"],
+            "WWT_Type": "7.1",
+            "other": ["7.2", "7.1"],
         },
     },
     # should this question be repeated for each
     {
-        "question": "How much wastewater can be handled per day [m³/d] by this facility?",
+        "question": "How much wastewater can be handled  [m³/h] by the WWT_TYPE system in place?",
         "question_id": "7.1",
         "possible_answers": TYPE_FLOAT,
     },
     {
-        "question": "Please specify 'Other'",
+        "question": "Please name the wastewater treatment method you are using",
         "question_id": "7.2",
         "possible_answers": TYPE_STRING,
     },
+    {
+        "question": "Which kind of toilet are you using?",
+        "question_id": "7.3",
+        "possible_answers": [
+            "flush toilet",
+            "latrine",
+            "dry toilet",
+            "composting toilet",
+            "open field"
+        ]
+    }
 ]
 
 CROPS_SURVEY_STRUCTURE = [
@@ -441,68 +514,75 @@ CROPS_SURVEY_STRUCTURE = [
         "question": "Please list the crops types you are cultivating",
         "question_id": "8.1",
         "possible_answers": [
-            "tomato",
-            "potato",
-            "raspberry",
-            "corn",
             "wheat",
-            "soybean",
-            "carrot",
-            "lettuce",
-            "strawberry",
-            "cucumber",
+            "rice",
+            "soy bean",
+            "dry bean",
+            "peanut",
+            "potato",
             "cassava",
-            "sweet_potato",
+            "tomato",
+            "sweetcorn",
+            "green bean",
+            "carrot",
+            "cotton",
+            "banana",
+            "lettuce",
+            "cucumber",
+            "pineanpple",
+            "avocado",
             "quinoa",
             "amaranth",
-            "pineapple",
             "guava",
             "papaya",
-            "avocado",
             "mango",
             "sorghum",
             "millet",
             "yam",
             "plantain",
-            "maca",
-            "aji_amarillo",
-            "malagueta_pepper",
-            "chuño",
-            "yacón",
-            "peanut",
+            "apple",
             "sunflower",
-            "custard_apple",
-            "arrowroot",
             "cacao",
             "cashew",
             "pumpkin",
-            "squash",
-            "ullucu",
-            "oca",
-            "beans",
-            "tapioca",
+            "black bean",
+            "oat",
+            "pepper",
             "other",
+            "CROP_TYPE",  # put CROP_TYPE here to avoid error; in the end
+            # TODO CROP_TYPE related question has to be posed for all stated/ticked crops
         ],
         "display_type": "multiple_choice_tickbox",
-        "subquestion": {"other": "8.2"},
+        # TODO: map all ticked answers to CROP_TYPE and repeat the following questions for all of them
+        "subquestion": {"other": ["8.2", "8.3", "8.4", "8.5"],
+                        "CROP_TYPE": ["8.3", "8.4", "8.5"]
+                        },
     },
     {
-        "question": "Which other crops are you cultivating",
+        "question": "Which other crops not mentioned above are you cultivating",
         "question_id": "8.2",
         "possible_answers": TYPE_STRING,
     },
-
-    #TODO define CROP_TYPE ask all the following question for the specific crop type: Cultivation area;
-    # annual crop production in [t], do you irrigate CROP_TYPE"
     {
         "question": "What is the size of the area on which you are cultivating [CROP_TYPE] [m²]?",
         "question_id": "8.3",
         "possible_answers": TYPE_STRING,
     },
     {
+        "question": "What is your annual [CROP_TYPE] production [kg]",
+        INFOBOX: "Note that here we refer to actual [CROP_TYPE] biomass used for food production",
+        "question_id": "8.4",
+        "possible_answers": TYPE_STRING,
+    },
+    {
+        "question": "How much organic waste occurs annually [kg/year] from the [CROP_TYPE] cultivation in place?",
+        "question_id": "8.5",
+        "possible_answers": TYPE_FLOAT,
+    },
+    {
         "question": "Are you interested to combine electricity and crop production on the same land in the form of"
                     " agrivoltaics, the combination of solar photovoltaic systems with agricultural production"
-                    " on the same land??",
+                    " on the same land?",
         "question_id": "10",
         "possible_answers": ["yes", "no"],
     },
@@ -510,104 +590,87 @@ CROPS_SURVEY_STRUCTURE = [
 IRRIGATION_TYPE_SURVEY =[
 
     {
-        "question": " Do you use irrigation systems?",
+        "question": "Are you irrigating your CROP_TYPE cultivation?",
         "question_id": "9",
         "possible_answers": ["yes", "no"],
         "subquestion": {"yes": ["9.1", "9.2"]},
     },
-
     {
         "question": "Please indicate the irrigation technologies you are using",
         "question_id": "9.1",
         "possible_answers": [
-            "surface_irrigation",
-            "center-pivot_irrigation",
-            "irrigation_sprinkler",
-            "subsurface_drip_irrigation",
-            "drip_irrigation",
-            "furrow_irrigation",
-            "basin_irrigation",
-            "border_irrigation",
-            "watering_can",
-            "smart_irrigation_system",
+            "surface irrigation",
+            "center-pivot irrigation",
+            "irrigation sprinkler",
+            "subsurface drip irrigation",
+            "drip irrigation",
+            "furrow irrigation",
+            "basin irrigation",
+            "border irrigation",
+            "watering can",
+            "smart irrigation system",
             "other",
+            "IRRIGATION_TYPE",
         ],
         "display_type": "multiple_choice_tickbox",
+        # TODO: map all ticked answers to IRRIGATION TYPE and repeat the following questions for all of them
         "subquestion": {
-            "surface_irrigation": "9.1.1",
-            "center-pivot_irrigation": "9.1.2",
-            "irrigation_sprinkler": "9.1.3",
-            "subsurface_drip_irrigation": "9.1.4",
-            "drip_irrigation": "9.1.5",
-            "furrow_irrigation": "9.1.6",
-            "basin_irrigation": "9.1.7",
-            "border_irrigation": "9.1.8",
-            "watering_can": "9.1.9",
-            "smart_irrigation_system": "9.1.10",
-            "other": ["9.1.11", "9.1.12"],
+            "other": ["9.3", "9.2"],
+            "IRRIGATION_TYPE": "9.2",
+
         },
     },
-    # TODO Simplify here ask question for specific irrigation type
     {
-        "question": "What is the maximum throughput [m³/h] of your installed surface irrigation system?",
-        "question_id": "9.1.1",
+        "question": "What is the maximum flow rate [m³/h] of the IRRIGATION_TYPE system that you have in place?",
+        "question_id": "9.2",
         "possible_answers": TYPE_FLOAT,
     },
     {
-        "question": "What is the maximum throughput [m³/h] of your installed center-plot irrigation system?",
-        "question_id": "9.1.2",
-        "possible_answers": TYPE_FLOAT,
-    },
-    {
-        "question": "What is the maximum throughput [m³/h] of your installed irrigation sprinkler system?",
-        "question_id": "9.1.3",
-        "possible_answers": TYPE_FLOAT,
-    },
-    {
-        "question": "What is the maximum throughput [m³/h] of your installed subsurface drip irrigation system?",
-        "question_id": "9.1.4",
-        "possible_answers": TYPE_FLOAT,
-    },
-    {
-        "question": "What is the maximum throughput [m³/h] of your drip irrigation system?",
-        "question_id": "9.1.5",
-        "possible_answers": TYPE_FLOAT,
-    },
-    {
-        "question": "What is the maximum throughput [m³/h] of your furrow irrigation system?",
-        "question_id": "9.1.6",
-        "possible_answers": TYPE_FLOAT,
-    },
-    {
-        "question": "What is the maximum throughput [m³/h] of your basin irrigation system?",
-        "question_id": "9.1.7",
-        "possible_answers": TYPE_FLOAT,
-    },
-    {
-        "question": "What is the maximum throughput [m³/h] of your border irrigation system?",
-        "question_id": "9.1.8",
-        "possible_answers": TYPE_FLOAT,
-    },
-    {
-        "question": "How much water can you apply to your plants per hour [m³/h] using watering cans?",
-        "question_id": "9.1.9",
-        "possible_answers": TYPE_FLOAT,
-    },
-    {
-        "question": "Which other irrigation technology are you using?",
-        "question_id": "9.1.11",
+        "question": "What is the other irrigation technology you are using?",
+        "question_id": "9.3",
         "possible_answers": TYPE_STRING,
     },
     {
-        "question": "What is the maximum throughput [m³/h] of this other irrigation technology you have installed?",
-        "question_id": "9.1.12",
-        "possible_answers": TYPE_FLOAT,
-    },
-    {
-        "question": "Which of your crops are served by the irrigation system?",
-        "question_id": "9.2",
-        "possible_answers": TYPE_STRING,  # TODO: options shall be ticked crops above!
-    },
+        "question": "For which crop types are you using this irrigation technology?",
+        "question_id": "9.4",
+        "possible_answers": [  # TODO ideally reduce options to CROP_TYPE which have been ticked in question 8.1
+            "wheat",
+            "rice",
+            "soy bean",
+            "dry bean",
+            "peanut",
+            "potato",
+            "cassava",
+            "tomato",
+            "sweetcorn",
+            "green bean",
+            "carrot",
+            "cotton",
+            "banana",
+            "lettuce",
+            "cucumber",
+            "pineanpple",
+            "avocado",
+            "quinoa",
+            "amaranth",
+            "guava",
+            "papaya",
+            "mango",
+            "sorghum",
+            "millet",
+            "yam",
+            "plantain",
+            "apple",
+            "sunflower",
+            "cacao",
+            "cashew",
+            "pumpkin",
+            "black bean",
+            "oat",
+            "pepper",
+            "other",
+        ],
+    }
 ],
 
 
@@ -615,7 +678,9 @@ SURVEY_STRUCTURE = COMPONENT_SURVEY_STRUCTURE + WATER_SUPPLY_SURVEY_STRUCTURE + 
 
 def infer_survey_categories():
     question_category_map = {}
-    for category, question_list in zip((COMPONENT_CATEGORY, WATER_CATEGORY, CROP_CATEGORY),(COMPONENT_SURVEY_STRUCTURE, WATER_SUPPLY_SURVEY_STRUCTURE, CROPS_SURVEY_STRUCTURE)):
+    for category, question_list in zip((COMPONENT_CATEGORY, WATER_CATEGORY, CROP_CATEGORY),
+                                       (COMPONENT_SURVEY_STRUCTURE, WATER_SUPPLY_SURVEY_STRUCTURE,
+                                        CROPS_SURVEY_STRUCTURE)):
         for question in question_list:
             question_category_map[question["question_id"]] = category
     return question_category_map
