@@ -2,7 +2,6 @@ import copy
 from django.utils.translation import gettext_lazy as _
 import logging
 
-
 TYPE_FLOAT = "float"
 TYPE_INT = "int"
 TYPE_STRING = "string"
@@ -150,6 +149,35 @@ SURVEY_QUESTIONS_CATEGORIES = {
     CROP_CATEGORY: _("Crops"),
 }
 
+
+def generate_generic_questions(suffixes, survey_questions_template, text_to_replace):
+    """Generate redundant question for different cases
+    :param suffixes: dict mapping of label to subquestion suffix
+    :param survey_questions_template: the redundant questions which need to be duplicated for each suffix mapping
+    :param text_to_replace: the text placeholder which will be replaced by the `suffices` keys
+    :return: list of survey questions
+    """
+    new_questions = []
+    for name, suffix in suffixes.items():
+        temp = copy.deepcopy(survey_questions_template)
+        for question in temp:
+            question["question"] = question["question"].replace(text_to_replace, name)
+            id = question["question_id"]
+            question["question_id"] = id + suffix
+            subquestions = question.get("subquestion", {})
+            for subq in subquestions.keys():
+                subq_id = subquestions[subq]
+                if isinstance(subq_id, str):
+                    subq_id = [subq_id]
+
+                new_ids = [q_id + suffix for q_id in subq_id]
+                if len(new_ids) == 1:
+                    new_ids = new_ids[0]
+                subquestions[subq] = new_ids
+            if subquestions:
+                question["subquestion"] = subquestions
+            new_questions.append(question)
+    return new_questions
 
 COMPONENT_SURVEY_STRUCTURE = [
     # {"question": "", "question_id": "", "possible_answers":["answer1", "answer2"]}
@@ -419,28 +447,7 @@ WATER_SUPPLY_TEMPLATE = [{
 
 
 
-def generate_water_questions(suffixes, survey_questions):
-    new_questions = []
-    for name, suffix in suffixes.items():
-        temp = copy.deepcopy(survey_questions)
-        for question in temp:
-            question["question"] = question["question"].replace("TYPE_WATER_USE", name)
-            id = question["question_id"]
-            question["question_id"] = id + suffix
-            subquestions = question.get("subquestion", {})
-            for subq in subquestions.keys():
-                subq_id = subquestions[subq]
-                if isinstance(subq_id, str):
-                    subq_id = [subq_id]
 
-                new_ids = [q_id + suffix for q_id in subq_id]
-                if len(new_ids) == 1:
-                    new_ids = new_ids[0]
-                subquestions[subq] = new_ids
-            if subquestions:
-                question["subquestion"] = subquestions
-            new_questions.append(question)
-    return new_questions
 
 WATER_SUPPLY_SURVEY_STRUCTURE = [
     {
@@ -457,7 +464,7 @@ WATER_SUPPLY_SURVEY_STRUCTURE = [
             "No": ["3", "4", "5", "6"]
         }
     },
-] + generate_water_questions(WATER_SUPPLY_SPECIFIC, WATER_SUPPLY_TEMPLATE) + [
+] + generate_generic_questions(WATER_SUPPLY_SPECIFIC, WATER_SUPPLY_TEMPLATE, text_to_replace="TYPE_WATER_USE") + [
     {
         "question": "How are you treating your waste water?",
         "question_id": "7",
@@ -726,7 +733,7 @@ def check_subquestions_keys():
         possible_answers = question.get("possible_answers", [])
         for subq in subquestions.keys():
             if subq not in possible_answers:
-                print(f"The subquestion key '{subq}' is not listed within the allowed values. The allowed values are:\n{', '.join(possible_answers)}\n\n")
+                print(f"The subquestion key '{subq}' of question '{question.get('question_id')}' is not listed within the allowed values. The allowed values are:\n{', '.join(possible_answers)}\n\n")
 
 SUB_QUESTION_MAPPING = collect_subquestion_mapping()
 
