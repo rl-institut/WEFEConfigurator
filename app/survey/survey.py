@@ -163,7 +163,7 @@ COMPONENT_SURVEY_STRUCTURE = [
             "wind turbine",
             "hydropower",
             "national grid",
-            "biogas plant"
+            "biogas plant",
             "other",
         ],
         "display_type": "multiple_choice_tickbox",
@@ -233,7 +233,7 @@ WATER_SUPPLY_TEMPLATE = [{
         "question": "Which water source do you use for TYPE_WATER_USE",
         "question_id": "3",
         "possible_answers": [
-            "groundwater well"
+            "groundwater well",
             "public tap water",
             "desalinated seawater",
             "river/creek",
@@ -284,7 +284,7 @@ WATER_SUPPLY_TEMPLATE = [{
             "diesel": ["3.1.3"],
             "electricity (grid)": ["3.1.3"],
             "wind turbine": ["3.1.3"],
-            "photovoltaic system": ["3.1.3"],
+            "photovoltaics": ["3.1.3"],
         },
     },
     {
@@ -375,9 +375,9 @@ WATER_SUPPLY_TEMPLATE = [{
             "reverse osmosis": ["5.1", "5.2", "SEC_DW"],
             "membrane distillation": ["5.1", "5.2", "SEC_DW"],
             "ultrafiltration": ["5.1", "5.2", "SEC_DW"],
-            "boiling water": ["5.2", "SEC_DW"],
+            "boiling": ["5.2", "SEC_DW"],
             "distillation": ["5.2", "SEC_DW"],
-            "activated carbon_filter": ["5.2", "SEC_DW"],
+            "activated carbon filter": ["5.2", "SEC_DW"],
             "UV-disinfection": ["5.2", "SEC_DW"],
             "cartridge filter": ["5.2", "SEC_DW"],
             "microfiltration": ["5.2", "SEC_DW"],
@@ -453,8 +453,8 @@ WATER_SUPPLY_SURVEY_STRUCTURE = [
         "question_id": "2",
         "possible_answers": ["Yes", "No"],
         "subquestion": {
-            "yes": ["3a", "4a", "5a", "6a", "3b", "4b", "5b", "6b"],
-            "no": ["3", "4", "5", "6"]
+            "Yes": ["3a", "4a", "5a", "6a", "3b", "4b", "5b", "6b"],
+            "No": ["3", "4", "5", "6"]
         }
     },
 ] + generate_water_questions(WATER_SUPPLY_SPECIFIC, WATER_SUPPLY_TEMPLATE) + [
@@ -474,7 +474,13 @@ WATER_SUPPLY_SURVEY_STRUCTURE = [
         # TODO: map all ticked answers to WWT_TYPE (Wastewater Treatment Type)
         #  and repeat the following questions for all of them
         "subquestion": {
-            "WWT_Type": "7.1",
+            "septic system": "7.1",
+            "constructed wetland": "7.1",
+            "centralized waste water treatment plant": "7.1",
+            "decentralized waste water treatment plant": "7.1",
+            "water recycling and reuse system": "7.1",
+            "disposal to environment without treatment": "7.1",
+            #"WWT_Type": "7.1",
             "other": ["7.2", "7.1"],
         },
     },
@@ -499,7 +505,7 @@ WATER_SUPPLY_SURVEY_STRUCTURE = [
             "composting toilet",
             "open field"
         ]
-    }
+    },
 ]
 
 CROPS_SURVEY_STRUCTURE = [

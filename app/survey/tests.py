@@ -1,3 +1,5 @@
 from django.test import TestCase
+from survey import check_subquestions_keys
 
-# Create your tests here.
+if __name__=="__main__":
+    check_subquestions_keys()
