@@ -284,7 +284,7 @@ COMPONENT_SURVEY_STRUCTURE = [
         },
     },
     {
-        "question": "What is the installed capacity [kWp] of of your photovoltaic system?",
+        "question": "What is the installed capacity [kWp] of your photovoltaic system?",
         "question_id": "1.1",
         "possible_answers": TYPE_FLOAT,
     },
@@ -379,6 +379,7 @@ WATER_SUPPLY_TEMPLATE = [{
     {
         "question": "Which energy source is the pump using?",
         "question_id": "3.1.2",
+        "display_type": "multiple_choice_tickbox",
         "possible_answers": [
             "manual",
             "diesel",
