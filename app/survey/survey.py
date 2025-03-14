@@ -239,7 +239,7 @@ def generate_matrix_questions(survey_questions, text_to_replace):
                         temp["question"] = temp["question"].replace(text_to_replace, supra_answer)
                         temp["question_id"] = ssq_id + "." + str(suffix)
                         # Replace the subquestion id in the supraquestion subquestions
-                        ques["subquestion"][supra_answer][ques["subquestion"][supra_answer].index(ssq_id)]=temp["question_id"]
+                        q["subquestion"][supra_answer][q["subquestion"][supra_answer].index(ssq_id)] = temp["question_id"]
                         extra_questions[ssq_id].append(temp)
 
 
