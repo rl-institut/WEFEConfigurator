@@ -179,6 +179,84 @@ def generate_generic_questions(suffixes, survey_questions_template, text_to_repl
             new_questions.append(question)
     return new_questions
 
+def get_survey_question_by_id(survey_questions, question_id):
+    answer = None
+    for q in survey_questions:
+        if q["question_id"] == question_id:
+            if answer is None:
+                answer = q
+            else:
+                msg = f"Question number {question_id} appears multiple times"
+                raise KeyError(msg)
+    return answer
+
+def get_survey_question_index(survey_questions, question):
+    if isinstance(question, dict):
+        q_id = question["question_id"]
+    elif isinstance(question, str):
+        q_id = question
+
+    q_idx = None
+    for i, q in enumerate(survey_questions):
+        if q["question_id"] == q_id:
+            q_idx = i
+    return q_idx
+
+def get_shared_subquestions(subquestions):
+    shared_subquestions_mapping = {}
+
+    for k, v in subquestions.items():
+        if not isinstance(v, list):
+            v = [v]
+        for sq in v:
+            if sq in shared_subquestions_mapping:
+                shared_subquestions_mapping[sq].append(k)
+            else:
+                shared_subquestions_mapping[sq] = [k]
+
+    shared_subquestions = {}
+    for k, v in shared_subquestions_mapping.items():
+        if len(v) > 1:
+            shared_subquestions[k] = v
+    return shared_subquestions
+
+
+def generate_matrix_questions(survey_questions, text_to_replace):
+    extra_questions = {}
+    for qi,q in enumerate(survey_questions):
+        if q.get("display_type", "") == "multiple_choice_tickbox" and "subquestion" in q:
+            sq = q["subquestion"]
+            # get the list of question's answers which share the same link to a subquestion
+            shared_subquestions = get_shared_subquestions(sq)
+            # for each subquestion, if this one has the display type 'matrix', we will make as many copies of it
+            # as there are question's answer with a link to the subquestion
+            for ssq_id in shared_subquestions:
+                ssq = get_survey_question_by_id(survey_questions,ssq_id)
+                if ssq.get("display_type","") == "matrix":
+                    extra_questions[ssq_id] = []
+                    for suffix, supra_answer in enumerate(shared_subquestions[ssq_id]):
+                        temp = copy.deepcopy(ssq)
+                        temp["question"] = temp["question"].replace(text_to_replace, supra_answer)
+                        temp["question_id"] = ssq_id + "." + str(suffix)
+                        # Replace the subquestion id in the supraquestion subquestions
+                        ques["subquestion"][supra_answer][ques["subquestion"][supra_answer].index(ssq_id)]=temp["question_id"]
+                        extra_questions[ssq_id].append(temp)
+
+
+    for q_id in extra_questions:
+        # find the orginal question index in the survey questions
+        q_idx = get_survey_question_index(survey_questions, q_id)
+        # insert the matrix subquestions
+        survey_questions = survey_questions[:q_idx+1] + extra_questions[q_id] + survey_questions[q_idx+1:]
+        # remove the original question from the survey questions
+        survey_questions.pop(q_idx)
+
+    return survey_questions
+
+
+
+
+
 COMPONENT_SURVEY_STRUCTURE = [
     # {"question": "", "question_id": "", "possible_answers":["answer1", "answer2"]}
     {
@@ -417,26 +495,29 @@ WATER_SUPPLY_TEMPLATE = [{
             "other": ["5.3", "5.1", "5.2", "SEC_DW"]
         },
     },
-    # TODO: map the ticked answers to WT_TYPE
-    {
+   {
         "question": "What is the recovery rate [%] of your WT_TYPE system?",
         "question_id": "5.1",
         "possible_answers": TYPE_FLOAT,
+        "display_type": "matrix"
     },
     {
         "question": "What is the maximum flow rate [m³/h] of your WT_TYPE system?",
         "question_id": "5.2",
         "possible_answers": TYPE_FLOAT,
-    },
-    {
-        "question": "Which other water treatment technologies are you using to treat your TYPE_WATER_USE?",
-        "question_id": "5.3",
-        "possible_answers": TYPE_STRING,
+        "display_type": "matrix"
     },
     {
         "question": "What is the specific energy consumption (SEC) [kWh/m³] of your WT_TYPE system",
         "question_id": "SEC_DW",
         "possible_answers": TYPE_FLOAT,
+        "display_type": "matrix"
+    },
+
+    {
+        "question": "Which other water treatment technologies are you using to treat your TYPE_WATER_USE?",
+        "question_id": "5.3",
+        "possible_answers": TYPE_STRING,
     },
     {
         "question": "Do you typically experience TYPE_WATER_USE shortages from time to time?",
@@ -445,6 +526,9 @@ WATER_SUPPLY_TEMPLATE = [{
     },
 ]
 
+WATER_SUPPLY_TEMPLATE = generate_matrix_questions(
+    survey_questions=WATER_SUPPLY_TEMPLATE,
+    text_to_replace="WT_TYPE")
 
 
 
