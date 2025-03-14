@@ -735,6 +735,11 @@ def check_subquestions_keys():
             if subq not in possible_answers:
                 print(f"The subquestion key '{subq}' of question '{question.get('question_id')}' is not listed within the allowed values. The allowed values are:\n{', '.join(possible_answers)}\n\n")
 
+def check_questions_format():
+    for i, question in enumerate(SURVEY_STRUCTURE):
+        if "question_id" not in question:
+            print(f"{i}th question of the survey does not have the mandatory field 'question_id'")
+
 SUB_QUESTION_MAPPING = collect_subquestion_mapping()
 
 
