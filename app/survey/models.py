@@ -8,7 +8,8 @@ class SurveyQuestion(models.Model):
     subquestion_to = models.ForeignKey("self", null=True, on_delete=models.CASCADE)
     subquestion = models.TextField(null=True)
     possible_answers = models.TextField(null=True)
-    multiple_answers = models.BooleanField(default=False)
+    multiple_answers = models.BooleanField(default=False)  # this is a parameter for checkbox questions
+    matrix_answers = models.BooleanField(default=False)
     answer_type = models.CharField(null=False, max_length=8)
     description = models.TextField(null=False, default="")
     category = models.CharField(
