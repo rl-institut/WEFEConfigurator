@@ -52,7 +52,13 @@ class SurveyQuestionForm(forms.Form):
 
                 # subsubquestion class
                 if supra_question.subquestion_to is not None:
-                    self.fields[f"criteria_{answer.question.id}"].widget.attrs.update({"class": "sub_question sub_sub_question"})
+                    if answer.question.matrix_answers is True:
+                        self.fields[f"criteria_{answer.question.id}"].widget.attrs.update({"class": "sub_question sub_sub_question matrix_target"})
+                        supra_question_css = self.fields[f"criteria_{supra_question.id}"].widget.attrs["class"]
+                        if "matrix_source" not in supra_question_css:
+                            self.fields[f"criteria_{supra_question.id}"].widget.attrs["class"] =  f"{supra_question_css} matrix_source"
+                    else:
+                        self.fields[f"criteria_{answer.question.id}"].widget.attrs.update({"class": "sub_question sub_sub_question"})
 
                 self.fields[f"criteria_{supra_question.id}"].widget.attrs.update(
                     {

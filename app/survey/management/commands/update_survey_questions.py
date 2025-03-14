@@ -34,7 +34,7 @@ class Command(BaseCommand):
             display_type = asset_params.pop("display_type", None)
             if display_type == "multiple_choice_tickbox":
                 asset_params["multiple_answers"] = True
-            elif display_type == "multiple_choice_tickbox_matrix":
+            elif display_type == "matrix":
                 asset_params["matrix_answers"] = True
 
             if "possible_answers" in asset_params:
