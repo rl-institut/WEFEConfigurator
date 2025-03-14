@@ -13,7 +13,8 @@ class SurveyQuestionForm(forms.Form):
     def __init__(self, *args, **kwargs):
         qs = kwargs.pop("qs", [])
         super().__init__(*args, **kwargs)
-        for answer in qs:
+        for q in SURVEY_STRUCTURE:
+            answer = qs.get(question__question_id=q["question_id"])
             alv = answer.question.possible_answers
             opts = {"label": f"{answer.question.question_id}: {answer.question.question}"}
 
