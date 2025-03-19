@@ -53,7 +53,19 @@ class SurveyQuestionForm(forms.Form):
                 # subsubquestion class
                 if supra_question.subquestion_to is not None:
                     if answer.question.matrix_answers is True:
-                        self.fields[f"criteria_{answer.question.id}"].widget.attrs.update({"class": "sub_question sub_sub_question matrix_target"})
+                        # import pdb;pdb.set_trace()
+                        def original_question_number(q_id):
+                            answer = q_id
+                            for letter in ("a", "b", "c", "d", "e"):
+                                if letter in answer:
+                                    answer = answer.replace(letter, "")
+                            return answer
+                        matrix_idxs = original_question_number(answer.question.id).replace(f"{original_question_number(supra_question.id)}.", "")
+                        # print(supra_question.id)
+                        # print(matrix_idxs)
+                        matrix_col_idx, matrix_row_idx = matrix_idxs.split(".")
+
+                        self.fields[f"criteria_{answer.question.id}"].widget.attrs.update({"class": f"sub_question sub_sub_question matrix_target matrix_row_{matrix_row_idx} matrix_col_{matrix_col_idx}"})
                         supra_question_css = self.fields[f"criteria_{supra_question.id}"].widget.attrs["class"]
                         if "matrix_source" not in supra_question_css:
                             self.fields[f"criteria_{supra_question.id}"].widget.attrs["class"] =  f"{supra_question_css} matrix_source"

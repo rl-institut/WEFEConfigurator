@@ -11,6 +11,14 @@ register = template.Library()
 def fill_spaces(string: str):
     return string.replace(" ", "_")
 
+@register.simple_tag
+def setvar(val=None):
+    return val
+
+@register.filter
+def getval(val):
+    # import pdb;pdb.set_trace()
+    return str(val)
 
 @register.filter
 def pdb(element):
@@ -60,6 +68,24 @@ def is_subsubquestion(field):
     answer = False
     if field_classes is not None:
         if "sub_sub_question" in field_classes:
+            answer = True
+    return answer
+
+@register.filter
+def is_matrix(field):
+    field_classes = field.field.widget.attrs.get("class")
+    answer = False
+    if field_classes is not None:
+        if "matrix_target" in field_classes:
+            answer = True
+    return answer
+
+@register.filter
+def is_matrix_source(field):
+    field_classes = field.field.widget.attrs.get("class")
+    answer = False
+    if field_classes is not None:
+        if "matrix_source" in field_classes:
             answer = True
     return answer
 

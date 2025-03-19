@@ -11,6 +11,8 @@
 <!-- WRITE HTML CODE WITHIN THESE block content TAGS -->
 {% block content %}
 
+
+
 <section class="container-lg">
 	<div class="row">
 		<div class="col">
@@ -28,17 +30,40 @@
 
 						<div id="collapse-{{ forloop.counter }}" class="accordion-collapse collapse {% if forloop.first %}show{% endif %}" aria-labelledby="heading-{{ forloop.counter }}" data-bs-parent="#accordionQuestions">
 							<div class="accordion-body cpn-business__questionnaire">
+								{% setvar False as matrix_current %}
 								{% for field in form %}
-
 								{% if categories_map|get_index:forloop.counter0|is_current_category:cat %}
 
-								<div class="form-group{% if field.errors %} invalid{% endif %} {% if field|is_subsubquestion %} subsubquestion {% endif %} {% if field|is_subquestion %} subquestion {% if field.initial %}{% else %} disabled {% endif %} {% endif %}">
-									{% if field.label|is_water_header %}
-									<h4>{{ field.label|is_water_header }}</h4>
-								{% endif %}
-									{{ field |as_crispy_field}}
-								</div>
+								{% if field|is_matrix %}
+									{{ field }}
+								{% else %}
+									<div class="form-group{% if field.errors %} invalid{% endif %} {% if field|is_subsubquestion %} subsubquestion {% endif %} {% if field|is_subquestion %} subquestion {% if field.initial %}{% else %} disabled {% endif %} {% endif %}">
+										{% if field.label|is_water_header %}
+											<h4>{{ field.label|is_water_header }}</h4>
+										{% endif %}
 
+									{{ field |as_crispy_field}}
+
+
+								</div>
+								{% if field|is_matrix_source %}
+										{% if matrix_current %}
+											seems fishy
+										{%else%}
+											TRIGGER
+											{% setvar True as matrix_current %}
+
+												<div class="container_matrix subquestion">
+										{% endif %}
+								{% else %}
+										{% if matrix_current %}
+											{% setvar False as matrix_current %}
+											</div>
+										{% endif %}
+									{% endif %}
+
+
+								{% endif %}
 								{% endif %}
 								{% endfor %}
 							</div>
