@@ -81,7 +81,7 @@ SURVEY_ANSWER_COMPONENT_MAPPING = {
           },
     "5.1": {"WT_TYPE/recovery_rate": TYPE_FLOAT},
     "5.2": {"WT_TYPE/capacity": TYPE_FLOAT},
-    "SEC_DW": {"WT_TYPE/SEC": TYPE_FLOAT},
+    "5.3": {"WT_TYPE/SEC": TYPE_FLOAT},
 
 
     "7": {"septic system": ["septic_system"],
@@ -479,21 +479,21 @@ WATER_SUPPLY_TEMPLATE = [{
         ],
         "display_type": "multiple_choice_tickbox",
         "subquestion": {
-            "reverse osmosis": ["5.1", "5.2", "SEC_DW"],
-            "membrane distillation": ["5.1", "5.2", "SEC_DW"],
-            "ultrafiltration": ["5.1", "5.2", "SEC_DW"],
-            "boiling": ["5.2", "SEC_DW"],
-            "distillation": ["5.2", "SEC_DW"],
-            "activated carbon filter": ["5.2", "SEC_DW"],
-            "UV-disinfection": ["5.2", "SEC_DW"],
-            "cartridge filter": ["5.2", "SEC_DW"],
-            "microfiltration": ["5.2", "SEC_DW"],
-            "ceramic filter": ["5.2", "SEC_DW"],
-            "nanofiltration": ["5.2", "SEC_DW"],
-            "electrodialyis": ["5.2", "SEC_DW"],
-            "slow sand filter": ["5.2", "SEC_DW"],
-            "water softener": ["5.2", "SEC_DW"],
-            "other": ["5.3", "5.1", "5.2", "SEC_DW"]
+            "reverse osmosis": ["5.1", "5.2", "5.3"],
+            "membrane distillation": ["5.1", "5.2", "5.3"],
+            "ultrafiltration": ["5.1", "5.2", "5.3"],
+            "boiling": ["5.2", "5.3"],
+            "distillation": ["5.2", "5.3"],
+            "activated carbon filter": ["5.2", "5.3"],
+            "UV-disinfection": ["5.2", "5.3"],
+            "cartridge filter": ["5.2", "5.3"],
+            "microfiltration": ["5.2", "5.3"],
+            "ceramic filter": ["5.2", "5.3"],
+            "nanofiltration": ["5.2", "5.3"],
+            "electrodialyis": ["5.2", "5.3"],
+            "slow sand filter": ["5.2", "5.3"],
+            "water softener": ["5.2", "5.3"],
+            "other": ["5.4", "5.1", "5.2", "5.3"]
         },
     },
    {
@@ -510,14 +510,14 @@ WATER_SUPPLY_TEMPLATE = [{
     },
     {
         "question": "What is the specific energy consumption (SEC) [kWh/m³] of your WT_TYPE system",
-        "question_id": "SEC_DW",
+        "question_id": "5.3",
         "possible_answers": TYPE_FLOAT,
         "display_type": "matrix"
     },
 
     {
         "question": "Which other water treatment technologies are you using to treat your TYPE_WATER_USE?",
-        "question_id": "5.3",
+        "question_id": "5.4",
         "possible_answers": TYPE_STRING,
     },
     {
