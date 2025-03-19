@@ -71,12 +71,18 @@ class SurveyQuestionForm(forms.Form):
                             self.fields[f"criteria_{supra_question.id}"].widget.attrs["class"] =  f"{supra_question_css} matrix_source"
                     else:
                         self.fields[f"criteria_{answer.question.id}"].widget.attrs.update({"class": "sub_question sub_sub_question"})
-
-                self.fields[f"criteria_{supra_question.id}"].widget.attrs.update(
-                    {
-                        "onchange": f"triggerSubQuestion(new_value=this,subQuestionMapping={supra_question.subquestion})"
-                    }
-                )
+                if answer.question.matrix_answers is True:
+                    self.fields[f"criteria_{supra_question.id}"].widget.attrs.update(
+                        {
+                            "onchange": f"triggerMatrixSubQuestion(new_value=this,subQuestionMapping={supra_question.subquestion})"
+                        }
+                    )
+                else:
+                    self.fields[f"criteria_{supra_question.id}"].widget.attrs.update(
+                        {
+                            "onchange": f"triggerSubQuestion(new_value=this,subQuestionMapping={supra_question.subquestion})"
+                        }
+                    )
 
                 # only provide initial value for subquestion if the answer to supraquestion exists and is valid
                 supra_answer = qs.get(question=supra_question)
