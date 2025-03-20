@@ -4,8 +4,7 @@ function deselect(elm) {
     }
 }
 
-function triggerSubQuestion(new_value,subQuestionMapping){
-    console.log("Trigger Sub Question");
+function getSelectedValues(inputElement) {
     var stray = [];
     if(new_value.type == "checkbox"){
         var checkBoxes = new_value.parentElement.parentElement.querySelectorAll('input[type="checkbox"]'); // get all the check box
@@ -17,21 +16,27 @@ function triggerSubQuestion(new_value,subQuestionMapping){
     }
     // selected options
     console.log("selected options", stray);
+    return stray
+}
 
-
-    var sub_questions = [];
-    stray.filter((r) => {
+function getRelevantSubQuestions(selectedValues, subQuestionMapping) {
+    var subQuestions = [];
+    selectedValues.filter((r) => {
         // select only potential subquestions
         return r in subQuestionMapping;
     }).map((o)=>{
       // if there are more than one subquestion, expands their numbers
         if( typeof subQuestionMapping[o] != "string"){
-            subQuestionMapping[o].map((e)=>{sub_questions.push(e);});
+            subQuestionMapping[o].map((e)=>{subQuestions.push(e);});
         }
-        else{sub_questions.push(subQuestionMapping[o]);}
+        else{subQuestions.push(subQuestionMapping[o]);}
     });
-    console.log("selected_values", sub_questions);
 
+    console.log("Relevant subquestions:" + subQuestions)
+    return subQuestions;
+}
+
+function toggleVisibility(elementIdPrefix, subQuestions, subQuestionMapping) {
     for (let key in subQuestionMapping) {
         if(typeof subQuestionMapping[key] === 'string' || subQuestionMapping[key] instanceof String){
             var q_id = [subQuestionMapping[key]];
@@ -42,14 +47,15 @@ function triggerSubQuestion(new_value,subQuestionMapping){
 
         // loop over the subquestions
         for (let key_i in q_id){
-            var subQuestionDiv = document.getElementById("div_id_criteria_" + q_id[key_i]);
+            debugger;
+            var subQuestionDiv = document.getElementById(elementIdPrefix + q_id[key_i]);
             console.log("displaying subquestions for" + subQuestionDiv)
             // TODO maybe useless
             var dropdowns = subQuestionDiv.querySelectorAll(".sub_question");
 
             var check_boxes = subQuestionDiv.querySelectorAll('input[type="checkbox"]');
 
-            if(sub_questions.includes(q_id[key_i])){
+            if(subQuestions.includes(q_id[key_i])){
                 console.log("key " + q_id[key_i] + " is selected")
                 subQuestionDiv.parentNode.hidden = false;
                 subQuestionDiv.parentNode.classList.remove("disabled");
@@ -67,16 +73,51 @@ function triggerSubQuestion(new_value,subQuestionMapping){
                 // deselect the checked options of subquestions
                 if(check_boxes){
                     for(let i=0;i<check_boxes.length;i++){
-                        console.log(check_boxes[i].checked);
                         deselect(check_boxes[i]);
-                        console.log(check_boxes[i].checked);
                     }
                 }
             }
         }
     }
-
 }
+
+function triggerSubQuestion(new_value,subQuestionMapping){
+    console.log("Trigger Sub Question");
+    let selectedValues = getSelectedValues(new_value);
+    let subQuestions = getRelevantSubQuestions(selectedValues, subQuestionMapping);
+    toggleVisibility("div_id_criteria_", subQuestions, subQuestionMapping);
+}
+
+function triggerMatrixSubQuestion(new_value, subQuestionMapping) {
+    console.log("Trigger Matrix SubQuestion");
+
+    let selectedValues = getSelectedValues(new_value);
+    console.log("Selected options:", selectedValues);
+
+    let subQuestions = getRelevantSubQuestions(selectedValues, subQuestionMapping);
+    console.log("Relevant SubQuestions:", subQuestions);
+
+    // TODO this was made by chatGPT... check usefulness and if we want to take an approach like this
+    // Possible approach to check for the water and assign the number of columns for the matrix...
+    let waterTypeDifferentiation = document.querySelector('[name="id_criteria_2"]');
+    debugger;
+    let numColumns = waterTypeDifferentiation && waterTypeDifferentiation.value === "yes" ? 2 : 1;
+
+    // ... then show the matrix rows related to the relevant questions
+    toggleVisibility("matrix_row_", subQuestions, subQuestionMapping);
+
+    // Adjust matrix column visibility
+    subQuestions.forEach(q_id => {
+        let matrixRow = document.getElementById("matrix_row_" + q_id);
+        if (!matrixRow) return;
+
+        let columns = matrixRow.querySelectorAll(".matrix_col");
+        columns.forEach((col, idx) => {
+            col.hidden = idx >= numColumns;
+        });
+    });
+}
+
 var surveyFormDOM = document.getElementById("surveyQuestions");
 
 // this is not compatible with saved data
