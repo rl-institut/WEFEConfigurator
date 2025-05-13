@@ -1,4 +1,5 @@
 import copy
+import functools
 from django.utils.translation import gettext_lazy as _
 import logging
 
@@ -202,6 +203,15 @@ def get_survey_question_index(survey_questions, question):
             q_idx = i
     return q_idx
 
+def remove_question(survey_questions, question):
+    q_id = question["question_id"]
+    q_idx = None
+    for i, q in enumerate(survey_questions):
+        if q["question_id"] == q_id:
+            q_idx = i
+    if q_idx is not None:
+        return survey_questions.pop(q_idx)
+
 def get_shared_subquestions(subquestions):
     shared_subquestions_mapping = {}
 
@@ -221,10 +231,15 @@ def get_shared_subquestions(subquestions):
     return shared_subquestions
 
 
+def compare_matrix_questions(q1, q2):
+    return int(q1["question_id"].split(".")[-1]) - int(q2["question_id"].split(".")[-1])
+
 def generate_matrix_questions(survey_questions, text_to_replace):
     extra_questions = {}
+    extra_questions_size = {}
     for qi,q in enumerate(survey_questions):
         if q.get("display_type", "") == "multiple_choice_tickbox" and "subquestion" in q:
+            extra_number = 0
             sq = q["subquestion"]
             # get the list of question's answers which share the same link to a subquestion
             shared_subquestions = get_shared_subquestions(sq)
@@ -241,15 +256,26 @@ def generate_matrix_questions(survey_questions, text_to_replace):
                         # Replace the subquestion id in the supraquestion subquestions
                         q["subquestion"][supra_answer][q["subquestion"][supra_answer].index(ssq_id)] = temp["question_id"]
                         extra_questions[ssq_id].append(temp)
+                    # update the number of extra questions
+                    extra_number += len(extra_questions[ssq_id])
+                if extra_number > 0 :
+                    extra_questions_size[q["question_id"]] = extra_number
 
 
     for q_id in extra_questions:
-        # find the orginal question index in the survey questions
+        # find the original question index in the survey questions
         q_idx = get_survey_question_index(survey_questions, q_id)
         # insert the matrix subquestions
         survey_questions = survey_questions[:q_idx+1] + extra_questions[q_id] + survey_questions[q_idx+1:]
         # remove the original question from the survey questions
         survey_questions.pop(q_idx)
+
+    # sort the matrix questions by rows instead of by columns (only for display purposes)
+    for q_id in extra_questions_size:
+        q_idx = survey_questions.index(get_survey_question_by_id(survey_questions,q_id))
+        col_sorted_questions = survey_questions[q_idx+1:q_idx+1+extra_questions_size[q_id]]
+        row_sorted_questions = sorted(col_sorted_questions, key=functools.cmp_to_key(compare_matrix_questions))
+        survey_questions[q_idx + 1:q_idx + 1 + extra_questions_size[q_id]] = row_sorted_questions
 
     return survey_questions
 
@@ -497,19 +523,19 @@ WATER_SUPPLY_TEMPLATE = [{
         },
     },
    {
-        "question": "What is the recovery rate [%] of your WT_TYPE system?",
+        "question": "What is the recovery rate [%]", #  of your WT_TYPE system?
         "question_id": "5.1",
         "possible_answers": TYPE_FLOAT,
         "display_type": "matrix"
     },
     {
-        "question": "What is the maximum flow rate [m³/h] of your WT_TYPE system?",
+        "question": "What is the maximum flow rate [m³/h]", #  of your WT_TYPE system?
         "question_id": "5.2",
         "possible_answers": TYPE_FLOAT,
         "display_type": "matrix"
     },
     {
-        "question": "What is the specific energy consumption (SEC) [kWh/m³] of your WT_TYPE system",
+        "question": "What is the specific energy consumption (SEC) [kWh/m³]", #  of your WT_TYPE system?
         "question_id": "5.3",
         "possible_answers": TYPE_FLOAT,
         "display_type": "matrix"

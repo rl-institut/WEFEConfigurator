@@ -17,7 +17,7 @@ padding-left: 8rem;
   display: grid;
   gap: 0.25rem;
   justify-content: space-evenly;
-  grid-auto-columns: 7rem;
+  //grid-auto-columns: 7rem;
   grid-auto-rows: 1.25rem;
 }
 
@@ -57,6 +57,7 @@ padding-left: 8rem;
 .matrix_col_13{grid-column:13;}
 .matrix_col_14{grid-column:14;}
 .matrix_col_15{grid-column:15;}
+.matrix_col_16{grid-column:16;}
 
 
 .matrix_row_0{grid-row:1;}
@@ -74,3 +75,4 @@ padding-left: 8rem;
 .matrix_row_12{grid-row:13;}
 .matrix_row_13{grid-row:14;}
 .matrix_row_14{grid-row:15;}
+.matrix_row_15{grid-row:16;}

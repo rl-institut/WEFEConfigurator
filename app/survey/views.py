@@ -2,11 +2,19 @@ from django.shortcuts import *
 from django.urls import reverse
 from .forms import *
 from .models import *
-from .survey import SURVEY_CATEGORIES
+from .survey import SURVEY_CATEGORIES, SURVEY_STRUCTURE, get_survey_question_by_id
 import logging
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.http import require_http_methods
 
+
+def is_matrix_source(field):
+    field_classes = field.widget.attrs.get("class")
+    answer = False
+    if field_classes is not None:
+        if "matrix_source" in field_classes:
+            answer = True
+    return answer
 
 @require_http_methods(["GET", "POST"])
 def view_survey_questions(request, scen_id=None):
@@ -26,8 +34,9 @@ def view_survey_questions(request, scen_id=None):
             answer = HttpResponseRedirect(reverse("view_survey", args=[scen_id]))
         else:
             # TODO
-            import pdb;
-            pdb.set_trace()
+            print("Form is not valid")
+            # import pdb;
+            # pdb.set_trace()
 
     else:
         # TODO this is currently for testing
@@ -56,12 +65,32 @@ def view_survey_questions(request, scen_id=None):
         )
 
         categories_map = []
+        matrix_headers = {}
+        matrix_labels = {}
         for field in form.fields:
             question_id = field.split("criteria_")[1]
             # TODO: could be done from models "category" attribute
             cat = SURVEY_CATEGORIES.get(question_id)
             # TODO: reassign cat after testing phase is over
             categories_map.append("components")
+            # TODO here one can know that the question
+            if is_matrix_source(form.fields[field]):
+                print(form.fields[field].__dict__)
+                subs = []
+                labels =[]
+                question = get_survey_question_by_id(SURVEY_STRUCTURE, question_id)
+                for answer, subquestions in question["subquestion"].items():
+                    labels.append(answer)
+                    for sq_id in subquestions:
+                        q_main_id = ".".join(sq_id.split(".")[:2])
+                        subquestion = get_survey_question_by_id(SURVEY_STRUCTURE, sq_id)
+                        # print(subquestion)
+                        if subquestion.get("display_type", "") == "matrix":
+                            if subquestion["question"] not in subs:
+                                subs.append(subquestion["question"])
+                matrix_headers[field] = subs
+                matrix_labels[field] = labels
+
 
         answer = render(
             request,
@@ -72,6 +101,8 @@ def view_survey_questions(request, scen_id=None):
                 "categories_map": categories_map,
                 "categories": categories,
                 "categories_verbose": SURVEY_QUESTIONS_CATEGORIES,
+                "matrix_headers" : matrix_headers,
+                "matrix_labels": matrix_labels,
             },
         )
 

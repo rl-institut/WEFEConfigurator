@@ -32,39 +32,44 @@
 							<div class="accordion-body cpn-business__questionnaire">
 								{% setvar False as matrix_current %}
 								{% for field in form %}
-								{% if categories_map|get_index:forloop.counter0|is_current_category:cat %}
+									{% if categories_map|get_index:forloop.counter0|is_current_category:cat %}
+										{% if field|is_matrix %}
+											{% comment %} here are the subquestion in matrix form {% endcomment %}
+											{{ field }}
+										{% else %}
+											<div class="form-group{% if field.errors %} invalid{% endif %} {% if field|is_subsubquestion %} subsubquestion {% endif %} {% if field|is_subquestion %} subquestion {% if field.initial %}{% else %} disabled {% endif %} {% endif %}">
+											{% if field.label|is_water_header %}
+												<h4>{{ field.label|is_water_header }}</h4>
+											{% endif %}
+											{{ field |as_crispy_field}}
+											</div>
+											{% if field|is_matrix_source %}
+												{% if matrix_current %}
+													seems fishy
+												{%else%}
+													Trigger
+													{{field.name}}
+													field name
 
-								{% if field|is_matrix %}
-								{{ field }}
-								{% else %}
-								<div class="form-group{% if field.errors %} invalid{% endif %} {% if field|is_subsubquestion %} subsubquestion {% endif %} {% if field|is_subquestion %} subquestion {% if field.initial %}{% else %} disabled {% endif %} {% endif %}">
-									{% if field.label|is_water_header %}
-									<h4>{{ field.label|is_water_header }}</h4>
+													{% setvar True as matrix_current %}
+													<div id="id_matrix_{{field.name}}" class="form-group container_matrix {% if field.errors %} invalid{% endif %} {% if field|is_subsubquestion %} subsubquestion {% endif %} {% if field|is_subquestion %} subquestion {% if field.initial %}{% else %} disabled {% endif %} {% endif %}">
+													<span  class="sub_question sub_sub_question matrix_target matrix_row_0 matrix_col_1"></span>
+													{% for header in matrix_labels|get_item:field.name %}
+														<span  class="sub_question sub_sub_question matrix_target matrix_row_{{ forloop.counter }} matrix_col_1">{{header}}</span>
+													{% endfor %}
+
+													{% for header in matrix_headers|get_item:field.name %}
+														<div  class="sub_question sub_sub_question matrix_target matrix_row_0 matrix_col_{{ forloop.counter|add:1 }}">{{header}}</div>
+													{% endfor %}
+												{% endif %}
+											{% else %}
+													{% if matrix_current %}
+														{% setvar False as matrix_current %}
+														</div>
+								      		{% endif %}
+								    	{% endif %}
+										{% endif %}
 									{% endif %}
-
-									{{ field |as_crispy_field}}
-
-
-								</div>
-								{% if field|is_matrix_source %}
-								{% if matrix_current %}
-								seems fishy
-								{%else%}
-								TRIGGER
-								{% setvar True as matrix_current %}
-
-								<div class="container_matrix subquestion">
-									{% endif %}
-									{% else %}
-									{% if matrix_current %}
-									{% setvar False as matrix_current %}
-								</div>
-								{% endif %}
-								{% endif %}
-
-
-								{% endif %}
-								{% endif %}
 								{% endfor %}
 							</div>
 						</div>

@@ -9,6 +9,9 @@ from .models import *
 from .survey import SURVEY_STRUCTURE, SURVEY_CATEGORIES
 
 
+def is_matrix_source(field):
+
+    return "matrix_source" in field.widget.attrs.get("class", "")
 class SurveyQuestionForm(forms.Form):
     def __init__(self, *args, **kwargs):
         qs = kwargs.pop("qs", [])
@@ -61,23 +64,24 @@ class SurveyQuestionForm(forms.Form):
                                     answer = answer.replace(letter, "")
                             return answer
                         matrix_idxs = original_question_number(answer.question.id).replace(f"{original_question_number(supra_question.id)}.", "")
-                        # print(supra_question.id)
-                        # print(matrix_idxs)
                         matrix_col_idx, matrix_row_idx = matrix_idxs.split(".")
 
-                        self.fields[f"criteria_{answer.question.id}"].widget.attrs.update({"class": f"sub_question sub_sub_question matrix_target matrix_row_{matrix_row_idx} matrix_col_{matrix_col_idx}"})
+                        self.fields[f"criteria_{answer.question.id}"].widget.attrs.update({"class": f"sub_question sub_sub_question matrix_target matrix_row_{int(matrix_row_idx)+1} matrix_col_{int(matrix_col_idx)+1}"})
+                        # self.fields[f"criteria_{answer.question.id}"].widget.attrs.update({"class": f"sub_question sub_sub_question matrix_target matrix_col_{int(matrix_col_idx)+1}"})
                         supra_question_css = self.fields[f"criteria_{supra_question.id}"].widget.attrs["class"]
                         if "matrix_source" not in supra_question_css:
                             self.fields[f"criteria_{supra_question.id}"].widget.attrs["class"] =  f"{supra_question_css} matrix_source"
                     else:
                         self.fields[f"criteria_{answer.question.id}"].widget.attrs.update({"class": "sub_question sub_sub_question"})
-                if answer.question.matrix_answers is True:
+                if is_matrix_source(self.fields[f"criteria_{supra_question.id}"]):
+                    # here we know we are within matrix questions
                     self.fields[f"criteria_{supra_question.id}"].widget.attrs.update(
                         {
                             "onchange": f"triggerMatrixSubQuestion(new_value=this,subQuestionMapping={supra_question.subquestion})"
                         }
                     )
                 else:
+
                     self.fields[f"criteria_{supra_question.id}"].widget.attrs.update(
                         {
                             "onchange": f"triggerSubQuestion(new_value=this,subQuestionMapping={supra_question.subquestion})"
