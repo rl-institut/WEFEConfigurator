@@ -14,10 +14,10 @@ def is_matrix_source(field):
     return "matrix_source" in field.widget.attrs.get("class", "")
 class SurveyQuestionForm(forms.Form):
     def __init__(self, *args, **kwargs):
-        qs = kwargs.pop("qs", [])
+        self.qs_answers = kwargs.pop("qs", [])
         super().__init__(*args, **kwargs)
         for q in SURVEY_STRUCTURE:
-            answer = qs.get(question__question_id=q["question_id"])
+            answer = self.qs_answers.get(question__question_id=q["question_id"])
             alv = answer.question.possible_answers
             opts = {"label": f"{answer.question.question_id}: {answer.question.question}"}
 
@@ -89,7 +89,7 @@ class SurveyQuestionForm(forms.Form):
                     )
 
                 # only provide initial value for subquestion if the answer to supraquestion exists and is valid
-                supra_answer = qs.get(question=supra_question)
+                supra_answer = self.qs_answers.get(question=supra_question)
                 if supra_answer.value is not None:
                     if answer.value:
                         if answer.question.multiple_answers is True:
@@ -107,11 +107,32 @@ class SurveyQuestionForm(forms.Form):
 
     def clean(self):
         cleaned_data = super().clean()
-
         if cleaned_data:
+            subquestion_to_erase = []
             for record in cleaned_data:
-                if cleaned_data[record] is not None:
 
+                question_id = record.replace("criteria_", "")
+
+                question = self.qs_answers.get(question__question_id=question_id).question
+                subquestions = question.subquestions
+                other_keys = []
+
+                # if the question is a subquestion and the supra question changed, then the subquestion's answer are erased
+                if question_id in subquestion_to_erase:
+                    cleaned_data[record] = None
+
+                # if the question is a subquestion and the supra question was reinitialized, then the subquestion's answer are erased
+                if question.subquestion_to is not None:
+                    if f"criteria_{question.subquestion_to.question_id}" not in cleaned_data:
+                        cleaned_data[record] = None
+
+                if cleaned_data[record] is not None:
+                    new_answer = cleaned_data[record]
+                    if question.multiple_answers is False:
+                        new_answer = [new_answer]
+
+                    if subquestions is not None:
+                        other_keys = set(subquestions.keys()) - set(new_answer)
 
                     if cleaned_data[record]:
                         print(record)
@@ -119,11 +140,22 @@ class SurveyQuestionForm(forms.Form):
                         print(type(cleaned_data[record]))
                     else:
                         cleaned_data[record] = None
-                    # TODO need to look at the expected type of the question's answer
+                    # TODO when a supra answer is given, one need to make sure to cancel the sub answer from subquestions which are not allowed anymore
                 else:
-                    question = SurveyQuestion.objects.get(question_id=record.replace("criteria_", ""))
+
+                    if subquestions is not None:
+                        other_keys = set(subquestions.keys())
+
                     if question.subquestion_to is None:
                         raise ValidationError("This field cannot be blank")
+
+                for k in other_keys:
+                    sq = subquestions[k]
+                    if isinstance(sq, list):
+                        subquestion_to_erase.extend(sq)
+                    else:
+                        subquestion_to_erase.append(sq)
+
         else:
             raise ValidationError("This form cannot be blank")
         return cleaned_data

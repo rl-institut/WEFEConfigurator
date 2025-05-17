@@ -46,8 +46,8 @@ def view_survey_questions(request, scen_id=None):
             scenario_id = scen_id
 
         # Check if answers already exists, if not create them
-        qs = SurveyAnswer.objects.filter(scenario_id=scenario_id)
-        if qs.exists() is False:
+        qs_answer = SurveyAnswer.objects.filter(scenario_id=scenario_id)
+        if qs_answer.exists() is False:
             questions = SurveyQuestion.objects.all()
             print(questions)
             for question in questions:
@@ -59,9 +59,8 @@ def view_survey_questions(request, scen_id=None):
                 new_answer.save()
 
         categories = [cat for cat in SURVEY_QUESTIONS_CATEGORIES.keys()]
-        print(categories)
         form = SurveyQuestionForm(
-            qs=SurveyAnswer.objects.filter(scenario_id=scenario_id)
+            qs=qs_answer
         )
 
         categories_map = []
@@ -75,7 +74,6 @@ def view_survey_questions(request, scen_id=None):
             categories_map.append("components")
             # TODO here one can know that the question
             if is_matrix_source(form.fields[field]):
-                print(form.fields[field].__dict__)
                 subs = []
                 labels =[]
                 question = get_survey_question_by_id(SURVEY_STRUCTURE, question_id)

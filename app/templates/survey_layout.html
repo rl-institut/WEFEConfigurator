@@ -37,7 +37,7 @@
 											{% comment %} here are the subquestion in matrix form {% endcomment %}
 											{{ field }}
 										{% else %}
-											<div class="form-group{% if field.errors %} invalid{% endif %} {% if field|is_subsubquestion %} subsubquestion {% endif %} {% if field|is_subquestion %} subquestion {% if field.initial %}{% else %} disabled {% endif %} {% endif %}">
+											<div class="form-group{% if field.errors %} invalid{% endif %}{% if field|is_subsubquestion %} subsubquestion{% endif %}{% if field|is_subquestion %} subquestion{% if field.initial %}{% else %} disabled {% endif %}{% endif %}">
 											{% if field.label|is_water_header %}
 												<h4>{{ field.label|is_water_header }}</h4>
 											{% endif %}
@@ -45,12 +45,9 @@
 											</div>
 											{% if field|is_matrix_source %}
 												{% if matrix_current %}
-													seems fishy
+													This text should never be seen
 												{%else%}
-													Trigger
-													{{field.name}}
-													field name
-
+                          {% comment %} here are begins the subquestion matrix container {% endcomment %}
 													{% setvar True as matrix_current %}
 													<div id="id_matrix_{{field.name}}" class="form-group container_matrix {% if field.errors %} invalid{% endif %} {% if field|is_subsubquestion %} subsubquestion {% endif %} {% if field|is_subquestion %} subquestion {% if field.initial %}{% else %} disabled {% endif %} {% endif %}">
 													<span  class="sub_question sub_sub_question matrix_target matrix_row_0 matrix_col_1"></span>

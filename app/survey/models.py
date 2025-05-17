@@ -1,3 +1,4 @@
+import json
 from django.db import models
 from .survey import SURVEY_QUESTIONS_CATEGORIES
 
@@ -22,6 +23,15 @@ class SurveyQuestion(models.Model):
     @property
     def id(self):
         return self.question_id
+
+    @property
+    def subquestions(self):
+        if self.subquestion is not None:
+            answer = json.loads(self.subquestion)
+        else:
+            answer = self.subquestion
+        return answer
+
 
 
 class SurveyAnswer(models.Model):
