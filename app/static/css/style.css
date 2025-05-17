@@ -3,15 +3,24 @@
     margin-bottom:0.5rem;
 }
 
+/* Subquestions: visually indented */
 .form-group.subquestion {
-padding-left: 4rem;
+    padding-left: 4rem;
 }
+
 .form-group.subsubquestion {
-padding-left: 8rem;
+    padding-left: 8rem;
 }
-//.sub_question.disabled {
-//display:none;
-//}
+
+.form-groug.container_matrix {
+    padding-left: 10rem;
+}
+
+/* Disabled subquestions */
+.disabled {
+    display: none;
+}
+
 
 .container_matrix{
   display: grid;
