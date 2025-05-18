@@ -15,7 +15,6 @@ function getSelectedValues(inputElement) {
         stray = array_opts.map((o)=> o.value);
     }
     // selected options
-    console.log("selected options", stray);
     return stray
 }
 
@@ -32,7 +31,6 @@ function getRelevantSubQuestions(selectedValues, subQuestionMapping) {
         else{subQuestions.push(subQuestionMapping[o]);}
     });
 
-    console.log("Relevant subquestions:" + subQuestions)
     return subQuestions;
 }
 
@@ -43,34 +41,22 @@ function toggleVisibility(elementIdPrefix, subQuestions, subQuestionMapping) {
         }
         else{q_id=subQuestionMapping[key]}
 
-        console.log("ids", q_id)
-
         // loop over the subquestions
         for (let key_i in q_id){
             var subQuestionDiv = document.getElementById(elementIdPrefix + q_id[key_i]);
             if(subQuestionDiv === null){
                 subQuestionDiv = document.getElementById(elementIdPrefix + q_id[key_i]);
             }
-            console.log("displaying subquestions for" + subQuestionDiv)
-            // TODO maybe useless
             var dropdowns = subQuestionDiv.querySelectorAll(".sub_question");
 
             var check_boxes = subQuestionDiv.querySelectorAll('input[type="checkbox"]');
 
             if(subQuestions.includes(q_id[key_i])){
-                console.log("key " + q_id[key_i] + " is selected")
-                subQuestionDiv.parentNode.hidden = false;
+                // show the subquestion
                 subQuestionDiv.parentNode.classList.remove("disabled");
-                /*for(let i=0;i<check_boxes.length;i++){
-                    console.log("I shouldnt")
-                    check_boxes[i].parentNode.hidden = false;
-                }*/
-                // TODO change the class as well
             }
             else{
-              console.log("key " + q_id[key_i] + " is hidden")
-              // hide the subquestion
-                subQuestionDiv.parentNode.hidden = true;
+                // hide the subquestion
                 subQuestionDiv.parentNode.classList.add("disabled");
                 // deselect the checked options of subquestions
                 if(check_boxes){
@@ -91,37 +77,25 @@ function toggleMatrixVisibility(elementIdPrefix, subQuestions, subQuestionMappin
         }
         else{q_id=subQuestionMapping[key]}
 
-        console.log("ids", q_id)
-
         let row_selected = false;
         // loop over the subquestions
         for (let key_i in q_id){
-            //console.log(q_id);
 
             var subQuestionDiv = document.getElementById(elementIdPrefix + q_id[key_i]);
             if(subQuestionDiv === null){
                 subQuestionDiv = document.getElementById(elementIdPrefix + q_id[key_i]);
             }
-            //console.log("displaying subquestions for" + subQuestionDiv)
-            // TODO maybe useless
             var dropdowns = subQuestionDiv.querySelectorAll(".sub_question");
 
             var check_boxes = subQuestionDiv.querySelectorAll('input[type="checkbox"]');
 
             if(subQuestions.includes(q_id[key_i])){
-                //
+                // show the subquestion
                 row_selected = true
-                console.log("key " + q_id[key_i] + " is selected")
-                subQuestionDiv.hidden = false;
                 subQuestionDiv.classList.remove("disabled");
-
-
-
             }
             else{
-              //console.log("key " + q_id[key_i] + " is hidden")
-              // hide the subquestion
-                subQuestionDiv.hidden = true;
+                // hide the subquestion
                 subQuestionDiv.classList.add("disabled");
                 // deselect the checked options of subquestions
                 if(check_boxes){
@@ -139,8 +113,10 @@ function toggleMatrixVisibility(elementIdPrefix, subQuestions, subQuestionMappin
     // set parent class disabled when no one is selected
     if(tot_selected==0){
         subQuestionDiv.parentNode.hidden = true;
+        subQuestionDiv.parentNode.classList.add("disabled");
     }else{
          subQuestionDiv.parentNode.hidden=false;
+         subQuestionDiv.parentNode.classList.remove("disabled");
     }
 
 
@@ -156,12 +132,11 @@ function triggerSubQuestion(new_value,subQuestionMapping){
 }
 
 function triggerMatrixSubQuestion(new_value, subQuestionMapping) {
-    console.log("Trigger Matrix SubQuestion");
+    console.log("Trigger Matrix Sub Question");
 
     let selectedValues = getSelectedValues(new_value);
 
     let subQuestions = getRelevantSubQuestions(selectedValues, subQuestionMapping);
-    console.log("Relevant SubQuestions:", subQuestions);
 
     // TODO this was made by chatGPT... check usefulness and if we want to take an approach like this
     // Possible approach to check for the water and assign the number of columns for the matrix...
@@ -177,7 +152,7 @@ var surveyFormDOM = document.getElementById("surveyQuestions");
 
 // this is not compatible with saved data
 
-var subQuestions = surveyFormDOM.querySelectorAll(".subquestion");
+/*var subQuestions = surveyFormDOM.querySelectorAll(".subquestion");
 for(i=0;i<subQuestions.length;++i) {
     if(subQuestions[i].classList.contains("disabled"))
     {
@@ -190,4 +165,4 @@ for(i=0;i<subQuestions.length;++i) {
         subQuestions[i].classList.add("disabled")
 
     }
-};
+};*/
