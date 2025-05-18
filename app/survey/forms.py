@@ -126,6 +126,7 @@ class SurveyQuestionForm(forms.Form):
                     if f"criteria_{question.subquestion_to.question_id}" not in cleaned_data:
                         cleaned_data[record] = None
 
+                selected_subquestions = []
                 if cleaned_data[record] is not None:
                     new_answer = cleaned_data[record]
                     if question.multiple_answers is False:
@@ -134,6 +135,16 @@ class SurveyQuestionForm(forms.Form):
                     if subquestions is not None:
                         other_keys = set(subquestions.keys()) - set(new_answer)
 
+                        for k in new_answer:
+                            sq = subquestions.get(k)
+                            if isinstance(sq, list):
+                                selected_subquestions.extend(sq)
+                            elif sq is None:
+                                pass
+                            else:
+                                selected_subquestions.append(sq)
+                        selected_subquestions =list(set(selected_subquestions))
+
                     if cleaned_data[record]:
                         print(record)
                         print(cleaned_data[record])
@@ -141,6 +152,10 @@ class SurveyQuestionForm(forms.Form):
                     else:
                         cleaned_data[record] = None
                     # TODO when a supra answer is given, one need to make sure to cancel the sub answer from subquestions which are not allowed anymore
+
+
+
+
                 else:
 
                     if subquestions is not None:
@@ -150,11 +165,18 @@ class SurveyQuestionForm(forms.Form):
                         raise ValidationError("This field cannot be blank")
 
                 for k in other_keys:
-                    sq = subquestions[k]
+                    # TODO if the id is in the combined subquestions[l] for l in cleaned_data[record]
+                    # then one does not need to get it out by adding it to the subquestion_to_erase
+                    sq = subquestions.get(k)
                     if isinstance(sq, list):
-                        subquestion_to_erase.extend(sq)
+                        for e in sq:
+                            if e not in selected_subquestions:
+                                subquestion_to_erase.append(e)
+                    elif sq is None:
+                        pass
                     else:
-                        subquestion_to_erase.append(sq)
+                        if sq not in selected_subquestions:
+                            subquestion_to_erase.append(sq)
 
         else:
             raise ValidationError("This form cannot be blank")
