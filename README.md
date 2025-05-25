@@ -1,7 +1,6 @@
 # WEFEConfigurator
 
-WEFEConfigurator is a tool designed to set up and run energy system simulations for the case study analysis of 
-Water-Energy-Food-Environment (WEFE) mini-grids. These combine different renewable energy (RE) technologies,
+WEFEConfigurator is an open software tool designed to set up, simulate and optimize models of integrated water-energy-food-environment systems (iWEFEs). These combine different renewable energy (RE) technologies,
 such as photovoltaics, wind turbines, hydropower, and biogas plants, storage systems such as
 batteries, hydrogen, or water tanks, and productive uses, such as water pumping, water treatment,
 irrigation, cold storage, agricultural processing, via smart control systems. An example of such are agrivoltaics which 
