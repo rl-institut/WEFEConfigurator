@@ -1,9 +1,4 @@
-name;amount;profile;type;bus
-demand;1;electricity-load-profile;load;ac_elec-bus
-demand;1;cooking-load-profile;load;cooking-bus
-demand;1;service-water-demand-profile;load;service-water-bus
-demand;1;drinking-water-demand;load;drinking-water-bus
-demand;1;groundwater-recharge;load;service-water-bus
-
-# groundwater could also be modeled as water storage, thus groundwater recharge just recharges groundwater storage
-
+type;profile;name;region;year;bus;amount
+load;drinking-water;drinking-water-demand;DE;2021;drinking-water-bus;1
+load;drinking-water;service-water-demand;CO;2024;service-water-bus;1
+load;electricity;elec-demand;DE;2021;ac-elec-bus;1

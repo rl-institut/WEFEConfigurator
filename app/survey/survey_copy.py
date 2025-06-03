@@ -1,7 +1,7 @@
 import copy
-import functools
 from django.utils.translation import gettext_lazy as _
 import logging
+
 
 TYPE_FLOAT = "float"
 TYPE_INT = "int"
@@ -82,7 +82,7 @@ SURVEY_ANSWER_COMPONENT_MAPPING = {
           },
     "5.1": {"WT_TYPE/recovery_rate": TYPE_FLOAT},
     "5.2": {"WT_TYPE/capacity": TYPE_FLOAT},
-    "5.3": {"WT_TYPE/SEC": TYPE_FLOAT},
+    "SEC_DW": {"WT_TYPE/SEC": TYPE_FLOAT},
 
 
     "7": {"septic system": ["septic_system"],
@@ -135,10 +135,10 @@ SURVEY_ANSWER_COMPONENT_MAPPING = {
           "oat": ["oat"],
           "pepper": ["pepper"],
           },
-    "9.1": {"IRRIGATION_TYPE": ["IRRIGATION_TYPE"]},
-    "9.3": {"capacity": TYPE_FLOAT},
+
     "10": {"yes": ["apv"]}
 }
+
 
 COMPONENT_CATEGORY = "components"
 WATER_CATEGORY = "water"
@@ -149,138 +149,6 @@ SURVEY_QUESTIONS_CATEGORIES = {
     WATER_CATEGORY: _("Water"),
     CROP_CATEGORY: _("Crops"),
 }
-
-
-def generate_generic_questions(suffixes, survey_questions_template, text_to_replace):
-    """Generate redundant question for different cases
-    :param suffixes: dict mapping of label to subquestion suffix
-    :param survey_questions_template: the redundant questions which need to be duplicated for each suffix mapping
-    :param text_to_replace: the text placeholder which will be replaced by the `suffices` keys
-    :return: list of survey questions
-    """
-    new_questions = []
-    for name, suffix in suffixes.items():
-        temp = copy.deepcopy(survey_questions_template)
-        for question in temp:
-            question["question"] = question["question"].replace(text_to_replace, name)
-            id = question["question_id"]
-            question["question_id"] = id + suffix
-            subquestions = question.get("subquestion", {})
-            for subq in subquestions.keys():
-                subq_id = subquestions[subq]
-                if isinstance(subq_id, str):
-                    subq_id = [subq_id]
-
-                new_ids = [q_id + suffix for q_id in subq_id]
-                if len(new_ids) == 1:
-                    new_ids = new_ids[0]
-                subquestions[subq] = new_ids
-            if subquestions:
-                question["subquestion"] = subquestions
-            new_questions.append(question)
-    return new_questions
-
-def get_survey_question_by_id(survey_questions, question_id):
-    answer = None
-    for q in survey_questions:
-        if q["question_id"] == question_id:
-            if answer is None:
-                answer = q
-            else:
-                msg = f"Question number {question_id} appears multiple times"
-                raise KeyError(msg)
-    return answer
-
-def get_survey_question_index(survey_questions, question):
-    if isinstance(question, dict):
-        q_id = question["question_id"]
-    elif isinstance(question, str):
-        q_id = question
-
-    q_idx = None
-    for i, q in enumerate(survey_questions):
-        if q["question_id"] == q_id:
-            q_idx = i
-    return q_idx
-
-def remove_question(survey_questions, question):
-    q_id = question["question_id"]
-    q_idx = None
-    for i, q in enumerate(survey_questions):
-        if q["question_id"] == q_id:
-            q_idx = i
-    if q_idx is not None:
-        return survey_questions.pop(q_idx)
-
-def get_shared_subquestions(subquestions):
-    shared_subquestions_mapping = {}
-
-    for k, v in subquestions.items():
-        if not isinstance(v, list):
-            v = [v]
-        for sq in v:
-            if sq in shared_subquestions_mapping:
-                shared_subquestions_mapping[sq].append(k)
-            else:
-                shared_subquestions_mapping[sq] = [k]
-
-    shared_subquestions = {}
-    for k, v in shared_subquestions_mapping.items():
-        if len(v) > 1:
-            shared_subquestions[k] = v
-    return shared_subquestions
-
-
-def compare_matrix_questions(q1, q2):
-    return int(q1["question_id"].split(".")[-1]) - int(q2["question_id"].split(".")[-1])
-
-def generate_matrix_questions(survey_questions, text_to_replace):
-    extra_questions = {}
-    extra_questions_size = {}
-    for qi,q in enumerate(survey_questions):
-        if q.get("display_type", "") == "multiple_choice_tickbox" and "subquestion" in q:
-            extra_number = 0
-            sq = q["subquestion"]
-            # get the list of question's answers which share the same link to a subquestion
-            shared_subquestions = get_shared_subquestions(sq)
-            # for each subquestion, if this one has the display type 'matrix', we will make as many copies of it
-            # as there are question's answer with a link to the subquestion
-            for ssq_id in shared_subquestions:
-                ssq = get_survey_question_by_id(survey_questions,ssq_id)
-                if ssq.get("display_type","") == "matrix":
-                    extra_questions[ssq_id] = []
-                    for suffix, supra_answer in enumerate(shared_subquestions[ssq_id]):
-                        temp = copy.deepcopy(ssq)
-                        temp["question"] = temp["question"].replace(text_to_replace, supra_answer)
-                        temp["question_id"] = ssq_id + "." + str(suffix)
-                        # Replace the subquestion id in the supraquestion subquestions
-                        q["subquestion"][supra_answer][q["subquestion"][supra_answer].index(ssq_id)] = temp["question_id"]
-                        extra_questions[ssq_id].append(temp)
-                    # update the number of extra questions
-                    extra_number += len(extra_questions[ssq_id])
-                if extra_number > 0 :
-                    extra_questions_size[q["question_id"]] = extra_number
-
-
-    for q_id in extra_questions:
-        # find the original question index in the survey questions
-        q_idx = get_survey_question_index(survey_questions, q_id)
-        # insert the matrix subquestions
-        survey_questions = survey_questions[:q_idx+1] + extra_questions[q_id] + survey_questions[q_idx+1:]
-        # remove the original question from the survey questions
-        survey_questions.pop(q_idx)
-
-    # sort the matrix questions by rows instead of by columns (only for display purposes)
-    for q_id in extra_questions_size:
-        q_idx = survey_questions.index(get_survey_question_by_id(survey_questions,q_id))
-        col_sorted_questions = survey_questions[q_idx+1:q_idx+1+extra_questions_size[q_id]]
-        row_sorted_questions = sorted(col_sorted_questions, key=functools.cmp_to_key(compare_matrix_questions))
-        survey_questions[q_idx + 1:q_idx + 1 + extra_questions_size[q_id]] = row_sorted_questions
-
-    return survey_questions
-
-
-
 
 
 COMPONENT_SURVEY_STRUCTURE = [
@@ -295,7 +163,7 @@ COMPONENT_SURVEY_STRUCTURE = [
             "wind turbine",
             "hydropower",
             "national grid",
-            "biogas plant",
+            "biogas plant"
             "other",
         ],
         "display_type": "multiple_choice_tickbox",
@@ -310,7 +178,7 @@ COMPONENT_SURVEY_STRUCTURE = [
         },
     },
     {
-        "question": "What is the installed capacity [kWp] of your photovoltaic system?",
+        "question": "What is the installed capacity [kWp] of of your photovoltaic system?",
         "question_id": "1.1",
         "possible_answers": TYPE_FLOAT,
     },
@@ -365,7 +233,7 @@ WATER_SUPPLY_TEMPLATE = [{
         "question": "Which water source do you use for TYPE_WATER_USE",
         "question_id": "3",
         "possible_answers": [
-            "groundwater well",
+            "groundwater well"
             "public tap water",
             "desalinated seawater",
             "river/creek",
@@ -405,7 +273,6 @@ WATER_SUPPLY_TEMPLATE = [{
     {
         "question": "Which energy source is the pump using?",
         "question_id": "3.1.2",
-        "display_type": "multiple_choice_tickbox",
         "possible_answers": [
             "manual",
             "diesel",
@@ -417,7 +284,7 @@ WATER_SUPPLY_TEMPLATE = [{
             "diesel": ["3.1.3"],
             "electricity (grid)": ["3.1.3"],
             "wind turbine": ["3.1.3"],
-            "photovoltaics": ["3.1.3"],
+            "photovoltaic system": ["3.1.3"],
         },
     },
     {
@@ -505,46 +372,43 @@ WATER_SUPPLY_TEMPLATE = [{
         ],
         "display_type": "multiple_choice_tickbox",
         "subquestion": {
-            "reverse osmosis": ["5.1", "5.2", "5.3"],
-            "membrane distillation": ["5.1", "5.2", "5.3"],
-            "ultrafiltration": ["5.1", "5.2", "5.3"],
-            "boiling": ["5.2", "5.3"],
-            "distillation": ["5.2", "5.3"],
-            "activated carbon filter": ["5.2", "5.3"],
-            "UV-disinfection": ["5.2", "5.3"],
-            "cartridge filter": ["5.2", "5.3"],
-            "microfiltration": ["5.2", "5.3"],
-            "ceramic filter": ["5.2", "5.3"],
-            "nanofiltration": ["5.2", "5.3"],
-            "electrodialyis": ["5.2", "5.3"],
-            "slow sand filter": ["5.2", "5.3"],
-            "water softener": ["5.2", "5.3"],
-            "other": ["5.4", "5.1", "5.2", "5.3"]
+            "reverse osmosis": ["5.1", "5.2", "SEC_DW"],
+            "membrane distillation": ["5.1", "5.2", "SEC_DW"],
+            "ultrafiltration": ["5.1", "5.2", "SEC_DW"],
+            "boiling water": ["5.2", "SEC_DW"],
+            "distillation": ["5.2", "SEC_DW"],
+            "activated carbon_filter": ["5.2", "SEC_DW"],
+            "UV-disinfection": ["5.2", "SEC_DW"],
+            "cartridge filter": ["5.2", "SEC_DW"],
+            "microfiltration": ["5.2", "SEC_DW"],
+            "ceramic filter": ["5.2", "SEC_DW"],
+            "nanofiltration": ["5.2", "SEC_DW"],
+            "electrodialyis": ["5.2", "SEC_DW"],
+            "slow sand filter": ["5.2", "SEC_DW"],
+            "water softener": ["5.2", "SEC_DW"],
+            "other": ["5.3", "5.1", "5.2", "SEC_DW"]
         },
     },
-   {
-        "question": "What is the recovery rate [%]", #  of your WT_TYPE system?
+    # TODO: map the ticked answers to WT_TYPE
+    {
+        "question": "What is the recovery rate [%] of your WT_TYPE system?",
         "question_id": "5.1",
         "possible_answers": TYPE_FLOAT,
-        "display_type": "matrix"
     },
     {
-        "question": "What is the maximum flow rate [m³/h]", #  of your WT_TYPE system?
+        "question": "What is the maximum flow rate [m³/h] of your WT_TYPE system?",
         "question_id": "5.2",
         "possible_answers": TYPE_FLOAT,
-        "display_type": "matrix"
     },
-    {
-        "question": "What is the specific energy consumption (SEC) [kWh/m³]", #  of your WT_TYPE system?
-        "question_id": "5.3",
-        "possible_answers": TYPE_FLOAT,
-        "display_type": "matrix"
-    },
-
     {
         "question": "Which other water treatment technologies are you using to treat your TYPE_WATER_USE?",
-        "question_id": "5.4",
+        "question_id": "5.3",
         "possible_answers": TYPE_STRING,
+    },
+    {
+        "question": "What is the specific energy consumption (SEC) [kWh/m³] of your WT_TYPE system",
+        "question_id": "SEC_DW",
+        "possible_answers": TYPE_FLOAT,
     },
     {
         "question": "Do you typically experience TYPE_WATER_USE shortages from time to time?",
@@ -553,12 +417,30 @@ WATER_SUPPLY_TEMPLATE = [{
     },
 ]
 
-WATER_SUPPLY_TEMPLATE = generate_matrix_questions(
-    survey_questions=WATER_SUPPLY_TEMPLATE,
-    text_to_replace="WT_TYPE")
 
 
+def generate_water_questions(suffixes, survey_questions):
+    new_questions = []
+    for name, suffix in suffixes.items():
+        temp = copy.deepcopy(survey_questions)
+        for question in temp:
+            question["question"] = question["question"].replace("TYPE_WATER_USE", name)
+            id = question["question_id"]
+            question["question_id"] = id + suffix
+            subquestions = question.get("subquestion", {})
+            for subq in subquestions.keys():
+                subq_id = subquestions[subq]
+                if isinstance(subq_id, str):
+                    subq_id = [subq_id]
 
+                new_ids = [q_id + suffix for q_id in subq_id]
+                if len(new_ids) == 1:
+                    new_ids = new_ids[0]
+                subquestions[subq] = new_ids
+            if subquestions:
+                question["subquestion"] = subquestions
+            new_questions.append(question)
+    return new_questions
 
 WATER_SUPPLY_SURVEY_STRUCTURE = [
     {
@@ -571,11 +453,11 @@ WATER_SUPPLY_SURVEY_STRUCTURE = [
         "question_id": "2",
         "possible_answers": ["Yes", "No"],
         "subquestion": {
-            "Yes": ["3a", "4a", "5a", "6a", "3b", "4b", "5b", "6b"],
-            "No": ["3", "4", "5", "6"]
+            "yes": ["3a", "4a", "5a", "6a", "3b", "4b", "5b", "6b"],
+            "no": ["3", "4", "5", "6"]
         }
     },
-] + generate_generic_questions(WATER_SUPPLY_SPECIFIC, WATER_SUPPLY_TEMPLATE, text_to_replace="TYPE_WATER_USE") + [
+] + generate_water_questions(WATER_SUPPLY_SPECIFIC, WATER_SUPPLY_TEMPLATE) + [
     {
         "question": "How are you treating your waste water?",
         "question_id": "7",
@@ -592,13 +474,7 @@ WATER_SUPPLY_SURVEY_STRUCTURE = [
         # TODO: map all ticked answers to WWT_TYPE (Wastewater Treatment Type)
         #  and repeat the following questions for all of them
         "subquestion": {
-            "septic system": "7.1",
-            "constructed wetland": "7.1",
-            "centralized waste water treatment plant": "7.1",
-            "decentralized waste water treatment plant": "7.1",
-            "water recycling and reuse system": "7.1",
-            "disposal to environment without treatment": "7.1",
-            #"WWT_Type": "7.1",
+            "WWT_Type": "7.1",
             "other": ["7.2", "7.1"],
         },
     },
@@ -623,7 +499,7 @@ WATER_SUPPLY_SURVEY_STRUCTURE = [
             "composting toilet",
             "open field"
         ]
-    },
+    }
 ]
 
 CROPS_SURVEY_STRUCTURE = [
@@ -739,18 +615,19 @@ IRRIGATION_TYPE_SURVEY =[
         "display_type": "multiple_choice_tickbox",
         # TODO: map all ticked answers to IRRIGATION TYPE and repeat the following questions for all of them
         "subquestion": {
-            "other": ["9.2", "9.3", "9.4"],
-            "IRRIGATION_TYPE": ["9.3", "9.4"]
+            "other": ["9.3", "9.2"],
+            "IRRIGATION_TYPE": "9.2",
+
         },
     },
     {
         "question": "What is the maximum flow rate [m³/h] of the IRRIGATION_TYPE system that you have in place?",
-        "question_id": "9.3",
+        "question_id": "9.2",
         "possible_answers": TYPE_FLOAT,
     },
     {
         "question": "What is the other irrigation technology you are using?",
-        "question_id": "9.2",
+        "question_id": "9.3",
         "possible_answers": TYPE_STRING,
     },
     {
@@ -844,12 +721,7 @@ def check_subquestions_keys():
         possible_answers = question.get("possible_answers", [])
         for subq in subquestions.keys():
             if subq not in possible_answers:
-                print(f"The subquestion key '{subq}' of question '{question.get('question_id')}' is not listed within the allowed values. The allowed values are:\n{', '.join(possible_answers)}\n\n")
-
-def check_questions_format():
-    for i, question in enumerate(SURVEY_STRUCTURE):
-        if "question_id" not in question:
-            print(f"{i}th question of the survey does not have the mandatory field 'question_id'")
+                print(f"The subquestion key '{subq}' is not listed within the allowed values. The allowed values are:\n{', '.join(possible_answers)}\n\n")
 
 SUB_QUESTION_MAPPING = collect_subquestion_mapping()
 

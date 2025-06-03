@@ -7,6 +7,8 @@ import pandas as pd
 from oemof_industry.mimo_converter import MIMO
 from oemof_tabular_plugins.wefe.facades import PVPanel
 import datapackage as dp
+import tableschema
+
 
 COMPONENT_TEMPLATES_PATH = os.path.abspath(os.path.join(os.path.dirname(os.path.dirname(__file__)), "data"))
 
@@ -38,7 +40,12 @@ def list_available_components():
     component_to_csv_name_mappping = {}
     for r in p0.resources:
         category = r.name
-        resource_data = pd.DataFrame.from_records(r.read(keyed=True))
+        try:
+            resource_data = pd.DataFrame.from_records(r.read(keyed=True))
+        except tableschema.exceptions.CastError as err:
+            print(category)
+            print(err.errors)
+
         for component_name in resource_data.name.values:
             if component_name not in component_to_csv_name_mappping:
                 component_to_csv_name_mappping[component_name] = category

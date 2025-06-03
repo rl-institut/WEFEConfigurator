@@ -1,0 +1,14 @@
+name;carrier;tech;storage_capacity;storage_capacity_potential;capacity;efficiency;capacity_cost;storage_capacity_cost;marginal_cost;type;bus;invest_relation_output_capacity;invest_relation_input_output;expandable;verbose_name
+battery-storage;electricity;battery;0;;0;0.92;0;100;0;storage;dc-elec-bus;0.1;1;True;"Battery Storage"
+water-storage;water;water_storage;0;;0;0.92;0;100;0;storage;dc-elec-bus;0.1;1;True;"Water Storage"
+
+
+# TODO consider modelling groundwater as storage: es, groundwater can indeed be modeled as storage.
+# Groundwater storage refers to the volume of water stored in an aquifer, which can be influenced
+# by factors such as recharge (inflow) and discharge (outflow) rates.
+#This concept is crucial for understanding and managing water resources,
+# especially in regions dependent on groundwater for agriculture, drinking water, and industry.
+
+# Groundwater models often use specific storage (SS) values to predict how groundwater levels will respond
+# to various factors like pumping, recharge, and climate change2. These models help in making informed decisions
+# about water management and sustainability.
