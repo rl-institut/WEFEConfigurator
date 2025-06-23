@@ -17,7 +17,7 @@ then be interactively visualized through [dash](https://dash.plotly.com/).
 
 Make sure a supported Python Version (3.9 or greater) and an interpreter (preferably PyCharm) is installed on your system. 
 Install CBC solver for oemof-solph using the installation instructions: 
-https://oemof-solph.readthedocs.io/en/latest/readme.html#installing-a-solver
+https://github.com/oemof/oemof-solph?tab=readme-ov-file#installing-a-solver
 
 ## Installation
 
