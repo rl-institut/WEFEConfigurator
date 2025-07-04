@@ -16,11 +16,14 @@ def is_matrix_source(field):
             answer = True
     return answer
 
+
 @require_http_methods(["GET", "POST"])
 def view_survey_questions(request, scen_id=None):
 
     if request.method == "POST":
-        form = SurveyQuestionForm(request.POST, qs=SurveyAnswer.objects.filter(scenario_id=scen_id))
+        form = SurveyQuestionForm(
+            request.POST, qs=SurveyAnswer.objects.filter(scenario_id=scen_id)
+        )
 
         if form.is_valid():
             qs = SurveyAnswer.objects.filter(scenario_id=scen_id)
@@ -59,9 +62,7 @@ def view_survey_questions(request, scen_id=None):
                 new_answer.save()
 
         categories = [cat for cat in SURVEY_QUESTIONS_CATEGORIES.keys()]
-        form = SurveyQuestionForm(
-            qs=qs_answer
-        )
+        form = SurveyQuestionForm(qs=qs_answer)
 
         categories_map = []
         matrix_headers = {}
@@ -75,7 +76,7 @@ def view_survey_questions(request, scen_id=None):
             # TODO here one can know that the question
             if is_matrix_source(form.fields[field]):
                 subs = []
-                labels =[]
+                labels = []
                 question = get_survey_question_by_id(SURVEY_STRUCTURE, question_id)
                 for answer, subquestions in question["subquestion"].items():
                     labels.append(answer)
@@ -89,7 +90,6 @@ def view_survey_questions(request, scen_id=None):
                 matrix_headers[field] = subs
                 matrix_labels[field] = labels
 
-
         answer = render(
             request,
             "survey_layout.html",
@@ -99,7 +99,7 @@ def view_survey_questions(request, scen_id=None):
                 "categories_map": categories_map,
                 "categories": categories,
                 "categories_verbose": SURVEY_QUESTIONS_CATEGORIES,
-                "matrix_headers" : matrix_headers,
+                "matrix_headers": matrix_headers,
                 "matrix_labels": matrix_labels,
             },
         )

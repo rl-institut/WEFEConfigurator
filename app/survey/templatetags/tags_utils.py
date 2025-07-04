@@ -11,14 +11,17 @@ register = template.Library()
 def fill_spaces(string: str):
     return string.replace(" ", "_")
 
+
 @register.simple_tag
 def setvar(val=None):
     return val
+
 
 @register.filter
 def getval(val):
     # import pdb;pdb.set_trace()
     return str(val)
+
 
 @register.filter
 def pdb(element):
@@ -62,6 +65,7 @@ def is_subquestion(field):
             answer = True
     return answer
 
+
 @register.filter
 def is_subsubquestion(field):
     field_classes = field.field.widget.attrs.get("class")
@@ -70,6 +74,7 @@ def is_subsubquestion(field):
         if "sub_sub_question" in field_classes:
             answer = True
     return answer
+
 
 @register.filter
 def is_matrix(field):
@@ -80,6 +85,7 @@ def is_matrix(field):
             answer = True
     return answer
 
+
 @register.filter
 def is_matrix_source(field):
     field_classes = field.field.widget.attrs.get("class")
@@ -88,6 +94,7 @@ def is_matrix_source(field):
         if "matrix_source" in field_classes:
             answer = True
     return answer
+
 
 @register.filter
 def is_water_header(field_label):

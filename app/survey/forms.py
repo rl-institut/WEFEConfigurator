@@ -12,6 +12,8 @@ from .survey import SURVEY_STRUCTURE, SURVEY_CATEGORIES
 def is_matrix_source(field):
 
     return "matrix_source" in field.widget.attrs.get("class", "")
+
+
 class SurveyQuestionForm(forms.Form):
     def __init__(self, *args, **kwargs):
         self.qs_answers = kwargs.pop("qs", [])
@@ -19,7 +21,9 @@ class SurveyQuestionForm(forms.Form):
         for q in SURVEY_STRUCTURE:
             answer = self.qs_answers.get(question__question_id=q["question_id"])
             alv = answer.question.possible_answers
-            opts = {"label": f"{answer.question.question_id}: {answer.question.question}"}
+            opts = {
+                "label": f"{answer.question.question_id}: {answer.question.question}"
+            }
 
             # by default the subquestion are not required
             if answer.question.subquestion_to is not None:
@@ -28,30 +32,42 @@ class SurveyQuestionForm(forms.Form):
             if alv is not None:
                 try:
                     possible_answers = json.loads(alv)
-                    list_choices = [(pa, pa.replace("_", " ").capitalize()) for pa in possible_answers]
+                    list_choices = [
+                        (pa, pa.replace("_", " ").capitalize())
+                        for pa in possible_answers
+                    ]
 
                     if answer.question.multiple_answers is True:
                         opts["choices"] = list_choices
                         opts["widget"] = forms.CheckboxSelectMultiple
-                        self.fields[f"criteria_{answer.question.id}"] = forms.MultipleChoiceField(**opts)
+                        self.fields[f"criteria_{answer.question.id}"] = (
+                            forms.MultipleChoiceField(**opts)
+                        )
                     else:
                         opts["choices"] = [("", "----------")] + list_choices
-                        self.fields[f"criteria_{answer.question.id}"] = forms.ChoiceField(**opts)
+                        self.fields[f"criteria_{answer.question.id}"] = (
+                            forms.ChoiceField(**opts)
+                        )
                 except json.decoder.JSONDecodeError:
-                    self.fields[f"criteria_{answer.question.id}"] = forms.FloatField(**opts)
+                    self.fields[f"criteria_{answer.question.id}"] = forms.FloatField(
+                        **opts
+                    )
             else:
                 self.fields[f"criteria_{answer.question.id}"] = forms.FloatField(**opts)
-
 
             # treat sub question differently:
             # - links to onchange of supra question
             # - hide the sub question if the supra question's answer is not "Yes"
             if answer.question.subquestion_to is not None:
 
-                supra_question = SurveyQuestion.objects.get(question_id=answer.question.subquestion_to.question_id)
+                supra_question = SurveyQuestion.objects.get(
+                    question_id=answer.question.subquestion_to.question_id
+                )
 
                 # subquestion class
-                self.fields[f"criteria_{answer.question.id}"].widget.attrs.update({"class": "sub_question"})
+                self.fields[f"criteria_{answer.question.id}"].widget.attrs.update(
+                    {"class": "sub_question"}
+                )
 
                 # subsubquestion class
                 if supra_question.subquestion_to is not None:
@@ -63,16 +79,33 @@ class SurveyQuestionForm(forms.Form):
                                 if letter in answer:
                                     answer = answer.replace(letter, "")
                             return answer
-                        matrix_idxs = original_question_number(answer.question.id).replace(f"{original_question_number(supra_question.id)}.", "")
+
+                        matrix_idxs = original_question_number(
+                            answer.question.id
+                        ).replace(f"{original_question_number(supra_question.id)}.", "")
                         matrix_col_idx, matrix_row_idx = matrix_idxs.split(".")
 
-                        self.fields[f"criteria_{answer.question.id}"].widget.attrs.update({"class": f"sub_question sub_sub_question matrix_target matrix_row_{int(matrix_row_idx)+1} matrix_col_{int(matrix_col_idx)+1}"})
+                        self.fields[
+                            f"criteria_{answer.question.id}"
+                        ].widget.attrs.update(
+                            {
+                                "class": f"sub_question sub_sub_question matrix_target matrix_row_{int(matrix_row_idx)+1} matrix_col_{int(matrix_col_idx)+1}"
+                            }
+                        )
                         # self.fields[f"criteria_{answer.question.id}"].widget.attrs.update({"class": f"sub_question sub_sub_question matrix_target matrix_col_{int(matrix_col_idx)+1}"})
-                        supra_question_css = self.fields[f"criteria_{supra_question.id}"].widget.attrs["class"]
+                        supra_question_css = self.fields[
+                            f"criteria_{supra_question.id}"
+                        ].widget.attrs["class"]
                         if "matrix_source" not in supra_question_css:
-                            self.fields[f"criteria_{supra_question.id}"].widget.attrs["class"] =  f"{supra_question_css} matrix_source"
+                            self.fields[f"criteria_{supra_question.id}"].widget.attrs[
+                                "class"
+                            ] = f"{supra_question_css} matrix_source"
                     else:
-                        self.fields[f"criteria_{answer.question.id}"].widget.attrs.update({"class": "sub_question sub_sub_question"})
+                        self.fields[
+                            f"criteria_{answer.question.id}"
+                        ].widget.attrs.update(
+                            {"class": "sub_question sub_sub_question"}
+                        )
                 if is_matrix_source(self.fields[f"criteria_{supra_question.id}"]):
                     # here we know we are within matrix questions
                     self.fields[f"criteria_{supra_question.id}"].widget.attrs.update(
@@ -93,17 +126,24 @@ class SurveyQuestionForm(forms.Form):
                 if supra_answer.value is not None:
                     if answer.value:
                         if answer.question.multiple_answers is True:
-                            self.fields[f"criteria_{answer.question.id}"].initial = json.loads(answer.value.replace("'", '"'))
+                            self.fields[f"criteria_{answer.question.id}"].initial = (
+                                json.loads(answer.value.replace("'", '"'))
+                            )
                         else:
-                            self.fields[f"criteria_{answer.question.id}"].initial = answer.value
+                            self.fields[f"criteria_{answer.question.id}"].initial = (
+                                answer.value
+                            )
 
             else:
                 if answer.value:
                     if answer.question.multiple_answers is True:
-                        self.fields[f"criteria_{answer.question.id}"].initial = json.loads(answer.value.replace("'", '"'))
+                        self.fields[f"criteria_{answer.question.id}"].initial = (
+                            json.loads(answer.value.replace("'", '"'))
+                        )
                     else:
-                        self.fields[f"criteria_{answer.question.id}"].initial = answer.value
-
+                        self.fields[f"criteria_{answer.question.id}"].initial = (
+                            answer.value
+                        )
 
     def clean(self):
         cleaned_data = super().clean()
@@ -113,7 +153,9 @@ class SurveyQuestionForm(forms.Form):
 
                 question_id = record.replace("criteria_", "")
 
-                question = self.qs_answers.get(question__question_id=question_id).question
+                question = self.qs_answers.get(
+                    question__question_id=question_id
+                ).question
                 subquestions = question.subquestions
                 other_keys = []
 
@@ -123,7 +165,10 @@ class SurveyQuestionForm(forms.Form):
 
                 # if the question is a subquestion and the supra question was reinitialized, then the subquestion's answer are erased
                 if question.subquestion_to is not None:
-                    if f"criteria_{question.subquestion_to.question_id}" not in cleaned_data:
+                    if (
+                        f"criteria_{question.subquestion_to.question_id}"
+                        not in cleaned_data
+                    ):
                         cleaned_data[record] = None
 
                 selected_subquestions = []
@@ -143,7 +188,7 @@ class SurveyQuestionForm(forms.Form):
                                 pass
                             else:
                                 selected_subquestions.append(sq)
-                        selected_subquestions =list(set(selected_subquestions))
+                        selected_subquestions = list(set(selected_subquestions))
 
                     if cleaned_data[record]:
                         print(record)
@@ -152,9 +197,6 @@ class SurveyQuestionForm(forms.Form):
                     else:
                         cleaned_data[record] = None
                     # TODO when a supra answer is given, one need to make sure to cancel the sub answer from subquestions which are not allowed anymore
-
-
-
 
                 else:
 

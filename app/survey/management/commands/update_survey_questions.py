@@ -29,7 +29,9 @@ class Command(BaseCommand):
             qs = SurveyQuestion.objects.filter(question_id=question_id)
 
             if question_id in SUB_QUESTION_MAPPING:
-                asset_params["subquestion_to"] = SurveyQuestion.objects.get(question_id=SUB_QUESTION_MAPPING[question_id])
+                asset_params["subquestion_to"] = SurveyQuestion.objects.get(
+                    question_id=SUB_QUESTION_MAPPING[question_id]
+                )
 
             display_type = asset_params.pop("display_type", None)
             if display_type == "multiple_choice_tickbox":
@@ -60,6 +62,6 @@ class Command(BaseCommand):
                     asset = qs.get()
                     print("Update", asset.__dict__)
                     qs.update(**asset_params)
-                    #print(asset)
+                    # print(asset)
                     print("To", asset_params)
         # import pdb;pdb.set_trace()
