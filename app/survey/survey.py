@@ -254,7 +254,10 @@ def generate_matrix_questions(survey_questions, text_to_replace):
                         temp["question"] = temp["question"].replace(text_to_replace, supra_answer)
                         temp["question_id"] = ssq_id + "." + str(suffix)
                         # Replace the subquestion id in the supraquestion subquestions
-                        q["subquestion"][supra_answer][q["subquestion"][supra_answer].index(ssq_id)] = temp["question_id"]
+                        if isinstance(q["subquestion"][supra_answer], str):
+                            q["subquestion"][supra_answer] = temp["question_id"]
+                        else:
+                            q["subquestion"][supra_answer][q["subquestion"][supra_answer].index(ssq_id)] = temp["question_id"]
                         extra_questions[ssq_id].append(temp)
                     # update the number of extra questions
                     extra_number += len(extra_questions[ssq_id])
@@ -575,56 +578,64 @@ WATER_SUPPLY_SURVEY_STRUCTURE = [
             "No": ["3", "4", "5", "6"]
         }
     },
-] + generate_generic_questions(WATER_SUPPLY_SPECIFIC, WATER_SUPPLY_TEMPLATE, text_to_replace="TYPE_WATER_USE") + [
-    {
-        "question": "How are you treating your waste water?",
-        "question_id": "7",
-        "possible_answers": [
-            "septic system",
-            "constructed wetland",
-            "centralized waste water treatment plant",
-            "decentralized waste water treatment plant",
-            "water recycling and reuse system",
-            "disposal to environment without treatment",
-            "other",
-        ],
-        "display_type": "multiple_choice_tickbox",
-        # TODO: map all ticked answers to WWT_TYPE (Wastewater Treatment Type)
-        #  and repeat the following questions for all of them
-        "subquestion": {
-            "septic system": "7.1",
-            "constructed wetland": "7.1",
-            "centralized waste water treatment plant": "7.1",
-            "decentralized waste water treatment plant": "7.1",
-            "water recycling and reuse system": "7.1",
-            "disposal to environment without treatment": "7.1",
-            #"WWT_Type": "7.1",
-            "other": ["7.2", "7.1"],
+] \
++ generate_generic_questions(WATER_SUPPLY_SPECIFIC, WATER_SUPPLY_TEMPLATE, text_to_replace="TYPE_WATER_USE") \
++ generate_matrix_questions(
+    survey_questions=[
+        {
+            "question": "How are you treating your waste water?",
+            "question_id": "7",
+            "possible_answers": [
+                "septic system",
+                "constructed wetland",
+                "centralized waste water treatment plant",
+                "decentralized waste water treatment plant",
+                "water recycling and reuse system",
+                "disposal to environment without treatment",
+                "other",
+            ],
+            "display_type": "multiple_choice_tickbox",
+            # TODO: map all ticked answers to WWT_TYPE (Wastewater Treatment Type)
+            #  and repeat the following questions for all of them
+            "subquestion": {
+                "septic system": "7.1",
+                "constructed wetland": "7.1",
+                "centralized waste water treatment plant": "7.1",
+                "decentralized waste water treatment plant": "7.1",
+                "water recycling and reuse system": "7.1",
+                "disposal to environment without treatment": "7.1",
+                #"WWT_Type": "7.1",
+                "other": ["7.2", "7.1"],
+            },
         },
-    },
-    # should this question be repeated for each
-    {
-        "question": "How much wastewater can be handled  [m³/h] by the WWT_TYPE system in place?",
-        "question_id": "7.1",
-        "possible_answers": TYPE_FLOAT,
-    },
-    {
-        "question": "Please name the wastewater treatment method you are using",
-        "question_id": "7.2",
-        "possible_answers": TYPE_STRING,
-    },
-    {
-        "question": "Which kind of toilet are you using?",
-        "question_id": "7.3",
-        "possible_answers": [
-            "flush toilet",
-            "latrine",
-            "dry toilet",
-            "composting toilet",
-            "open field"
-        ]
-    },
-]
+        # should this question be repeated for each
+        {
+            "question": "How much wastewater can be handled  [m³/h] by the WWT_TYPE system in place?",
+            "question_id": "7.1",
+            "possible_answers": TYPE_FLOAT,
+            "display_type": "matrix"
+        },
+        {
+            "question": "Please name the wastewater treatment method you are using",
+            "question_id": "7.2",
+            "possible_answers": TYPE_STRING,
+        },
+        {
+            "question": "Which kind of toilet are you using?",
+            "question_id": "7.3",
+            "possible_answers": [
+                "flush toilet",
+                "latrine",
+                "dry toilet",
+                "composting toilet",
+                "open field"
+            ]
+        },
+
+    ],
+    text_to_replace="WWT_TYPE"
+)
+
 
 CROPS_SURVEY_STRUCTURE = [
 
