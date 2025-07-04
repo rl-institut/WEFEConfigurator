@@ -615,20 +615,15 @@ WATER_SUPPLY_SURVEY_STRUCTURE = (
                     "other",
                 ],
                 "display_type": "multiple_choice_tickbox",
-                # TODO: map all ticked answers to WWT_TYPE (Wastewater Treatment Type)
-                #  and repeat the following questions for all of them
                 "subquestion": {
                     "septic system": "7.1",
                     "constructed wetland": "7.1",
                     "centralized waste water treatment plant": "7.1",
                     "decentralized waste water treatment plant": "7.1",
                     "water recycling and reuse system": "7.1",
-                    "disposal to environment without treatment": "7.1",
-                    # "WWT_Type": "7.1",
                     "other": ["7.2", "7.1"],
                 },
             },
-            # should this question be repeated for each
             {
                 "question": "How much wastewater can be handled  [m³/h] by the WWT_TYPE system in place?",
                 "question_id": "7.1",
