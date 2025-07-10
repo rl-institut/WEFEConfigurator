@@ -124,6 +124,7 @@ function triggerMatrixSubQuestion(new_value, subQuestionMapping) {
     container.querySelectorAll("." + row.rowClass).forEach(el => {
       el.style.display = "";
       if (el.tagName === "INPUT") el.disabled = false;
+      if (el.tagName === "SELECT") el.disabled = false;
       el.classList.add(newClass);
     });
   });

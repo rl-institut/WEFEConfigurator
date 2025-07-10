@@ -50,16 +50,18 @@ def view_survey_questions(request, scen_id=None):
 
         # Check if answers already exists, if not create them
         qs_answer = SurveyAnswer.objects.filter(scenario_id=scenario_id)
+        # import pdb;pdb.set_trace()
         if qs_answer.exists() is False:
             questions = SurveyQuestion.objects.all()
             print(questions)
             for question in questions:
-                print(question)
+                #print(question)
                 answer_param = {}
                 answer_param["scenario_id"] = scenario_id
                 answer_param["question"] = question
                 new_answer = SurveyAnswer(**answer_param)
                 new_answer.save()
+            qs_answer = SurveyAnswer.objects.filter(scenario_id=scenario_id)
 
         categories = [cat for cat in SURVEY_QUESTIONS_CATEGORIES.keys()]
         form = SurveyQuestionForm(qs=qs_answer)

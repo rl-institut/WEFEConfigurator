@@ -654,6 +654,7 @@ WATER_SUPPLY_SURVEY_STRUCTURE = (
 
 CROPS_SURVEY_STRUCTURE = (
     [
+        # TODO try commenting this out or to get question up
         {
             "question": "Are you cultivating crops?",
             "question_id": "8",
@@ -705,41 +706,41 @@ CROPS_SURVEY_STRUCTURE = (
                 ],
                 "display_type": "multiple_choice_tickbox",
                 "subquestion": {
-                    "other": ["8.2", "11.1", "11.2", "11.3"],
-                    "wheat": ["11.1", "11.2", "11.3"],
-                    "rice": ["11.1", "11.2", "11.3"],
-                    "soy bean": ["11.1", "11.2", "11.3"],
-                    "dry bean": ["11.1", "11.2", "11.3"],
-                    "peanut": ["11.1", "11.2", "11.3"],
-                    "potato": ["11.1", "11.2", "11.3"],
-                    "cassava": ["11.1", "11.2", "11.3"],
-                    "tomato": ["11.1", "11.2", "11.3"],
-                    "sweetcorn": ["11.1", "11.2", "11.3"],
-                    "green bean": ["11.1", "11.2", "11.3"],
-                    "carrot": ["11.1", "11.2", "11.3"],
-                    "cotton": ["11.1", "11.2", "11.3"],
-                    "banana": ["11.1", "11.2", "11.3"],
-                    "lettuce": ["11.1", "11.2", "11.3"],
-                    "cucumber": ["11.1", "11.2", "11.3"],
-                    "pineapple": ["11.1", "11.2", "11.3"],
-                    "avocado": ["11.1", "11.2", "11.3"],
-                    "quinoa": ["11.1", "11.2", "11.3"],
-                    "amaranth": ["11.1", "11.2", "11.3"],
-                    "guava": ["11.1", "11.2", "11.3"],
-                    "papaya": ["11.1", "11.2", "11.3"],
-                    "mango": ["11.1", "11.2", "11.3"],
-                    "sorghum": ["11.1", "11.2", "11.3"],
-                    "millet": ["11.1", "11.2", "11.3"],
-                    "yam": ["11.1", "11.2", "11.3"],
-                    "plantain": ["11.1", "11.2", "11.3"],
-                    "apple": ["11.1", "11.2", "11.3"],
-                    "sunflower": ["11.1", "11.2", "11.3"],
-                    "cacao": ["11.1", "11.2", "11.3"],
-                    "cashew": ["11.1", "11.2", "11.3"],
-                    "pumpkin": ["11.1", "11.2", "11.3"],
-                    "black bean": ["11.1", "11.2", "11.3"],
-                    "oat": ["11.1", "11.2", "11.3"],
-                    "pepper": ["11.1", "11.2", "11.3"],
+                    "wheat": ["11.1", "11.2", "11.3", "11.4", "11.5"],
+                    "rice": ["11.1", "11.2", "11.3", "11.4", "11.5"],
+                    "soy bean": ["11.1", "11.2", "11.3", "11.4", "11.5"],
+                    "dry bean": ["11.1", "11.2", "11.3", "11.4", "11.5"],
+                    "peanut": ["11.1", "11.2", "11.3", "11.4", "11.5"],
+                    "potato": ["11.1", "11.2", "11.3", "11.4", "11.5"],
+                    "cassava": ["11.1", "11.2", "11.3", "11.4", "11.5"],
+                    "tomato": ["11.1", "11.2", "11.3", "11.4", "11.5"],
+                    "sweetcorn": ["11.1", "11.2", "11.3", "11.4", "11.5"],
+                    "green bean": ["11.1", "11.2", "11.3", "11.4", "11.5"],
+                    "carrot": ["11.1", "11.2", "11.3", "11.4", "11.5"],
+                    "cotton": ["11.1", "11.2", "11.3", "11.4", "11.5"],
+                    "banana": ["11.1", "11.2", "11.3", "11.4", "11.5"],
+                    "lettuce": ["11.1", "11.2", "11.3", "11.4", "11.5"],
+                    "cucumber": ["11.1", "11.2", "11.3", "11.4", "11.5"],
+                    "pineapple": ["11.1", "11.2", "11.3", "11.4", "11.5"],
+                    "avocado": ["11.1", "11.2", "11.3", "11.4", "11.5"],
+                    "quinoa": ["11.1", "11.2", "11.3", "11.4", "11.5"],
+                    "amaranth": ["11.1", "11.2", "11.3", "11.4", "11.5"],
+                    "guava": ["11.1", "11.2", "11.3", "11.4", "11.5"],
+                    "papaya": ["11.1", "11.2", "11.3", "11.4", "11.5"],
+                    "mango": ["11.1", "11.2", "11.3", "11.4", "11.5"],
+                    "sorghum": ["11.1", "11.2", "11.3", "11.4", "11.5"],
+                    "millet": ["11.1", "11.2", "11.3", "11.4", "11.5"],
+                    "yam": ["11.1", "11.2", "11.3", "11.4", "11.5"],
+                    "plantain": ["11.1", "11.2", "11.3", "11.4", "11.5"],
+                    "apple": ["11.1", "11.2", "11.3", "11.4", "11.5"],
+                    "sunflower": ["11.1", "11.2", "11.3", "11.4", "11.5"],
+                    "cacao": ["11.1", "11.2", "11.3", "11.4", "11.5"],
+                    "cashew": ["11.1", "11.2", "11.3", "11.4", "11.5"],
+                    "pumpkin": ["11.1", "11.2", "11.3", "11.4", "11.5"],
+                    "black bean": ["11.1", "11.2", "11.3", "11.4", "11.5"],
+                    "oat": ["11.1", "11.2", "11.3", "11.4", "11.5"],
+                    "pepper": ["11.1", "11.2", "11.3", "11.4", "11.5"],
+                    "other": ["8.2", "11.1", "11.2", "11.3", "11.4", "11.5"],
                 },
             },
             {
@@ -761,6 +762,30 @@ CROPS_SURVEY_STRUCTURE = (
                 "possible_answers": TYPE_FLOAT,
                 "display_type": "matrix",
             },
+            {
+                "question": "Please indicate the irrigation technology you are using",
+                "question_id": "11.4",
+                "possible_answers": [
+                    "surface irrigation",
+                    "center-pivot irrigation",
+                    "irrigation sprinkler",
+                    "subsurface drip irrigation",
+                    "drip irrigation",
+                    "furrow irrigation",
+                    "basin irrigation",
+                    "border irrigation",
+                    "watering can",
+                    "smart irrigation system",
+                    "other",
+                ],
+                "display_type": "matrix",
+            },
+            {
+                "question": "What is the maximum flow rate [m³/h] of the irrigation system that you have in place?",
+                "question_id": "11.5",
+                "possible_answers": TYPE_FLOAT,
+                "display_type": "matrix",
+            },
         ],
         text_to_replace="CROP_TYPE",
     )
@@ -779,14 +804,14 @@ CROPS_SURVEY_STRUCTURE = (
         },
     ]
 )
-IRRIGATION_TYPE_SURVEY = (
-    [
+IRRIGATION_TYPE_SURVEY = [
         {
             "question": "Are you irrigating your CROP_TYPE cultivation?",
             "question_id": "9",
             "possible_answers": ["yes", "no"],
             "subquestion": {"yes": ["9.1", "9.2"]},
-        },
+        },]  + generate_matrix_questions(
+        survey_questions=[
         {
             "question": "Please indicate the irrigation technologies you are using",
             "question_id": "9.1",
@@ -802,28 +827,33 @@ IRRIGATION_TYPE_SURVEY = (
                 "watering can",
                 "smart irrigation system",
                 "other",
-                "IRRIGATION_TYPE",
             ],
             "display_type": "multiple_choice_tickbox",
             # TODO: map all ticked answers to IRRIGATION TYPE and repeat the following questions for all of them
             "subquestion": {
                 "other": ["9.2", "9.3", "9.4"],
-                "IRRIGATION_TYPE": ["9.3", "9.4"],
+                "surface irrigation": ["9.3", "9.4"],
+                "center-pivot irrigation": ["9.3", "9.4"],
+                "irrigation sprinkler": ["9.3", "9.4"],
+                "subsurface drip irrigation": ["9.3", "9.4"],
+                "drip irrigation": ["9.3", "9.4"],
+                "furrow irrigation": ["9.3", "9.4"],
+                "basin irrigation": ["9.3", "9.4"],
+                "border irrigation": ["9.3", "9.4"],
+                "watering can": ["9.3", "9.4"],
+                "smart irrigation system": ["9.3", "9.4"],
             },
         },
         {
             "question": "What is the maximum flow rate [m³/h] of the IRRIGATION_TYPE system that you have in place?",
             "question_id": "9.3",
             "possible_answers": TYPE_FLOAT,
-        },
-        {
-            "question": "What is the other irrigation technology you are using?",
-            "question_id": "9.2",
-            "possible_answers": TYPE_STRING,
+            "display_type": "matrix",
         },
         {
             "question": "For which crop types are you using this irrigation technology?",
             "question_id": "9.4",
+            "display_type": "matrix",
             "possible_answers": [  # TODO ideally reduce options to CROP_TYPE which have been ticked in question 8.1
                 "wheat",
                 "rice",
@@ -863,11 +893,19 @@ IRRIGATION_TYPE_SURVEY = (
             ],
         },
     ],
-)
+    text_to_replace="CROP_TYPE",
+
+) + [
+    {
+        "question": "What is the other irrigation technology you are using?",
+        "question_id": "9.2",
+        "possible_answers": TYPE_STRING,
+    },
+]
 
 
 SURVEY_STRUCTURE = (
-    COMPONENT_SURVEY_STRUCTURE + WATER_SUPPLY_SURVEY_STRUCTURE + CROPS_SURVEY_STRUCTURE
+    COMPONENT_SURVEY_STRUCTURE + WATER_SUPPLY_SURVEY_STRUCTURE + CROPS_SURVEY_STRUCTURE #+ IRRIGATION_TYPE_SURVEY
 )
 
 
