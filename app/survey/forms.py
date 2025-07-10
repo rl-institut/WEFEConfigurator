@@ -39,7 +39,7 @@ class SurveyQuestionForm(forms.Form):
 
                     if answer.question.multiple_answers is True:
                         opts["choices"] = list_choices
-                        opts["widget"] = forms.CheckboxSelectMultiple
+                        opts["widget"] = forms.CheckboxSelectMultiple(attrs={'class': 'checkbox-grid'})
                         self.fields[f"criteria_{answer.question.id}"] = (
                             forms.MultipleChoiceField(**opts)
                         )
@@ -83,13 +83,19 @@ class SurveyQuestionForm(forms.Form):
                         matrix_idxs = original_question_number(
                             answer.question.id
                         ).replace(f"{original_question_number(supra_question.id)}.", "")
-                        matrix_col_idx, matrix_row_idx = matrix_idxs.split(".")
+                        try:
+                            print(matrix_idxs)
+                            matrix_col_idx, matrix_row_idx = matrix_idxs.split(".")
+                        except:
+                            print(supra_question.__dict__)
+                            print(matrix_idxs)
+                            import pdb;pdb.set_trace()
 
                         self.fields[
                             f"criteria_{answer.question.id}"
                         ].widget.attrs.update(
                             {
-                                "class": f"sub_question sub_sub_question matrix_target matrix_row_{int(matrix_row_idx)+1} matrix_col_{int(matrix_col_idx)+1}"
+                                "class": f"sub_question sub_sub_question matrix_target label_row_{int(matrix_row_idx)+1} matrix_row_{int(matrix_row_idx)+1} matrix_col_{int(matrix_col_idx)+1}"
                             }
                         )
                         # self.fields[f"criteria_{answer.question.id}"].widget.attrs.update({"class": f"sub_question sub_sub_question matrix_target matrix_col_{int(matrix_col_idx)+1}"})
@@ -144,6 +150,28 @@ class SurveyQuestionForm(forms.Form):
                         self.fields[f"criteria_{answer.question.id}"].initial = (
                             answer.value
                         )
+
+            # if q.get("display_type") == "multiple_choice_tickbox":
+            #     question = q
+            #     #print(question)
+            #     #import pdb;pdb.set_trace()
+            #     q_classes = self.fields[
+            #         f"criteria_{answer.question.id}"
+            #     ].widget.attrs.get("class")
+            #     print(q_classes)
+            #     if q_classes is not None:
+            #         q_classes = f"{q_classes} multiple_answer"
+            #     else:
+            #         q_classes = "multiple_answer"
+            #     self.fields[
+            #         f"criteria_{answer.question.id}"
+            #     ].widget.attrs.update(
+            #         {
+            #             "class": q_classes
+            #         }
+            #     )
+
+
 
     def clean(self):
         cleaned_data = super().clean()

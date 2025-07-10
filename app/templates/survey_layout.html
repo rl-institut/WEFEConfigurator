@@ -49,10 +49,10 @@
 												{%else%}
                           {% comment %} here are begins the subquestion matrix container {% endcomment %}
 													{% setvar True as matrix_current %}
-													<div id="id_matrix_{{field.name}}" class="form-group container_matrix {% if field.errors %} invalid{% endif %} {% if field|is_subsubquestion %} subsubquestion {% endif %} {% if field|is_subquestion %} subquestion {% if field.initial %}{% else %} disabled {% endif %} {% endif %}">
+													<div id="id_matrix_{{field.name}}" class="form-group container_matrix {% if field.errors %} invalid{% endif %} {% if field|is_subsubquestion %} subsubquestion {% endif %} {% if field|is_subquestion %} subquestion {% if field.initial %}{% else %}{% endif %} {% endif %}">
 													<span  class="sub_question sub_sub_question matrix_target matrix_row_0 matrix_col_1"></span>
 													{% for header in matrix_labels|get_item:field.name %}
-														<span  class="sub_question sub_sub_question matrix_target matrix_row_{{ forloop.counter }} matrix_col_1">{{header}}</span>
+														<span  class="sub_question sub_sub_question matrix_target label_row_{{ forloop.counter }} matrix_row_{{ forloop.counter }} matrix_col_1">{{header}}</span>
 													{% endfor %}
 
 													{% for header in matrix_headers|get_item:field.name %}

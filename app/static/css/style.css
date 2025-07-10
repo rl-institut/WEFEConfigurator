@@ -42,7 +42,7 @@ padding-bottom: 0.5 rem;
 }
 
 /* Styling the label cells (1st column of each row) */
-.container_matrix > div:nth-child(4n+1) {
+.matrix_col_1{
   font-weight: bold;
   white-space: nowrap;
 }
@@ -113,3 +113,95 @@ padding-bottom: 0.5 rem;
 .matrix_row_13{grid-row:14;}
 .matrix_row_14{grid-row:15;}
 .matrix_row_15{grid-row:16;}
+.matrix_row_16 { grid-row: 17; }
+.matrix_row_17 { grid-row: 18; }
+.matrix_row_18 { grid-row: 19; }
+.matrix_row_19 { grid-row: 20; }
+.matrix_row_20 { grid-row: 21; }
+.matrix_row_21 { grid-row: 22; }
+.matrix_row_22 { grid-row: 23; }
+.matrix_row_23 { grid-row: 24; }
+.matrix_row_24 { grid-row: 25; }
+.matrix_row_25 { grid-row: 26; }
+.matrix_row_26 { grid-row: 27; }
+.matrix_row_27 { grid-row: 28; }
+.matrix_row_28 { grid-row: 29; }
+.matrix_row_29 { grid-row: 30; }
+.matrix_row_30 { grid-row: 31; }
+
+#div_id_criteria_1 > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 0.5rem;
+}
+
+#div_id_criteria_3 > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 0.5rem;
+}
+
+#div_id_criteria_3a > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 0.5rem;
+}
+
+#div_id_criteria_3b > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 0.5rem;
+}
+
+#div_id_criteria_4 > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 0.5rem;
+}
+
+#div_id_criteria_4a > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 0.5rem;
+}
+
+#div_id_criteria_4b > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 0.5rem;
+}
+
+#div_id_criteria_5 > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 0.5rem;
+}
+
+#div_id_criteria_5a > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 0.5rem;
+}
+
+#div_id_criteria_5b > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 0.5rem;
+}
+
+#div_id_criteria_7 > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 0.5rem;
+}
+
+#div_id_criteria_11 > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 0.5rem;
+}
+
+.form-group > label{
+padding-top: 1rem;
+padding-bottom: 0.5 rem;
+}
