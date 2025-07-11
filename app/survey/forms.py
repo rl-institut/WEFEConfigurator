@@ -84,7 +84,6 @@ class SurveyQuestionForm(forms.Form):
                             answer.question.id
                         ).replace(f"{original_question_number(supra_question.id)}.", "")
                         try:
-                            print(matrix_idxs)
                             matrix_col_idx, matrix_row_idx = matrix_idxs.split(".")
                         except:
                             print(supra_question.__dict__)
