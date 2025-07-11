@@ -309,7 +309,7 @@ def generate_matrix_questions(survey_questions, text_to_replace):
 COMPONENT_SURVEY_STRUCTURE = [
     # {"question": "", "question_id": "", "possible_answers":["answer1", "answer2"]}
     {
-        "question": "Which components do yoú use for electricity production?",
+        "question": "Which components do you use for electricity production?",
         "question_id": "1",
         "possible_answers": [
             "photovoltaic system",
@@ -467,8 +467,8 @@ WATER_SUPPLY_TEMPLATE = [
     {
         "question": "What is the price of the water provided by truck [$/m³]",
         "question_id": "3.2",
-        "possible_answers": TYPE_STRING,
         "variable_name": "marginal_cost",
+        "possible_answers": TYPE_FLOAT,
     },
     {
         "question": "Which other source do you use for TYPE_WATER_USE",
