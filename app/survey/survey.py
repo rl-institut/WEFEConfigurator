@@ -335,41 +335,49 @@ COMPONENT_SURVEY_STRUCTURE = [
     {
         "question": "What is the installed capacity [kWp] of your photovoltaic system?",
         "question_id": "1.1",
+        "variable_name": "capacity",
         "possible_answers": TYPE_FLOAT,
     },
     {
         "question": "How much battery storage capacity [kWh] do you have installed at your site?",
         "question_id": "1.2",
+        "variable_name": "capacity",
         "possible_answers": TYPE_FLOAT,
     },
     {
         "question": "What is the overall rated power [kW] of the installed diesel generators?",
         "question_id": "1.3",
+        "variable_name": "capacity",
         "possible_answers": TYPE_FLOAT,
     },
     {
         "question": "What ist the capacity [kW] of the installed wind power systems?",
         "question_id": "1.4",
+        "variable_name": "capacity",
         "possible_answers": TYPE_FLOAT,
     },
     {
         "question": "What ist the capacity [kW] of the installed hydropower systems?",
         "question_id": "1.5",
+        "variable_name": "capacity",
         "possible_answers": TYPE_FLOAT,
     },
     {
         "question": "What ist the capacity [kW] of the installed biogas plant??",
         "question_id": "1.6",
+        "variable_name": "capacity",
         "possible_answers": TYPE_STRING,
     },
     {
         "question": "Which other technology do you use for electricity supply?",
         "question_id": "1.7",
+        "variable_name": "supply",
         "possible_answers": TYPE_STRING,
     },
     {
         "question": "What is the installed capacity [kW] of this other electricity production technology",
         "question_id": "1.8",
+        "variable_name": "capacity",
         "possible_answers": TYPE_FLOAT,
     },
 ]
@@ -418,11 +426,12 @@ WATER_SUPPLY_TEMPLATE = [
     },
     {
         "question": "What is the height difference between the elevation of the water source"
-        "and the elevation of the location where you are using the water (both above sea level)?",
+        "and the elevation of the location where you are using the water?",
         INFOBOX: "Elevation of the water source refers to for example average elevation of the groundwater level,"
         " lake surface, or the elevation of the location of river water uptake. We require this information"
         "to obtain information regarding a potential water pump head",
         "question_id": "3.1.1",
+        "variable_name": "water_head_height",
         "possible_answers": TYPE_FLOAT,
     },
     {
@@ -446,21 +455,25 @@ WATER_SUPPLY_TEMPLATE = [
     {
         "question": "What is the rated power of the water pump?",
         "question_id": "3.1.3",
+        "variable_name": "capacity",
         "possible_answers": TYPE_FLOAT,
     },
     {
         "question": "What is the maximum throughput [m³/h] of the water pump",
         "question_id": "3.1.4",
+        "variable_name": "flow",
         "possible_answers": TYPE_FLOAT,
     },
     {
         "question": "What is the price of the water provided by truck [$/m³]",
         "question_id": "3.2",
         "possible_answers": TYPE_STRING,
+        "variable_name": "marginal_cost",
     },
     {
         "question": "Which other source do you use for TYPE_WATER_USE",
         "question_id": "3.3",
+        "variable_name": "water_supply",
         "possible_answers": TYPE_STRING,
     },
     {
@@ -485,17 +498,20 @@ WATER_SUPPLY_TEMPLATE = [
     {
         "question": "What is the Salinity of your TYPE_WATER_USE source [g/l]?",
         "question_id": "4.1",
+        "variable_name": "salinity",
         "possible_answers": TYPE_FLOAT,
     },
     {
         "question": "Which heavy metals are prevalent in your TYPE_WATER_USE source?",
         "question_id": "4.2",
+        "variable_name": "water_metals",
         "possible_answers": ["Arsenic", "Lead", "Mercury", "Cadmium", "Iron"],
         "display_type": "multiple_choice_tickbox",
     },
     {
         "question": "Which chemical contamination is prevalent in your drinking water source?",
         "question_id": "4.3",
+        "variable_name": "water_pollution",
         "possible_answers": [
             "pesticides",
             "pharmaceutical_residues",
@@ -548,18 +564,21 @@ WATER_SUPPLY_TEMPLATE = [
     {
         "question": "What is the recovery rate [%]",  #  of your WT_TYPE system?
         "question_id": "5.1",
+        "variable_name": "recovery_rate",
         "possible_answers": TYPE_FLOAT,
         "display_type": "matrix",
     },
     {
         "question": "What is the maximum flow rate [m³/h]",  #  of your WT_TYPE system?
         "question_id": "5.2",
+        "variable_name": "flow_rate",
         "possible_answers": TYPE_FLOAT,
         "display_type": "matrix",
     },
     {
         "question": "What is the specific energy consumption (SEC) [kWh/m³]",  #  of your WT_TYPE system?
         "question_id": "5.3",
+        "variable_name": "flow_rate",
         "possible_answers": TYPE_FLOAT,
         "display_type": "matrix",
     },
@@ -627,17 +646,20 @@ WATER_SUPPLY_SURVEY_STRUCTURE = (
             {
                 "question": "How much wastewater can be handled  [m³/h] by the WWT_TYPE system in place?",
                 "question_id": "7.1",
+                "variable_name": "flow_rate",
                 "possible_answers": TYPE_FLOAT,
                 "display_type": "matrix",
             },
             {
                 "question": "Please name the wastewater treatment method you are using",
                 "question_id": "7.2",
+                "variable_name": "wastewater_treatment",
                 "possible_answers": TYPE_STRING,
             },
             {
                 "question": "Which kind of toilet are you using?",
                 "question_id": "7.3",
+                "variable_name": "toilet_type",
                 "possible_answers": [
                     "flush toilet",
                     "latrine",
@@ -746,6 +768,7 @@ CROPS_SURVEY_STRUCTURE = (
             {
                 "question": "What is the size of the area on which you are cultivating [m²]?",
                 "question_id": "11.1",
+                "variable_name": "installed_capacity",
                 "possible_answers": TYPE_STRING,
                 "display_type": "matrix",
             },
@@ -753,12 +776,14 @@ CROPS_SURVEY_STRUCTURE = (
                 "question": "What is your annual production [kg]",
                 INFOBOX: "Note that here we refer to actual [CROP_TYPE] biomass used for food production",
                 "question_id": "11.2",
+                "variable_name": "crop_production",
                 "possible_answers": TYPE_STRING,
                 "display_type": "matrix",
             },
             {
                 "question": "How much organic waste occurs annually [kg/year] from the cultivation in place?",
                 "question_id": "11.3",
+                "variable_name": "biomass_production",
                 "possible_answers": TYPE_FLOAT,
                 "display_type": "matrix",
             },
@@ -783,6 +808,7 @@ CROPS_SURVEY_STRUCTURE = (
             {
                 "question": "What is the maximum flow rate [m³/h] of the irrigation system that you have in place?",
                 "question_id": "11.5",
+                "variable_name": "flow_rate",
                 "possible_answers": TYPE_FLOAT,
                 "display_type": "matrix",
             },
@@ -974,7 +1000,6 @@ def check_questions_format():
 
 
 SUB_QUESTION_MAPPING = collect_subquestion_mapping()
-
 
 def map_subquestions():
     """
