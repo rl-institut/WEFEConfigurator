@@ -7,6 +7,9 @@ TYPE_FLOAT = "float"
 TYPE_INT = "int"
 TYPE_STRING = "string"
 TYPE_WATER = "string"
+TYPE_COMPONENT = "component"
+TYPE_COMPONENT_ATTRIBUTE = "attribute"
+TYPE_NO_MAP = "skip"
 INFOBOX = "description"
 
 
@@ -321,6 +324,7 @@ COMPONENT_SURVEY_STRUCTURE = [
             "biogas plant",
             "other",
         ],
+        "answer_map_to": TYPE_COMPONENT,
         "display_type": "multiple_choice_tickbox",
         "subquestion": {
             "photovoltaic system": "1.1",
@@ -337,48 +341,56 @@ COMPONENT_SURVEY_STRUCTURE = [
         "question_id": "1.1",
         "variable_name": "capacity",
         "possible_answers": TYPE_FLOAT,
+        "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
     },
     {
         "question": "How much battery storage capacity [kWh] do you have installed at your site?",
         "question_id": "1.2",
         "variable_name": "capacity",
         "possible_answers": TYPE_FLOAT,
+        "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
     },
     {
         "question": "What is the overall rated power [kW] of the installed diesel generators?",
         "question_id": "1.3",
         "variable_name": "capacity",
         "possible_answers": TYPE_FLOAT,
+        "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
     },
     {
         "question": "What ist the capacity [kW] of the installed wind power systems?",
         "question_id": "1.4",
         "variable_name": "capacity",
         "possible_answers": TYPE_FLOAT,
+        "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
     },
     {
         "question": "What ist the capacity [kW] of the installed hydropower systems?",
         "question_id": "1.5",
         "variable_name": "capacity",
         "possible_answers": TYPE_FLOAT,
+        "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
     },
     {
         "question": "What ist the capacity [kW] of the installed biogas plant??",
         "question_id": "1.6",
         "variable_name": "capacity",
-        "possible_answers": TYPE_STRING,
+        "possible_answers": TYPE_FLOAT,
+        "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
     },
     {
         "question": "Which other technology do you use for electricity supply?",
         "question_id": "1.7",
         "variable_name": "supply",
         "possible_answers": TYPE_STRING,
+        "answer_map_to": TYPE_COMPONENT,
     },
     {
         "question": "What is the installed capacity [kW] of this other electricity production technology",
         "question_id": "1.8",
         "variable_name": "capacity",
         "possible_answers": TYPE_FLOAT,
+        "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
     },
 ]
 
@@ -406,6 +418,7 @@ WATER_SUPPLY_TEMPLATE = [
             "bottled water",
             "other",
         ],
+        "answer_map_to": TYPE_COMPONENT,
         "display_type": "multiple_choice_tickbox",
         "subquestion": {
             "groundwater well": ["3.1"],
@@ -420,6 +433,7 @@ WATER_SUPPLY_TEMPLATE = [
         "question": "Are water pumps required to convey water from the source to the point of consumption?",
         "question_id": "3.1",
         "possible_answers": ["Yes", "No"],
+        "answer_map_to": TYPE_COMPONENT,
         "subquestion": {
             "Yes": ["3.1.1", "3.1.2", "3.1.4"],
         },
@@ -431,7 +445,8 @@ WATER_SUPPLY_TEMPLATE = [
         " lake surface, or the elevation of the location of river water uptake. We require this information"
         "to obtain information regarding a potential water pump head",
         "question_id": "3.1.1",
-        "variable_name": "water_head_height",
+        "variable_name": "head",
+        "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
         "possible_answers": TYPE_FLOAT,
     },
     {
@@ -445,6 +460,7 @@ WATER_SUPPLY_TEMPLATE = [
             "wind turbine",
             "photovoltaics",
         ],
+        "answer_map_to": TYPE_COMPONENT,
         "subquestion": {
             "diesel": ["3.1.3"],
             "electricity (grid)": ["3.1.3"],
@@ -457,24 +473,28 @@ WATER_SUPPLY_TEMPLATE = [
         "question_id": "3.1.3",
         "variable_name": "capacity",
         "possible_answers": TYPE_FLOAT,
+        "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
     },
     {
         "question": "What is the maximum throughput [m³/h] of the water pump",
         "question_id": "3.1.4",
         "variable_name": "flow",
         "possible_answers": TYPE_FLOAT,
+        "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
     },
     {
         "question": "What is the price of the water provided by truck [$/m³]",
         "question_id": "3.2",
         "variable_name": "marginal_cost",
         "possible_answers": TYPE_FLOAT,
+        "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
     },
     {
         "question": "Which other source do you use for TYPE_WATER_USE",
         "question_id": "3.3",
         "variable_name": "water_supply",
         "possible_answers": TYPE_STRING,
+        "answer_map_to": TYPE_COMPONENT,
     },
     {
         "question": "Do you encounter water quality issues at your TYPE_WATER_USE source, if yes which?",
@@ -500,6 +520,7 @@ WATER_SUPPLY_TEMPLATE = [
         "question_id": "4.1",
         "variable_name": "salinity",
         "possible_answers": TYPE_FLOAT,
+        "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
     },
     {
         "question": "Which heavy metals are prevalent in your TYPE_WATER_USE source?",
@@ -507,9 +528,11 @@ WATER_SUPPLY_TEMPLATE = [
         "variable_name": "water_metals",
         "possible_answers": ["Arsenic", "Lead", "Mercury", "Cadmium", "Iron"],
         "display_type": "multiple_choice_tickbox",
+        "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
+
     },
     {
-        "question": "Which chemical contamination is prevalent in your drinking water source?",
+        "question": "Which chemical contamination is prevalent in your TYPE_WATER_USE source?",
         "question_id": "4.3",
         "variable_name": "water_pollution",
         "possible_answers": [
@@ -518,6 +541,7 @@ WATER_SUPPLY_TEMPLATE = [
             "fertilizers",
             "industrial_chemicals",
         ],
+        "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
         "display_type": "multiple_choice_tickbox",
     },
     {
@@ -542,6 +566,7 @@ WATER_SUPPLY_TEMPLATE = [
             "chlorination",
             "other",
         ],
+        "answer_map_to": TYPE_COMPONENT,
         "display_type": "multiple_choice_tickbox",
         "subquestion": {
             "reverse osmosis": ["5.1", "5.2", "5.3"],
@@ -566,6 +591,7 @@ WATER_SUPPLY_TEMPLATE = [
         "question_id": "5.1",
         "variable_name": "recovery_rate",
         "possible_answers": TYPE_FLOAT,
+        "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
         "display_type": "matrix",
     },
     {
@@ -573,6 +599,7 @@ WATER_SUPPLY_TEMPLATE = [
         "question_id": "5.2",
         "variable_name": "flow_rate",
         "possible_answers": TYPE_FLOAT,
+        "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
         "display_type": "matrix",
     },
     {
@@ -580,17 +607,20 @@ WATER_SUPPLY_TEMPLATE = [
         "question_id": "5.3",
         "variable_name": "flow_rate",
         "possible_answers": TYPE_FLOAT,
+        "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
         "display_type": "matrix",
     },
     {
         "question": "Which other water treatment technologies are you using to treat your TYPE_WATER_USE?",
         "question_id": "5.4",
         "possible_answers": TYPE_STRING,
+        "answer_map_to": TYPE_COMPONENT,
     },
     {
         "question": "Do you typically experience TYPE_WATER_USE shortages from time to time?",
         "question_id": "6",
         "possible_answers": ["Yes", "No"],
+        "answer_map_to": TYPE_COMPONENT,
     },
 ]
 
@@ -633,6 +663,7 @@ WATER_SUPPLY_SURVEY_STRUCTURE = (
                     "disposal to environment without treatment",
                     "other",
                 ],
+                "answer_map_to": TYPE_COMPONENT,
                 "display_type": "multiple_choice_tickbox",
                 "subquestion": {
                     "septic system": "7.1",
@@ -648,6 +679,7 @@ WATER_SUPPLY_SURVEY_STRUCTURE = (
                 "question_id": "7.1",
                 "variable_name": "flow_rate",
                 "possible_answers": TYPE_FLOAT,
+                "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
                 "display_type": "matrix",
             },
             {
@@ -655,6 +687,7 @@ WATER_SUPPLY_SURVEY_STRUCTURE = (
                 "question_id": "7.2",
                 "variable_name": "wastewater_treatment",
                 "possible_answers": TYPE_STRING,
+                "answer_map_to": TYPE_NO_MAP,
             },
             {
                 "question": "Which kind of toilet are you using?",
@@ -667,6 +700,7 @@ WATER_SUPPLY_SURVEY_STRUCTURE = (
                     "composting toilet",
                     "open field",
                 ],
+                "answer_map_to": TYPE_COMPONENT,
             },
         ],
         text_to_replace="WWT_TYPE",
@@ -726,6 +760,7 @@ CROPS_SURVEY_STRUCTURE = (
                     "pepper",
                     "other",
                 ],
+                "answer_map_to": TYPE_COMPONENT,
                 "display_type": "multiple_choice_tickbox",
                 "subquestion": {
                     "wheat": ["11.1", "11.2", "11.3", "11.4", "11.5"],
@@ -769,7 +804,8 @@ CROPS_SURVEY_STRUCTURE = (
                 "question": "What is the size of the area on which you are cultivating [m²]?",
                 "question_id": "11.1",
                 "variable_name": "installed_capacity",
-                "possible_answers": TYPE_STRING,
+                "possible_answers": TYPE_FLOAT,
+                "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
                 "display_type": "matrix",
             },
             {
@@ -777,7 +813,8 @@ CROPS_SURVEY_STRUCTURE = (
                 INFOBOX: "Note that here we refer to actual [CROP_TYPE] biomass used for food production",
                 "question_id": "11.2",
                 "variable_name": "crop_production",
-                "possible_answers": TYPE_STRING,
+                "possible_answers": TYPE_FLOAT,
+                "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
                 "display_type": "matrix",
             },
             {
@@ -785,6 +822,7 @@ CROPS_SURVEY_STRUCTURE = (
                 "question_id": "11.3",
                 "variable_name": "biomass_production",
                 "possible_answers": TYPE_FLOAT,
+                "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
                 "display_type": "matrix",
             },
             {
@@ -803,6 +841,7 @@ CROPS_SURVEY_STRUCTURE = (
                     "smart irrigation system",
                     "other",
                 ],
+                "answer_map_to": TYPE_COMPONENT,
                 "display_type": "matrix",
             },
             {
@@ -810,6 +849,7 @@ CROPS_SURVEY_STRUCTURE = (
                 "question_id": "11.5",
                 "variable_name": "flow_rate",
                 "possible_answers": TYPE_FLOAT,
+                "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
                 "display_type": "matrix",
             },
         ],
@@ -820,6 +860,7 @@ CROPS_SURVEY_STRUCTURE = (
             "question": "Which other crops not mentioned above are you cultivating",
             "question_id": "8.2",
             "possible_answers": TYPE_STRING,
+            "answer_map_to": TYPE_COMPONENT,
         },
         {
             "question": "Are you interested to combine electricity and crop production on the same land in the form of"
@@ -827,6 +868,7 @@ CROPS_SURVEY_STRUCTURE = (
             " on the same land?",
             "question_id": "10",
             "possible_answers": ["yes", "no"],
+            "answer_map_to": TYPE_COMPONENT,
         },
     ]
 )
@@ -1000,6 +1042,7 @@ def check_questions_format():
 
 
 SUB_QUESTION_MAPPING = collect_subquestion_mapping()
+
 
 def map_subquestions():
     """
