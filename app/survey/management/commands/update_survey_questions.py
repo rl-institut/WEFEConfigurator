@@ -25,6 +25,8 @@ class Command(BaseCommand):
         assets = SURVEY_STRUCTURE
         for asset_params in assets:
             question_id = asset_params.get("question_id")
+            asset_params.pop("answer_map_to", None)
+            asset_params.pop("variable_name", None)
 
             qs = SurveyQuestion.objects.filter(question_id=question_id)
 
