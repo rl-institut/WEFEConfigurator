@@ -1,0 +1,11 @@
+name;type;carrier;tech;expandable;capacity;capacity_cost;marginal_cost;electricity_bus;water_in_bus;water_out_bus;capex;opex_fix;age;lifetime;carrier_cost;resource_cost;land_requirement_factor;ghg_emission_factor;water_consumption_factor;land_requirement;ghg_emissions;water_footprint;annuity;verbose_name
+septic_system;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;wastewater-bus;septic-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Septic Tank
+constructed_wetland;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;wastewater-bus;discharge-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Constructed Wetland
+centralized_waste_water_treatment_plant;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;wastewater-bus;discharge-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Centralized Wastewater Treatment Plant
+decentralized_waste_water_treatment_plant;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;wastewater-bus;discharge-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Decentralized Wastewater Treatment Plant
+water_reuse_system;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;wastewater-bus;service-water-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Water Recycling and Reuse System
+
+# wastewater treatment currently is modeled with two inputs (electricity and water), however there are some solutions which do not require electricty!
+# TODO find solution for case that various filtration nad desalination system are put in series..;;;;;;;;;;;;;;;;;;;;;;;;
+# specific energy consumption eqauls  conversion_factor_ac-elec-bus (some kind of efficiency);;;;;;;;;;;;;;;;;;;;;;;;
+# conversion_rate_feed_bus always equals 1; could be omitted;;;;;;;;;;;;;;;;;;;;;;;
