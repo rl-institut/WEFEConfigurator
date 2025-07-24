@@ -1,0 +1,169 @@
+digraph {
+	subgraph cluster_1 {
+		color=black
+		label=Legends
+		Bus [color=lightgrey fixedsize=shape fontsize=10 height=0.3 shape=rectangle style=filled tooltip=Bus width=4.1]
+		Sink [color="#FFD6E0" fontsize=10 shape=trapezium]
+		Source [color="#A4ADFB" fontsize=10 shape=invtrapezium]
+		"Transforme
+r" [color="#7BF1A8" fontsize=10 shape=rectangle]
+		Storage [color="#90F1EF" fontsize=10 shape=rectangle style=rounded]
+	}
+	"seawater-bus" [color=lightgrey fixedsize=shape fontsize=10 height=0.3 shape=rectangle style=filled tooltip="seawater-bus" width=4.1]
+	"ac-elec-bus" [color=lightgrey fixedsize=shape fontsize=10 height=0.3 shape=rectangle style=filled tooltip="ac-elec-bus" width=4.1]
+	"dc-elec-bus" [color=lightgrey fixedsize=shape fontsize=10 height=0.3 shape=rectangle style=filled tooltip="dc-elec-bus" width=4.1]
+	"brine-bus" [color=lightgrey fixedsize=shape fontsize=10 height=0.3 shape=rectangle style=filled tooltip="brine-bus" width=4.1]
+	"solar-bus" [color=lightgrey fixedsize=shape fontsize=10 height=0.3 shape=rectangle style=filled tooltip="solar-bus" width=4.1]
+	"wind-bus" [color=lightgrey fixedsize=shape fontsize=10 height=0.3 shape=rectangle style=filled tooltip="wind-bus" width=4.1]
+	"drinking-water-bus" [color=lightgrey fixedsize=shape fontsize=10 height=0.3 shape=rectangle style=filled tooltip="drinking-water-bus" width=4.1]
+	"service-water-bus" [color=lightgrey fixedsize=shape fontsize=10 height=0.3 shape=rectangle style=filled tooltip="service-water-bus" width=4.1]
+	"precipitation-bus" [color=lightgrey fixedsize=shape fontsize=10 height=0.3 shape=rectangle style=filled tooltip="precipitation-bus" width=4.1]
+	"diesel-bus" [color=lightgrey fixedsize=shape fontsize=10 height=0.3 shape=rectangle style=filled tooltip="diesel-bus" width=4.1]
+	"groundwater-bus" [color=lightgrey fixedsize=shape fontsize=10 height=0.3 shape=rectangle style=filled tooltip="groundwater-bus" width=4.1]
+	"diesel-gen
+erator" [color="#7BF1A8" fontsize=10 shape=rectangle]
+	inverter [color="#7BF1A8" fontsize=10 shape=rectangle]
+	"seawater-s
+ource" [color="#A4ADFB" fontsize=10 shape=invtrapezium]
+	"solar-reso
+urce" [color="#A4ADFB" fontsize=10 shape=invtrapezium]
+	"wind-resou
+rce" [color="#A4ADFB" fontsize=10 shape=invtrapezium]
+	"water-truc
+k" [color="#A4ADFB" fontsize=10 shape=invtrapezium]
+	"precipitat
+ion" [color="#A4ADFB" fontsize=10 shape=invtrapezium]
+	diesel [color="#A4ADFB" fontsize=10 shape=invtrapezium]
+	"groundwate
+r" [color="#A4ADFB" fontsize=10 shape=invtrapezium]
+	"bottled-wa
+ter" [color="#A4ADFB" fontsize=10 shape=invtrapezium]
+	"electricit
+y-grid" [color="#A4ADFB" fontsize=10 shape=invtrapezium]
+	"electricit
+y-excess" [color="#FFD6E0" fontsize=10 shape=trapezium]
+	"brine-exce
+ss" [color="#FFD6E0" fontsize=10 shape=trapezium]
+	"excess-ser
+vice-water" [color="#FFD6E0" fontsize=10 shape=trapezium]
+	"excess-dri
+nking-wate
+r" [color="#FFD6E0" fontsize=10 shape=trapezium]
+	"drinking-w
+ater-deman
+d" [color="#FFD6E0" fontsize=10 shape=trapezium]
+	"service-wa
+ter-demand" [color="#FFD6E0" fontsize=10 shape=trapezium]
+	"elec-deman
+d" [color="#FFD6E0" fontsize=10 shape=trapezium]
+	"seawater-r
+everse-osm
+osis" [fontsize=10]
+	"battery-st
+orage" [color="#90F1EF" fontsize=10 shape=rectangle style=rounded]
+	"drinking-w
+ater-stora
+ge" [color="#90F1EF" fontsize=10 shape=rectangle style=rounded]
+	"service-wa
+ter-storag
+e" [color="#90F1EF" fontsize=10 shape=rectangle style=rounded]
+	"photovolta
+ics" [color="#A4ADFB" fontsize=10 shape=invtrapezium]
+	"rainwater-
+harvesting" [color="#A4ADFB" fontsize=10 shape=invtrapezium]
+	"condensed-
+water" [color="#A4ADFB" fontsize=10 shape=invtrapezium]
+	"wind-turbi
+ne" [color="#A4ADFB" fontsize=10 shape=invtrapezium]
+	"water-filt
+ration-sys
+tem" [color="#7BF1A8" fontsize=10 shape=rectangle]
+	"water pump" [color="#7BF1A8" fontsize=10 shape=rectangle]
+	"seawater-s
+ource" -> "seawater-bus"
+	"seawater-bus" -> "seawater-r
+everse-osm
+osis"
+	"electricit
+y-grid" -> "ac-elec-bus"
+	"diesel-gen
+erator" -> "ac-elec-bus"
+	inverter -> "ac-elec-bus"
+	"ac-elec-bus" -> "electricit
+y-excess"
+	"ac-elec-bus" -> "elec-deman
+d"
+	"ac-elec-bus" -> "seawater-r
+everse-osm
+osis"
+	"ac-elec-bus" -> "water-filt
+ration-sys
+tem"
+	"ac-elec-bus" -> "water pump"
+	"battery-st
+orage" -> "dc-elec-bus"
+	"wind-turbi
+ne" -> "dc-elec-bus"
+	"photovolta
+ics" -> "dc-elec-bus"
+	"dc-elec-bus" -> inverter
+	"dc-elec-bus" -> "battery-st
+orage"
+	"seawater-r
+everse-osm
+osis" -> "brine-bus"
+	"brine-bus" -> "brine-exce
+ss"
+	"solar-reso
+urce" -> "solar-bus"
+	"wind-resou
+rce" -> "wind-bus"
+	"drinking-w
+ater-stora
+ge" -> "drinking-water-bus"
+	"bottled-wa
+ter" -> "drinking-water-bus"
+	"water-filt
+ration-sys
+tem" -> "drinking-water-bus"
+	"seawater-r
+everse-osm
+osis" -> "drinking-water-bus"
+	"drinking-water-bus" -> "excess-dri
+nking-wate
+r"
+	"drinking-water-bus" -> "drinking-w
+ater-deman
+d"
+	"drinking-water-bus" -> "drinking-w
+ater-stora
+ge"
+	"condensed-
+water" -> "service-water-bus"
+	"service-wa
+ter-storag
+e" -> "service-water-bus"
+	"water-truc
+k" -> "service-water-bus"
+	"rainwater-
+harvesting" -> "service-water-bus"
+	"water pump" -> "service-water-bus"
+	"service-water-bus" -> "excess-ser
+vice-water"
+	"service-water-bus" -> "service-wa
+ter-demand"
+	"service-water-bus" -> "service-wa
+ter-storag
+e"
+	"service-water-bus" -> "water-filt
+ration-sys
+tem"
+	"precipitat
+ion" -> "precipitation-bus"
+	diesel -> "diesel-bus"
+	"diesel-bus" -> "diesel-gen
+erator"
+	"groundwate
+r" -> "groundwater-bus"
+	"groundwater-bus" -> "water pump"
+}

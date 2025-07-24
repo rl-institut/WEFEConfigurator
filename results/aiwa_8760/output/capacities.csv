@@ -1,0 +1,7 @@
+,Component name,Capacity,Optimized Capacity,Capacity Total,Maximum Capacity,unit
+6,inverter,0.0,101.88234,101.88234,,[kW]
+9,battery-storage,0.0,0.91963817,0.91963817,,[kWh]
+12,photovoltaics,0.0,142.13928,142.13928,,[kW]
+20,water-filtration-system,0.0,5.8459313,5.8459313,,[m³/h]
+25,service-water-storage,0.0,0.4,20.4,,[m³]
+30,water pump,0.0,16.29315,16.29315,,[m³/h]

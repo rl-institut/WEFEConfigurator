@@ -1,0 +1,41 @@
+bus,direction,asset,carrier,facade_type,Upfront Investment Costs,Annuity Total
+ac-elec-bus,in,elec-demand,electricity,load,,
+ac-elec-bus,in,electricity-excess,electricity,excess,,
+ac-elec-bus,in,seawater-reverse-osmosis,electricity,ro,,
+ac-elec-bus,in,water pump,electricity,water-pump,,
+ac-elec-bus,in,water-filtration-system,electricity,water-filtration,,
+ac-elec-bus,out,diesel-generator,electricity,conversion,-0.0,-0.0
+ac-elec-bus,out,electricity-grid,electricity,dispatchable,,0.0
+ac-elec-bus,out,inverter,electricity,conversion,35658.819,51496.893267819214
+brine-bus,in,brine-excess,water,excess,,
+brine-bus,out,seawater-reverse-osmosis,water,ro,,
+dc-elec-bus,in,battery-storage,electricity,storage,595.00589599,786.2070573937543
+dc-elec-bus,in,inverter,electricity,conversion,,
+dc-elec-bus,out,battery-storage,electricity,storage,595.00589599,786.2070573937543
+dc-elec-bus,out,photovoltaics,electricity,volatile,71069.64000000001,76380.4819482715
+dc-elec-bus,out,wind-turbine,electricity,volatile,-0.0,-0.0
+diesel-bus,in,diesel-generator,energy,conversion,,
+diesel-bus,out,diesel,energy,dispatchable,,-0.0
+drinking-water-bus,in,drinking-water-demand,water,load,,
+drinking-water-bus,in,drinking-water-storage,water,storage,-0.0,-0.0
+drinking-water-bus,in,excess-drinking-water,water,excess,,
+drinking-water-bus,out,bottled-water,water,dispatchable,,-0.0
+drinking-water-bus,out,drinking-water-storage,water,storage,-0.0,-0.0
+drinking-water-bus,out,seawater-reverse-osmosis,water,ro,,
+drinking-water-bus,out,water-filtration-system,water,water-filtration,584.59313,1526.319533818515
+groundwater-bus,in,water pump,water,water-pump,,
+groundwater-bus,out,groundwater,water,dispatchable,,0.0
+precipitation-bus,out,precipitation,water,dispatchable,,-0.0
+seawater-bus,in,seawater-reverse-osmosis,water,ro,-0.0,-0.0
+seawater-bus,out,seawater-source,water,dispatchable,,-0.0
+service-water-bus,in,excess-service-water,water,excess,,
+service-water-bus,in,service-water-demand,water,load,,
+service-water-bus,in,service-water-storage,water,storage,74.4,68.0727294921875
+service-water-bus,in,water-filtration-system,water,water-filtration,,
+service-water-bus,out,condensed-water,water,volatile,,
+service-water-bus,out,rainwater-harvesting,water,volatile,-0.0,-0.0
+service-water-bus,out,service-water-storage,water,storage,74.4,68.0727294921875
+service-water-bus,out,water pump,water,water-pump,81465.75,66790.06905256349
+service-water-bus,out,water-truck,water,dispatchable,,0.0
+solar-bus,out,solar-resource,energy,dispatchable,,-0.0
+wind-bus,out,wind-resource,energy,dispatchable,,-0.0

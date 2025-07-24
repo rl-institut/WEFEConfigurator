@@ -1,0 +1,4 @@
+type;profile;name;region;year;bus;amount
+load;drinking-water;drinking-water-demand;DE;2021;drinking-water-bus;1
+load;drinking-water;service-water-demand;CO;2024;service-water-bus;1
+load;electricity;elec-demand;DE;2021;ac-elec-bus;1

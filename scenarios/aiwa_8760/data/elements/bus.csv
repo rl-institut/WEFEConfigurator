@@ -1,0 +1,12 @@
+name;type;balanced;carrier
+seawater-bus;bus;True;water
+ac-elec-bus;bus;True;electricity
+dc-elec-bus;bus;True;electricity
+brine-bus;bus;True;water
+solar-bus;bus;True;energy
+wind-bus;bus;True;energy
+drinking-water-bus;bus;True;water
+service-water-bus;bus;True;water
+precipitation-bus;bus;True;water
+diesel-bus;bus;True;energy
+groundwater-bus;bus;True;water
