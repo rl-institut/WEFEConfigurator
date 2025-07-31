@@ -35,10 +35,18 @@ If successful, the following message will appear:
 
 ![img.png](img.png)
 
-If unsuccessful, the message will say "cbc: not working", in which case an external executable "cbc.exe" file from a 
-successful installation should be included in your path and your system restarted.
+If unsuccessful, the message will say "cbc: not working", in which case an external executable "cbc.exe" file from a successful installation should be included in your path and your system restarted. Once all of these steps have been completed successfully, you are ready to run scenarios!
 
-Once all of these steps have been completed successfully, you are ready to run scenarios!
+## How to create a new component for our WEFE component library (facade)
+Joint effort of the research and practitioner community is required to model many other WEF components, including traditional, nature-based and low-cost approaches. The recipe for creating a new component in short is as follows:
+
+- copy paste a converter facade code
+- get rid of unused parameters in docstring and in attributes definition, add new required ones
+- modify build_solph_components accordingly (depending how complex your component is)
+- add the import into src/wefe/facades/__init__.py
+- add the component in the TYPEMAP in src/wefe/__init__.py
+
+A more detailed description follows soon in our readthedocs.
 
 ## Troubleshooting
 
