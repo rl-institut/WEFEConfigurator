@@ -37,7 +37,7 @@ If successful, the following message will appear:
 
 If unsuccessful, the message will say "cbc: not working", in which case an external executable "cbc.exe" file from a successful installation should be included in your path and your system restarted. Once all of these steps have been completed successfully, you are ready to run scenarios!
 
-## How to create a new component for our WEFE component library (facade)
+## How to create a new component for our WEFE component library
 Joint effort of the research and practitioner community is required to model many other WEF components, including traditional, nature-based and low-cost approaches. New components can be added in two ways: 
 1) Components which follow concepts of existing component classes can be created by filling a template of that class. In practice we recommend to start from an existing instance of that class which can be found in the WEFE Component Library. This instance is then adapted and filled with specific information for the new component to be modeled. 
 2) The second way is to create a new facade allowing to combine various component classes and introducing new functions (e.g. for conversion). In practice we also recommend to start from an existing facade and adapt it according to the characteristics of the new component to be modeled. The documentation and practical examples for creating new components are still in an early stage. A more detailed description follows soon in our readthedocs.
