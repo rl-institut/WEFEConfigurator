@@ -1,14 +1,4 @@
-name;carrier;tech;storage_capacity;storage_capacity_potential;capacity;efficiency;capacity_cost;storage_capacity_cost;marginal_cost;type;bus;invest_relation_output_capacity;invest_relation_input_output;expandable;verbose_name
-battery-storage;electricity;battery;0;;0;0.92;0;100;0;storage;dc-elec-bus;0.1;1;True;"Battery Storage"
-water-storage;water;water_storage;0;;0;0.92;0;100;0;storage;dc-elec-bus;0.1;1;True;"Water Storage"
-
-
-# TODO consider modelling groundwater as storage: es, groundwater can indeed be modeled as storage.
-# Groundwater storage refers to the volume of water stored in an aquifer, which can be influenced
-# by factors such as recharge (inflow) and discharge (outflow) rates.
-#This concept is crucial for understanding and managing water resources,
-# especially in regions dependent on groundwater for agriculture, drinking water, and industry.
-
-# Groundwater models often use specific storage (SS) values to predict how groundwater levels will respond
-# to various factors like pumping, recharge, and climate change2. These models help in making informed decisions
-# about water management and sustainability.
+name;carrier;tech;storage_capacity;storage_capacity_potential;capacity;efficiency;capacity_cost;storage_capacity_cost;marginal_cost;type;bus;invest_relation_output_capacity;expandable;capex;opex_fix;lifetime;resource_cost;land_requirement_factor;ghg_emission_factor;water_consumption_factor;land_requirement;ghg_emissions;water_footprint;output_parameters;annuity
+battery-storage;energy;battery;0;;0;0.92;0;341.96363636363634;0.2;storage;dc-elec-bus;1.0;True;647;19.0;12.5;0;3.0;;0;0;0;0;"{""custom_attributes"": {""ghg_emission_factor"": NaN, ""land_requirement_factor"": 3.0, ""water_consumption_factor"": 0, ""water_footprint"": 0, ""ghg_emissions"": 0, ""resource_cost"": 0, ""annuity"": 94.04}}";94.04
+drinking-water-storage;water;storage;2;;0;0.98;0;122.39999999999996;0.3;storage;drinking-water-bus;0.2;True;300;7.5;20.0;0;1.5;;0;0;0;0;"{""custom_attributes"": {""ghg_emission_factor"": NaN, ""land_requirement_factor"": 1.5, ""water_consumption_factor"": 0, ""water_footprint"": 0, ""ghg_emissions"": 0, ""resource_cost"": 0, ""annuity"": 33.66}}";33.66
+service-water-storage;water;storage;4;;0;0.98;0;68.07272727272726;0.1;storage;service-water-bus;0.2;True;186;2.5;20.0;0;1.7;;0;0;0;0;"{""custom_attributes"": {""ghg_emission_factor"": NaN, ""land_requirement_factor"": 1.7, ""water_consumption_factor"": 0, ""water_footprint"": 0, ""ghg_emissions"": 0, ""resource_cost"": 0, ""annuity"": 18.72}}";18.72

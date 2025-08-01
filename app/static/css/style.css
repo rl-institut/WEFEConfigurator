@@ -3,12 +3,205 @@
     margin-bottom:0.5rem;
 }
 
+/* Subquestions: visually indented */
 .form-group.subquestion {
-padding-left: 4rem;
+    padding-left: 4rem;
 }
+
 .form-group.subsubquestion {
-padding-left: 8rem;
+    padding-left: 8rem;
 }
-//.sub_question.disabled {
-//display:none;
-//}
+
+.form-group.container_matrix {
+    padding-left: 1rem;
+}
+
+/* Disabled subquestions */
+.disabled {
+    display: none !important;
+}
+
+
+.container_matrix{
+  //gap: 0.25rem;
+  justify-content: space-evenly;
+  //grid-auto-columns: 7rem;
+  //grid-auto-rows: 1.25rem;
+
+  display: grid;
+  grid-template-columns: 15rem 1fr 1fr 1fr;
+  //grid-template-columns: 15rem repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 0.5rem 1.25rem;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.matrix_target{
+padding-top: 0.5rem;
+padding-bottom: 0.5 rem;
+}
+
+/* Styling the label cells (1st column of each row) */
+.matrix_col_1{
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+/* Ensure all inputs scale nicely */
+.container_matrix input {
+  width: 100%;
+  max-width: 10rem;
+  max-height: 2rem;
+}
+
+/* Fallback: hide empty divs gracefully if they're used for alignment */
+.container_matrix > div:empty {
+  display: block;
+}
+
+.container_1{
+  display: grid;
+  grid-template-columns: auto;
+}
+
+.container_2{
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+.container_3{
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.container_4{
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.matrix_col_1{grid-column:1;}
+.matrix_col_2{grid-column:2;}
+.matrix_col_3{grid-column:3;}
+.matrix_col_4{grid-column:4;}
+.matrix_col_5{grid-column:5;}
+.matrix_col_6{grid-column:6;}
+.matrix_col_7{grid-column:7;}
+.matrix_col_8{grid-column:8;}
+.matrix_col_9{grid-column:9;}
+.matrix_col_10{grid-column:10;}
+.matrix_col_11{grid-column:11;}
+.matrix_col_12{grid-column:12;}
+.matrix_col_13{grid-column:13;}
+.matrix_col_14{grid-column:14;}
+.matrix_col_15{grid-column:15;}
+.matrix_col_16{grid-column:16;}
+
+
+.matrix_row_0{grid-row:1;}
+.matrix_row_1{grid-row:2;}
+.matrix_row_2{grid-row:3;}
+.matrix_row_3{grid-row:4;}
+.matrix_row_4{grid-row:5;}
+.matrix_row_5{grid-row:6;}
+.matrix_row_6{grid-row:7;}
+.matrix_row_7{grid-row:8;}
+.matrix_row_8{grid-row:9;}
+.matrix_row_9{grid-row:10;}
+.matrix_row_10{grid-row:11;}
+.matrix_row_11{grid-row:12;}
+.matrix_row_12{grid-row:13;}
+.matrix_row_13{grid-row:14;}
+.matrix_row_14{grid-row:15;}
+.matrix_row_15{grid-row:16;}
+.matrix_row_16 { grid-row: 17; }
+.matrix_row_17 { grid-row: 18; }
+.matrix_row_18 { grid-row: 19; }
+.matrix_row_19 { grid-row: 20; }
+.matrix_row_20 { grid-row: 21; }
+.matrix_row_21 { grid-row: 22; }
+.matrix_row_22 { grid-row: 23; }
+.matrix_row_23 { grid-row: 24; }
+.matrix_row_24 { grid-row: 25; }
+.matrix_row_25 { grid-row: 26; }
+.matrix_row_26 { grid-row: 27; }
+.matrix_row_27 { grid-row: 28; }
+.matrix_row_28 { grid-row: 29; }
+.matrix_row_29 { grid-row: 30; }
+.matrix_row_30 { grid-row: 31; }
+
+#div_id_criteria_1 > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 0.5rem;
+}
+
+#div_id_criteria_3 > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 0.5rem;
+}
+
+#div_id_criteria_3a > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 0.5rem;
+}
+
+#div_id_criteria_3b > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 0.5rem;
+}
+
+#div_id_criteria_4 > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 0.5rem;
+}
+
+#div_id_criteria_4a > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 0.5rem;
+}
+
+#div_id_criteria_4b > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 0.5rem;
+}
+
+#div_id_criteria_5 > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 0.5rem;
+}
+
+#div_id_criteria_5a > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 0.5rem;
+}
+
+#div_id_criteria_5b > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 0.5rem;
+}
+
+#div_id_criteria_7 > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 0.5rem;
+}
+
+#div_id_criteria_11 > div {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 0.5rem;
+}
+
+.form-group > label{
+padding-top: 1rem;
+padding-bottom: 0.5 rem;
+}

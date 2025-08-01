@@ -1,0 +1,24 @@
+name;type;carrier;tech;expandable;capacity;capacity_cost;marginal_cost;electricity_bus;water_in_bus;water_out_bus;capex;opex_fix;age;lifetime;carrier_cost;resource_cost;land_requirement_factor;ghg_emission_factor;water_consumption_factor;land_requirement;ghg_emissions;water_footprint;annuity;verbose_name
+cartridge_filter;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Cartridge Filter
+activated_carbon_filter;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Activated Carbon Filter
+chlorination;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Chlorination Unit
+microfiltration;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Microfiltration
+ultrafiltration;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Ultrafiltration
+nanofiltration;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Nanofiltration
+ceramic_filter;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Ceramic Filter
+slow_sand_filter;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Slow Sand Filter
+uv_disinfection;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;UV-Disinfection
+adsoprtion;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Adsorption
+biofiltration;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Biofiltration
+electrodialysis;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Electrodialysis
+ion_exchange;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Ion Exchange
+simple_oxidation;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Simple Oxidation
+ozonation;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Ozonation
+biological_denitrification;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Biological Denitrifiation
+photocatalysis;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Photocatalysis
+
+# water treatment currently is modeled with two inputs (electricity and water), however there are some solutions which do not require electricty!
+
+# TODO find solution for case that various filtration nad desalination system are put in series..;;;;;;;;;;;;;;;;;;;;;;;;
+# specific energy consumption eqauls  conversion_factor_ac-elec-bus (some kind of efficiency);;;;;;;;;;;;;;;;;;;;;;;;
+# conversion_rate_feed_bus always equals 1; could be omitted;;;;;;;;;;;;;;;;;;;;;;;

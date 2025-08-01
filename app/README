@@ -13,4 +13,4 @@ Right now it is a simple app to visualize the survey and test potential inputs f
 The survey is then accessible at http://127.0.0.1:8000/view/survey/<integer id of scenario> (you can input any integer during the test phase)
 If you saved a survey visiting http://127.0.0.1:8000/view/survey/<integer id of scenario> will show you the answers, which you can then modify
 
-If you edit the questions in survey/survey.py then you need to run `python manage.py update_survey_questions --update` to edit within the app (if you create a new question, then the older saved surveys likely won't display it)
+If you edit the questions in survey/survey.py then you need to run `python manage.py update_survey_questions --update --dev` to edit within the app (if you create a new question, then the older saved surveys likely won't display it)

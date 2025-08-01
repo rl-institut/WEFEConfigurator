@@ -3,45 +3,171 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
-        <entry key="\results\wefe_reverse_osmosis_ciara\output\all_results_by_flow.csv">
+        <entry key="\component_library\WIP_components\cattle.csv">
           <value>
             <Attribute>
-              <option name="separator" value="," />
+              <option name="separator" value=";" />
             </Attribute>
           </value>
         </entry>
-        <entry key="\results\wefe_reverse_osmosis_ciara\output\all_scalars.csv">
+        <entry key="\component_library\WIP_components\excess.csv">
           <value>
             <Attribute>
-              <option name="separator" value="," />
+              <option name="separator" value=";" />
             </Attribute>
           </value>
         </entry>
-        <entry key="\results\wefe_reverse_osmosis_ciara\output\all_sequences.csv">
+        <entry key="\component_library\WIP_components\irrigation.csv">
           <value>
             <Attribute>
-              <option name="separator" value="," />
+              <option name="separator" value=";" />
             </Attribute>
           </value>
         </entry>
-        <entry key="\results\wefe_reverse_osmosis_ciara\output\capacities.csv">
+        <entry key="\component_library\WIP_components\load.csv">
           <value>
             <Attribute>
-              <option name="separator" value="," />
+              <option name="separator" value=";" />
             </Attribute>
           </value>
         </entry>
-        <entry key="\results\wefe_reverse_osmosis_ciara\output\costs.csv">
+        <entry key="\component_library\WIP_components\mobility.csv">
           <value>
             <Attribute>
-              <option name="separator" value="," />
+              <option name="separator" value=";" />
             </Attribute>
           </value>
         </entry>
-        <entry key="\results\wefe_reverse_osmosis_ciara\output\kpis.csv">
+        <entry key="\component_library\WIP_components\productive_use.csv">
           <value>
             <Attribute>
-              <option name="separator" value="," />
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\component_library\WIP_components\storage.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\component_library\WIP_components\toliets.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\component_library\WIP_components\waste_source.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\component_library\WIP_components\waste_water_treatment.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\component_library\WIP_components\water_sources.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\component_library\WIP_components\water_treatment.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\component_library\data\elements\apv.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\component_library\data\elements\bus.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\component_library\data\elements\conversion.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\component_library\data\elements\dispatchable.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\component_library\data\elements\excess.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\component_library\data\elements\hydropower.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\component_library\data\elements\load.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\component_library\data\elements\mimo.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\component_library\data\elements\storage.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\component_library\data\elements\volatile.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\component_library\data\elements\water_filtration.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\component_library\data\elements\water_pumps.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value=";" />
             </Attribute>
           </value>
         </entry>
@@ -91,27 +217,6 @@
           <value>
             <Attribute>
               <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\scenarios\wefe_reverse_osmosis_ciara\data\elements\conversion.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value=";" />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\scenarios\wefe_reverse_osmosis_ciara\data\elements\dispatchable.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value=";" />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\scenarios\wefe_reverse_osmosis_ciara\data\elements\mimo.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value=";" />
             </Attribute>
           </value>
         </entry>

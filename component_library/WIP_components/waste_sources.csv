@@ -1,0 +1,7 @@
+name;type;carrier;tech;capacity;capacity_cost;bus;marginal_cost;profile;expandable;capex;opex_fix;lifetime;resource_cost;land_requirement_factor;ghg_emission_factor;water_consumption_factor;land_requirement;water_footprint;ghg_emissions;output_parameters;annuity
+human_feces;volatile;organic;pv;3.87;214.94545454545454;human_feces_bus;stool_profile;True;500.0;20.0;25.0;0.0;9.0;0.0;0.0;;;;;59.11
+human_urin;volatile;organic;pv;3.87;214.94545454545454;human_urin_bus;stool_profile;True;500.0;20.0;25.0;0.0;9.0;0.0;0.0;;;;;59.11
+animal_feces;volatile;organic;pv;3.87;214.94545454545454;animal_feces_bus;stool_profile;True;500.0;20.0;25.0;0.0;9.0;0.0;0.0;;;;;59.11
+animal_urin;volatile;organic;pv;3.87;214.94545454545454;animal_urin_bus;stool_profile;True;500.0;20.0;25.0;0.0;9.0;0.0;0.0;;;;;59.11
+agricultural_waste;volatile;organic;pv;3.87;214.94545454545454;animal_urin_bus;stool_profile;True;500.0;20.0;25.0;0.0;9.0;0.0;0.0;;;;;59.11
+household_organic_waste;volatile;organic;pv;3.87;214.94545454545454;animal_urin_bus;stool_profile;True;500.0;20.0;25.0;0.0;9.0;0.0;0.0;;;;;59.11

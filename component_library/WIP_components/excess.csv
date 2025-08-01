@@ -4,4 +4,5 @@ brine-excess;excess;brine-bus;0
 excess-river-flow;excess;river-flow-bus;0
 excess-service-water;excess;service-water-bus;0
 excess-drinking-water;excess;drinking-water-bus;0
-direct_wastewater_disposal;excess;wastewater-bus;0
+direct_wastewater_disposal;excess;direct-disposal-wastewater-bus;0
+septic_tank;excess;septic-bus;10
