@@ -153,8 +153,19 @@ SURVEY_QUESTIONS_CATEGORIES = {
     CROP_CATEGORY: _("Crops"),
 }
 
+def set_qestion_suffix(q_id, suffix):
+    tot = q_id.split(".")
+    main_id = tot[0]
+    if len(tot) >= 2:
+        rest=tot[1:]
 
-def generate_generic_questions(suffixes, survey_questions_template, text_to_replace):
+        answer = main_id + suffix + "."+ ".".join(rest)
+    else:
+        answer = main_id + suffix
+    return answer
+
+
+def generate_generic_questions(suffixes, survey_questions_template, text_to_replace=None):
     """Generate redundant question for different cases
     :param suffixes: dict mapping of label to subquestion suffix
     :param survey_questions_template: the redundant questions which need to be duplicated for each suffix mapping
@@ -165,16 +176,17 @@ def generate_generic_questions(suffixes, survey_questions_template, text_to_repl
     for name, suffix in suffixes.items():
         temp = copy.deepcopy(survey_questions_template)
         for question in temp:
-            question["question"] = question["question"].replace(text_to_replace, name)
+            if text_to_replace is not None:
+                question["question"] = question["question"].replace(text_to_replace, name)
             id = question["question_id"]
-            question["question_id"] = id + suffix
+            question["question_id"] = set_qestion_suffix(id,suffix)
             subquestions = question.get("subquestion", {})
             for subq in subquestions.keys():
                 subq_id = subquestions[subq]
                 if isinstance(subq_id, str):
                     subq_id = [subq_id]
 
-                new_ids = [q_id + suffix for q_id in subq_id]
+                new_ids = [set_qestion_suffix(q_id,suffix) for q_id in subq_id]
                 if len(new_ids) == 1:
                     new_ids = new_ids[0]
                 subquestions[subq] = new_ids
