@@ -14,3 +14,5 @@ The survey is then accessible at http://127.0.0.1:8000/view/survey/<integer id o
 If you saved a survey visiting http://127.0.0.1:8000/view/survey/<integer id of scenario> will show you the answers, which you can then modify
 
 If you edit the questions in survey/survey.py then you need to run `python manage.py update_survey_questions --update --dev` to edit within the app (if you create a new question, then the older saved surveys likely won't display it)
+
+If you want to erase all questions of the survey from the database, then run `python manage.py purge_survey_questions`
