@@ -154,6 +154,12 @@ SURVEY_QUESTIONS_CATEGORIES = {
 }
 
 def set_qestion_suffix(q_id, suffix):
+    """ Format question when suffix is used
+
+    :param q_id: question ID
+    :param suffix: suffix to prepend
+    :return: example q_id="5.1" and suffix="_DS" --> 5_DS.1
+    """
     tot = q_id.split(".")
     main_id = tot[0]
     if len(tot) >= 2:
@@ -165,7 +171,7 @@ def set_qestion_suffix(q_id, suffix):
     return answer
 
 
-def generate_generic_questions(suffixes, survey_questions_template, text_to_replace=None):
+def generate_generic_questions(suffixes, survey_questions_template=[], text_to_replace=None):
     """Generate redundant question for different cases
     :param suffixes: dict mapping of label to subquestion suffix
     :param survey_questions_template: the redundant questions which need to be duplicated for each suffix mapping
@@ -179,14 +185,17 @@ def generate_generic_questions(suffixes, survey_questions_template, text_to_repl
             if text_to_replace is not None:
                 question["question"] = question["question"].replace(text_to_replace, name)
             id = question["question_id"]
-            question["question_id"] = set_qestion_suffix(id,suffix)
+
+            # generate new id based on the suffix
+            question["question_id"] = set_qestion_suffix(id, suffix)
             subquestions = question.get("subquestion", {})
             for subq in subquestions.keys():
                 subq_id = subquestions[subq]
                 if isinstance(subq_id, str):
                     subq_id = [subq_id]
 
-                new_ids = [set_qestion_suffix(q_id,suffix) for q_id in subq_id]
+                # generate new ids for the subquestions based on the suffix
+                new_ids = [set_qestion_suffix(q_id, suffix) for q_id in subq_id]
                 if len(new_ids) == 1:
                     new_ids = new_ids[0]
                 subquestions[subq] = new_ids
@@ -414,245 +423,12 @@ WATER_SUPPLY_SPECIFIC = {
     "drinking water": "a",
     "service water": "b",
 }
-
-
-Question_3_subquestions = [
-    {
-        "question": "Do you encounter water quality issues at your TYPE_WATER_USE source, if yes which?",
-        "question_id": "4",
-        "possible_answers": [
-            "salinity",
-            "heavy metals",
-            "chemical contamination",
-            "fecal contamination",
-            "hardness",
-            "sediments and turbidity",
-            "nitrates and nitrites",
-        ],
-        "display_type": "multiple_choice_tickbox",
-        "subquestion": {
-            "salinity": "4.1",
-            "heavy metals": "4.2",
-            "chemical contamination": "4.3",
-        },
-    },
-    {
-        "question": "What is the Salinity of your TYPE_WATER_USE source [g/l]?",
-        "question_id": "4.1",
-        "variable_name": "salinity",
-        "possible_answers": TYPE_FLOAT,
-        "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
-    },
-    {
-        "question": "Which heavy metals are prevalent in your TYPE_WATER_USE source?",
-        "question_id": "4.2",
-        "variable_name": "water_metals",
-        "possible_answers": ["Arsenic", "Lead", "Mercury", "Cadmium", "Iron"],
-        "display_type": "multiple_choice_tickbox",
-        "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
-
-    },
-    {
-        "question": "Which chemical contamination is prevalent in your TYPE_WATER_USE source?",
-        "question_id": "4.3",
-        "variable_name": "water_pollution",
-        "possible_answers": [
-            "pesticides",
-            "pharmaceutical_residues",
-            "fertilizers",
-            "industrial_chemicals",
-        ],
-        "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
-        "display_type": "multiple_choice_tickbox",
-    },
-    {
-        "question": "Do you treat your TYPE_WATER_USE, if yes, which technologies are your using?",
-        "question_id": "5",
-        "possible_answers": [
-            "no",
-            "reverse osmosis",
-            "membrane distillation",
-            "ultrafiltration",
-            "boiling",
-            "distillation",
-            "activated carbon filter",
-            "UV-disinfection",
-            "cartridge filter",
-            "microfiltration",
-            "ceramic filter",
-            "nanofiltration",
-            "electrodialyis",
-            "slow sand filter",
-            "water softener",
-            "chlorination",
-            "other",
-        ],
-        "answer_map_to": TYPE_COMPONENT,
-        "display_type": "multiple_choice_tickbox",
-        "subquestion": {
-            "reverse osmosis": ["5.1", "5.2", "5.3"],
-            "membrane distillation": ["5.1", "5.2", "5.3"],
-            "ultrafiltration": ["5.1", "5.2", "5.3"],
-            "boiling": ["5.2", "5.3"],
-            "distillation": ["5.2", "5.3"],
-            "activated carbon filter": ["5.2", "5.3"],
-            "UV-disinfection": ["5.2", "5.3"],
-            "cartridge filter": ["5.2", "5.3"],
-            "microfiltration": ["5.2", "5.3"],
-            "ceramic filter": ["5.2", "5.3"],
-            "nanofiltration": ["5.2", "5.3"],
-            "electrodialyis": ["5.2", "5.3"],
-            "slow sand filter": ["5.2", "5.3"],
-            "water softener": ["5.2", "5.3"],
-            "other": ["5.4", "5.1", "5.2", "5.3"],
-        },
-    },
-    {
-        "question": "What is the recovery rate [%]",  #  of your WT_TYPE system?
-        "question_id": "5.1",
-        "variable_name": "recovery_rate",
-        "possible_answers": TYPE_FLOAT,
-        "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
-        "display_type": "matrix",
-    },
-    {
-        "question": "What is the maximum flow rate [m³/h]",  #  of your WT_TYPE system?
-        "question_id": "5.2",
-        "variable_name": "flow_rate",
-        "possible_answers": TYPE_FLOAT,
-        "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
-        "display_type": "matrix",
-    },
-    {
-        "question": "What is the specific energy consumption (SEC) [kWh/m³]",  #  of your WT_TYPE system?
-        "question_id": "5.3",
-        "variable_name": "flow_rate",
-        "possible_answers": TYPE_FLOAT,
-        "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
-        "display_type": "matrix",
-    },
-    {
-        "question": "Which other water treatment technologies are you using to treat your TYPE_WATER_USE?",
-        "question_id": "5.4",
-        "possible_answers": TYPE_STRING,
-        "answer_map_to": TYPE_COMPONENT,
-    },
-
-]
-
-
-WATER_SUPPLY_TEMPLATE = ([
-    {
-        "question": "Which water source do you use for TYPE_WATER_USE",
-        "question_id": "3",
-        "possible_answers": [
-            "groundwater well",
-            "public tap water",
-            "desalinated seawater",
-            "river/creek",
-            "lake",
-            "water truck",
-            "rainwater harvesting",
-            "bottled water",
-            "other",
-        ],
-        "answer_map_to": TYPE_COMPONENT,
-        "display_type": "multiple_choice_tickbox",
-        "subquestion": {
-            "groundwater well": ["3.1", "4_GW", "5_GW"],
-            "desalinated seawater": ["3.1", "4_DS", "5_DS"],
-            "river/creek": ["3.1"],
-            "lake": ["3.1"],
-            "water truck": ["3.2"],
-            "other": ["3.3"],
-        },
-    },
-    {
-        "question": "Are water pumps required to convey water from the source to the point of consumption?",
-        "question_id": "3.1",
-        "possible_answers": ["Yes", "No"],
-        "answer_map_to": TYPE_COMPONENT,
-        "subquestion": {
-            "Yes": ["3.1.1", "3.1.2", "3.1.4"],
-        },
-    },
-    {
-        "question": "What is the height difference between the elevation of the water source"
-        "and the elevation of the location where you are using the water?",
-        INFOBOX: "Elevation of the water source refers to for example average elevation of the groundwater level,"
-        " lake surface, or the elevation of the location of river water uptake. We require this information"
-        "to obtain information regarding a potential water pump head",
-        "question_id": "3.1.1",
-        "variable_name": "head",
-        "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
-        "possible_answers": TYPE_FLOAT,
-    },
-    {
-        "question": "Which energy source is the pump using?",
-        "question_id": "3.1.2",
-        "display_type": "multiple_choice_tickbox",
-        "possible_answers": [
-            "manual",
-            "diesel",
-            "electricity (grid)",
-            "wind turbine",
-            "photovoltaics",
-        ],
-        "answer_map_to": TYPE_COMPONENT,
-        "subquestion": {
-            "diesel": ["3.1.3"],
-            "electricity (grid)": ["3.1.3"],
-            "wind turbine": ["3.1.3"],
-            "photovoltaics": ["3.1.3"],
-        },
-    },
-    {
-        "question": "What is the rated power of the water pump?",
-        "question_id": "3.1.3",
-        "variable_name": "capacity",
-        "possible_answers": TYPE_FLOAT,
-        "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
-    },
-    {
-        "question": "What is the maximum throughput [m³/h] of the water pump",
-        "question_id": "3.1.4",
-        "variable_name": "flow",
-        "possible_answers": TYPE_FLOAT,
-        "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
-    },
-    {
-        "question": "What is the price of the water provided by truck [$/m³]",
-        "question_id": "3.2",
-        "variable_name": "marginal_cost",
-        "possible_answers": TYPE_FLOAT,
-        "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
-    },
-    {
-        "question": "Which other source do you use for TYPE_WATER_USE",
-        "question_id": "3.3",
-        "variable_name": "water_supply",
-        "possible_answers": TYPE_STRING,
-        "answer_map_to": TYPE_COMPONENT,
-    # },]+generate_matrix_questions(survey_questions= Question_3_subquestions,text_to_replace="WT_TYPE") +[
-    },]+
-                         #generate_generic_questions(WATER_SOURCE_SPECIFIC, generate_matrix_questions(survey_questions=Question_3_subquestions,text_to_replace="WT_TYPE"), "TYPE_WATER_USE") +
-                         [
-    {
-        "question": "Do you typically experience TYPE_WATER_USE shortages from time to time?",
-        "question_id": "6",
-        "possible_answers": ["Yes", "No"],
-        "answer_map_to": TYPE_COMPONENT,
-    },
-])
-
-
-
-
-
-
-# WATER_SUPPLY_TEMPLATE = generate_matrix_questions(
-#     survey_questions=WATER_SUPPLY_TEMPLATE, text_to_replace="WT_TYPE"
-# )
+WATER_SOURCE_SPECIFIC = {
+    "groundwater well": "_GW",
+    "desalinated seawater": "_DS",
+    "river/creek": "_RC",
+    "lake": "_L",
+}
 
 
 WATER_SUPPLY_SURVEY_STRUCTURE = (
@@ -668,12 +444,236 @@ WATER_SUPPLY_SURVEY_STRUCTURE = (
             "possible_answers": ["Yes", "No"],
             "subquestion": {
                 "Yes": ["3a", "6a", "3b", "6b"],
-                "No": ["3","6"],
+                "No": ["3", "6"],
             },
         },
     ]
     + generate_generic_questions(
-        WATER_SUPPLY_SPECIFIC, WATER_SUPPLY_TEMPLATE, text_to_replace="TYPE_WATER_USE"
+        WATER_SUPPLY_SPECIFIC,
+        text_to_replace="TYPE_WATER_SUPPLY",
+        survey_questions_template=[
+            {
+                "question": "Which water source do you use for TYPE_WATER_SUPPLY",
+                "question_id": "3",
+                "possible_answers": [
+                    "groundwater well",
+                    "public tap water",
+                    "desalinated seawater",
+                    "river/creek",
+                    "lake",
+                    "water truck",
+                    "rainwater harvesting",
+                    "bottled water",
+                    "other",
+                ],
+                "answer_map_to": TYPE_COMPONENT,
+                "display_type": "multiple_choice_tickbox",
+                "subquestion": {
+                    "groundwater well": ["3_GW.1", "4_GW", "5_GW"],
+                    "desalinated seawater": ["3_DS.1", "4_DS", "5_DS"],
+                    "river/creek": ["3_RC.1", "4_RC", "5_RC"],
+                    "lake": ["3_L.1", "4_L", "5_L"],
+                    "water truck": ["3.2"],
+                    "other": ["3.3"],
+                },
+            },
+        ]
+        + generate_generic_questions(
+            WATER_SOURCE_SPECIFIC,
+            text_to_replace="TYPE_WATER_SOURCE",
+            survey_questions_template=[
+                {
+                    "question": "Are water pumps required to convey TYPE_WATER_SOURCE from the source to the point of consumption?",
+                    "question_id": "3.1",
+                    "possible_answers": ["Yes", "No"],
+                    "answer_map_to": TYPE_COMPONENT,
+                    "subquestion": {
+                        "Yes": ["3.1.1", "3.1.2", "3.1.4"],
+                    },
+                },
+                {
+                    "question": "What is the height difference between the elevation of the TYPE_WATER_SOURCE"
+                    " and the elevation of the location where you are using the water?",
+                    INFOBOX: "Elevation of the water source refers to for example average elevation of the groundwater level,"
+                    " lake surface, or the elevation of the location of river water uptake. We require this information"
+                    "to obtain information regarding a potential water pump head",
+                    "question_id": "3.1.1",
+                    "variable_name": "head",
+                    "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
+                    "possible_answers": TYPE_FLOAT,
+                },
+                {
+                    "question": "Which energy source is the pump using?",
+                    "question_id": "3.1.2",
+                    "display_type": "multiple_choice_tickbox",
+                    "possible_answers": [
+                        "manual",
+                        "diesel",
+                        "electricity (grid)",
+                        "wind turbine",
+                        "photovoltaics",
+                    ],
+                    "answer_map_to": TYPE_COMPONENT,
+                    "subquestion": {
+                        "diesel": ["3.1.3"],
+                        "electricity (grid)": ["3.1.3"],
+                        "wind turbine": ["3.1.3"],
+                        "photovoltaics": ["3.1.3"],
+                    },
+                },
+                {
+                    "question": "What is the rated power of the water pump?",
+                    "question_id": "3.1.3",
+                    "variable_name": "capacity",
+                    "possible_answers": TYPE_FLOAT,
+                    "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
+                },
+                {
+                    "question": "What is the maximum throughput [m³/h] of the water pump",
+                    "question_id": "3.1.4",
+                    "variable_name": "flow",
+                    "possible_answers": TYPE_FLOAT,
+                    "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
+                },
+                {
+                    "question": "Do you encounter water quality issues at your TYPE_WATER_SOURCE, if yes which?",
+                    "question_id": "4",
+                    "possible_answers": [
+                        "salinity",
+                        "heavy metals",
+                        "chemical contamination",
+                        "fecal contamination",
+                        "hardness",
+                        "sediments and turbidity",
+                        "nitrates and nitrites",
+                    ],
+                    "display_type": "multiple_choice_tickbox",
+                    "subquestion": {
+                        "salinity": "4.1",
+                        "heavy metals": "4.2",
+                        "chemical contamination": "4.3",
+                    },
+                },
+                {
+                    "question": "What is the Salinity of your TYPE_WATER_SOURCE [g/l]?",
+                    "question_id": "4.1",
+                    "variable_name": "salinity",
+                    "possible_answers": TYPE_FLOAT,
+                    "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
+                },
+                {
+                    "question": "Which heavy metals are prevalent in your TYPE_WATER_SOURCE?",
+                    "question_id": "4.2",
+                    "variable_name": "water_metals",
+                    "possible_answers": [
+                        "Arsenic",
+                        "Lead",
+                        "Mercury",
+                        "Cadmium",
+                        "Iron",
+                    ],
+                    "display_type": "multiple_choice_tickbox",
+                    "answer_map_to": TYPE_COMPONENT,
+                },
+                {
+                    "question": "Which chemical contamination is prevalent in your TYPE_WATER_SOURCE?",
+                    "question_id": "4.3",
+                    "variable_name": "water_pollution",
+                    "possible_answers": [
+                        "pesticides",
+                        "pharmaceutical_residues",
+                        "fertilizers",
+                    ],
+                    "answer_map_to": TYPE_COMPONENT,
+                    "display_type": "multiple_choice_tickbox",
+                },
+            ]
+            + generate_matrix_questions(
+                text_to_replace="WT_TYPE",
+                survey_questions=[
+                    {
+                        "question": "Do you treat your TYPE_WATER_SUPPLY TYPE_WATER_SOURCE, if yes, which technologies are your using?",
+                        "question_id": "5",
+                        "possible_answers": [
+                            "no",
+                            "reverse osmosis",
+                            "membrane distillation",
+                            "ultrafiltration",
+                            "boiling",
+                            "distillation",
+                            "activated carbon filter",
+                            "UV-disinfection",
+                            "cartridge filter",
+                            "microfiltration",
+                            "ceramic filter",
+                            "nanofiltration",
+                            "electrodialyis",
+                            "slow sand filter",
+                            "water softener",
+                            "chlorination",
+                            "other",
+                        ],
+                        "answer_map_to": TYPE_COMPONENT,
+                        "display_type": "multiple_choice_tickbox",
+                        "subquestion": {
+                            "reverse osmosis": ["5.1", "5.2", "5.3"],
+                            "membrane distillation": ["5.1", "5.2", "5.3"],
+                            "ultrafiltration": ["5.1", "5.2", "5.3"],
+                            "boiling": ["5.2", "5.3"],
+                            "distillation": ["5.2", "5.3"],
+                            "activated carbon filter": ["5.2", "5.3"],
+                            "UV-disinfection": ["5.2", "5.3"],
+                            "cartridge filter": ["5.2", "5.3"],
+                            "microfiltration": ["5.2", "5.3"],
+                            "ceramic filter": ["5.2", "5.3"],
+                            "nanofiltration": ["5.2", "5.3"],
+                            "electrodialyis": ["5.2", "5.3"],
+                            "slow sand filter": ["5.2", "5.3"],
+                            "water softener": ["5.2", "5.3"],
+                            "other": ["5.4", "5.1", "5.2", "5.3"],
+                        },
+                    },
+                    {
+                        "question": "What is the recovery rate [%]",  # of your WT_TYPE system?
+                        "question_id": "5.1",
+                        "variable_name": "recovery_rate",
+                        "possible_answers": TYPE_FLOAT,
+                        "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
+                        "display_type": "matrix",
+                    },
+                    {
+                        "question": "What is the maximum flow rate [m³/h]",  # of your WT_TYPE system?
+                        "question_id": "5.2",
+                        "variable_name": "flow_rate",
+                        "possible_answers": TYPE_FLOAT,
+                        "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
+                        "display_type": "matrix",
+                    },
+                    {
+                        "question": "What is the specific energy consumption (SEC) [kWh/m³]",  # of your WT_TYPE system?
+                        "question_id": "5.3",
+                        "variable_name": "flow_rate",
+                        "possible_answers": TYPE_FLOAT,
+                        "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
+                        "display_type": "matrix",
+                    },
+                    {
+                        "question": "Which other water treatment technologies are you using to treat the TYPE_WATER_SUPPLY from TYPE_WATER_SOURCE?",
+                        "question_id": "5.4",
+                        "possible_answers": TYPE_STRING,
+                        "answer_map_to": TYPE_COMPONENT,
+                    },
+                ],
+            ),
+        )
+        + [
+            {
+                "question": "Do you typically experience TYPE_WATER_SUPPLY shortages from time to time?",
+                "question_id": "6",
+                "possible_answers": ["Yes", "No"],
+                "answer_map_to": TYPE_COMPONENT,
+            },
+        ],
     )
     + generate_matrix_questions(
         survey_questions=[
@@ -732,6 +732,7 @@ WATER_SUPPLY_SURVEY_STRUCTURE = (
         text_to_replace="WWT_TYPE",
     )
 )
+
 
 
 CROPS_SURVEY_STRUCTURE = (
@@ -999,7 +1000,7 @@ IRRIGATION_TYPE_SURVEY = [
 
 
 SURVEY_STRUCTURE = (
-    COMPONENT_SURVEY_STRUCTURE + WATER_SUPPLY_SURVEY_STRUCTURE + CROPS_SURVEY_STRUCTURE #+ IRRIGATION_TYPE_SURVEY
+    COMPONENT_SURVEY_STRUCTURE +  CROPS_SURVEY_STRUCTURE + WATER_SUPPLY_SURVEY_STRUCTURE #+ IRRIGATION_TYPE_SURVEY
 )
 
 
