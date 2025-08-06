@@ -42,12 +42,11 @@ def view_survey_questions(request, scen_id=None):
             # pdb.set_trace()
 
     else:
-        # TODO this is currently for testing
         if scen_id is None:
-            # try:
-            scenario_id = SurveyAnswer.objects.all().values_list("scenario_id",flat=True).distinct().order_by().last() + 1
-            # except:
-            #     scenario_id = 1
+            last_scenario_id = SurveyAnswer.objects.all().values_list("scenario_id",flat=True).distinct().order_by().last()
+            if last_scenario_id is None:
+                last_scenario_id = 0
+            scenario_id = last_scenario_id + 1
             answer = HttpResponseRedirect(reverse("view_survey", args=[scenario_id]))
         else:
             scenario_id = scen_id
