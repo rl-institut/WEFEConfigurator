@@ -77,7 +77,7 @@ def view_survey_questions(request, scen_id=None):
                 # TODO: could be done from models "category" attribute
                 cat = SURVEY_CATEGORIES.get(question_id)
                 # TODO: reassign cat after testing phase is over
-                categories_map.append("components")
+                categories_map.append(cat)
                 # TODO here one can know that the question
                 if is_matrix_source(form.fields[field]):
                     subs = []

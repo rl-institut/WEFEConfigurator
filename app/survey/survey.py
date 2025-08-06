@@ -149,8 +149,8 @@ CROP_CATEGORY = "crops"
 
 SURVEY_QUESTIONS_CATEGORIES = {
     COMPONENT_CATEGORY: _("Components"),
-    WATER_CATEGORY: _("Water"),
     CROP_CATEGORY: _("Crops"),
+    WATER_CATEGORY: _("Water"),
 }
 
 def set_qestion_suffix(q_id, suffix):
