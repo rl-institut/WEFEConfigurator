@@ -6,7 +6,7 @@ from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
 from django.forms import ModelForm
 from .models import *
-from .survey import SURVEY_STRUCTURE, SURVEY_CATEGORIES
+from .survey import SURVEY_STRUCTURE, SURVEY_CATEGORIES, TYPE_STRING
 
 
 def is_matrix_source(field):
@@ -53,8 +53,10 @@ class SurveyQuestionForm(forms.Form):
                         **opts
                     )
             else:
-                self.fields[f"criteria_{answer.question.id}"] = forms.FloatField(**opts)
-
+                if answer.question.answer_type == TYPE_STRING:
+                    self.fields[f"criteria_{answer.question.id}"] = forms.CharField(**opts)
+                else:
+                    self.fields[f"criteria_{answer.question.id}"] = forms.FloatField(**opts)
             # treat sub question differently:
             # - links to onchange of supra question
             # - hide the sub question if the supra question's answer is not "Yes"
