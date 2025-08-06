@@ -403,99 +403,8 @@ WATER_SUPPLY_SPECIFIC = {
     "service water": "b",
 }
 
-WATER_SUPPLY_TEMPLATE = [
-    {
-        "question": "Which water source do you use for TYPE_WATER_USE",
-        "question_id": "3",
-        "possible_answers": [
-            "groundwater well",
-            "public tap water",
-            "desalinated seawater",
-            "river/creek",
-            "lake",
-            "water truck",
-            "rainwater harvesting",
-            "bottled water",
-            "other",
-        ],
-        "answer_map_to": TYPE_COMPONENT,
-        "display_type": "multiple_choice_tickbox",
-        "subquestion": {
-            "groundwater well": ["3.1"],
-            "desalinated seawater": ["3.1"],
-            "river/creek": ["3.1"],
-            "lake": ["3.1"],
-            "water truck": ["3.2"],
-            "other": ["3.3"],
-        },
-    },
-    {
-        "question": "Are water pumps required to convey water from the source to the point of consumption?",
-        "question_id": "3.1",
-        "possible_answers": ["Yes", "No"],
-        "answer_map_to": TYPE_COMPONENT,
-        "subquestion": {
-            "Yes": ["3.1.1", "3.1.2", "3.1.4"],
-        },
-    },
-    {
-        "question": "What is the height difference between the elevation of the water source"
-        "and the elevation of the location where you are using the water?",
-        INFOBOX: "Elevation of the water source refers to for example average elevation of the groundwater level,"
-        " lake surface, or the elevation of the location of river water uptake. We require this information"
-        "to obtain information regarding a potential water pump head",
-        "question_id": "3.1.1",
-        "variable_name": "head",
-        "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
-        "possible_answers": TYPE_FLOAT,
-    },
-    {
-        "question": "Which energy source is the pump using?",
-        "question_id": "3.1.2",
-        "display_type": "multiple_choice_tickbox",
-        "possible_answers": [
-            "manual",
-            "diesel",
-            "electricity (grid)",
-            "wind turbine",
-            "photovoltaics",
-        ],
-        "answer_map_to": TYPE_COMPONENT,
-        "subquestion": {
-            "diesel": ["3.1.3"],
-            "electricity (grid)": ["3.1.3"],
-            "wind turbine": ["3.1.3"],
-            "photovoltaics": ["3.1.3"],
-        },
-    },
-    {
-        "question": "What is the rated power of the water pump?",
-        "question_id": "3.1.3",
-        "variable_name": "capacity",
-        "possible_answers": TYPE_FLOAT,
-        "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
-    },
-    {
-        "question": "What is the maximum throughput [m³/h] of the water pump",
-        "question_id": "3.1.4",
-        "variable_name": "flow",
-        "possible_answers": TYPE_FLOAT,
-        "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
-    },
-    {
-        "question": "What is the price of the water provided by truck [$/m³]",
-        "question_id": "3.2",
-        "variable_name": "marginal_cost",
-        "possible_answers": TYPE_FLOAT,
-        "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
-    },
-    {
-        "question": "Which other source do you use for TYPE_WATER_USE",
-        "question_id": "3.3",
-        "variable_name": "water_supply",
-        "possible_answers": TYPE_STRING,
-        "answer_map_to": TYPE_COMPONENT,
-    },
+
+Question_3_subquestions = [
     {
         "question": "Do you encounter water quality issues at your TYPE_WATER_USE source, if yes which?",
         "question_id": "4",
@@ -616,17 +525,122 @@ WATER_SUPPLY_TEMPLATE = [
         "possible_answers": TYPE_STRING,
         "answer_map_to": TYPE_COMPONENT,
     },
+
+]
+
+
+WATER_SUPPLY_TEMPLATE = ([
+    {
+        "question": "Which water source do you use for TYPE_WATER_USE",
+        "question_id": "3",
+        "possible_answers": [
+            "groundwater well",
+            "public tap water",
+            "desalinated seawater",
+            "river/creek",
+            "lake",
+            "water truck",
+            "rainwater harvesting",
+            "bottled water",
+            "other",
+        ],
+        "answer_map_to": TYPE_COMPONENT,
+        "display_type": "multiple_choice_tickbox",
+        "subquestion": {
+            "groundwater well": ["3.1", "4_GW", "5_GW"],
+            "desalinated seawater": ["3.1", "4_DS", "5_DS"],
+            "river/creek": ["3.1"],
+            "lake": ["3.1"],
+            "water truck": ["3.2"],
+            "other": ["3.3"],
+        },
+    },
+    {
+        "question": "Are water pumps required to convey water from the source to the point of consumption?",
+        "question_id": "3.1",
+        "possible_answers": ["Yes", "No"],
+        "answer_map_to": TYPE_COMPONENT,
+        "subquestion": {
+            "Yes": ["3.1.1", "3.1.2", "3.1.4"],
+        },
+    },
+    {
+        "question": "What is the height difference between the elevation of the water source"
+        "and the elevation of the location where you are using the water?",
+        INFOBOX: "Elevation of the water source refers to for example average elevation of the groundwater level,"
+        " lake surface, or the elevation of the location of river water uptake. We require this information"
+        "to obtain information regarding a potential water pump head",
+        "question_id": "3.1.1",
+        "variable_name": "head",
+        "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
+        "possible_answers": TYPE_FLOAT,
+    },
+    {
+        "question": "Which energy source is the pump using?",
+        "question_id": "3.1.2",
+        "display_type": "multiple_choice_tickbox",
+        "possible_answers": [
+            "manual",
+            "diesel",
+            "electricity (grid)",
+            "wind turbine",
+            "photovoltaics",
+        ],
+        "answer_map_to": TYPE_COMPONENT,
+        "subquestion": {
+            "diesel": ["3.1.3"],
+            "electricity (grid)": ["3.1.3"],
+            "wind turbine": ["3.1.3"],
+            "photovoltaics": ["3.1.3"],
+        },
+    },
+    {
+        "question": "What is the rated power of the water pump?",
+        "question_id": "3.1.3",
+        "variable_name": "capacity",
+        "possible_answers": TYPE_FLOAT,
+        "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
+    },
+    {
+        "question": "What is the maximum throughput [m³/h] of the water pump",
+        "question_id": "3.1.4",
+        "variable_name": "flow",
+        "possible_answers": TYPE_FLOAT,
+        "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
+    },
+    {
+        "question": "What is the price of the water provided by truck [$/m³]",
+        "question_id": "3.2",
+        "variable_name": "marginal_cost",
+        "possible_answers": TYPE_FLOAT,
+        "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
+    },
+    {
+        "question": "Which other source do you use for TYPE_WATER_USE",
+        "question_id": "3.3",
+        "variable_name": "water_supply",
+        "possible_answers": TYPE_STRING,
+        "answer_map_to": TYPE_COMPONENT,
+    # },]+generate_matrix_questions(survey_questions= Question_3_subquestions,text_to_replace="WT_TYPE") +[
+    },]+
+                         #generate_generic_questions(WATER_SOURCE_SPECIFIC, generate_matrix_questions(survey_questions=Question_3_subquestions,text_to_replace="WT_TYPE"), "TYPE_WATER_USE") +
+                         [
     {
         "question": "Do you typically experience TYPE_WATER_USE shortages from time to time?",
         "question_id": "6",
         "possible_answers": ["Yes", "No"],
         "answer_map_to": TYPE_COMPONENT,
     },
-]
+])
 
-WATER_SUPPLY_TEMPLATE = generate_matrix_questions(
-    survey_questions=WATER_SUPPLY_TEMPLATE, text_to_replace="WT_TYPE"
-)
+
+
+
+
+
+# WATER_SUPPLY_TEMPLATE = generate_matrix_questions(
+#     survey_questions=WATER_SUPPLY_TEMPLATE, text_to_replace="WT_TYPE"
+# )
 
 
 WATER_SUPPLY_SURVEY_STRUCTURE = (
@@ -641,8 +655,8 @@ WATER_SUPPLY_SURVEY_STRUCTURE = (
             "question_id": "2",
             "possible_answers": ["Yes", "No"],
             "subquestion": {
-                "Yes": ["3a", "4a", "5a", "6a", "3b", "4b", "5b", "6b"],
-                "No": ["3", "4", "5", "6"],
+                "Yes": ["3a", "6a", "3b", "6b"],
+                "No": ["3","6"],
             },
         },
     ]
