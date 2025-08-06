@@ -5,22 +5,12 @@ from survey.survey import SURVEY_STRUCTURE, TYPE_STRING, SUB_QUESTION_MAPPING
 
 
 class Command(BaseCommand):
-    help = "Update the survey question objects from SURVEY_STRUCTURE"
+    help = "Remove all survey questions and answers and repopulate the questions"
 
-    def add_arguments(self, parser):
-        parser.add_argument(
-            "--update", action="store_true", help="Update survey questions"
-        )
-        parser.add_argument(
-            "--dev", action="store_true", help="Remove the survey answers"
-        )
 
     def handle(self, *args, **options):
-        update_assets = options["update"]
-        remove_answers = options["dev"]
-
-        if remove_answers is True:
-            SurveyAnswer.objects.all().delete()
+        SurveyAnswer.objects.all().delete()
+        SurveyQuestion.objects.all().delete()
 
         assets = SURVEY_STRUCTURE
         for asset_params in assets:
@@ -66,4 +56,3 @@ class Command(BaseCommand):
                     qs.update(**asset_params)
                     # print(asset)
                     print("To", asset_params)
-        # import pdb;pdb.set_trace()
