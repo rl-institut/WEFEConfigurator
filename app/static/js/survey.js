@@ -45,23 +45,26 @@ function toggleVisibility(elementIdPrefix, subQuestions, subQuestionMapping) {
         for (let key_i in q_id){
             var subQuestionDiv = document.getElementById(elementIdPrefix + q_id[key_i]);
             if(subQuestionDiv === null){
-                subQuestionDiv = document.getElementById(elementIdPrefix + q_id[key_i]);
-            }
-            var dropdowns = subQuestionDiv.querySelectorAll(".sub_question");
-
-            var check_boxes = subQuestionDiv.querySelectorAll('input[type="checkbox"]');
-
-            if(subQuestions.includes(q_id[key_i])){
-                // show the subquestion
-                subQuestionDiv.parentNode.classList.remove("disabled");
+                console.log("Looking for element " + elementIdPrefix + q_id[key_i]);
             }
             else{
-                // hide the subquestion
-                subQuestionDiv.parentNode.classList.add("disabled");
-                // deselect the checked options of subquestions
-                if(check_boxes){
-                    for(let i=0;i<check_boxes.length;i++){
-                        deselect(check_boxes[i]);
+
+                var dropdowns = subQuestionDiv.querySelectorAll(".sub_question");
+
+                var check_boxes = subQuestionDiv.querySelectorAll('input[type="checkbox"]');
+
+                if(subQuestions.includes(q_id[key_i])){
+                    // show the subquestion
+                    subQuestionDiv.parentNode.classList.remove("disabled");
+                }
+                else{
+                    // hide the subquestion
+                    subQuestionDiv.parentNode.classList.add("disabled");
+                    // deselect the checked options of subquestions
+                    if(check_boxes){
+                        for(let i=0;i<check_boxes.length;i++){
+                            deselect(check_boxes[i]);
+                        }
                     }
                 }
             }
