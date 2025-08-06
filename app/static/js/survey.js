@@ -133,14 +133,23 @@ function triggerMatrixSubQuestion(new_value, subQuestionMapping) {
   });
 
   // display the headers only if there are selected elements
+  hide_parent_container = true;
+
   container.querySelectorAll(".matrix_row_0").forEach(el => {
     if (visibleRowData.length === 0) {
         el.style.display = "none";
     }else{
         el.style.display = "";
+        hide_parent_container = false;
     }
   });
-
+  if(hide_parent_container){
+    container.classList.add("disabled");
+  }
+  else{
+  container.classList.remove("disabled");
+  //
+  }
     //resetMatrixRows(container=matrixDiv, selectedValues=selectedValues)
 }
 
