@@ -1,7 +1,6 @@
 # WEFEConfigurator
 
-WEFEConfigurator is a tool designed to set up and run energy system simulations for the case study analysis of 
-Water-Energy-Food-Environment (WEFE) mini-grids. These combine different renewable energy (RE) technologies,
+WEFEConfigurator is an open software tool designed to set up, simulate and optimize models of integrated water-energy-food-environment systems (iWEFEs). These combine different renewable energy (RE) technologies,
 such as photovoltaics, wind turbines, hydropower, and biogas plants, storage systems such as
 batteries, hydrogen, or water tanks, and productive uses, such as water pumping, water treatment,
 irrigation, cold storage, agricultural processing, via smart control systems. An example of such are agrivoltaics which 
@@ -18,7 +17,7 @@ then be interactively visualized through [dash](https://dash.plotly.com/).
 
 Make sure a supported Python Version (3.9 or greater) and an interpreter (preferably PyCharm) is installed on your system. 
 Install CBC solver for oemof-solph using the installation instructions: 
-https://oemof-solph.readthedocs.io/en/latest/readme.html#installing-a-solver
+https://github.com/oemof/oemof-solph?tab=readme-ov-file#installing-a-solver
 
 ## Installation
 

@@ -5,66 +5,51 @@ import pandas as pd
 import logging
 import json
 
+from app.survey.survey import SUB_QUESTION_MAPPING
 from utils import AVAILABLE_COMPONENTS, COMPONENT_TEMPLATES_PATH
 from analyse_survey import create_components_list
 
 # TODO this needs to work standalone as well as a service
 
+#-------------RELEVANT PATHS------------
+# they may be changed if this script is moved somewhere else...
+script_dir = os.path.dirname(os.path.abspath(__file__))
+project_dir = os.path.dirname(os.path.dirname(script_dir))
+scenario_dir = os.path.join(project_dir, "scenarios")
+lib_dir = os.path.join(project_dir, "component_library")
 
+#-------SURVEY MAPPING----------
 TYPE_FLOAT = "float"
 TYPE_INT = "int"
 TYPE_STRING = "string"
 TYPE_WATER = "string"
 INFOBOX = "description"
-SURVEY_ANSWER_COMPONENT_MAPPING = {
-    # "question_id": {"yes": "component_name"},
-    # "question_id": {"no": "component_name", "yes": "other_component_name"},
-    "1": {
-        "photovoltaic_system": "pv_ground_mounted",
-        "battery_system": "battery-storage",
-        "diesel_generator": "diesel_generator",
-        "wind_turbine": "wind_turbine",
-        "hydropower": "hydropower",
-        "national_grid": "grid",
-    },
-    "1.1": {"pv_ground_mounted/capacity": TYPE_FLOAT},
-    "1.2": {"battery_storage/capacity": TYPE_FLOAT},
-    "1.3": {"diesel_generator/capacity": TYPE_FLOAT},
-    "1.4": {"wind_turbine/capacity": TYPE_FLOAT},
-    "1.5": {"hydropower/capacity": TYPE_FLOAT},
-    "1.6": {"other_energy_production": TYPE_STRING},
-    "1.7": {"other_energy_production/capacity": TYPE_FLOAT},
-    # TODO "2" define water cycles considering WATER_TYPE_USE -> service water and drinking water cycle
-    "3": {
-        "well_with_hand_pump": ["submersible_pump", "groundwater"],
-        "well_with_motorized_pump": ["submersible_pump", "groundwater"],
-        "desalinated_seawater": ["desalinator", "seawater"],
-        "protected_spring": "groundwater",
-        "unprotected_spring": "groundwater",
-        "river/creek": ["surface_water", "hydropower"],
-        "rainwater_harvesting": [
-            "precipitation",
-            "rainwater harvesting",
-            "water_storage",
-        ],
-        "water_truck": "water_truck",
-        "public_tap_water": "tap_water",
-    },
-    "3.1": {"groundwater/head": TYPE_FLOAT},
-    "3.2": {"submersible_pump/capacity": TYPE_FLOAT},
-    # TODO include question for specific throughput
-    "3.6": {"water_truck/marginal_cost": TYPE_FLOAT},
+
+TYPE_COMPONENT = "component"
+TYPE_COMPONENT_ATTRIBUTE = "attribute"
+TYPE_NO_MAP = "skip"
+
+type_check = {
+    TYPE_FLOAT: float,
+    TYPE_INT: int,
+    TYPE_STRING: str,
 }
+
+# Later direct imports without .json
+with open(os.path.join(project_dir, "app", "commented_mapping.json"),"r") as fp:
+    SURVEY_ANSWER_COMPONENT_MAPPING= json.load(fp)
+
 
 class ScenarioBuilder:
     def __init__(self):
-        self.name = "some_scenario_name" # should be updated based on scenario
+        self.name = "test_scenario" # should be updated based on scenario
         self.mapping = SURVEY_ANSWER_COMPONENT_MAPPING
+        self.subq_mapping = SUB_QUESTION_MAPPING
         self.components = {}
         self.scenario_folder = self.create_scenario_folder()
 
 
-    def create_scenario_folder(self, destination_path=os.getcwd()):
+    def create_scenario_folder(self, destination_path=scenario_dir):
         """Create a folder with the datapackage structure, the components and timeseries will be filled later on"""
         scenario_folder = os.path.join(destination_path, self.name)
         if os.path.exists(scenario_folder):
@@ -84,39 +69,89 @@ class ScenarioBuilder:
         once without editing them multiple times.
         Example output:
         {
-            "wind_turbine": {"capacity": 10, "some_parameter": 5},
-            "diesel_generator": {"fuel_efficiency": 0.8}
+            "wind-turbine": {"capacity": 10, "some_parameter": 5},
+            "diesel-generator": {"fuel_efficiency": 0.8}
         }
         """
         for question_id, answer in survey.items():
+            # 2 options for answer:
+            # option 1: list -> turn all TYPE_COMPONENT answers into list
+            # option 2: single item (None, float, str) -> assume all TYPE_COMPONENT_ATTRIBUTE answers to be single items
             if answer is not None:
+                # obtain question_id
                 question_id = question_id.strip("criteria_")
 
                 if question_id in self.mapping:
-                    # Check if it's a top-level question for adding components
-                    try:
-                        int_test = int(question_id)
-                        component_map = self.mapping[question_id]
+                    map_to, map_answer = next(iter(self.mapping[question_id].items()))
+                    """
+                    in general 3 options for map_answer (always dict):
+                    option 1: {str1: list, str2: list, ...} -> for components
+                    option 2: {str: list} -> not applicable at all (modify to align with option 1)
+                    option 3: {str: str} -> for attributes
+                    keys can be component_name, attribute_name, bool (related to some attribute/component)
+                    """
+
+                    if map_to == TYPE_COMPONENT:
                         components_to_add = []
-                        for component in answer:
-                            if isinstance(component_map.get(component, None), list):
-                                components_to_add.extend(component_map.get(component, None))
+
+                        # Align answer structure: Should always be of type "list" to match component mapping
+                        answer = [answer] if not isinstance(answer, list) else answer
+
+                        for a in answer:
+                            # option 1: all "normal" components are keys in map_what
+                            if a in map_answer:
+                                components_to_add.extend(map_answer[a])
+
+                            # option 2: so far not applicable for components -> dismiss
+
+                            # option 3: "other" components are just given as user input (string) -> delete
+                            # TODO: this will create user-defined component which is hard to handle,
+                            #  questions where users insert components as strings should not be used in ESM directly,
+                            #  "other" can be option to choose (tick) though with "other" in component_lib
                             else:
-                                components_to_add.append(component_map.get(component, None))
+                                components_to_add.append(str(a))
+                            # another condition to catch errors
 
                         self.components.update({component: {} for component in components_to_add})
-                    # If the number can't be parsed as an integer, it's a subquestion
-                    except ValueError:
-                        answer_mapping = self.mapping[question_id].keys()
-                        for map in answer_mapping:
-                            component, attribute = map.split("/")
-                            try:
-                                self.components[component][attribute] = answer
-                            except KeyError:
-                                 print(f"Could not add attribute {attribute} to {component}, because {component} was not found")
+
+                    elif map_to == TYPE_COMPONENT_ATTRIBUTE:
+                        if question_id in self.subq_mapping:
+                            # Obtain parent question_id and answer to link attribute to its component
+                            parent_qid, parent_answer = self.subq_mapping[question_id]
+
+                            # Align answer structure: Should always be single item to match attribute mapping
+                            answer = answer[0] if isinstance(answer, list) else answer
+                            # some debugging if answer is list longer than 1
+
+                            # option 1: so far not applicable for attributes -> dismiss
+
+                            # option 2: no idea yet how these attributes should be linked to a component
+                            # example for opt 2: question 4.2, map_answer = {'water_metals': ['Arsenic', 'Lead', 'Mercury', 'Cadmium', 'Iron']}
+                            # TODO: Modify these questions to be TYPE_COMPONENT formatted according to option 1
+
+                            # option 3:
+                            (attribute_name, attribute_type), = map_answer.items()
+                            attribute_val = type_check[attribute_type](answer)
+
+                            target_components = self.mapping[parent_qid][TYPE_COMPONENT][parent_answer]
+
+                            for target_component in target_components:
+                                self.components[target_component] = {attribute_name: attribute_val}
+                                #some debugging for key error
+                        else:
+                            # TODO: Check if TYPE_COMPONENT_ATTRIBUTE questions are always subquestions of a TYPE_COMPONENT question
+                            pass
+
+                    elif map_to == TYPE_NO_MAP:
+                        # Don't know what to do with this
+                        pass
+                    else:
+                        print(f"Question {question_id} has unexpected key {map_to} that can't be mapped.")
+                        pass
 
 
     def add_components(self):
+        # TODO: does not add components that are not in AVAILABLE_COMPONENTS (component: "other")
         """
         Add all components and their corresponding attributes from the survey to the corresponding csv files. If a
         folder for the scenario doesn't exist, it will be created. If it does, the components and corresponding

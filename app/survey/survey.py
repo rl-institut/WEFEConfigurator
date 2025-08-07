@@ -1030,20 +1030,22 @@ def collect_subquestion_mapping():
     subquestion_mapping = {}
     for question in SURVEY_STRUCTURE:
         subquestions = question.get("subquestion", {})
-        for subq in subquestions.values():
+        for possible_answer, subq in subquestions.items():
             if isinstance(subq, list):
                 for sq in subq:
                     if sq not in subquestion_mapping:
-                        subquestion_mapping[sq] = question["question_id"]
+                        # I used tuples to pass possible_answer alongside the question_id, due to json converting this will turn out as a list...use list right away
+                        subquestion_mapping[sq] = [question["question_id"], possible_answer]
                     else:
-                        if subquestion_mapping[sq] != question["question_id"]:
+                        # some subquestions produce the error, but seem to be dumped correctly in the json file!
+                        if subquestion_mapping[sq] != [question["question_id"], possible_answer]:
                             print("problem with subquestion", sq)
 
             else:
                 if subq not in subquestion_mapping:
-                    subquestion_mapping[subq] = question["question_id"]
+                    subquestion_mapping[subq] = [question["question_id"], possible_answer]
                 else:
-                    if subquestion_mapping[subq] != question["question_id"]:
+                    if subquestion_mapping[subq] != [question["question_id"], possible_answer]:
                         print("problem with subquestion", subq)
 
     return subquestion_mapping
