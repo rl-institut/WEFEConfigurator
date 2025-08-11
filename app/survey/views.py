@@ -31,7 +31,7 @@ def view_survey_questions(request, scen_id=None):
                 json.dump(form.cleaned_data, fp, indent=4)
             for criteria_num, value in form.cleaned_data.items():
                 crit = qs.get(question_id=criteria_num.replace("criteria_", ""))
-                crit.value = value
+                crit.value = json.dumps(value)
                 crit.save(update_fields=["value"])
 
             answer = HttpResponseRedirect(reverse("view_survey", args=[scen_id]))

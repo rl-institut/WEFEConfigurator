@@ -42,3 +42,12 @@ class SurveyAnswer(models.Model):
     value = models.TextField(null=True)
     # TODO make this a ForeignKey
     scenario_id = models.IntegerField(null=False)
+
+    def export(self, ignore_empty=False):
+
+        value = json.loads(self.value)
+        answer = {self.question.question_id: value}
+        if ignore_empty is True and value is None:
+            answer = {}
+        return answer
+
