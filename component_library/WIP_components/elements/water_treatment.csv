@@ -16,9 +16,3 @@ simple_oxidation;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-el
 ozonation;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Ozonation
 biological_denitrification;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Biological Denitrifiation
 photocatalysis;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Photocatalysis
-
-# water treatment currently is modeled with two inputs (electricity and water), however there are some solutions which do not require electricty!
-
-# TODO find solution for case that various filtration nad desalination system are put in series..;;;;;;;;;;;;;;;;;;;;;;;;
-# specific energy consumption eqauls  conversion_factor_ac-elec-bus (some kind of efficiency);;;;;;;;;;;;;;;;;;;;;;;;
-# conversion_rate_feed_bus always equals 1; could be omitted;;;;;;;;;;;;;;;;;;;;;;;

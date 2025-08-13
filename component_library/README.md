@@ -13,6 +13,11 @@ The following columns could be added to each component:
 ## Trying out locally
 Install requirements in a virtual environement `pip install -r component_library/scripts/requirements.txt`
 
+## Check the validity of the component library
+
+From within `component_library/scripts` run `python utils.py`, this will display the list of the available components and to which csv file they are linked. In case of addition of new csv files, one need to delete the `component_library/WIP_components/datapackage.json` file. You will then enounter errors like `The resource energy_sources has the following casting errors: Field "profile" can't cast value "ghi-profile" for type "integer" with format "default"` --> simply change the type to "string" for this field
+
+
 ## Postprocessing of the survey
 
 Get questions of the survey from the database: run `python manage.py save_survey_answers <scenario number>`. This will save the answers in a json file in the format : `scenario_<scenario number>_survey_answers.json`
