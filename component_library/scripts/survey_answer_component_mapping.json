@@ -1,0 +1,6115 @@
+{
+    "1": {
+        "component": {
+            "photovoltaic system": [
+                ""
+            ],
+            "battery system": [
+                ""
+            ],
+            "diesel generator": [
+                ""
+            ],
+            "wind turbine": [
+                ""
+            ],
+            "hydropower": [
+                ""
+            ],
+            "national grid": [
+                ""
+            ],
+            "biogas plant": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "1.1": {
+        "attribute": {
+            "capacity": "float"
+        }
+    },
+    "1.2": {
+        "attribute": {
+            "capacity": "float"
+        }
+    },
+    "1.3": {
+        "attribute": {
+            "capacity": "float"
+        }
+    },
+    "1.4": {
+        "attribute": {
+            "capacity": "float"
+        }
+    },
+    "1.5": {
+        "attribute": {
+            "capacity": "float"
+        }
+    },
+    "1.6": {
+        "attribute": {
+            "capacity": "float"
+        }
+    },
+    "1.7": {
+        "component": {
+            "supply": "string"
+        }
+    },
+    "1.8": {
+        "attribute": {
+            "capacity": "float"
+        }
+    },
+    "11": {
+        "component": {
+            "wheat": [
+                ""
+            ],
+            "rice": [
+                ""
+            ],
+            "soy bean": [
+                ""
+            ],
+            "dry bean": [
+                ""
+            ],
+            "peanut": [
+                ""
+            ],
+            "potato": [
+                ""
+            ],
+            "cassava": [
+                ""
+            ],
+            "tomato": [
+                ""
+            ],
+            "sweetcorn": [
+                ""
+            ],
+            "green bean": [
+                ""
+            ],
+            "carrot": [
+                ""
+            ],
+            "cotton": [
+                ""
+            ],
+            "banana": [
+                ""
+            ],
+            "lettuce": [
+                ""
+            ],
+            "cucumber": [
+                ""
+            ],
+            "pineapple": [
+                ""
+            ],
+            "avocado": [
+                ""
+            ],
+            "quinoa": [
+                ""
+            ],
+            "amaranth": [
+                ""
+            ],
+            "guava": [
+                ""
+            ],
+            "papaya": [
+                ""
+            ],
+            "mango": [
+                ""
+            ],
+            "sorghum": [
+                ""
+            ],
+            "millet": [
+                ""
+            ],
+            "yam": [
+                ""
+            ],
+            "plantain": [
+                ""
+            ],
+            "apple": [
+                ""
+            ],
+            "sunflower": [
+                ""
+            ],
+            "cacao": [
+                ""
+            ],
+            "cashew": [
+                ""
+            ],
+            "pumpkin": [
+                ""
+            ],
+            "black bean": [
+                ""
+            ],
+            "oat": [
+                ""
+            ],
+            "pepper": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.1.0": {
+        "attribute": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.0": {
+        "attribute": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.0": {
+        "attribute": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.0": {
+        "component": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.0": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.1": {
+        "attribute": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.1": {
+        "attribute": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.1": {
+        "attribute": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.1": {
+        "component": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.1": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.2": {
+        "attribute": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.2": {
+        "attribute": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.2": {
+        "attribute": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.2": {
+        "component": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.2": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.3": {
+        "attribute": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.3": {
+        "attribute": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.3": {
+        "attribute": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.3": {
+        "component": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.3": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.4": {
+        "attribute": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.4": {
+        "attribute": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.4": {
+        "attribute": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.4": {
+        "component": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.4": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.5": {
+        "attribute": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.5": {
+        "attribute": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.5": {
+        "attribute": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.5": {
+        "component": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.5": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.6": {
+        "attribute": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.6": {
+        "attribute": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.6": {
+        "attribute": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.6": {
+        "component": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.6": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.7": {
+        "attribute": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.7": {
+        "attribute": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.7": {
+        "attribute": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.7": {
+        "component": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.7": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.8": {
+        "attribute": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.8": {
+        "attribute": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.8": {
+        "attribute": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.8": {
+        "component": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.8": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.9": {
+        "attribute": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.9": {
+        "attribute": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.9": {
+        "attribute": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.9": {
+        "component": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.9": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.10": {
+        "attribute": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.10": {
+        "attribute": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.10": {
+        "attribute": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.10": {
+        "component": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.10": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.11": {
+        "attribute": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.11": {
+        "attribute": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.11": {
+        "attribute": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.11": {
+        "component": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.11": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.12": {
+        "attribute": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.12": {
+        "attribute": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.12": {
+        "attribute": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.12": {
+        "component": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.12": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.13": {
+        "attribute": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.13": {
+        "attribute": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.13": {
+        "attribute": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.13": {
+        "component": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.13": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.14": {
+        "attribute": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.14": {
+        "attribute": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.14": {
+        "attribute": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.14": {
+        "component": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.14": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.15": {
+        "attribute": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.15": {
+        "attribute": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.15": {
+        "attribute": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.15": {
+        "component": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.15": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.16": {
+        "attribute": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.16": {
+        "attribute": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.16": {
+        "attribute": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.16": {
+        "component": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.16": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.17": {
+        "attribute": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.17": {
+        "attribute": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.17": {
+        "attribute": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.17": {
+        "component": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.17": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.18": {
+        "attribute": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.18": {
+        "attribute": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.18": {
+        "attribute": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.18": {
+        "component": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.18": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.19": {
+        "attribute": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.19": {
+        "attribute": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.19": {
+        "attribute": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.19": {
+        "component": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.19": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.20": {
+        "attribute": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.20": {
+        "attribute": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.20": {
+        "attribute": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.20": {
+        "component": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.20": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.21": {
+        "attribute": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.21": {
+        "attribute": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.21": {
+        "attribute": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.21": {
+        "component": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.21": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.22": {
+        "attribute": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.22": {
+        "attribute": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.22": {
+        "attribute": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.22": {
+        "component": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.22": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.23": {
+        "attribute": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.23": {
+        "attribute": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.23": {
+        "attribute": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.23": {
+        "component": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.23": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.24": {
+        "attribute": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.24": {
+        "attribute": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.24": {
+        "attribute": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.24": {
+        "component": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.24": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.25": {
+        "attribute": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.25": {
+        "attribute": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.25": {
+        "attribute": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.25": {
+        "component": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.25": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.26": {
+        "attribute": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.26": {
+        "attribute": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.26": {
+        "attribute": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.26": {
+        "component": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.26": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.27": {
+        "attribute": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.27": {
+        "attribute": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.27": {
+        "attribute": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.27": {
+        "component": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.27": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.28": {
+        "attribute": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.28": {
+        "attribute": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.28": {
+        "attribute": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.28": {
+        "component": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.28": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.29": {
+        "attribute": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.29": {
+        "attribute": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.29": {
+        "attribute": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.29": {
+        "component": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.29": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.30": {
+        "attribute": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.30": {
+        "attribute": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.30": {
+        "attribute": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.30": {
+        "component": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.30": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.31": {
+        "attribute": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.31": {
+        "attribute": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.31": {
+        "attribute": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.31": {
+        "component": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.31": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.32": {
+        "attribute": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.32": {
+        "attribute": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.32": {
+        "attribute": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.32": {
+        "component": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.32": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.33": {
+        "attribute": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.33": {
+        "attribute": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.33": {
+        "attribute": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.33": {
+        "component": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.33": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.34": {
+        "attribute": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.34": {
+        "attribute": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.34": {
+        "attribute": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.34": {
+        "component": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.34": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "8.2": {
+        "component": {
+            "variable_name": "string"
+        }
+    },
+    "10": {
+        "component": {
+            "yes": [
+                ""
+            ],
+            "no": [
+                ""
+            ]
+        }
+    },
+    "3": {
+        "component": {
+            "groundwater well": [
+                ""
+            ],
+            "public tap water": [
+                ""
+            ],
+            "desalinated seawater": [
+                ""
+            ],
+            "river/creek": [
+                ""
+            ],
+            "lake": [
+                ""
+            ],
+            "water truck": [
+                ""
+            ],
+            "rainwater harvesting": [
+                ""
+            ],
+            "bottled water": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "3_GW.1": {
+        "component": {
+            "Yes": [
+                ""
+            ],
+            "No": [
+                ""
+            ]
+        }
+    },
+    "3_GW.1.1": {
+        "attribute": {
+            "head": "float"
+        }
+    },
+    "3_GW.1.2": {
+        "component": {
+            "manual": [
+                ""
+            ],
+            "diesel": [
+                ""
+            ],
+            "electricity (grid)": [
+                ""
+            ],
+            "wind turbine": [
+                ""
+            ],
+            "photovoltaics": [
+                ""
+            ]
+        }
+    },
+    "3_GW.1.3": {
+        "attribute": {
+            "capacity": "float"
+        }
+    },
+    "3_GW.1.4": {
+        "attribute": {
+            "flow": "float"
+        }
+    },
+    "4_GW.1": {
+        "attribute": {
+            "salinity": "float"
+        }
+    },
+    "4_GW.2": {
+        "component": {
+            "Arsenic": [
+                ""
+            ],
+            "Lead": [
+                ""
+            ],
+            "Mercury": [
+                ""
+            ],
+            "Cadmium": [
+                ""
+            ],
+            "Iron": [
+                ""
+            ]
+        }
+    },
+    "4_GW.3": {
+        "component": {
+            "pesticides": [
+                ""
+            ],
+            "pharmaceutical_residues": [
+                ""
+            ],
+            "fertilizers": [
+                ""
+            ]
+        }
+    },
+    "5_GW": {
+        "component": {
+            "no": [
+                ""
+            ],
+            "reverse osmosis": [
+                ""
+            ],
+            "membrane distillation": [
+                ""
+            ],
+            "ultrafiltration": [
+                ""
+            ],
+            "boiling": [
+                ""
+            ],
+            "distillation": [
+                ""
+            ],
+            "activated carbon filter": [
+                ""
+            ],
+            "UV-disinfection": [
+                ""
+            ],
+            "cartridge filter": [
+                ""
+            ],
+            "microfiltration": [
+                ""
+            ],
+            "ceramic filter": [
+                ""
+            ],
+            "nanofiltration": [
+                ""
+            ],
+            "electrodialyis": [
+                ""
+            ],
+            "slow sand filter": [
+                ""
+            ],
+            "water softener": [
+                ""
+            ],
+            "chlorination": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "5_GW.1.0": {
+        "attribute": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_GW.2.0": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.3.0": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.1.1": {
+        "attribute": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_GW.2.1": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.3.1": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.1.2": {
+        "attribute": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_GW.2.2": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.3.2": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.1.3": {
+        "attribute": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_GW.2.3": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.3.3": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.2.4": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.3.4": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.2.5": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.3.5": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.2.6": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.3.6": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.2.7": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.3.7": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.2.8": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.3.8": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.2.9": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.3.9": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.2.10": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.3.10": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.2.11": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.3.11": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.2.12": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.3.12": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.2.13": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.3.13": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.2.14": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.3.14": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.4": {
+        "component": {
+            "variable_name": "string"
+        }
+    },
+    "3_DS.1": {
+        "component": {
+            "Yes": [
+                ""
+            ],
+            "No": [
+                ""
+            ]
+        }
+    },
+    "3_DS.1.1": {
+        "attribute": {
+            "head": "float"
+        }
+    },
+    "3_DS.1.2": {
+        "component": {
+            "manual": [
+                ""
+            ],
+            "diesel": [
+                ""
+            ],
+            "electricity (grid)": [
+                ""
+            ],
+            "wind turbine": [
+                ""
+            ],
+            "photovoltaics": [
+                ""
+            ]
+        }
+    },
+    "3_DS.1.3": {
+        "attribute": {
+            "capacity": "float"
+        }
+    },
+    "3_DS.1.4": {
+        "attribute": {
+            "flow": "float"
+        }
+    },
+    "4_DS.1": {
+        "attribute": {
+            "salinity": "float"
+        }
+    },
+    "4_DS.2": {
+        "component": {
+            "Arsenic": [
+                ""
+            ],
+            "Lead": [
+                ""
+            ],
+            "Mercury": [
+                ""
+            ],
+            "Cadmium": [
+                ""
+            ],
+            "Iron": [
+                ""
+            ]
+        }
+    },
+    "4_DS.3": {
+        "component": {
+            "pesticides": [
+                ""
+            ],
+            "pharmaceutical_residues": [
+                ""
+            ],
+            "fertilizers": [
+                ""
+            ]
+        }
+    },
+    "5_DS": {
+        "component": {
+            "no": [
+                ""
+            ],
+            "reverse osmosis": [
+                ""
+            ],
+            "membrane distillation": [
+                ""
+            ],
+            "ultrafiltration": [
+                ""
+            ],
+            "boiling": [
+                ""
+            ],
+            "distillation": [
+                ""
+            ],
+            "activated carbon filter": [
+                ""
+            ],
+            "UV-disinfection": [
+                ""
+            ],
+            "cartridge filter": [
+                ""
+            ],
+            "microfiltration": [
+                ""
+            ],
+            "ceramic filter": [
+                ""
+            ],
+            "nanofiltration": [
+                ""
+            ],
+            "electrodialyis": [
+                ""
+            ],
+            "slow sand filter": [
+                ""
+            ],
+            "water softener": [
+                ""
+            ],
+            "chlorination": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "5_DS.1.0": {
+        "attribute": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_DS.2.0": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.3.0": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.1.1": {
+        "attribute": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_DS.2.1": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.3.1": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.1.2": {
+        "attribute": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_DS.2.2": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.3.2": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.1.3": {
+        "attribute": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_DS.2.3": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.3.3": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.2.4": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.3.4": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.2.5": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.3.5": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.2.6": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.3.6": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.2.7": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.3.7": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.2.8": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.3.8": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.2.9": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.3.9": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.2.10": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.3.10": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.2.11": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.3.11": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.2.12": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.3.12": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.2.13": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.3.13": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.2.14": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.3.14": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.4": {
+        "component": {
+            "variable_name": "string"
+        }
+    },
+    "3_RC.1": {
+        "component": {
+            "Yes": [
+                ""
+            ],
+            "No": [
+                ""
+            ]
+        }
+    },
+    "3_RC.1.1": {
+        "attribute": {
+            "head": "float"
+        }
+    },
+    "3_RC.1.2": {
+        "component": {
+            "manual": [
+                ""
+            ],
+            "diesel": [
+                ""
+            ],
+            "electricity (grid)": [
+                ""
+            ],
+            "wind turbine": [
+                ""
+            ],
+            "photovoltaics": [
+                ""
+            ]
+        }
+    },
+    "3_RC.1.3": {
+        "attribute": {
+            "capacity": "float"
+        }
+    },
+    "3_RC.1.4": {
+        "attribute": {
+            "flow": "float"
+        }
+    },
+    "4_RC.1": {
+        "attribute": {
+            "salinity": "float"
+        }
+    },
+    "4_RC.2": {
+        "component": {
+            "Arsenic": [
+                ""
+            ],
+            "Lead": [
+                ""
+            ],
+            "Mercury": [
+                ""
+            ],
+            "Cadmium": [
+                ""
+            ],
+            "Iron": [
+                ""
+            ]
+        }
+    },
+    "4_RC.3": {
+        "component": {
+            "pesticides": [
+                ""
+            ],
+            "pharmaceutical_residues": [
+                ""
+            ],
+            "fertilizers": [
+                ""
+            ]
+        }
+    },
+    "5_RC": {
+        "component": {
+            "no": [
+                ""
+            ],
+            "reverse osmosis": [
+                ""
+            ],
+            "membrane distillation": [
+                ""
+            ],
+            "ultrafiltration": [
+                ""
+            ],
+            "boiling": [
+                ""
+            ],
+            "distillation": [
+                ""
+            ],
+            "activated carbon filter": [
+                ""
+            ],
+            "UV-disinfection": [
+                ""
+            ],
+            "cartridge filter": [
+                ""
+            ],
+            "microfiltration": [
+                ""
+            ],
+            "ceramic filter": [
+                ""
+            ],
+            "nanofiltration": [
+                ""
+            ],
+            "electrodialyis": [
+                ""
+            ],
+            "slow sand filter": [
+                ""
+            ],
+            "water softener": [
+                ""
+            ],
+            "chlorination": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "5_RC.1.0": {
+        "attribute": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_RC.2.0": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.3.0": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.1.1": {
+        "attribute": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_RC.2.1": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.3.1": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.1.2": {
+        "attribute": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_RC.2.2": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.3.2": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.1.3": {
+        "attribute": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_RC.2.3": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.3.3": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.2.4": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.3.4": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.2.5": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.3.5": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.2.6": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.3.6": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.2.7": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.3.7": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.2.8": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.3.8": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.2.9": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.3.9": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.2.10": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.3.10": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.2.11": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.3.11": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.2.12": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.3.12": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.2.13": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.3.13": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.2.14": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.3.14": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.4": {
+        "component": {
+            "variable_name": "string"
+        }
+    },
+    "3_L.1": {
+        "component": {
+            "Yes": [
+                ""
+            ],
+            "No": [
+                ""
+            ]
+        }
+    },
+    "3_L.1.1": {
+        "attribute": {
+            "head": "float"
+        }
+    },
+    "3_L.1.2": {
+        "component": {
+            "manual": [
+                ""
+            ],
+            "diesel": [
+                ""
+            ],
+            "electricity (grid)": [
+                ""
+            ],
+            "wind turbine": [
+                ""
+            ],
+            "photovoltaics": [
+                ""
+            ]
+        }
+    },
+    "3_L.1.3": {
+        "attribute": {
+            "capacity": "float"
+        }
+    },
+    "3_L.1.4": {
+        "attribute": {
+            "flow": "float"
+        }
+    },
+    "4_L.1": {
+        "attribute": {
+            "salinity": "float"
+        }
+    },
+    "4_L.2": {
+        "component": {
+            "Arsenic": [
+                ""
+            ],
+            "Lead": [
+                ""
+            ],
+            "Mercury": [
+                ""
+            ],
+            "Cadmium": [
+                ""
+            ],
+            "Iron": [
+                ""
+            ]
+        }
+    },
+    "4_L.3": {
+        "component": {
+            "pesticides": [
+                ""
+            ],
+            "pharmaceutical_residues": [
+                ""
+            ],
+            "fertilizers": [
+                ""
+            ]
+        }
+    },
+    "5_L": {
+        "component": {
+            "no": [
+                ""
+            ],
+            "reverse osmosis": [
+                ""
+            ],
+            "membrane distillation": [
+                ""
+            ],
+            "ultrafiltration": [
+                ""
+            ],
+            "boiling": [
+                ""
+            ],
+            "distillation": [
+                ""
+            ],
+            "activated carbon filter": [
+                ""
+            ],
+            "UV-disinfection": [
+                ""
+            ],
+            "cartridge filter": [
+                ""
+            ],
+            "microfiltration": [
+                ""
+            ],
+            "ceramic filter": [
+                ""
+            ],
+            "nanofiltration": [
+                ""
+            ],
+            "electrodialyis": [
+                ""
+            ],
+            "slow sand filter": [
+                ""
+            ],
+            "water softener": [
+                ""
+            ],
+            "chlorination": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "5_L.1.0": {
+        "attribute": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_L.2.0": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.3.0": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.1.1": {
+        "attribute": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_L.2.1": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.3.1": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.1.2": {
+        "attribute": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_L.2.2": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.3.2": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.1.3": {
+        "attribute": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_L.2.3": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.3.3": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.2.4": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.3.4": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.2.5": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.3.5": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.2.6": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.3.6": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.2.7": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.3.7": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.2.8": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.3.8": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.2.9": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.3.9": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.2.10": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.3.10": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.2.11": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.3.11": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.2.12": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.3.12": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.2.13": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.3.13": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.2.14": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.3.14": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.4": {
+        "component": {
+            "variable_name": "string"
+        }
+    },
+    "6": {
+        "component": {
+            "Yes": [
+                ""
+            ],
+            "No": [
+                ""
+            ]
+        }
+    },
+    "3a": {
+        "component": {
+            "groundwater well": [
+                ""
+            ],
+            "public tap water": [
+                ""
+            ],
+            "desalinated seawater": [
+                ""
+            ],
+            "river/creek": [
+                ""
+            ],
+            "lake": [
+                ""
+            ],
+            "water truck": [
+                ""
+            ],
+            "rainwater harvesting": [
+                ""
+            ],
+            "bottled water": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "3_GWa.1": {
+        "component": {
+            "Yes": [
+                ""
+            ],
+            "No": [
+                ""
+            ]
+        }
+    },
+    "3_GWa.1.1": {
+        "attribute": {
+            "head": "float"
+        }
+    },
+    "3_GWa.1.2": {
+        "component": {
+            "manual": [
+                ""
+            ],
+            "diesel": [
+                ""
+            ],
+            "electricity (grid)": [
+                ""
+            ],
+            "wind turbine": [
+                ""
+            ],
+            "photovoltaics": [
+                ""
+            ]
+        }
+    },
+    "3_GWa.1.3": {
+        "attribute": {
+            "capacity": "float"
+        }
+    },
+    "3_GWa.1.4": {
+        "attribute": {
+            "flow": "float"
+        }
+    },
+    "4_GWa.1": {
+        "attribute": {
+            "salinity": "float"
+        }
+    },
+    "4_GWa.2": {
+        "component": {
+            "Arsenic": [
+                ""
+            ],
+            "Lead": [
+                ""
+            ],
+            "Mercury": [
+                ""
+            ],
+            "Cadmium": [
+                ""
+            ],
+            "Iron": [
+                ""
+            ]
+        }
+    },
+    "4_GWa.3": {
+        "component": {
+            "pesticides": [
+                ""
+            ],
+            "pharmaceutical_residues": [
+                ""
+            ],
+            "fertilizers": [
+                ""
+            ]
+        }
+    },
+    "5_GWa": {
+        "component": {
+            "no": [
+                ""
+            ],
+            "reverse osmosis": [
+                ""
+            ],
+            "membrane distillation": [
+                ""
+            ],
+            "ultrafiltration": [
+                ""
+            ],
+            "boiling": [
+                ""
+            ],
+            "distillation": [
+                ""
+            ],
+            "activated carbon filter": [
+                ""
+            ],
+            "UV-disinfection": [
+                ""
+            ],
+            "cartridge filter": [
+                ""
+            ],
+            "microfiltration": [
+                ""
+            ],
+            "ceramic filter": [
+                ""
+            ],
+            "nanofiltration": [
+                ""
+            ],
+            "electrodialyis": [
+                ""
+            ],
+            "slow sand filter": [
+                ""
+            ],
+            "water softener": [
+                ""
+            ],
+            "chlorination": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "5_GWa.1.0": {
+        "attribute": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_GWa.2.0": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.3.0": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.1.1": {
+        "attribute": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_GWa.2.1": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.3.1": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.1.2": {
+        "attribute": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_GWa.2.2": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.3.2": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.1.3": {
+        "attribute": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_GWa.2.3": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.3.3": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.2.4": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.3.4": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.2.5": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.3.5": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.2.6": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.3.6": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.2.7": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.3.7": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.2.8": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.3.8": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.2.9": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.3.9": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.2.10": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.3.10": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.2.11": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.3.11": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.2.12": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.3.12": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.2.13": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.3.13": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.2.14": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.3.14": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.4": {
+        "component": {
+            "variable_name": "string"
+        }
+    },
+    "3_DSa.1": {
+        "component": {
+            "Yes": [
+                ""
+            ],
+            "No": [
+                ""
+            ]
+        }
+    },
+    "3_DSa.1.1": {
+        "attribute": {
+            "head": "float"
+        }
+    },
+    "3_DSa.1.2": {
+        "component": {
+            "manual": [
+                ""
+            ],
+            "diesel": [
+                ""
+            ],
+            "electricity (grid)": [
+                ""
+            ],
+            "wind turbine": [
+                ""
+            ],
+            "photovoltaics": [
+                ""
+            ]
+        }
+    },
+    "3_DSa.1.3": {
+        "attribute": {
+            "capacity": "float"
+        }
+    },
+    "3_DSa.1.4": {
+        "attribute": {
+            "flow": "float"
+        }
+    },
+    "4_DSa.1": {
+        "attribute": {
+            "salinity": "float"
+        }
+    },
+    "4_DSa.2": {
+        "component": {
+            "Arsenic": [
+                ""
+            ],
+            "Lead": [
+                ""
+            ],
+            "Mercury": [
+                ""
+            ],
+            "Cadmium": [
+                ""
+            ],
+            "Iron": [
+                ""
+            ]
+        }
+    },
+    "4_DSa.3": {
+        "component": {
+            "pesticides": [
+                ""
+            ],
+            "pharmaceutical_residues": [
+                ""
+            ],
+            "fertilizers": [
+                ""
+            ]
+        }
+    },
+    "5_DSa": {
+        "component": {
+            "no": [
+                ""
+            ],
+            "reverse osmosis": [
+                ""
+            ],
+            "membrane distillation": [
+                ""
+            ],
+            "ultrafiltration": [
+                ""
+            ],
+            "boiling": [
+                ""
+            ],
+            "distillation": [
+                ""
+            ],
+            "activated carbon filter": [
+                ""
+            ],
+            "UV-disinfection": [
+                ""
+            ],
+            "cartridge filter": [
+                ""
+            ],
+            "microfiltration": [
+                ""
+            ],
+            "ceramic filter": [
+                ""
+            ],
+            "nanofiltration": [
+                ""
+            ],
+            "electrodialyis": [
+                ""
+            ],
+            "slow sand filter": [
+                ""
+            ],
+            "water softener": [
+                ""
+            ],
+            "chlorination": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "5_DSa.1.0": {
+        "attribute": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_DSa.2.0": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.3.0": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.1.1": {
+        "attribute": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_DSa.2.1": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.3.1": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.1.2": {
+        "attribute": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_DSa.2.2": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.3.2": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.1.3": {
+        "attribute": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_DSa.2.3": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.3.3": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.2.4": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.3.4": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.2.5": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.3.5": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.2.6": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.3.6": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.2.7": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.3.7": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.2.8": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.3.8": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.2.9": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.3.9": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.2.10": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.3.10": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.2.11": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.3.11": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.2.12": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.3.12": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.2.13": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.3.13": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.2.14": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.3.14": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.4": {
+        "component": {
+            "variable_name": "string"
+        }
+    },
+    "3_RCa.1": {
+        "component": {
+            "Yes": [
+                ""
+            ],
+            "No": [
+                ""
+            ]
+        }
+    },
+    "3_RCa.1.1": {
+        "attribute": {
+            "head": "float"
+        }
+    },
+    "3_RCa.1.2": {
+        "component": {
+            "manual": [
+                ""
+            ],
+            "diesel": [
+                ""
+            ],
+            "electricity (grid)": [
+                ""
+            ],
+            "wind turbine": [
+                ""
+            ],
+            "photovoltaics": [
+                ""
+            ]
+        }
+    },
+    "3_RCa.1.3": {
+        "attribute": {
+            "capacity": "float"
+        }
+    },
+    "3_RCa.1.4": {
+        "attribute": {
+            "flow": "float"
+        }
+    },
+    "4_RCa.1": {
+        "attribute": {
+            "salinity": "float"
+        }
+    },
+    "4_RCa.2": {
+        "component": {
+            "Arsenic": [
+                ""
+            ],
+            "Lead": [
+                ""
+            ],
+            "Mercury": [
+                ""
+            ],
+            "Cadmium": [
+                ""
+            ],
+            "Iron": [
+                ""
+            ]
+        }
+    },
+    "4_RCa.3": {
+        "component": {
+            "pesticides": [
+                ""
+            ],
+            "pharmaceutical_residues": [
+                ""
+            ],
+            "fertilizers": [
+                ""
+            ]
+        }
+    },
+    "5_RCa": {
+        "component": {
+            "no": [
+                ""
+            ],
+            "reverse osmosis": [
+                ""
+            ],
+            "membrane distillation": [
+                ""
+            ],
+            "ultrafiltration": [
+                ""
+            ],
+            "boiling": [
+                ""
+            ],
+            "distillation": [
+                ""
+            ],
+            "activated carbon filter": [
+                ""
+            ],
+            "UV-disinfection": [
+                ""
+            ],
+            "cartridge filter": [
+                ""
+            ],
+            "microfiltration": [
+                ""
+            ],
+            "ceramic filter": [
+                ""
+            ],
+            "nanofiltration": [
+                ""
+            ],
+            "electrodialyis": [
+                ""
+            ],
+            "slow sand filter": [
+                ""
+            ],
+            "water softener": [
+                ""
+            ],
+            "chlorination": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "5_RCa.1.0": {
+        "attribute": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_RCa.2.0": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.3.0": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.1.1": {
+        "attribute": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_RCa.2.1": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.3.1": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.1.2": {
+        "attribute": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_RCa.2.2": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.3.2": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.1.3": {
+        "attribute": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_RCa.2.3": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.3.3": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.2.4": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.3.4": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.2.5": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.3.5": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.2.6": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.3.6": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.2.7": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.3.7": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.2.8": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.3.8": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.2.9": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.3.9": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.2.10": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.3.10": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.2.11": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.3.11": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.2.12": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.3.12": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.2.13": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.3.13": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.2.14": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.3.14": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.4": {
+        "component": {
+            "variable_name": "string"
+        }
+    },
+    "3_La.1": {
+        "component": {
+            "Yes": [
+                ""
+            ],
+            "No": [
+                ""
+            ]
+        }
+    },
+    "3_La.1.1": {
+        "attribute": {
+            "head": "float"
+        }
+    },
+    "3_La.1.2": {
+        "component": {
+            "manual": [
+                ""
+            ],
+            "diesel": [
+                ""
+            ],
+            "electricity (grid)": [
+                ""
+            ],
+            "wind turbine": [
+                ""
+            ],
+            "photovoltaics": [
+                ""
+            ]
+        }
+    },
+    "3_La.1.3": {
+        "attribute": {
+            "capacity": "float"
+        }
+    },
+    "3_La.1.4": {
+        "attribute": {
+            "flow": "float"
+        }
+    },
+    "4_La.1": {
+        "attribute": {
+            "salinity": "float"
+        }
+    },
+    "4_La.2": {
+        "component": {
+            "Arsenic": [
+                ""
+            ],
+            "Lead": [
+                ""
+            ],
+            "Mercury": [
+                ""
+            ],
+            "Cadmium": [
+                ""
+            ],
+            "Iron": [
+                ""
+            ]
+        }
+    },
+    "4_La.3": {
+        "component": {
+            "pesticides": [
+                ""
+            ],
+            "pharmaceutical_residues": [
+                ""
+            ],
+            "fertilizers": [
+                ""
+            ]
+        }
+    },
+    "5_La": {
+        "component": {
+            "no": [
+                ""
+            ],
+            "reverse osmosis": [
+                ""
+            ],
+            "membrane distillation": [
+                ""
+            ],
+            "ultrafiltration": [
+                ""
+            ],
+            "boiling": [
+                ""
+            ],
+            "distillation": [
+                ""
+            ],
+            "activated carbon filter": [
+                ""
+            ],
+            "UV-disinfection": [
+                ""
+            ],
+            "cartridge filter": [
+                ""
+            ],
+            "microfiltration": [
+                ""
+            ],
+            "ceramic filter": [
+                ""
+            ],
+            "nanofiltration": [
+                ""
+            ],
+            "electrodialyis": [
+                ""
+            ],
+            "slow sand filter": [
+                ""
+            ],
+            "water softener": [
+                ""
+            ],
+            "chlorination": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "5_La.1.0": {
+        "attribute": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_La.2.0": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.3.0": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.1.1": {
+        "attribute": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_La.2.1": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.3.1": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.1.2": {
+        "attribute": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_La.2.2": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.3.2": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.1.3": {
+        "attribute": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_La.2.3": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.3.3": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.2.4": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.3.4": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.2.5": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.3.5": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.2.6": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.3.6": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.2.7": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.3.7": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.2.8": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.3.8": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.2.9": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.3.9": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.2.10": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.3.10": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.2.11": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.3.11": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.2.12": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.3.12": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.2.13": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.3.13": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.2.14": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.3.14": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.4": {
+        "component": {
+            "variable_name": "string"
+        }
+    },
+    "6a": {
+        "component": {
+            "Yes": [
+                ""
+            ],
+            "No": [
+                ""
+            ]
+        }
+    },
+    "3b": {
+        "component": {
+            "groundwater well": [
+                ""
+            ],
+            "public tap water": [
+                ""
+            ],
+            "desalinated seawater": [
+                ""
+            ],
+            "river/creek": [
+                ""
+            ],
+            "lake": [
+                ""
+            ],
+            "water truck": [
+                ""
+            ],
+            "rainwater harvesting": [
+                ""
+            ],
+            "bottled water": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "3_GWb.1": {
+        "component": {
+            "Yes": [
+                ""
+            ],
+            "No": [
+                ""
+            ]
+        }
+    },
+    "3_GWb.1.1": {
+        "attribute": {
+            "head": "float"
+        }
+    },
+    "3_GWb.1.2": {
+        "component": {
+            "manual": [
+                ""
+            ],
+            "diesel": [
+                ""
+            ],
+            "electricity (grid)": [
+                ""
+            ],
+            "wind turbine": [
+                ""
+            ],
+            "photovoltaics": [
+                ""
+            ]
+        }
+    },
+    "3_GWb.1.3": {
+        "attribute": {
+            "capacity": "float"
+        }
+    },
+    "3_GWb.1.4": {
+        "attribute": {
+            "flow": "float"
+        }
+    },
+    "4_GWb.1": {
+        "attribute": {
+            "salinity": "float"
+        }
+    },
+    "4_GWb.2": {
+        "component": {
+            "Arsenic": [
+                ""
+            ],
+            "Lead": [
+                ""
+            ],
+            "Mercury": [
+                ""
+            ],
+            "Cadmium": [
+                ""
+            ],
+            "Iron": [
+                ""
+            ]
+        }
+    },
+    "4_GWb.3": {
+        "component": {
+            "pesticides": [
+                ""
+            ],
+            "pharmaceutical_residues": [
+                ""
+            ],
+            "fertilizers": [
+                ""
+            ]
+        }
+    },
+    "5_GWb": {
+        "component": {
+            "no": [
+                ""
+            ],
+            "reverse osmosis": [
+                ""
+            ],
+            "membrane distillation": [
+                ""
+            ],
+            "ultrafiltration": [
+                ""
+            ],
+            "boiling": [
+                ""
+            ],
+            "distillation": [
+                ""
+            ],
+            "activated carbon filter": [
+                ""
+            ],
+            "UV-disinfection": [
+                ""
+            ],
+            "cartridge filter": [
+                ""
+            ],
+            "microfiltration": [
+                ""
+            ],
+            "ceramic filter": [
+                ""
+            ],
+            "nanofiltration": [
+                ""
+            ],
+            "electrodialyis": [
+                ""
+            ],
+            "slow sand filter": [
+                ""
+            ],
+            "water softener": [
+                ""
+            ],
+            "chlorination": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "5_GWb.1.0": {
+        "attribute": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_GWb.2.0": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.3.0": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.1.1": {
+        "attribute": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_GWb.2.1": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.3.1": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.1.2": {
+        "attribute": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_GWb.2.2": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.3.2": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.1.3": {
+        "attribute": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_GWb.2.3": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.3.3": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.2.4": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.3.4": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.2.5": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.3.5": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.2.6": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.3.6": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.2.7": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.3.7": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.2.8": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.3.8": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.2.9": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.3.9": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.2.10": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.3.10": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.2.11": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.3.11": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.2.12": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.3.12": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.2.13": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.3.13": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.2.14": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.3.14": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.4": {
+        "component": {
+            "variable_name": "string"
+        }
+    },
+    "3_DSb.1": {
+        "component": {
+            "Yes": [
+                ""
+            ],
+            "No": [
+                ""
+            ]
+        }
+    },
+    "3_DSb.1.1": {
+        "attribute": {
+            "head": "float"
+        }
+    },
+    "3_DSb.1.2": {
+        "component": {
+            "manual": [
+                ""
+            ],
+            "diesel": [
+                ""
+            ],
+            "electricity (grid)": [
+                ""
+            ],
+            "wind turbine": [
+                ""
+            ],
+            "photovoltaics": [
+                ""
+            ]
+        }
+    },
+    "3_DSb.1.3": {
+        "attribute": {
+            "capacity": "float"
+        }
+    },
+    "3_DSb.1.4": {
+        "attribute": {
+            "flow": "float"
+        }
+    },
+    "4_DSb.1": {
+        "attribute": {
+            "salinity": "float"
+        }
+    },
+    "4_DSb.2": {
+        "component": {
+            "Arsenic": [
+                ""
+            ],
+            "Lead": [
+                ""
+            ],
+            "Mercury": [
+                ""
+            ],
+            "Cadmium": [
+                ""
+            ],
+            "Iron": [
+                ""
+            ]
+        }
+    },
+    "4_DSb.3": {
+        "component": {
+            "pesticides": [
+                ""
+            ],
+            "pharmaceutical_residues": [
+                ""
+            ],
+            "fertilizers": [
+                ""
+            ]
+        }
+    },
+    "5_DSb": {
+        "component": {
+            "no": [
+                ""
+            ],
+            "reverse osmosis": [
+                ""
+            ],
+            "membrane distillation": [
+                ""
+            ],
+            "ultrafiltration": [
+                ""
+            ],
+            "boiling": [
+                ""
+            ],
+            "distillation": [
+                ""
+            ],
+            "activated carbon filter": [
+                ""
+            ],
+            "UV-disinfection": [
+                ""
+            ],
+            "cartridge filter": [
+                ""
+            ],
+            "microfiltration": [
+                ""
+            ],
+            "ceramic filter": [
+                ""
+            ],
+            "nanofiltration": [
+                ""
+            ],
+            "electrodialyis": [
+                ""
+            ],
+            "slow sand filter": [
+                ""
+            ],
+            "water softener": [
+                ""
+            ],
+            "chlorination": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "5_DSb.1.0": {
+        "attribute": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_DSb.2.0": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.3.0": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.1.1": {
+        "attribute": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_DSb.2.1": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.3.1": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.1.2": {
+        "attribute": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_DSb.2.2": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.3.2": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.1.3": {
+        "attribute": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_DSb.2.3": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.3.3": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.2.4": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.3.4": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.2.5": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.3.5": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.2.6": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.3.6": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.2.7": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.3.7": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.2.8": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.3.8": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.2.9": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.3.9": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.2.10": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.3.10": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.2.11": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.3.11": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.2.12": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.3.12": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.2.13": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.3.13": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.2.14": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.3.14": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.4": {
+        "component": {
+            "variable_name": "string"
+        }
+    },
+    "3_RCb.1": {
+        "component": {
+            "Yes": [
+                ""
+            ],
+            "No": [
+                ""
+            ]
+        }
+    },
+    "3_RCb.1.1": {
+        "attribute": {
+            "head": "float"
+        }
+    },
+    "3_RCb.1.2": {
+        "component": {
+            "manual": [
+                ""
+            ],
+            "diesel": [
+                ""
+            ],
+            "electricity (grid)": [
+                ""
+            ],
+            "wind turbine": [
+                ""
+            ],
+            "photovoltaics": [
+                ""
+            ]
+        }
+    },
+    "3_RCb.1.3": {
+        "attribute": {
+            "capacity": "float"
+        }
+    },
+    "3_RCb.1.4": {
+        "attribute": {
+            "flow": "float"
+        }
+    },
+    "4_RCb.1": {
+        "attribute": {
+            "salinity": "float"
+        }
+    },
+    "4_RCb.2": {
+        "component": {
+            "Arsenic": [
+                ""
+            ],
+            "Lead": [
+                ""
+            ],
+            "Mercury": [
+                ""
+            ],
+            "Cadmium": [
+                ""
+            ],
+            "Iron": [
+                ""
+            ]
+        }
+    },
+    "4_RCb.3": {
+        "component": {
+            "pesticides": [
+                ""
+            ],
+            "pharmaceutical_residues": [
+                ""
+            ],
+            "fertilizers": [
+                ""
+            ]
+        }
+    },
+    "5_RCb": {
+        "component": {
+            "no": [
+                ""
+            ],
+            "reverse osmosis": [
+                ""
+            ],
+            "membrane distillation": [
+                ""
+            ],
+            "ultrafiltration": [
+                ""
+            ],
+            "boiling": [
+                ""
+            ],
+            "distillation": [
+                ""
+            ],
+            "activated carbon filter": [
+                ""
+            ],
+            "UV-disinfection": [
+                ""
+            ],
+            "cartridge filter": [
+                ""
+            ],
+            "microfiltration": [
+                ""
+            ],
+            "ceramic filter": [
+                ""
+            ],
+            "nanofiltration": [
+                ""
+            ],
+            "electrodialyis": [
+                ""
+            ],
+            "slow sand filter": [
+                ""
+            ],
+            "water softener": [
+                ""
+            ],
+            "chlorination": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "5_RCb.1.0": {
+        "attribute": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_RCb.2.0": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.3.0": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.1.1": {
+        "attribute": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_RCb.2.1": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.3.1": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.1.2": {
+        "attribute": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_RCb.2.2": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.3.2": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.1.3": {
+        "attribute": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_RCb.2.3": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.3.3": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.2.4": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.3.4": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.2.5": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.3.5": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.2.6": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.3.6": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.2.7": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.3.7": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.2.8": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.3.8": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.2.9": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.3.9": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.2.10": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.3.10": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.2.11": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.3.11": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.2.12": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.3.12": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.2.13": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.3.13": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.2.14": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.3.14": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.4": {
+        "component": {
+            "variable_name": "string"
+        }
+    },
+    "3_Lb.1": {
+        "component": {
+            "Yes": [
+                ""
+            ],
+            "No": [
+                ""
+            ]
+        }
+    },
+    "3_Lb.1.1": {
+        "attribute": {
+            "head": "float"
+        }
+    },
+    "3_Lb.1.2": {
+        "component": {
+            "manual": [
+                ""
+            ],
+            "diesel": [
+                ""
+            ],
+            "electricity (grid)": [
+                ""
+            ],
+            "wind turbine": [
+                ""
+            ],
+            "photovoltaics": [
+                ""
+            ]
+        }
+    },
+    "3_Lb.1.3": {
+        "attribute": {
+            "capacity": "float"
+        }
+    },
+    "3_Lb.1.4": {
+        "attribute": {
+            "flow": "float"
+        }
+    },
+    "4_Lb.1": {
+        "attribute": {
+            "salinity": "float"
+        }
+    },
+    "4_Lb.2": {
+        "component": {
+            "Arsenic": [
+                ""
+            ],
+            "Lead": [
+                ""
+            ],
+            "Mercury": [
+                ""
+            ],
+            "Cadmium": [
+                ""
+            ],
+            "Iron": [
+                ""
+            ]
+        }
+    },
+    "4_Lb.3": {
+        "component": {
+            "pesticides": [
+                ""
+            ],
+            "pharmaceutical_residues": [
+                ""
+            ],
+            "fertilizers": [
+                ""
+            ]
+        }
+    },
+    "5_Lb": {
+        "component": {
+            "no": [
+                ""
+            ],
+            "reverse osmosis": [
+                ""
+            ],
+            "membrane distillation": [
+                ""
+            ],
+            "ultrafiltration": [
+                ""
+            ],
+            "boiling": [
+                ""
+            ],
+            "distillation": [
+                ""
+            ],
+            "activated carbon filter": [
+                ""
+            ],
+            "UV-disinfection": [
+                ""
+            ],
+            "cartridge filter": [
+                ""
+            ],
+            "microfiltration": [
+                ""
+            ],
+            "ceramic filter": [
+                ""
+            ],
+            "nanofiltration": [
+                ""
+            ],
+            "electrodialyis": [
+                ""
+            ],
+            "slow sand filter": [
+                ""
+            ],
+            "water softener": [
+                ""
+            ],
+            "chlorination": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "5_Lb.1.0": {
+        "attribute": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_Lb.2.0": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.3.0": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.1.1": {
+        "attribute": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_Lb.2.1": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.3.1": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.1.2": {
+        "attribute": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_Lb.2.2": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.3.2": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.1.3": {
+        "attribute": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_Lb.2.3": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.3.3": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.2.4": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.3.4": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.2.5": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.3.5": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.2.6": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.3.6": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.2.7": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.3.7": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.2.8": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.3.8": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.2.9": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.3.9": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.2.10": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.3.10": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.2.11": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.3.11": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.2.12": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.3.12": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.2.13": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.3.13": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.2.14": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.3.14": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.4": {
+        "component": {
+            "variable_name": "string"
+        }
+    },
+    "6b": {
+        "component": {
+            "Yes": [
+                ""
+            ],
+            "No": [
+                ""
+            ]
+        }
+    },
+    "7": {
+        "component": {
+            "septic system": [
+                ""
+            ],
+            "constructed wetland": [
+                ""
+            ],
+            "centralized waste water treatment plant": [
+                ""
+            ],
+            "decentralized waste water treatment plant": [
+                ""
+            ],
+            "water recycling and reuse system": [
+                ""
+            ],
+            "disposal to environment without treatment": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "7.1.0": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "7.1.1": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "7.1.2": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "7.1.3": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "7.1.4": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "7.1.5": {
+        "attribute": {
+            "flow_rate": "float"
+        }
+    },
+    "7.2": {
+        "skip": {
+            "wastewater_treatment": "string"
+        }
+    },
+    "7.3": {
+        "component": {
+            "toilet_type": [
+                "flush toilet",
+                "latrine",
+                "dry toilet",
+                "composting toilet",
+                "open field"
+            ]
+        }
+    }
+}
