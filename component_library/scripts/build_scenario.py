@@ -1,11 +1,11 @@
 import os
-
+from copy import deepcopy
+import datapackage as dp
 import numpy as np
 import pandas as pd
 import logging
 import json
 
-from app.survey.survey import SUB_QUESTION_MAPPING
 from utils import AVAILABLE_COMPONENTS, COMPONENT_TEMPLATES_PATH
 from analyse_survey import create_components_list
 
@@ -36,8 +36,12 @@ type_check = {
 }
 
 # Later direct imports without .json
-with open(os.path.join(project_dir, "app", "commented_mapping.json"),"r") as fp:
+# TODO update this mapping with the latest produced survey_answer_component_mapping.json
+with open(os.path.join(project_dir, "app", "survey_answer_component_mapping_in_use.json"),"r") as fp:
     SURVEY_ANSWER_COMPONENT_MAPPING= json.load(fp)
+
+with open(os.path.join(project_dir, "app","sub_question_mapping.json"),"r") as fp:
+    SUB_QUESTION_MAPPING= json.load(fp)
 
 
 class ScenarioBuilder:
@@ -46,6 +50,7 @@ class ScenarioBuilder:
         self.mapping = SURVEY_ANSWER_COMPONENT_MAPPING
         self.subq_mapping = SUB_QUESTION_MAPPING
         self.components = {}
+        self.wished_components = {}
         self.scenario_folder = self.create_scenario_folder()
 
 
@@ -74,6 +79,7 @@ class ScenarioBuilder:
         }
         """
         for question_id, answer in survey.items():
+            print(question_id)
             # 2 options for answer:
             # option 1: list -> turn all TYPE_COMPONENT answers into list
             # option 2: single item (None, float, str) -> assume all TYPE_COMPONENT_ATTRIBUTE answers to be single items
@@ -82,37 +88,34 @@ class ScenarioBuilder:
                 question_id = question_id.strip("criteria_")
 
                 if question_id in self.mapping:
-                    map_to, map_answer = next(iter(self.mapping[question_id].items()))
-                    """
-                    in general 3 options for map_answer (always dict):
-                    option 1: {str1: list, str2: list, ...} -> for components
-                    option 2: {str: list} -> not applicable at all (modify to align with option 1)
-                    option 3: {str: str} -> for attributes
-                    keys can be component_name, attribute_name, bool (related to some attribute/component)
-                    """
+
+                    answer_mapping = self.mapping[question_id]
+                    bus = answer_mapping.pop("bus", None)
+
+                    map_to = answer_mapping["map_to"]
+                    map_answer = answer_mapping["map_answer"]
 
                     if map_to == TYPE_COMPONENT:
+                        # if question_id == "3":
+                        #     import pdb;pdb.set_trace()
+                        # TODO here for bus handling
                         components_to_add = []
 
                         # Align answer structure: Should always be of type "list" to match component mapping
                         answer = [answer] if not isinstance(answer, list) else answer
 
+                        # loop over the answers provided and add components to the energy system if the answer finds
+                        # itself within the survey answer mapping. If the answer
+                        other_answers = []
                         for a in answer:
-                            # option 1: all "normal" components are keys in map_what
                             if a in map_answer:
                                 components_to_add.extend(map_answer[a])
 
-                            # option 2: so far not applicable for components -> dismiss
-
-                            # option 3: "other" components are just given as user input (string) -> delete
-                            # TODO: this will create user-defined component which is hard to handle,
-                            #  questions where users insert components as strings should not be used in ESM directly,
-                            #  "other" can be option to choose (tick) though with "other" in component_lib
                             else:
-                                components_to_add.append(str(a))
-                            # another condition to catch errors
+                                 other_answers.append(str(a))
 
                         self.components.update({component: {} for component in components_to_add})
+                        self.wished_components[question_id] = other_answers
 
                     elif map_to == TYPE_COMPONENT_ATTRIBUTE:
                         if question_id in self.subq_mapping:
@@ -121,22 +124,19 @@ class ScenarioBuilder:
 
                             # Align answer structure: Should always be single item to match attribute mapping
                             answer = answer[0] if isinstance(answer, list) else answer
-                            # some debugging if answer is list longer than 1
+                            print(map_answer)
+                            # import pdb;pdb.set_trace()
 
-                            # option 1: so far not applicable for attributes -> dismiss
-
-                            # option 2: no idea yet how these attributes should be linked to a component
                             # example for opt 2: question 4.2, map_answer = {'water_metals': ['Arsenic', 'Lead', 'Mercury', 'Cadmium', 'Iron']}
                             # TODO: Modify these questions to be TYPE_COMPONENT formatted according to option 1
 
-                            # option 3:
                             (attribute_name, attribute_type), = map_answer.items()
                             attribute_val = type_check[attribute_type](answer)
 
-                            target_components = self.mapping[parent_qid][TYPE_COMPONENT][parent_answer]
+                            target_components = self.mapping[parent_qid]["map_answer"][parent_answer]
 
                             for target_component in target_components:
-                                self.components[target_component] = {attribute_name: attribute_val}
+                                self.components[target_component].update({attribute_name: attribute_val})
                                 #some debugging for key error
                         else:
                             # TODO: Check if TYPE_COMPONENT_ATTRIBUTE questions are always subquestions of a TYPE_COMPONENT question
@@ -312,7 +312,7 @@ if __name__=="__main__":
     repo_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "scenarios")
     # create_scenario_from_survey_data({}, "test_scenario", repo_path)
 
-    with open(f"test_survey.json", "r") as fp:
+    with open(os.path.join(project_dir, "app", "test_question3.json"), "r") as fp:
         test_survey =  json.load(fp)
 
     # test_survey =  {'criteria_1': ['diesel_generator', 'wind_turbine'],
