@@ -67,6 +67,15 @@ class ScenarioBuilder:
 
         return scenario_folder
 
+    def water_systems(self, survey):
+        """Go through the survey and implement specific logic regarding the water questions"""
+        water_distinction_question_id = "2"
+        # TODO look answer to question 2 and implement specific logic there
+        # in this method, one needs to refer to the question number as they are hard coded in the survey, that means one
+        # need to pay attention if the question numbering changes to also carry out the changes here
+        # This is a tradeoff between efficiency of survey processing and being able to treat special cases as we would
+        # like to and make conditional choices (like add this component only to the drinking water bus and only if quesiton XYZ was answered with ...)
+
     def process_survey(self, survey):
         """
         Process the survey responses to build a nested structure. Some answers add components, while some change
