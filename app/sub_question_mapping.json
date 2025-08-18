@@ -1,0 +1,2986 @@
+{
+    "1.1": [
+        "1",
+        "photovoltaic system"
+    ],
+    "1.2": [
+        "1",
+        "battery system"
+    ],
+    "1.3": [
+        "1",
+        "diesel generator"
+    ],
+    "1.4": [
+        "1",
+        "wind turbine"
+    ],
+    "1.5": [
+        "1",
+        "hydropower"
+    ],
+    "1.6": [
+        "1",
+        "biogas plant"
+    ],
+    "1.7": [
+        "1",
+        "other"
+    ],
+    "1.8": [
+        "1",
+        "other"
+    ],
+    "11": [
+        "8",
+        "Yes"
+    ],
+    "9": [
+        "8",
+        "Yes"
+    ],
+    "10": [
+        "8",
+        "Yes"
+    ],
+    "11.1.0": [
+        "11",
+        "wheat"
+    ],
+    "11.2.0": [
+        "11",
+        "wheat"
+    ],
+    "11.3.0": [
+        "11",
+        "wheat"
+    ],
+    "11.4.0": [
+        "11",
+        "wheat"
+    ],
+    "11.5.0": [
+        "11",
+        "wheat"
+    ],
+    "11.1.1": [
+        "11",
+        "rice"
+    ],
+    "11.2.1": [
+        "11",
+        "rice"
+    ],
+    "11.3.1": [
+        "11",
+        "rice"
+    ],
+    "11.4.1": [
+        "11",
+        "rice"
+    ],
+    "11.5.1": [
+        "11",
+        "rice"
+    ],
+    "11.1.2": [
+        "11",
+        "soy bean"
+    ],
+    "11.2.2": [
+        "11",
+        "soy bean"
+    ],
+    "11.3.2": [
+        "11",
+        "soy bean"
+    ],
+    "11.4.2": [
+        "11",
+        "soy bean"
+    ],
+    "11.5.2": [
+        "11",
+        "soy bean"
+    ],
+    "11.1.3": [
+        "11",
+        "dry bean"
+    ],
+    "11.2.3": [
+        "11",
+        "dry bean"
+    ],
+    "11.3.3": [
+        "11",
+        "dry bean"
+    ],
+    "11.4.3": [
+        "11",
+        "dry bean"
+    ],
+    "11.5.3": [
+        "11",
+        "dry bean"
+    ],
+    "11.1.4": [
+        "11",
+        "peanut"
+    ],
+    "11.2.4": [
+        "11",
+        "peanut"
+    ],
+    "11.3.4": [
+        "11",
+        "peanut"
+    ],
+    "11.4.4": [
+        "11",
+        "peanut"
+    ],
+    "11.5.4": [
+        "11",
+        "peanut"
+    ],
+    "11.1.5": [
+        "11",
+        "potato"
+    ],
+    "11.2.5": [
+        "11",
+        "potato"
+    ],
+    "11.3.5": [
+        "11",
+        "potato"
+    ],
+    "11.4.5": [
+        "11",
+        "potato"
+    ],
+    "11.5.5": [
+        "11",
+        "potato"
+    ],
+    "11.1.6": [
+        "11",
+        "cassava"
+    ],
+    "11.2.6": [
+        "11",
+        "cassava"
+    ],
+    "11.3.6": [
+        "11",
+        "cassava"
+    ],
+    "11.4.6": [
+        "11",
+        "cassava"
+    ],
+    "11.5.6": [
+        "11",
+        "cassava"
+    ],
+    "11.1.7": [
+        "11",
+        "tomato"
+    ],
+    "11.2.7": [
+        "11",
+        "tomato"
+    ],
+    "11.3.7": [
+        "11",
+        "tomato"
+    ],
+    "11.4.7": [
+        "11",
+        "tomato"
+    ],
+    "11.5.7": [
+        "11",
+        "tomato"
+    ],
+    "11.1.8": [
+        "11",
+        "sweetcorn"
+    ],
+    "11.2.8": [
+        "11",
+        "sweetcorn"
+    ],
+    "11.3.8": [
+        "11",
+        "sweetcorn"
+    ],
+    "11.4.8": [
+        "11",
+        "sweetcorn"
+    ],
+    "11.5.8": [
+        "11",
+        "sweetcorn"
+    ],
+    "11.1.9": [
+        "11",
+        "green bean"
+    ],
+    "11.2.9": [
+        "11",
+        "green bean"
+    ],
+    "11.3.9": [
+        "11",
+        "green bean"
+    ],
+    "11.4.9": [
+        "11",
+        "green bean"
+    ],
+    "11.5.9": [
+        "11",
+        "green bean"
+    ],
+    "11.1.10": [
+        "11",
+        "carrot"
+    ],
+    "11.2.10": [
+        "11",
+        "carrot"
+    ],
+    "11.3.10": [
+        "11",
+        "carrot"
+    ],
+    "11.4.10": [
+        "11",
+        "carrot"
+    ],
+    "11.5.10": [
+        "11",
+        "carrot"
+    ],
+    "11.1.11": [
+        "11",
+        "cotton"
+    ],
+    "11.2.11": [
+        "11",
+        "cotton"
+    ],
+    "11.3.11": [
+        "11",
+        "cotton"
+    ],
+    "11.4.11": [
+        "11",
+        "cotton"
+    ],
+    "11.5.11": [
+        "11",
+        "cotton"
+    ],
+    "11.1.12": [
+        "11",
+        "banana"
+    ],
+    "11.2.12": [
+        "11",
+        "banana"
+    ],
+    "11.3.12": [
+        "11",
+        "banana"
+    ],
+    "11.4.12": [
+        "11",
+        "banana"
+    ],
+    "11.5.12": [
+        "11",
+        "banana"
+    ],
+    "11.1.13": [
+        "11",
+        "lettuce"
+    ],
+    "11.2.13": [
+        "11",
+        "lettuce"
+    ],
+    "11.3.13": [
+        "11",
+        "lettuce"
+    ],
+    "11.4.13": [
+        "11",
+        "lettuce"
+    ],
+    "11.5.13": [
+        "11",
+        "lettuce"
+    ],
+    "11.1.14": [
+        "11",
+        "cucumber"
+    ],
+    "11.2.14": [
+        "11",
+        "cucumber"
+    ],
+    "11.3.14": [
+        "11",
+        "cucumber"
+    ],
+    "11.4.14": [
+        "11",
+        "cucumber"
+    ],
+    "11.5.14": [
+        "11",
+        "cucumber"
+    ],
+    "11.1.15": [
+        "11",
+        "pineapple"
+    ],
+    "11.2.15": [
+        "11",
+        "pineapple"
+    ],
+    "11.3.15": [
+        "11",
+        "pineapple"
+    ],
+    "11.4.15": [
+        "11",
+        "pineapple"
+    ],
+    "11.5.15": [
+        "11",
+        "pineapple"
+    ],
+    "11.1.16": [
+        "11",
+        "avocado"
+    ],
+    "11.2.16": [
+        "11",
+        "avocado"
+    ],
+    "11.3.16": [
+        "11",
+        "avocado"
+    ],
+    "11.4.16": [
+        "11",
+        "avocado"
+    ],
+    "11.5.16": [
+        "11",
+        "avocado"
+    ],
+    "11.1.17": [
+        "11",
+        "quinoa"
+    ],
+    "11.2.17": [
+        "11",
+        "quinoa"
+    ],
+    "11.3.17": [
+        "11",
+        "quinoa"
+    ],
+    "11.4.17": [
+        "11",
+        "quinoa"
+    ],
+    "11.5.17": [
+        "11",
+        "quinoa"
+    ],
+    "11.1.18": [
+        "11",
+        "amaranth"
+    ],
+    "11.2.18": [
+        "11",
+        "amaranth"
+    ],
+    "11.3.18": [
+        "11",
+        "amaranth"
+    ],
+    "11.4.18": [
+        "11",
+        "amaranth"
+    ],
+    "11.5.18": [
+        "11",
+        "amaranth"
+    ],
+    "11.1.19": [
+        "11",
+        "guava"
+    ],
+    "11.2.19": [
+        "11",
+        "guava"
+    ],
+    "11.3.19": [
+        "11",
+        "guava"
+    ],
+    "11.4.19": [
+        "11",
+        "guava"
+    ],
+    "11.5.19": [
+        "11",
+        "guava"
+    ],
+    "11.1.20": [
+        "11",
+        "papaya"
+    ],
+    "11.2.20": [
+        "11",
+        "papaya"
+    ],
+    "11.3.20": [
+        "11",
+        "papaya"
+    ],
+    "11.4.20": [
+        "11",
+        "papaya"
+    ],
+    "11.5.20": [
+        "11",
+        "papaya"
+    ],
+    "11.1.21": [
+        "11",
+        "mango"
+    ],
+    "11.2.21": [
+        "11",
+        "mango"
+    ],
+    "11.3.21": [
+        "11",
+        "mango"
+    ],
+    "11.4.21": [
+        "11",
+        "mango"
+    ],
+    "11.5.21": [
+        "11",
+        "mango"
+    ],
+    "11.1.22": [
+        "11",
+        "sorghum"
+    ],
+    "11.2.22": [
+        "11",
+        "sorghum"
+    ],
+    "11.3.22": [
+        "11",
+        "sorghum"
+    ],
+    "11.4.22": [
+        "11",
+        "sorghum"
+    ],
+    "11.5.22": [
+        "11",
+        "sorghum"
+    ],
+    "11.1.23": [
+        "11",
+        "millet"
+    ],
+    "11.2.23": [
+        "11",
+        "millet"
+    ],
+    "11.3.23": [
+        "11",
+        "millet"
+    ],
+    "11.4.23": [
+        "11",
+        "millet"
+    ],
+    "11.5.23": [
+        "11",
+        "millet"
+    ],
+    "11.1.24": [
+        "11",
+        "yam"
+    ],
+    "11.2.24": [
+        "11",
+        "yam"
+    ],
+    "11.3.24": [
+        "11",
+        "yam"
+    ],
+    "11.4.24": [
+        "11",
+        "yam"
+    ],
+    "11.5.24": [
+        "11",
+        "yam"
+    ],
+    "11.1.25": [
+        "11",
+        "plantain"
+    ],
+    "11.2.25": [
+        "11",
+        "plantain"
+    ],
+    "11.3.25": [
+        "11",
+        "plantain"
+    ],
+    "11.4.25": [
+        "11",
+        "plantain"
+    ],
+    "11.5.25": [
+        "11",
+        "plantain"
+    ],
+    "11.1.26": [
+        "11",
+        "apple"
+    ],
+    "11.2.26": [
+        "11",
+        "apple"
+    ],
+    "11.3.26": [
+        "11",
+        "apple"
+    ],
+    "11.4.26": [
+        "11",
+        "apple"
+    ],
+    "11.5.26": [
+        "11",
+        "apple"
+    ],
+    "11.1.27": [
+        "11",
+        "sunflower"
+    ],
+    "11.2.27": [
+        "11",
+        "sunflower"
+    ],
+    "11.3.27": [
+        "11",
+        "sunflower"
+    ],
+    "11.4.27": [
+        "11",
+        "sunflower"
+    ],
+    "11.5.27": [
+        "11",
+        "sunflower"
+    ],
+    "11.1.28": [
+        "11",
+        "cacao"
+    ],
+    "11.2.28": [
+        "11",
+        "cacao"
+    ],
+    "11.3.28": [
+        "11",
+        "cacao"
+    ],
+    "11.4.28": [
+        "11",
+        "cacao"
+    ],
+    "11.5.28": [
+        "11",
+        "cacao"
+    ],
+    "11.1.29": [
+        "11",
+        "cashew"
+    ],
+    "11.2.29": [
+        "11",
+        "cashew"
+    ],
+    "11.3.29": [
+        "11",
+        "cashew"
+    ],
+    "11.4.29": [
+        "11",
+        "cashew"
+    ],
+    "11.5.29": [
+        "11",
+        "cashew"
+    ],
+    "11.1.30": [
+        "11",
+        "pumpkin"
+    ],
+    "11.2.30": [
+        "11",
+        "pumpkin"
+    ],
+    "11.3.30": [
+        "11",
+        "pumpkin"
+    ],
+    "11.4.30": [
+        "11",
+        "pumpkin"
+    ],
+    "11.5.30": [
+        "11",
+        "pumpkin"
+    ],
+    "11.1.31": [
+        "11",
+        "black bean"
+    ],
+    "11.2.31": [
+        "11",
+        "black bean"
+    ],
+    "11.3.31": [
+        "11",
+        "black bean"
+    ],
+    "11.4.31": [
+        "11",
+        "black bean"
+    ],
+    "11.5.31": [
+        "11",
+        "black bean"
+    ],
+    "11.1.32": [
+        "11",
+        "oat"
+    ],
+    "11.2.32": [
+        "11",
+        "oat"
+    ],
+    "11.3.32": [
+        "11",
+        "oat"
+    ],
+    "11.4.32": [
+        "11",
+        "oat"
+    ],
+    "11.5.32": [
+        "11",
+        "oat"
+    ],
+    "11.1.33": [
+        "11",
+        "pepper"
+    ],
+    "11.2.33": [
+        "11",
+        "pepper"
+    ],
+    "11.3.33": [
+        "11",
+        "pepper"
+    ],
+    "11.4.33": [
+        "11",
+        "pepper"
+    ],
+    "11.5.33": [
+        "11",
+        "pepper"
+    ],
+    "8.2": [
+        "11",
+        "other"
+    ],
+    "11.1.34": [
+        "11",
+        "other"
+    ],
+    "11.2.34": [
+        "11",
+        "other"
+    ],
+    "11.3.34": [
+        "11",
+        "other"
+    ],
+    "11.4.34": [
+        "11",
+        "other"
+    ],
+    "11.5.34": [
+        "11",
+        "other"
+    ],
+    "3a": [
+        "2",
+        "Yes"
+    ],
+    "6a": [
+        "2",
+        "Yes"
+    ],
+    "3b": [
+        "2",
+        "Yes"
+    ],
+    "6b": [
+        "2",
+        "Yes"
+    ],
+    "3": [
+        "2",
+        "No"
+    ],
+    "6": [
+        "2",
+        "No"
+    ],
+    "3_GW.1": [
+        "3",
+        "groundwater well"
+    ],
+    "4_GW": [
+        "3",
+        "groundwater well"
+    ],
+    "5_GW": [
+        "3",
+        "groundwater well"
+    ],
+    "3_DS.1": [
+        "3",
+        "desalinated seawater"
+    ],
+    "4_DS": [
+        "3",
+        "desalinated seawater"
+    ],
+    "5_DS": [
+        "3",
+        "desalinated seawater"
+    ],
+    "3_RC.1": [
+        "3",
+        "river/creek"
+    ],
+    "4_RC": [
+        "3",
+        "river/creek"
+    ],
+    "5_RC": [
+        "3",
+        "river/creek"
+    ],
+    "3_L.1": [
+        "3",
+        "lake"
+    ],
+    "4_L": [
+        "3",
+        "lake"
+    ],
+    "5_L": [
+        "3",
+        "lake"
+    ],
+    "3.2": [
+        "3",
+        "water truck"
+    ],
+    "3.3": [
+        "3",
+        "other"
+    ],
+    "3_GW.1.1": [
+        "3_GW.1",
+        "Yes"
+    ],
+    "3_GW.1.2": [
+        "3_GW.1",
+        "Yes"
+    ],
+    "3_GW.1.4": [
+        "3_GW.1",
+        "Yes"
+    ],
+    "3_GW.1.3": [
+        "3_GW.1.2",
+        ""
+    ],
+    "4_GW.1": [
+        "4_GW",
+        "salinity"
+    ],
+    "4_GW.2": [
+        "4_GW",
+        "heavy metals"
+    ],
+    "4_GW.3": [
+        "4_GW",
+        "chemical contamination"
+    ],
+    "5_GW.1.0": [
+        "5_GW",
+        "reverse osmosis"
+    ],
+    "5_GW.2.0": [
+        "5_GW",
+        "reverse osmosis"
+    ],
+    "5_GW.3.0": [
+        "5_GW",
+        "reverse osmosis"
+    ],
+    "5_GW.1.1": [
+        "5_GW",
+        "membrane distillation"
+    ],
+    "5_GW.2.1": [
+        "5_GW",
+        "membrane distillation"
+    ],
+    "5_GW.3.1": [
+        "5_GW",
+        "membrane distillation"
+    ],
+    "5_GW.1.2": [
+        "5_GW",
+        "ultrafiltration"
+    ],
+    "5_GW.2.2": [
+        "5_GW",
+        "ultrafiltration"
+    ],
+    "5_GW.3.2": [
+        "5_GW",
+        "ultrafiltration"
+    ],
+    "5_GW.2.3": [
+        "5_GW",
+        "boiling"
+    ],
+    "5_GW.3.3": [
+        "5_GW",
+        "boiling"
+    ],
+    "5_GW.2.4": [
+        "5_GW",
+        "distillation"
+    ],
+    "5_GW.3.4": [
+        "5_GW",
+        "distillation"
+    ],
+    "5_GW.2.5": [
+        "5_GW",
+        "activated carbon filter"
+    ],
+    "5_GW.3.5": [
+        "5_GW",
+        "activated carbon filter"
+    ],
+    "5_GW.2.6": [
+        "5_GW",
+        "UV-disinfection"
+    ],
+    "5_GW.3.6": [
+        "5_GW",
+        "UV-disinfection"
+    ],
+    "5_GW.2.7": [
+        "5_GW",
+        "cartridge filter"
+    ],
+    "5_GW.3.7": [
+        "5_GW",
+        "cartridge filter"
+    ],
+    "5_GW.2.8": [
+        "5_GW",
+        "microfiltration"
+    ],
+    "5_GW.3.8": [
+        "5_GW",
+        "microfiltration"
+    ],
+    "5_GW.2.9": [
+        "5_GW",
+        "ceramic filter"
+    ],
+    "5_GW.3.9": [
+        "5_GW",
+        "ceramic filter"
+    ],
+    "5_GW.2.10": [
+        "5_GW",
+        "nanofiltration"
+    ],
+    "5_GW.3.10": [
+        "5_GW",
+        "nanofiltration"
+    ],
+    "5_GW.2.11": [
+        "5_GW",
+        "electrodialyis"
+    ],
+    "5_GW.3.11": [
+        "5_GW",
+        "electrodialyis"
+    ],
+    "5_GW.2.12": [
+        "5_GW",
+        "slow sand filter"
+    ],
+    "5_GW.3.12": [
+        "5_GW",
+        "slow sand filter"
+    ],
+    "5_GW.2.13": [
+        "5_GW",
+        "water softener"
+    ],
+    "5_GW.3.13": [
+        "5_GW",
+        "water softener"
+    ],
+    "5_GW.4": [
+        "5_GW",
+        "other"
+    ],
+    "5_GW.1.3": [
+        "5_GW",
+        "other"
+    ],
+    "5_GW.2.14": [
+        "5_GW",
+        "other"
+    ],
+    "5_GW.3.14": [
+        "5_GW",
+        "other"
+    ],
+    "3_DS.1.1": [
+        "3_DS.1",
+        "Yes"
+    ],
+    "3_DS.1.2": [
+        "3_DS.1",
+        "Yes"
+    ],
+    "3_DS.1.4": [
+        "3_DS.1",
+        "Yes"
+    ],
+    "3_DS.1.3": [
+        "3_DS.1.2",
+        ""
+    ],
+    "4_DS.1": [
+        "4_DS",
+        "salinity"
+    ],
+    "4_DS.2": [
+        "4_DS",
+        "heavy metals"
+    ],
+    "4_DS.3": [
+        "4_DS",
+        "chemical contamination"
+    ],
+    "5_DS.1.0": [
+        "5_DS",
+        "reverse osmosis"
+    ],
+    "5_DS.2.0": [
+        "5_DS",
+        "reverse osmosis"
+    ],
+    "5_DS.3.0": [
+        "5_DS",
+        "reverse osmosis"
+    ],
+    "5_DS.1.1": [
+        "5_DS",
+        "membrane distillation"
+    ],
+    "5_DS.2.1": [
+        "5_DS",
+        "membrane distillation"
+    ],
+    "5_DS.3.1": [
+        "5_DS",
+        "membrane distillation"
+    ],
+    "5_DS.1.2": [
+        "5_DS",
+        "ultrafiltration"
+    ],
+    "5_DS.2.2": [
+        "5_DS",
+        "ultrafiltration"
+    ],
+    "5_DS.3.2": [
+        "5_DS",
+        "ultrafiltration"
+    ],
+    "5_DS.2.3": [
+        "5_DS",
+        "boiling"
+    ],
+    "5_DS.3.3": [
+        "5_DS",
+        "boiling"
+    ],
+    "5_DS.2.4": [
+        "5_DS",
+        "distillation"
+    ],
+    "5_DS.3.4": [
+        "5_DS",
+        "distillation"
+    ],
+    "5_DS.2.5": [
+        "5_DS",
+        "activated carbon filter"
+    ],
+    "5_DS.3.5": [
+        "5_DS",
+        "activated carbon filter"
+    ],
+    "5_DS.2.6": [
+        "5_DS",
+        "UV-disinfection"
+    ],
+    "5_DS.3.6": [
+        "5_DS",
+        "UV-disinfection"
+    ],
+    "5_DS.2.7": [
+        "5_DS",
+        "cartridge filter"
+    ],
+    "5_DS.3.7": [
+        "5_DS",
+        "cartridge filter"
+    ],
+    "5_DS.2.8": [
+        "5_DS",
+        "microfiltration"
+    ],
+    "5_DS.3.8": [
+        "5_DS",
+        "microfiltration"
+    ],
+    "5_DS.2.9": [
+        "5_DS",
+        "ceramic filter"
+    ],
+    "5_DS.3.9": [
+        "5_DS",
+        "ceramic filter"
+    ],
+    "5_DS.2.10": [
+        "5_DS",
+        "nanofiltration"
+    ],
+    "5_DS.3.10": [
+        "5_DS",
+        "nanofiltration"
+    ],
+    "5_DS.2.11": [
+        "5_DS",
+        "electrodialyis"
+    ],
+    "5_DS.3.11": [
+        "5_DS",
+        "electrodialyis"
+    ],
+    "5_DS.2.12": [
+        "5_DS",
+        "slow sand filter"
+    ],
+    "5_DS.3.12": [
+        "5_DS",
+        "slow sand filter"
+    ],
+    "5_DS.2.13": [
+        "5_DS",
+        "water softener"
+    ],
+    "5_DS.3.13": [
+        "5_DS",
+        "water softener"
+    ],
+    "5_DS.4": [
+        "5_DS",
+        "other"
+    ],
+    "5_DS.1.3": [
+        "5_DS",
+        "other"
+    ],
+    "5_DS.2.14": [
+        "5_DS",
+        "other"
+    ],
+    "5_DS.3.14": [
+        "5_DS",
+        "other"
+    ],
+    "3_RC.1.1": [
+        "3_RC.1",
+        "Yes"
+    ],
+    "3_RC.1.2": [
+        "3_RC.1",
+        "Yes"
+    ],
+    "3_RC.1.4": [
+        "3_RC.1",
+        "Yes"
+    ],
+    "3_RC.1.3": [
+        "3_RC.1.2",
+        ""
+    ],
+    "4_RC.1": [
+        "4_RC",
+        "salinity"
+    ],
+    "4_RC.2": [
+        "4_RC",
+        "heavy metals"
+    ],
+    "4_RC.3": [
+        "4_RC",
+        "chemical contamination"
+    ],
+    "5_RC.1.0": [
+        "5_RC",
+        "reverse osmosis"
+    ],
+    "5_RC.2.0": [
+        "5_RC",
+        "reverse osmosis"
+    ],
+    "5_RC.3.0": [
+        "5_RC",
+        "reverse osmosis"
+    ],
+    "5_RC.1.1": [
+        "5_RC",
+        "membrane distillation"
+    ],
+    "5_RC.2.1": [
+        "5_RC",
+        "membrane distillation"
+    ],
+    "5_RC.3.1": [
+        "5_RC",
+        "membrane distillation"
+    ],
+    "5_RC.1.2": [
+        "5_RC",
+        "ultrafiltration"
+    ],
+    "5_RC.2.2": [
+        "5_RC",
+        "ultrafiltration"
+    ],
+    "5_RC.3.2": [
+        "5_RC",
+        "ultrafiltration"
+    ],
+    "5_RC.2.3": [
+        "5_RC",
+        "boiling"
+    ],
+    "5_RC.3.3": [
+        "5_RC",
+        "boiling"
+    ],
+    "5_RC.2.4": [
+        "5_RC",
+        "distillation"
+    ],
+    "5_RC.3.4": [
+        "5_RC",
+        "distillation"
+    ],
+    "5_RC.2.5": [
+        "5_RC",
+        "activated carbon filter"
+    ],
+    "5_RC.3.5": [
+        "5_RC",
+        "activated carbon filter"
+    ],
+    "5_RC.2.6": [
+        "5_RC",
+        "UV-disinfection"
+    ],
+    "5_RC.3.6": [
+        "5_RC",
+        "UV-disinfection"
+    ],
+    "5_RC.2.7": [
+        "5_RC",
+        "cartridge filter"
+    ],
+    "5_RC.3.7": [
+        "5_RC",
+        "cartridge filter"
+    ],
+    "5_RC.2.8": [
+        "5_RC",
+        "microfiltration"
+    ],
+    "5_RC.3.8": [
+        "5_RC",
+        "microfiltration"
+    ],
+    "5_RC.2.9": [
+        "5_RC",
+        "ceramic filter"
+    ],
+    "5_RC.3.9": [
+        "5_RC",
+        "ceramic filter"
+    ],
+    "5_RC.2.10": [
+        "5_RC",
+        "nanofiltration"
+    ],
+    "5_RC.3.10": [
+        "5_RC",
+        "nanofiltration"
+    ],
+    "5_RC.2.11": [
+        "5_RC",
+        "electrodialyis"
+    ],
+    "5_RC.3.11": [
+        "5_RC",
+        "electrodialyis"
+    ],
+    "5_RC.2.12": [
+        "5_RC",
+        "slow sand filter"
+    ],
+    "5_RC.3.12": [
+        "5_RC",
+        "slow sand filter"
+    ],
+    "5_RC.2.13": [
+        "5_RC",
+        "water softener"
+    ],
+    "5_RC.3.13": [
+        "5_RC",
+        "water softener"
+    ],
+    "5_RC.4": [
+        "5_RC",
+        "other"
+    ],
+    "5_RC.1.3": [
+        "5_RC",
+        "other"
+    ],
+    "5_RC.2.14": [
+        "5_RC",
+        "other"
+    ],
+    "5_RC.3.14": [
+        "5_RC",
+        "other"
+    ],
+    "3_L.1.1": [
+        "3_L.1",
+        "Yes"
+    ],
+    "3_L.1.2": [
+        "3_L.1",
+        "Yes"
+    ],
+    "3_L.1.4": [
+        "3_L.1",
+        "Yes"
+    ],
+    "3_L.1.3": [
+        "3_L.1.2",
+        ""
+    ],
+    "4_L.1": [
+        "4_L",
+        "salinity"
+    ],
+    "4_L.2": [
+        "4_L",
+        "heavy metals"
+    ],
+    "4_L.3": [
+        "4_L",
+        "chemical contamination"
+    ],
+    "5_L.1.0": [
+        "5_L",
+        "reverse osmosis"
+    ],
+    "5_L.2.0": [
+        "5_L",
+        "reverse osmosis"
+    ],
+    "5_L.3.0": [
+        "5_L",
+        "reverse osmosis"
+    ],
+    "5_L.1.1": [
+        "5_L",
+        "membrane distillation"
+    ],
+    "5_L.2.1": [
+        "5_L",
+        "membrane distillation"
+    ],
+    "5_L.3.1": [
+        "5_L",
+        "membrane distillation"
+    ],
+    "5_L.1.2": [
+        "5_L",
+        "ultrafiltration"
+    ],
+    "5_L.2.2": [
+        "5_L",
+        "ultrafiltration"
+    ],
+    "5_L.3.2": [
+        "5_L",
+        "ultrafiltration"
+    ],
+    "5_L.2.3": [
+        "5_L",
+        "boiling"
+    ],
+    "5_L.3.3": [
+        "5_L",
+        "boiling"
+    ],
+    "5_L.2.4": [
+        "5_L",
+        "distillation"
+    ],
+    "5_L.3.4": [
+        "5_L",
+        "distillation"
+    ],
+    "5_L.2.5": [
+        "5_L",
+        "activated carbon filter"
+    ],
+    "5_L.3.5": [
+        "5_L",
+        "activated carbon filter"
+    ],
+    "5_L.2.6": [
+        "5_L",
+        "UV-disinfection"
+    ],
+    "5_L.3.6": [
+        "5_L",
+        "UV-disinfection"
+    ],
+    "5_L.2.7": [
+        "5_L",
+        "cartridge filter"
+    ],
+    "5_L.3.7": [
+        "5_L",
+        "cartridge filter"
+    ],
+    "5_L.2.8": [
+        "5_L",
+        "microfiltration"
+    ],
+    "5_L.3.8": [
+        "5_L",
+        "microfiltration"
+    ],
+    "5_L.2.9": [
+        "5_L",
+        "ceramic filter"
+    ],
+    "5_L.3.9": [
+        "5_L",
+        "ceramic filter"
+    ],
+    "5_L.2.10": [
+        "5_L",
+        "nanofiltration"
+    ],
+    "5_L.3.10": [
+        "5_L",
+        "nanofiltration"
+    ],
+    "5_L.2.11": [
+        "5_L",
+        "electrodialyis"
+    ],
+    "5_L.3.11": [
+        "5_L",
+        "electrodialyis"
+    ],
+    "5_L.2.12": [
+        "5_L",
+        "slow sand filter"
+    ],
+    "5_L.3.12": [
+        "5_L",
+        "slow sand filter"
+    ],
+    "5_L.2.13": [
+        "5_L",
+        "water softener"
+    ],
+    "5_L.3.13": [
+        "5_L",
+        "water softener"
+    ],
+    "5_L.4": [
+        "5_L",
+        "other"
+    ],
+    "5_L.1.3": [
+        "5_L",
+        "other"
+    ],
+    "5_L.2.14": [
+        "5_L",
+        "other"
+    ],
+    "5_L.3.14": [
+        "5_L",
+        "other"
+    ],
+    "3_GWa.1": [
+        "3a",
+        "groundwater well"
+    ],
+    "4_GWa": [
+        "3a",
+        "groundwater well"
+    ],
+    "5_GWa": [
+        "3a",
+        "groundwater well"
+    ],
+    "3_DSa.1": [
+        "3a",
+        "desalinated seawater"
+    ],
+    "4_DSa": [
+        "3a",
+        "desalinated seawater"
+    ],
+    "5_DSa": [
+        "3a",
+        "desalinated seawater"
+    ],
+    "3_RCa.1": [
+        "3a",
+        "river/creek"
+    ],
+    "4_RCa": [
+        "3a",
+        "river/creek"
+    ],
+    "5_RCa": [
+        "3a",
+        "river/creek"
+    ],
+    "3_La.1": [
+        "3a",
+        "lake"
+    ],
+    "4_La": [
+        "3a",
+        "lake"
+    ],
+    "5_La": [
+        "3a",
+        "lake"
+    ],
+    "3a.2": [
+        "3a",
+        "water truck"
+    ],
+    "3a.3": [
+        "3a",
+        "other"
+    ],
+    "3_GWa.1.1": [
+        "3_GWa.1",
+        "Yes"
+    ],
+    "3_GWa.1.2": [
+        "3_GWa.1",
+        "Yes"
+    ],
+    "3_GWa.1.4": [
+        "3_GWa.1",
+        "Yes"
+    ],
+    "3_GWa.1.3": [
+        "3_GWa.1.2",
+        ""
+    ],
+    "4_GWa.1": [
+        "4_GWa",
+        "salinity"
+    ],
+    "4_GWa.2": [
+        "4_GWa",
+        "heavy metals"
+    ],
+    "4_GWa.3": [
+        "4_GWa",
+        "chemical contamination"
+    ],
+    "5_GWa.1.0": [
+        "5_GWa",
+        "reverse osmosis"
+    ],
+    "5_GWa.2.0": [
+        "5_GWa",
+        "reverse osmosis"
+    ],
+    "5_GWa.3.0": [
+        "5_GWa",
+        "reverse osmosis"
+    ],
+    "5_GWa.1.1": [
+        "5_GWa",
+        "membrane distillation"
+    ],
+    "5_GWa.2.1": [
+        "5_GWa",
+        "membrane distillation"
+    ],
+    "5_GWa.3.1": [
+        "5_GWa",
+        "membrane distillation"
+    ],
+    "5_GWa.1.2": [
+        "5_GWa",
+        "ultrafiltration"
+    ],
+    "5_GWa.2.2": [
+        "5_GWa",
+        "ultrafiltration"
+    ],
+    "5_GWa.3.2": [
+        "5_GWa",
+        "ultrafiltration"
+    ],
+    "5_GWa.2.3": [
+        "5_GWa",
+        "boiling"
+    ],
+    "5_GWa.3.3": [
+        "5_GWa",
+        "boiling"
+    ],
+    "5_GWa.2.4": [
+        "5_GWa",
+        "distillation"
+    ],
+    "5_GWa.3.4": [
+        "5_GWa",
+        "distillation"
+    ],
+    "5_GWa.2.5": [
+        "5_GWa",
+        "activated carbon filter"
+    ],
+    "5_GWa.3.5": [
+        "5_GWa",
+        "activated carbon filter"
+    ],
+    "5_GWa.2.6": [
+        "5_GWa",
+        "UV-disinfection"
+    ],
+    "5_GWa.3.6": [
+        "5_GWa",
+        "UV-disinfection"
+    ],
+    "5_GWa.2.7": [
+        "5_GWa",
+        "cartridge filter"
+    ],
+    "5_GWa.3.7": [
+        "5_GWa",
+        "cartridge filter"
+    ],
+    "5_GWa.2.8": [
+        "5_GWa",
+        "microfiltration"
+    ],
+    "5_GWa.3.8": [
+        "5_GWa",
+        "microfiltration"
+    ],
+    "5_GWa.2.9": [
+        "5_GWa",
+        "ceramic filter"
+    ],
+    "5_GWa.3.9": [
+        "5_GWa",
+        "ceramic filter"
+    ],
+    "5_GWa.2.10": [
+        "5_GWa",
+        "nanofiltration"
+    ],
+    "5_GWa.3.10": [
+        "5_GWa",
+        "nanofiltration"
+    ],
+    "5_GWa.2.11": [
+        "5_GWa",
+        "electrodialyis"
+    ],
+    "5_GWa.3.11": [
+        "5_GWa",
+        "electrodialyis"
+    ],
+    "5_GWa.2.12": [
+        "5_GWa",
+        "slow sand filter"
+    ],
+    "5_GWa.3.12": [
+        "5_GWa",
+        "slow sand filter"
+    ],
+    "5_GWa.2.13": [
+        "5_GWa",
+        "water softener"
+    ],
+    "5_GWa.3.13": [
+        "5_GWa",
+        "water softener"
+    ],
+    "5_GWa.4": [
+        "5_GWa",
+        "other"
+    ],
+    "5_GWa.1.3": [
+        "5_GWa",
+        "other"
+    ],
+    "5_GWa.2.14": [
+        "5_GWa",
+        "other"
+    ],
+    "5_GWa.3.14": [
+        "5_GWa",
+        "other"
+    ],
+    "3_DSa.1.1": [
+        "3_DSa.1",
+        "Yes"
+    ],
+    "3_DSa.1.2": [
+        "3_DSa.1",
+        "Yes"
+    ],
+    "3_DSa.1.4": [
+        "3_DSa.1",
+        "Yes"
+    ],
+    "3_DSa.1.3": [
+        "3_DSa.1.2",
+        ""
+    ],
+    "4_DSa.1": [
+        "4_DSa",
+        "salinity"
+    ],
+    "4_DSa.2": [
+        "4_DSa",
+        "heavy metals"
+    ],
+    "4_DSa.3": [
+        "4_DSa",
+        "chemical contamination"
+    ],
+    "5_DSa.1.0": [
+        "5_DSa",
+        "reverse osmosis"
+    ],
+    "5_DSa.2.0": [
+        "5_DSa",
+        "reverse osmosis"
+    ],
+    "5_DSa.3.0": [
+        "5_DSa",
+        "reverse osmosis"
+    ],
+    "5_DSa.1.1": [
+        "5_DSa",
+        "membrane distillation"
+    ],
+    "5_DSa.2.1": [
+        "5_DSa",
+        "membrane distillation"
+    ],
+    "5_DSa.3.1": [
+        "5_DSa",
+        "membrane distillation"
+    ],
+    "5_DSa.1.2": [
+        "5_DSa",
+        "ultrafiltration"
+    ],
+    "5_DSa.2.2": [
+        "5_DSa",
+        "ultrafiltration"
+    ],
+    "5_DSa.3.2": [
+        "5_DSa",
+        "ultrafiltration"
+    ],
+    "5_DSa.2.3": [
+        "5_DSa",
+        "boiling"
+    ],
+    "5_DSa.3.3": [
+        "5_DSa",
+        "boiling"
+    ],
+    "5_DSa.2.4": [
+        "5_DSa",
+        "distillation"
+    ],
+    "5_DSa.3.4": [
+        "5_DSa",
+        "distillation"
+    ],
+    "5_DSa.2.5": [
+        "5_DSa",
+        "activated carbon filter"
+    ],
+    "5_DSa.3.5": [
+        "5_DSa",
+        "activated carbon filter"
+    ],
+    "5_DSa.2.6": [
+        "5_DSa",
+        "UV-disinfection"
+    ],
+    "5_DSa.3.6": [
+        "5_DSa",
+        "UV-disinfection"
+    ],
+    "5_DSa.2.7": [
+        "5_DSa",
+        "cartridge filter"
+    ],
+    "5_DSa.3.7": [
+        "5_DSa",
+        "cartridge filter"
+    ],
+    "5_DSa.2.8": [
+        "5_DSa",
+        "microfiltration"
+    ],
+    "5_DSa.3.8": [
+        "5_DSa",
+        "microfiltration"
+    ],
+    "5_DSa.2.9": [
+        "5_DSa",
+        "ceramic filter"
+    ],
+    "5_DSa.3.9": [
+        "5_DSa",
+        "ceramic filter"
+    ],
+    "5_DSa.2.10": [
+        "5_DSa",
+        "nanofiltration"
+    ],
+    "5_DSa.3.10": [
+        "5_DSa",
+        "nanofiltration"
+    ],
+    "5_DSa.2.11": [
+        "5_DSa",
+        "electrodialyis"
+    ],
+    "5_DSa.3.11": [
+        "5_DSa",
+        "electrodialyis"
+    ],
+    "5_DSa.2.12": [
+        "5_DSa",
+        "slow sand filter"
+    ],
+    "5_DSa.3.12": [
+        "5_DSa",
+        "slow sand filter"
+    ],
+    "5_DSa.2.13": [
+        "5_DSa",
+        "water softener"
+    ],
+    "5_DSa.3.13": [
+        "5_DSa",
+        "water softener"
+    ],
+    "5_DSa.4": [
+        "5_DSa",
+        "other"
+    ],
+    "5_DSa.1.3": [
+        "5_DSa",
+        "other"
+    ],
+    "5_DSa.2.14": [
+        "5_DSa",
+        "other"
+    ],
+    "5_DSa.3.14": [
+        "5_DSa",
+        "other"
+    ],
+    "3_RCa.1.1": [
+        "3_RCa.1",
+        "Yes"
+    ],
+    "3_RCa.1.2": [
+        "3_RCa.1",
+        "Yes"
+    ],
+    "3_RCa.1.4": [
+        "3_RCa.1",
+        "Yes"
+    ],
+    "3_RCa.1.3": [
+        "3_RCa.1.2",
+        ""
+    ],
+    "4_RCa.1": [
+        "4_RCa",
+        "salinity"
+    ],
+    "4_RCa.2": [
+        "4_RCa",
+        "heavy metals"
+    ],
+    "4_RCa.3": [
+        "4_RCa",
+        "chemical contamination"
+    ],
+    "5_RCa.1.0": [
+        "5_RCa",
+        "reverse osmosis"
+    ],
+    "5_RCa.2.0": [
+        "5_RCa",
+        "reverse osmosis"
+    ],
+    "5_RCa.3.0": [
+        "5_RCa",
+        "reverse osmosis"
+    ],
+    "5_RCa.1.1": [
+        "5_RCa",
+        "membrane distillation"
+    ],
+    "5_RCa.2.1": [
+        "5_RCa",
+        "membrane distillation"
+    ],
+    "5_RCa.3.1": [
+        "5_RCa",
+        "membrane distillation"
+    ],
+    "5_RCa.1.2": [
+        "5_RCa",
+        "ultrafiltration"
+    ],
+    "5_RCa.2.2": [
+        "5_RCa",
+        "ultrafiltration"
+    ],
+    "5_RCa.3.2": [
+        "5_RCa",
+        "ultrafiltration"
+    ],
+    "5_RCa.2.3": [
+        "5_RCa",
+        "boiling"
+    ],
+    "5_RCa.3.3": [
+        "5_RCa",
+        "boiling"
+    ],
+    "5_RCa.2.4": [
+        "5_RCa",
+        "distillation"
+    ],
+    "5_RCa.3.4": [
+        "5_RCa",
+        "distillation"
+    ],
+    "5_RCa.2.5": [
+        "5_RCa",
+        "activated carbon filter"
+    ],
+    "5_RCa.3.5": [
+        "5_RCa",
+        "activated carbon filter"
+    ],
+    "5_RCa.2.6": [
+        "5_RCa",
+        "UV-disinfection"
+    ],
+    "5_RCa.3.6": [
+        "5_RCa",
+        "UV-disinfection"
+    ],
+    "5_RCa.2.7": [
+        "5_RCa",
+        "cartridge filter"
+    ],
+    "5_RCa.3.7": [
+        "5_RCa",
+        "cartridge filter"
+    ],
+    "5_RCa.2.8": [
+        "5_RCa",
+        "microfiltration"
+    ],
+    "5_RCa.3.8": [
+        "5_RCa",
+        "microfiltration"
+    ],
+    "5_RCa.2.9": [
+        "5_RCa",
+        "ceramic filter"
+    ],
+    "5_RCa.3.9": [
+        "5_RCa",
+        "ceramic filter"
+    ],
+    "5_RCa.2.10": [
+        "5_RCa",
+        "nanofiltration"
+    ],
+    "5_RCa.3.10": [
+        "5_RCa",
+        "nanofiltration"
+    ],
+    "5_RCa.2.11": [
+        "5_RCa",
+        "electrodialyis"
+    ],
+    "5_RCa.3.11": [
+        "5_RCa",
+        "electrodialyis"
+    ],
+    "5_RCa.2.12": [
+        "5_RCa",
+        "slow sand filter"
+    ],
+    "5_RCa.3.12": [
+        "5_RCa",
+        "slow sand filter"
+    ],
+    "5_RCa.2.13": [
+        "5_RCa",
+        "water softener"
+    ],
+    "5_RCa.3.13": [
+        "5_RCa",
+        "water softener"
+    ],
+    "5_RCa.4": [
+        "5_RCa",
+        "other"
+    ],
+    "5_RCa.1.3": [
+        "5_RCa",
+        "other"
+    ],
+    "5_RCa.2.14": [
+        "5_RCa",
+        "other"
+    ],
+    "5_RCa.3.14": [
+        "5_RCa",
+        "other"
+    ],
+    "3_La.1.1": [
+        "3_La.1",
+        "Yes"
+    ],
+    "3_La.1.2": [
+        "3_La.1",
+        "Yes"
+    ],
+    "3_La.1.4": [
+        "3_La.1",
+        "Yes"
+    ],
+    "3_La.1.3": [
+        "3_La.1.2",
+        ""
+    ],
+    "4_La.1": [
+        "4_La",
+        "salinity"
+    ],
+    "4_La.2": [
+        "4_La",
+        "heavy metals"
+    ],
+    "4_La.3": [
+        "4_La",
+        "chemical contamination"
+    ],
+    "5_La.1.0": [
+        "5_La",
+        "reverse osmosis"
+    ],
+    "5_La.2.0": [
+        "5_La",
+        "reverse osmosis"
+    ],
+    "5_La.3.0": [
+        "5_La",
+        "reverse osmosis"
+    ],
+    "5_La.1.1": [
+        "5_La",
+        "membrane distillation"
+    ],
+    "5_La.2.1": [
+        "5_La",
+        "membrane distillation"
+    ],
+    "5_La.3.1": [
+        "5_La",
+        "membrane distillation"
+    ],
+    "5_La.1.2": [
+        "5_La",
+        "ultrafiltration"
+    ],
+    "5_La.2.2": [
+        "5_La",
+        "ultrafiltration"
+    ],
+    "5_La.3.2": [
+        "5_La",
+        "ultrafiltration"
+    ],
+    "5_La.2.3": [
+        "5_La",
+        "boiling"
+    ],
+    "5_La.3.3": [
+        "5_La",
+        "boiling"
+    ],
+    "5_La.2.4": [
+        "5_La",
+        "distillation"
+    ],
+    "5_La.3.4": [
+        "5_La",
+        "distillation"
+    ],
+    "5_La.2.5": [
+        "5_La",
+        "activated carbon filter"
+    ],
+    "5_La.3.5": [
+        "5_La",
+        "activated carbon filter"
+    ],
+    "5_La.2.6": [
+        "5_La",
+        "UV-disinfection"
+    ],
+    "5_La.3.6": [
+        "5_La",
+        "UV-disinfection"
+    ],
+    "5_La.2.7": [
+        "5_La",
+        "cartridge filter"
+    ],
+    "5_La.3.7": [
+        "5_La",
+        "cartridge filter"
+    ],
+    "5_La.2.8": [
+        "5_La",
+        "microfiltration"
+    ],
+    "5_La.3.8": [
+        "5_La",
+        "microfiltration"
+    ],
+    "5_La.2.9": [
+        "5_La",
+        "ceramic filter"
+    ],
+    "5_La.3.9": [
+        "5_La",
+        "ceramic filter"
+    ],
+    "5_La.2.10": [
+        "5_La",
+        "nanofiltration"
+    ],
+    "5_La.3.10": [
+        "5_La",
+        "nanofiltration"
+    ],
+    "5_La.2.11": [
+        "5_La",
+        "electrodialyis"
+    ],
+    "5_La.3.11": [
+        "5_La",
+        "electrodialyis"
+    ],
+    "5_La.2.12": [
+        "5_La",
+        "slow sand filter"
+    ],
+    "5_La.3.12": [
+        "5_La",
+        "slow sand filter"
+    ],
+    "5_La.2.13": [
+        "5_La",
+        "water softener"
+    ],
+    "5_La.3.13": [
+        "5_La",
+        "water softener"
+    ],
+    "5_La.4": [
+        "5_La",
+        "other"
+    ],
+    "5_La.1.3": [
+        "5_La",
+        "other"
+    ],
+    "5_La.2.14": [
+        "5_La",
+        "other"
+    ],
+    "5_La.3.14": [
+        "5_La",
+        "other"
+    ],
+    "3_GWb.1": [
+        "3b",
+        "groundwater well"
+    ],
+    "4_GWb": [
+        "3b",
+        "groundwater well"
+    ],
+    "5_GWb": [
+        "3b",
+        "groundwater well"
+    ],
+    "3_DSb.1": [
+        "3b",
+        "desalinated seawater"
+    ],
+    "4_DSb": [
+        "3b",
+        "desalinated seawater"
+    ],
+    "5_DSb": [
+        "3b",
+        "desalinated seawater"
+    ],
+    "3_RCb.1": [
+        "3b",
+        "river/creek"
+    ],
+    "4_RCb": [
+        "3b",
+        "river/creek"
+    ],
+    "5_RCb": [
+        "3b",
+        "river/creek"
+    ],
+    "3_Lb.1": [
+        "3b",
+        "lake"
+    ],
+    "4_Lb": [
+        "3b",
+        "lake"
+    ],
+    "5_Lb": [
+        "3b",
+        "lake"
+    ],
+    "3b.2": [
+        "3b",
+        "water truck"
+    ],
+    "3b.3": [
+        "3b",
+        "other"
+    ],
+    "3_GWb.1.1": [
+        "3_GWb.1",
+        "Yes"
+    ],
+    "3_GWb.1.2": [
+        "3_GWb.1",
+        "Yes"
+    ],
+    "3_GWb.1.4": [
+        "3_GWb.1",
+        "Yes"
+    ],
+    "3_GWb.1.3": [
+        "3_GWb.1.2",
+        ""
+    ],
+    "4_GWb.1": [
+        "4_GWb",
+        "salinity"
+    ],
+    "4_GWb.2": [
+        "4_GWb",
+        "heavy metals"
+    ],
+    "4_GWb.3": [
+        "4_GWb",
+        "chemical contamination"
+    ],
+    "5_GWb.1.0": [
+        "5_GWb",
+        "reverse osmosis"
+    ],
+    "5_GWb.2.0": [
+        "5_GWb",
+        "reverse osmosis"
+    ],
+    "5_GWb.3.0": [
+        "5_GWb",
+        "reverse osmosis"
+    ],
+    "5_GWb.1.1": [
+        "5_GWb",
+        "membrane distillation"
+    ],
+    "5_GWb.2.1": [
+        "5_GWb",
+        "membrane distillation"
+    ],
+    "5_GWb.3.1": [
+        "5_GWb",
+        "membrane distillation"
+    ],
+    "5_GWb.1.2": [
+        "5_GWb",
+        "ultrafiltration"
+    ],
+    "5_GWb.2.2": [
+        "5_GWb",
+        "ultrafiltration"
+    ],
+    "5_GWb.3.2": [
+        "5_GWb",
+        "ultrafiltration"
+    ],
+    "5_GWb.2.3": [
+        "5_GWb",
+        "boiling"
+    ],
+    "5_GWb.3.3": [
+        "5_GWb",
+        "boiling"
+    ],
+    "5_GWb.2.4": [
+        "5_GWb",
+        "distillation"
+    ],
+    "5_GWb.3.4": [
+        "5_GWb",
+        "distillation"
+    ],
+    "5_GWb.2.5": [
+        "5_GWb",
+        "activated carbon filter"
+    ],
+    "5_GWb.3.5": [
+        "5_GWb",
+        "activated carbon filter"
+    ],
+    "5_GWb.2.6": [
+        "5_GWb",
+        "UV-disinfection"
+    ],
+    "5_GWb.3.6": [
+        "5_GWb",
+        "UV-disinfection"
+    ],
+    "5_GWb.2.7": [
+        "5_GWb",
+        "cartridge filter"
+    ],
+    "5_GWb.3.7": [
+        "5_GWb",
+        "cartridge filter"
+    ],
+    "5_GWb.2.8": [
+        "5_GWb",
+        "microfiltration"
+    ],
+    "5_GWb.3.8": [
+        "5_GWb",
+        "microfiltration"
+    ],
+    "5_GWb.2.9": [
+        "5_GWb",
+        "ceramic filter"
+    ],
+    "5_GWb.3.9": [
+        "5_GWb",
+        "ceramic filter"
+    ],
+    "5_GWb.2.10": [
+        "5_GWb",
+        "nanofiltration"
+    ],
+    "5_GWb.3.10": [
+        "5_GWb",
+        "nanofiltration"
+    ],
+    "5_GWb.2.11": [
+        "5_GWb",
+        "electrodialyis"
+    ],
+    "5_GWb.3.11": [
+        "5_GWb",
+        "electrodialyis"
+    ],
+    "5_GWb.2.12": [
+        "5_GWb",
+        "slow sand filter"
+    ],
+    "5_GWb.3.12": [
+        "5_GWb",
+        "slow sand filter"
+    ],
+    "5_GWb.2.13": [
+        "5_GWb",
+        "water softener"
+    ],
+    "5_GWb.3.13": [
+        "5_GWb",
+        "water softener"
+    ],
+    "5_GWb.4": [
+        "5_GWb",
+        "other"
+    ],
+    "5_GWb.1.3": [
+        "5_GWb",
+        "other"
+    ],
+    "5_GWb.2.14": [
+        "5_GWb",
+        "other"
+    ],
+    "5_GWb.3.14": [
+        "5_GWb",
+        "other"
+    ],
+    "3_DSb.1.1": [
+        "3_DSb.1",
+        "Yes"
+    ],
+    "3_DSb.1.2": [
+        "3_DSb.1",
+        "Yes"
+    ],
+    "3_DSb.1.4": [
+        "3_DSb.1",
+        "Yes"
+    ],
+    "3_DSb.1.3": [
+        "3_DSb.1.2",
+        ""
+    ],
+    "4_DSb.1": [
+        "4_DSb",
+        "salinity"
+    ],
+    "4_DSb.2": [
+        "4_DSb",
+        "heavy metals"
+    ],
+    "4_DSb.3": [
+        "4_DSb",
+        "chemical contamination"
+    ],
+    "5_DSb.1.0": [
+        "5_DSb",
+        "reverse osmosis"
+    ],
+    "5_DSb.2.0": [
+        "5_DSb",
+        "reverse osmosis"
+    ],
+    "5_DSb.3.0": [
+        "5_DSb",
+        "reverse osmosis"
+    ],
+    "5_DSb.1.1": [
+        "5_DSb",
+        "membrane distillation"
+    ],
+    "5_DSb.2.1": [
+        "5_DSb",
+        "membrane distillation"
+    ],
+    "5_DSb.3.1": [
+        "5_DSb",
+        "membrane distillation"
+    ],
+    "5_DSb.1.2": [
+        "5_DSb",
+        "ultrafiltration"
+    ],
+    "5_DSb.2.2": [
+        "5_DSb",
+        "ultrafiltration"
+    ],
+    "5_DSb.3.2": [
+        "5_DSb",
+        "ultrafiltration"
+    ],
+    "5_DSb.2.3": [
+        "5_DSb",
+        "boiling"
+    ],
+    "5_DSb.3.3": [
+        "5_DSb",
+        "boiling"
+    ],
+    "5_DSb.2.4": [
+        "5_DSb",
+        "distillation"
+    ],
+    "5_DSb.3.4": [
+        "5_DSb",
+        "distillation"
+    ],
+    "5_DSb.2.5": [
+        "5_DSb",
+        "activated carbon filter"
+    ],
+    "5_DSb.3.5": [
+        "5_DSb",
+        "activated carbon filter"
+    ],
+    "5_DSb.2.6": [
+        "5_DSb",
+        "UV-disinfection"
+    ],
+    "5_DSb.3.6": [
+        "5_DSb",
+        "UV-disinfection"
+    ],
+    "5_DSb.2.7": [
+        "5_DSb",
+        "cartridge filter"
+    ],
+    "5_DSb.3.7": [
+        "5_DSb",
+        "cartridge filter"
+    ],
+    "5_DSb.2.8": [
+        "5_DSb",
+        "microfiltration"
+    ],
+    "5_DSb.3.8": [
+        "5_DSb",
+        "microfiltration"
+    ],
+    "5_DSb.2.9": [
+        "5_DSb",
+        "ceramic filter"
+    ],
+    "5_DSb.3.9": [
+        "5_DSb",
+        "ceramic filter"
+    ],
+    "5_DSb.2.10": [
+        "5_DSb",
+        "nanofiltration"
+    ],
+    "5_DSb.3.10": [
+        "5_DSb",
+        "nanofiltration"
+    ],
+    "5_DSb.2.11": [
+        "5_DSb",
+        "electrodialyis"
+    ],
+    "5_DSb.3.11": [
+        "5_DSb",
+        "electrodialyis"
+    ],
+    "5_DSb.2.12": [
+        "5_DSb",
+        "slow sand filter"
+    ],
+    "5_DSb.3.12": [
+        "5_DSb",
+        "slow sand filter"
+    ],
+    "5_DSb.2.13": [
+        "5_DSb",
+        "water softener"
+    ],
+    "5_DSb.3.13": [
+        "5_DSb",
+        "water softener"
+    ],
+    "5_DSb.4": [
+        "5_DSb",
+        "other"
+    ],
+    "5_DSb.1.3": [
+        "5_DSb",
+        "other"
+    ],
+    "5_DSb.2.14": [
+        "5_DSb",
+        "other"
+    ],
+    "5_DSb.3.14": [
+        "5_DSb",
+        "other"
+    ],
+    "3_RCb.1.1": [
+        "3_RCb.1",
+        "Yes"
+    ],
+    "3_RCb.1.2": [
+        "3_RCb.1",
+        "Yes"
+    ],
+    "3_RCb.1.4": [
+        "3_RCb.1",
+        "Yes"
+    ],
+    "3_RCb.1.3": [
+        "3_RCb.1.2",
+        ""
+    ],
+    "4_RCb.1": [
+        "4_RCb",
+        "salinity"
+    ],
+    "4_RCb.2": [
+        "4_RCb",
+        "heavy metals"
+    ],
+    "4_RCb.3": [
+        "4_RCb",
+        "chemical contamination"
+    ],
+    "5_RCb.1.0": [
+        "5_RCb",
+        "reverse osmosis"
+    ],
+    "5_RCb.2.0": [
+        "5_RCb",
+        "reverse osmosis"
+    ],
+    "5_RCb.3.0": [
+        "5_RCb",
+        "reverse osmosis"
+    ],
+    "5_RCb.1.1": [
+        "5_RCb",
+        "membrane distillation"
+    ],
+    "5_RCb.2.1": [
+        "5_RCb",
+        "membrane distillation"
+    ],
+    "5_RCb.3.1": [
+        "5_RCb",
+        "membrane distillation"
+    ],
+    "5_RCb.1.2": [
+        "5_RCb",
+        "ultrafiltration"
+    ],
+    "5_RCb.2.2": [
+        "5_RCb",
+        "ultrafiltration"
+    ],
+    "5_RCb.3.2": [
+        "5_RCb",
+        "ultrafiltration"
+    ],
+    "5_RCb.2.3": [
+        "5_RCb",
+        "boiling"
+    ],
+    "5_RCb.3.3": [
+        "5_RCb",
+        "boiling"
+    ],
+    "5_RCb.2.4": [
+        "5_RCb",
+        "distillation"
+    ],
+    "5_RCb.3.4": [
+        "5_RCb",
+        "distillation"
+    ],
+    "5_RCb.2.5": [
+        "5_RCb",
+        "activated carbon filter"
+    ],
+    "5_RCb.3.5": [
+        "5_RCb",
+        "activated carbon filter"
+    ],
+    "5_RCb.2.6": [
+        "5_RCb",
+        "UV-disinfection"
+    ],
+    "5_RCb.3.6": [
+        "5_RCb",
+        "UV-disinfection"
+    ],
+    "5_RCb.2.7": [
+        "5_RCb",
+        "cartridge filter"
+    ],
+    "5_RCb.3.7": [
+        "5_RCb",
+        "cartridge filter"
+    ],
+    "5_RCb.2.8": [
+        "5_RCb",
+        "microfiltration"
+    ],
+    "5_RCb.3.8": [
+        "5_RCb",
+        "microfiltration"
+    ],
+    "5_RCb.2.9": [
+        "5_RCb",
+        "ceramic filter"
+    ],
+    "5_RCb.3.9": [
+        "5_RCb",
+        "ceramic filter"
+    ],
+    "5_RCb.2.10": [
+        "5_RCb",
+        "nanofiltration"
+    ],
+    "5_RCb.3.10": [
+        "5_RCb",
+        "nanofiltration"
+    ],
+    "5_RCb.2.11": [
+        "5_RCb",
+        "electrodialyis"
+    ],
+    "5_RCb.3.11": [
+        "5_RCb",
+        "electrodialyis"
+    ],
+    "5_RCb.2.12": [
+        "5_RCb",
+        "slow sand filter"
+    ],
+    "5_RCb.3.12": [
+        "5_RCb",
+        "slow sand filter"
+    ],
+    "5_RCb.2.13": [
+        "5_RCb",
+        "water softener"
+    ],
+    "5_RCb.3.13": [
+        "5_RCb",
+        "water softener"
+    ],
+    "5_RCb.4": [
+        "5_RCb",
+        "other"
+    ],
+    "5_RCb.1.3": [
+        "5_RCb",
+        "other"
+    ],
+    "5_RCb.2.14": [
+        "5_RCb",
+        "other"
+    ],
+    "5_RCb.3.14": [
+        "5_RCb",
+        "other"
+    ],
+    "3_Lb.1.1": [
+        "3_Lb.1",
+        "Yes"
+    ],
+    "3_Lb.1.2": [
+        "3_Lb.1",
+        "Yes"
+    ],
+    "3_Lb.1.4": [
+        "3_Lb.1",
+        "Yes"
+    ],
+    "3_Lb.1.3": [
+        "3_Lb.1.2",
+        ""
+    ],
+    "4_Lb.1": [
+        "4_Lb",
+        "salinity"
+    ],
+    "4_Lb.2": [
+        "4_Lb",
+        "heavy metals"
+    ],
+    "4_Lb.3": [
+        "4_Lb",
+        "chemical contamination"
+    ],
+    "5_Lb.1.0": [
+        "5_Lb",
+        "reverse osmosis"
+    ],
+    "5_Lb.2.0": [
+        "5_Lb",
+        "reverse osmosis"
+    ],
+    "5_Lb.3.0": [
+        "5_Lb",
+        "reverse osmosis"
+    ],
+    "5_Lb.1.1": [
+        "5_Lb",
+        "membrane distillation"
+    ],
+    "5_Lb.2.1": [
+        "5_Lb",
+        "membrane distillation"
+    ],
+    "5_Lb.3.1": [
+        "5_Lb",
+        "membrane distillation"
+    ],
+    "5_Lb.1.2": [
+        "5_Lb",
+        "ultrafiltration"
+    ],
+    "5_Lb.2.2": [
+        "5_Lb",
+        "ultrafiltration"
+    ],
+    "5_Lb.3.2": [
+        "5_Lb",
+        "ultrafiltration"
+    ],
+    "5_Lb.2.3": [
+        "5_Lb",
+        "boiling"
+    ],
+    "5_Lb.3.3": [
+        "5_Lb",
+        "boiling"
+    ],
+    "5_Lb.2.4": [
+        "5_Lb",
+        "distillation"
+    ],
+    "5_Lb.3.4": [
+        "5_Lb",
+        "distillation"
+    ],
+    "5_Lb.2.5": [
+        "5_Lb",
+        "activated carbon filter"
+    ],
+    "5_Lb.3.5": [
+        "5_Lb",
+        "activated carbon filter"
+    ],
+    "5_Lb.2.6": [
+        "5_Lb",
+        "UV-disinfection"
+    ],
+    "5_Lb.3.6": [
+        "5_Lb",
+        "UV-disinfection"
+    ],
+    "5_Lb.2.7": [
+        "5_Lb",
+        "cartridge filter"
+    ],
+    "5_Lb.3.7": [
+        "5_Lb",
+        "cartridge filter"
+    ],
+    "5_Lb.2.8": [
+        "5_Lb",
+        "microfiltration"
+    ],
+    "5_Lb.3.8": [
+        "5_Lb",
+        "microfiltration"
+    ],
+    "5_Lb.2.9": [
+        "5_Lb",
+        "ceramic filter"
+    ],
+    "5_Lb.3.9": [
+        "5_Lb",
+        "ceramic filter"
+    ],
+    "5_Lb.2.10": [
+        "5_Lb",
+        "nanofiltration"
+    ],
+    "5_Lb.3.10": [
+        "5_Lb",
+        "nanofiltration"
+    ],
+    "5_Lb.2.11": [
+        "5_Lb",
+        "electrodialyis"
+    ],
+    "5_Lb.3.11": [
+        "5_Lb",
+        "electrodialyis"
+    ],
+    "5_Lb.2.12": [
+        "5_Lb",
+        "slow sand filter"
+    ],
+    "5_Lb.3.12": [
+        "5_Lb",
+        "slow sand filter"
+    ],
+    "5_Lb.2.13": [
+        "5_Lb",
+        "water softener"
+    ],
+    "5_Lb.3.13": [
+        "5_Lb",
+        "water softener"
+    ],
+    "5_Lb.4": [
+        "5_Lb",
+        "other"
+    ],
+    "5_Lb.1.3": [
+        "5_Lb",
+        "other"
+    ],
+    "5_Lb.2.14": [
+        "5_Lb",
+        "other"
+    ],
+    "5_Lb.3.14": [
+        "5_Lb",
+        "other"
+    ],
+    "7.1.0": [
+        "7",
+        "septic system"
+    ],
+    "7.1.1": [
+        "7",
+        "constructed wetland"
+    ],
+    "7.1.2": [
+        "7",
+        "centralized waste water treatment plant"
+    ],
+    "7.1.3": [
+        "7",
+        "decentralized waste water treatment plant"
+    ],
+    "7.1.4": [
+        "7",
+        "water recycling and reuse system"
+    ],
+    "7.2": [
+        "7",
+        "other"
+    ],
+    "7.1.5": [
+        "7",
+        "other"
+    ]
+}

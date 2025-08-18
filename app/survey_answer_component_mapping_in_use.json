@@ -1,0 +1,6843 @@
+{
+    "1": {
+        "map_to": "component",
+        "map_answer": {
+            "photovoltaic system": [
+                "pv_rooftop"
+            ],
+            "battery system": [
+                "battery"
+            ],
+            "diesel generator": [
+                "diesel-generator",
+                "diesel"
+            ],
+            "wind turbine": [
+                "wind_turbine"
+            ],
+            "hydropower": [
+                "hydro_power"
+            ],
+            "national grid": [
+                "grid"
+            ],
+            "biogas plant": [
+                "biogas-plant"
+            ]
+        }
+    },
+    "1.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "capacity": "float"
+        }
+    },
+    "1.2": {
+        "map_to": "attribute",
+        "map_answer": {
+            "capacity": "float"
+        }
+    },
+    "1.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "capacity": "float"
+        }
+    },
+    "1.4": {
+        "map_to": "attribute",
+        "map_answer": {
+            "capacity": "float"
+        }
+    },
+    "1.5": {
+        "map_to": "attribute",
+        "map_answer": {
+            "capacity": "float"
+        }
+    },
+    "1.6": {
+        "map_to": "attribute",
+        "map_answer": {
+            "capacity": "float"
+        }
+    },
+    "1.7": {
+        "map_to": "component",
+        "map_answer": {
+            "supply": "string"
+        }
+    },
+    "1.8": {
+        "map_to": "attribute",
+        "map_answer": {
+            "capacity": "float"
+        }
+    },
+    "11": {
+        "map_to": "component",
+        "map_answer": {
+            "wheat": [
+                ""
+            ],
+            "rice": [
+                ""
+            ],
+            "soy bean": [
+                ""
+            ],
+            "dry bean": [
+                ""
+            ],
+            "peanut": [
+                ""
+            ],
+            "potato": [
+                ""
+            ],
+            "cassava": [
+                ""
+            ],
+            "tomato": [
+                ""
+            ],
+            "sweetcorn": [
+                ""
+            ],
+            "green bean": [
+                ""
+            ],
+            "carrot": [
+                ""
+            ],
+            "cotton": [
+                ""
+            ],
+            "banana": [
+                ""
+            ],
+            "lettuce": [
+                ""
+            ],
+            "cucumber": [
+                ""
+            ],
+            "pineapple": [
+                ""
+            ],
+            "avocado": [
+                ""
+            ],
+            "quinoa": [
+                ""
+            ],
+            "amaranth": [
+                ""
+            ],
+            "guava": [
+                ""
+            ],
+            "papaya": [
+                ""
+            ],
+            "mango": [
+                ""
+            ],
+            "sorghum": [
+                ""
+            ],
+            "millet": [
+                ""
+            ],
+            "yam": [
+                ""
+            ],
+            "plantain": [
+                ""
+            ],
+            "apple": [
+                ""
+            ],
+            "sunflower": [
+                ""
+            ],
+            "cacao": [
+                ""
+            ],
+            "cashew": [
+                ""
+            ],
+            "pumpkin": [
+                ""
+            ],
+            "black bean": [
+                ""
+            ],
+            "oat": [
+                ""
+            ],
+            "pepper": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.1.0": {
+        "map_to": "attribute",
+        "map_answer": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.0": {
+        "map_to": "attribute",
+        "map_answer": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.0": {
+        "map_to": "attribute",
+        "map_answer": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.0": {
+        "map_to": "component",
+        "map_answer": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.0": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.1": {
+        "map_to": "component",
+        "map_answer": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.2": {
+        "map_to": "attribute",
+        "map_answer": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.2": {
+        "map_to": "attribute",
+        "map_answer": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.2": {
+        "map_to": "attribute",
+        "map_answer": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.2": {
+        "map_to": "component",
+        "map_answer": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.2": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.3": {
+        "map_to": "component",
+        "map_answer": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.4": {
+        "map_to": "attribute",
+        "map_answer": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.4": {
+        "map_to": "attribute",
+        "map_answer": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.4": {
+        "map_to": "attribute",
+        "map_answer": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.4": {
+        "map_to": "component",
+        "map_answer": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.4": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.5": {
+        "map_to": "attribute",
+        "map_answer": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.5": {
+        "map_to": "attribute",
+        "map_answer": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.5": {
+        "map_to": "attribute",
+        "map_answer": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.5": {
+        "map_to": "component",
+        "map_answer": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.5": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.6": {
+        "map_to": "attribute",
+        "map_answer": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.6": {
+        "map_to": "attribute",
+        "map_answer": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.6": {
+        "map_to": "attribute",
+        "map_answer": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.6": {
+        "map_to": "component",
+        "map_answer": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.6": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.7": {
+        "map_to": "attribute",
+        "map_answer": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.7": {
+        "map_to": "attribute",
+        "map_answer": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.7": {
+        "map_to": "attribute",
+        "map_answer": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.7": {
+        "map_to": "component",
+        "map_answer": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.7": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.8": {
+        "map_to": "attribute",
+        "map_answer": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.8": {
+        "map_to": "attribute",
+        "map_answer": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.8": {
+        "map_to": "attribute",
+        "map_answer": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.8": {
+        "map_to": "component",
+        "map_answer": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.8": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.9": {
+        "map_to": "attribute",
+        "map_answer": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.9": {
+        "map_to": "attribute",
+        "map_answer": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.9": {
+        "map_to": "attribute",
+        "map_answer": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.9": {
+        "map_to": "component",
+        "map_answer": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.9": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.10": {
+        "map_to": "attribute",
+        "map_answer": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.10": {
+        "map_to": "attribute",
+        "map_answer": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.10": {
+        "map_to": "attribute",
+        "map_answer": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.10": {
+        "map_to": "component",
+        "map_answer": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.10": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.11": {
+        "map_to": "attribute",
+        "map_answer": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.11": {
+        "map_to": "attribute",
+        "map_answer": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.11": {
+        "map_to": "attribute",
+        "map_answer": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.11": {
+        "map_to": "component",
+        "map_answer": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.11": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.12": {
+        "map_to": "attribute",
+        "map_answer": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.12": {
+        "map_to": "attribute",
+        "map_answer": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.12": {
+        "map_to": "attribute",
+        "map_answer": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.12": {
+        "map_to": "component",
+        "map_answer": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.12": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.13": {
+        "map_to": "attribute",
+        "map_answer": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.13": {
+        "map_to": "attribute",
+        "map_answer": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.13": {
+        "map_to": "attribute",
+        "map_answer": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.13": {
+        "map_to": "component",
+        "map_answer": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.13": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.14": {
+        "map_to": "attribute",
+        "map_answer": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.14": {
+        "map_to": "attribute",
+        "map_answer": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.14": {
+        "map_to": "attribute",
+        "map_answer": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.14": {
+        "map_to": "component",
+        "map_answer": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.14": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.15": {
+        "map_to": "attribute",
+        "map_answer": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.15": {
+        "map_to": "attribute",
+        "map_answer": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.15": {
+        "map_to": "attribute",
+        "map_answer": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.15": {
+        "map_to": "component",
+        "map_answer": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.15": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.16": {
+        "map_to": "attribute",
+        "map_answer": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.16": {
+        "map_to": "attribute",
+        "map_answer": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.16": {
+        "map_to": "attribute",
+        "map_answer": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.16": {
+        "map_to": "component",
+        "map_answer": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.16": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.17": {
+        "map_to": "attribute",
+        "map_answer": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.17": {
+        "map_to": "attribute",
+        "map_answer": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.17": {
+        "map_to": "attribute",
+        "map_answer": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.17": {
+        "map_to": "component",
+        "map_answer": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.17": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.18": {
+        "map_to": "attribute",
+        "map_answer": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.18": {
+        "map_to": "attribute",
+        "map_answer": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.18": {
+        "map_to": "attribute",
+        "map_answer": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.18": {
+        "map_to": "component",
+        "map_answer": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.18": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.19": {
+        "map_to": "attribute",
+        "map_answer": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.19": {
+        "map_to": "attribute",
+        "map_answer": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.19": {
+        "map_to": "attribute",
+        "map_answer": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.19": {
+        "map_to": "component",
+        "map_answer": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.19": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.20": {
+        "map_to": "attribute",
+        "map_answer": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.20": {
+        "map_to": "attribute",
+        "map_answer": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.20": {
+        "map_to": "attribute",
+        "map_answer": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.20": {
+        "map_to": "component",
+        "map_answer": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.20": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.21": {
+        "map_to": "attribute",
+        "map_answer": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.21": {
+        "map_to": "attribute",
+        "map_answer": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.21": {
+        "map_to": "attribute",
+        "map_answer": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.21": {
+        "map_to": "component",
+        "map_answer": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.21": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.22": {
+        "map_to": "attribute",
+        "map_answer": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.22": {
+        "map_to": "attribute",
+        "map_answer": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.22": {
+        "map_to": "attribute",
+        "map_answer": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.22": {
+        "map_to": "component",
+        "map_answer": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.22": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.23": {
+        "map_to": "attribute",
+        "map_answer": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.23": {
+        "map_to": "attribute",
+        "map_answer": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.23": {
+        "map_to": "attribute",
+        "map_answer": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.23": {
+        "map_to": "component",
+        "map_answer": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.23": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.24": {
+        "map_to": "attribute",
+        "map_answer": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.24": {
+        "map_to": "attribute",
+        "map_answer": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.24": {
+        "map_to": "attribute",
+        "map_answer": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.24": {
+        "map_to": "component",
+        "map_answer": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.24": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.25": {
+        "map_to": "attribute",
+        "map_answer": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.25": {
+        "map_to": "attribute",
+        "map_answer": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.25": {
+        "map_to": "attribute",
+        "map_answer": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.25": {
+        "map_to": "component",
+        "map_answer": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.25": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.26": {
+        "map_to": "attribute",
+        "map_answer": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.26": {
+        "map_to": "attribute",
+        "map_answer": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.26": {
+        "map_to": "attribute",
+        "map_answer": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.26": {
+        "map_to": "component",
+        "map_answer": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.26": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.27": {
+        "map_to": "attribute",
+        "map_answer": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.27": {
+        "map_to": "attribute",
+        "map_answer": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.27": {
+        "map_to": "attribute",
+        "map_answer": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.27": {
+        "map_to": "component",
+        "map_answer": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.27": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.28": {
+        "map_to": "attribute",
+        "map_answer": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.28": {
+        "map_to": "attribute",
+        "map_answer": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.28": {
+        "map_to": "attribute",
+        "map_answer": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.28": {
+        "map_to": "component",
+        "map_answer": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.28": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.29": {
+        "map_to": "attribute",
+        "map_answer": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.29": {
+        "map_to": "attribute",
+        "map_answer": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.29": {
+        "map_to": "attribute",
+        "map_answer": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.29": {
+        "map_to": "component",
+        "map_answer": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.29": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.30": {
+        "map_to": "attribute",
+        "map_answer": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.30": {
+        "map_to": "attribute",
+        "map_answer": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.30": {
+        "map_to": "attribute",
+        "map_answer": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.30": {
+        "map_to": "component",
+        "map_answer": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.30": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.31": {
+        "map_to": "attribute",
+        "map_answer": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.31": {
+        "map_to": "attribute",
+        "map_answer": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.31": {
+        "map_to": "attribute",
+        "map_answer": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.31": {
+        "map_to": "component",
+        "map_answer": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.31": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.32": {
+        "map_to": "attribute",
+        "map_answer": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.32": {
+        "map_to": "attribute",
+        "map_answer": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.32": {
+        "map_to": "attribute",
+        "map_answer": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.32": {
+        "map_to": "component",
+        "map_answer": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.32": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.33": {
+        "map_to": "attribute",
+        "map_answer": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.33": {
+        "map_to": "attribute",
+        "map_answer": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.33": {
+        "map_to": "attribute",
+        "map_answer": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.33": {
+        "map_to": "component",
+        "map_answer": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.33": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "11.1.34": {
+        "map_to": "attribute",
+        "map_answer": {
+            "installed_capacity": "float"
+        }
+    },
+    "11.2.34": {
+        "map_to": "attribute",
+        "map_answer": {
+            "crop_production": "float"
+        }
+    },
+    "11.3.34": {
+        "map_to": "attribute",
+        "map_answer": {
+            "biomass_production": "float"
+        }
+    },
+    "11.4.34": {
+        "map_to": "component",
+        "map_answer": {
+            "surface irrigation": [
+                ""
+            ],
+            "center-pivot irrigation": [
+                ""
+            ],
+            "irrigation sprinkler": [
+                ""
+            ],
+            "subsurface drip irrigation": [
+                ""
+            ],
+            "drip irrigation": [
+                ""
+            ],
+            "furrow irrigation": [
+                ""
+            ],
+            "basin irrigation": [
+                ""
+            ],
+            "border irrigation": [
+                ""
+            ],
+            "watering can": [
+                ""
+            ],
+            "smart irrigation system": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "11.5.34": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "8.2": {
+        "map_to": "component",
+        "map_answer": {
+            "variable_name": "string"
+        }
+    },
+    "10": {
+        "map_to": "component",
+        "map_answer": {
+            "yes": [
+                ""
+            ],
+            "no": [
+                ""
+            ]
+        }
+    },
+    "3": {
+        "bus": "nameofbus",
+        "map_to": "component",
+        "map_answer": {
+              "groundwater well": [
+                "groundwater"
+            ],
+            "public tap water": [
+                "tap_water"
+            ],
+            "desalinated seawater": [
+                "seawater", "desalinator"
+            ],
+            "river/creek": [
+                ""
+            ],
+            "lake": [
+                ""
+            ],
+            "water truck": [
+                "truck_water"
+            ],
+            "rainwater harvesting": [
+                ""
+            ],
+            "bottled water": [
+                "bottled_water"
+            ]
+        }
+    },
+    "3_GW.1": {
+        "map_to": "component",
+        "map_answer": {
+            "Yes": [
+                ""
+            ],
+            "No": [
+                ""
+            ]
+        }
+    },
+    "3_GW.1.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "head": "float"
+        }
+    },
+    "3_GW.1.2": {
+        "map_to": "component",
+        "map_answer": {
+            "manual": [
+                ""
+            ],
+            "diesel": [
+                ""
+            ],
+            "electricity (grid)": [
+                ""
+            ],
+            "wind turbine": [
+                ""
+            ],
+            "photovoltaics": [
+                ""
+            ]
+        }
+    },
+    "3_GW.1.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "capacity": "float"
+        }
+    },
+    "3_GW.1.4": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow": "float"
+        }
+    },
+    "4_GW.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "salinity": "float"
+        }
+    },
+    "4_GW.2": {
+        "map_to": "component",
+        "map_answer": {
+            "Arsenic": [
+                ""
+            ],
+            "Lead": [
+                ""
+            ],
+            "Mercury": [
+                ""
+            ],
+            "Cadmium": [
+                ""
+            ],
+            "Iron": [
+                ""
+            ]
+        }
+    },
+    "4_GW.3": {
+        "map_to": "component",
+        "map_answer": {
+            "pesticides": [
+                ""
+            ],
+            "pharmaceutical_residues": [
+                ""
+            ],
+            "fertilizers": [
+                ""
+            ]
+        }
+    },
+    "5_GW": {
+        "map_to": "component",
+        "map_answer": {
+            "no": [
+                ""
+            ],
+            "reverse osmosis": [
+                ""
+            ],
+            "membrane distillation": [
+                ""
+            ],
+            "ultrafiltration": [
+                ""
+            ],
+            "boiling": [
+                ""
+            ],
+            "distillation": [
+                ""
+            ],
+            "activated carbon filter": [
+                ""
+            ],
+            "UV-disinfection": [
+                ""
+            ],
+            "cartridge filter": [
+                ""
+            ],
+            "microfiltration": [
+                ""
+            ],
+            "ceramic filter": [
+                ""
+            ],
+            "nanofiltration": [
+                ""
+            ],
+            "electrodialyis": [
+                ""
+            ],
+            "slow sand filter": [
+                ""
+            ],
+            "water softener": [
+                ""
+            ],
+            "chlorination": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "5_GW.1.0": {
+        "map_to": "attribute",
+        "map_answer": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_GW.2.0": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.3.0": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.1.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_GW.2.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.3.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.1.2": {
+        "map_to": "attribute",
+        "map_answer": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_GW.2.2": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.3.2": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.1.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_GW.2.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.3.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.2.4": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.3.4": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.2.5": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.3.5": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.2.6": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.3.6": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.2.7": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.3.7": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.2.8": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.3.8": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.2.9": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.3.9": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.2.10": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.3.10": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.2.11": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.3.11": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.2.12": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.3.12": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.2.13": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.3.13": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.2.14": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.3.14": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GW.4": {
+        "map_to": "component",
+        "map_answer": {
+            "variable_name": "string"
+        }
+    },
+    "3_DS.1": {
+        "map_to": "component",
+        "map_answer": {
+            "Yes": [
+                ""
+            ],
+            "No": [
+                ""
+            ]
+        }
+    },
+    "3_DS.1.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "head": "float"
+        }
+    },
+    "3_DS.1.2": {
+        "map_to": "component",
+        "map_answer": {
+            "manual": [
+                ""
+            ],
+            "diesel": [
+                ""
+            ],
+            "electricity (grid)": [
+                ""
+            ],
+            "wind turbine": [
+                ""
+            ],
+            "photovoltaics": [
+                ""
+            ]
+        }
+    },
+    "3_DS.1.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "capacity": "float"
+        }
+    },
+    "3_DS.1.4": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow": "float"
+        }
+    },
+    "4_DS.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "salinity": "float"
+        }
+    },
+    "4_DS.2": {
+        "map_to": "component",
+        "map_answer": {
+            "Arsenic": [
+                ""
+            ],
+            "Lead": [
+                ""
+            ],
+            "Mercury": [
+                ""
+            ],
+            "Cadmium": [
+                ""
+            ],
+            "Iron": [
+                ""
+            ]
+        }
+    },
+    "4_DS.3": {
+        "map_to": "component",
+        "map_answer": {
+            "pesticides": [
+                ""
+            ],
+            "pharmaceutical_residues": [
+                ""
+            ],
+            "fertilizers": [
+                ""
+            ]
+        }
+    },
+    "5_DS": {
+        "map_to": "component",
+        "map_answer": {
+            "no": [
+                ""
+            ],
+            "reverse osmosis": [
+                ""
+            ],
+            "membrane distillation": [
+                ""
+            ],
+            "ultrafiltration": [
+                ""
+            ],
+            "boiling": [
+                ""
+            ],
+            "distillation": [
+                ""
+            ],
+            "activated carbon filter": [
+                ""
+            ],
+            "UV-disinfection": [
+                ""
+            ],
+            "cartridge filter": [
+                ""
+            ],
+            "microfiltration": [
+                ""
+            ],
+            "ceramic filter": [
+                ""
+            ],
+            "nanofiltration": [
+                ""
+            ],
+            "electrodialyis": [
+                ""
+            ],
+            "slow sand filter": [
+                ""
+            ],
+            "water softener": [
+                ""
+            ],
+            "chlorination": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "5_DS.1.0": {
+        "map_to": "attribute",
+        "map_answer": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_DS.2.0": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.3.0": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.1.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_DS.2.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.3.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.1.2": {
+        "map_to": "attribute",
+        "map_answer": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_DS.2.2": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.3.2": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.1.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_DS.2.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.3.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.2.4": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.3.4": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.2.5": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.3.5": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.2.6": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.3.6": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.2.7": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.3.7": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.2.8": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.3.8": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.2.9": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.3.9": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.2.10": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.3.10": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.2.11": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.3.11": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.2.12": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.3.12": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.2.13": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.3.13": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.2.14": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.3.14": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DS.4": {
+        "map_to": "component",
+        "map_answer": {
+            "variable_name": "string"
+        }
+    },
+    "3_RC.1": {
+        "map_to": "component",
+        "map_answer": {
+            "Yes": [
+                ""
+            ],
+            "No": [
+                ""
+            ]
+        }
+    },
+    "3_RC.1.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "head": "float"
+        }
+    },
+    "3_RC.1.2": {
+        "map_to": "component",
+        "map_answer": {
+            "manual": [
+                ""
+            ],
+            "diesel": [
+                ""
+            ],
+            "electricity (grid)": [
+                ""
+            ],
+            "wind turbine": [
+                ""
+            ],
+            "photovoltaics": [
+                ""
+            ]
+        }
+    },
+    "3_RC.1.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "capacity": "float"
+        }
+    },
+    "3_RC.1.4": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow": "float"
+        }
+    },
+    "4_RC.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "salinity": "float"
+        }
+    },
+    "4_RC.2": {
+        "map_to": "component",
+        "map_answer": {
+            "Arsenic": [
+                ""
+            ],
+            "Lead": [
+                ""
+            ],
+            "Mercury": [
+                ""
+            ],
+            "Cadmium": [
+                ""
+            ],
+            "Iron": [
+                ""
+            ]
+        }
+    },
+    "4_RC.3": {
+        "map_to": "component",
+        "map_answer": {
+            "pesticides": [
+                ""
+            ],
+            "pharmaceutical_residues": [
+                ""
+            ],
+            "fertilizers": [
+                ""
+            ]
+        }
+    },
+    "5_RC": {
+        "map_to": "component",
+        "map_answer": {
+            "no": [
+                ""
+            ],
+            "reverse osmosis": [
+                ""
+            ],
+            "membrane distillation": [
+                ""
+            ],
+            "ultrafiltration": [
+                ""
+            ],
+            "boiling": [
+                ""
+            ],
+            "distillation": [
+                ""
+            ],
+            "activated carbon filter": [
+                ""
+            ],
+            "UV-disinfection": [
+                ""
+            ],
+            "cartridge filter": [
+                ""
+            ],
+            "microfiltration": [
+                ""
+            ],
+            "ceramic filter": [
+                ""
+            ],
+            "nanofiltration": [
+                ""
+            ],
+            "electrodialyis": [
+                ""
+            ],
+            "slow sand filter": [
+                ""
+            ],
+            "water softener": [
+                ""
+            ],
+            "chlorination": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "5_RC.1.0": {
+        "map_to": "attribute",
+        "map_answer": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_RC.2.0": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.3.0": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.1.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_RC.2.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.3.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.1.2": {
+        "map_to": "attribute",
+        "map_answer": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_RC.2.2": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.3.2": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.1.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_RC.2.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.3.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.2.4": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.3.4": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.2.5": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.3.5": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.2.6": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.3.6": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.2.7": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.3.7": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.2.8": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.3.8": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.2.9": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.3.9": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.2.10": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.3.10": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.2.11": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.3.11": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.2.12": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.3.12": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.2.13": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.3.13": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.2.14": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.3.14": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RC.4": {
+        "map_to": "component",
+        "map_answer": {
+            "variable_name": "string"
+        }
+    },
+    "3_L.1": {
+        "map_to": "component",
+        "map_answer": {
+            "Yes": [
+                ""
+            ],
+            "No": [
+                ""
+            ]
+        }
+    },
+    "3_L.1.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "head": "float"
+        }
+    },
+    "3_L.1.2": {
+        "map_to": "component",
+        "map_answer": {
+            "manual": [
+                ""
+            ],
+            "diesel": [
+                ""
+            ],
+            "electricity (grid)": [
+                ""
+            ],
+            "wind turbine": [
+                ""
+            ],
+            "photovoltaics": [
+                ""
+            ]
+        }
+    },
+    "3_L.1.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "capacity": "float"
+        }
+    },
+    "3_L.1.4": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow": "float"
+        }
+    },
+    "4_L.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "salinity": "float"
+        }
+    },
+    "4_L.2": {
+        "map_to": "component",
+        "map_answer": {
+            "Arsenic": [
+                ""
+            ],
+            "Lead": [
+                ""
+            ],
+            "Mercury": [
+                ""
+            ],
+            "Cadmium": [
+                ""
+            ],
+            "Iron": [
+                ""
+            ]
+        }
+    },
+    "4_L.3": {
+        "map_to": "component",
+        "map_answer": {
+            "pesticides": [
+                ""
+            ],
+            "pharmaceutical_residues": [
+                ""
+            ],
+            "fertilizers": [
+                ""
+            ]
+        }
+    },
+    "5_L": {
+        "map_to": "component",
+        "map_answer": {
+            "no": [
+                ""
+            ],
+            "reverse osmosis": [
+                ""
+            ],
+            "membrane distillation": [
+                ""
+            ],
+            "ultrafiltration": [
+                ""
+            ],
+            "boiling": [
+                ""
+            ],
+            "distillation": [
+                ""
+            ],
+            "activated carbon filter": [
+                ""
+            ],
+            "UV-disinfection": [
+                ""
+            ],
+            "cartridge filter": [
+                ""
+            ],
+            "microfiltration": [
+                ""
+            ],
+            "ceramic filter": [
+                ""
+            ],
+            "nanofiltration": [
+                ""
+            ],
+            "electrodialyis": [
+                ""
+            ],
+            "slow sand filter": [
+                ""
+            ],
+            "water softener": [
+                ""
+            ],
+            "chlorination": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "5_L.1.0": {
+        "map_to": "attribute",
+        "map_answer": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_L.2.0": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.3.0": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.1.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_L.2.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.3.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.1.2": {
+        "map_to": "attribute",
+        "map_answer": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_L.2.2": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.3.2": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.1.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_L.2.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.3.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.2.4": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.3.4": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.2.5": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.3.5": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.2.6": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.3.6": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.2.7": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.3.7": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.2.8": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.3.8": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.2.9": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.3.9": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.2.10": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.3.10": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.2.11": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.3.11": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.2.12": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.3.12": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.2.13": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.3.13": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.2.14": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.3.14": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_L.4": {
+        "map_to": "component",
+        "map_answer": {
+            "variable_name": "string"
+        }
+    },
+    "6": {
+        "map_to": "component",
+        "map_answer": {
+            "Yes": [
+                ""
+            ],
+            "No": [
+                ""
+            ]
+        }
+    },
+    "3a": {
+        "bus": "nameofbus",
+        "map_to": "component",
+        "map_answer": {
+              "groundwater well": [
+                "groundwater"
+            ],
+            "public tap water": [
+                "tap_water"
+            ],
+            "desalinated seawater": [
+                "seawater", "desalinator"
+            ],
+            "river/creek": [
+                ""
+            ],
+            "lake": [
+                ""
+            ],
+            "water truck": [
+                "truck_water"
+            ],
+            "rainwater harvesting": [
+                ""
+            ],
+            "bottled water": [
+                "bottled_water"
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "3_GWa.1": {
+        "map_to": "component",
+        "map_answer": {
+            "Yes": [
+                ""
+            ],
+            "No": [
+                ""
+            ]
+        }
+    },
+    "3_GWa.1.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "head": "float"
+        }
+    },
+    "3_GWa.1.2": {
+        "map_to": "component",
+        "map_answer": {
+            "manual": [
+                ""
+            ],
+            "diesel": [
+                ""
+            ],
+            "electricity (grid)": [
+                ""
+            ],
+            "wind turbine": [
+                ""
+            ],
+            "photovoltaics": [
+                ""
+            ]
+        }
+    },
+    "3_GWa.1.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "capacity": "float"
+        }
+    },
+    "3_GWa.1.4": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow": "float"
+        }
+    },
+    "4_GWa.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "salinity": "float"
+        }
+    },
+    "4_GWa.2": {
+        "map_to": "component",
+        "map_answer": {
+            "Arsenic": [
+                ""
+            ],
+            "Lead": [
+                ""
+            ],
+            "Mercury": [
+                ""
+            ],
+            "Cadmium": [
+                ""
+            ],
+            "Iron": [
+                ""
+            ]
+        }
+    },
+    "4_GWa.3": {
+        "map_to": "component",
+        "map_answer": {
+            "pesticides": [
+                ""
+            ],
+            "pharmaceutical_residues": [
+                ""
+            ],
+            "fertilizers": [
+                ""
+            ]
+        }
+    },
+    "5_GWa": {
+        "map_to": "component",
+        "map_answer": {
+            "no": [
+                ""
+            ],
+            "reverse osmosis": [
+                ""
+            ],
+            "membrane distillation": [
+                ""
+            ],
+            "ultrafiltration": [
+                ""
+            ],
+            "boiling": [
+                ""
+            ],
+            "distillation": [
+                ""
+            ],
+            "activated carbon filter": [
+                ""
+            ],
+            "UV-disinfection": [
+                ""
+            ],
+            "cartridge filter": [
+                ""
+            ],
+            "microfiltration": [
+                ""
+            ],
+            "ceramic filter": [
+                ""
+            ],
+            "nanofiltration": [
+                ""
+            ],
+            "electrodialyis": [
+                ""
+            ],
+            "slow sand filter": [
+                ""
+            ],
+            "water softener": [
+                ""
+            ],
+            "chlorination": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "5_GWa.1.0": {
+        "map_to": "attribute",
+        "map_answer": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_GWa.2.0": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.3.0": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.1.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_GWa.2.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.3.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.1.2": {
+        "map_to": "attribute",
+        "map_answer": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_GWa.2.2": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.3.2": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.1.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_GWa.2.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.3.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.2.4": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.3.4": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.2.5": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.3.5": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.2.6": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.3.6": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.2.7": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.3.7": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.2.8": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.3.8": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.2.9": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.3.9": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.2.10": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.3.10": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.2.11": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.3.11": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.2.12": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.3.12": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.2.13": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.3.13": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.2.14": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.3.14": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWa.4": {
+        "map_to": "component",
+        "map_answer": {
+            "variable_name": "string"
+        }
+    },
+    "3_DSa.1": {
+        "map_to": "component",
+        "map_answer": {
+            "Yes": [
+                ""
+            ],
+            "No": [
+                ""
+            ]
+        }
+    },
+    "3_DSa.1.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "head": "float"
+        }
+    },
+    "3_DSa.1.2": {
+        "map_to": "component",
+        "map_answer": {
+            "manual": [
+                ""
+            ],
+            "diesel": [
+                ""
+            ],
+            "electricity (grid)": [
+                ""
+            ],
+            "wind turbine": [
+                ""
+            ],
+            "photovoltaics": [
+                ""
+            ]
+        }
+    },
+    "3_DSa.1.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "capacity": "float"
+        }
+    },
+    "3_DSa.1.4": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow": "float"
+        }
+    },
+    "4_DSa.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "salinity": "float"
+        }
+    },
+    "4_DSa.2": {
+        "map_to": "component",
+        "map_answer": {
+            "Arsenic": [
+                ""
+            ],
+            "Lead": [
+                ""
+            ],
+            "Mercury": [
+                ""
+            ],
+            "Cadmium": [
+                ""
+            ],
+            "Iron": [
+                ""
+            ]
+        }
+    },
+    "4_DSa.3": {
+        "map_to": "component",
+        "map_answer": {
+            "pesticides": [
+                ""
+            ],
+            "pharmaceutical_residues": [
+                ""
+            ],
+            "fertilizers": [
+                ""
+            ]
+        }
+    },
+    "5_DSa": {
+        "map_to": "component",
+        "map_answer": {
+            "no": [
+                ""
+            ],
+            "reverse osmosis": [
+                ""
+            ],
+            "membrane distillation": [
+                ""
+            ],
+            "ultrafiltration": [
+                ""
+            ],
+            "boiling": [
+                ""
+            ],
+            "distillation": [
+                ""
+            ],
+            "activated carbon filter": [
+                ""
+            ],
+            "UV-disinfection": [
+                ""
+            ],
+            "cartridge filter": [
+                ""
+            ],
+            "microfiltration": [
+                ""
+            ],
+            "ceramic filter": [
+                ""
+            ],
+            "nanofiltration": [
+                ""
+            ],
+            "electrodialyis": [
+                ""
+            ],
+            "slow sand filter": [
+                ""
+            ],
+            "water softener": [
+                ""
+            ],
+            "chlorination": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "5_DSa.1.0": {
+        "map_to": "attribute",
+        "map_answer": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_DSa.2.0": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.3.0": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.1.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_DSa.2.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.3.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.1.2": {
+        "map_to": "attribute",
+        "map_answer": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_DSa.2.2": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.3.2": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.1.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_DSa.2.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.3.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.2.4": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.3.4": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.2.5": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.3.5": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.2.6": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.3.6": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.2.7": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.3.7": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.2.8": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.3.8": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.2.9": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.3.9": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.2.10": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.3.10": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.2.11": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.3.11": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.2.12": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.3.12": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.2.13": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.3.13": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.2.14": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.3.14": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSa.4": {
+        "map_to": "component",
+        "map_answer": {
+            "variable_name": "string"
+        }
+    },
+    "3_RCa.1": {
+        "map_to": "component",
+        "map_answer": {
+            "Yes": [
+                ""
+            ],
+            "No": [
+                ""
+            ]
+        }
+    },
+    "3_RCa.1.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "head": "float"
+        }
+    },
+    "3_RCa.1.2": {
+        "map_to": "component",
+        "map_answer": {
+            "manual": [
+                ""
+            ],
+            "diesel": [
+                ""
+            ],
+            "electricity (grid)": [
+                ""
+            ],
+            "wind turbine": [
+                ""
+            ],
+            "photovoltaics": [
+                ""
+            ]
+        }
+    },
+    "3_RCa.1.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "capacity": "float"
+        }
+    },
+    "3_RCa.1.4": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow": "float"
+        }
+    },
+    "4_RCa.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "salinity": "float"
+        }
+    },
+    "4_RCa.2": {
+        "map_to": "component",
+        "map_answer": {
+            "Arsenic": [
+                ""
+            ],
+            "Lead": [
+                ""
+            ],
+            "Mercury": [
+                ""
+            ],
+            "Cadmium": [
+                ""
+            ],
+            "Iron": [
+                ""
+            ]
+        }
+    },
+    "4_RCa.3": {
+        "map_to": "component",
+        "map_answer": {
+            "pesticides": [
+                ""
+            ],
+            "pharmaceutical_residues": [
+                ""
+            ],
+            "fertilizers": [
+                ""
+            ]
+        }
+    },
+    "5_RCa": {
+        "map_to": "component",
+        "map_answer": {
+            "no": [
+                ""
+            ],
+            "reverse osmosis": [
+                ""
+            ],
+            "membrane distillation": [
+                ""
+            ],
+            "ultrafiltration": [
+                ""
+            ],
+            "boiling": [
+                ""
+            ],
+            "distillation": [
+                ""
+            ],
+            "activated carbon filter": [
+                ""
+            ],
+            "UV-disinfection": [
+                ""
+            ],
+            "cartridge filter": [
+                ""
+            ],
+            "microfiltration": [
+                ""
+            ],
+            "ceramic filter": [
+                ""
+            ],
+            "nanofiltration": [
+                ""
+            ],
+            "electrodialyis": [
+                ""
+            ],
+            "slow sand filter": [
+                ""
+            ],
+            "water softener": [
+                ""
+            ],
+            "chlorination": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "5_RCa.1.0": {
+        "map_to": "attribute",
+        "map_answer": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_RCa.2.0": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.3.0": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.1.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_RCa.2.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.3.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.1.2": {
+        "map_to": "attribute",
+        "map_answer": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_RCa.2.2": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.3.2": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.1.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_RCa.2.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.3.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.2.4": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.3.4": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.2.5": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.3.5": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.2.6": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.3.6": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.2.7": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.3.7": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.2.8": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.3.8": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.2.9": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.3.9": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.2.10": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.3.10": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.2.11": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.3.11": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.2.12": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.3.12": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.2.13": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.3.13": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.2.14": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.3.14": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCa.4": {
+        "map_to": "component",
+        "map_answer": {
+            "variable_name": "string"
+        }
+    },
+    "3_La.1": {
+        "map_to": "component",
+        "map_answer": {
+            "Yes": [
+                ""
+            ],
+            "No": [
+                ""
+            ]
+        }
+    },
+    "3_La.1.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "head": "float"
+        }
+    },
+    "3_La.1.2": {
+        "map_to": "component",
+        "map_answer": {
+            "manual": [
+                ""
+            ],
+            "diesel": [
+                ""
+            ],
+            "electricity (grid)": [
+                ""
+            ],
+            "wind turbine": [
+                ""
+            ],
+            "photovoltaics": [
+                ""
+            ]
+        }
+    },
+    "3_La.1.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "capacity": "float"
+        }
+    },
+    "3_La.1.4": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow": "float"
+        }
+    },
+    "4_La.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "salinity": "float"
+        }
+    },
+    "4_La.2": {
+        "map_to": "component",
+        "map_answer": {
+            "Arsenic": [
+                ""
+            ],
+            "Lead": [
+                ""
+            ],
+            "Mercury": [
+                ""
+            ],
+            "Cadmium": [
+                ""
+            ],
+            "Iron": [
+                ""
+            ]
+        }
+    },
+    "4_La.3": {
+        "map_to": "component",
+        "map_answer": {
+            "pesticides": [
+                ""
+            ],
+            "pharmaceutical_residues": [
+                ""
+            ],
+            "fertilizers": [
+                ""
+            ]
+        }
+    },
+    "5_La": {
+        "map_to": "component",
+        "map_answer": {
+            "no": [
+                ""
+            ],
+            "reverse osmosis": [
+                ""
+            ],
+            "membrane distillation": [
+                ""
+            ],
+            "ultrafiltration": [
+                ""
+            ],
+            "boiling": [
+                ""
+            ],
+            "distillation": [
+                ""
+            ],
+            "activated carbon filter": [
+                ""
+            ],
+            "UV-disinfection": [
+                ""
+            ],
+            "cartridge filter": [
+                ""
+            ],
+            "microfiltration": [
+                ""
+            ],
+            "ceramic filter": [
+                ""
+            ],
+            "nanofiltration": [
+                ""
+            ],
+            "electrodialyis": [
+                ""
+            ],
+            "slow sand filter": [
+                ""
+            ],
+            "water softener": [
+                ""
+            ],
+            "chlorination": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "5_La.1.0": {
+        "map_to": "attribute",
+        "map_answer": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_La.2.0": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.3.0": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.1.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_La.2.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.3.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.1.2": {
+        "map_to": "attribute",
+        "map_answer": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_La.2.2": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.3.2": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.1.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_La.2.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.3.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.2.4": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.3.4": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.2.5": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.3.5": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.2.6": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.3.6": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.2.7": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.3.7": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.2.8": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.3.8": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.2.9": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.3.9": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.2.10": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.3.10": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.2.11": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.3.11": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.2.12": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.3.12": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.2.13": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.3.13": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.2.14": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.3.14": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_La.4": {
+        "map_to": "component",
+        "map_answer": {
+            "variable_name": "string"
+        }
+    },
+    "6a": {
+        "map_to": "component",
+        "map_answer": {
+            "Yes": [
+                ""
+            ],
+            "No": [
+                ""
+            ]
+        }
+    },
+    "3b": {
+        "bus": "nameofbus",
+        "map_to": "component",
+        "map_answer": {
+              "groundwater well": [
+                "groundwater"
+            ],
+            "public tap water": [
+                "tap_water"
+            ],
+            "desalinated seawater": [
+                "seawater", "desalinator"
+            ],
+            "river/creek": [
+                ""
+            ],
+            "lake": [
+                ""
+            ],
+            "water truck": [
+                "truck_water"
+            ],
+            "rainwater harvesting": [
+                ""
+            ],
+            "bottled water": [
+                "bottled_water"
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "3_GWb.1": {
+        "map_to": "component",
+        "map_answer": {
+            "Yes": [
+                ""
+            ],
+            "No": [
+                ""
+            ]
+        }
+    },
+    "3_GWb.1.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "head": "float"
+        }
+    },
+    "3_GWb.1.2": {
+        "map_to": "component",
+        "map_answer": {
+            "manual": [
+                ""
+            ],
+            "diesel": [
+                ""
+            ],
+            "electricity (grid)": [
+                ""
+            ],
+            "wind turbine": [
+                ""
+            ],
+            "photovoltaics": [
+                ""
+            ]
+        }
+    },
+    "3_GWb.1.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "capacity": "float"
+        }
+    },
+    "3_GWb.1.4": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow": "float"
+        }
+    },
+    "4_GWb.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "salinity": "float"
+        }
+    },
+    "4_GWb.2": {
+        "map_to": "component",
+        "map_answer": {
+            "Arsenic": [
+                ""
+            ],
+            "Lead": [
+                ""
+            ],
+            "Mercury": [
+                ""
+            ],
+            "Cadmium": [
+                ""
+            ],
+            "Iron": [
+                ""
+            ]
+        }
+    },
+    "4_GWb.3": {
+        "map_to": "component",
+        "map_answer": {
+            "pesticides": [
+                ""
+            ],
+            "pharmaceutical_residues": [
+                ""
+            ],
+            "fertilizers": [
+                ""
+            ]
+        }
+    },
+    "5_GWb": {
+        "map_to": "component",
+        "map_answer": {
+            "no": [
+                ""
+            ],
+            "reverse osmosis": [
+                ""
+            ],
+            "membrane distillation": [
+                ""
+            ],
+            "ultrafiltration": [
+                ""
+            ],
+            "boiling": [
+                ""
+            ],
+            "distillation": [
+                ""
+            ],
+            "activated carbon filter": [
+                ""
+            ],
+            "UV-disinfection": [
+                ""
+            ],
+            "cartridge filter": [
+                ""
+            ],
+            "microfiltration": [
+                ""
+            ],
+            "ceramic filter": [
+                ""
+            ],
+            "nanofiltration": [
+                ""
+            ],
+            "electrodialyis": [
+                ""
+            ],
+            "slow sand filter": [
+                ""
+            ],
+            "water softener": [
+                ""
+            ],
+            "chlorination": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "5_GWb.1.0": {
+        "map_to": "attribute",
+        "map_answer": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_GWb.2.0": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.3.0": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.1.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_GWb.2.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.3.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.1.2": {
+        "map_to": "attribute",
+        "map_answer": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_GWb.2.2": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.3.2": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.1.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_GWb.2.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.3.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.2.4": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.3.4": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.2.5": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.3.5": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.2.6": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.3.6": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.2.7": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.3.7": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.2.8": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.3.8": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.2.9": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.3.9": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.2.10": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.3.10": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.2.11": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.3.11": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.2.12": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.3.12": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.2.13": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.3.13": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.2.14": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.3.14": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_GWb.4": {
+        "map_to": "component",
+        "map_answer": {
+            "variable_name": "string"
+        }
+    },
+    "3_DSb.1": {
+        "map_to": "component",
+        "map_answer": {
+            "Yes": [
+                ""
+            ],
+            "No": [
+                ""
+            ]
+        }
+    },
+    "3_DSb.1.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "head": "float"
+        }
+    },
+    "3_DSb.1.2": {
+        "map_to": "component",
+        "map_answer": {
+            "manual": [
+                ""
+            ],
+            "diesel": [
+                ""
+            ],
+            "electricity (grid)": [
+                ""
+            ],
+            "wind turbine": [
+                ""
+            ],
+            "photovoltaics": [
+                ""
+            ]
+        }
+    },
+    "3_DSb.1.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "capacity": "float"
+        }
+    },
+    "3_DSb.1.4": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow": "float"
+        }
+    },
+    "4_DSb.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "salinity": "float"
+        }
+    },
+    "4_DSb.2": {
+        "map_to": "component",
+        "map_answer": {
+            "Arsenic": [
+                ""
+            ],
+            "Lead": [
+                ""
+            ],
+            "Mercury": [
+                ""
+            ],
+            "Cadmium": [
+                ""
+            ],
+            "Iron": [
+                ""
+            ]
+        }
+    },
+    "4_DSb.3": {
+        "map_to": "component",
+        "map_answer": {
+            "pesticides": [
+                ""
+            ],
+            "pharmaceutical_residues": [
+                ""
+            ],
+            "fertilizers": [
+                ""
+            ]
+        }
+    },
+    "5_DSb": {
+        "map_to": "component",
+        "map_answer": {
+            "no": [
+                ""
+            ],
+            "reverse osmosis": [
+                ""
+            ],
+            "membrane distillation": [
+                ""
+            ],
+            "ultrafiltration": [
+                ""
+            ],
+            "boiling": [
+                ""
+            ],
+            "distillation": [
+                ""
+            ],
+            "activated carbon filter": [
+                ""
+            ],
+            "UV-disinfection": [
+                ""
+            ],
+            "cartridge filter": [
+                ""
+            ],
+            "microfiltration": [
+                ""
+            ],
+            "ceramic filter": [
+                ""
+            ],
+            "nanofiltration": [
+                ""
+            ],
+            "electrodialyis": [
+                ""
+            ],
+            "slow sand filter": [
+                ""
+            ],
+            "water softener": [
+                ""
+            ],
+            "chlorination": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "5_DSb.1.0": {
+        "map_to": "attribute",
+        "map_answer": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_DSb.2.0": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.3.0": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.1.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_DSb.2.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.3.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.1.2": {
+        "map_to": "attribute",
+        "map_answer": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_DSb.2.2": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.3.2": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.1.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_DSb.2.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.3.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.2.4": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.3.4": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.2.5": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.3.5": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.2.6": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.3.6": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.2.7": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.3.7": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.2.8": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.3.8": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.2.9": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.3.9": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.2.10": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.3.10": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.2.11": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.3.11": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.2.12": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.3.12": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.2.13": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.3.13": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.2.14": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.3.14": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_DSb.4": {
+        "map_to": "component",
+        "map_answer": {
+            "variable_name": "string"
+        }
+    },
+    "3_RCb.1": {
+        "map_to": "component",
+        "map_answer": {
+            "Yes": [
+                ""
+            ],
+            "No": [
+                ""
+            ]
+        }
+    },
+    "3_RCb.1.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "head": "float"
+        }
+    },
+    "3_RCb.1.2": {
+        "map_to": "component",
+        "map_answer": {
+            "manual": [
+                ""
+            ],
+            "diesel": [
+                ""
+            ],
+            "electricity (grid)": [
+                ""
+            ],
+            "wind turbine": [
+                ""
+            ],
+            "photovoltaics": [
+                ""
+            ]
+        }
+    },
+    "3_RCb.1.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "capacity": "float"
+        }
+    },
+    "3_RCb.1.4": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow": "float"
+        }
+    },
+    "4_RCb.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "salinity": "float"
+        }
+    },
+    "4_RCb.2": {
+        "map_to": "component",
+        "map_answer": {
+            "Arsenic": [
+                ""
+            ],
+            "Lead": [
+                ""
+            ],
+            "Mercury": [
+                ""
+            ],
+            "Cadmium": [
+                ""
+            ],
+            "Iron": [
+                ""
+            ]
+        }
+    },
+    "4_RCb.3": {
+        "map_to": "component",
+        "map_answer": {
+            "pesticides": [
+                ""
+            ],
+            "pharmaceutical_residues": [
+                ""
+            ],
+            "fertilizers": [
+                ""
+            ]
+        }
+    },
+    "5_RCb": {
+        "map_to": "component",
+        "map_answer": {
+            "no": [
+                ""
+            ],
+            "reverse osmosis": [
+                ""
+            ],
+            "membrane distillation": [
+                ""
+            ],
+            "ultrafiltration": [
+                ""
+            ],
+            "boiling": [
+                ""
+            ],
+            "distillation": [
+                ""
+            ],
+            "activated carbon filter": [
+                ""
+            ],
+            "UV-disinfection": [
+                ""
+            ],
+            "cartridge filter": [
+                ""
+            ],
+            "microfiltration": [
+                ""
+            ],
+            "ceramic filter": [
+                ""
+            ],
+            "nanofiltration": [
+                ""
+            ],
+            "electrodialyis": [
+                ""
+            ],
+            "slow sand filter": [
+                ""
+            ],
+            "water softener": [
+                ""
+            ],
+            "chlorination": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "5_RCb.1.0": {
+        "map_to": "attribute",
+        "map_answer": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_RCb.2.0": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.3.0": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.1.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_RCb.2.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.3.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.1.2": {
+        "map_to": "attribute",
+        "map_answer": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_RCb.2.2": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.3.2": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.1.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_RCb.2.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.3.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.2.4": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.3.4": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.2.5": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.3.5": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.2.6": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.3.6": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.2.7": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.3.7": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.2.8": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.3.8": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.2.9": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.3.9": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.2.10": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.3.10": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.2.11": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.3.11": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.2.12": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.3.12": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.2.13": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.3.13": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.2.14": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.3.14": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_RCb.4": {
+        "map_to": "component",
+        "map_answer": {
+            "variable_name": "string"
+        }
+    },
+    "3_Lb.1": {
+        "map_to": "component",
+        "map_answer": {
+            "Yes": [
+                ""
+            ],
+            "No": [
+                ""
+            ]
+        }
+    },
+    "3_Lb.1.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "head": "float"
+        }
+    },
+    "3_Lb.1.2": {
+        "map_to": "component",
+        "map_answer": {
+            "manual": [
+                ""
+            ],
+            "diesel": [
+                ""
+            ],
+            "electricity (grid)": [
+                ""
+            ],
+            "wind turbine": [
+                ""
+            ],
+            "photovoltaics": [
+                ""
+            ]
+        }
+    },
+    "3_Lb.1.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "capacity": "float"
+        }
+    },
+    "3_Lb.1.4": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow": "float"
+        }
+    },
+    "4_Lb.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "salinity": "float"
+        }
+    },
+    "4_Lb.2": {
+        "map_to": "component",
+        "map_answer": {
+            "Arsenic": [
+                ""
+            ],
+            "Lead": [
+                ""
+            ],
+            "Mercury": [
+                ""
+            ],
+            "Cadmium": [
+                ""
+            ],
+            "Iron": [
+                ""
+            ]
+        }
+    },
+    "4_Lb.3": {
+        "map_to": "component",
+        "map_answer": {
+            "pesticides": [
+                ""
+            ],
+            "pharmaceutical_residues": [
+                ""
+            ],
+            "fertilizers": [
+                ""
+            ]
+        }
+    },
+    "5_Lb": {
+        "map_to": "component",
+        "map_answer": {
+            "no": [
+                ""
+            ],
+            "reverse osmosis": [
+                ""
+            ],
+            "membrane distillation": [
+                ""
+            ],
+            "ultrafiltration": [
+                ""
+            ],
+            "boiling": [
+                ""
+            ],
+            "distillation": [
+                ""
+            ],
+            "activated carbon filter": [
+                ""
+            ],
+            "UV-disinfection": [
+                ""
+            ],
+            "cartridge filter": [
+                ""
+            ],
+            "microfiltration": [
+                ""
+            ],
+            "ceramic filter": [
+                ""
+            ],
+            "nanofiltration": [
+                ""
+            ],
+            "electrodialyis": [
+                ""
+            ],
+            "slow sand filter": [
+                ""
+            ],
+            "water softener": [
+                ""
+            ],
+            "chlorination": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "5_Lb.1.0": {
+        "map_to": "attribute",
+        "map_answer": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_Lb.2.0": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.3.0": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.1.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_Lb.2.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.3.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.1.2": {
+        "map_to": "attribute",
+        "map_answer": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_Lb.2.2": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.3.2": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.1.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "recovery_rate": "float"
+        }
+    },
+    "5_Lb.2.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.3.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.2.4": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.3.4": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.2.5": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.3.5": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.2.6": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.3.6": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.2.7": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.3.7": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.2.8": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.3.8": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.2.9": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.3.9": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.2.10": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.3.10": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.2.11": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.3.11": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.2.12": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.3.12": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.2.13": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.3.13": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.2.14": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.3.14": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "5_Lb.4": {
+        "map_to": "component",
+        "map_answer": {
+            "variable_name": "string"
+        }
+    },
+    "6b": {
+        "map_to": "component",
+        "map_answer": {
+            "Yes": [
+                ""
+            ],
+            "No": [
+                ""
+            ]
+        }
+    },
+    "7": {
+        "map_to": "component",
+        "map_answer": {
+            "septic system": [
+                ""
+            ],
+            "constructed wetland": [
+                ""
+            ],
+            "centralized waste water treatment plant": [
+                ""
+            ],
+            "decentralized waste water treatment plant": [
+                ""
+            ],
+            "water recycling and reuse system": [
+                ""
+            ],
+            "disposal to environment without treatment": [
+                ""
+            ],
+            "other": [
+                ""
+            ]
+        }
+    },
+    "7.1.0": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "7.1.1": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "7.1.2": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "7.1.3": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "7.1.4": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "7.1.5": {
+        "map_to": "attribute",
+        "map_answer": {
+            "flow_rate": "float"
+        }
+    },
+    "7.2": {
+        "map_to": "skip",
+        "map_answer": {
+            "wastewater_treatment": "string"
+        }
+    },
+    "7.3": {
+        "map_to": "component",
+        "map_answer": {
+            "toilet_type": [
+                "flush toilet",
+                "latrine",
+                "dry toilet",
+                "composting toilet",
+                "open field"
+            ]
+        }
+    }
+}

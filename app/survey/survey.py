@@ -919,7 +919,12 @@ def collect_subquestion_mapping():
                     subquestion_mapping[subq] = [question["question_id"], possible_answer]
                 else:
                     if subquestion_mapping[subq] != [question["question_id"], possible_answer]:
-                        print("problem with subquestion", subq)
+                        if question["question_id"] in subquestion_mapping[subq]:
+                            subquestion_mapping[subq] = [question["question_id"], ""]
+                        else:
+                            print("problem with subquestion", subq)
+                            import pdb;
+                            pdb.set_trace()
 
     return subquestion_mapping
 
@@ -945,6 +950,9 @@ def check_questions_format():
 
 SUB_QUESTION_MAPPING = collect_subquestion_mapping()
 
+import json
+with open("sub_question_mapping.json", "w") as fp:
+    json.dump(SUB_QUESTION_MAPPING, fp, indent=4)
 
 def map_subquestions():
     """
