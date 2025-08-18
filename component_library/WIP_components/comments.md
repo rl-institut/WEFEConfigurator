@@ -51,3 +51,8 @@ currently it is modeled with two inputs (electricity and water), however there a
 # Desalination
 
 conversion_factor_ac-elec-bus eqals specific energy consumption [kWh/m³]
+
+
+task: provide all busses from all components in "bus.csv" check the datapackage.json and if there are no foreign key for a resource which should have busses --> add them to the bus.csv file
+
+If you have a profile in a resource, make sure its exact name appears in one of the column of a file within data/sequences so that it will be recognized as a foreign key and added to the datapackage.

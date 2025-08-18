@@ -17,6 +17,10 @@ Install requirements in a virtual environement `pip install -r component_library
 
 From within `component_library/scripts` run `python utils.py`, this will display the list of the available components and to which csv file they are linked. In case of addition of new csv files, one need to delete the `component_library/WIP_components/datapackage.json` file. You will then enounter errors like `The resource energy_sources has the following casting errors: Field "profile" can't cast value "ghi-profile" for type "integer" with format "default"` --> simply change the type to "string" for this field
 
+### Adding new components
+
+When you add a new component in the component library, make sure the field which should be updated by the survey has the correct type in the `component_library/WIP_components/datapackage.json`
+
 
 ## Postprocessing of the survey
 
