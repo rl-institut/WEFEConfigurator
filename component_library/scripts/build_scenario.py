@@ -158,21 +158,25 @@ class ScenarioBuilder:
         attributes will be updated
         """
 
-        scenario_component_folder = os.path.join(self.scenario_folder, "data")
+        scenario_component_folder = os.path.join(self.scenario_folder)
 
+        dp_json = os.path.join(COMPONENT_TEMPLATES_PATH, "datapackage.json")
+        dp_ref = dp.Package(dp_json)
+        dp_new = dp.Package(base_path=scenario_component_folder)
         for component in self.components:
             if component in AVAILABLE_COMPONENTS:
-                fname = f"{AVAILABLE_COMPONENTS[component]}.csv"
-                path = os.path.join(COMPONENT_TEMPLATES_PATH, "elements", fname)
-                df = pd.read_csv(path, delimiter=";", index_col="name") # TODO change this to , instead of ;
-
-                ofname = os.path.join(scenario_component_folder, "elements", fname)
+                # Load the resource from the reference datapackage
+                resource = dp_ref.get_resource(AVAILABLE_COMPONENTS[component])
+                df = pd.DataFrame.from_records(resource.read(keyed=True), index="name")
 
                 # Strip the component documentation columns
                 selected_columns = [col for col in df.columns if col not in ['verbose_name', 'description']]
                 component_params = df.loc[component]
                 component_params = component_params[selected_columns]
 
+                ofname = os.path.join(scenario_component_folder, "data", "elements", f"{AVAILABLE_COMPONENTS[component]}.csv")
+
+                # Write or modify the component in the new datapackage
                 if os.path.exists(ofname):
                     category_df = pd.read_csv(ofname, index_col="name")
                     if component not in category_df.index:
@@ -188,6 +192,11 @@ class ScenarioBuilder:
 
 
                 else:
+                    # Copy package metadata
+                    descriptor = deepcopy(resource.descriptor)
+                    dp_new.add_resource(descriptor)
+                    dp_new.commit()
+
                     # Edit the attributes in the csv file if they have been set in the survey
                     component_params = self.update_component_attributes(component_params)
                     component_df = component_params.to_frame().T
@@ -196,6 +205,7 @@ class ScenarioBuilder:
             else:
                 logging.warning(f"The component {component} is not in the available component list {', '.join([comp for comp in AVAILABLE_COMPONENTS])}")
 
+        dp_new.save(os.path.join(scenario_component_folder, "datapackage.json"))
 
     def update_component_attributes(self, component_params):
         """
