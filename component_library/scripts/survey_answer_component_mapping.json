@@ -3472,6 +3472,7 @@
         }
     },
     "3a": {
+        "bus": "name of bus",
         "component": {
             "groundwater well": [
                 ""
