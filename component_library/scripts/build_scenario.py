@@ -45,8 +45,8 @@ with open(os.path.join(project_dir, "app","sub_question_mapping.json"),"r") as f
 
 
 class ScenarioBuilder:
-    def __init__(self):
-        self.name = "test_scenario" # should be updated based on scenario
+    def __init__(self, name="test_scenario"):
+        self.name = name # should be updated based on scenario
         self.mapping = SURVEY_ANSWER_COMPONENT_MAPPING
         self.subq_mapping = SUB_QUESTION_MAPPING
         self.components = {}
@@ -238,10 +238,12 @@ class ScenarioBuilder:
             logging.warning("No components found to add timeseries. Please add components to the system first.")
 
         else:
+            # use datapackage here
             for filename in os.listdir(scenario_component_folder):
                 file = os.path.join(scenario_component_folder, filename)
                 components = pd.read_csv(file)
                 # Look for components that should have profiles
+                # here look in the foreign keys if something point to a resource from scenario_sequences_folder
                 if "profile" in components.columns:
                     # Create a file for the corresponding profiles if the elements file has a profiles column
                     sequences_filename = f"{filename.replace('.csv', '')}_profile.csv"
@@ -294,6 +296,7 @@ class ScenarioBuilder:
                 file = os.path.join(scenario_component_folder, filename)
                 components = pd.read_csv(file)
                 # Look for columns pertaining to bus connections
+                # TODO use the datapakage to get the busses connection
                 bus_cols = components.filter(regex="^(bus|from_bus_.*|to_bus_.*)$").columns
                 for col in bus_cols:
                     buses.extend(components[col].tolist())
