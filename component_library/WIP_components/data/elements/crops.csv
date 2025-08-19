@@ -1,1 +1,2 @@
-name;type;carrier;tech;capacity;capacity_cost;marginal_cost;carrier_cost;efficiency;from_bus;to_bus;expandable;verbose_name
+type;name;tech;expandable;primary;capacity;capacity_minimum;capacity_potential;capacity_cost;solar_energy_bus;irrigation_bus;precipitation_bus;crop_bus;biomass_bus;capex;opex_fix;lifetime;time_profile;ghi_profile;t_air_profile;tp_profile;windspeed_profile;t_dp_profile;elevation;crop_type;sowing_date;harvest_date;has_irrigation
+mimo-crop;mimo-crop;mimo;False;solar-energy-bus;100.0;0.0;;0.0;solar-energy-bus;irrigation-bus;precipitation-bus;crop-bus;biomass-bus;;;;time;ghi;t_air;tp;windspeed;t_dp;71.0;tomato;07-15;05-31;True

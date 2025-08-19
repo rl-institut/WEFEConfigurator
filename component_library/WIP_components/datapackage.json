@@ -147,17 +147,12 @@
             "schema": {
                 "fields": [
                     {
-                        "name": "name",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
                         "name": "type",
                         "type": "string",
                         "format": "default"
                     },
                     {
-                        "name": "carrier",
+                        "name": "name",
                         "type": "string",
                         "format": "default"
                     },
@@ -167,48 +162,128 @@
                         "format": "default"
                     },
                     {
+                        "name": "expandable",
+                        "type": "boolean",
+                        "format": "default"
+                    },
+                    {
+                        "name": "primary",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
                         "name": "capacity",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "capacity_minimum",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "capacity_potential",
                         "type": "string",
                         "format": "default"
                     },
                     {
                         "name": "capacity_cost",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "solar_energy_bus",
                         "type": "string",
                         "format": "default"
                     },
                     {
-                        "name": "marginal_cost",
+                        "name": "irrigation_bus",
                         "type": "string",
                         "format": "default"
                     },
                     {
-                        "name": "carrier_cost",
+                        "name": "precipitation_bus",
                         "type": "string",
                         "format": "default"
                     },
                     {
-                        "name": "efficiency",
+                        "name": "crop_bus",
                         "type": "string",
                         "format": "default"
                     },
                     {
-                        "name": "from_bus",
+                        "name": "biomass_bus",
                         "type": "string",
                         "format": "default"
                     },
                     {
-                        "name": "to_bus",
+                        "name": "capex",
                         "type": "string",
                         "format": "default"
                     },
                     {
-                        "name": "expandable",
+                        "name": "opex_fix",
                         "type": "string",
                         "format": "default"
                     },
                     {
-                        "name": "verbose_name",
+                        "name": "lifetime",
                         "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "time_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "ghi_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "t_air_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "tp_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "windspeed_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "t_dp_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "elevation",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "crop_type",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "sowing_date",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "harvest_date",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "has_irrigation",
+                        "type": "boolean",
                         "format": "default"
                     }
                 ],
@@ -216,22 +291,7 @@
                     ""
                 ],
                 "primaryKey": "name",
-                "foreignKeys": [
-                    {
-                        "fields": "from_bus",
-                        "reference": {
-                            "resource": "bus",
-                            "fields": "name"
-                        }
-                    },
-                    {
-                        "fields": "to_bus",
-                        "reference": {
-                            "resource": "bus",
-                            "fields": "name"
-                        }
-                    }
-                ]
+                "foreignKeys": []
             }
         },
         {
@@ -1273,7 +1333,7 @@
                     },
                     {
                         "name": "profile",
-                        "type": "boolean",
+                        "type": "string",
                         "format": "default"
                     },
                     {
@@ -1967,7 +2027,7 @@
                         "format": "default"
                     },
                     {
-                        "name": "ghi-profiles",
+                        "name": "ghi-profile",
                         "type": "number",
                         "format": "default"
                     }

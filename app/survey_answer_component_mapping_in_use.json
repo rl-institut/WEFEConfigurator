@@ -3,7 +3,7 @@
         "map_to": "component",
         "map_answer": {
             "photovoltaic system": [
-                "pv_rooftop"
+                "pv_rooftop", "solar-radiation"
             ],
             "battery system": [
                 "battery-storage"
@@ -13,10 +13,11 @@
                 "diesel"
             ],
             "wind turbine": [
-                "wind_turbine", "inverter"
+                "wind_turbine"
             ],
             "hydropower": [
-                "hydro_power"
+                "hydro_power",
+                "river_flow"
             ],
             "national grid": [
                 "grid"
@@ -75,13 +76,14 @@
         }
     },
     "11": {
+        "bus": ["service-water", "water"],
         "map_to": "component",
         "map_answer": {
             "wheat": [
-                ""
+                "mimo-crop"
             ],
             "rice": [
-                ""
+                "mimo-crop"
             ],
             "soy bean": [
                 ""
@@ -2385,10 +2387,10 @@
                 "seawater", "desalinator"
             ],
             "river/creek": [
-                ""
+                "surface_water"
             ],
             "lake": [
-                ""
+                "surface_water"
             ],
             "water truck": [
                 "truck_water"
