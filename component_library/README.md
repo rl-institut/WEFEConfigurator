@@ -15,7 +15,9 @@ Install requirements in a virtual environement `pip install -r component_library
 
 ## Check the validity of the component library
 
-From within `component_library/scripts` run `python utils.py`, this will display the list of the available components and to which csv file they are linked. In case of addition of new csv files, one need to delete the `component_library/WIP_components/datapackage.json` file. You will then enounter errors like `The resource energy_sources has the following casting errors: Field "profile" can't cast value "ghi-profile" for type "integer" with format "default"` --> simply change the type to "string" for this field
+Once you add components to the library you need to check it is well formatted. To generate a datapackage.json file, you need to run `python validate_component_lib.py` and fix the potential errors you might encounter there.
+
+From within `component_library/scripts` run `python utils.py`, this will display the list of the available components and to which csv file they are linked. In case of addition of new csv files, one need to delete the `component_library/WIP_components/datapackage.json` file. You will then encounter errors like `The resource energy_sources has the following casting errors: Field "profile" can't cast value "ghi-profile" for type "integer" with format "default"` --> simply change the type to "string" for this field
 
 ### Adding new components
 

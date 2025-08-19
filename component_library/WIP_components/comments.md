@@ -1,3 +1,7 @@
+# All
+
+If an attribute is supposed to be a float, then either write 0.0 instead of 0 in the value of the attribute of the components in WIP_components, or change the fields "type" in datapackage.json of WIP_components (must be redone if we regenerate the file from scratch, so I would advice to write the format of the numbers correct in the resources directly)
+
 # Water treatment
 water treatment currently is modeled with two inputs (electricity and water), however there are some solutions which do not require electricty!
 TODO find solution for case that various filtration nad desalination system are put in series..;;;;;;;;;;;;;;;;;;;;;;;;

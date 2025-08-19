@@ -36,10 +36,7 @@ def list_available_components():
     path = COMPONENT_TEMPLATES_PATH
     dp_json = os.path.join(path, "datapackage.json")
     if os.path.exists(dp_json) is False:
-        p0 = dp.Package(base_path=path)
-        p0.infer(os.path.join(path, "**" + os.sep + "*.csv"))
-        p0.commit()
-        p0.save(dp_json)
+        raise FileNotFoundError("The component library datapackage is not there, please generate it using 'python validate_component_lib.py' ")
     else:
         p0 = dp.Package(dp_json)
 
