@@ -16,3 +16,13 @@ If you saved a survey visiting http://127.0.0.1:8000/view/survey/<integer id of 
 If you edit the questions in survey/survey.py then you need to run `python manage.py update_survey_questions --update --dev` to edit within the app (if you create a new question, then the older saved surveys likely won't display it)
 
 If you want to erase all questions of the survey from the database, then run `python manage.py purge_survey_questions`
+
+
+Run the survey
+fill it
+export the survey results with python manage.py save_survey_answers <id of survey>, it saves it locally in the app folder in "scenario_<scen id>_survey_answers.json"
+then move to the component_library/scripts/build_scenario.py file
+
+There if you added a component to the library you need to rerun `python validate_component_lib.py` to recreate the datapackage.json file inside WIP_components folder (for this you need to clone oemof-tabular locally and checkout the branch `fix/datapackage`
+
+Otherwise go at the end of `component_library/scripts/build_scenario.py` file and adapt the survey answer file after the `if __name__=="__main__":` statement

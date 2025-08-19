@@ -6,14 +6,14 @@
                 "pv_rooftop"
             ],
             "battery system": [
-                "battery"
+                "battery-storage"
             ],
             "diesel generator": [
                 "diesel-generator",
                 "diesel"
             ],
             "wind turbine": [
-                "wind_turbine"
+                "wind_turbine", "inverter"
             ],
             "hydropower": [
                 "hydro_power"
@@ -2372,7 +2372,7 @@
         }
     },
     "3": {
-        "bus": "nameofbus",
+        "bus": "water-bus",
         "map_to": "component",
         "map_answer": {
               "groundwater well": [
@@ -3833,7 +3833,7 @@
         }
     },
     "3a": {
-        "bus": "nameofbus",
+        "bus": "service-water-bus",
         "map_to": "component",
         "map_answer": {
               "groundwater well": [
@@ -5297,7 +5297,7 @@
         }
     },
     "3b": {
-        "bus": "nameofbus",
+        "bus": "drinking-water-bus",
         "map_to": "component",
         "map_answer": {
               "groundwater well": [
