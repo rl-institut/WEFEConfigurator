@@ -8,7 +8,7 @@ import logging
 import json
 import shutil
 
-from utils import AVAILABLE_COMPONENTS, COMPONENT_TEMPLATES_PATH
+from utils import AVAILABLE_COMPONENTS, AVAILABLE_SEQUENCES, COMPONENT_TEMPLATES_PATH
 from analyse_survey import create_components_list
 
 # TODO this needs to work standalone as well as a service
@@ -167,8 +167,11 @@ class ScenarioBuilder:
 
                             (attribute_name, attribute_type), = map_answer.items()
                             attribute_val = type_check[attribute_type](answer)
-
-                            target_components = self.mapping[parent_qid]["map_answer"][parent_answer]
+                            try:
+                                target_components = self.mapping[parent_qid]["map_answer"][parent_answer]
+                            except:
+                                print(f"There is a problem with question {question_id}")
+                                import pdb;pdb.set_trace()
 
                             for target_component in target_components:
                                 self.components[target_component].update({attribute_name: attribute_val})
@@ -197,6 +200,7 @@ class ScenarioBuilder:
         dp_ref = self.reference_datapackage
         for component in self.components:
             if component in AVAILABLE_COMPONENTS:
+                print(component)
                 # Load the resource from the reference datapackage
                 resource = dp_ref.get_resource(AVAILABLE_COMPONENTS[component])
                 df = pd.DataFrame.from_records(resource.read(keyed=True), index="name")
@@ -211,7 +215,7 @@ class ScenarioBuilder:
 
                 # Write or modify the component in the new datapackage
                 if os.path.exists(ofname):
-                    category_df = pd.read_csv(ofname, index_col="name")
+                    category_df = pd.read_csv(ofname, index_col="name", sep=";")
                     if component not in category_df.index:
                         # If the component doesn't exist, add a row for the component
                         component_df = component_params.to_frame().T
@@ -231,7 +235,6 @@ class ScenarioBuilder:
                     for f in descriptor["schema"]["fields"]:
                         if f["name"] in selected_columns + ["name"]:
                             selected_fields.append(f)
-                    print(selected_fields)
                     descriptor["schema"]["fields"] = selected_fields
                     dp.add_resource(descriptor)
                     dp.commit()
@@ -270,53 +273,107 @@ class ScenarioBuilder:
         for renewable energy output) will be used.
         :param custom_timeseries: DataFrame with datetime index and elements as columns (should be uploaded as .csv or .xlsx
         """
+
+
         scenario_component_folder = self.scenario_component_folder
+
+        dp_ref = self.reference_datapackage
+        # ref_buses = dp_ref.get_resource("bus")
+        # df_ref_buses = pd.DataFrame.from_records(ref_buses.read(keyed=True))
+
+        # TODO need to do a mapping of sequence to
+
+        dp = self.scenario_datapackage
         scenario_sequences_folder = os.path.join(self.scenario_folder, "data/sequences")
+
 
         if not os.path.exists(scenario_component_folder):
             logging.warning("No components found to add timeseries. Please add components to the system first.")
 
         else:
-            # use datapackage here
-            for filename in os.listdir(scenario_component_folder):
-                file = os.path.join(scenario_component_folder, filename)
-                components = pd.read_csv(file)
-                # Look for components that should have profiles
-                # here look in the foreign keys if something point to a resource from scenario_sequences_folder
-                if "profile" in components.columns:
-                    # Create a file for the corresponding profiles if the elements file has a profiles column
-                    sequences_filename = f"{filename.replace('.csv', '')}_profile.csv"
-                    component_names = components.name.values.tolist()
-                    # TODO generate hourly timeseries based on scenario parameters (start, end, duration)
-                    timeindex = pd.date_range(start=f'2025-01-01', end=f'2025-12-31 23:00:00', freq='h')
-                    # Create a dataframe to store the profiles
-                    profile_df = pd.DataFrame(index=timeindex, columns=component_names)
-                    profile_df.index.rename("timeindex", inplace=True)
-                    for component in component_names:
-                        # If custom timeseries are provided, use these instead of the ones in database
-                        if custom_timeseries is not None and component in custom_timeseries.columns:
-                            # Check that the length of the custom data matches the index and does not contain NaN values
-                            if len(custom_timeseries.index) != len(profile_df.timeindex):
-                                logging.error(f"The uploaded timeseries should contain {len(profile_df.timeindex)} "
-                                              f"timesteps, but it contains {len(custom_timeseries.index)} ")
-                            elif custom_timeseries[component].isnan().any():
-                                logging.error(f"The uploaded timeseries contains NaN values. Please revise your input.")
-                            else:
-                                # Output a warning if the timeseries indexes do not match but save to sequences regardless
-                                if custom_timeseries.index != profile_df.timeindex:
-                                    logging.warning(f"The uploaded timeseries and the scenario do not have identical "
-                                                f"timestamps. Please make sure that the uploaded timeseries cover the correct period.")
-                                profile_df[component] = custom_timeseries[component]
+            profiles_to_add = []
+            for res in dp.resources:
+                if (os.sep + "elements" + os.sep in res.descriptor["path"]):
+                    try:
+                        resource_data = pd.DataFrame.from_records(res.read(keyed=True))
+                    except tableschema.exceptions.CastError as err:
+                        if err.errors:
+                            logging.error(
+                                f"The resource {res.name} has the following casting errors: {','.join([str(e) for e in err.errors])}")
                         else:
-                            profile_df[component] = self.fetch_component_timeseries(component)
+                            logging.error(f"The resource {res.name} has the following casting error: {err}")
+                        resource_data = pd.DataFrame()
+                    for fk in res.descriptor["schema"]["foreignKeys"]:
+                        fk_target = fk["reference"]["resource"]
+                        if fk_target != "bus":
+                            target_res = dp_ref.get_resource(fk_target)
+                            sequence_headers = [
+                                f"{f['name']}"
+                                for f in target_res.descriptor["schema"].get("fields", [])
+                            ]
+                            col_name = fk["fields"]
+                            if col_name in resource_data.columns:
+                                profile_names = resource_data[col_name].values.tolist()
+                                # check the bus names are listed in the component library
+                                for profile_name in profile_names:
+                                    if profile_name not in sequence_headers:
+                                        logging.warning(f"In the column '{col_name}' of the resource '{res.name}' the profile {profile_name} is listed, however it is missing from the component library resource in data/sequences path")
+                                    else:
+                                        if profile_name not in profiles_to_add:
+                                            profiles_to_add.append(profile_name)
+                            else:
+                                logging.error(
+                                    f"Column '{col_name}' missing from resource '{res.name}' although it is listed as foreignKey")
+            # WIP, here need to take an external file as argument and only select 'profiles_to_add' columns
 
-                    # Save sequences to .csv file
-                    filepath = os.path.join(scenario_sequences_folder, sequences_filename)
-                    profile_df.to_csv(filepath,sep=";")
+            df_profiles = []
+
+            for profile_name in profiles_to_add:
+                ref_profiles = dp_ref.get_resource(AVAILABLE_SEQUENCES[profile_name])
+                df_ref_profiles = pd.DataFrame.from_records(ref_profiles.read(keyed=True))
+                df_profiles.append(df_ref_profiles[["timeindex", profile_name]])
+            ofname = os.path.join(scenario_sequences_folder, "profiles.csv")
+            df_profiles = pd.concat(df_profiles)
+            df_profiles.to_csv(ofname, index=False, sep=";")
+            # use datapackage here
+            # for filename in os.listdir(scenario_component_folder):
+            #     file = os.path.join(scenario_component_folder, filename)
+            #     components = pd.read_csv(file)
+            #     # Look for components that should have profiles
+            #     # here look in the foreign keys if something point to a resource from scenario_sequences_folder
+            #     if "profile" in components.columns:
+            #         # Create a file for the corresponding profiles if the elements file has a profiles column
+            #         sequences_filename = f"{filename.replace('.csv', '')}_profile.csv"
+            #         component_names = components.name.values.tolist()
+            #         # TODO generate hourly timeseries based on scenario parameters (start, end, duration)
+            #         timeindex = pd.date_range(start=f'2025-01-01', end=f'2025-12-31 23:00:00', freq='h')
+            #         # Create a dataframe to store the profiles
+            #         profile_df = pd.DataFrame(index=timeindex, columns=component_names)
+            #         profile_df.index.rename("timeindex", inplace=True)
+            #         for component in component_names:
+            #             # If custom timeseries are provided, use these instead of the ones in database
+            #             if custom_timeseries is not None and component in custom_timeseries.columns:
+            #                 # Check that the length of the custom data matches the index and does not contain NaN values
+            #                 if len(custom_timeseries.index) != len(profile_df.timeindex):
+            #                     logging.error(f"The uploaded timeseries should contain {len(profile_df.timeindex)} "
+            #                                   f"timesteps, but it contains {len(custom_timeseries.index)} ")
+            #                 elif custom_timeseries[component].isnan().any():
+            #                     logging.error(f"The uploaded timeseries contains NaN values. Please revise your input.")
+            #                 else:
+            #                     # Output a warning if the timeseries indexes do not match but save to sequences regardless
+            #                     if custom_timeseries.index != profile_df.timeindex:
+            #                         logging.warning(f"The uploaded timeseries and the scenario do not have identical "
+            #                                     f"timestamps. Please make sure that the uploaded timeseries cover the correct period.")
+            #                     profile_df[component] = custom_timeseries[component]
+            #             else:
+            #                 profile_df[component] = self.fetch_component_timeseries(component)
+            #
+            #         # Save sequences to .csv file
+            #         filepath = os.path.join(scenario_sequences_folder, sequences_filename)
+            #         profile_df.to_csv(filepath,sep=";")
 
         # TODO check the foreign keys between timeseries and component attributes are valid
         # i.e. that each of the component attribute value correspond to a timeseries header
-        pass
 
 
     def add_buses(self):
@@ -348,8 +405,6 @@ class ScenarioBuilder:
                         else:
                             logging.error(f"The resource {res.name} has the following casting error: {err}")
                         resource_data = pd.DataFrame()
-                    print(res.name)
-                    print()
                     for fk in res.descriptor["schema"]["foreignKeys"]:
                         if fk["reference"]["resource"] == "bus":
                             col_name = fk["fields"]
@@ -363,7 +418,6 @@ class ScenarioBuilder:
                                 buses_to_add.extend(bus_names)
                             else:
                                 logging.error(f"Column '{col_name}' missing from resource '{res.name}' although it is listed as foreignKey")
-                print(buses_to_add)
 
             # for filename in os.listdir(scenario_component_folder):
             #     file = os.path.join(scenario_component_folder, filename)
@@ -379,11 +433,9 @@ class ScenarioBuilder:
 
 
             df_buses = []
-            print(df_ref_buses)
 
             for bus_name in buses_to_add:
                 df_buses.append(df_ref_buses.loc[df_ref_buses.name == bus_name])
-            print(df_buses)
             ofname = os.path.join(scenario_component_folder, "bus.csv")
             df_buses = pd.concat(df_buses)
             df_buses.to_csv(ofname, index=False, sep=";")

@@ -74,5 +74,47 @@ def list_available_components():
 
 AVAILABLE_COMPONENTS = list_available_components()
 
+def list_available_timeseries():
+    """browse all components in all csv files and link component name to csv file name"""
+
+    path = COMPONENT_TEMPLATES_PATH
+    dp_json = os.path.join(path, "datapackage.json")
+    if os.path.exists(dp_json) is False:
+        raise FileNotFoundError("The component library datapackage is not there, please generate it using 'python validate_component_lib.py' ")
+    else:
+        p0 = dp.Package(dp_json)
+
+
+    sequence_to_csv_name_mappping = {}
+    for r in p0.resources:
+        logging.info(r.name)
+        if os.sep + "sequences" + os.sep in r.descriptor["path"]:
+            category = r.name
+            try:
+                resource_data = pd.DataFrame.from_records(r.read(keyed=True))
+            except tableschema.exceptions.CastError as err:
+                if err.errors:
+                    logging.error(f"The resource {category} has the following casting errors: {','.join([str(e) for e in err.errors])}")
+                else:
+                    logging.error(f"The resource {category} has the following casting error: {err}")
+                resource_data = pd.DataFrame()
+
+            if resource_data.empty is False:
+                if len(resource_data.columns) == 1:
+                    logging.warning(f"The resource {category} has only one field detected, this is usually the case when there is a mismatch of number of values between the headers row and the data rows, please check your file.")
+
+                for component_name in resource_data.columns[1:]:
+                    if component_name not in sequence_to_csv_name_mappping:
+                        sequence_to_csv_name_mappping[component_name] = category
+                    else:
+                        raise ValueError(
+                            f"The component {component_name} is listed under several categories: {sequence_to_csv_name_mappping[component_name]} and {category}")
+            else:
+                logging.warning(f"The resource {category} is empty")
+    return sequence_to_csv_name_mappping
+
+AVAILABLE_SEQUENCES = list_available_timeseries()
+
 if __name__ == "__main__":
     print(AVAILABLE_COMPONENTS)
+    print(AVAILABLE_SEQUENCES)
