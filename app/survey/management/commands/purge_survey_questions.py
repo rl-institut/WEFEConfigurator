@@ -22,7 +22,7 @@ class Command(BaseCommand):
 
             if question_id in SUB_QUESTION_MAPPING:
                 asset_params["subquestion_to"] = SurveyQuestion.objects.get(
-                    question_id=SUB_QUESTION_MAPPING[question_id]
+                    question_id=SUB_QUESTION_MAPPING[question_id][0]
                 )
 
             display_type = asset_params.pop("display_type", None)
