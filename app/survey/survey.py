@@ -9,6 +9,7 @@ TYPE_STRING = "string"
 TYPE_WATER = "string"
 TYPE_COMPONENT = "component"
 TYPE_COMPONENT_ATTRIBUTE = "attribute"
+TYPE_OTHER = "other"
 TYPE_NO_MAP = "skip"
 INFOBOX = "description"
 
@@ -277,14 +278,14 @@ COMPONENT_SURVEY_STRUCTURE = [
         "question_id": "1.7",
         "variable_name": "supply",
         "possible_answers": TYPE_STRING,
-        "answer_map_to": TYPE_COMPONENT,
+        "answer_map_to": TYPE_OTHER,
     },
     {
         "question": "What is the installed capacity [kW] of this other electricity production technology",
         "question_id": "1.8",
         "variable_name": "capacity",
         "possible_answers": TYPE_FLOAT,
-        "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
+        "answer_map_to": TYPE_OTHER,
     },
 ]
 
@@ -349,6 +350,12 @@ WATER_SUPPLY_SURVEY_STRUCTURE = (
                     "water truck": ["3.2"],
                     "other": ["3.3"],
                 },
+            },
+            {
+              "question": "What other TYPE_WATER_SUPPLY source(s) do you have(separate with a comma)?",
+              "question_id": "3.3",
+              "possible_answers": TYPE_STRING,
+              "answer_map_to": TYPE_OTHER,
             },
         ]
         + generate_generic_questions(
@@ -534,7 +541,7 @@ WATER_SUPPLY_SURVEY_STRUCTURE = (
                         "question": "Which other water treatment technologies are you using to treat the TYPE_WATER_SUPPLY from TYPE_WATER_SOURCE?",
                         "question_id": "5.4",
                         "possible_answers": TYPE_STRING,
-                        "answer_map_to": TYPE_COMPONENT,
+                        "answer_map_to": TYPE_OTHER,
                     },
                 ],
             ),
@@ -586,7 +593,7 @@ WATER_SUPPLY_SURVEY_STRUCTURE = (
                 "question_id": "7.2",
                 "variable_name": "wastewater_treatment",
                 "possible_answers": TYPE_STRING,
-                "answer_map_to": TYPE_NO_MAP,
+                "answer_map_to": TYPE_OTHER,
             },
             {
                 "question": "Which kind of toilet are you using?",
@@ -760,7 +767,7 @@ CROPS_SURVEY_STRUCTURE = (
             "question": "Which other crops not mentioned above are you cultivating",
             "question_id": "8.2",
             "possible_answers": TYPE_STRING,
-            "answer_map_to": TYPE_COMPONENT,
+            "answer_map_to": TYPE_OTHER,
         },
         {
             "question": "Are you interested to combine electricity and crop production on the same land in the form of"
