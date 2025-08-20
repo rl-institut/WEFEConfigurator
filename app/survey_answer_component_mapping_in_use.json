@@ -3,13 +3,16 @@
         "map_to": "component",
         "map_answer": {
             "photovoltaic system": [
-                "pv_rooftop", "solar-radiation"
+                "pv_rooftop",
+                "solar-radiation",
+                "inverter"
             ],
             "battery system": [
-                "battery-storage"
+                "battery-storage",
+                "inverter"
             ],
             "diesel generator": [
-                "diesel-generator",
+                "diesel_generator",
                 "diesel"
             ],
             "wind turbine": [
@@ -23,7 +26,8 @@
                 "grid"
             ],
             "biogas plant": [
-                "biogas-plant"
+                "biogas-plant",
+                "biofuel"
             ]
         }
     },
