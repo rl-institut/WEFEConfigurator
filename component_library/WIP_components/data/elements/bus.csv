@@ -12,6 +12,6 @@ precipitation-bus;bus;True;water
 irrigation-bus;bus;True;water
 diesel-bus;bus;True;energy
 groundwater-bus;bus;True;water
-river-flow-bus;bus;True;water
+riverflow-bus;bus;True;water
 biofuel-bus;bus;True;fuel
 tap-water-bus;bus;True;water
