@@ -30,6 +30,7 @@ INFOBOX = "description"
 TYPE_COMPONENT = "component"
 TYPE_COMPONENT_ATTRIBUTE = "attribute"
 TYPE_NO_MAP = "skip"
+TYPE_OTHER = "other"
 
 type_check = {
     TYPE_FLOAT: float,
@@ -183,6 +184,8 @@ class ScenarioBuilder:
                     elif map_to == TYPE_NO_MAP:
                         # Don't know what to do with this
                         pass
+                    elif map_to == TYPE_OTHER:
+                        self.wished_components[question_id] = answer
                     else:
                         print(f"Question {question_id} has unexpected key {map_to} that can't be mapped.")
                         pass
@@ -219,7 +222,9 @@ class ScenarioBuilder:
                     if component not in category_df.index:
                         # If the component doesn't exist, add a row for the component
                         component_df = component_params.to_frame().T
-                        category_df = pd.concat([category_df, component_df])
+                        component_df.name = "name"
+                        category_df = pd.concat([f.dropna(axis=1, how="all") for f in [category_df, component_df]])
+                        # category_df = pd.concat([category_df, component_df])
                     else:
                         # If the component already exists, only update the attributes
                         component_params = category_df.loc[component]
