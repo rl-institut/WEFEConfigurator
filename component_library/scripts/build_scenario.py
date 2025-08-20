@@ -337,6 +337,11 @@ class ScenarioBuilder:
                 ref_profiles = dp_ref.get_resource(AVAILABLE_SEQUENCES[profile_name])
                 df_ref_profiles = pd.DataFrame.from_records(ref_profiles.read(keyed=True))
                 df_profiles.append(df_ref_profiles[["timeindex", profile_name]])
+                logging.info(f"Added profile {profile_name} to the '{self.scenario_folder.split(os.sep)[-1]}' datapage")
+
+            if len(profiles_to_add) == 0:
+                print(f"No profiles listed within the component for the '{self.scenario_folder.split(os.sep)[-1]}' datapage. If you think it is an error, double check the foreign keys")
+
             ofname = os.path.join(scenario_sequences_folder, "profiles.csv")
             if df_profiles:
                 df_profiles = pd.concat(df_profiles)
@@ -423,7 +428,7 @@ class ScenarioBuilder:
 
                                 buses_to_add.extend(bus_names)
                             else:
-                                logging.error(f"Column '{col_name}' missing from resource '{res.name}' although it is listed as foreignKey")
+                                logging.error(f"Add buses: column '{col_name}' missing from resource '{res.name}' although it is listed as foreignKey")
 
             # for filename in os.listdir(scenario_component_folder):
             #     file = os.path.join(scenario_component_folder, filename)
@@ -441,11 +446,20 @@ class ScenarioBuilder:
             df_buses = []
 
             for bus_name in buses_to_add:
-                df_buses.append(df_ref_buses.loc[df_ref_buses.name == bus_name])
+                lines = df_ref_buses.loc[df_ref_buses.name == bus_name]
+                df_buses.append(lines)
+                logging.info(f"Added bus {bus_name} to the '{self.scenario_folder.split(os.sep)[-1]}' datapage")
+
+            if len(buses_to_add) == 0:
+                print(
+                    f"No buses listed within the component for the '{self.scenario_folder.split(os.sep)[-1]}' datapage. This is likely because the foreign keys are missing from the component library's datapackage.json file.")
+
             ofname = os.path.join(scenario_component_folder, "bus.csv")
             if df_buses:
                 df_buses = pd.concat(df_buses)
                 df_buses.to_csv(ofname, index=False, sep=";")
+
+            # TODO add the source component which are connected to the busses using foreign keys, check beforehand the logic
 
 
     def fetch_component_timeseries(self, component):
