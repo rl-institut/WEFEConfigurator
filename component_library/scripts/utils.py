@@ -44,7 +44,7 @@ def list_available_components():
     component_to_csv_name_mappping = {}
     for r in p0.resources:
         logging.info(r.name)
-        if os.sep + "elements" + os.sep in r.descriptor["path"]:
+        if "/elements/" in r.descriptor["path"]:
             category = r.name
             try:
                 resource_data = pd.DataFrame.from_records(r.read(keyed=True))
@@ -88,7 +88,7 @@ def list_available_timeseries():
     sequence_to_csv_name_mappping = {}
     for r in p0.resources:
         logging.info(r.name)
-        if os.sep + "sequences" + os.sep in r.descriptor["path"]:
+        if "/sequences/" in r.descriptor["path"]:
             category = r.name
             try:
                 resource_data = pd.DataFrame.from_records(r.read(keyed=True))

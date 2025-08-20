@@ -293,7 +293,7 @@ class ScenarioBuilder:
         else:
             profiles_to_add = []
             for res in dp.resources:
-                if (os.sep + "elements" + os.sep in res.descriptor["path"]):
+                if "/elements/" in res.descriptor["path"]:
                     try:
                         resource_data = pd.DataFrame.from_records(res.read(keyed=True))
                     except tableschema.exceptions.CastError as err:
@@ -333,8 +333,9 @@ class ScenarioBuilder:
                 df_ref_profiles = pd.DataFrame.from_records(ref_profiles.read(keyed=True))
                 df_profiles.append(df_ref_profiles[["timeindex", profile_name]])
             ofname = os.path.join(scenario_sequences_folder, "profiles.csv")
-            df_profiles = pd.concat(df_profiles)
-            df_profiles.to_csv(ofname, index=False, sep=";")
+            if df_profiles:
+                df_profiles = pd.concat(df_profiles)
+                df_profiles.to_csv(ofname, index=False, sep=";")
             # use datapackage here
             # for filename in os.listdir(scenario_component_folder):
             #     file = os.path.join(scenario_component_folder, filename)
@@ -395,7 +396,7 @@ class ScenarioBuilder:
         else:
             buses_to_add = []
             for res in dp.resources:
-                if (os.sep + "elements" + os.sep in res.descriptor["path"]) and res.name != "bus":
+                if ("/elements/" in res.descriptor["path"]) and res.name != "bus":
                     try:
                         resource_data = pd.DataFrame.from_records(res.read(keyed=True))
                     except tableschema.exceptions.CastError as err:
@@ -437,8 +438,9 @@ class ScenarioBuilder:
             for bus_name in buses_to_add:
                 df_buses.append(df_ref_buses.loc[df_ref_buses.name == bus_name])
             ofname = os.path.join(scenario_component_folder, "bus.csv")
-            df_buses = pd.concat(df_buses)
-            df_buses.to_csv(ofname, index=False, sep=";")
+            if df_buses:
+                df_buses = pd.concat(df_buses)
+                df_buses.to_csv(ofname, index=False, sep=";")
 
 
     def fetch_component_timeseries(self, component):
