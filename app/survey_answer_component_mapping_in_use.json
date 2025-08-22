@@ -3,7 +3,7 @@
         "map_to": "component",
         "map_answer": {
             "photovoltaic system": [
-                "pv_rooftop",
+                "photovoltaics",
                 "solar-radiation",
                 "inverter"
             ],
@@ -12,15 +12,16 @@
                 "inverter"
             ],
             "diesel generator": [
-                "diesel_generator",
+                "diesel-generator",
                 "diesel"
             ],
             "wind turbine": [
-                "wind_turbine"
+                "wind-turbine",
+                "wind"
             ],
             "hydropower": [
-                "hydro_power",
-                "river_flow"
+                "hydro-power",
+                "river-flow"
             ],
             "national grid": [
                 "grid"
