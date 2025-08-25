@@ -213,6 +213,8 @@ class ScenarioBuilder:
 
                 component_params = df.loc[component]
                 component_params = component_params[selected_columns]
+                # Edit the attributes in the csv file if they have been set in the survey
+                component_params = self.update_component_attributes(component_params)
 
                 ofname = os.path.join(self.scenario_component_folder, f"{AVAILABLE_COMPONENTS[component]}.csv")
 
@@ -244,8 +246,6 @@ class ScenarioBuilder:
                     dp.add_resource(descriptor)
                     dp.commit()
 
-                    # Edit the attributes in the csv file if they have been set in the survey
-                    component_params = self.update_component_attributes(component_params)
                     component_df = component_params.to_frame().T
                     component_df.to_csv(ofname, index_label="name", sep=";")
 
