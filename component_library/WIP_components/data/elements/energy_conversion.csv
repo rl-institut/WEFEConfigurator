@@ -1,7 +1,7 @@
 name;type;carrier;tech;capacity;capacity_cost;marginal_cost;carrier_cost;efficiency;from_bus;to_bus;expandable; verbose_name
 inverter;conversion;energy;energy_conversion;0.;10.;0;0;0.9;dc-elec-bus;ac-elec-bus;true;"Inverter"
 diesel-generator;conversion;energy;energy_conversion;0.;10.;0;0;0.9;diesel-bus;ac-elec-bus;true;"Diesel Generator"
-hydro-power; conversion; energy;energy_conversion; 0.;10.;0;0;0.9;riverflow-bus;ac-elec-bus;true;"Hydropower Plant"
+hydro-power;conversion;energy;energy_conversion;0.;10.;0;0;0.9;riverflow-bus;ac-elec-bus;true;"Hydropower Plant"
 photovoltaics;conversion;energy;energy_conversion;0.;10.;0;0;0.9;solar-energy-bus;dc-elec-bus;true;"Rooftop Photovoltaic System"
 wind-turbine;conversion;energy;energy_conversion;0.;10.;0;0;0.9;wind-bus;ac-elec-bus;true;"Wind Turbine"
 electrolyzer;conversion;energy;energy_conversion;0.;10.;0;0;0.9;ac-elec-bus;hydrogen-bus;true;"Electrolyzer"
