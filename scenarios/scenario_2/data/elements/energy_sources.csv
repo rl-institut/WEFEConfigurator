@@ -1,0 +1,2 @@
+name;type;carrier;tech;capacity;capacity_cost;bus;marginal_cost;carrier_cost;profile;output_parameters;expandable
+grid;dispatchable;energy;source;;0;ac-elec-bus;2;0;1;{};True

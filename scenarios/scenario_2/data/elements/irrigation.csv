@@ -1,0 +1,2 @@
+name;type;carrier;tech;capacity;capacity_cost;marginal_cost;carrier_cost;efficiency;from_bus;to_bus;expandable
+irrigation-sprinkler;conversion;water;irrigation;0;10;0;0;0.9;irrigation-bus;crop;True

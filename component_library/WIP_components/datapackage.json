@@ -2050,7 +2050,12 @@
                         "format": "default"
                     },
                     {
-                        "name": "river-flow",
+                        "name": "river-flow-profile",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "wind-speed-profile",
                         "type": "number",
                         "format": "default"
                     }

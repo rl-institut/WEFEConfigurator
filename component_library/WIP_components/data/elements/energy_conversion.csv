@@ -6,3 +6,4 @@ photovoltaics;conversion;energy;energy_conversion;0.;10.;0;0;0.9;solar-energy-bu
 wind-turbine;conversion;energy;energy_conversion;0.;10.;0;0;0.9;wind-bus;ac-elec-bus;true;"Wind Turbine"
 electrolyzer;conversion;energy;energy_conversion;0.;10.;0;0;0.9;ac-elec-bus;hydrogen-bus;true;"Electrolyzer"
 fuel-cell;conversion;energy;energy_conversion;0.;10.;0;0;0.9;hydrogen_bus;ac_elec_bus;true;"Fuel Cell"
+rainwater-harvesting;conversion;water;rainwater-harvesting;0;29.927272727272726;0;0;0.9;precipitation-bus;service-water-bus;true; "Rainwater Harvesting"

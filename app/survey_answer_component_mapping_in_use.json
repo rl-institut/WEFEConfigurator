@@ -4,7 +4,6 @@
         "map_answer": {
             "photovoltaic system": [
                 "photovoltaics",
-                "solar-radiation",
                 "inverter"
             ],
             "battery system": [
@@ -213,34 +212,34 @@
         "map_to": "component",
         "map_answer": {
             "surface irrigation": [
-                ""
+                "surface-irrigation"
             ],
             "center-pivot irrigation": [
-                ""
+                "center-pivot-irrigation"
             ],
             "irrigation sprinkler": [
-                ""
+                "irrigation-sprinkler"
             ],
             "subsurface drip irrigation": [
-                ""
+                "subsurface-drip-irrigation"
             ],
             "drip irrigation": [
-                ""
+                "drip-irrigation"
             ],
             "furrow irrigation": [
-                ""
+                "furrow-irrigation"
             ],
             "basin irrigation": [
-                ""
+                "basin-irrigation"
             ],
             "border irrigation": [
-                ""
+                "border-irrigation"
             ],
             "watering can": [
-                ""
+                "watering-can"
             ],
             "smart irrigation system": [
-                ""
+                "smart-irrigation"
             ],
             "other": [
                 ""
@@ -647,34 +646,34 @@
         "map_to": "component",
         "map_answer": {
             "surface irrigation": [
-                ""
+                "surface-irrigation"
             ],
             "center-pivot irrigation": [
-                ""
+                "center-pivot-irrigation"
             ],
             "irrigation sprinkler": [
-                ""
+                "irrigation-sprinkler"
             ],
             "subsurface drip irrigation": [
-                ""
+                "subsurface-drip-irrigation"
             ],
             "drip irrigation": [
-                ""
+                "drip-irrigation"
             ],
             "furrow irrigation": [
-                ""
+                "furrow-irrigation"
             ],
             "basin irrigation": [
-                ""
+                "basin-irrigation"
             ],
             "border irrigation": [
-                ""
+                "border-irrigation"
             ],
             "watering can": [
-                ""
+                "water-can"
             ],
             "smart irrigation system": [
-                ""
+                "smart-irrigation"
             ],
             "other": [
                 ""
@@ -709,34 +708,34 @@
         "map_to": "component",
         "map_answer": {
             "surface irrigation": [
-                ""
+                "surface-irrigation"
             ],
             "center-pivot irrigation": [
-                ""
+                "center-pivot-irrigation"
             ],
             "irrigation sprinkler": [
-                ""
+                "irrigation-sprinkler"
             ],
             "subsurface drip irrigation": [
-                ""
+                "subsurface-drip-irrigation"
             ],
             "drip irrigation": [
-                ""
+                "drip-irrigation"
             ],
             "furrow irrigation": [
-                ""
+                "furrow-irrigation"
             ],
             "basin irrigation": [
-                ""
+                "basin-irrigation"
             ],
             "border irrigation": [
-                ""
+                "border-irrigation"
             ],
             "watering can": [
-                ""
+                "watering-can"
             ],
             "smart irrigation system": [
-                ""
+                "smart-irrigation"
             ],
             "other": [
                 ""
@@ -771,34 +770,34 @@
         "map_to": "component",
         "map_answer": {
             "surface irrigation": [
-                ""
+                "surface-irrigation"
             ],
             "center-pivot irrigation": [
-                ""
+                "center-pivot-irrigation"
             ],
             "irrigation sprinkler": [
-                ""
+                "irrigation-sprinkler"
             ],
             "subsurface drip irrigation": [
-                ""
+                "subsurface-drip-irrigation"
             ],
             "drip irrigation": [
-                ""
+                "drip-irrigation"
             ],
             "furrow irrigation": [
-                ""
+                "furrow-irrigation"
             ],
             "basin irrigation": [
-                ""
+                "basin-irrigation"
             ],
             "border irrigation": [
-                ""
+                "border-irrigation"
             ],
             "watering can": [
-                ""
+                "watering-can"
             ],
             "smart irrigation system": [
-                ""
+                "smart-irrigation"
             ],
             "other": [
                 ""
@@ -833,34 +832,34 @@
         "map_to": "component",
         "map_answer": {
             "surface irrigation": [
-                ""
+                "surface-irrigation"
             ],
             "center-pivot irrigation": [
-                ""
+                "center-pivot-irrigation"
             ],
             "irrigation sprinkler": [
-                ""
+                "irrigation-sprinkler"
             ],
             "subsurface drip irrigation": [
-                ""
+                "subsurface-drip-irrigation"
             ],
             "drip irrigation": [
-                ""
+                "drip-irrigation"
             ],
             "furrow irrigation": [
-                ""
+                "furrow-irrigation"
             ],
             "basin irrigation": [
-                ""
+                "basin-irrigation"
             ],
             "border irrigation": [
-                ""
+                "border-irrigation"
             ],
             "watering can": [
-                ""
+                "watering-can"
             ],
             "smart irrigation system": [
-                ""
+                "smart-irrigation"
             ],
             "other": [
                 ""
@@ -895,34 +894,34 @@
         "map_to": "component",
         "map_answer": {
             "surface irrigation": [
-                ""
+                "surface-irrigation"
             ],
             "center-pivot irrigation": [
-                ""
+                "center-pivot-irrigation"
             ],
             "irrigation sprinkler": [
-                ""
+                "irrigation-sprinkler"
             ],
             "subsurface drip irrigation": [
-                ""
+                "subsurface-drip-irrigation"
             ],
             "drip irrigation": [
-                ""
+                "drip-irrigation"
             ],
             "furrow irrigation": [
-                ""
+                "furrow-irrigation"
             ],
             "basin irrigation": [
-                ""
+                "basin-irrigation"
             ],
             "border irrigation": [
-                ""
+                "border-irrigation"
             ],
             "watering can": [
-                ""
+                "watering-can"
             ],
             "smart irrigation system": [
-                ""
+                "smart-irrigation"
             ],
             "other": [
                 ""
@@ -957,34 +956,34 @@
         "map_to": "component",
         "map_answer": {
             "surface irrigation": [
-                ""
+                "surface-irrigation"
             ],
             "center-pivot irrigation": [
-                ""
+                "center-pivot-irrigation"
             ],
             "irrigation sprinkler": [
-                ""
+                "irrigation-sprinkler"
             ],
             "subsurface drip irrigation": [
-                ""
+                "subsurface-drip-irrigation"
             ],
             "drip irrigation": [
-                ""
+                "drip-irrigation"
             ],
             "furrow irrigation": [
-                ""
+                "furrow-irrigation"
             ],
             "basin irrigation": [
-                ""
+                "basin-irrigation"
             ],
             "border irrigation": [
-                ""
+                "border-irrigation"
             ],
             "watering can": [
-                ""
+                "watering-can"
             ],
             "smart irrigation system": [
-                ""
+                "smart-irrigation"
             ],
             "other": [
                 ""
@@ -1019,34 +1018,34 @@
         "map_to": "component",
         "map_answer": {
             "surface irrigation": [
-                ""
+                "surface-irrigation"
             ],
             "center-pivot irrigation": [
-                ""
+                "center-pivot-irrigation"
             ],
             "irrigation sprinkler": [
-                ""
+                "irrigation-sprinkler"
             ],
             "subsurface drip irrigation": [
-                ""
+                "subsurface-drip-irrigation"
             ],
             "drip irrigation": [
-                ""
+                "drip-irrigation"
             ],
             "furrow irrigation": [
-                ""
+                "furrow-irrigation"
             ],
             "basin irrigation": [
-                ""
+                "basin-irrigation"
             ],
             "border irrigation": [
-                ""
+                "border-irrigation"
             ],
             "watering can": [
-                ""
+                "watering-can"
             ],
             "smart irrigation system": [
-                ""
+                "smart-irrigation"
             ],
             "other": [
                 ""
@@ -1081,34 +1080,34 @@
         "map_to": "component",
         "map_answer": {
             "surface irrigation": [
-                ""
+                "surface-irrigation"
             ],
             "center-pivot irrigation": [
-                ""
+                "center-pivot-irrigation"
             ],
             "irrigation sprinkler": [
-                ""
+                "irrigation-sprinkler"
             ],
             "subsurface drip irrigation": [
-                ""
+                "subsurface-drip-irrigation"
             ],
             "drip irrigation": [
-                ""
+                "drip-irrigation"
             ],
             "furrow irrigation": [
-                ""
+                "furrow-irrigation"
             ],
             "basin irrigation": [
-                ""
+                "basin-irrigation"
             ],
             "border irrigation": [
-                ""
+                "border-irrigation"
             ],
             "watering can": [
-                ""
+                "watering-can"
             ],
             "smart irrigation system": [
-                ""
+                "smart-irrigation"
             ],
             "other": [
                 ""
@@ -1143,34 +1142,34 @@
         "map_to": "component",
         "map_answer": {
             "surface irrigation": [
-                ""
+                "surface-irrigation"
             ],
             "center-pivot irrigation": [
-                ""
+                "center-pivot-irrigation"
             ],
             "irrigation sprinkler": [
-                ""
+                "irrigation-sprinkler"
             ],
             "subsurface drip irrigation": [
-                ""
+                "subsurface-drip-irrigation"
             ],
             "drip irrigation": [
-                ""
+                "drip-irrigation"
             ],
             "furrow irrigation": [
-                ""
+                "furrow-irrigation"
             ],
             "basin irrigation": [
-                ""
+                "basin-irrigation"
             ],
             "border irrigation": [
-                ""
+                "border-irrigation"
             ],
             "watering can": [
-                ""
+                "watering-can"
             ],
             "smart irrigation system": [
-                ""
+                "smart-irrigation"
             ],
             "other": [
                 ""
@@ -1205,34 +1204,34 @@
         "map_to": "component",
         "map_answer": {
             "surface irrigation": [
-                ""
+                "surface-irrigation"
             ],
             "center-pivot irrigation": [
-                ""
+                "center-pivot-irrigation"
             ],
             "irrigation sprinkler": [
-                ""
+                "irrigation-sprinkler"
             ],
             "subsurface drip irrigation": [
-                ""
+                "subsurface-drip-irrigation"
             ],
             "drip irrigation": [
-                ""
+                "drip-irrigation"
             ],
             "furrow irrigation": [
-                ""
+                "furrow-irrigation"
             ],
             "basin irrigation": [
-                ""
+                "basin-irrigation"
             ],
             "border irrigation": [
-                ""
+                "border-irrigation"
             ],
             "watering can": [
-                ""
+                "watering-can"
             ],
             "smart irrigation system": [
-                ""
+                "smart-irrigation"
             ],
             "other": [
                 ""
@@ -1267,34 +1266,34 @@
         "map_to": "component",
         "map_answer": {
             "surface irrigation": [
-                ""
+                "surface-irrigation"
             ],
             "center-pivot irrigation": [
-                ""
+                "center-pivot-irrigation"
             ],
             "irrigation sprinkler": [
-                ""
+                "irrigation-sprinkler"
             ],
             "subsurface drip irrigation": [
-                ""
+                "subsurface-drip-irrigation"
             ],
             "drip irrigation": [
-                ""
+                "drip-irrigation"
             ],
             "furrow irrigation": [
-                ""
+                "furrow-irrigation"
             ],
             "basin irrigation": [
-                ""
+                "basin-irrigation"
             ],
             "border irrigation": [
-                ""
+                "border-irrigation"
             ],
             "watering can": [
-                ""
+                "watering-can"
             ],
             "smart irrigation system": [
-                ""
+                "smart-irrigation"
             ],
             "other": [
                 ""
@@ -1329,34 +1328,34 @@
         "map_to": "component",
         "map_answer": {
             "surface irrigation": [
-                ""
+                "surface-irrigation"
             ],
             "center-pivot irrigation": [
-                ""
+                "center-pivot-irrigation"
             ],
             "irrigation sprinkler": [
-                ""
+                "irrigation-sprinkler"
             ],
             "subsurface drip irrigation": [
-                ""
+                "subsurface-drip-irrigation"
             ],
             "drip irrigation": [
-                ""
+                "drip-irrigation"
             ],
             "furrow irrigation": [
-                ""
+                "furrow-irrigation"
             ],
             "basin irrigation": [
-                ""
+                "basin-irrigation"
             ],
             "border irrigation": [
-                ""
+                "border-irrigation"
             ],
             "watering can": [
-                ""
+                "watering-can"
             ],
             "smart irrigation system": [
-                ""
+                "smart-irrigation"
             ],
             "other": [
                 ""
@@ -1391,34 +1390,34 @@
         "map_to": "component",
         "map_answer": {
             "surface irrigation": [
-                ""
+                "surface-irrigation"
             ],
             "center-pivot irrigation": [
-                ""
+                "center-pivot-irrigation"
             ],
             "irrigation sprinkler": [
-                ""
+                "irrigation-sprinkler"
             ],
             "subsurface drip irrigation": [
-                ""
+                "subsurface-drip-irrigation"
             ],
             "drip irrigation": [
-                ""
+                "drip-irrigation"
             ],
             "furrow irrigation": [
-                ""
+                "furrow-irrigation"
             ],
             "basin irrigation": [
-                ""
+                "basin-irrigation"
             ],
             "border irrigation": [
-                ""
+                "border-irrigation"
             ],
             "watering can": [
-                ""
+                "watering-can"
             ],
             "smart irrigation system": [
-                ""
+                "smart-irrigation"
             ],
             "other": [
                 ""
@@ -1453,34 +1452,34 @@
         "map_to": "component",
         "map_answer": {
             "surface irrigation": [
-                ""
+                "surface-irrigation"
             ],
             "center-pivot irrigation": [
-                ""
+                "center-pivot-irrigation"
             ],
             "irrigation sprinkler": [
-                ""
+                "irrigation-sprinkler"
             ],
             "subsurface drip irrigation": [
-                ""
+                "subsurface-drip-irrigation"
             ],
             "drip irrigation": [
-                ""
+                "drip-irrigation"
             ],
             "furrow irrigation": [
-                ""
+                "furrow-irrigation"
             ],
             "basin irrigation": [
-                ""
+                "basin-irrigation"
             ],
             "border irrigation": [
-                ""
+                "border-irrigation"
             ],
             "watering can": [
-                ""
+                "watering-can"
             ],
             "smart irrigation system": [
-                ""
+                "smart-irrigation"
             ],
             "other": [
                 ""
@@ -1515,34 +1514,34 @@
         "map_to": "component",
         "map_answer": {
             "surface irrigation": [
-                ""
+                "surface-irrigation"
             ],
             "center-pivot irrigation": [
-                ""
+                "center-pivot-irrigation"
             ],
             "irrigation sprinkler": [
-                ""
+                "irrigation-sprinkler"
             ],
             "subsurface drip irrigation": [
-                ""
+                "subsurface-drip-irrigation"
             ],
             "drip irrigation": [
-                ""
+                "drip-irrigation"
             ],
             "furrow irrigation": [
-                ""
+                "furrow-irrigation"
             ],
             "basin irrigation": [
-                ""
+                "basin-irrigation"
             ],
             "border irrigation": [
-                ""
+                "border-irrigation"
             ],
             "watering can": [
-                ""
+                "watering-can"
             ],
             "smart irrigation system": [
-                ""
+                "smart-irrigation"
             ],
             "other": [
                 ""
@@ -1577,34 +1576,34 @@
         "map_to": "component",
         "map_answer": {
             "surface irrigation": [
-                ""
+                "surface-irrigation"
             ],
             "center-pivot irrigation": [
-                ""
+                "center-pivot-irrigation"
             ],
             "irrigation sprinkler": [
-                ""
+                "irrigation-sprinkler"
             ],
             "subsurface drip irrigation": [
-                ""
+                "subsurface-drip-irrigation"
             ],
             "drip irrigation": [
-                ""
+                "drip-irrigation"
             ],
             "furrow irrigation": [
-                ""
+                "furrow-irrigation"
             ],
             "basin irrigation": [
-                ""
+                "basin-irrigation"
             ],
             "border irrigation": [
-                ""
+                "border-irrigation"
             ],
             "watering can": [
-                ""
+                "watering-can"
             ],
             "smart irrigation system": [
-                ""
+                "smart-irrigation"
             ],
             "other": [
                 ""
@@ -1639,34 +1638,34 @@
         "map_to": "component",
         "map_answer": {
             "surface irrigation": [
-                ""
+                "surface-irrigation"
             ],
             "center-pivot irrigation": [
-                ""
+                "center-pivot-irrigation"
             ],
             "irrigation sprinkler": [
-                ""
+                "irrigation-sprinkler"
             ],
             "subsurface drip irrigation": [
-                ""
+                "subsurface-drip-irrigation"
             ],
             "drip irrigation": [
-                ""
+                "drip-irrigation"
             ],
             "furrow irrigation": [
-                ""
+                "furrow-irrigation"
             ],
             "basin irrigation": [
-                ""
+                "basin-irrigation"
             ],
             "border irrigation": [
-                ""
+                "border-irrigation"
             ],
             "watering can": [
-                ""
+                "watering-can"
             ],
             "smart irrigation system": [
-                ""
+                "smart-irrigation"
             ],
             "other": [
                 ""
@@ -1701,34 +1700,34 @@
         "map_to": "component",
         "map_answer": {
             "surface irrigation": [
-                ""
+                "surface-irrigation"
             ],
             "center-pivot irrigation": [
-                ""
+                "center-pivot-irrigation"
             ],
             "irrigation sprinkler": [
-                ""
+                "irrigation-sprinkler"
             ],
             "subsurface drip irrigation": [
-                ""
+                "subsurface-drip-irrigation"
             ],
             "drip irrigation": [
-                ""
+                "drip-irrigation"
             ],
             "furrow irrigation": [
-                ""
+                "furrow-irrigation"
             ],
             "basin irrigation": [
-                ""
+                "basin-irrigation"
             ],
             "border irrigation": [
-                ""
+                "border-irrigation"
             ],
             "watering can": [
-                ""
+                "watering-can"
             ],
             "smart irrigation system": [
-                ""
+                "smart-irrigation"
             ],
             "other": [
                 ""
@@ -1822,37 +1821,37 @@
         }
     },
     "11.4.26": {
-        "map_to": "component",
+         "map_to": "component",
         "map_answer": {
             "surface irrigation": [
-                ""
+                "surface-irrigation"
             ],
             "center-pivot irrigation": [
-                ""
+                "center-pivot-irrigation"
             ],
             "irrigation sprinkler": [
-                ""
+                "irrigation-sprinkler"
             ],
             "subsurface drip irrigation": [
-                ""
+                "subsurface-drip-irrigation"
             ],
             "drip irrigation": [
-                ""
+                "drip-irrigation"
             ],
             "furrow irrigation": [
-                ""
+                "furrow-irrigation"
             ],
             "basin irrigation": [
-                ""
+                "basin-irrigation"
             ],
             "border irrigation": [
-                ""
+                "border-irrigation"
             ],
             "watering can": [
-                ""
+                "watering-can"
             ],
             "smart irrigation system": [
-                ""
+                "smart-irrigation"
             ],
             "other": [
                 ""
@@ -1887,34 +1886,34 @@
         "map_to": "component",
         "map_answer": {
             "surface irrigation": [
-                ""
+                "surface-irrigation"
             ],
             "center-pivot irrigation": [
-                ""
+                "center-pivot-irrigation"
             ],
             "irrigation sprinkler": [
-                ""
+                "irrigation-sprinkler"
             ],
             "subsurface drip irrigation": [
-                ""
+                "subsurface-drip-irrigation"
             ],
             "drip irrigation": [
-                ""
+                "drip-irrigation"
             ],
             "furrow irrigation": [
-                ""
+                "furrow-irrigation"
             ],
             "basin irrigation": [
-                ""
+                "basin-irrigation"
             ],
             "border irrigation": [
-                ""
+                "border-irrigation"
             ],
             "watering can": [
-                ""
+                "watering-can"
             ],
             "smart irrigation system": [
-                ""
+                "smart-irrigation"
             ],
             "other": [
                 ""
@@ -1949,34 +1948,34 @@
         "map_to": "component",
         "map_answer": {
             "surface irrigation": [
-                ""
+                "surface-irrigation"
             ],
             "center-pivot irrigation": [
-                ""
+                "center-pivot-irrigation"
             ],
             "irrigation sprinkler": [
-                ""
+                "irrigation-sprinkler"
             ],
             "subsurface drip irrigation": [
-                ""
+                "subsurface-drip-irrigation"
             ],
             "drip irrigation": [
-                ""
+                "drip-irrigation"
             ],
             "furrow irrigation": [
-                ""
+                "furrow-irrigation"
             ],
             "basin irrigation": [
-                ""
+                "basin-irrigation"
             ],
             "border irrigation": [
-                ""
+                "border-irrigation"
             ],
             "watering can": [
-                ""
+                "watering-can"
             ],
             "smart irrigation system": [
-                ""
+                "smart-irrigation"
             ],
             "other": [
                 ""
@@ -2011,34 +2010,34 @@
         "map_to": "component",
         "map_answer": {
             "surface irrigation": [
-                ""
+                "surface-irrigation"
             ],
             "center-pivot irrigation": [
-                ""
+                "center-pivot-irrigation"
             ],
             "irrigation sprinkler": [
-                ""
+                "irrigation-sprinkler"
             ],
             "subsurface drip irrigation": [
-                ""
+                "subsurface-drip-irrigation"
             ],
             "drip irrigation": [
-                ""
+                "drip-irrigation"
             ],
             "furrow irrigation": [
-                ""
+                "furrow-irrigation"
             ],
             "basin irrigation": [
-                ""
+                "basin-irrigation"
             ],
             "border irrigation": [
-                ""
+                "border-irrigation"
             ],
             "watering can": [
-                ""
+                "watering-can"
             ],
             "smart irrigation system": [
-                ""
+                "smart-irrigation"
             ],
             "other": [
                 ""
@@ -2070,37 +2069,37 @@
         }
     },
     "11.4.30": {
-        "map_to": "component",
+         "map_to": "component",
         "map_answer": {
             "surface irrigation": [
-                ""
+                "surface-irrigation"
             ],
             "center-pivot irrigation": [
-                ""
+                "center-pivot-irrigation"
             ],
             "irrigation sprinkler": [
-                ""
+                "irrigation-sprinkler"
             ],
             "subsurface drip irrigation": [
-                ""
+                "subsurface-drip-irrigation"
             ],
             "drip irrigation": [
-                ""
+                "drip-irrigation"
             ],
             "furrow irrigation": [
-                ""
+                "furrow-irrigation"
             ],
             "basin irrigation": [
-                ""
+                "basin-irrigation"
             ],
             "border irrigation": [
-                ""
+                "border-irrigation"
             ],
             "watering can": [
-                ""
+                "watering-can"
             ],
             "smart irrigation system": [
-                ""
+                "smart-irrigation"
             ],
             "other": [
                 ""
@@ -2132,37 +2131,37 @@
         }
     },
     "11.4.31": {
-        "map_to": "component",
+         "map_to": "component",
         "map_answer": {
             "surface irrigation": [
-                ""
+                "surface-irrigation"
             ],
             "center-pivot irrigation": [
-                ""
+                "center-pivot-irrigation"
             ],
             "irrigation sprinkler": [
-                ""
+                "irrigation-sprinkler"
             ],
             "subsurface drip irrigation": [
-                ""
+                "subsurface-drip-irrigation"
             ],
             "drip irrigation": [
-                ""
+                "drip-irrigation"
             ],
             "furrow irrigation": [
-                ""
+                "furrow-irrigation"
             ],
             "basin irrigation": [
-                ""
+                "basin-irrigation"
             ],
             "border irrigation": [
-                ""
+                "border-irrigation"
             ],
             "watering can": [
-                ""
+                "watering-can"
             ],
             "smart irrigation system": [
-                ""
+                "smart-irrigation"
             ],
             "other": [
                 ""
@@ -2194,37 +2193,37 @@
         }
     },
     "11.4.32": {
-        "map_to": "component",
+          "map_to": "component",
         "map_answer": {
             "surface irrigation": [
-                ""
+                "surface-irrigation"
             ],
             "center-pivot irrigation": [
-                ""
+                "center-pivot-irrigation"
             ],
             "irrigation sprinkler": [
-                ""
+                "irrigation-sprinkler"
             ],
             "subsurface drip irrigation": [
-                ""
+                "subsurface-drip-irrigation"
             ],
             "drip irrigation": [
-                ""
+                "drip-irrigation"
             ],
             "furrow irrigation": [
-                ""
+                "furrow-irrigation"
             ],
             "basin irrigation": [
-                ""
+                "basin-irrigation"
             ],
             "border irrigation": [
-                ""
+                "border-irrigation"
             ],
             "watering can": [
-                ""
+                "watering-can"
             ],
             "smart irrigation system": [
-                ""
+                "smart-irrigation"
             ],
             "other": [
                 ""
@@ -2256,37 +2255,37 @@
         }
     },
     "11.4.33": {
-        "map_to": "component",
+          "map_to": "component",
         "map_answer": {
             "surface irrigation": [
-                ""
+                "surface-irrigation"
             ],
             "center-pivot irrigation": [
-                ""
+                "center-pivot-irrigation"
             ],
             "irrigation sprinkler": [
-                ""
+                "irrigation-sprinkler"
             ],
             "subsurface drip irrigation": [
-                ""
+                "subsurface-drip-irrigation"
             ],
             "drip irrigation": [
-                ""
+                "drip-irrigation"
             ],
             "furrow irrigation": [
-                ""
+                "furrow-irrigation"
             ],
             "basin irrigation": [
-                ""
+                "basin-irrigation"
             ],
             "border irrigation": [
-                ""
+                "border-irrigation"
             ],
             "watering can": [
-                ""
+                "watering-can"
             ],
             "smart irrigation system": [
-                ""
+                "smart-irrigation"
             ],
             "other": [
                 ""
@@ -2318,37 +2317,37 @@
         }
     },
     "11.4.34": {
-        "map_to": "component",
+         "map_to": "component",
         "map_answer": {
             "surface irrigation": [
-                ""
+                "surface-irrigation"
             ],
             "center-pivot irrigation": [
-                ""
+                "center-pivot-irrigation"
             ],
             "irrigation sprinkler": [
-                ""
+                "irrigation-sprinkler"
             ],
             "subsurface drip irrigation": [
-                ""
+                "subsurface-drip-irrigation"
             ],
             "drip irrigation": [
-                ""
+                "drip-irrigation"
             ],
             "furrow irrigation": [
-                ""
+                "furrow-irrigation"
             ],
             "basin irrigation": [
-                ""
+                "basin-irrigation"
             ],
             "border irrigation": [
-                ""
+                "border-irrigation"
             ],
             "watering can": [
-                ""
+                "watering-can"
             ],
             "smart irrigation system": [
-                ""
+                "smart-irrigation"
             ],
             "other": [
                 ""
@@ -2371,7 +2370,7 @@
         "map_to": "component",
         "map_answer": {
             "yes": [
-                ""
+                "agrivoltaics"
             ],
             "no": [
                 ""
@@ -2386,25 +2385,26 @@
                 "groundwater"
             ],
             "public tap water": [
-                "tap_water"
+                "tap-water"
             ],
             "desalinated seawater": [
-                "seawater", "desalinator"
+                "seawater",
+                "swro"
             ],
             "river/creek": [
-                "surface_water"
+                "surface-water"
             ],
             "lake": [
-                "surface_water"
+                "surface-water"
             ],
             "water truck": [
-                "truck_water"
+                "truck-water"
             ],
             "rainwater harvesting": [
                 ""
             ],
             "bottled water": [
-                "bottled_water"
+                "bottled-water"
             ]
         }
     },
