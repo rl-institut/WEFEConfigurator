@@ -11,6 +11,7 @@ import shutil
 from utils import AVAILABLE_COMPONENTS, AVAILABLE_SEQUENCES, COMPONENT_TEMPLATES_PATH
 from analyse_survey import create_components_list
 
+import weather_data
 # TODO this needs to work standalone as well as a service
 
 #-------------RELEVANT PATHS------------
@@ -55,6 +56,7 @@ class ScenarioBuilder:
         self.subq_mapping = SUB_QUESTION_MAPPING
         self.components = {}
         self.wished_components = {}
+        self.weather_data_path = "weather_data.csv"
         self.scenario_folder = self.create_scenario_folder()
 
 
@@ -102,6 +104,19 @@ class ScenarioBuilder:
     @property
     def scenario_component_folder(self):
         return os.path.join(self.scenario_folder, "data", "elements")
+
+    def download_weather_data(self):
+        if not os.path.exists(self.weather_data_path):
+            df = weather_data.get_data()
+            df.to_csv(self.weather_data_path,index=False)
+
+    @property
+    def weather_data(self):
+        if not os.path.exists(self.weather_data_path):
+            self.download_weather_data()
+
+        return pd.read_csv(self.weather_data_path)
+
 
     def process_survey(self, survey):
         """
@@ -343,6 +358,10 @@ class ScenarioBuilder:
                 print(f"No profiles listed within the component for the '{self.scenario_folder.split(os.sep)[-1]}' datapage. If you think it is an error, double check the foreign keys")
 
             ofname = os.path.join(scenario_sequences_folder, "profiles.csv")
+
+            # TODO look if some columns of df_profiles are within weather_data and copy them into df_profiles from weather_data
+            weather_data = self.weather_data
+
             if df_profiles:
                 df_profiles = pd.concat(df_profiles)
                 df_profiles.to_csv(ofname, index=False, sep=";")
