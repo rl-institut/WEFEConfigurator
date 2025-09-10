@@ -73,7 +73,7 @@ scenarios = [
     # "wefe_pv_panel",
     # "wefe_reverse_osmosis",
     # "aiwa"
-    "scenario_7"
+    "scenario_1"
     #"aiwa_8760"
     # "test_Tsumkwe"
     # "arusi_8760"

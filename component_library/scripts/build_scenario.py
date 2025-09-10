@@ -11,6 +11,7 @@ import shutil
 from utils import AVAILABLE_COMPONENTS, AVAILABLE_SEQUENCES, COMPONENT_TEMPLATES_PATH
 from analyse_survey import create_components_list
 
+import weather_data
 # TODO this needs to work standalone as well as a service
 
 #-------------RELEVANT PATHS------------
@@ -55,6 +56,7 @@ class ScenarioBuilder:
         self.subq_mapping = SUB_QUESTION_MAPPING
         self.components = {}
         self.wished_components = {}
+        self.weather_data_path = "weather_data.csv"
         self.scenario_folder = self.create_scenario_folder()
 
 
@@ -102,6 +104,42 @@ class ScenarioBuilder:
     @property
     def scenario_component_folder(self):
         return os.path.join(self.scenario_folder, "data", "elements")
+
+    def download_weather_data(self):
+        if not os.path.exists(self.weather_data_path):
+            df = weather_data.get_data()
+            df.to_csv(self.weather_data_path,index=False)
+
+    @property
+    def weather_data(self):
+        if not os.path.exists(self.weather_data_path):
+            self.download_weather_data()
+
+        return pd.read_csv(self.weather_data_path)
+
+    @property
+    def process_weather_data(self):
+        """
+        Function to calculate and add new columns to the weather_data DataFrame
+        TODO: add more cols for river_flow, groundwater_recharge, etc (check WIP_components\...\profiles.csv)
+        """
+
+        weather_df = self.weather_data.copy()
+        c_j_to_kwh = 1 / 3600000
+        weather_df["ghi"] = weather_df.apply(
+            lambda row: row["ssrd"] * c_j_to_kwh, axis=1
+        )
+
+        weather_df["windspeed10"] = weather_df.apply(
+            lambda row: np.sqrt(row["u10"] ** 2 + row["v10"] ** 2), axis=1
+        )
+
+        weather_df["windspeed100"] = weather_df.apply(
+            lambda row: np.sqrt(row["u100"] ** 2 + row["v100"] ** 2), axis=1
+        )
+
+        return weather_df
+
 
     def process_survey(self, survey):
         """
@@ -254,6 +292,7 @@ class ScenarioBuilder:
 
         dp.save(os.path.join(self.scenario_folder, "datapackage.json"))
 
+
     def update_component_attributes(self, component_params):
         """
         Edit the component attributes in the corresponding .csv file based on the component attributes set in
@@ -331,57 +370,56 @@ class ScenarioBuilder:
                                     f"Column '{col_name}' missing from resource '{res.name}' although it is listed as foreignKey")
             # WIP, here need to take an external file as argument and only select 'profiles_to_add' columns
 
-            df_profiles = []
-
-            for profile_name in profiles_to_add:
-                ref_profiles = dp_ref.get_resource(AVAILABLE_SEQUENCES[profile_name])
-                df_ref_profiles = pd.DataFrame.from_records(ref_profiles.read(keyed=True))
-                df_profiles.append(df_ref_profiles[["timeindex", profile_name]])
-                logging.info(f"Added profile {profile_name} to the '{self.scenario_folder.split(os.sep)[-1]}' datapage")
-
             if len(profiles_to_add) == 0:
                 print(f"No profiles listed within the component for the '{self.scenario_folder.split(os.sep)[-1]}' datapage. If you think it is an error, double check the foreign keys")
 
+            # Get processed weather data
+            weather_df = self.process_weather_data
+            weather_data_len = len(weather_df)
+
+            # Get blueprint profiles from component library for mapping
+            lib_profiles_path = os.path.join(lib_dir, "WIP_components", "data", "sequences", "profiles.csv")
+            lib_profiles_df = pd.read_csv(lib_profiles_path, sep=";")
+
+            # Create DF for the scenario profiles and match index with weather data
+            scen_profiles_df = pd.DataFrame(columns=profiles_to_add)
+            scen_profiles_df = scen_profiles_df.reindex(range(weather_data_len))
+
+            # If timeindex col exists: extract year (of first entry), else: set year to 2022 (according to weather data)
+            if "timeindex" in scen_profiles_df.columns:
+                scen_profiles_df["timeindex"] = pd.to_datetime(scen_profiles_df["timeindex"])
+                scen_profiles_year = int(scen_profiles_df["timeindex"].dt.year.iloc[0])
+            else:
+                scen_profiles_year = int(2022)
+
+            # Add timeindex column in right format and length
+            timeindex = pd.date_range(
+                start=f"{scen_profiles_year}-01-01",
+                periods=weather_data_len,
+                freq="h",
+                tz="UTC"
+            )
+            scen_profiles_df["timeindex"] = timeindex.strftime("%Y-%m-%dT%H:%M:%SZ")
+
+            # Compare with profiles from library profiles csv and in case of a match, populate with data from weather df
+            for profile in profiles_to_add:
+                if profile in lib_profiles_df.columns:
+                    weather_data_match = str(lib_profiles_df[profile].iloc[0])
+                    if weather_data_match in weather_df.columns:
+                        scen_profiles_df[profile] = weather_df[weather_data_match]
+                    else:
+                        print(
+                            f"Profile '{profile}' is not in the available weather data. A dummy profile (series of 1) will be used.")
+                        dummy_series = pd.Series([1] * weather_data_len)
+                        scen_profiles_df[profile] = dummy_series
+                else:
+                    print(
+                        f"Profile '{profile}' is not in the profile library. A dummy profile (series of 1) will be used.")
+                    scen_profiles_df[profile] = pd.Series([1] * weather_data_len)
+
             ofname = os.path.join(scenario_sequences_folder, "profiles.csv")
-            if df_profiles:
-                df_profiles = pd.concat(df_profiles)
-                df_profiles.to_csv(ofname, index=False, sep=";")
-            # use datapackage here
-            # for filename in os.listdir(scenario_component_folder):
-            #     file = os.path.join(scenario_component_folder, filename)
-            #     components = pd.read_csv(file)
-            #     # Look for components that should have profiles
-            #     # here look in the foreign keys if something point to a resource from scenario_sequences_folder
-            #     if "profile" in components.columns:
-            #         # Create a file for the corresponding profiles if the elements file has a profiles column
-            #         sequences_filename = f"{filename.replace('.csv', '')}_profile.csv"
-            #         component_names = components.name.values.tolist()
-            #         # TODO generate hourly timeseries based on scenario parameters (start, end, duration)
-            #         timeindex = pd.date_range(start=f'2025-01-01', end=f'2025-12-31 23:00:00', freq='h')
-            #         # Create a dataframe to store the profiles
-            #         profile_df = pd.DataFrame(index=timeindex, columns=component_names)
-            #         profile_df.index.rename("timeindex", inplace=True)
-            #         for component in component_names:
-            #             # If custom timeseries are provided, use these instead of the ones in database
-            #             if custom_timeseries is not None and component in custom_timeseries.columns:
-            #                 # Check that the length of the custom data matches the index and does not contain NaN values
-            #                 if len(custom_timeseries.index) != len(profile_df.timeindex):
-            #                     logging.error(f"The uploaded timeseries should contain {len(profile_df.timeindex)} "
-            #                                   f"timesteps, but it contains {len(custom_timeseries.index)} ")
-            #                 elif custom_timeseries[component].isnan().any():
-            #                     logging.error(f"The uploaded timeseries contains NaN values. Please revise your input.")
-            #                 else:
-            #                     # Output a warning if the timeseries indexes do not match but save to sequences regardless
-            #                     if custom_timeseries.index != profile_df.timeindex:
-            #                         logging.warning(f"The uploaded timeseries and the scenario do not have identical "
-            #                                     f"timestamps. Please make sure that the uploaded timeseries cover the correct period.")
-            #                     profile_df[component] = custom_timeseries[component]
-            #             else:
-            #                 profile_df[component] = self.fetch_component_timeseries(component)
-            #
-            #         # Save sequences to .csv file
-            #         filepath = os.path.join(scenario_sequences_folder, sequences_filename)
-            #         profile_df.to_csv(filepath,sep=";")
+            scen_profiles_df.to_csv(ofname, index=False, sep=";")
+
 
         # TODO check the foreign keys between timeseries and component attributes are valid
         # i.e. that each of the component attribute value correspond to a timeseries header
