@@ -188,7 +188,7 @@ class ScenarioBuilder:
                             else:
                                  other_answers.append(str(a))
 
-                        self.components.update({component: {} for component in components_to_add})
+                        self.components.update({(component,component): {} for component in components_to_add})
                         self.wished_components[question_id] = other_answers
 
                     elif map_to == TYPE_COMPONENT_ATTRIBUTE:
@@ -213,7 +213,7 @@ class ScenarioBuilder:
                                 import pdb;pdb.set_trace()
 
                             for target_component in target_components:
-                                self.components[target_component].update({attribute_name: attribute_val})
+                                self.components[(target_component, target_component)].update({attribute_name: attribute_val})
                                 #some debugging for key error
                         else:
                             # TODO: Check if TYPE_COMPONENT_ATTRIBUTE questions are always subquestions of a TYPE_COMPONENT question
@@ -239,40 +239,38 @@ class ScenarioBuilder:
 
         dp = self.scenario_datapackage
         dp_ref = self.reference_datapackage
-        for component in self.components:
-            if component in AVAILABLE_COMPONENTS:
-                print(component)
+        for component_key in self.components:
+            component_type, component_name = component_key
+            if component_type in AVAILABLE_COMPONENTS:
                 # Load the resource from the reference datapackage
-                resource = dp_ref.get_resource(AVAILABLE_COMPONENTS[component])
-                df = pd.DataFrame.from_records(resource.read(keyed=True), index="name")
+                resource = dp_ref.get_resource(AVAILABLE_COMPONENTS[component_type])
+                df = pd.DataFrame.from_records(resource.read(keyed=True))
+                df.set_index("name", drop=False, inplace=True)
 
                 # Strip the component documentation columns
                 selected_columns = [col for col in df.columns if col not in ['verbose_name', 'description']]
 
-                component_params = df.loc[component]
+                component_params = df.loc[component_type]
                 component_params = component_params[selected_columns]
                 # Edit the attributes in the csv file if they have been set in the survey
-                component_params = self.update_component_attributes(component_params)
-
-                ofname = os.path.join(self.scenario_component_folder, f"{AVAILABLE_COMPONENTS[component]}.csv")
+                component_params = self.update_component_attributes(component_key,component_params)
+                ofname = os.path.join(self.scenario_component_folder, f"{AVAILABLE_COMPONENTS[component_type]}.csv")
 
                 # Write or modify the component in the new datapackage
                 if os.path.exists(ofname):
-                    category_df = pd.read_csv(ofname, index_col="name", sep=";")
-                    if component not in category_df.index:
+                    component_df = pd.read_csv(ofname, sep=";")
+                    existing_records = component_df.name.tolist()
+                    if component_params["name"] not in existing_records and component_name not in existing_records:
                         # If the component doesn't exist, add a row for the component
-                        component_df = component_params.to_frame().T
-                        component_df.name = "name"
-                        category_df = pd.concat([f.dropna(axis=1, how="all") for f in [category_df, component_df]])
-                        # category_df = pd.concat([category_df, component_df])
+                        component_df = pd.concat([component_df, component_params.to_frame().T])
                     else:
                         # If the component already exists, only update the attributes
-                        component_params = category_df.loc[component]
-                        category_df.loc[component] = self.update_component_attributes(component_params)
-                    # Save the components back to the csv file
-                    category_df.to_csv(ofname, index_label="name", sep=";")
-
-
+                        if component_params["name"] in existing_records:
+                            component_name = component_params["name"]
+                        component_df.set_index("name", drop=False, inplace=True)
+                        component_params = component_df.loc[component_name].copy()
+                        component_df.loc[component_name] = self.update_component_attributes(component_key,
+                                                                                           component_params)
                 else:
                     # Copy package metadata
                     descriptor = deepcopy(resource.descriptor)
@@ -285,28 +283,35 @@ class ScenarioBuilder:
                     dp.commit()
 
                     component_df = component_params.to_frame().T
-                    component_df.to_csv(ofname, index_label="name", sep=";")
 
-            else:
-                logging.warning(f"The component {component} is not in the available component list {', '.join([comp for comp in AVAILABLE_COMPONENTS])}")
+                # Save the components back to the csv file
+                component_df[selected_columns].to_csv(ofname, index=False, sep=";")
+
+
+        else:
+                logging.warning(f"The component {component_key} is not in the available component list {', '.join([comp for comp in AVAILABLE_COMPONENTS])}")
 
         dp.save(os.path.join(self.scenario_folder, "datapackage.json"))
 
 
-    def update_component_attributes(self, component_params):
+    def update_component_attributes(self, component_key,component_params):
         """
         Edit the component attributes in the corresponding .csv file based on the component attributes set in
         self.components.
+        :param component_key: tuple containing the component type and component name
         :param component_params: DataSeries object containing the .csv row of parameters for the corresponding component
         :returns: component_params DataSeries updated according to attributes in self.components[component]
         """
-        component = component_params.name
-        for attr in self.components[component]:
+        for attr in self.components[component_key]:
             try:
-                component_params[attr] = self.components[component][attr]
+                component_params.loc[attr] = self.components[component_key][attr]
             except KeyError:
-                logging.warning(f"Attribute {attr} was not found for {component}")
+                logging.warning(f"Attribute {attr} was not found for {component_key}")
 
+        if "name" not in self.components[component_key]:
+            # make sure the name provided in the component_key is used instead of the name of component library
+            if component_key[0] != component_key[1]:
+                component_params["name"] = component_key[1]
         return component_params
 
 
@@ -521,9 +526,12 @@ if __name__=="__main__":
     with open(os.path.join(project_dir, "app", f"scenario_{scen_id}_survey_answers.json"), "r") as fp:
         survey_answers =  json.load(fp)
 
-    scenario = ScenarioBuilder(name=f"scenario_{scen_id}", overwrite=True)
+    scenario = ScenarioBuilder(name=f"scenario_{scen_id}", overwrite=False)
     #parse the survey to add components to a list
     scenario.process_survey(survey_answers)
+    scenario.components.update({("septic_system", "gws"):{}})
+    scenario.components.update({("septic_system", "bordel"):{"name":"bws"}})
+    print(scenario.components)
     #scenario.water_systems_postprocessing()
     # adding the component to the datapackge from the component library based on the list of component
     # to add we got from the survey
