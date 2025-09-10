@@ -1,2 +1,2 @@
 electricity-load-profile;cooking-load-profile;service-water-demand-profile;drinking-water-demand;groundwater-recharge;precipitation-profile;ghi-profile;river-flow-profile;wind-speed-profile
-elec;cook;service;drink;ground;tp;ghi;u10;u100
+elec;cook;service;drink;ground;tp;ghi;riverflow;windspeed10
