@@ -370,20 +370,8 @@ class ScenarioBuilder:
                                     f"Column '{col_name}' missing from resource '{res.name}' although it is listed as foreignKey")
             # WIP, here need to take an external file as argument and only select 'profiles_to_add' columns
 
-            # df_profiles = []
-            # TODO: AVAILABLE_SEQUENCES seemed to be empty so this part is not used -> work around below
-            # try:
-            #     for profile_name in profiles_to_add:
-            #         ref_profiles = dp_ref.get_resource(AVAILABLE_SEQUENCES[profile_name])
-            #         df_ref_profiles = pd.DataFrame.from_records(ref_profiles.read(keyed=True))
-            #         df_profiles.append(df_ref_profiles[["timeindex", profile_name]])
-            #         logging.info(f"Added profile {profile_name} to the '{self.scenario_folder.split(os.sep)[-1]}' datapage")
-            # except Exception:
-            #     import pdb
-            #     pdb.set_trace()
-            #
-            # if len(profiles_to_add) == 0:
-            #     print(f"No profiles listed within the component for the '{self.scenario_folder.split(os.sep)[-1]}' datapage. If you think it is an error, double check the foreign keys")
+            if len(profiles_to_add) == 0:
+                print(f"No profiles listed within the component for the '{self.scenario_folder.split(os.sep)[-1]}' datapage. If you think it is an error, double check the foreign keys")
 
             # Get processed weather data
             weather_df = self.process_weather_data
