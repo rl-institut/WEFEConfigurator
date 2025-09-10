@@ -2197,53 +2197,48 @@
             "schema": {
                 "fields": [
                     {
-                        "name": "timeindex",
-                        "type": "datetime",
-                        "format": "default"
-                    },
-                    {
                         "name": "electricity-load-profile",
-                        "type": "number",
+                        "type": "string",
                         "format": "default"
                     },
                     {
                         "name": "cooking-load-profile",
-                        "type": "number",
+                        "type": "string",
                         "format": "default"
                     },
                     {
                         "name": "service-water-demand-profile",
-                        "type": "number",
+                        "type": "string",
                         "format": "default"
                     },
                     {
                         "name": "drinking-water-demand",
-                        "type": "number",
+                        "type": "string",
                         "format": "default"
                     },
                     {
                         "name": "groundwater-recharge",
-                        "type": "number",
+                        "type": "string",
                         "format": "default"
                     },
                     {
                         "name": "precipitation-profile",
-                        "type": "number",
+                        "type": "string",
                         "format": "default"
                     },
                     {
                         "name": "ghi-profile",
-                        "type": "number",
+                        "type": "string",
                         "format": "default"
                     },
                     {
                         "name": "river-flow-profile",
-                        "type": "number",
+                        "type": "string",
                         "format": "default"
                     },
                     {
                         "name": "wind-speed-profile",
-                        "type": "number",
+                        "type": "string",
                         "format": "default"
                     }
                 ],
