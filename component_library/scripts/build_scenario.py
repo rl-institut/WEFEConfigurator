@@ -429,6 +429,26 @@ class ScenarioBuilder:
         # TODO check the foreign keys between timeseries and component attributes are valid
         # i.e. that each of the component attribute value correspond to a timeseries header
 
+    def add_single_bus(self, name, balanced=True, carrier=""):
+
+        ofname = os.path.join(self.scenario_component_folder, "bus.csv")
+        bus = pd.Series({"name": name, "type": "bus", "balanced": balanced, "carrier": carrier}).to_frame().T
+        # Write or modify the bus in the new datapackage
+        if os.path.exists(ofname):
+            busses_df = pd.read_csv(ofname, sep=";")
+            existing_records = busses_df.name.tolist()
+            if name not in existing_records:
+                # If the bus doesn't exist, add a row for it
+                busses_df = pd.concat([busses_df, bus])
+            else:
+                # If the bus already exists, replace it
+                busses_df.set_index("name", drop=False, inplace=True)
+                busses_df.loc[name] = bus
+        else:
+            busses_df = bus
+        # Save the components back to the csv file
+        busses_df.to_csv(ofname, index=False, sep=";")
+
 
     def add_buses(self):
         """

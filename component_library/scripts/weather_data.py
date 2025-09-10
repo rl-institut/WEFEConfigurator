@@ -1,6 +1,7 @@
 import requests
 import logging
 import pandas as pd
+import os
 
 WEATHER_DATA_API_HOST = os.environ.get("WEATHER_DATA_API_HOST", "")
 
