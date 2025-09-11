@@ -106,24 +106,11 @@ class ScenarioBuilder:
         population = 1000 #  # survey needs to ask population, makes most of the logic implementation easier
         toilet_types = survey["criteria_7.3"]
 
-        # Bus addition section
-            # creation of black water based on flush toilet selection
-        if "flush toilet" in toilet_types:
-            self.add_single_bus(name="black-water-bus", carrier="water")
-
-        # default creation of grey water bus
-        self.add_single_bus(name="grey-water-bus", carrier="water")
-        # input waste water treatment plant water bus, which serves as a mixing point if black water train is present
-        self.add_single_bus(name="wwtp-ip-water-bus", carrier="water")
-        # output waste water treatment plant water bus
-        self.add_single_bus(name="wwtp-op-water-bus", carrier="water")
-        # final service water bus, it is the same one which the whole scenario uses
-        self.add_single_bus(name="service-water-bus", carrier="water")
 
         # black water treatment
         if "flush toilet" in toilet_types:
             if "septic system" in wastewater_systems:
-                self.components.update({("septic_system", "black_water_septic"): {"water_in_bus": "black-water-bus", "water_out_bus": "wwtp-ip-water-bus"}})
+                self.components.update({("septic_system", "black_water_septic"): {"water_in_bus": "black-water-bus"}})
                 # to update attributes if survey provides it
                 # self.components[("septic_system","black_water_septic")].update({"capacity": 100})
             elif "constructed wetland" in wastewater_systems:
@@ -141,8 +128,7 @@ class ScenarioBuilder:
                 component_type="septic_system",
                 component_name="grey_water_septic",
                 component_attrs= {
-                    "water_in_bus": "grey-water-bus",
-                    "water_out_bus": "wwtp-ip-water-bus"
+                    "water_in_bus": "grey-water-bus"
                 }
             )
             capacity = survey["criteria_7.1.0"]
@@ -177,7 +163,7 @@ class ScenarioBuilder:
 
         # water recycling and reuse system
         # default addition of this component
-        self.add_single_component("water_reuse_system", component_attrs={"water_in_bus": "wwtp-op-water-bus", "water_out_bus": "service-water-bus"})
+        self.add_single_component(component_type="water_reuse_system", component_attrs={"water_in_bus": "wwtp-op-water-bus", "water_out_bus": "service-water-bus"})
         if "water recycling and reuse system" in wastewater_systems:
             # to update attributes if survey provides it
             #self.components["water_reuse_system"].update({"capacity": 100})
