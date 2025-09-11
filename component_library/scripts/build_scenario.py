@@ -629,9 +629,26 @@ class ScenarioBuilder:
                     f"No buses listed within the component for the '{self.scenario_folder.split(os.sep)[-1]}' datapage. This is likely because the foreign keys are missing from the component library's datapackage.json file.")
 
             ofname = os.path.join(scenario_component_folder, "bus.csv")
-            if df_buses:
-                df_buses = pd.concat(df_buses)
-                df_buses.to_csv(ofname, index=False, sep=";")
+
+            # Write or modify the bus in the new datapackage
+            if os.path.exists(ofname):
+                busses_df = pd.read_csv(ofname, sep=";")
+                existing_records = busses_df.name.tolist()
+                if df_buses:
+                    # If the bus doesn't exist, add a row for it
+                    busses_df = pd.concat([busses_df] + df_buses)
+                # else:
+                #     # If the bus already exists, replace it
+                #     busses_df.set_index("name", drop=False, inplace=True)
+                #     busses_df.loc[name] = bus
+            else:
+                if df_buses:
+                    busses_df = pd.concat(df_buses)
+            # Save the components back to the csv file
+            busses_df.to_csv(ofname, index=False, sep=";")
+
+
+
 
             # TODO add the source component which are connected to the busses using foreign keys, check beforehand the logic
 
@@ -660,8 +677,6 @@ if __name__=="__main__":
     scenario = ScenarioBuilder(name=f"scenario_{scen_id}", overwrite=False)
     #parse the survey to add components to a list
     scenario.process_survey(survey_answers)
-    #scenario.components.update({("septic_system", "gws"):{}})
-    #scenario.components.update({("septic_system", "bordel"):{"name":"bws"}})
     scenario.waste_water_systems_postprocessing(survey_answers)
     print(scenario.components)
     #scenario.water_systems_postprocessing()
