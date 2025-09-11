@@ -1378,11 +1378,6 @@
                         "format": "default"
                     },
                     {
-                        "name": "to_bus_1",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
                         "name": "conversion_factor_from_bus_0",
                         "type": "integer",
                         "format": "default"
@@ -1472,7 +1467,36 @@
                     ""
                 ],
                 "primaryKey": "name",
-                "foreignKeys": []
+                "foreignKeys": [
+                    {
+                        "fields": "from_bus_0",
+                        "reference": {
+                            "resource": "bus",
+                            "fields": "name"
+                        }
+                    },
+                    {
+                        "fields": "from_bus_1",
+                        "reference": {
+                            "resource": "bus",
+                            "fields": "name"
+                        }
+                    },
+                    {
+                        "fields": "from_bus_2",
+                        "reference": {
+                            "resource": "bus",
+                            "fields": "name"
+                        }
+                    },
+                    {
+                        "fields": "to_bus_0",
+                        "reference": {
+                            "resource": "bus",
+                            "fields": "name"
+                        }
+                    }
+                ]
             }
         },
         {

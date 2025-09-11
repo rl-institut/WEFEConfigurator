@@ -15,3 +15,6 @@ groundwater-bus;bus;True;water
 riverflow-bus;bus;True;water
 biofuel-bus;bus;True;fuel
 tap-water-bus;bus;True;water
+human-feces-bus;bus;True;feces
+human-urin-bus;bus;True;urin
+black-water-bus;bus;True;water
