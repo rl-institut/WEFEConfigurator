@@ -6844,13 +6844,11 @@
     "7.3": {
         "map_to": "component",
         "map_answer": {
-            "toilet_type": [
-                "flush toilet",
-                "latrine",
-                "dry toilet",
-                "composting toilet",
-                "open field"
-            ]
+            "flush toilet": ["flush_toilet"],
+            "latrine": ["latrine"],
+            "dry toilet": ["dry_toilet"],
+            "composting toilet": ["composting_toilet"],
+            "open field": ["open_field"]
         }
     }
 }
