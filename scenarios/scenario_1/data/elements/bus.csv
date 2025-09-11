@@ -2,3 +2,8 @@ name;type;balanced;carrier
 ac-elec-bus;bus;True;electricity
 riverflow-bus;bus;True;water
 wind-bus;bus;True;energy
+black-water-bus;bus;True;water
+grey-water-bus;bus;True;water
+wwtp-ip-water-bus;bus;True;water
+wwtp-op-water-bus;bus;True;water
+service-water-bus;bus;True;water
