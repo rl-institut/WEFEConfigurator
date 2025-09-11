@@ -121,7 +121,6 @@ class ScenarioBuilder:
         self.add_single_bus(name="service-water-bus", carrier="water")
 
         # black water treatment
-
         if "flush toilet" in toilet_types:
             if "septic system" in wastewater_systems:
                 self.components.update({("septic_system", "black_water_septic"): {"water_in_bus": "black-water-bus", "water_out_bus": "wwtp-ip-water-bus"}})
@@ -138,9 +137,18 @@ class ScenarioBuilder:
         # grey water treatment
 
         if "septic system" in wastewater_systems:
-            self.components.update({("septic_system", "grey_water_septic"): {"water_in_bus": "grey-water-bus", "water_out_bus": "wwtp-ip-water-bus"}})
-            # to update attributes if survey provides it
-            # self.components[("septic_system", "grey_water_septic")].update({"capacity": 100})
+            component_key = self.add_single_component(
+                component_type="septic_system",
+                component_name="grey_water_septic",
+                component_attrs= {
+                    "water_in_bus": "grey-water-bus",
+                    "water_out_bus": "wwtp-ip-water-bus"
+                }
+            )
+            capacity = survey["criteria_7.1.0"]
+            if capacity is not None:
+                # to update attributes if survey provides it
+                self.components[component_key].update({"capacity": capacity})
         elif "constructed wetland" in wastewater_systems:
             self.components.update({("constructed_wetland", "grey_water_cw"): {"water_in_bus": "grey-water-bus", "water_out_bus": "wwtp-ip-water-bus"}})
             # to update attributes if survey provides it
@@ -160,7 +168,8 @@ class ScenarioBuilder:
         else:
             # decentralized waste water treatment plant
             # default addition of this component
-            self.components.update({"decentralized_waste_water_treatment_plant": {"water_in_bus": "wwtp-ip-water-bus", "water_out_bus": "wwtp-op-water-bus"}})
+
+            self.components.update({("decentralized_waste_water_treatment_plant","decentralized_waste_water_treatment_plant"): {"water_in_bus": "wwtp-ip-water-bus", "water_out_bus": "wwtp-op-water-bus"}})
             if "decentralized waste water treatment plant" in wastewater_systems:
                 # to update attributes if survey provides it
                 # self.components["decentralized_waste_water_treatment_plant"].update({"capacity": 100})
@@ -168,7 +177,7 @@ class ScenarioBuilder:
 
         # water recycling and reuse system
         # default addition of this component
-        self.components.update({"water_reuse_system": {"water_in_bus": "wwtp-op-water-bus", "water_out_bus": "service-water-bus"}})
+        self.add_single_component("water_reuse_system", component_attrs={"water_in_bus": "wwtp-op-water-bus", "water_out_bus": "service-water-bus"})
         if "water recycling and reuse system" in wastewater_systems:
             # to update attributes if survey provides it
             #self.components["water_reuse_system"].update({"capacity": 100})
@@ -403,6 +412,19 @@ class ScenarioBuilder:
                 component_params["name"] = component_key[1]
         return component_params
 
+    def add_single_component(self, component_type, component_name=None, component_attrs=None):
+
+        if component_attrs is None:
+            component_attrs = {}
+
+        if component_name is None:
+            component_key = (component_type, component_type)
+        elif not isinstance(component_key, tuple):
+            raise TypeError("The component key provided is neither a string not a tuple")
+        else:
+            component_key = (component_type, component_name)
+        self.components.update({component_key: component_attrs})
+        return component_key
 
     def add_sequences(self, custom_timeseries=None):
         """
