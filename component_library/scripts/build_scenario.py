@@ -372,7 +372,7 @@ class ScenarioBuilder:
                 component_df[selected_columns].to_csv(ofname, index=False, sep=";")
 
 
-        else:
+            else:
                 logging.warning(f"The component {component_key} is not in the available component list {', '.join([comp for comp in AVAILABLE_COMPONENTS])}")
 
         dp.save(os.path.join(self.scenario_folder, "datapackage.json"))
