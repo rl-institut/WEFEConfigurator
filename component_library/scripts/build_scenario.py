@@ -193,7 +193,7 @@ class ScenarioBuilder:
     def download_demand_data(self):
         if not os.path.exists(self.demand_data_path):
             # TODO: empty df for now, add real data download later
-            df = pd.DataFrame
+            df = pd.DataFrame(columns=["dummy"])
             df.to_csv(self.demand_data_path, index=False)
 
     @property
@@ -551,7 +551,7 @@ class ScenarioBuilder:
             # TODO: Check possible issues with demand data and weather data,
             #  I assumed weather data to always be of correct length while demand data may be flexible in length
             if len(weather_df) != len(demand_df):
-                logging.warning(f"Length mismatch between {self.demand_data} and {self.weather_data}.")
+                logging.warning(f"Length mismatch between {self.demand_data_path} and {self.weather_data_path}.")
 
             if demand_df.dropna(how="all").empty:
                 profiles_len = len(weather_df)
