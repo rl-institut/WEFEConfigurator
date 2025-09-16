@@ -57,6 +57,7 @@ class ScenarioBuilder:
         self.components = {}
         self.wished_components = {}
         self.weather_data_path = "weather_data.csv"
+        self.demand_data_path = "demand_data.csv"
         self.scenario_folder = self.create_scenario_folder()
 
 
@@ -189,10 +190,23 @@ class ScenarioBuilder:
     def scenario_component_folder(self):
         return os.path.join(self.scenario_folder, "data", "elements")
 
+    def download_demand_data(self):
+        if not os.path.exists(self.demand_data_path):
+            # TODO: empty df for now, add real data download later
+            df = pd.DataFrame
+            df.to_csv(self.demand_data_path, index=False)
+
+    @property
+    def demand_data(self):
+        if not os.path.exists(self.demand_data_path):
+            self.download_demand_data()
+
+        return pd.read_csv(self.demand_data_path)
+
     def download_weather_data(self):
         if not os.path.exists(self.weather_data_path):
             df = weather_data.get_data()
-            df.to_csv(self.weather_data_path,index=False)
+            df.to_csv(self.weather_data_path, index=False)
 
     @property
     def weather_data(self):
@@ -201,6 +215,8 @@ class ScenarioBuilder:
 
         return pd.read_csv(self.weather_data_path)
 
+    # TODO: put together demand_data, weather_data and others to profiles_data or sequences_data
+    #  and process all together as one df
     @property
     def process_weather_data(self):
         """
@@ -223,6 +239,55 @@ class ScenarioBuilder:
         )
 
         return weather_df
+
+
+    def add_loads(self):
+        """
+        Add load.csv to the energy system based on demand_data.csv.
+        --------------------------
+        ATTENTION regarding the variable names:
+        "demand" refers to the actual data (from WEFEDemand)
+        "load" refers to the load.csv from the component library
+        profiles.csv basically maps: load_name -> demand_name
+
+        "usual" workflow:
+        AVAILABLE_COMPONENTS
+        -> component_type: name_of_the_csv (load)
+        -> get the load_name
+        -> profiles.csv for mapping (is in AVAILABLE_COMPONENTS itself)
+        -> get the demand_name
+        
+        I need a reversed workflow because I got the demand_name and map it to load_name
+        to get the modified component (load).
+        
+        I assume "load.csv" and "profiles.csv" to be the only necessary components and that they will not be renamed.
+
+        I assume the demands to be unique (one for electricity, one for drinking water, ...) so in the load.csv,
+        there will only be one row for every component (sink with demand profile) using the predefined component name.
+        """
+        demand_df = self.demand_data
+        demands_to_add = demand_df.columns
+
+        # TODO: properly modify and save datapackage (meta)data
+        dp = self.scenario_datapackage
+        dp_ref = self.reference_datapackage
+
+        resource = dp_ref.get_resource("load")
+        load_df = pd.DataFrame.from_records(resource.read(keyed=True))
+
+        resource = dp_ref.get_resource("profiles")
+        profiles_df = pd.DataFrame.from_records(resource.read(keyed=True))
+
+        loads_to_add = []
+        for demand in demands_to_add:
+            matching_loads = profiles_df.columns[(profiles_df.iloc[0] == demand).values].tolist()
+            loads_to_add.extend(matching_loads)
+
+        filtered_load_df = load_df[load_df["profile"].isin(loads_to_add)]
+
+        # Save the required loads as a csv in the scenario component folder
+        ofname = os.path.join(self.scenario_component_folder, "load.csv")
+        filtered_load_df.to_csv(ofname, index=False, sep=";")
 
 
     def process_survey(self, survey):
@@ -475,17 +540,33 @@ class ScenarioBuilder:
             if len(profiles_to_add) == 0:
                 print(f"No profiles listed within the component for the '{self.scenario_folder.split(os.sep)[-1]}' datapage. If you think it is an error, double check the foreign keys")
 
+            # TODO: process all profiles data into one df that shall be imported here
             # Get processed weather data
             weather_df = self.process_weather_data
-            weather_data_len = len(weather_df)
 
-            # Get blueprint profiles from component library for mapping
+            # Get demand data
+            demand_df = self.demand_data
+
+            # Check data profiles length
+            # TODO: Check possible issues with demand data and weather data,
+            #  I assumed weather data to always be of correct length while demand data may be flexible in length
+            if len(weather_df) != len(demand_df):
+                logging.warning(f"Length mismatch between {self.demand_data} and {self.weather_data}.")
+
+            if demand_df.dropna(how="all").empty:
+                profiles_len = len(weather_df)
+                logging.warning(f"{self.demand_data_path} seems to be effectively empty")
+                logging.info(f"{self.weather_data_path} will be used to set the time index of the model.")
+            else:
+                profiles_len = len(demand_df)
+                logging.info(f"{self.demand_data_path} will be used to set the time index of the model.")
+
+            # Get blueprint profile names from component library for mapping
             lib_profiles_path = os.path.join(lib_dir, "WIP_components", "data", "sequences", "profiles.csv")
             lib_profiles_df = pd.read_csv(lib_profiles_path, sep=";")
 
-            # Create DF for the scenario profiles and match index with weather data
-            scen_profiles_df = pd.DataFrame(columns=profiles_to_add)
-            scen_profiles_df = scen_profiles_df.reindex(range(weather_data_len))
+            # Create DF for the scenario profiles and match index with profiles length
+            scen_profiles_df = pd.DataFrame(columns=profiles_to_add, index=range(profiles_len))
 
             # If timeindex col exists: extract year (of first entry), else: set year to 2022 (according to weather data)
             if "timeindex" in scen_profiles_df.columns:
@@ -497,7 +578,7 @@ class ScenarioBuilder:
             # Add timeindex column in right format and length
             timeindex = pd.date_range(
                 start=f"{scen_profiles_year}-01-01",
-                periods=weather_data_len,
+                periods=profiles_len,
                 freq="h",
                 tz="UTC"
             )
@@ -506,18 +587,19 @@ class ScenarioBuilder:
             # Compare with profiles from library profiles csv and in case of a match, populate with data from weather df
             for profile in profiles_to_add:
                 if profile in lib_profiles_df.columns:
-                    weather_data_match = str(lib_profiles_df[profile].iloc[0])
-                    if weather_data_match in weather_df.columns:
-                        scen_profiles_df[profile] = weather_df[weather_data_match]
+                    matching_col = str(lib_profiles_df[profile].iloc[0])
+                    if matching_col in weather_df.columns:
+                        scen_profiles_df[profile] = weather_df[matching_col].reindex(range(profiles_len)).values
+                    elif matching_col in demand_df.columns:
+                        scen_profiles_df[profile] = demand_df[matching_col].reindex(range(profiles_len)).values
                     else:
-                        print(
-                            f"Profile '{profile}' is not in the available weather data. A dummy profile (series of 1) will be used.")
-                        dummy_series = pd.Series([1] * weather_data_len)
-                        scen_profiles_df[profile] = dummy_series
+                        logging.warning(
+                            f"Profile '{profile}' is not in the available data. A dummy profile (series of 1) will be used.")
+                        scen_profiles_df[profile] = pd.Series([1] * profiles_len)
                 else:
-                    print(
+                    logging.warning(
                         f"Profile '{profile}' is not in the profile library. A dummy profile (series of 1) will be used.")
-                    scen_profiles_df[profile] = pd.Series([1] * weather_data_len)
+                    scen_profiles_df[profile] = pd.Series([1] * profiles_len)
 
             ofname = os.path.join(scenario_sequences_folder, "profiles.csv")
             scen_profiles_df.to_csv(ofname, index=False, sep=";")
@@ -666,6 +748,10 @@ if __name__=="__main__":
     scenario.waste_water_systems_postprocessing(survey_answers)
     print(scenario.components)
     #scenario.water_systems_postprocessing()
+
+    # Add a load.csv component based on demand data from WEFEDemand
+    scenario.add_loads()
+
     # adding the component to the datapackge from the component library based on the list of component
     # to add we got from the survey
     scenario.add_components()
