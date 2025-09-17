@@ -16,8 +16,13 @@ riverflow-bus;bus;True;water
 biofuel-bus;bus;True;fuel
 tap-water-bus;bus;True;water
 human-feces-bus;bus;True;feces
-human-urin-bus;bus;True;urin
+human-urine-bus;bus;True;urine
+animal-feces-bus;bus;True;feces
+animal-urine-bus;bus;True;urine
 black-water-bus;bus;True;water
 grey-water-bus;bus;True;water
 wwtp-ip-water-bus;bus;True;water
 wwtp-op-water-bus;bus;True;water
+biomass-waste-bus;bus;True;biomass
+dry-feces-bus;bus;True;dry-feces
+compost-bus;bus;True;compost

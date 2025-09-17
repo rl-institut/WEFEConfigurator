@@ -8,7 +8,7 @@ nanofiltration;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec
 ceramic_filter;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Ceramic Filter
 slow_sand_filter;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Slow Sand Filter
 uv_disinfection;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;UV-Disinfection
-adsoprtion;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Adsorption
+adsorption;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Adsorption
 biofiltration;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Biofiltration
 electrodialysis;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Electrodialysis
 ion_exchange;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Ion Exchange
