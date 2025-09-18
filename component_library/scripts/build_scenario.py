@@ -88,6 +88,26 @@ class ScenarioBuilder:
         # This is a tradeoff between efficiency of survey processing and being able to treat special cases as we would
         # like to and make conditional choices (like add this component only to the drinking water bus and only if quesiton XYZ was answered with ...)
 
+        # Vivek's attempt 5
+        # works dont touch it: this is my understanding of how i can use answers to get the mapping from component mapping
+        # errors with process_survey function line 292 resolve later in the night
+        if survey["criteria_4_GW.1"] is not None:
+            salinity_value_component = self.mapping["4_GW.1"]["map_answer"]["salinity"]
+            salinity_value = survey["criteria_4_GW.1"]
+            salinity_component_list = salinity_value_component.get("component", [])
+            print(salinity_value)  # float
+            print(salinity_component_list)  # list of components for salinity
+        if survey["criteria_4_GW.2"] is not None:
+            metals_selected = survey["criteria_4_GW.2"]
+            print(metals_selected)
+        if survey["criteria_4_GW.3"] is not None:
+            chemicals_selected = survey["criteria_4_GW.3"]
+            print(chemicals_selected)
+
+        #self.add_single_component()
+        #self.add_single_bus()
+
+
     def waste_water_systems_postprocessing(self, survey):
         """Go through the survey and implement specific logic regarding the water questions"""
         # water_distinction_question_id = "7"
@@ -272,8 +292,17 @@ class ScenarioBuilder:
 
                             else:
                                  other_answers.append(str(a))
+                        # temporary error solving trick for parallel components
+                        for component in components_to_add:
+                            if isinstance(component, list):
+                                # parallel components: add each one
+                                for subcomponent in component:
+                                    self.components[(subcomponent, subcomponent)] = {}
+                            else:
+                                # single sequential component
+                                self.components[(component, component)] = {}
 
-                        self.components.update({(component,component): {} for component in components_to_add})
+                        #self.components.update({(component,component): {} for component in components_to_add})
                         self.wished_components[question_id] = other_answers
 
                     elif map_to == TYPE_COMPONENT_ATTRIBUTE:
@@ -664,9 +693,9 @@ if __name__=="__main__":
     scenario = ScenarioBuilder(name=f"scenario_{scen_id}", overwrite=False)
     #parse the survey to add components to a list
     scenario.process_survey(survey_answers)
+    scenario.water_systems_postprocessing(survey_answers)
     scenario.waste_water_systems_postprocessing(survey_answers)
     print(scenario.components)
-    #scenario.water_systems_postprocessing()
     # adding the component to the datapackge from the component library based on the list of component
     # to add we got from the survey
     scenario.add_components()
