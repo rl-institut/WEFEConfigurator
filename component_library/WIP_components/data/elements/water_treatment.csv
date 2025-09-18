@@ -14,5 +14,14 @@ electrodialysis;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-ele
 ion_exchange;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Ion Exchange
 simple_oxidation;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Simple Oxidation
 ozonation;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Ozonation
-biological_denitrification;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Biological Denitrifiation
+biological_denitrification;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Biological Denitrification
 photocatalysis;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Photocatalysis
+intake_structure;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Intake Structure
+coarse_bar_screen;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Coarse Bar Screen
+coagulation_flocculation;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Coagulation Flocculation
+distillation;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Distillation
+membrane_distillation;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Membrane Distillation
+boiling;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Boiling
+reverse_osmosis;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Reverse Osmosis
+fine_screen;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Fine Screen
+grit_chamber;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Grit Chamber
