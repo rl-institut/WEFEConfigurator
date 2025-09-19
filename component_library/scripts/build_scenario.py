@@ -81,41 +81,58 @@ class ScenarioBuilder:
 
     def water_systems_postprocessing(self, survey):
 
-        #drinking_water_component_list = []
-        if survey["criteria_2"] == "Yes":
-            #drinking_water_component_list = []
-            #service_water_component_list = []
-            pass
+        def fill_component_list(suffix):
+            unique_slim_component_list = []
+            combined_component_list = []
+            if survey[f"criteria_4{suffix}.1"] is not None:
+                salinity_value = survey[f"criteria_4{suffix}.1"]
+                print(salinity_value)  # float
+                combined_component_list.extend(self.mapping[f"4{suffix}.1"]["map_answer"]["salinity_selected"])
+            if survey[f"criteria_4{suffix}.2"] is not None:
+                metals_selected = survey[f"criteria_4{suffix}.2"]
+                for metal in metals_selected:
+                    print(metal)
+                    combined_component_list.extend(self.mapping[f"4{suffix}.2"]["map_answer"][metal])
+            if survey[f"criteria_4{suffix}.3"] is not None:
+                chemicals_selected = survey[f"criteria_4{suffix}.3"]
+                for chemical in chemicals_selected:
+                    print(chemical)
+                    combined_component_list.extend(self.mapping[f"4{suffix}.3"]["map_answer"][chemical])
+            for item in combined_component_list:
+                if isinstance(item, list):
+                    unique_slim_component_list.extend(item)
+                else:
+                    unique_slim_component_list.append(item)
 
-        unique_slim_component_list = []
-        gw_component_list = []
-        if survey["criteria_4_GW.1"] is not None:
-            salinity_value = survey["criteria_4_GW.1"]
-            print(salinity_value)  # float
-            gw_component_list.extend(self.mapping["4_GW.1"]["map_answer"]["salinity_selected"])
-        if survey["criteria_4_GW.2"] is not None:
-            metals_selected = survey["criteria_4_GW.2"]
-            for metal in metals_selected:
-                print(metal)
-                gw_component_list.extend(self.mapping["4_GW.2"]["map_answer"][metal])
-        if survey["criteria_4_GW.3"] is not None:
-            chemicals_selected = survey["criteria_4_GW.3"]
-            for chemical in chemicals_selected:
-                print(chemical)
-                gw_component_list.extend(self.mapping["4_GW.3"]["map_answer"][chemical])
-        print(gw_component_list)
-        for item in gw_component_list:
-            if isinstance(item, list):
-                unique_slim_component_list.extend(item)
-            else:
-                unique_slim_component_list.append(item)
+            unique_slim_component_list = list(dict.fromkeys(unique_slim_component_list))
+            return unique_slim_component_list
 
-        unique_slim_component_list = list(dict.fromkeys(unique_slim_component_list))
-        print(unique_slim_component_list)
+        if survey["criteria_2"] == "Yes": # set Yes currently
+            suffixes_a = ["_GWa", "_DSa", "_RCa", "_La"] # drinking water
+            suffixes_b = ["_GWb", "_DSb", "_RCb", "_Lb"] # service water
+            drinking_water_component_list = []
+            service_water_component_list = []
+            for a_suffix, b_suffix in zip(suffixes_a, suffixes_b):
+                drinking_water_component_list.extend(fill_component_list(a_suffix))
+                service_water_component_list.extend(fill_component_list(b_suffix))
+            drinking_water_component_list = list(dict.fromkeys(drinking_water_component_list))
+            service_water_component_list = list(dict.fromkeys(service_water_component_list))
+            print("DW WC list")
+            print(drinking_water_component_list)
+            print("SW WC list")
+            print(service_water_component_list)
+        else:
+            suffixes = ["_GW", "_DS", "_RC", "_L"] # all water assumed drinking water
+            drinking_water_component_list = []
+            for suffix in suffixes:
+                drinking_water_component_list.extend(fill_component_list(suffix))
+            drinking_water_component_list = list(dict.fromkeys(drinking_water_component_list))
+            print("DW WC list")
+            print(drinking_water_component_list)
+
         #final_water_treatment_train
         #self.add_single_component()
         #self.add_single_bus()
-
 
     def waste_water_systems_postprocessing(self, survey):
         """Go through the survey and implement specific logic regarding the water questions"""

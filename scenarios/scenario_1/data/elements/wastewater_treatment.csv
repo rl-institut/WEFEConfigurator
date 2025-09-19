@@ -1,0 +1,5 @@
+name;type;carrier;tech;expandable;capacity;capacity_cost;marginal_cost;electricity_bus;water_in_bus;water_out_bus;capex;opex_fix;age;lifetime;carrier_cost;resource_cost;land_requirement_factor;ghg_emission_factor;water_consumption_factor;land_requirement;ghg_emissions;water_footprint;annuity
+black_water_cw;water-treatment;water;water-treatment;True;0;261.0909091;;ac-elec-bus;black-water-bus;wwtp-ip-water-bus;100;20;0;20;0;0;0.1;0.045;0;;;;
+grey_water_cw;water-treatment;water;water-treatment;True;0;261.0909091;;ac-elec-bus;grey-water-bus;wwtp-ip-water-bus;100;20;0;20;0;0;0.1;0.045;0;;;;
+decentralized_waste_water_treatment_plant;water-treatment;water;water-treatment;True;0;261.0909091;;ac-elec-bus;wwtp-ip-water-bus;wwtp-op-water-bus;100;20;0;20;0;0;0.1;0.045;0;;;;
+water_reuse_system;water-treatment;water;water-treatment;True;0;261.0909091;;ac-elec-bus;wwtp-op-water-bus;service-water-bus;100;20;0;20;0;0;0.1;0.045;0;;;;
