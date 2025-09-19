@@ -2464,11 +2464,9 @@
         }
     },
     "4_GW.1": {
-        "map_to": ["attribute", "component"],
+        "map_to": "component",
         "map_answer": {
-            "salinity": {
-                "attribute": "float",
-                "component": [
+            "salinity_selected": [
                     "intake_structure",
                     "coarse_bar_screen",
                     "cartridge_filter",
@@ -2491,8 +2489,7 @@
                         "uv_disinfection",
                         "chlorination"
                     ]
-                ]
-            }
+            ]
         }
     },
     "4_GW.2": {
@@ -3003,11 +3000,9 @@
         }
     },
     "4_DS.1": {
-        "map_to": ["attribute", "component"],
+        "map_to": "component",
         "map_answer": {
-            "salinity": {
-                "attribute": "float",
-                "component": [
+            "salinity_selected": [
                     "intake_structure",
                     "coarse_bar_screen",
                     "cartridge_filter",
@@ -3030,8 +3025,7 @@
                         "uv_disinfection",
                         "chlorination"
                     ]
-                ]
-            }
+            ]
         }
     },
     "4_DS.2": {
@@ -3542,11 +3536,9 @@
         }
     },
     "4_RC.1": {
-        "map_to": ["attribute", "component"],
+        "map_to": "component",
         "map_answer": {
-            "salinity": {
-                "attribute": "float",
-                "component": [
+            "salinity_selected": [
                     "intake_structure",
                     "coarse_bar_screen",
                     "cartridge_filter",
@@ -3569,8 +3561,7 @@
                         "uv_disinfection",
                         "chlorination"
                     ]
-                ]
-            }
+            ]
         }
     },
     "4_RC.2": {
@@ -4081,11 +4072,9 @@
         }
     },
     "4_L.1": {
-        "map_to": ["attribute", "component"],
+        "map_to": "component",
         "map_answer": {
-            "salinity": {
-                "attribute": "float",
-                "component": [
+            "salinity_selected": [
                     "intake_structure",
                     "coarse_bar_screen",
                     "cartridge_filter",
@@ -4108,8 +4097,7 @@
                         "uv_disinfection",
                         "chlorination"
                     ]
-                ]
-            }
+            ]
         }
     },
     "4_L.2": {
@@ -4664,11 +4652,9 @@
         }
     },
     "4_GWa.1": {
-        "map_to": ["attribute", "component"],
+        "map_to": "component",
         "map_answer": {
-            "salinity": {
-                "attribute": "float",
-                "component": [
+            "salinity_selected": [
                     "intake_structure",
                     "coarse_bar_screen",
                     "cartridge_filter",
@@ -4691,8 +4677,7 @@
                         "uv_disinfection",
                         "chlorination"
                     ]
-                ]
-            }
+            ]
         }
     },
     "4_GWa.2": {
@@ -5203,11 +5188,9 @@
         }
     },
     "4_DSa.1": {
-        "map_to": ["attribute", "component"],
+        "map_to": "component",
         "map_answer": {
-            "salinity": {
-                "attribute": "float",
-                "component": [
+            "salinity_selected": [
                     "intake_structure",
                     "coarse_bar_screen",
                     "cartridge_filter",
@@ -5230,8 +5213,7 @@
                         "uv_disinfection",
                         "chlorination"
                     ]
-                ]
-            }
+            ]
         }
     },
     "4_DSa.2": {
@@ -5742,11 +5724,9 @@
         }
     },
     "4_RCa.1": {
-        "map_to": ["attribute", "component"],
+        "map_to": "component",
         "map_answer": {
-            "salinity": {
-                "attribute": "float",
-                "component": [
+            "salinity_selected": [
                     "intake_structure",
                     "coarse_bar_screen",
                     "cartridge_filter",
@@ -5769,8 +5749,7 @@
                         "uv_disinfection",
                         "chlorination"
                     ]
-                ]
-            }
+            ]
         }
     },
     "4_RCa.2": {
@@ -6281,11 +6260,9 @@
         }
     },
     "4_La.1": {
-        "map_to": ["attribute", "component"],
+        "map_to": "component",
         "map_answer": {
-            "salinity": {
-                "attribute": "float",
-                "component": [
+            "salinity_selected": [
                     "intake_structure",
                     "coarse_bar_screen",
                     "cartridge_filter",
@@ -6308,8 +6285,7 @@
                         "uv_disinfection",
                         "chlorination"
                     ]
-                ]
-            }
+            ]
         }
     },
     "4_La.2": {
@@ -6864,11 +6840,9 @@
         }
     },
     "4_GWb.1": {
-        "map_to": ["attribute", "component"],
+        "map_to": "component",
         "map_answer": {
-            "salinity": {
-                "attribute": "float",
-                "component": [
+            "salinity_selected": [
                     "intake_structure",
                     "coarse_bar_screen",
                     "cartridge_filter",
@@ -6888,8 +6862,7 @@
                         "uv_disinfection",
                         "chlorination"
                     ]
-                ]
-            }
+          ]
         }
     },
     "4_GWb.2": {
@@ -7330,11 +7303,9 @@
         }
     },
     "4_DSb.1": {
-        "map_to": ["attribute", "component"],
+        "map_to": "component",
         "map_answer": {
-            "salinity": {
-                "attribute": "float",
-                "component": [
+            "salinity_selected": [
                     "intake_structure",
                     "coarse_bar_screen",
                     "cartridge_filter",
@@ -7354,8 +7325,7 @@
                         "uv_disinfection",
                         "chlorination"
                     ]
-                ]
-            }
+          ]
         }
     },
     "4_DSb.2": {
@@ -7796,11 +7766,9 @@
         }
     },
     "4_RCb.1": {
-        "map_to": ["attribute", "component"],
+        "map_to": "component",
         "map_answer": {
-            "salinity": {
-                "attribute": "float",
-                "component": [
+            "salinity_selected": [
                     "intake_structure",
                     "coarse_bar_screen",
                     "cartridge_filter",
@@ -7820,8 +7788,7 @@
                         "uv_disinfection",
                         "chlorination"
                     ]
-                ]
-            }
+          ]
         }
     },
     "4_RCb.2": {
@@ -8262,11 +8229,9 @@
         }
     },
     "4_Lb.1": {
-        "map_to": ["attribute", "component"],
+        "map_to": "component",
         "map_answer": {
-            "salinity": {
-                "attribute": "float",
-                "component": [
+            "salinity_selected": [
                     "intake_structure",
                     "coarse_bar_screen",
                     "cartridge_filter",
@@ -8286,8 +8251,7 @@
                         "uv_disinfection",
                         "chlorination"
                     ]
-                ]
-            }
+          ]
         }
     },
     "4_Lb.2": {

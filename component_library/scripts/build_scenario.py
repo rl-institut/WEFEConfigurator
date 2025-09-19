@@ -80,30 +80,39 @@ class ScenarioBuilder:
         return scenario_folder
 
     def water_systems_postprocessing(self, survey):
-        """Go through the survey and implement specific logic regarding the water questions"""
-        water_distinction_question_id = "2"
-        # TODO look answer to question 2 and implement specific logic there
-        # in this method, one needs to refer to the question number as they are hard coded in the survey, that means one
-        # need to pay attention if the question numbering changes to also carry out the changes here
-        # This is a tradeoff between efficiency of survey processing and being able to treat special cases as we would
-        # like to and make conditional choices (like add this component only to the drinking water bus and only if quesiton XYZ was answered with ...)
 
-        # Vivek's attempt 5
-        # works dont touch it: this is my understanding of how i can use answers to get the mapping from component mapping
-        # errors with process_survey function line 292 resolve later in the night
+        #drinking_water_component_list = []
+        if survey["criteria_2"] == "Yes":
+            #drinking_water_component_list = []
+            #service_water_component_list = []
+            pass
+
+        unique_slim_component_list = []
+        gw_component_list = []
         if survey["criteria_4_GW.1"] is not None:
-            salinity_value_component = self.mapping["4_GW.1"]["map_answer"]["salinity"]
             salinity_value = survey["criteria_4_GW.1"]
-            salinity_component_list = salinity_value_component.get("component", [])
             print(salinity_value)  # float
-            print(salinity_component_list)  # list of components for salinity
+            gw_component_list.extend(self.mapping["4_GW.1"]["map_answer"]["salinity_selected"])
         if survey["criteria_4_GW.2"] is not None:
             metals_selected = survey["criteria_4_GW.2"]
-            print(metals_selected)
+            for metal in metals_selected:
+                print(metal)
+                gw_component_list.extend(self.mapping["4_GW.2"]["map_answer"][metal])
         if survey["criteria_4_GW.3"] is not None:
             chemicals_selected = survey["criteria_4_GW.3"]
-            print(chemicals_selected)
+            for chemical in chemicals_selected:
+                print(chemical)
+                gw_component_list.extend(self.mapping["4_GW.3"]["map_answer"][chemical])
+        print(gw_component_list)
+        for item in gw_component_list:
+            if isinstance(item, list):
+                unique_slim_component_list.extend(item)
+            else:
+                unique_slim_component_list.append(item)
 
+        unique_slim_component_list = list(dict.fromkeys(unique_slim_component_list))
+        print(unique_slim_component_list)
+        #final_water_treatment_train
         #self.add_single_component()
         #self.add_single_bus()
 
@@ -279,19 +288,25 @@ class ScenarioBuilder:
                         #     import pdb;pdb.set_trace()
                         # TODO here for bus handling
                         components_to_add = []
+                        if question_id.startswith("4_") and question_id.endswith(".1") and isinstance(answer, (int, float)):
+                            # treat any float as salinity selected
+                            components_to_add.extend(map_answer["salinity_selected"])
+                            other_answers = []
 
-                        # Align answer structure: Should always be of type "list" to match component mapping
-                        answer = [answer] if not isinstance(answer, list) else answer
+                        else:
+                            # Align answer structure: Should always be of type "list" to match component mapping
+                            answer = [answer] if not isinstance(answer, list) else answer
 
-                        # loop over the answers provided and add components to the energy system if the answer finds
-                        # itself within the survey answer mapping. If the answer
-                        other_answers = []
-                        for a in answer:
-                            if a in map_answer:
-                                components_to_add.extend(map_answer[a])
+                            # loop over the answers provided and add components to the energy system if the answer finds
+                            # itself within the survey answer mapping. If the answer
+                            other_answers = []
+                            for a in answer:
+                                if a in map_answer:
+                                    components_to_add.extend(map_answer[a])
 
-                            else:
-                                 other_answers.append(str(a))
+                                else:
+                                     other_answers.append(str(a))
+
                         # temporary error solving trick for parallel components
                         for component in components_to_add:
                             if isinstance(component, list):
@@ -695,7 +710,7 @@ if __name__=="__main__":
     scenario.process_survey(survey_answers)
     scenario.water_systems_postprocessing(survey_answers)
     scenario.waste_water_systems_postprocessing(survey_answers)
-    print(scenario.components)
+    # print(scenario.components)
     # adding the component to the datapackge from the component library based on the list of component
     # to add we got from the survey
     scenario.add_components()
