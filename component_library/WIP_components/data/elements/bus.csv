@@ -26,3 +26,5 @@ wwtp-op-water-bus;bus;True;water
 biomass-waste-bus;bus;True;biomass
 dry-feces-bus;bus;True;dry-feces
 compost-bus;bus;True;compost
+water-in-bus;bus;True;water
+water-out-bus;bus;True;water
