@@ -10,7 +10,7 @@ import shutil
 
 from utils import AVAILABLE_COMPONENTS, AVAILABLE_SEQUENCES, COMPONENT_TEMPLATES_PATH
 from analyse_survey import create_components_list
-#from water_treatment_dict import
+from water_treatment_dict import water_treatment_train
 
 import weather_data
 # TODO this needs to work standalone as well as a service
@@ -107,6 +107,24 @@ class ScenarioBuilder:
             unique_slim_component_list = list(dict.fromkeys(unique_slim_component_list))
             return unique_slim_component_list
 
+        def arrange_components(main_list, component_list):
+            arranged_component_list = []
+            for component in main_list:
+                if isinstance(component, list): # parallel component adding
+                    parallel_components = [
+                        parallel
+                        for parallel in component
+                        if parallel in component_list]
+                    # single component from parallel choices
+                    if len(parallel_components) == 1: arranged_component_list.append(parallel_components[0])
+                    # multiple components from parallel choices
+                    elif len(parallel_components) > 1: arranged_component_list.append(parallel_components)
+                else: # single component adding
+                    if component in component_list:
+                        arranged_component_list.append(component)
+
+            return arranged_component_list
+
         if survey["criteria_2"] == "Yes": # set Yes currently
             suffixes_a = ["_GWa", "_DSa", "_RCa", "_La"] # drinking water
             suffixes_b = ["_GWb", "_DSb", "_RCb", "_Lb"] # service water
@@ -117,9 +135,11 @@ class ScenarioBuilder:
                 service_water_component_list.extend(fill_component_list(b_suffix))
             drinking_water_component_list = list(dict.fromkeys(drinking_water_component_list))
             service_water_component_list = list(dict.fromkeys(service_water_component_list))
-            print("DW WC list")
+            print("arranged DW WC list")
+            drinking_water_component_list = arrange_components(water_treatment_train["main_list"], drinking_water_component_list)
             print(drinking_water_component_list)
-            print("SW WC list")
+            print("arranged SW WC list")
+            service_water_component_list = arrange_components(water_treatment_train["main_list"], service_water_component_list)
             print(service_water_component_list)
         else:
             suffixes = ["_GW", "_DS", "_RC", "_L"] # all water assumed drinking water
@@ -127,7 +147,8 @@ class ScenarioBuilder:
             for suffix in suffixes:
                 drinking_water_component_list.extend(fill_component_list(suffix))
             drinking_water_component_list = list(dict.fromkeys(drinking_water_component_list))
-            print("DW WC list")
+            print("arranged DW WC list")
+            drinking_water_component_list = arrange_components(water_treatment_train["main_list"], drinking_water_component_list)
             print(drinking_water_component_list)
 
         #final_water_treatment_train
@@ -216,7 +237,7 @@ class ScenarioBuilder:
             #self.components["water_reuse_system"].update({"capacity": 100})
             pass
 
-        print(self.components)
+        #print(self.components)
 
     @property
     def reference_datapackage(self):
