@@ -327,14 +327,14 @@
                         }
                     },
                     {
-                        "fields": "fuel_bus",
+                        "fields": "water_in_bus",
                         "reference": {
                             "resource": "bus",
                             "fields": "name"
                         }
                     },
                     {
-                        "fields": "heat_bus",
+                        "fields": "water_out_bus",
                         "reference": {
                             "resource": "bus",
                             "fields": "name"
