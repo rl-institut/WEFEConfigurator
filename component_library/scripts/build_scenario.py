@@ -125,6 +125,28 @@ class ScenarioBuilder:
 
             return arranged_component_list
 
+        def create_component_dict(component_list, entry_bus, water_type):
+            prefix = "SW_" if water_type.lower() == "service" else "DW_"
+            components_dict = {}
+            counter = {} # counts the number of times a component appears in the train
+            previous_out_bus = entry_bus # entry bus to the treatment train
+            for index, component in enumerate(component_list):
+                if isinstance(component, list): # handling parallel components
+                    parallel_out_bus = f"{prefix}parallel_{index+1}_out_bus"
+                    for parallel in component:
+                        counter[parallel] = counter.get(parallel, 0) + 1
+                        key = (f"{parallel}", f"{prefix}{parallel}_{counter[parallel]}")
+                        components_dict[key] = {"water_in_bus":previous_out_bus,"water_out_bus":parallel_out_bus}
+                    previous_out_bus = parallel_out_bus
+                else:
+                    counter[component] = counter.get(component, 0) + 1
+                    out_bus = f"{prefix}{component}_{counter[component]}_out_bus"
+                    key = (f"{component}", f"{prefix}{component}_{counter[component]}")
+                    components_dict[key] = {"water_in_bus": previous_out_bus,"water_out_bus": out_bus}
+                    previous_out_bus = out_bus
+
+            return components_dict
+
         if survey["criteria_2"] == "Yes": # set Yes currently
             suffixes_a = ["_GWa", "_DSa", "_RCa", "_La"] # drinking water
             suffixes_b = ["_GWb", "_DSb", "_RCb", "_Lb"] # service water
@@ -135,21 +157,24 @@ class ScenarioBuilder:
                 service_water_component_list.extend(fill_component_list(b_suffix))
             drinking_water_component_list = list(dict.fromkeys(drinking_water_component_list))
             service_water_component_list = list(dict.fromkeys(service_water_component_list))
-            print("arranged DW WC list")
+            print("DW treatment dictionary")
             drinking_water_component_list = arrange_components(water_treatment_train["main_list"], drinking_water_component_list)
-            print(drinking_water_component_list)
-            print("arranged SW WC list")
+            drinking_water_treatment_dict = create_component_dict(drinking_water_component_list, entry_bus = "water-in-bus", water_type = "drinking")
+            print(drinking_water_treatment_dict)
+            print("SW treatment dictionary")
             service_water_component_list = arrange_components(water_treatment_train["main_list"], service_water_component_list)
-            print(service_water_component_list)
+            service_water_treatment_dict = create_component_dict(service_water_component_list, entry_bus = "water-in-bus", water_type = "service")
+            print(service_water_treatment_dict)
         else:
             suffixes = ["_GW", "_DS", "_RC", "_L"] # all water assumed drinking water
             drinking_water_component_list = []
             for suffix in suffixes:
                 drinking_water_component_list.extend(fill_component_list(suffix))
             drinking_water_component_list = list(dict.fromkeys(drinking_water_component_list))
-            print("arranged DW WC list")
+            print("DW treatment dictionary")
             drinking_water_component_list = arrange_components(water_treatment_train["main_list"], drinking_water_component_list)
-            print(drinking_water_component_list)
+            drinking_water_treatment_dict = create_component_dict(drinking_water_component_list, entry_bus="water-in-bus", water_type="drinking")
+            print(drinking_water_treatment_dict)
 
         #final_water_treatment_train
         #self.add_single_component()
