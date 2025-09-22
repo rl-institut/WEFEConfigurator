@@ -57,6 +57,7 @@ class ScenarioBuilder:
         self.subq_mapping = SUB_QUESTION_MAPPING
         self.components = {}
         self.wished_components = {}
+        self.additional_busses = []
         self.weather_data_path = "weather_data.csv"
         self.scenario_folder = self.create_scenario_folder()
 
@@ -508,15 +509,19 @@ class ScenarioBuilder:
 
     def add_single_component(self, component_type, component_name=None, component_attrs=None):
 
-        if component_attrs is None:
+        if not isinstance(component_attrs, dict):
             component_attrs = {}
+            logging.warning(f"The component attributes {component_attrs} must be of type dict! Will be ignored...")
 
         if component_name is None:
             component_key = (component_type, component_type)
-        elif not isinstance(component_key, tuple):
-            raise TypeError("The component key provided is neither a string not a tuple")
-        else:
+        elif isinstance(component_name, tuple):
+            component_key = component_name
+        elif isinstance(component_name, str):
             component_key = (component_type, component_name)
+        else:
+            logging.warning(f"The component name {component_name} is neither a string nor a tuple")
+
         self.components.update({component_key: component_attrs})
         return component_key
 
@@ -635,6 +640,11 @@ class ScenarioBuilder:
         # i.e. that each of the component attribute value correspond to a timeseries header
 
     def add_single_bus(self, name, balanced=True, carrier=""):
+        # Check if bus is in component_lib, if not: Add to additional busses so that it will be ignored later
+        dp_ref = self.reference_datapackage
+        bus_ref = self.get_single_component_from_datapackage(dp=dp_ref, resource_name="bus", component_name=name)
+        if bus_ref.empty:
+            self.additional_busses.append(name)
 
         ofname = os.path.join(self.scenario_component_folder, "bus.csv")
         bus = pd.Series({"name": name, "type": "bus", "balanced": balanced, "carrier": carrier}).to_frame().T
@@ -648,7 +658,13 @@ class ScenarioBuilder:
             else:
                 # If the bus already exists, replace it
                 busses_df.set_index("name", drop=False, inplace=True)
-                busses_df.loc[name] = bus
+                try:
+                    # TODO: ask chatgpt about the indexing error...
+                    busses_df.loc[name] = bus
+                except Exception:
+                    # import pdb
+                    # pdb.set_trace()
+                    pass
         else:
             busses_df = bus
         # Save the components back to the csv file
@@ -692,7 +708,10 @@ class ScenarioBuilder:
                                 # check the bus names are listed in the component library
                                 for bus_name in bus_names:
                                     if bus_name not in df_ref_buses.name.values:
-                                        raise KeyError(f"In the column '{col_name}' of the resource '{res.name}' the bus {bus_name} is listed, however it is missing from the component library resource 'bus.csv'")
+                                        if bus_name not in self.additional_busses:
+                                            # import pdb
+                                            # pdb.set_trace()
+                                            raise KeyError(f"In the column '{col_name}' of the resource '{res.name}' the bus {bus_name} is listed, however it is missing from the component library resource 'bus.csv'")
 
                                 buses_to_add.extend(bus_names)
                             else:
