@@ -84,16 +84,16 @@
         "map_to": "component",
         "map_answer": {
             "wheat": [
-                "mimo-crop"
+                "wheat"
             ],
             "rice": [
-                "mimo-crop"
+                "rice"
             ],
             "soy bean": [
-                ""
+                "soy-bean"
             ],
             "dry bean": [
-                ""
+                "dry-bean"
             ],
             "peanut": [
                 ""
@@ -193,7 +193,7 @@
     "11.1.0": {
         "map_to": "attribute",
         "map_answer": {
-            "installed_capacity": "float"
+            "capacity": "float"
         }
     },
     "11.2.0": {
@@ -209,53 +209,21 @@
         }
     },
     "11.4.0": {
-        "map_to": "component",
+        "map_to": "attribute",
         "map_answer": {
-            "surface irrigation": [
-                "surface-irrigation"
-            ],
-            "center-pivot irrigation": [
-                "center-pivot-irrigation"
-            ],
-            "irrigation sprinkler": [
-                "irrigation-sprinkler"
-            ],
-            "subsurface drip irrigation": [
-                "subsurface-drip-irrigation"
-            ],
-            "drip irrigation": [
-                "drip-irrigation"
-            ],
-            "furrow irrigation": [
-                "furrow-irrigation"
-            ],
-            "basin irrigation": [
-                "basin-irrigation"
-            ],
-            "border irrigation": [
-                "border-irrigation"
-            ],
-            "watering can": [
-                "watering-can"
-            ],
-            "smart irrigation system": [
-                "smart-irrigation"
-            ],
-            "other": [
-                ""
-            ]
+            "irrigation_tech": "string"
         }
     },
     "11.5.0": {
         "map_to": "attribute",
         "map_answer": {
-            "flow_rate": "float"
+            "irrigation_flow": "float"
         }
     },
     "11.1.1": {
         "map_to": "attribute",
         "map_answer": {
-            "installed_capacity": "float"
+            "capacity": "float"
         }
     },
     "11.2.1": {
@@ -271,47 +239,15 @@
         }
     },
     "11.4.1": {
-        "map_to": "component",
+        "map_to": "attribute",
         "map_answer": {
-            "surface irrigation": [
-                ""
-            ],
-            "center-pivot irrigation": [
-                ""
-            ],
-            "irrigation sprinkler": [
-                ""
-            ],
-            "subsurface drip irrigation": [
-                ""
-            ],
-            "drip irrigation": [
-                ""
-            ],
-            "furrow irrigation": [
-                ""
-            ],
-            "basin irrigation": [
-                ""
-            ],
-            "border irrigation": [
-                ""
-            ],
-            "watering can": [
-                ""
-            ],
-            "smart irrigation system": [
-                ""
-            ],
-            "other": [
-                ""
-            ]
+            "irrigation_tech": "string"
         }
     },
     "11.5.1": {
         "map_to": "attribute",
         "map_answer": {
-            "flow_rate": "float"
+            "irrigation_flow": "float"
         }
     },
     "11.1.2": {

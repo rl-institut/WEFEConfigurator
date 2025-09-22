@@ -314,6 +314,110 @@ class ScenarioBuilder:
 
         return component
 
+    def get_single_component_from_datapackage(self, dp, resource_name, component_name):
+        """
+        Returns a component from a single resource (csv file) of a datapackage as a one-row df.
+        ATTENTION: the returned df will be empty if there is no match!
+        """
+        resource = dp.get_resource(resource_name)
+        df = pd.DataFrame.from_records(resource.read(keyed=True))
+        component = df[df["name"] == component_name]
+        # TODO: check uniqueness of resource names
+        #  (if necessary...check if there are already other checks for uniqueness of names in the reference datapackage)
+
+        return component
+
+    def crop_systems_postprocessing(self):
+        """
+        AFTER survey_processing to fetch crop components
+        BEFORE add_components to be able to add extra components based on crop components
+        """
+        dp_ref = self.reference_datapackage
+
+        # Get additional components as reference
+        # TODO: assign these components directly when adding single comp, use busses of "crop" from below
+        sun = self.get_single_component_from_datapackage(dp=dp_ref, resource_name="energy_sources",
+                                                         component_name="solar-radiation")
+        rain = self.get_single_component_from_datapackage(dp=dp_ref, resource_name="water_sources",
+                                                          component_name="precipitation")
+        generic_excess = self.get_single_component_from_datapackage(dp=dp_ref, resource_name="excess",
+                                                                    component_name="generic-excess")
+
+        # loop through components
+        components_so_far = self.components.copy()
+        for (component_type, component_name), component_attributes in components_so_far.items():
+            crop = self.get_single_component_from_datapackage(dp=dp_ref, resource_name="mimo_crops",
+                                                              component_name=component_type)
+            if crop.empty:
+                continue
+
+            # add sources: sun, rain
+            sun_bus = f"{component_name}_{sun['bus'].iloc[0]}"
+            self.add_single_component(component_type=sun['name'].iloc[0],
+                                      component_name=f"{component_name}_{sun['name'].iloc[0]}",
+                                      component_attrs={
+                                          "capacity": component_attributes["capacity"],
+                                          "bus": sun_bus,
+                                          "expandable": False
+                                      }
+                                      )
+            self.add_single_bus(name=sun_bus, balanced=True, carrier=sun["carrier"].iloc[0])
+
+            rain_bus = f"{component_name}_{rain['bus'].iloc[0]}"
+            self.add_single_component(component_type=rain['name'].iloc[0],
+                                      component_name=f"{component_name}_{rain['name'].iloc[0]}",
+                                      component_attrs={
+                                          "capacity": component_attributes["capacity"],
+                                          "bus": rain_bus,
+                                          "expandable": False
+                                        }
+                                      )
+            self.add_single_bus(name=rain_bus, balanced=True, carrier=rain["carrier"].iloc[0])
+
+            # add excess: crops, biomass
+            crop_bus = crop["crop_bus"].iloc[0]
+            self.add_single_component(component_type="generic-excess",
+                                      component_name=f"{component_name}_crop-excess",
+                                      component_attrs={
+                                          "bus": crop_bus,
+                                        }
+                                      )
+            self.add_single_bus(name=crop_bus, balanced=True, carrier=rain["carrier"].iloc[0])
+
+            biomass_bus = crop["biomass_bus"].iloc[0]
+            self.add_single_component(component_type="generic-excess",
+                                      component_name=f"{component_name}_biomass-excess",
+                                      component_attrs={
+                                          "bus": biomass_bus
+                                        }
+                                      )
+            self.add_single_bus(name=biomass_bus, balanced=True, carrier=rain["carrier"].iloc[0])
+
+            # add irrigation as converter
+            # TODO: irrigation-tech-mapping
+            irrigation_map = {
+                "surface irrigation": "surface-irrigation",
+                "smart irrigation system": "smart-irrigation",
+            }
+
+            irrigation = self.get_single_component_from_datapackage(dp=dp_ref, resource_name="irrigation",
+                                    component_name=irrigation_map[component_attributes["irrigation_tech"]])
+            try:
+                irrigation_bus = f"{component_name}_{irrigation['to_bus'].iloc[0]}"
+            except Exception:
+                import pdb
+                pdb.set_trace()
+
+            self.add_single_component(component_type=irrigation['name'].iloc[0],
+                                          component_name=f"{component_name}_{irrigation['name'].iloc[0]}",
+                                          component_attrs={
+                                              "capacity": component_attributes["capacity"],
+                                              "bus": irrigation_bus,
+                                              "expandable": False
+                                          }
+                                          )
+            self.add_single_bus(name=irrigation_bus, balanced=True, carrier=irrigation["carrier"].iloc[0])
+
     @property
     def reference_datapackage(self):
         dp_json = os.path.join(COMPONENT_TEMPLATES_PATH, "datapackage.json")
@@ -917,7 +1021,7 @@ if __name__=="__main__":
     repo_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "scenarios")
     # create_scenario_from_survey_data({}, "test_scenario", repo_path)
 
-    scen_id = 1
+    scen_id = 13
 
     with open(os.path.join(project_dir, "app", f"scenario_{scen_id}_survey_answers.json"), "r") as fp:
         survey_answers =  json.load(fp)
@@ -925,10 +1029,10 @@ if __name__=="__main__":
     scenario = ScenarioBuilder(name=f"scenario_{scen_id}", overwrite=False)
     #parse the survey to add components to a list
     scenario.process_survey(survey_answers)
+
     scenario.water_systems_postprocessing(survey_answers)
     scenario.waste_water_systems_postprocessing(survey_answers)
-    print(scenario.components)
-    #scenario.water_systems_postprocessing()
+    scenario.crop_systems_postprocessing()
 
     # Add a load.csv component based on demand data from WEFEDemand
     scenario.add_loads()

@@ -6,3 +6,4 @@ excess-service-water;excess;service-water-bus;0
 excess-drinking-water;excess;drinking-water-bus;0
 direct_wastewater_disposal;excess;direct-disposal-wastewater-bus;0
 septic_tank;excess;septic-bus;10
+generic-excess;excess;;0
