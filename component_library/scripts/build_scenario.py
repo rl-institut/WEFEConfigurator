@@ -352,6 +352,7 @@ class ScenarioBuilder:
                         #     import pdb;pdb.set_trace()
                         # TODO here for bus handling
                         components_to_add = []
+                        # TODO here make this check independent of question id
                         if question_id.startswith("4_") and question_id.endswith(".1") and isinstance(answer, (int, float)):
                             # treat any float as salinity selected
                             components_to_add.extend(map_answer["salinity_selected"])
@@ -709,8 +710,6 @@ class ScenarioBuilder:
                                 for bus_name in bus_names:
                                     if bus_name not in df_ref_buses.name.values:
                                         if bus_name not in self.additional_busses:
-                                            # import pdb
-                                            # pdb.set_trace()
                                             raise KeyError(f"In the column '{col_name}' of the resource '{res.name}' the bus {bus_name} is listed, however it is missing from the component library resource 'bus.csv'")
 
                                 buses_to_add.extend(bus_names)
@@ -744,19 +743,25 @@ class ScenarioBuilder:
             ofname = os.path.join(scenario_component_folder, "bus.csv")
 
             # Write or modify the bus in the new datapackage
+            # why are you replacing the bus in the else block?
+
             if os.path.exists(ofname):
                 busses_df = pd.read_csv(ofname, sep=";")
                 existing_records = busses_df.name.tolist()
                 if df_buses:
+                    new_buses = [bus for bus in df_buses if bus["name"].iloc[0] not in existing_records]
+                    if new_buses:
+                        busses_df = pd.concat([busses_df] + new_buses, ignore_index=True)
+               # if df_buses:
                     # If the bus doesn't exist, add a row for it
-                    busses_df = pd.concat([busses_df] + df_buses)
-                # else:
-                #     # If the bus already exists, replace it
-                #     busses_df.set_index("name", drop=False, inplace=True)
-                #     busses_df.loc[name] = bus
+                 #   busses_df = pd.concat([busses_df] + df_buses)
+                #else:
+                    # If the bus already exists, replace it
+                #    busses_df.set_index("name", drop=False, inplace=True)
+                 #   busses_df.loc[name] = bus
             else:
                 if df_buses:
-                    busses_df = pd.concat(df_buses)
+                    busses_df = pd.concat(df_buses, ignore_index=True)
             # Save the components back to the csv file
             busses_df.to_csv(ofname, index=False, sep=";")
 
