@@ -92,8 +92,7 @@ class ScenarioBuilder:
                 else:
                     water_main_list.append(comp)
             for comp in water_main_list:
-                if comp in self.components:
-                    self.components.pop(comp)
+                self.components.pop((comp, comp), None)
             # --- END CLEANUP ---
 
         def fill_component_list(suffix):
@@ -299,7 +298,7 @@ class ScenarioBuilder:
             #self.components["water_reuse_system"].update({"capacity": 100})
             pass
 
-        #print(self.components)
+        print(self.components)
 
     def get_single_component_from_datapackage(self, dp, resource_name, component_name):
         """
