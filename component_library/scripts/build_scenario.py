@@ -82,6 +82,20 @@ class ScenarioBuilder:
 
     def water_systems_postprocessing(self, survey):
 
+        def safety_check():
+            # --- SAFETY CLEANUP STEP ---
+            # Remove any existing water-treatment components that process_survey might have added
+            water_main_list = []
+            for comp in water_treatment_train["main_list"]:
+                if isinstance(comp, list):
+                    water_main_list.extend(comp)
+                else:
+                    water_main_list.append(comp)
+            for comp in water_main_list:
+                if comp in self.components:
+                    self.components.pop(comp)
+            # --- END CLEANUP ---
+
         def fill_component_list(suffix):
             unique_slim_component_list = []
             combined_component_list = []
@@ -148,6 +162,7 @@ class ScenarioBuilder:
 
             return components_dict
 
+        safety_check()
         if survey["criteria_2"] == "Yes": # set Yes currently
             suffixes_a = ["_GWa", "_DSa", "_RCa", "_La"] # drinking water
             suffixes_b = ["_GWb", "_DSb", "_RCb", "_Lb"] # service water
@@ -161,10 +176,24 @@ class ScenarioBuilder:
             print("DW treatment dictionary")
             drinking_water_component_list = arrange_components(water_treatment_train["main_list"], drinking_water_component_list)
             drinking_water_treatment_dict = create_component_dict(drinking_water_component_list, entry_bus = "water-in-bus", water_type = "drinking")
+            for (component_type, component_name), component_attrs in drinking_water_treatment_dict.items():
+                # Add the component from the train
+                self.add_single_component(component_type, component_name, component_attrs)
+                # Add the water in and water out buses for each component
+                for bus_type in ["water_in_bus", "water_out_bus"]:
+                    if component_attrs.get(bus_type):  # only add if defined
+                        self.add_single_bus(name=component_attrs.get(bus_type), balanced=True, carrier="water")
             print(drinking_water_treatment_dict)
             print("SW treatment dictionary")
             service_water_component_list = arrange_components(water_treatment_train["main_list"], service_water_component_list)
             service_water_treatment_dict = create_component_dict(service_water_component_list, entry_bus = "water-in-bus", water_type = "service")
+            for (component_type, component_name), component_attrs in service_water_treatment_dict.items():
+                # Add the component from the train
+                self.add_single_component(component_type, component_name, component_attrs)
+                # Add the water in and water out buses for each component
+                for bus_type in ["water_in_bus", "water_out_bus"]:
+                    if component_attrs.get(bus_type):  # only add if defined
+                        self.add_single_bus(name=component_attrs.get(bus_type), balanced=True, carrier="water")
             print(service_water_treatment_dict)
         else:
             suffixes = ["_GW", "_DS", "_RC", "_L"] # all water assumed drinking water
@@ -175,6 +204,13 @@ class ScenarioBuilder:
             print("DW treatment dictionary")
             drinking_water_component_list = arrange_components(water_treatment_train["main_list"], drinking_water_component_list)
             drinking_water_treatment_dict = create_component_dict(drinking_water_component_list, entry_bus="water-in-bus", water_type="drinking")
+            for (component_type, component_name), component_attrs in drinking_water_treatment_dict.items():
+                # Add the component from the train
+                self.add_single_component(component_type, component_name, component_attrs)
+                # Add the water in and water out buses for each component
+                for bus_type in ["water_in_bus", "water_out_bus"]:
+                    if component_attrs.get(bus_type):  # only add if defined
+                        self.add_single_bus(name=component_attrs.get(bus_type), balanced=True, carrier="water")
             print(drinking_water_treatment_dict)
 
         #final_water_treatment_train
@@ -264,6 +300,19 @@ class ScenarioBuilder:
             pass
 
         #print(self.components)
+
+    def get_single_component_from_datapackage(self, dp, resource_name, component_name):
+        """
+        Returns a component from a single resource (csv file) of a datapackage as a one-row df.
+        ATTENTION: the returned df will be empty if there is no match!
+        """
+        resource = dp.get_resource(resource_name)
+        df = pd.DataFrame.from_records(resource.read(keyed=True))
+        component = df[df["name"] == component_name]
+        # TODO: check uniqueness of resource names
+        #  (if necessary...check if there are already other checks for uniqueness of names in the reference datapackage)
+
+        return component
 
     @property
     def reference_datapackage(self):
@@ -749,7 +798,7 @@ class ScenarioBuilder:
                 busses_df = pd.read_csv(ofname, sep=";")
                 existing_records = busses_df.name.tolist()
                 if df_buses:
-                    new_buses = [bus for bus in df_buses if bus["name"].iloc[0] not in existing_records]
+                    new_buses = [bus for bus in df_buses if not bus.empty and bus["name"].iloc[0] not in existing_records]
                     if new_buses:
                         busses_df = pd.concat([busses_df] + new_buses, ignore_index=True)
                # if df_buses:
