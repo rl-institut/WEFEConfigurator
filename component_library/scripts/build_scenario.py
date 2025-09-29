@@ -410,26 +410,44 @@ class ScenarioBuilder:
         demand_df = self.demand_data
         demands_to_add = demand_df.columns
 
-        # TODO: properly modify and save datapackage (meta)data
         dp = self.scenario_datapackage
         dp_ref = self.reference_datapackage
 
+        # Read in "load.csv" from component library into DataFrame, add metadata to scenario datapackage
         resource = dp_ref.get_resource("load")
+        descriptor = deepcopy(resource.descriptor)
+        dp.add_resource(descriptor)
         load_df = pd.DataFrame.from_records(resource.read(keyed=True))
 
-        resource = dp_ref.get_resource("profiles")
-        profiles_df = pd.DataFrame.from_records(resource.read(keyed=True))
+        # Read in "excess.csv" from component library into DataFrame, add metadata to scenario datapackage
+        resource = dp_ref.get_resource("excess")
+        descriptor = deepcopy(resource.descriptor)
+        dp.add_resource(descriptor)
+        excess_df = pd.DataFrame.from_records(resource.read(keyed=True))
 
+        # Read in "profiles.csv" from component library
+        profiles_resource = dp_ref.get_resource("profiles")
+        profiles_df = pd.DataFrame.from_records(profiles_resource.read(keyed=True))
+
+        # Map the given demands to the corresponding loads of the component library
         loads_to_add = []
         for demand in demands_to_add:
-            matching_loads = profiles_df.columns[(profiles_df.iloc[0] == demand).values].tolist()
-            loads_to_add.extend(matching_loads)
+            match = profiles_df.columns[(profiles_df.iloc[0] == demand).values].tolist()
+            if not match:
+                logging.warning(f"Demand '{demand}' not found in '{profiles_resource.name}.csv'")
+            loads_to_add.extend(match)
 
+        # Create new load DF (matches only) and corresponding excess DF
         filtered_load_df = load_df[load_df["profile"].isin(loads_to_add)]
+        filtered_excess_df = excess_df[excess_df["bus"].isin(filtered_load_df["bus"])]
 
-        # Save the required loads as a csv in the scenario component folder
-        ofname = os.path.join(self.scenario_component_folder, "load.csv")
-        filtered_load_df.to_csv(ofname, index=False, sep=";")
+        # Save the required load.csv and excess.csv in the scenario component folder
+        filtered_load_df.to_csv(os.path.join(self.scenario_component_folder, "load.csv"), index=False, sep=";")
+        filtered_excess_df.to_csv(os.path.join(self.scenario_component_folder, "excess.csv"), index=False, sep=";")
+
+        # Save scenario datapackage metadata
+        dp.commit()
+        dp.save(os.path.join(self.scenario_folder, "datapackage.json"))
 
 
     def process_survey(self, survey):
@@ -621,6 +639,7 @@ class ScenarioBuilder:
                 component_params["name"] = component_key[1]
         return component_params
 
+
     def add_single_component(self, component_type, component_name=None, component_attrs=None):
 
         if not isinstance(component_attrs, dict):
@@ -639,6 +658,7 @@ class ScenarioBuilder:
         self.components.update({component_key: component_attrs})
         return component_key
 
+
     def add_sequences(self, custom_timeseries=None):
         """
         Looks for the column "profile" within the elements .csv files. If existing, creates a *element*_profile file
@@ -646,21 +666,10 @@ class ScenarioBuilder:
         for renewable energy output) will be used.
         :param custom_timeseries: DataFrame with datetime index and elements as columns (should be uploaded as .csv or .xlsx
         """
-
-
-        scenario_component_folder = self.scenario_component_folder
-
         dp_ref = self.reference_datapackage
-        # ref_buses = dp_ref.get_resource("bus")
-        # df_ref_buses = pd.DataFrame.from_records(ref_buses.read(keyed=True))
-
-        # TODO need to do a mapping of sequence to
-
         dp = self.scenario_datapackage
-        scenario_sequences_folder = os.path.join(self.scenario_folder, "data/sequences")
 
-
-        if not os.path.exists(scenario_component_folder):
+        if not os.path.exists(self.scenario_component_folder):
             logging.warning("No components found to add timeseries. Please add components to the system first.")
 
         else:
@@ -763,7 +772,7 @@ class ScenarioBuilder:
                         f"Profile '{profile}' is not in the profile library. A dummy profile (series of 1) will be used.")
                     scen_profiles_df[profile] = pd.Series([1] * profiles_len)
 
-            ofname = os.path.join(scenario_sequences_folder, "profiles.csv")
+            ofname = os.path.join(self.scenario_folder, "data/sequences", "profiles.csv")
             scen_profiles_df.to_csv(ofname, index=False, sep=";")
 
 
@@ -927,8 +936,7 @@ if __name__=="__main__":
     scenario.process_survey(survey_answers)
     scenario.water_systems_postprocessing(survey_answers)
     scenario.waste_water_systems_postprocessing(survey_answers)
-    print(scenario.components)
-    #scenario.water_systems_postprocessing()
+    # scenario.crop_systems_postprocessing()
 
     # Add a load.csv component based on demand data from WEFEDemand
     scenario.add_loads()
