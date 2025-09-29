@@ -1,5 +1,5 @@
 name;amount;profile;type;bus
-el_demand;1;electricity-load-profile;load;ac_elec-bus
+el_demand;1;electricity-load-profile;load;ac-elec-bus
 cooking_demand;1;cooking-load-profile;load;cooking-bus
 sw_demand;1;service-water-demand-profile;load;service-water-bus
 dw_demand;1;drinking-water-demand;load;drinking-water-bus
