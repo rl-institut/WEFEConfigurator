@@ -3,31 +3,36 @@
         "map_to": "component",
         "map_answer": {
             "photovoltaic system": [
-                "photovoltaics",
-                "inverter"
+                "pv-panel",
+                "inverter",
+                "dc-electricity-excess"
             ],
             "battery system": [
                 "battery-storage",
-                "inverter"
+                "inverter",
+                "dc-electricity-excess"
             ],
             "diesel generator": [
                 "diesel-generator",
-                "diesel"
+                "diesel",
+                "ac-electricity-excess"
             ],
             "wind turbine": [
                 "wind-turbine",
-                "wind"
+                "ac-electricity-excess"
             ],
             "hydropower": [
                 "hydro-power",
-                "river-flow"
+                "ac-electricity-excess"
             ],
             "national grid": [
-                "grid"
+                "grid",
+                "ac-electricity-excess"
             ],
             "biogas plant": [
-                "biogas-plant",
-                "biofuel"
+                "biogas-generator",
+                "biogas",
+                "ac-electricity-excess"
             ]
         }
     },
