@@ -1,10 +1,9 @@
 name;type;carrier;tech;capacity;capacity_cost;bus;marginal_cost;carrier_cost;profile;output_parameters;expandable;verbose_name
-solar-radiation;volatile;energy;source;;0;solar-energy-bus;0;0;ghi-profile;{};true;"Solar Radiation"
 lpg;dispatchable;energy;source;;0;lpg-bus;0.5;0;1;{};true;"Liquified Petroleum Gas (LPG)"
 kerosene;dispatchable;energy;source;;0;kerosene-bus;0.5;0;1;{};true;"Kerosene"
 biofuel;dispatchable;energy;source;;0;biofuel-bus;0.5;0;1;{};true;"Biofuel"
 diesel;dispatchable;energy;source;;0;diesel-bus;2;0;1;{};true;"Diesel"
 woody_biomass;dispatchable;energy;source;;0;woody_bus;2;0;1;{};true;"Woody Biomass"
 grid;dispatchable;energy;source;;0;ac-elec-bus;2;0;1;{};true;"Electricity Grid"
-river-flow;dispatchable;energy;source;;0;riverflow-bus;0;0;river-flow-profile;{};true;"River Flow"
-wind;volatile;energy;source;;0;wind-bus;0;0;wind-speed-profile;{};true;"Wind"
+biogas;dispatchable;energy;source;;0;biogas-bus;3;0;;{};true;"Biogas"
+hydro-power;dispatchable;energy;source;;0;ac-elec-bus;0;0;;{};true;"Hydropower Plant"
