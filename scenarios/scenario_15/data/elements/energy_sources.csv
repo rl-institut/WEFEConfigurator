@@ -1,0 +1,5 @@
+name;type;carrier;tech;capacity;capacity_cost;bus;marginal_cost;carrier_cost;profile;output_parameters;expandable
+diesel;dispatchable;energy;source;13.0;0;diesel-bus;2;0;1.0;{};True
+hydro-power;dispatchable;energy;source;15.0;0;ac-elec-bus;0;0;;{};True
+grid;dispatchable;energy;source;;0;ac-elec-bus;2;0;1.0;{};True
+biogas;dispatchable;energy;source;16.0;0;biogas-bus;3;0;;{};True
