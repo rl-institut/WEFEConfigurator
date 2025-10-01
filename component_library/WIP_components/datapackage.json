@@ -1479,27 +1479,27 @@
                     },
                     {
                         "name": "capacity",
-                        "type": "integer",
+                        "type": "number",
                         "format": "default"
                     },
                     {
                         "name": "capacity_potential",
-                        "type": "string",
+                        "type": "number",
                         "format": "default"
                     },
                     {
                         "name": "capacity_cost",
-                        "type": "integer",
+                        "type": "number",
                         "format": "default"
                     },
                     {
                         "name": "marginal_cost",
-                        "type": "integer",
+                        "type": "number",
                         "format": "default"
                     },
                     {
                         "name": "carrier_cost",
-                        "type": "integer",
+                        "type": "number",
                         "format": "default"
                     },
                     {
@@ -1524,7 +1524,7 @@
                     },
                     {
                         "name": "latitude",
-                        "type": "integer",
+                        "type": "number",
                         "format": "default"
                     },
                     {
@@ -2604,27 +2604,27 @@
                     },
                     {
                         "name": "capacity",
-                        "type": "integer",
+                        "type": "number",
                         "format": "default"
                     },
                     {
                         "name": "capacity_potential",
-                        "type": "string",
+                        "type": "number",
                         "format": "default"
                     },
                     {
                         "name": "capacity_cost",
-                        "type": "integer",
+                        "type": "number",
                         "format": "default"
                     },
                     {
                         "name": "marginal_cost",
-                        "type": "integer",
+                        "type": "number",
                         "format": "default"
                     },
                     {
                         "name": "carrier_cost",
-                        "type": "integer",
+                        "type": "number",
                         "format": "default"
                     },
                     {
@@ -2644,7 +2644,7 @@
                     },
                     {
                         "name": "ref_height",
-                        "type": "integer",
+                        "type": "number",
                         "format": "default"
                     },
                     {

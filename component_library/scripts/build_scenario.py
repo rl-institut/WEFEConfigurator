@@ -447,7 +447,7 @@ class ScenarioBuilder:
         if not os.path.exists(self.demand_data_path):
             self.download_demand_data()
 
-        return pd.read_csv(self.demand_data_path)
+        return pd.read_csv(self.demand_data_path, delimiter=",", quotechar='"', decimal=",")
 
     def download_weather_data(self):
         if not os.path.exists(self.weather_data_path):
@@ -511,11 +511,11 @@ class ScenarioBuilder:
         I assume the demands to be unique (one for electricity, one for drinking water, ...) so in the load.csv,
         there will only be one row for every component (sink with demand profile) using the predefined component name.
         """
-        demand_df = self.demand_data
-        demands_to_add = demand_df.columns
-
         dp = self.scenario_datapackage
         dp_ref = self.reference_datapackage
+
+        # Read in demand from csv
+        demand_df = self.demand_data
 
         # Read in "load.csv" from component library into DataFrame, add metadata to scenario datapackage
         resource = dp_ref.get_resource("load")
@@ -535,7 +535,7 @@ class ScenarioBuilder:
 
         # Map the given demands to the corresponding loads of the component library
         loads_to_add = []
-        for demand in demands_to_add:
+        for demand in demand_df.columns:
             match = profiles_df.columns[(profiles_df.iloc[0] == demand).values].tolist()
             if not match:
                 logging.warning(f"Demand '{demand}' not found in '{profiles_resource.name}.csv'")
@@ -779,6 +779,7 @@ class ScenarioBuilder:
         else:
             profiles_to_add = []
             for res in dp.resources:
+                x = res.name
                 if "/elements/" in res.descriptor["path"]:
                     try:
                         resource_data = pd.DataFrame.from_records(res.read(keyed=True))
@@ -1039,8 +1040,8 @@ if __name__=="__main__":
     #parse the survey to add components to a list
     scenario.process_survey(survey_answers)
 
-    scenario.water_systems_postprocessing(survey_answers)
-    scenario.waste_water_systems_postprocessing(survey_answers)
+    # scenario.water_systems_postprocessing(survey_answers)
+    # scenario.waste_water_systems_postprocessing(survey_answers)
     # scenario.crop_systems_postprocessing()
 
     # Add a load.csv component based on demand data from WEFEDemand
