@@ -83,7 +83,7 @@
                     },
                     {
                         "name": "marginal_cost",
-                        "type": "number",
+                        "type": "integer",
                         "format": "default"
                     }
                 ],
@@ -255,12 +255,12 @@
                     },
                     {
                         "name": "marginal_cost",
-                        "type": "number",
+                        "type": "integer",
                         "format": "default"
                     },
                     {
                         "name": "carrier_cost",
-                        "type": "number",
+                        "type": "integer",
                         "format": "default"
                     },
                     {
@@ -337,7 +337,7 @@
                     },
                     {
                         "name": "storage_capacity_potential",
-                        "type": "number",
+                        "type": "string",
                         "format": "default"
                     },
                     {
@@ -352,17 +352,17 @@
                     },
                     {
                         "name": "capacity_cost",
-                        "type": "number",
+                        "type": "integer",
                         "format": "default"
                     },
                     {
                         "name": "storage_capacity_cost",
-                        "type": "number",
+                        "type": "integer",
                         "format": "default"
                     },
                     {
                         "name": "marginal_cost",
-                        "type": "number",
+                        "type": "integer",
                         "format": "default"
                     },
                     {
@@ -382,7 +382,7 @@
                     },
                     {
                         "name": "invest_relation_input_output",
-                        "type": "number",
+                        "type": "integer",
                         "format": "default"
                     },
                     {
@@ -606,6 +606,98 @@
                             "resource": "profiles"
                         }
                     }
+                ]
+            }
+        },
+        {
+            "path": "data/elements/bus.csv",
+            "profile": "tabular-data-resource",
+            "name": "bus",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "encoding": "utf-8",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "name",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "type",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "balanced",
+                        "type": "boolean",
+                        "format": "default"
+                    },
+                    {
+                        "name": "carrier",
+                        "type": "string",
+                        "format": "default"
+                    }
+                ],
+                "missingValues": [
+                    ""
+                ],
+                "primaryKey": "name",
+                "foreignKeys": []
+            }
+        },
+        {
+            "path": "data/sequences/profiles.csv",
+            "profile": "tabular-data-resource",
+            "name": "profiles",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "encoding": "utf-8",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "electricity-load-profile",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "service-water-demand-profile",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "drinking-water-demand",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "ghi-profile",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "air-temperature-profile",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "surface-roughness-profile",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "wind-speed-profile",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "timeindex",
+                        "type": "datetime",
+                        "format": "default"
+                    }
+                ],
+                "missingValues": [
+                    ""
                 ]
             }
         }
