@@ -471,10 +471,11 @@ class ScenarioBuilder:
         """
 
         weather_df = self.weather_data.copy()
-        c_j_to_kwh = 1 / 3600000
-        weather_df["ghi"] = weather_df.apply(
-            lambda row: row["ssrd"] * c_j_to_kwh, axis=1
-        )
+        c_j_to_wh = 1 / 3600
+        offset_K_Celsius = 273.15
+        weather_df["ghi"] = weather_df["ssrd"] * c_j_to_wh
+
+        weather_df["t_air"] = weather_df["t2m"] - offset_K_Celsius
 
         weather_df["windspeed10"] = weather_df.apply(
             lambda row: np.sqrt(row["u10"] ** 2 + row["v10"] ** 2), axis=1
