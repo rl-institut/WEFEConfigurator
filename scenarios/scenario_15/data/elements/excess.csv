@@ -1,5 +1,3 @@
 name;type;bus;marginal_cost
 ac-electricity-excess;excess;ac-elec-bus;0
-excess-service-water;excess;service-water-bus;0
-excess-drinking-water;excess;drinking-water-bus;0
 dc-electricity-excess;excess;dc-elec-bus;0

@@ -1,7 +1,5 @@
 name;type;balanced;carrier
-biogas-bus;bus;True;biogas
-service-water-bus;bus;True;water
-diesel-bus;bus;True;energy
-dc-elec-bus;bus;True;electricity
 ac-elec-bus;bus;True;electricity
-drinking-water-bus;bus;True;water
+dc-elec-bus;bus;True;electricity
+diesel-bus;bus;True;energy
+biogas-bus;bus;True;biogas
