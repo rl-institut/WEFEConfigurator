@@ -81,6 +81,27 @@ class ScenarioBuilder:
 
         return scenario_folder
 
+    def safety_check_1(self):
+        # --- SAFETY CLEANUP STEP ---
+        # Remove any existing water-treatment components that process_survey might have added
+        water_main_list = []
+        for comp in water_treatment_train["main_list"]:
+            if isinstance(comp, list):
+                water_main_list.extend(comp)
+            else:
+                water_main_list.append(comp)
+        for comp in water_main_list:
+            self.components.pop((comp, comp), None)
+        # --- END CLEANUP ---
+
+    def safety_check_2(self):
+        # --- SAFETY CLEANUP STEP ---
+        # Remove any existing wastewater-treatment components that process_survey might have added
+        for comp in ["septic_system", "constructed_wetland", "centralized_waste_water_treatment_plant",
+                     "decentralized_waste_water_treatment_plant", "water_reuse_system"]:
+            self.components.pop((comp, comp), None)
+        # --- END CLEANUP ---
+
     def water_systems_postprocessing(self, survey):
 
         def safety_check():
@@ -314,18 +335,6 @@ class ScenarioBuilder:
 
         return component
 
-    def get_single_component_from_datapackage(self, dp, resource_name, component_name):
-        """
-        Returns a component from a single resource (csv file) of a datapackage as a one-row df.
-        ATTENTION: the returned df will be empty if there is no match!
-        """
-        resource = dp.get_resource(resource_name)
-        df = pd.DataFrame.from_records(resource.read(keyed=True))
-        component = df[df["name"] == component_name]
-        # TODO: check uniqueness of resource names
-        #  (if necessary...check if there are already other checks for uniqueness of names in the reference datapackage)
-
-        return component
 
     def crop_systems_postprocessing(self):
         """
@@ -447,6 +456,7 @@ class ScenarioBuilder:
         if not os.path.exists(self.demand_data_path):
             self.download_demand_data()
 
+        # TODO: test this function to see handling of different csv formats
         return pd.read_csv(self.demand_data_path, delimiter=",", quotechar='"', decimal=",")
 
     def download_weather_data(self):
@@ -470,22 +480,25 @@ class ScenarioBuilder:
         TODO: add more cols for river_flow, groundwater_recharge, etc (check WIP_components\...\profiles.csv)
         """
 
-        weather_df = self.weather_data.copy()
+        df = self.weather_data.copy()
         c_j_to_wh = 1 / 3600
         offset_K_Celsius = 273.15
-        weather_df["ghi"] = weather_df["ssrd"] * c_j_to_wh
 
-        weather_df["t_air"] = weather_df["t2m"] - offset_K_Celsius
+        if "ghi" not in df.columns:
+            df["ghi"] = df["ssrd"] * c_j_to_wh
 
-        weather_df["windspeed10"] = weather_df.apply(
-            lambda row: np.sqrt(row["u10"] ** 2 + row["v10"] ** 2), axis=1
-        )
+        if "t_air" not in df.columns:
+            df["t_air"] = df["t2m"] - offset_K_Celsius
 
-        weather_df["windspeed100"] = weather_df.apply(
+        if "t_dew" not in df.columns:
+            df["t_dew"] = df["d2m"] - offset_K_Celsius
+
+        if "windspeed" not in df.columns:
+            df["windspeed"] = df.apply(
             lambda row: np.sqrt(row["u100"] ** 2 + row["v100"] ** 2), axis=1
         )
 
-        return weather_df
+        return df
 
 
     def add_loads(self):
@@ -1078,6 +1091,9 @@ if __name__=="__main__":
     scenario = ScenarioBuilder(name=f"scenario_{scen_id}", overwrite=False)
     #parse the survey to add components to a list
     scenario.process_survey(survey_answers)
+
+    scenario.safety_check_1()
+    scenario.safety_check_2()
 
     # scenario.water_systems_postprocessing(survey_answers)
     # scenario.waste_water_systems_postprocessing(survey_answers)

@@ -1,5 +1,0 @@
-name;type;balanced;carrier
-ac-elec-bus;bus;True;electricity
-dc-elec-bus;bus;True;electricity
-diesel-bus;bus;True;energy
-biogas-bus;bus;True;biogas
