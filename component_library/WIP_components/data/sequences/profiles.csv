@@ -1,2 +1,2 @@
-electricity-load-profile;cooking-load-profile;service-water-demand-profile;drinking-water-demand;groundwater-recharge;precipitation-profile;ghi-profile;river-flow-profile;wind-speed-profile
-electrical_appliances;cook;service_water;drinking_water;ground;tp;ghi;riverflow;windspeed10
+electricity-load-profile;cooking-load-profile;service-water-demand-profile;drinking-water-demand;groundwater-recharge;precipitation-profile;ghi-profile;air-temperature-profile;wind-speed-profile;surface-roughness-profile
+electrical_appliances;cook;service_water;drinking_water;ground;tp;ghi;t_air;windspeed100;fsr

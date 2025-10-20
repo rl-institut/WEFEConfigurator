@@ -1,0 +1,2 @@
+name;type;carrier;tech;capacity;capacity_potential;capacity_cost;marginal_cost;carrier_cost;bus;windspeed;surface_roughness;ref_height;turbine_type;expandable
+wind-turbine;wind-turbine;electricity;wind-turbine;0;;100;0;0;ac-elec-bus;wind-speed-profile;surface-roughness-profile;100;aeolos-h_50kw;True

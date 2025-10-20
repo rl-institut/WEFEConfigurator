@@ -81,6 +81,27 @@ class ScenarioBuilder:
 
         return scenario_folder
 
+    def safety_check_1(self):
+        # --- SAFETY CLEANUP STEP ---
+        # Remove any existing water-treatment components that process_survey might have added
+        water_main_list = []
+        for comp in water_treatment_train["main_list"]:
+            if isinstance(comp, list):
+                water_main_list.extend(comp)
+            else:
+                water_main_list.append(comp)
+        for comp in water_main_list:
+            self.components.pop((comp, comp), None)
+        # --- END CLEANUP ---
+
+    def safety_check_2(self):
+        # --- SAFETY CLEANUP STEP ---
+        # Remove any existing wastewater-treatment components that process_survey might have added
+        for comp in ["septic_system", "constructed_wetland", "centralized_waste_water_treatment_plant",
+                     "decentralized_waste_water_treatment_plant", "water_reuse_system"]:
+            self.components.pop((comp, comp), None)
+        # --- END CLEANUP ---
+
     def water_systems_postprocessing(self, survey):
 
         def safety_check():
@@ -314,6 +335,98 @@ class ScenarioBuilder:
 
         return component
 
+
+    def crop_systems_postprocessing(self):
+        """
+        AFTER survey_processing to fetch crop components
+        BEFORE add_components to be able to add extra components based on crop components
+        """
+        dp_ref = self.reference_datapackage
+
+        # Get additional components as reference
+        # TODO: assign these components directly when adding single comp, use busses of "crop" from below
+        sun = self.get_single_component_from_datapackage(dp=dp_ref, resource_name="energy_sources",
+                                                         component_name="solar-radiation")
+        rain = self.get_single_component_from_datapackage(dp=dp_ref, resource_name="water_sources",
+                                                          component_name="precipitation")
+        generic_excess = self.get_single_component_from_datapackage(dp=dp_ref, resource_name="excess",
+                                                                    component_name="generic-excess")
+
+        # loop through components
+        components_so_far = self.components.copy()
+        for (component_type, component_name), component_attributes in components_so_far.items():
+            crop = self.get_single_component_from_datapackage(dp=dp_ref, resource_name="mimo_crops",
+                                                              component_name=component_type)
+            if crop.empty:
+                continue
+
+            # add sources: sun, rain
+            sun_bus = f"{component_name}_{sun['bus'].iloc[0]}"
+            self.add_single_component(component_type=sun['name'].iloc[0],
+                                      component_name=f"{component_name}_{sun['name'].iloc[0]}",
+                                      component_attrs={
+                                          "capacity": component_attributes["capacity"],
+                                          "bus": sun_bus,
+                                          "expandable": False
+                                      }
+                                      )
+            self.add_single_bus(name=sun_bus, balanced=True, carrier=sun["carrier"].iloc[0])
+
+            rain_bus = f"{component_name}_{rain['bus'].iloc[0]}"
+            self.add_single_component(component_type=rain['name'].iloc[0],
+                                      component_name=f"{component_name}_{rain['name'].iloc[0]}",
+                                      component_attrs={
+                                          "capacity": component_attributes["capacity"],
+                                          "bus": rain_bus,
+                                          "expandable": False
+                                        }
+                                      )
+            self.add_single_bus(name=rain_bus, balanced=True, carrier=rain["carrier"].iloc[0])
+
+            # add excess: crops, biomass
+            crop_bus = crop["crop_bus"].iloc[0]
+            self.add_single_component(component_type="generic-excess",
+                                      component_name=f"{component_name}_crop-excess",
+                                      component_attrs={
+                                          "bus": crop_bus,
+                                        }
+                                      )
+            self.add_single_bus(name=crop_bus, balanced=True, carrier=rain["carrier"].iloc[0])
+
+            biomass_bus = crop["biomass_bus"].iloc[0]
+            self.add_single_component(component_type="generic-excess",
+                                      component_name=f"{component_name}_biomass-excess",
+                                      component_attrs={
+                                          "bus": biomass_bus
+                                        }
+                                      )
+            self.add_single_bus(name=biomass_bus, balanced=True, carrier=rain["carrier"].iloc[0])
+
+            # add irrigation as converter
+            # TODO: irrigation-tech-mapping
+            irrigation_map = {
+                "surface irrigation": "surface-irrigation",
+                "smart irrigation system": "smart-irrigation",
+            }
+
+            irrigation = self.get_single_component_from_datapackage(dp=dp_ref, resource_name="irrigation",
+                                    component_name=irrigation_map[component_attributes["irrigation_tech"]])
+            try:
+                irrigation_bus = f"{component_name}_{irrigation['to_bus'].iloc[0]}"
+            except Exception:
+                import pdb
+                pdb.set_trace()
+
+            self.add_single_component(component_type=irrigation['name'].iloc[0],
+                                          component_name=f"{component_name}_{irrigation['name'].iloc[0]}",
+                                          component_attrs={
+                                              "capacity": component_attributes["capacity"],
+                                              "bus": irrigation_bus,
+                                              "expandable": False
+                                          }
+                                          )
+            self.add_single_bus(name=irrigation_bus, balanced=True, carrier=irrigation["carrier"].iloc[0])
+
     @property
     def reference_datapackage(self):
         dp_json = os.path.join(COMPONENT_TEMPLATES_PATH, "datapackage.json")
@@ -343,7 +456,8 @@ class ScenarioBuilder:
         if not os.path.exists(self.demand_data_path):
             self.download_demand_data()
 
-        return pd.read_csv(self.demand_data_path)
+        # TODO: test this function to see handling of different csv formats
+        return pd.read_csv(self.demand_data_path, delimiter=",", quotechar='"', decimal=",")
 
     def download_weather_data(self):
         if not os.path.exists(self.weather_data_path):
@@ -366,21 +480,25 @@ class ScenarioBuilder:
         TODO: add more cols for river_flow, groundwater_recharge, etc (check WIP_components\...\profiles.csv)
         """
 
-        weather_df = self.weather_data.copy()
-        c_j_to_kwh = 1 / 3600000
-        weather_df["ghi"] = weather_df.apply(
-            lambda row: row["ssrd"] * c_j_to_kwh, axis=1
-        )
+        df = self.weather_data.copy()
+        c_j_to_wh = 1 / 3600
+        offset_K_Celsius = 273.15
 
-        weather_df["windspeed10"] = weather_df.apply(
-            lambda row: np.sqrt(row["u10"] ** 2 + row["v10"] ** 2), axis=1
-        )
+        if "ghi" not in df.columns:
+            df["ghi"] = df["ssrd"] * c_j_to_wh
 
-        weather_df["windspeed100"] = weather_df.apply(
+        if "t_air" not in df.columns:
+            df["t_air"] = df["t2m"] - offset_K_Celsius
+
+        if "t_dew" not in df.columns:
+            df["t_dew"] = df["d2m"] - offset_K_Celsius
+
+        if "windspeed" not in df.columns:
+            df["windspeed"] = df.apply(
             lambda row: np.sqrt(row["u100"] ** 2 + row["v100"] ** 2), axis=1
         )
 
-        return weather_df
+        return df
 
 
     def add_loads(self):
@@ -406,12 +524,15 @@ class ScenarioBuilder:
 
         I assume the demands to be unique (one for electricity, one for drinking water, ...) so in the load.csv,
         there will only be one row for every component (sink with demand profile) using the predefined component name.
-        """
-        demand_df = self.demand_data
-        demands_to_add = demand_df.columns
 
+        TODO: more flexibility - this should not be dependent on csv-names, rather look for components
+            of type "load", "excess" in all csv files
+        """
         dp = self.scenario_datapackage
         dp_ref = self.reference_datapackage
+
+        # Read in demand from csv
+        demand_df = self.demand_data
 
         # Read in "load.csv" from component library into DataFrame, add metadata to scenario datapackage
         resource = dp_ref.get_resource("load")
@@ -431,7 +552,7 @@ class ScenarioBuilder:
 
         # Map the given demands to the corresponding loads of the component library
         loads_to_add = []
-        for demand in demands_to_add:
+        for demand in demand_df.columns:
             match = profiles_df.columns[(profiles_df.iloc[0] == demand).values].tolist()
             if not match:
                 logging.warning(f"Demand '{demand}' not found in '{profiles_resource.name}.csv'")
@@ -675,6 +796,7 @@ class ScenarioBuilder:
         else:
             profiles_to_add = []
             for res in dp.resources:
+                x = res.name
                 if "/elements/" in res.descriptor["path"]:
                     try:
                         resource_data = pd.DataFrame.from_records(res.read(keyed=True))
@@ -710,70 +832,97 @@ class ScenarioBuilder:
 
             if len(profiles_to_add) == 0:
                 print(f"No profiles listed within the component for the '{self.scenario_folder.split(os.sep)[-1]}' datapage. If you think it is an error, double check the foreign keys")
-
-            # TODO: process all profiles data into one df that shall be imported here
-            # Get processed weather data
-            weather_df = self.process_weather_data
-
-            # Get demand data
-            demand_df = self.demand_data
-
-            # Check data profiles length
-            # TODO: Check possible issues with demand data and weather data,
-            #  I assumed weather data to always be of correct length while demand data may be flexible in length
-            if len(weather_df) != len(demand_df):
-                logging.warning(f"Length mismatch between {self.demand_data_path} and {self.weather_data_path}.")
-
-            if demand_df.dropna(how="all").empty:
-                profiles_len = len(weather_df)
-                logging.warning(f"{self.demand_data_path} seems to be effectively empty")
-                logging.info(f"{self.weather_data_path} will be used to set the time index of the model.")
             else:
-                profiles_len = len(demand_df)
-                logging.info(f"{self.demand_data_path} will be used to set the time index of the model.")
+                # TODO: process all profiles data into one df that shall be imported here
+                # Get processed weather data
+                weather_df = self.process_weather_data
 
-            # Get blueprint profile names from component library for mapping
-            lib_profiles_path = os.path.join(lib_dir, "WIP_components", "data", "sequences", "profiles.csv")
-            lib_profiles_df = pd.read_csv(lib_profiles_path, sep=";")
+                # Get demand data
+                demand_df = self.demand_data
 
-            # Create DF for the scenario profiles and match index with profiles length
-            scen_profiles_df = pd.DataFrame(columns=profiles_to_add, index=range(profiles_len))
+                # Check data profiles length
+                # TODO: Check possible issues with demand data and weather data,
+                #  I assumed weather data to always be of correct length while demand data may be flexible in length
+                if len(weather_df) != len(demand_df):
+                    logging.warning(f"Length mismatch between {self.demand_data_path} and {self.weather_data_path}.")
 
-            # If timeindex col exists: extract year (of first entry), else: set year to 2022 (according to weather data)
-            if "timeindex" in scen_profiles_df.columns:
-                scen_profiles_df["timeindex"] = pd.to_datetime(scen_profiles_df["timeindex"])
-                scen_profiles_year = int(scen_profiles_df["timeindex"].dt.year.iloc[0])
-            else:
-                scen_profiles_year = int(2022)
+                if demand_df.dropna(how="all").empty:
+                    profiles_len = len(weather_df)
+                    logging.warning(f"{self.demand_data_path} seems to be effectively empty")
+                    logging.info(f"{self.weather_data_path} will be used to set the time index of the model.")
+                else:
+                    profiles_len = len(demand_df)
+                    logging.info(f"{self.demand_data_path} will be used to set the time index of the model.")
 
-            # Add timeindex column in right format and length
-            timeindex = pd.date_range(
-                start=f"{scen_profiles_year}-01-01",
-                periods=profiles_len,
-                freq="h",
-                tz="UTC"
-            )
-            scen_profiles_df["timeindex"] = timeindex.strftime("%Y-%m-%dT%H:%M:%SZ")
+                # Get blueprint profile names from component library for mapping
+                lib_profiles_path = os.path.join(lib_dir, "WIP_components", "data", "sequences", "profiles.csv")
+                lib_profiles_df = pd.read_csv(lib_profiles_path, sep=";")
 
-            # Compare with profiles from library profiles csv and in case of a match, populate with data from weather df
-            for profile in profiles_to_add:
-                if profile in lib_profiles_df.columns:
-                    matching_col = str(lib_profiles_df[profile].iloc[0])
-                    if matching_col in weather_df.columns:
-                        scen_profiles_df[profile] = weather_df[matching_col].reindex(range(profiles_len)).values
-                    elif matching_col in demand_df.columns:
-                        scen_profiles_df[profile] = demand_df[matching_col].reindex(range(profiles_len)).values
+                # Create DF for the scenario profiles and match index with profiles length
+                scen_profiles_df = pd.DataFrame(columns=profiles_to_add, index=range(profiles_len))
+
+                # If timeindex col exists: extract year (of first entry), else: set year to 2022 (according to weather data)
+                if "timeindex" in scen_profiles_df.columns:
+                    scen_profiles_df["timeindex"] = pd.to_datetime(scen_profiles_df["timeindex"])
+                    scen_profiles_year = int(scen_profiles_df["timeindex"].dt.year.iloc[0])
+                else:
+                    scen_profiles_year = int(2022)
+
+                # Add timeindex column in right format and length
+                timeindex = pd.date_range(
+                    start=f"{scen_profiles_year}-01-01",
+                    periods=profiles_len,
+                    freq="h",
+                    tz="UTC"
+                )
+                scen_profiles_df["timeindex"] = timeindex.strftime("%Y-%m-%dT%H:%M:%SZ")
+
+                # Compare with profiles from library profiles csv and in case of a match, populate with data from weather df
+                for profile in profiles_to_add:
+                    if profile in lib_profiles_df.columns:
+                        matching_col = str(lib_profiles_df[profile].iloc[0])
+                        if matching_col in weather_df.columns:
+                            scen_profiles_df[profile] = weather_df[matching_col].reindex(range(profiles_len)).values
+                        elif matching_col in demand_df.columns:
+                            scen_profiles_df[profile] = demand_df[matching_col].reindex(range(profiles_len)).values
+                        else:
+                            logging.warning(
+                                f"Profile '{profile}' is not in the available data. A dummy profile (series of 1) will be used.")
+                            scen_profiles_df[profile] = pd.Series([1] * profiles_len)
                     else:
                         logging.warning(
-                            f"Profile '{profile}' is not in the available data. A dummy profile (series of 1) will be used.")
+                            f"Profile '{profile}' is not in the profile library. A dummy profile (series of 1) will be used.")
                         scen_profiles_df[profile] = pd.Series([1] * profiles_len)
-                else:
-                    logging.warning(
-                        f"Profile '{profile}' is not in the profile library. A dummy profile (series of 1) will be used.")
-                    scen_profiles_df[profile] = pd.Series([1] * profiles_len)
 
-            ofname = os.path.join(self.scenario_folder, "data/sequences", "profiles.csv")
-            scen_profiles_df.to_csv(ofname, index=False, sep=";")
+
+                # Add profiles.csv to datapackage
+                ofname = os.path.join(self.scenario_folder, "data/sequences", "profiles.csv")
+                scen_profiles_df.to_csv(ofname, index=False, sep=";")
+
+                # Update dp.json
+                resource = dp_ref.get_resource("profiles")
+                descriptor = deepcopy(resource.descriptor)
+
+                # The order of fields in datapackage.json has to match order of column names in profiles.csv
+                selected_fields = []
+                for profile in scen_profiles_df.columns:
+                    for f in descriptor["schema"]["fields"]:
+                        if profile == f["name"]:
+                            f["type"] = "number"
+                            selected_fields.append(f)
+                    # TODO: in the future, timeindex should be part of profiles in dp_ref...nevertheless,
+                    #    as long as it is called "timeindex", this code will work as intended
+                    if profile == "timeindex":
+                        selected_fields.append({
+                            "name": "timeindex",
+                            "type": "datetime",
+                            "format": "default"
+                        })
+                descriptor["schema"]["fields"] = selected_fields
+                dp.add_resource(descriptor)
+                dp.commit()
+
+                dp.save(os.path.join(self.scenario_folder, "datapackage.json"))
 
 
         # TODO check the foreign keys between timeseries and component attributes are valid
@@ -904,6 +1053,15 @@ class ScenarioBuilder:
             # Save the components back to the csv file
             busses_df.to_csv(ofname, index=False, sep=";")
 
+            # Update dp.json: Add resource "bus" if there are busses
+            if not busses_df.empty:
+                resource = dp_ref.get_resource("bus")
+                descriptor = deepcopy(resource.descriptor)
+                dp.add_resource(descriptor)
+
+                dp.commit()
+                dp.save(os.path.join(self.scenario_folder, "datapackage.json"))
+
 
 
 
@@ -926,7 +1084,7 @@ if __name__=="__main__":
     repo_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "scenarios")
     # create_scenario_from_survey_data({}, "test_scenario", repo_path)
 
-    scen_id = 1
+    scen_id = 15
 
     with open(os.path.join(project_dir, "app", f"scenario_{scen_id}_survey_answers.json"), "r") as fp:
         survey_answers =  json.load(fp)
@@ -936,6 +1094,7 @@ if __name__=="__main__":
     scenario.process_survey(survey_answers)
     scenario.water_systems_postprocessing(survey_answers)
     scenario.waste_water_systems_postprocessing(survey_answers)
+
     # scenario.crop_systems_postprocessing()
 
     # Add a load.csv component based on demand data from WEFEDemand

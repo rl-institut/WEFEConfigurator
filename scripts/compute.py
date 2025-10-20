@@ -66,6 +66,7 @@ project_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir)
 # -------------- USER INPUTS --------------
 # list of scenarios to be evaluated
 scenarios = [
+    "scenario_15"
     # "general_add_cost_inputs",
     # "general_basic",
     # "general_constraints",
@@ -74,7 +75,7 @@ scenarios = [
     # "wefe_pv_panel",
     # "wefe_reverse_osmosis",
     # "aiwa"
-    "aiwa_vivek"
+    # "aiwa_vivek"
     #"aiwa_8760"
     # "arusi_8760"
     # "arusi_24"
@@ -119,6 +120,8 @@ for scenario in scenarios:
         moo=moo,
         dash_app=True,
         parameters_units=parameters_units,
+        skip_preprocessing=True,
+        skip_infer_datapackage_metadata=True,
     )
     df = calculator.df_results
     print(df)

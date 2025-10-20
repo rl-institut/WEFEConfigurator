@@ -28,3 +28,4 @@ dry-feces-bus;bus;True;dry-feces
 compost-bus;bus;True;compost
 water-in-bus;bus;True;water
 water-out-bus;bus;True;water
+biogas-bus;bus;True;biogas
