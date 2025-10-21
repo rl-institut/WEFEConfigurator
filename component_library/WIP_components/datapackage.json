@@ -1575,6 +1575,11 @@
                         "format": "default"
                     },
                     {
+                        "name": "type",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
                         "name": "carrier",
                         "type": "string",
                         "format": "default"
@@ -1591,7 +1596,7 @@
                     },
                     {
                         "name": "storage_capacity_potential",
-                        "type": "string",
+                        "type": "number",
                         "format": "default"
                     },
                     {
@@ -1611,17 +1616,47 @@
                     },
                     {
                         "name": "storage_capacity_cost",
-                        "type": "integer",
+                        "type": "number",
                         "format": "default"
                     },
                     {
                         "name": "marginal_cost",
-                        "type": "integer",
+                        "type": "number",
                         "format": "default"
                     },
                     {
-                        "name": "type",
-                        "type": "string",
+                        "name": "capex",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "opex_fix",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "lifetime",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "resource_cost",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "land_requirement_factor",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "ghg_emission_factor",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "water_consumption_factor",
+                        "type": "number",
                         "format": "default"
                     },
                     {
@@ -1636,7 +1671,7 @@
                     },
                     {
                         "name": "invest_relation_input_output",
-                        "type": "integer",
+                        "type": "number",
                         "format": "default"
                     },
                     {

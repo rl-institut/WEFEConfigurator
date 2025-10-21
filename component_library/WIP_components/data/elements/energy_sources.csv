@@ -1,9 +1,9 @@
-name;type;carrier;tech;capacity;capacity_cost;bus;marginal_cost;carrier_cost;profile;output_parameters;expandable;verbose_name
-lpg;dispatchable;energy;source;;0;lpg-bus;0.5;0;1;{};true;"Liquified Petroleum Gas (LPG)"
-kerosene;dispatchable;energy;source;;0;kerosene-bus;0.5;0;1;{};true;"Kerosene"
-biofuel;dispatchable;energy;source;;0;biofuel-bus;0.5;0;1;{};true;"Biofuel"
-diesel;dispatchable;energy;source;;0;diesel-bus;2;0;1;{};true;"Diesel"
-woody_biomass;dispatchable;energy;source;;0;woody_bus;2;0;1;{};true;"Woody Biomass"
-grid;dispatchable;energy;source;;0;ac-elec-bus;2;0;1;{};true;"Electricity Grid"
-biogas;dispatchable;energy;source;;0;biogas-bus;3;0;1;{};true;"Biogas"
-hydro-power;dispatchable;energy;source;;0;ac-elec-bus;0;0;1;{};true;"Hydropower Plant"
+name;type;carrier;tech;capacity;capacity_cost;bus;marginal_cost;carrier_cost;land_requirement_factor;ghg_emission_factor;water_consumption_factor;indirect_water_consumption_factor;profile;output_parameters;expandable;verbose_name
+lpg;dispatchable;energy;source;;0;lpg-bus;0.5;0;0;0;0;0;1;{};true;"Liquified Petroleum Gas (LPG)"
+kerosene;dispatchable;energy;source;;0;kerosene-bus;0.5;0;0;0;0;0;1;{};true;"Kerosene"
+biofuel;dispatchable;energy;source;;0;biofuel-bus;0.5;0;0;0;0;0;1;{};true;"Biofuel"
+diesel;dispatchable;energy;source;;0;diesel-bus;2;0;0.0;0.7;0.0;0.0225;1;{};true;"Diesel"
+woody_biomass;dispatchable;energy;source;;0;woody_bus;2;0;0;0;0;0;1;{};true;"Woody Biomass"
+grid;dispatchable;energy;source;;0;ac-elec-bus;2;0;0.001;0.45;0.0;0.0;1;{};true;"Electricity Grid"
+biogas;dispatchable;energy;source;;0;biogas-bus;3;0;0;0;0;0;1;{};true;"Biogas"
+hydro-power;dispatchable;energy;source;;0;ac-elec-bus;0;0;0;0;0;0;1;{};true;"Hydropower Plant"

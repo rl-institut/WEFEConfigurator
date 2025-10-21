@@ -1,6 +1,6 @@
-name;type;carrier;tech;capacity;capacity_cost;marginal_cost;carrier_cost;efficiency;from_bus;to_bus;expandable; verbose_name
-inverter;conversion;energy;energy_conversion;0.;10.;0;0;0.9;dc-elec-bus;ac-elec-bus;true;"Inverter"
-diesel-generator;conversion;energy;energy_conversion;0.;10.;0;0;0.9;diesel-bus;ac-elec-bus;true;"Diesel Generator"
-biogas-generator;conversion;energy;energy_conversion;0.;10.;0;0;0.9;biogas-bus;ac-elec-bus;true;"Biogas Generator"
-electrolyzer;conversion;energy;energy_conversion;0.;10.;0;0;0.9;ac-elec-bus;hydrogen-bus;true;"Electrolyzer"
-fuel-cell;conversion;energy;energy_conversion;0.;10.;0;0;0.9;hydrogen_bus;ac_elec_bus;true;"Fuel Cell"
+name;type;carrier;tech;capacity;capacity_cost;marginal_cost;carrier_cost;efficiency;land_requirement_factor;ghg_emission_factor;water_consumption_factor;from_bus;to_bus;expandable; verbose_name
+inverter;conversion;energy;energy_conversion;0.;10.;0;0;0.9;0.15;0.0;0.0;dc-elec-bus;ac-elec-bus;true;"Inverter"
+diesel-generator;conversion;energy;energy_conversion;0.;10.;0;0;0.9;0.0;0.0;0.0;diesel-bus;ac-elec-bus;true;"Diesel Generator"
+biogas-generator;conversion;energy;energy_conversion;0.;10.;0;0;0.9;0.0;0.0;0.0;biogas-bus;ac-elec-bus;true;"Biogas Generator"
+electrolyzer;conversion;energy;energy_conversion;0.;10.;0;0;0.9;0.0;0.0;0.0;ac-elec-bus;hydrogen-bus;true;"Electrolyzer"
+fuel-cell;conversion;energy;energy_conversion;0.;10.;0;0;0.9;0.0;0.0;0.0;hydrogen_bus;ac_elec_bus;true;"Fuel Cell"

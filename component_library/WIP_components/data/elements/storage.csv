@@ -1,3 +1,4 @@
-name;carrier;tech;storage_capacity;storage_capacity_potential;capacity;efficiency;capacity_cost;storage_capacity_cost;marginal_cost;type;bus;invest_relation_output_capacity;invest_relation_input_output;expandable;verbose_name
-battery-storage;electricity;battery;0.;;0;0.92;0;100;0;storage;dc-elec-bus;0.1;1;True;"Battery Storage"
-water-storage;water;water_storage;0.;;0;0.92;0;100;0;storage;dc-elec-bus;0.1;1;True;"Water Storage"
+name;type;carrier;tech;storage_capacity;storage_capacity_potential;capacity;efficiency;capacity_cost;storage_capacity_cost;marginal_cost;capex;opex_fix;lifetime;resource_cost;land_requirement_factor;ghg_emission_factor;water_consumption_factor;bus;invest_relation_output_capacity;invest_relation_input_output;expandable;verbose_name
+battery-storage;storage;electricity;battery;0.;;0;0.92;0;100;0;647;19.0;12.5;0.0;3.0;0.0;0.0;dc-elec-bus;1.0;1;True;"Battery Storage"
+drinking-water-storage;storage;water;water-storage;0.;;0;0.98;0;100;0;300;7.5;20.0;0.0;1.5;0.0;0.0;drinking-water-bus;0.02;1;True;Drinking Water Storage
+service-water-storage;storage;water;water-storage;0.;;0;0.98;0;100;0;186;2.5;20.0;0.0;1.7;0.0;0.0;service-water-bus;0.02;1;True;Service Water Storage

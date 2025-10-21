@@ -185,9 +185,7 @@ class ScenarioBuilder:
             return components_dict
 
         safety_check()
-        if survey["criteria_2"] == "Yes": # set Yes currently
-            # This Dict could be used to make all relevant criterias accessible throughout all functions
-            self.criterias["drinking_water_only"] = True
+        if self.criterias["2"] == "Yes": # set Yes currently
             suffixes_a = ["_GWa", "_DSa", "_RCa", "_La"] # drinking water
             suffixes_b = ["_GWb", "_DSb", "_RCb", "_Lb"] # service water
             drinking_water_component_list = []
@@ -507,80 +505,60 @@ class ScenarioBuilder:
         return df
 
 
-    def add_loads(self):
+    def process_demand(self):
         """
-        Add load.csv to the energy system based on demand_data.csv.
+        Add loads to the energy system based on demand_data
+        Add excess and storages according to the loads based on the busses
         --------------------------
         ATTENTION regarding the variable names:
         "demand" refers to the actual data (from WEFEDemand)
         "load" refers to the load.csv from the component library
-        profiles.csv basically maps: load_name -> demand_name
+        profiles.csv works as a mapping: load_name -> demand_name
 
-        "usual" workflow:
-        AVAILABLE_COMPONENTS
-        -> component_type: name_of_the_csv (load)
-        -> get the load_name
-        -> profiles.csv for mapping (is in AVAILABLE_COMPONENTS itself)
-        -> get the demand_name
-        
-        I need a reversed workflow because I got the demand_name and map it to load_name
-        to get the modified component (load).
-        
-        I assume "load.csv" and "profiles.csv" to be the only necessary components and that they will not be renamed.
-
-        I assume the demands to be unique (one for electricity, one for drinking water, ...) so in the load.csv,
-        there will only be one row for every component (sink with demand profile) using the predefined component name.
-
-        TODO: more flexibility - this should not be dependent on csv-names, rather look for components
-            of type "load", "excess" in all csv files
+        TODO: more flexibility - this code depends on the csv names ["load", "excess", "storage", "profiles"],
+         rather look for components of type "load", "excess", "storage" in all csv files
         """
-        dp = self.scenario_datapackage
         dp_ref = self.reference_datapackage
 
         # Read in demand from csv
         demand_df = self.demand_data
 
         # Merge drinking and service water demands if there is no differentiation
-        drinking_water_only = self.criterias["drinking_water_only"]
-        if drinking_water_only:
+        if self.criterias["2"] == "No":
             demand_df["drinking_water"] += demand_df["service_water"]
-            demand_df.drop("service_water", axis=1)
+            demand_df.drop("service_water", axis=1, inplace=True)
 
-        # Read in "load.csv" from component library into DataFrame, add metadata to scenario datapackage
-        resource = dp_ref.get_resource("load")
-        descriptor = deepcopy(resource.descriptor)
-        dp.add_resource(descriptor)
-        load_df = pd.DataFrame.from_records(resource.read(keyed=True))
-
-        # Read in "excess.csv" from component library into DataFrame, add metadata to scenario datapackage
-        resource = dp_ref.get_resource("excess")
-        descriptor = deepcopy(resource.descriptor)
-        dp.add_resource(descriptor)
-        excess_df = pd.DataFrame.from_records(resource.read(keyed=True))
-
-        # Read in "profiles.csv" from component library
-        profiles_resource = dp_ref.get_resource("profiles")
-        profiles_df = pd.DataFrame.from_records(profiles_resource.read(keyed=True))
+        # Read in relevant components from the component library
+        resource_names = ["load", "excess", "storage", "profiles"]
+        resources = {}
+        for name in resource_names:
+            resource = dp_ref.get_resource(name)
+            df = pd.DataFrame.from_records(resource.read(keyed=True))
+            resources[name] = df
 
         # Map the given demands to the corresponding loads of the component library
-        loads_to_add = []
+        load_profiles_to_add = []
         for demand in demand_df.columns:
-            match = profiles_df.columns[(profiles_df.iloc[0] == demand).values].tolist()
+            match = resources["profiles"].columns[(resources["profiles"].iloc[0] == demand).values].tolist()
             if not match:
-                logging.warning(f"Demand '{demand}' not found in '{profiles_resource.name}.csv'")
-            loads_to_add.extend(match)
+                logging.warning(f"Demand profile '{demand}' not found in 'profiles.csv'")
+            load_profiles_to_add.extend(match)
 
-        # Create new load DF (matches only) and corresponding excess DF
-        filtered_load_df = load_df[load_df["profile"].isin(loads_to_add)]
-        filtered_excess_df = excess_df[excess_df["bus"].isin(filtered_load_df["bus"])]
+        # Get all relevant busses from the load profiles
+        busses = set(resources["load"].loc[
+                        resources["load"]["profile"].isin(load_profiles_to_add), "bus"
+                    ])
 
-        # Save the required load.csv and excess.csv in the scenario component folder
-        filtered_load_df.to_csv(os.path.join(self.scenario_component_folder, "load.csv"), index=False, sep=";")
-        filtered_excess_df.to_csv(os.path.join(self.scenario_component_folder, "excess.csv"), index=False, sep=";")
+        # Collect all matching names across all resources
+        unique_names = set()
+        for df in resources.values():
+            if "bus" not in df.columns or "name" not in df.columns:
+                continue
+            unique_names.update(df.loc[df["bus"].isin(busses), "name"])
 
-        # Save scenario datapackage metadata
-        dp.commit()
-        dp.save(os.path.join(self.scenario_folder, "datapackage.json"))
+        # Add each component only once
+        for name in unique_names:
+            self.add_single_component(name)
 
 
     def process_survey(self, survey):
@@ -593,7 +571,11 @@ class ScenarioBuilder:
             "wind-turbine": {"capacity": 10, "some_parameter": 5},
             "diesel-generator": {"fuel_efficiency": 0.8}
         }
+
+        Additionally, certain answers defined in the 'criterias_list' are stored as class attributes 'self.criterias'
+        to make them easily accessible.
         """
+        criterias_list = ["2"]
         for question_id, answer in survey.items():
             print(question_id)
             # 2 options for answer:
@@ -602,6 +584,9 @@ class ScenarioBuilder:
             if answer is not None:
                 # obtain question_id
                 question_id = question_id.strip("criteria_")
+
+                if question_id in criterias_list:
+                    self.criterias[question_id] = answer
 
                 if question_id in self.mapping:
 
@@ -666,13 +651,16 @@ class ScenarioBuilder:
                             attribute_val = type_check[attribute_type](answer)
                             try:
                                 target_components = self.mapping[parent_qid]["map_answer"][parent_answer]
+
+                                for target_component in target_components:
+                                    self.components[(target_component, target_component)].update(
+                                        {attribute_name: attribute_val})
+                                    # some debugging for key error
                             except:
                                 print(f"There is a problem with question {question_id}")
-                                import pdb;pdb.set_trace()
+                                # import pdb;pdb.set_trace()
 
-                            for target_component in target_components:
-                                self.components[(target_component, target_component)].update({attribute_name: attribute_val})
-                                #some debugging for key error
+
                         else:
                             # TODO: Check if TYPE_COMPONENT_ATTRIBUTE questions are always subquestions of a TYPE_COMPONENT question
                             pass
@@ -1096,21 +1084,25 @@ if __name__=="__main__":
     repo_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "scenarios")
     # create_scenario_from_survey_data({}, "test_scenario", repo_path)
 
-    scen_id = 15
+    scen_id = 19
 
     with open(os.path.join(project_dir, "app", f"scenario_{scen_id}_survey_answers.json"), "r") as fp:
         survey_answers =  json.load(fp)
 
     scenario = ScenarioBuilder(name=f"scenario_{scen_id}", overwrite=False)
-    #parse the survey to add components to a list
+
+    # Parse the survey to add components to a list
     scenario.process_survey(survey_answers)
-    scenario.water_systems_postprocessing(survey_answers)
-    scenario.waste_water_systems_postprocessing(survey_answers)
+
+    # Add a load.csv component based on demand data from WEFEDemand
+    scenario.process_demand()
+
+    # scenario.water_systems_postprocessing(survey_answers)
+    # scenario.waste_water_systems_postprocessing(survey_answers)
 
     # scenario.crop_systems_postprocessing()
 
-    # Add a load.csv component based on demand data from WEFEDemand
-    scenario.add_loads()
+
 
     # adding the component to the datapackge from the component library based on the list of component
     # to add we got from the survey
