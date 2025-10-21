@@ -55,6 +55,7 @@ class ScenarioBuilder:
         self.overwrite = overwrite
         self.mapping = SURVEY_ANSWER_COMPONENT_MAPPING
         self.subq_mapping = SUB_QUESTION_MAPPING
+        self.criterias = {}
         self.components = {}
         self.wished_components = {}
         self.additional_busses = []
@@ -185,6 +186,8 @@ class ScenarioBuilder:
 
         safety_check()
         if survey["criteria_2"] == "Yes": # set Yes currently
+            # This Dict could be used to make all relevant criterias accessible throughout all functions
+            self.criterias["drinking_water_only"] = True
             suffixes_a = ["_GWa", "_DSa", "_RCa", "_La"] # drinking water
             suffixes_b = ["_GWb", "_DSb", "_RCb", "_Lb"] # service water
             drinking_water_component_list = []
@@ -338,6 +341,9 @@ class ScenarioBuilder:
 
     def crop_systems_postprocessing(self):
         """
+        ***** WIP *****
+        # TODO: Deploy improved 'crop' facade in OTP first
+
         AFTER survey_processing to fetch crop components
         BEFORE add_components to be able to add extra components based on crop components
         """
@@ -533,6 +539,12 @@ class ScenarioBuilder:
 
         # Read in demand from csv
         demand_df = self.demand_data
+
+        # Merge drinking and service water demands if there is no differentiation
+        drinking_water_only = self.criterias["drinking_water_only"]
+        if drinking_water_only:
+            demand_df["drinking_water"] += demand_df["service_water"]
+            demand_df.drop("service_water", axis=1)
 
         # Read in "load.csv" from component library into DataFrame, add metadata to scenario datapackage
         resource = dp_ref.get_resource("load")
