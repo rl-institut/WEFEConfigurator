@@ -1,13 +1,2 @@
-name;type;carrier;tech;capacity;capacity_cost;marginal_cost;carrier_cost;efficiency;from_bus;to_bus;expandable; verbose_name
-inverter;conversion;energy;energy_conversion;0;10;0;0;0.9;dc-elec-bus;ac-elec-bus;true;"Inverter"
-diesel_generator;conversion;energy;energy_conversion;0;10;0;0;0.9;diesel-bus;ac-elec-bus;true;"Diesel Generator"
-hydro_power; conversion; energy;energy_conversion; 0;10;0;0;0.9;riverflow-bus;ac-elec-bus;true;"Hydropower Plant"
-pv_rooftop;conversion;energy;energy_conversion;0;10;0;0;0.9;solar-bus;ac-elec-bus;true;"Rooftop Photovoltaic System"
-pv_ground_mounted;conversion;energy;energy_conversion;0;10;0;0;0.9;solar-bus;ac-elec-bus;true;"Ground-mounted Photovoltaic System"
-pv_floating;conversion;energy;energy_conversion;0;10;0;0;0.9;solar-bus;ac-elec-bus;true;"Floating Photovoltaic System"
-pv_canal_top;conversion;energy;energy_conversion;0;10;0;0;0.9;solar-bus;ac-elec-bus;true;"Canal-top Photovoltaic System"
-wind_turbine;conversion;energy;energy_conversion;0;10;0;0;0.9;wind-bus;ac-elec-bus;true;"Wind Turbine"
-electrolyzer;conversion;energy;energy_conversion;0;10;0;0;0.9;ac-elec-bus;hydrogen-bus;true;"Electrolyzer"
-fuel_cell;conversion;energy;energy_conversion;0;10;0;0;0.9;hydrogen_bus;ac_elec_bus;true;"Fuel Cell"
-
-# TODO add crop types; potentially differenciate between C2 and C3 plant
+type;name;tech;expandable;primary;capacity;capacity_minimum;capacity_potential;capacity_cost;solar_energy_bus;irrigation_bus;precipitation_bus;crop_bus;biomass_bus;capex;opex_fix;lifetime;time_profile;ghi_profile;t_air_profile;tp_profile;windspeed_profile;t_dp_profile;elevation;crop_type;sowing_date;harvest_date;has_irrigation
+mimo-crop;mimo-crop;mimo;False;solar-energy-bus;100.0;0.0;;0.0;solar-energy-bus;irrigation-bus;precipitation-bus;crop-bus;biomass-bus;;;;time;ghi;t_air;tp;windspeed;t_dp;71.0;tomato;07-15;05-31;True

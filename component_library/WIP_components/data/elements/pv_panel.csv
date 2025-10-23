@@ -1,2 +1,2 @@
-name;type;carrier;tech;capacity;capacity_potential;capacity_cost;marginal_cost;carrier_cost;land_requirement_factor;ghg_emission_factor;water_consumption_factor;bus;t_air;ghi;pv_type;latitude;expandable
-pv-panel;pv-panel;electricity;pv;0;;50;0;0;9.0;0.035;0.0;dc-elec-bus;air-temperature-profile;ghi-profile;boviet_450;30;True
+name;type;carrier;tech;capacity;capacity_potential;capacity_cost;marginal_cost;carrier_cost;resource_cost;capex;opex_fix;lifetime;land_requirement_factor;ghg_emission_factor;water_consumption_factor;bus;t_air;ghi;pv_type;latitude;expandable
+pv-panel;pv-panel;electricity;pv;0.0;+inf;0.0;0.0;0.0;0.0;1500.0;15.0;30.0;1.5;0.04;0.0;dc-elec-bus;air-temperature-profile;ghi-profile;boviet_450;30.0;True
