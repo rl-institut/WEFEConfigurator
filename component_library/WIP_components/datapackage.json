@@ -383,6 +383,12 @@
                             "resource": "bus",
                             "fields": "name"
                         }
+                    },
+                    {
+                        "fields": "profile",
+                        "reference": {
+                            "resource": "profiles"
+                        }
                     }
                 ]
             }
@@ -517,6 +523,18 @@
                         "reference": {
                             "resource": "bus",
                             "fields": "name"
+                        }
+                    },
+                    {
+                        "fields": "t_air",
+                        "reference": {
+                            "resource": "profiles"
+                        }
+                    },
+                    {
+                        "fields": "ghi",
+                        "reference": {
+                            "resource": "profiles"
                         }
                     }
                 ]
@@ -1387,6 +1405,18 @@
                         "reference": {
                             "resource": "bus",
                             "fields": "name"
+                        }
+                    },
+                    {
+                        "fields": "windspeed",
+                        "reference": {
+                            "resource": "profiles"
+                        }
+                    },
+                    {
+                        "fields": "surface_roughness",
+                        "reference": {
+                            "resource": "profiles"
                         }
                     }
                 ]

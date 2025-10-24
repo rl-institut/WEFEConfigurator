@@ -30,7 +30,7 @@
                 "ac-electricity-excess"
             ],
             "biogas plant": [
-                "biogas-generator",
+                "biomass-cogeneration",
                 "biogas",
                 "ac-electricity-excess"
             ]
