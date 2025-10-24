@@ -764,8 +764,8 @@ class ScenarioBuilder:
     def add_single_component(self, component_type, component_name=None, component_attrs=None):
 
         if not isinstance(component_attrs, dict):
+            logging.warning(f"The component attributes '{component_attrs}' of component '{component_type}' must be of type 'dict'! Will be ignored...")
             component_attrs = {}
-            logging.warning(f"The component attributes {component_attrs} must be of type dict! Will be ignored...")
 
         if component_name is None:
             component_key = (component_type, component_type)
@@ -774,7 +774,7 @@ class ScenarioBuilder:
         elif isinstance(component_name, str):
             component_key = (component_type, component_name)
         else:
-            logging.warning(f"The component name {component_name} is neither a string nor a tuple")
+            logging.warning(f"The component name '{component_name}' of component type '{component_type}' is neither a string nor a tuple")
 
         self.components.update({component_key: component_attrs})
         return component_key

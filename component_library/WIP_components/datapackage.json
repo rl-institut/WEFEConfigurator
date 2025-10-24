@@ -100,6 +100,11 @@
                         "format": "default"
                     },
                     {
+                        "name": "annuity",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
                         "name": "capex",
                         "type": "number",
                         "format": "default"
@@ -142,6 +147,11 @@
                     {
                         "name": "to_bus",
                         "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "output_parameters",
+                        "type": "object",
                         "format": "default"
                     },
                     {
@@ -453,6 +463,11 @@
                         "format": "default"
                     },
                     {
+                        "name": "annuity",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
                         "name": "capex",
                         "type": "number",
                         "format": "default"
@@ -508,8 +523,18 @@
                         "format": "default"
                     },
                     {
+                        "name": "output_parameters",
+                        "type": "object",
+                        "format": "default"
+                    },
+                    {
                         "name": "expandable",
                         "type": "boolean",
+                        "format": "default"
+                    },
+                    {
+                        "name": "verbose_name",
+                        "type": "string",
                         "format": "default"
                     }
                 ],
@@ -605,6 +630,11 @@
                         "format": "default"
                     },
                     {
+                        "name": "annuity",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
                         "name": "capex",
                         "type": "number",
                         "format": "default"
@@ -651,7 +681,12 @@
                     },
                     {
                         "name": "invest_relation_input_output",
-                        "type": "integer",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "output_parameters",
+                        "type": "object",
                         "format": "default"
                     },
                     {
@@ -1072,7 +1107,7 @@
                     },
                     {
                         "name": "profile",
-                        "type": "integer",
+                        "type": "string",
                         "format": "default"
                     },
                     {
@@ -1335,6 +1370,11 @@
                         "format": "default"
                     },
                     {
+                        "name": "annuity",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
                         "name": "capex",
                         "type": "number",
                         "format": "default"
@@ -1390,8 +1430,18 @@
                         "format": "default"
                     },
                     {
+                        "name": "output_parameters",
+                        "type": "object",
+                        "format": "default"
+                    },
+                    {
                         "name": "expandable",
                         "type": "boolean",
+                        "format": "default"
+                    },
+                    {
+                        "name": "verbose_name",
+                        "type": "string",
                         "format": "default"
                     }
                 ],
