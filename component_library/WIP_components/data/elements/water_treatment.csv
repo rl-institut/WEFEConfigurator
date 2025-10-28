@@ -1,27 +1,27 @@
-name;type;carrier;tech;expandable;capacity;capacity_cost;marginal_cost;electricity_bus;water_in_bus;water_out_bus;capex;opex_fix;age;lifetime;carrier_cost;resource_cost;land_requirement_factor;ghg_emission_factor;water_consumption_factor;land_requirement;ghg_emissions;water_footprint;annuity;verbose_name
-cartridge_filter;water-treatment;water;water-treatment;TRUE;0.0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Cartridge Filter
-activated_carbon_filter;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Activated Carbon Filter
-chlorination;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Chlorination Unit
-microfiltration;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Microfiltration
-ultrafiltration;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Ultrafiltration
-nanofiltration;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Nanofiltration
-ceramic_filter;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Ceramic Filter
-slow_sand_filter;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Slow Sand Filter
-uv_disinfection;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;UV-Disinfection
-adsorption;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Adsorption
-biofiltration;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Biofiltration
-electrodialysis;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Electrodialysis
-ion_exchange;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Ion Exchange
-simple_oxidation;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Simple Oxidation
-ozonation;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Ozonation
-biological_denitrification;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Biological Denitrification
-photocatalysis;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Photocatalysis
-intake_structure;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Intake Structure
-coarse_bar_screen;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Coarse Bar Screen
-coagulation_flocculation;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Coagulation Flocculation
-distillation;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Distillation
-membrane_distillation;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Membrane Distillation
-boiling;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Boiling
-reverse_osmosis;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Reverse Osmosis
-fine_screen;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Fine Screen
-grit_chamber;water-treatment;water;water-treatment;TRUE;0;261.0909091;;ac-elec-bus;water-in-bus;water-out-bus;100;20;0;20;0;0;0.1;0.045;0;;;;;Grit Chamber
+name;type;carrier;tech;capacity;capacity_cost;capacity_potential;marginal_cost;carrier_cost;capex;opex_fix;lifetime;specific_energy_consumption;efficiency;resource_cost;land_requirement_factor;ghg_emission_factor;water_consumption_factor;electricity_bus;water_in_bus;water_out_bus;brine_out_bus;waste_biomass_out_bus;N2_gas_bus;expandable;verbose_name
+cartridge_filter;cartridge_filter;water;water-treatment;0.;300.0;+inf;0.;0.;600.0;30.0;15.0;0.06;0.97;0.0;0.08;0.04;0.0;ac-elec-bus;groundwater-bus;drinking-water-bus;;;;True;Cartridge Filter
+activated_carbon_filter;activated_carbon_filter;water;water-treatment;0.;400.0;+inf;0.;0.;600.0;20.0;10.0;0.05;0.97;0.0;0.08;0.04;0.008;ac-elec-bus;groundwater-bus;drinking-water-bus;;;;True;Activated Carbon Filter
+chlorination;chlorination;water;water-treatment;0.;250.0;+inf;0.;0.;700.0;35.0;15.0;0.06;;0.0;0.12;0.06;0.008;ac-elec-bus;groundwater-bus;drinking-water-bus;;;;True;Chlorination Unit
+microfiltration;microfiltration;water;water-treatment;0.;600.0;+inf;0.;0.;1200.0;50.0;12.0;0.20;0.97;0.0;0.12;0.07;0.04;ac-elec-bus;groundwater-bus;drinking-water-bus;brine-bus;;;True;Microfiltration
+ultrafiltration;ultrafiltration;water;water-treatment;0.;700.0;+inf;0.;0.;1300.0;50.0;12.0;0.25;0.98;0.0;0.12;0.07;0.04;ac-elec-bus;groundwater-bus;drinking-water-bus;brine-bus;;;True;Ultrafiltration
+nanofiltration;nanofiltration;water;water-treatment;0.;1000.0;+inf;0.;0.;2000.0;60.0;12.0;0.50;0.90;0.0;0.12;0.10;0.08;ac-elec-bus;groundwater-bus;drinking-water-bus;brine-bus;;;True;Nanofiltration
+ceramic_filter;ceramic_filter;water;water-treatment;0.;200.0;+inf;0.;0.;150.0;15.0;8.0;0.02;0.97;0.0;0.04;0.03;0.0;ac-elec-bus;groundwater-bus;drinking-water-bus;;;;True;Ceramic Filter
+slow_sand_filter;slow_sand_filter;water;water-treatment;0.;300.0;+inf;0.;0.;700.0;20.0;25.0;0.015;0.98;0.0;2.5;0.06;0.0;ac-elec-bus;groundwater-bus;drinking-water-bus;;;;True;Slow Sand Filter
+uv_disinfection;uv_disinfection;water;water-treatment;0.;300.0;+inf;0.;0.;700.0;40.0;12.0;0.06;;0.0;0.10;0.06;0.005;ac-elec-bus;groundwater-bus;drinking-water-bus;;;;True;UV-Disinfection
+adsorption;adsorption;water;water-treatment;0.;400.0;+inf;0.;0.;700.0;30.0;12.0;0.06;;0.0;0.10;0.06;0.008;ac-elec-bus;groundwater-bus;drinking-water-bus;;;;True;Adsorption
+biofiltration;biofiltration;water;water-treatment;0.;300.0;+inf;0.;0.;1000.0;40.0;25.0;0.12;0.85;0.0;2.0;0.06;0.005;ac-elec-bus;groundwater-bus;drinking-water-bus;;biomass-bus;;True;Biofiltration
+electrodialysis;electrodialysis;water;water-treatment;0.;700.0;+inf;0.;0.;1400.0;40.0;15.0;0.90;0.75;0.0;0.10;0.10;0.008;ac-elec-bus;groundwater-bus;drinking-water-bus;brine-bus;;;True;Electrodialysis
+ion_exchange;ion_exchange;water;water-treatment;0.;450.0;+inf;0.;0.;1000.0;50.0;12.0;0.06;0.96;0.0;0.12;0.08;0.04;ac-elec-bus;groundwater-bus;drinking-water-bus;;;;True;Ion Exchange
+simple_oxidation;simple_oxidation;water;water-treatment;0.;250.0;+inf;0.;0.;700.0;35.0;15.0;0.07;;0.0;0.08;0.06;0.008;ac-elec-bus;groundwater-bus;drinking-water-bus;;;;True;Simple Oxidation
+ozonation;ozonation;water;water-treatment;0.;700.0;+inf;0.;0.;1200.0;50.0;15.0;;;0.0;0.12;0.08;0.008;ac-elec-bus;groundwater-bus;drinking-water-bus;;;;True;Ozonation
+biological_denitrification;biological_denitrification;water;water-treatment;0.;300.0;+inf;0.;0.;1000.0;35.0;20.0;0.008;;0.0;0.8;0.04;0.0;ac-elec-bus;groundwater-bus;drinking-water-bus;;;N2-bus;True;Biological Denitrification
+photocatalysis;photocatalysis;water;water-treatment;0.;600.0;+inf;0.;0.;1200.0;45.0;10.0;0.12;;0.0;0.10;0.07;0.008;ac-elec-bus;groundwater-bus;drinking-water-bus;;;;True;Photocatalysis
+intake_structure;intake_structure;water;water-treatment;0.;200.0;+inf;0.;0.;1000.0;20.0;40.0;0.008;0.98;0.0;0.20;0.01;0.0;ac-elec-bus;groundwater-bus;drinking-water-bus;;;;True;Intake Structure
+coarse_bar_screen;coarse_bar_screen;water;water-treatment;0.;200.0;+inf;0.;0.;700.0;20.0;25.0;0.04;0.90;0.0;0.12;0.03;0.0;ac-elec-bus;groundwater-bus;drinking-water-bus;;;;True;Coarse Bar Screen
+coagulation_flocculation;coagulation_flocculation;water;water-treatment;0.;300.0;+inf;0.;0.;700.0;20.0;25.0;0.04;0.95;0.0;0.3;0.05;0.008;ac-elec-bus;groundwater-bus;drinking-water-bus;;;;True;Coagulation Flocculation
+distillation;distillation;water;water-treatment;0.;700.0;+inf;0.;0.;1400.0;55.0;20.0;0.80;0.70;0.0;0.3;0.12;0.02;ac-elec-bus;groundwater-bus;drinking-water-bus;brine-bus;;;True;Distillation
+membrane_distillation;membrane_distillation;water;water-treatment;0.;700.0;+inf;0.;0.;1400.0;70.0;15.0;5.0;0.75;0.0;0.3;0.12;0.01;ac-elec-bus;groundwater-bus;drinking-water-bus;brine-bus;;;True;Membrane Distillation
+boiling;boiling;water;water-treatment;0.;600.0;+inf;0.;0.;1200.0;50.0;15.0;0.80;0.70;0.0;0.3;0.12;0.02;ac-elec-bus;groundwater-bus;drinking-water-bus;;;;True;Boiling
+reverse_osmosis;reverse_osmosis;water;water-treatment;0.;700.0;+inf;0.;0.;1400.0;55.0;12.0;1.2;0.55;0.0;0.10;0.12;0.5;ac-elec-bus;groundwater-bus;drinking-water-bus;brine-bus;;;True;Reverse Osmosis
+fine_screen;fine_screen;water;water-treatment;0.;250.0;+inf;0.;0.;800.0;20.0;25.0;0.04;0.99;0.0;0.12;0.03;0.0;ac-elec-bus;groundwater-bus;drinking-water-bus;;;;True;Fine Screen
+grit_chamber;grit_chamber;water;water-treatment;0.;150.0;+inf;0.;0.;700.0;20.0;30.0;0.015;0.98;0.0;0.20;0.03;0.0;ac-elec-bus;groundwater-bus;drinking-water-bus;;;;True;Grit Chamber
