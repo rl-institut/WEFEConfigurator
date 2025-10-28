@@ -1,6 +1,6 @@
 name;type;carrier;tech;capacity;capacity_cost;capacity_potential;marginal_cost;carrier_cost;capex;opex_fix;lifetime;resource_cost;land_requirement_factor;ghg_emission_factor;water_consumption_factor;human_feces_bus;animal_feces_bus;human_urine_bus;animal_urine_bus;biomass_waste_bus;compost_out_bus;dry_feces_out_bus;water_in_bus;water_out_bus;expandable;verbose_name
 flush_toilet;flush_toilet;water;toilet;0.;1000.0;+inf;0.;0.;800.0;200.0;15.0;0.0;0.15;0.075;0.009;human-feces-bus;;human-urine-bus;;;;;service-water-bus;black-water-bus;True;Flush Toilet
-latrine;latrine;water;toilet;0.;175.0;+inf;0.;0.;375.0;20.0;10.0;0.0;1.0;0.35;0;human-feces-bus;;human-urine-bus;;biomass-bus;;;;;True;Latrine
-dry_toilet;dry_toilet;water;toilet;0.;400.0;+inf;0.;0.;750.0;27.5;15.0;0.0;0.20;0.06;0;human-feces-bus;;human-urine-bus;;;;dry-feces-bus;;grey-water-bus;True;Dry Toilet
-composting_toilet;composting_toilet;water;toilet;0.;550.0;+inf;0.;0.;1050.0;40.0;20.0;0.0;0.15;0.065;0;human-feces-bus;;human-urine-bus;;;compost-bus;;;grey-water-bus;True;Composting Toilet
-open_field;open_field;water;toilet;0.;0.0;+inf;0.;0.;0.0;0.0;;0.0;3.0;0.8;0;human-feces-bus;animal-feces-bus;human-urine-bus;animal-urine-bus;biomass-bus;;;;;True;Open Field
+latrine;latrine;water;toilet;0.;175.0;+inf;0.;0.;375.0;20.0;10.0;0.0;1.0;0.35;0.0;human-feces-bus;;human-urine-bus;;biomass-bus;;;;;True;Latrine
+dry_toilet;dry_toilet;water;toilet;0.;400.0;+inf;0.;0.;750.0;27.5;15.0;0.0;0.20;0.06;0.0;human-feces-bus;;human-urine-bus;;;;dry-feces-bus;;grey-water-bus;True;Dry Toilet
+composting_toilet;composting_toilet;water;toilet;0.;550.0;+inf;0.;0.;1050.0;40.0;20.0;0.0;0.15;0.065;0.0;human-feces-bus;;human-urine-bus;;;compost-bus;;;grey-water-bus;True;Composting Toilet
+open_field;open_field;water;toilet;0.;0.0;+inf;0.;0.;0.0;0.0;;0.0;3.0;0.8;0.0;human-feces-bus;animal-feces-bus;human-urine-bus;animal-urine-bus;biomass-bus;;;;;True;Open Field
