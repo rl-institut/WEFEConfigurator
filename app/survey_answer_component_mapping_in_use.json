@@ -2329,8 +2329,7 @@
                 "tap-water"
             ],
             "desalinated seawater": [
-                "seawater",
-                "swro"
+                "seawater"
             ],
             "river/creek": [
                 "surface-water"
@@ -4521,7 +4520,7 @@
                 "tap_water"
             ],
             "desalinated seawater": [
-                "seawater", "desalinator"
+                "seawater"
             ],
             "river/creek": [
                 ""
@@ -6709,7 +6708,7 @@
                 "tap_water"
             ],
             "desalinated seawater": [
-                "seawater", "desalinator"
+                "seawater"
             ],
             "river/creek": [
                 ""
