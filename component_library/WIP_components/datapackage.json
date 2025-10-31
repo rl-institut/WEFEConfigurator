@@ -86,7 +86,7 @@
                     },
                     {
                         "name": "marginal_cost",
-                        "type": "number",
+                        "type": "string",
                         "format": "default"
                     },
                     {
@@ -233,7 +233,7 @@
                     },
                     {
                         "name": "marginal_cost",
-                        "type": "number",
+                        "type": "string",
                         "format": "default"
                     },
                     {
@@ -443,7 +443,7 @@
                     },
                     {
                         "name": "marginal_cost",
-                        "type": "number",
+                        "type": "string",
                         "format": "default"
                     },
                     {
@@ -608,7 +608,7 @@
                     },
                     {
                         "name": "marginal_cost",
-                        "type": "number",
+                        "type": "string",
                         "format": "default"
                     },
                     {
@@ -743,7 +743,7 @@
                     },
                     {
                         "name": "marginal_cost",
-                        "type": "number",
+                        "type": "string",
                         "format": "default"
                     },
                     {
@@ -895,7 +895,7 @@
                     },
                     {
                         "name": "marginal_cost",
-                        "type": "number",
+                        "type": "string",
                         "format": "default"
                     },
                     {
@@ -1049,7 +1049,7 @@
                     },
                     {
                         "name": "marginal_cost",
-                        "type": "number",
+                        "type": "string",
                         "format": "default"
                     },
                     {
@@ -1149,7 +1149,7 @@
                     },
                     {
                         "name": "marginal_cost",
-                        "type": "number",
+                        "type": "string",
                         "format": "default"
                     },
                     {
@@ -1318,7 +1318,7 @@
                     },
                     {
                         "name": "marginal_cost",
-                        "type": "number",
+                        "type": "string",
                         "format": "default"
                     },
                     {
@@ -1480,11 +1480,322 @@
                         "name": "surface-roughness-profile",
                         "type": "string",
                         "format": "default"
+                    },
+                    {
+                        "name": "cf-aware-profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "inverter_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "diesel-generator_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "biomass-cogeneration_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "electrolyzer_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "fuel-cell_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "lpg_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "kerosene_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "biofuel_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "diesel_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "woody_biomass_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "grid_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "biogas_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "hydro-power_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "pv-panel_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "battery-storage_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "drinking-water-storage_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "service-water-storage_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "flush_toilet_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "latrine_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "dry_toilet_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "composting_toilet_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "open_field_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "septic_system_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "constructed_wetland_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "centralized_waste_water_treatment_plant_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "decentralized_waste_water_treatment_plant_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "water_reuse_system_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "groundwater_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "seawater_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "surface-water_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "precipitation_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "tap-water_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "truck-water_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "bottled-water_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "cartridge_filter_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "activated_carbon_filter_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "chlorination_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "microfiltration_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "ultrafiltration_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "nanofiltration_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "ceramic_filter_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "slow_sand_filter_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "uv_disinfection_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "adsorption_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "biofiltration_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "electrodialysis_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "ion_exchange_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "simple_oxidation_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "ozonation_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "biological_denitrification_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "photocatalysis_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "intake_structure_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "coarse_bar_screen_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "coagulation_flocculation_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "distillation_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "membrane_distillation_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "boiling_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "reverse_osmosis_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "fine_screen_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "grit_chamber_mc_profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "wind-turbine_mc_profile",
+                        "type": "string",
+                        "format": "default"
                     }
                 ],
                 "missingValues": [
                     ""
-                ]
+                ],
+                "foreignKeys": []
             }
         }
     ]

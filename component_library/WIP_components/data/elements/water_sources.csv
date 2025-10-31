@@ -1,8 +1,8 @@
 name;type;carrier;tech;capacity;capacity_cost;bus;marginal_cost;carrier_cost;head;profile;output_parameters;expandable;salinity;verbose_name
-groundwater;dispatchable;water;source;0;0;groundwater-bus;0.5;0;0;;{};true;0;"Groundwater"
-seawater;dispatchable;water;source;0;0;seawater-bus;0.5;0;0;;{};true;0;"Seawater"
-surface-water;dispatchable;water;source;0;0;seawater-bus;0.5;0;0;;{};true;0;"Surface Water"
-precipitation;dispatchable;water;source;0;0;precipitation-bus;0;0;0;precipitation-profile;{};true;0;"Rain"
-tap-water;dispatchable;water;source;0;0;tap-water-bus;0;0;;;{};true;0;"Tap Water"
-truck-water;dispatchable;water;source;0;0;tap-water-bus;0;0;;;{};true;0;"Water delievered by a Truck"
-bottled-water;dispatchable;water;source;0;0;tap-water-bus;0;0;;;{};true;0;"Bottled Water"
+groundwater;dispatchable;water;source;0;0;groundwater-bus;groundwater_mc_profile;0;0.0;;{};True;0;Groundwater
+seawater;dispatchable;water;source;0;0;seawater-bus;seawater_mc_profile;0;0.0;;{};True;0;Seawater
+surface-water;dispatchable;water;source;0;0;seawater-bus;surface-water_mc_profile;0;0.0;;{};True;0;Surface Water
+precipitation;dispatchable;water;source;0;0;precipitation-bus;precipitation_mc_profile;0;0.0;precipitation-profile;{};True;0;Rain
+tap-water;dispatchable;water;source;0;0;tap-water-bus;tap-water_mc_profile;0;;;{};True;0;Tap Water
+truck-water;dispatchable;water;source;0;0;tap-water-bus;truck-water_mc_profile;0;;;{};True;0;Water delievered by a Truck
+bottled-water;dispatchable;water;source;0;0;tap-water-bus;bottled-water_mc_profile;0;;;{};True;0;Bottled Water

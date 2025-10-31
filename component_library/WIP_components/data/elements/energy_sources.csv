@@ -1,9 +1,9 @@
 name;type;carrier;tech;capacity;capacity_cost;bus;marginal_cost;carrier_cost;resource_cost;land_requirement_factor;ghg_emission_factor;water_consumption_factor;indirect_water_consumption_factor;profile;output_parameters;expandable;verbose_name
-lpg;dispatchable;energy;source;0.0;0.0;lpg-bus;0.5;0.0;0.5;0.0;0.0;0.0;0.0;1;{};true;"Liquified Petroleum Gas (LPG)"
-kerosene;dispatchable;energy;source;0.0;0.0;kerosene-bus;0.5;0.0;0.5;0.0;0.0;0.0;0.0;1;{};true;"Kerosene"
-biofuel;dispatchable;energy;source;0.0;0.0;biofuel-bus;0.5;0.0;0.5;0.0;0.0;0.0;0.0;1;{};true;"Biofuel"
-diesel;dispatchable;energy;source;0.0;0.0;diesel-bus;0.2;0.0;0.2;0.0;0.0;0.0;0.0;1;{};true;"Diesel"
-woody_biomass;dispatchable;energy;source;0.0;0.0;woody_bus;0.1;0.0;0.1;0.0;0.0;0.0;0.0;1;{};true;"Woody Biomass"
-grid;dispatchable;energy;source;0.0;0.0;ac-elec-bus;0.185;0.0;0.185;0.001;0.45;0.0;0.0;1;{};true;"Electricity Grid"
-biogas;dispatchable;energy;source;0.0;0.0;biogas-bus;0.0;0.0;0.0;0.0;0.0;0.0;0.0;1;{};true;"Biogas"
-hydro-power;dispatchable;energy;source;0.0;0.0;ac-elec-bus;0.0;0.0;0.0;0.0;0.0;0.0;0.0;1;{};false;"Hydropower Plant"
+lpg;dispatchable;energy;source;0.0;0.0;lpg-bus;lpg_mc_profile;0.0;0.5;0.0;0.0;0.0;0.0;1;{};True;Liquified Petroleum Gas (LPG)
+kerosene;dispatchable;energy;source;0.0;0.0;kerosene-bus;kerosene_mc_profile;0.0;0.5;0.0;0.0;0.0;0.0;1;{};True;Kerosene
+biofuel;dispatchable;energy;source;0.0;0.0;biofuel-bus;biofuel_mc_profile;0.0;0.5;0.0;0.0;0.0;0.0;1;{};True;Biofuel
+diesel;dispatchable;energy;source;0.0;0.0;diesel-bus;diesel_mc_profile;0.0;0.2;0.0;0.0;0.0;0.0;1;{};True;Diesel
+woody_biomass;dispatchable;energy;source;0.0;0.0;woody_bus;woody_biomass_mc_profile;0.0;0.1;0.0;0.0;0.0;0.0;1;{};True;Woody Biomass
+grid;dispatchable;energy;source;0.0;0.0;ac-elec-bus;grid_mc_profile;0.0;0.185;0.001;0.45;0.0;0.0;1;{};True;Electricity Grid
+biogas;dispatchable;energy;source;0.0;0.0;biogas-bus;biogas_mc_profile;0.0;0.0;0.0;0.0;0.0;0.0;1;{};True;Biogas
+hydro-power;dispatchable;energy;source;0.0;0.0;ac-elec-bus;hydro-power_mc_profile;0.0;0.0;0.0;0.0;0.0;0.0;1;{};False;Hydropower Plant

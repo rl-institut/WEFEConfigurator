@@ -1,6 +1,6 @@
 name;type;carrier;tech;capacity;capacity_cost;capacity_potential;marginal_cost;carrier_cost;efficiency;annuity;capex;opex_fix;lifetime;resource_cost;land_requirement_factor;ghg_emission_factor;water_consumption_factor;from_bus;to_bus;output_parameters;expandable;verbose_name
-inverter;conversion;energy;energy_conversion;0.;0.;+inf;0.;0.;0.94;0.0;350.0;15.0;12.5;0.0;0.15;0.0;0.0;dc-elec-bus;ac-elec-bus;{};true;"Inverter"
-diesel-generator;conversion;energy;energy_conversion;0.;0.;+inf;0.;0.;0.35;0.0;750.0;15.0;17.5;0.0;0.075;0.7;0.0;diesel-bus;ac-elec-bus;{};true;"Diesel Generator"
-biomass-cogeneration;conversion;energy;energy_conversion;0.;0.;+inf;0.;0.;0.25;0.0;5500.0;80.0;22.5;0.0;0.15;0.15;0.0;biogas-bus;ac-elec-bus;{};true;Biomass Cogeneration
-electrolyzer;conversion;energy;energy_conversion;0.;0.;+inf;0.;0.;0.7;0.0;1750.0;45.0;15.0;0.0;0.75;0.55;0.0;ac-elec-bus;hydrogen-bus;{};true;"Electrolyzer"
-fuel-cell;conversion;energy;energy_conversion;0.;0.;+inf;0.;0.;0.5;0.0;3500.0;60.0;7.5;0.0;0.4;0.03;0.0;hydrogen_bus;ac_elec_bus;{};true;"Fuel Cell"
+inverter;conversion;energy;energy_conversion;0.0;0.0;inf;inverter_mc_profile;0.0;0.94;0.0;350.0;15.0;12.5;0.0;0.15;0.0;0.0;dc-elec-bus;ac-elec-bus;{};True;Inverter
+diesel-generator;conversion;energy;energy_conversion;0.0;0.0;inf;diesel-generator_mc_profile;0.0;0.35;0.0;750.0;15.0;17.5;0.0;0.075;0.7;0.0;diesel-bus;ac-elec-bus;{};True;Diesel Generator
+biomass-cogeneration;conversion;energy;energy_conversion;0.0;0.0;inf;biomass-cogeneration_mc_profile;0.0;0.25;0.0;5500.0;80.0;22.5;0.0;0.15;0.15;0.0;biogas-bus;ac-elec-bus;{};True;Biomass Cogeneration
+electrolyzer;conversion;energy;energy_conversion;0.0;0.0;inf;electrolyzer_mc_profile;0.0;0.7;0.0;1750.0;45.0;15.0;0.0;0.75;0.55;0.0;ac-elec-bus;hydrogen-bus;{};True;Electrolyzer
+fuel-cell;conversion;energy;energy_conversion;0.0;0.0;inf;fuel-cell_mc_profile;0.0;0.5;0.0;3500.0;60.0;7.5;0.0;0.4;0.03;0.0;hydrogen_bus;ac_elec_bus;{};True;Fuel Cell

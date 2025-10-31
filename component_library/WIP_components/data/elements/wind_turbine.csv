@@ -1,2 +1,2 @@
 name;type;carrier;tech;capacity;capacity_potential;capacity_cost;marginal_cost;carrier_cost;resource_cost;annuity;capex;opex_fix;lifetime;land_requirement_factor;ghg_emission_factor;water_consumption_factor;bus;windspeed;surface_roughness;ref_height;turbine_type;output_parameters;expandable;verbose_name
-wind-turbine;wind-turbine;electricity;wind-turbine;0.;+inf;0.;0.;0.;0.;0.0;1600.0;35.0;22.5;2.5;0.02;0.0;ac-elec-bus;wind-speed-profile;surface-roughness-profile;100.0;aeolos-h_50kw;{};True;Wind Turbine
+wind-turbine;wind-turbine;electricity;wind-turbine;0.0;inf;0.0;wind-turbine_mc_profile;0.0;0.0;0.0;1600.0;35.0;22.5;2.5;0.02;0.0;ac-elec-bus;wind-speed-profile;surface-roughness-profile;100.0;aeolos-h_50kw;{};True;Wind Turbine

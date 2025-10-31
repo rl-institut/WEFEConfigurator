@@ -885,14 +885,16 @@ class ScenarioBuilder:
                             scen_profiles_df[profile] = weather_df[matching_col].reindex(range(profiles_len)).values
                         elif matching_col in demand_df.columns:
                             scen_profiles_df[profile] = demand_df[matching_col].reindex(range(profiles_len)).values
+                        elif profile.endswith("mc_profile"):
+                            scen_profiles_df[profile] = pd.Series([0] * profiles_len, dtype=float)
                         else:
                             logging.warning(
                                 f"Profile '{profile}' is not in the available data. A dummy profile (series of 1) will be used.")
-                            scen_profiles_df[profile] = pd.Series([1] * profiles_len)
+                            scen_profiles_df[profile] = pd.Series([1] * profiles_len, dtype=float)
                     else:
                         logging.warning(
                             f"Profile '{profile}' is not in the profile library. A dummy profile (series of 1) will be used.")
-                        scen_profiles_df[profile] = pd.Series([1] * profiles_len)
+                        scen_profiles_df[profile] = pd.Series([1] * profiles_len, dtype=float)
 
 
                 # Add profiles.csv to datapackage
