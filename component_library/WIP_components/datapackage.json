@@ -393,6 +393,12 @@
                             "resource": "bus",
                             "fields": "name"
                         }
+                    },
+                    {
+                        "fields": "profile",
+                        "reference": {
+                            "resource": "profiles"
+                        }
                     }
                 ]
             }
@@ -542,6 +548,18 @@
                         "reference": {
                             "resource": "bus",
                             "fields": "name"
+                        }
+                    },
+                    {
+                        "fields": "t_air",
+                        "reference": {
+                            "resource": "profiles"
+                        }
+                    },
+                    {
+                        "fields": "ghi",
+                        "reference": {
+                            "resource": "profiles"
                         }
                     }
                 ]
@@ -964,6 +982,11 @@
                         "format": "default"
                     },
                     {
+                        "name": "sludge_out_bus",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
                         "name": "expandable",
                         "type": "boolean",
                         "format": "default"
@@ -987,14 +1010,21 @@
                         }
                     },
                     {
-                        "fields": "fuel_bus",
+                        "fields": "water_in_bus",
                         "reference": {
                             "resource": "bus",
                             "fields": "name"
                         }
                     },
                     {
-                        "fields": "heat_bus",
+                        "fields": "water_out_bus",
+                        "reference": {
+                            "resource": "bus",
+                            "fields": "name"
+                        }
+                    },
+                    {
+                        "fields": "sludge_out_bus",
                         "reference": {
                             "resource": "bus",
                             "fields": "name"
@@ -1256,14 +1286,35 @@
                         }
                     },
                     {
-                        "fields": "fuel_bus",
+                        "fields": "water_in_bus",
                         "reference": {
                             "resource": "bus",
                             "fields": "name"
                         }
                     },
                     {
-                        "fields": "heat_bus",
+                        "fields": "water_out_bus",
+                        "reference": {
+                            "resource": "bus",
+                            "fields": "name"
+                        }
+                    },
+                    {
+                        "fields": "N2_gas_bus",
+                        "reference": {
+                            "resource": "bus",
+                            "fields": "name"
+                        }
+                    },
+                    {
+                        "fields": "brine_out_bus",
+                        "reference": {
+                            "resource": "bus",
+                            "fields": "name"
+                        }
+                    },
+                    {
+                        "fields": "waste_biomass_out_bus",
                         "reference": {
                             "resource": "bus",
                             "fields": "name"
