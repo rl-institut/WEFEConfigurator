@@ -502,6 +502,9 @@ class ScenarioBuilder:
             lambda row: np.sqrt(row["u100"] ** 2 + row["v100"] ** 2), axis=1
         )
 
+        if "cf_aware" not in df.columns:
+            df["cf_aware"] = pd.Series(np.random.uniform(low=1, high=10, size=len(df)))
+
         return df
 
 
@@ -833,6 +836,9 @@ class ScenarioBuilder:
             if len(profiles_to_add) == 0:
                 print(f"No profiles listed within the component for the '{self.scenario_folder.split(os.sep)[-1]}' datapage. If you think it is an error, double check the foreign keys")
             else:
+                # Manually add 'cf_aware' because it is not a foreign key, but will be needed for pre_processing later
+                profiles_to_add.append("cf-aware-profile")
+
                 # TODO: process all profiles data into one df that shall be imported here
                 # Get processed weather data
                 weather_df = self.process_weather_data
