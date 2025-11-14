@@ -1,0 +1,2 @@
+name;type;carrier;tech;capacity;capacity_cost;capacity_potential;marginal_cost;carrier_cost;capex;opex_fix;lifetime;resource_cost;land_requirement_factor;ghg_emission_factor;water_consumption_factor;human_feces_bus;human_urine_bus;water_in_bus;water_out_bus;expandable;verbose_name
+flush_toilet;flush_toilet;water;toilet;0.;1000.0;+inf;0.;0.;800.0;200.0;15.0;0.0;0.15;0.075;0.009;human-feces-bus;human-urine-bus;service-water-bus;black-water-bus;True;Flush Toilet
