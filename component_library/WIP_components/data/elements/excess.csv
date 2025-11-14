@@ -6,4 +6,7 @@ excess-river-flow;excess;riverflow-bus;0.0
 excess-service-water;excess;service-water-bus;0.0
 excess-drinking-water;excess;drinking-water-bus;0.0
 direct_wastewater_disposal;excess;direct-disposal-wastewater-bus;0.0
-septic_tank;excess;septic-bus;10.0
+excess-compost;excess;compost-bus;0.0
+excess-dry-feces;excess;dry-feces-bus;0.0
+excess-biomass;excess;biomass-bus;0.0
+excess-N2;excess;N2-bus;0.0
