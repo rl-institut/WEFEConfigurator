@@ -8664,11 +8664,37 @@
     "7.3": {
         "map_to": "component",
         "map_answer": {
-            "flush toilet": ["flush_toilet"],
-            "latrine": ["latrine"],
-            "dry toilet": ["dry_toilet"],
-            "composting toilet": ["composting_toilet"],
-            "open field": ["open_field"]
+            "flush toilet": [
+                "flush_toilet",
+                "hu_waste",
+                "hf_waste"
+            ],
+            "latrine": [
+                "latrine",
+                "hu_waste",
+                "hf_waste",
+                "excess-biomass"
+            ],
+            "dry toilet": [
+                "dry_toilet",
+                "hu_waste",
+                "hf_waste",
+                "excess-dry-feces"
+            ],
+            "composting toilet": [
+                "composting_toilet",
+                "hu_waste",
+                "hf_waste",
+                "excess-compost"
+            ],
+            "open field": [
+                "open_field",
+                "hu_waste",
+                "hf_waste",
+                "au_waste",
+                "af_waste",
+                "excess-biomass"
+            ]
         }
     }
 }
