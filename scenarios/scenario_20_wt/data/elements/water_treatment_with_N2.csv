@@ -1,0 +1,2 @@
+name;type;carrier;tech;capacity;capacity_cost;capacity_potential;marginal_cost;carrier_cost;capex;opex_fix;lifetime;specific_energy_consumption;efficiency;resource_cost;land_requirement_factor;ghg_emission_factor;water_consumption_factor;electricity_bus;water_in_bus;water_out_bus;N2_gas_bus;expandable
+DW_biological_denitrification_1;biological_denitrification;water;water-treatment;0;300.0;inf;0;0;1000.0;35.0;20.0;0.008;;0.0;0.8;0.04;0.0;ac-elec-bus;DW_parallel_14_out_bus;DW_biological_denitrification_1_out_bus;N2-bus;True
