@@ -364,11 +364,12 @@ WATER_SUPPLY_SURVEY_STRUCTURE = (
             survey_questions_template=[
                 {
                     "question": "Are water pumps required to convey TYPE_WATER_SOURCE from the source to the point of consumption?",
+                    INFOBOX: "For simplification, we automatically assume that electric water pumps are used.",
                     "question_id": "3.1",
                     "possible_answers": ["Yes", "No"],
                     "answer_map_to": TYPE_COMPONENT,
                     "subquestion": {
-                        "Yes": ["3.1.1", "3.1.2", "3.1.4"],
+                        "Yes": ["3.1.1", "3.1.3", "3.1.4"],
                     },
                 },
                 {
@@ -376,30 +377,11 @@ WATER_SUPPLY_SURVEY_STRUCTURE = (
                     " and the elevation of the location where you are using the water?",
                     INFOBOX: "Elevation of the water source refers to for example average elevation of the groundwater level,"
                     " lake surface, or the elevation of the location of river water uptake. We require this information"
-                    "to obtain information regarding a potential water pump head",
+                    " to obtain information regarding a potential water pump head.",
                     "question_id": "3.1.1",
                     "variable_name": "head",
                     "answer_map_to": TYPE_COMPONENT_ATTRIBUTE,
                     "possible_answers": TYPE_FLOAT,
-                },
-                {
-                    "question": "Which energy source is the pump using?",
-                    "question_id": "3.1.2",
-                    "display_type": "multiple_choice_tickbox",
-                    "possible_answers": [
-                        "manual",
-                        "diesel",
-                        "electricity (grid)",
-                        "wind turbine",
-                        "photovoltaics",
-                    ],
-                    "answer_map_to": TYPE_COMPONENT,
-                    "subquestion": {
-                        "diesel": ["3.1.3"],
-                        "electricity (grid)": ["3.1.3"],
-                        "wind turbine": ["3.1.3"],
-                        "photovoltaics": ["3.1.3"],
-                    },
                 },
                 {
                     "question": "What is the rated power of the water pump?",
