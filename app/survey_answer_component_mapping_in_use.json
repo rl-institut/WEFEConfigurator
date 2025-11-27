@@ -2352,10 +2352,10 @@
         "map_to": "component",
         "map_answer": {
             "Yes": [
-                "water-pump"
+                "groundwater-pump"
             ],
             "No": [
-                ""
+                "groundwater-pipe"
             ]
         }
     },
@@ -2874,10 +2874,10 @@
         "map_to": "component",
         "map_answer": {
             "Yes": [
-                "water-pump"
+                "seawater-pump"
             ],
             "No": [
-                ""
+                "seawater-pipe"
             ]
         }
     },
@@ -3390,10 +3390,10 @@
         "map_to": "component",
         "map_answer": {
             "Yes": [
-                "water-pump"
+                "river-water-pump"
             ],
             "No": [
-                ""
+                "river-water-pipe"
             ]
         }
     },
@@ -3906,10 +3906,10 @@
         "map_to": "component",
         "map_answer": {
             "Yes": [
-                "water-pump"
+                "lake-water-pump"
             ],
             "No": [
-                ""
+                "lake-water-pipe"
             ]
         }
     },
