@@ -1,0 +1,5 @@
+name;type;balanced;carrier
+human-feces-bus;bus;True;feces
+human-urine-bus;bus;True;urine
+service-water-bus;bus;True;water
+black-water-bus;bus;True;water
