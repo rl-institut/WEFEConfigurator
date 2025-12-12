@@ -890,101 +890,99 @@ class ScenarioBuilder:
                             else:
                                 logging.error(
                                     f"Column '{col_name}' missing from resource '{res.name}' although it is listed as foreignKey")
-            # WIP, here need to take an external file as argument and only select 'profiles_to_add' columns
 
             if len(profiles_to_add) == 0:
                 print(f"No profiles listed within the component for the '{self.scenario_folder.split(os.sep)[-1]}' datapage. If you think it is an error, double check the foreign keys")
+
+            # Add cf-aware-profile which should always be present
+            profiles_to_add.append("cf-aware-profile")
+
+            # Get processed weather data
+            weather_df = self.process_weather_data
+
+            # Get demand data
+            demand_df = self.demand_data
+
+            # Check data profiles length
+            # TODO: Check possible issues with demand data and weather data,
+            #  I assumed weather data to always be of correct length while demand data may be flexible in length
+            if len(weather_df) != len(demand_df):
+                logging.warning(f"Length mismatch between {self.demand_data_path} and {self.weather_data_path}.")
+
+            if demand_df.dropna(how="all").empty:
+                profiles_len = len(weather_df)
+                logging.warning(f"{self.demand_data_path} seems to be effectively empty")
+                logging.info(f"{self.weather_data_path} will be used to set the time index of the model.")
             else:
-                # TODO: process all profiles data into one df that shall be imported here
-                # Get processed weather data
-                weather_df = self.process_weather_data
+                profiles_len = len(demand_df)
+                logging.info(f"{self.demand_data_path} will be used to set the time index of the model.")
 
-                # Get demand data
-                demand_df = self.demand_data
+            # Get blueprint profile names from component library resource for mapping, copy descriptor to adapt metadata later
+            profiles_ref = dp_ref.get_resource("profiles")
+            descriptor = deepcopy(profiles_ref.descriptor)
+            profiles_ref_df = pd.DataFrame.from_records(profiles_ref.read(keyed=True))
 
-                # Check data profiles length
-                # TODO: Check possible issues with demand data and weather data,
-                #  I assumed weather data to always be of correct length while demand data may be flexible in length
-                if len(weather_df) != len(demand_df):
-                    logging.warning(f"Length mismatch between {self.demand_data_path} and {self.weather_data_path}.")
+            # Create DF for the scenario profiles and match index with profiles length
+            scen_profiles_df = pd.DataFrame(columns=profiles_to_add, index=range(profiles_len))
 
-                if demand_df.dropna(how="all").empty:
-                    profiles_len = len(weather_df)
-                    logging.warning(f"{self.demand_data_path} seems to be effectively empty")
-                    logging.info(f"{self.weather_data_path} will be used to set the time index of the model.")
-                else:
-                    profiles_len = len(demand_df)
-                    logging.info(f"{self.demand_data_path} will be used to set the time index of the model.")
+            # If timeindex col exists: extract year (of first entry), else: set year to 2022 (according to weather data)
+            if "timeindex" in scen_profiles_df.columns:
+                scen_profiles_df["timeindex"] = pd.to_datetime(scen_profiles_df["timeindex"])
+                scen_profiles_year = int(scen_profiles_df["timeindex"].dt.year.iloc[0])
+            else:
+                scen_profiles_year = int(2022)
 
-                # Get blueprint profile names from component library for mapping
-                lib_profiles_path = os.path.join(lib_dir, "WIP_components", "data", "sequences", "profiles.csv")
-                lib_profiles_df = pd.read_csv(lib_profiles_path, sep=";")
+            # Add timeindex column in right format and length
+            timeindex = pd.date_range(
+                start=f"{scen_profiles_year}-01-01",
+                periods=profiles_len,
+                freq="h",
+                tz="UTC"
+            )
+            scen_profiles_df["timeindex"] = timeindex.strftime("%Y-%m-%dT%H:%M:%SZ")
 
-                # Create DF for the scenario profiles and match index with profiles length
-                scen_profiles_df = pd.DataFrame(columns=profiles_to_add, index=range(profiles_len))
-
-                # If timeindex col exists: extract year (of first entry), else: set year to 2022 (according to weather data)
-                if "timeindex" in scen_profiles_df.columns:
-                    scen_profiles_df["timeindex"] = pd.to_datetime(scen_profiles_df["timeindex"])
-                    scen_profiles_year = int(scen_profiles_df["timeindex"].dt.year.iloc[0])
-                else:
-                    scen_profiles_year = int(2022)
-
-                # Add timeindex column in right format and length
-                timeindex = pd.date_range(
-                    start=f"{scen_profiles_year}-01-01",
-                    periods=profiles_len,
-                    freq="h",
-                    tz="UTC"
-                )
-                scen_profiles_df["timeindex"] = timeindex.strftime("%Y-%m-%dT%H:%M:%SZ")
-
-                # Compare with profiles from library profiles csv and in case of a match, populate with data from weather df
-                for profile in profiles_to_add:
-                    if profile in lib_profiles_df.columns:
-                        matching_col = str(lib_profiles_df[profile].iloc[0])
-                        if matching_col in weather_df.columns:
-                            scen_profiles_df[profile] = weather_df[matching_col].reindex(range(profiles_len)).values
-                        elif matching_col in demand_df.columns:
-                            scen_profiles_df[profile] = demand_df[matching_col].reindex(range(profiles_len)).values
-                        else:
-                            logging.warning(
-                                f"Profile '{profile}' is not in the available data. A dummy profile (series of 1) will be used.")
-                            scen_profiles_df[profile] = pd.Series([1] * profiles_len)
+            # Compare with profiles from library profiles csv and in case of a match, populate with data from weather df
+            for profile in profiles_to_add:
+                if profile in profiles_ref_df.columns:
+                    matching_col = str(profiles_ref_df[profile].iloc[0])
+                    if matching_col in weather_df.columns:
+                        scen_profiles_df[profile] = weather_df[matching_col].reindex(range(profiles_len)).values
+                    elif matching_col in demand_df.columns:
+                        scen_profiles_df[profile] = demand_df[matching_col].reindex(range(profiles_len)).values
                     else:
                         logging.warning(
-                            f"Profile '{profile}' is not in the profile library. A dummy profile (series of 1) will be used.")
+                            f"Profile '{profile}' is not in the available data. A dummy profile (series of 1) will be used.")
                         scen_profiles_df[profile] = pd.Series([1] * profiles_len)
+                else:
+                    logging.warning(
+                        f"Profile '{profile}' is not in the profile library. A dummy profile (series of 1) will be used.")
+                    scen_profiles_df[profile] = pd.Series([1] * profiles_len)
 
 
-                # Add profiles.csv to datapackage
-                ofname = os.path.join(self.scenario_folder, "data/sequences", "profiles.csv")
-                scen_profiles_df.to_csv(ofname, index=False, sep=";")
+            # Add profiles.csv to datapackage
+            ofname = os.path.join(self.scenario_folder, "data/sequences", "profiles.csv")
+            scen_profiles_df.to_csv(ofname, index=False, sep=";")
 
-                # Update dp.json
-                resource = dp_ref.get_resource("profiles")
-                descriptor = deepcopy(resource.descriptor)
+            # The order of fields in datapackage.json has to match order of column names in profiles.csv
+            selected_fields = []
+            for profile in scen_profiles_df.columns:
+                for f in descriptor["schema"]["fields"]:
+                    if profile == f["name"]:
+                        f["type"] = "number"
+                        selected_fields.append(f)
+                # TODO: in the future, timeindex should be part of profiles in dp_ref...nevertheless,
+                #    as long as it is called "timeindex", this code will work as intended
+                if profile == "timeindex":
+                    selected_fields.append({
+                        "name": "timeindex",
+                        "type": "datetime",
+                        "format": "default"
+                    })
+            descriptor["schema"]["fields"] = selected_fields
+            dp.add_resource(descriptor)
+            dp.commit()
 
-                # The order of fields in datapackage.json has to match order of column names in profiles.csv
-                selected_fields = []
-                for profile in scen_profiles_df.columns:
-                    for f in descriptor["schema"]["fields"]:
-                        if profile == f["name"]:
-                            f["type"] = "number"
-                            selected_fields.append(f)
-                    # TODO: in the future, timeindex should be part of profiles in dp_ref...nevertheless,
-                    #    as long as it is called "timeindex", this code will work as intended
-                    if profile == "timeindex":
-                        selected_fields.append({
-                            "name": "timeindex",
-                            "type": "datetime",
-                            "format": "default"
-                        })
-                descriptor["schema"]["fields"] = selected_fields
-                dp.add_resource(descriptor)
-                dp.commit()
-
-                dp.save(os.path.join(self.scenario_folder, "datapackage.json"))
+            dp.save(os.path.join(self.scenario_folder, "datapackage.json"))
 
 
         # TODO check the foreign keys between timeseries and component attributes are valid
