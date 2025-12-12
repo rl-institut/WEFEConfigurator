@@ -2870,6 +2870,11 @@
             "schema": {
                 "fields": [
                     {
+                        "name": "cf-aware-profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
                         "name": "electricity-load-profile",
                         "type": "string",
                         "format": "default"
