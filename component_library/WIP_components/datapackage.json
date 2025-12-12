@@ -1181,12 +1181,12 @@
             "schema": {
                 "fields": [
                     {
-                        "name": "name",
+                        "name": "type",
                         "type": "string",
                         "format": "default"
                     },
                     {
-                        "name": "type",
+                        "name": "name",
                         "type": "string",
                         "format": "default"
                     },
@@ -1201,6 +1201,16 @@
                         "format": "default"
                     },
                     {
+                        "name": "expandable",
+                        "type": "boolean",
+                        "format": "default"
+                    },
+                    {
+                        "name": "primary",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
                         "name": "capacity",
                         "type": "number",
                         "format": "default"
@@ -1211,13 +1221,28 @@
                         "format": "default"
                     },
                     {
-                        "name": "capacity_potential",
+                        "name": "marginal_cost",
                         "type": "number",
                         "format": "default"
                     },
                     {
-                        "name": "marginal_cost",
-                        "type": "number",
+                        "name": "service_water_bus",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "human_feces_bus",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "human_urine_bus",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "black_water_bus",
+                        "type": "string",
                         "format": "default"
                     },
                     {
@@ -1261,33 +1286,18 @@
                         "format": "default"
                     },
                     {
-                        "name": "human_feces_bus",
+                        "name": "urine_profile",
                         "type": "string",
                         "format": "default"
                     },
                     {
-                        "name": "human_urine_bus",
+                        "name": "feces_profile",
                         "type": "string",
                         "format": "default"
                     },
                     {
-                        "name": "water_in_bus",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "water_out_bus",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "expandable",
-                        "type": "boolean",
-                        "format": "default"
-                    },
-                    {
-                        "name": "verbose_name",
-                        "type": "string",
+                        "name": "output_parameters",
+                        "type": "object",
                         "format": "default"
                     }
                 ],
@@ -1311,17 +1321,29 @@
                         }
                     },
                     {
-                        "fields": "water_in_bus",
+                        "fields": "service_water_bus",
                         "reference": {
                             "resource": "bus",
                             "fields": "name"
                         }
                     },
                     {
-                        "fields": "water_out_bus",
+                        "fields": "black_water_bus",
                         "reference": {
                             "resource": "bus",
                             "fields": "name"
+                        }
+                    },
+                    {
+                        "fields": "urine_profile",
+                        "reference": {
+                            "resource": "profiles"
+                        }
+                    },
+                    {
+                        "fields": "feces_profile",
+                        "reference": {
+                            "resource": "profiles"
                         }
                     }
                 ]
