@@ -1,4 +1,0 @@
-name;type;bus;marginal_cost
-excess-black-water;excess;black-water-bus;0.0
-excess-human-feces;excess;human-feces-bus;100000.0
-excess-human-urine;excess;human-urine-bus;100000.0

@@ -1,0 +1,4 @@
+name;type;carrier;tech;capacity;capacity_cost;bus;marginal_cost;carrier_cost;resource_cost;land_requirement_factor;ghg_emission_factor;water_consumption_factor;indirect_water_consumption_factor;profile;output_parameters;expandable
+hu_waste;volatile;urine;source;1000.0;0.0;human-urine-bus;0.0;0.0;0.0;0.0;0.0;0.0;0.0;human-urine-profile;{};False
+hf_waste;volatile;feces;source;1.0;0.0;human-feces-bus;0.0;0.0;0.0;0.0;0.0;0.0;0.0;human-feces-profile;{};False
+hh_gw_waste;volatile;water;source;1000.0;0.0;grey-water-bus;0.0;0.0;0.0;0.0;0.0;0.0;0.0;household-grey-water-profile;{};False
