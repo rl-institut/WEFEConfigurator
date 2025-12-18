@@ -41,6 +41,260 @@
             }
         },
         {
+            "path": "data/elements/composting_toilet.csv",
+            "profile": "tabular-data-resource",
+            "name": "composting_toilet",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "encoding": "utf-8",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "name",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "type",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "carrier",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "tech",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "capacity",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "capacity_cost",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "capacity_potential",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "marginal_cost",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "carrier_cost",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "capex",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "opex_fix",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "lifetime",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "resource_cost",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "land_requirement_factor",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "ghg_emission_factor",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "water_consumption_factor",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "human_feces_bus",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "human_urine_bus",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "compost_out_bus",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "water_out_bus",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "expandable",
+                        "type": "boolean",
+                        "format": "default"
+                    },
+                    {
+                        "name": "verbose_name",
+                        "type": "string",
+                        "format": "default"
+                    }
+                ],
+                "missingValues": [
+                    ""
+                ],
+                "primaryKey": "name",
+                "foreignKeys": []
+            }
+        },
+        {
+            "path": "data/elements/dry_toilet.csv",
+            "profile": "tabular-data-resource",
+            "name": "dry_toilet",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "encoding": "utf-8",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "name",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "type",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "carrier",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "tech",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "capacity",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "capacity_cost",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "capacity_potential",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "marginal_cost",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "carrier_cost",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "capex",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "opex_fix",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "lifetime",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "resource_cost",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "land_requirement_factor",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "ghg_emission_factor",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "water_consumption_factor",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "human_feces_bus",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "human_urine_bus",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "dry_feces_out_bus",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "water_out_bus",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "expandable",
+                        "type": "boolean",
+                        "format": "default"
+                    },
+                    {
+                        "name": "verbose_name",
+                        "type": "string",
+                        "format": "default"
+                    }
+                ],
+                "missingValues": [
+                    ""
+                ],
+                "primaryKey": "name",
+                "foreignKeys": []
+            }
+        },
+        {
             "path": "data/elements/energy_conversion.csv",
             "profile": "tabular-data-resource",
             "name": "energy_conversion",
@@ -348,6 +602,255 @@
             }
         },
         {
+            "path": "data/elements/flush_toilet.csv",
+            "profile": "tabular-data-resource",
+            "name": "flush_toilet",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "encoding": "utf-8",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "name",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "type",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "carrier",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "tech",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "capacity",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "capacity_cost",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "capacity_potential",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "marginal_cost",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "carrier_cost",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "capex",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "opex_fix",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "lifetime",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "resource_cost",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "land_requirement_factor",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "ghg_emission_factor",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "water_consumption_factor",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "human_feces_bus",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "human_urine_bus",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "water_in_bus",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "water_out_bus",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "expandable",
+                        "type": "boolean",
+                        "format": "default"
+                    },
+                    {
+                        "name": "verbose_name",
+                        "type": "string",
+                        "format": "default"
+                    }
+                ],
+                "missingValues": [
+                    ""
+                ],
+                "primaryKey": "name",
+                "foreignKeys": []
+            }
+        },
+        {
+            "path": "data/elements/latrine.csv",
+            "profile": "tabular-data-resource",
+            "name": "latrine",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "encoding": "utf-8",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "name",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "type",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "carrier",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "tech",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "capacity",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "capacity_cost",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "capacity_potential",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "marginal_cost",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "carrier_cost",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "capex",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "opex_fix",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "lifetime",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "resource_cost",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "land_requirement_factor",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "ghg_emission_factor",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "water_consumption_factor",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "human_feces_bus",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "human_urine_bus",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "biomass_waste_bus",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "expandable",
+                        "type": "boolean",
+                        "format": "default"
+                    },
+                    {
+                        "name": "verbose_name",
+                        "type": "string",
+                        "format": "default"
+                    }
+                ],
+                "missingValues": [
+                    ""
+                ],
+                "primaryKey": "name",
+                "foreignKeys": []
+            }
+        },
+        {
             "path": "data/elements/load.csv",
             "profile": "tabular-data-resource",
             "name": "load",
@@ -401,6 +904,138 @@
                         }
                     }
                 ]
+            }
+        },
+        {
+            "path": "data/elements/open_field.csv",
+            "profile": "tabular-data-resource",
+            "name": "open_field",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "encoding": "utf-8",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "name",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "type",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "carrier",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "tech",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "capacity",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "capacity_cost",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "capacity_potential",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "marginal_cost",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "carrier_cost",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "capex",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "opex_fix",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "lifetime",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "resource_cost",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "land_requirement_factor",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "ghg_emission_factor",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "water_consumption_factor",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "human_feces_bus",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "animal_feces_bus",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "human_urine_bus",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "animal_urine_bus",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "biomass_waste_bus",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "expandable",
+                        "type": "boolean",
+                        "format": "default"
+                    },
+                    {
+                        "name": "verbose_name",
+                        "type": "string",
+                        "format": "default"
+                    }
+                ],
+                "missingValues": [
+                    ""
+                ],
+                "primaryKey": "name",
+                "foreignKeys": []
             }
         },
         {
@@ -716,465 +1351,9 @@
             }
         },
         {
-            "path": "data/elements/latrine.csv",
+            "path": "data/elements/waste_sources.csv",
             "profile": "tabular-data-resource",
-            "name": "latrine",
-            "format": "csv",
-            "mediatype": "text/csv",
-            "encoding": "utf-8",
-            "schema": {
-                "fields": [
-                    {
-                        "name": "name",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "type",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "carrier",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "tech",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "capacity",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "capacity_cost",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "capacity_potential",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "marginal_cost",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "carrier_cost",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "capex",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "opex_fix",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "lifetime",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "resource_cost",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "land_requirement_factor",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "ghg_emission_factor",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "water_consumption_factor",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "human_feces_bus",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "human_urine_bus",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "biomass_waste_bus",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "expandable",
-                        "type": "boolean",
-                        "format": "default"
-                    },
-                    {
-                        "name": "verbose_name",
-                        "type": "string",
-                        "format": "default"
-                    }
-                ],
-                "missingValues": [
-                    ""
-                ],
-                "primaryKey": "name",
-                "foreignKeys": [
-                    {
-                        "fields": "human_feces_bus",
-                        "reference": {
-                            "resource": "bus",
-                            "fields": "name"
-                        }
-                    },
-                    {
-                        "fields": "human_urine_bus",
-                        "reference": {
-                            "resource": "bus",
-                            "fields": "name"
-                        }
-                    },
-                    {
-                        "fields": "biomass_waste_bus",
-                        "reference": {
-                            "resource": "bus",
-                            "fields": "name"
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "path": "data/elements/composting_toilet.csv",
-            "profile": "tabular-data-resource",
-            "name": "composting_toilet",
-            "format": "csv",
-            "mediatype": "text/csv",
-            "encoding": "utf-8",
-            "schema": {
-                "fields": [
-                    {
-                        "name": "name",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "type",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "carrier",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "tech",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "capacity",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "capacity_cost",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "capacity_potential",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "marginal_cost",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "carrier_cost",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "capex",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "opex_fix",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "lifetime",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "resource_cost",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "land_requirement_factor",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "ghg_emission_factor",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "water_consumption_factor",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "human_feces_bus",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "human_urine_bus",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "compost_out_bus",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "water_out_bus",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "expandable",
-                        "type": "boolean",
-                        "format": "default"
-                    },
-                    {
-                        "name": "verbose_name",
-                        "type": "string",
-                        "format": "default"
-                    }
-                ],
-                "missingValues": [
-                    ""
-                ],
-                "primaryKey": "name",
-                "foreignKeys": [
-                    {
-                        "fields": "human_feces_bus",
-                        "reference": {
-                            "resource": "bus",
-                            "fields": "name"
-                        }
-                    },
-                    {
-                        "fields": "human_urine_bus",
-                        "reference": {
-                            "resource": "bus",
-                            "fields": "name"
-                        }
-                    },
-                    {
-                        "fields": "compost_out_bus",
-                        "reference": {
-                            "resource": "bus",
-                            "fields": "name"
-                        }
-                    },
-                    {
-                        "fields": "water_out_bus",
-                        "reference": {
-                            "resource": "bus",
-                            "fields": "name"
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "path": "data/elements/dry_toilet.csv",
-            "profile": "tabular-data-resource",
-            "name": "toilets",
-            "format": "csv",
-            "mediatype": "text/csv",
-            "encoding": "utf-8",
-            "schema": {
-                "fields": [
-                    {
-                        "name": "name",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "type",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "carrier",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "tech",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "capacity",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "capacity_cost",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "capacity_potential",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "marginal_cost",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "carrier_cost",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "capex",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "opex_fix",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "lifetime",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "resource_cost",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "land_requirement_factor",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "ghg_emission_factor",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "water_consumption_factor",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "human_feces_bus",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "human_urine_bus",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "dry_feces_out_bus",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "water_out_bus",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "expandable",
-                        "type": "boolean",
-                        "format": "default"
-                    },
-                    {
-                        "name": "verbose_name",
-                        "type": "string",
-                        "format": "default"
-                    }
-                ],
-                "missingValues": [
-                    ""
-                ],
-                "primaryKey": "name",
-                "foreignKeys": [
-                    {
-                        "fields": "human_feces_bus",
-                        "reference": {
-                            "resource": "bus",
-                            "fields": "name"
-                        }
-                    },
-                    {
-                        "fields": "human_urine_bus",
-                        "reference": {
-                            "resource": "bus",
-                            "fields": "name"
-                        }
-                    },
-                    {
-                        "fields": "dry_feces_out_bus",
-                        "reference": {
-                            "resource": "bus",
-                            "fields": "name"
-                        }
-                    },
-                    {
-                        "fields": "water_out_bus",
-                        "reference": {
-                            "resource": "bus",
-                            "fields": "name"
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "path": "data/elements/flush_toilet.csv",
-            "profile": "tabular-data-resource",
-            "name": "flush_toilet",
+            "name": "waste_sources",
             "format": "csv",
             "mediatype": "text/csv",
             "encoding": "utf-8",
@@ -1251,21 +1430,6 @@
                         "format": "default"
                     },
                     {
-                        "name": "capex",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "opex_fix",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "lifetime",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
                         "name": "resource_cost",
                         "type": "number",
                         "format": "default"
@@ -1330,8 +1494,7 @@
                     {
                         "fields": "black_water_bus",
                         "reference": {
-                            "resource": "bus",
-                            "fields": "name"
+                            "resource": "profiles"
                         }
                     },
                     {
@@ -1342,295 +1505,6 @@
                     },
                     {
                         "fields": "feces_profile",
-                        "reference": {
-                            "resource": "profiles"
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "path": "data/elements/open_field.csv",
-            "profile": "tabular-data-resource",
-            "name": "open_field",
-            "format": "csv",
-            "mediatype": "text/csv",
-            "encoding": "utf-8",
-            "schema": {
-                "fields": [
-                    {
-                        "name": "name",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "type",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "carrier",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "tech",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "capacity",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "capacity_cost",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "capacity_potential",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "marginal_cost",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "carrier_cost",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "capex",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "opex_fix",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "lifetime",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "resource_cost",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "land_requirement_factor",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "ghg_emission_factor",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "water_consumption_factor",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "human_feces_bus",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "animal_feces_bus",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "human_urine_bus",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "animal_urine_bus",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "biomass_waste_bus",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "expandable",
-                        "type": "boolean",
-                        "format": "default"
-                    },
-                    {
-                        "name": "verbose_name",
-                        "type": "string",
-                        "format": "default"
-                    }
-                ],
-                "missingValues": [
-                    ""
-                ],
-                "primaryKey": "name",
-                "foreignKeys": [
-                    {
-                        "fields": "human_feces_bus",
-                        "reference": {
-                            "resource": "bus",
-                            "fields": "name"
-                        }
-                    },
-                    {
-                        "fields": "animal_feces_bus",
-                        "reference": {
-                            "resource": "bus",
-                            "fields": "name"
-                        }
-                    },
-                    {
-                        "fields": "human_urine_bus",
-                        "reference": {
-                            "resource": "bus",
-                            "fields": "name"
-                        }
-                    },
-                    {
-                        "fields": "animal_urine_bus",
-                        "reference": {
-                            "resource": "bus",
-                            "fields": "name"
-                        }
-                    },
-                    {
-                        "fields": "biomass_waste_bus",
-                        "reference": {
-                            "resource": "bus",
-                            "fields": "name"
-                        }
-                    }
-                ]
-            }
-        },
-        {
-            "path": "data/elements/waste_sources.csv",
-            "profile": "tabular-data-resource",
-            "name": "waste_sources",
-            "format": "csv",
-            "mediatype": "text/csv",
-            "encoding": "utf-8",
-            "schema": {
-                "fields": [
-                    {
-                        "name": "name",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "type",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "carrier",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "tech",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "capacity",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "capacity_cost",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "bus",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "marginal_cost",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "carrier_cost",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "resource_cost",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "land_requirement_factor",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "ghg_emission_factor",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "water_consumption_factor",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "indirect_water_consumption_factor",
-                        "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "profile",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "output_parameters",
-                        "type": "object",
-                        "format": "default"
-                    },
-                    {
-                        "name": "expandable",
-                        "type": "boolean",
-                        "format": "default"
-                    },
-                    {
-                        "name": "verbose_name",
-                        "type": "string",
-                        "format": "default"
-                    }
-                ],
-                "missingValues": [
-                    ""
-                ],
-                "primaryKey": "name",
-                "foreignKeys": [
-                    {
-                        "fields": "bus",
-                        "reference": {
-                            "resource": "bus",
-                            "fields": "name"
-                        }
-                    },
-                    {
-                        "fields": "profile",
                         "reference": {
                             "resource": "profiles"
                         }
@@ -1776,14 +1650,14 @@
                         }
                     },
                     {
-                        "fields": "water_in_bus",
+                        "fields": "fuel_bus",
                         "reference": {
                             "resource": "bus",
                             "fields": "name"
                         }
                     },
                     {
-                        "fields": "water_out_bus",
+                        "fields": "heat_bus",
                         "reference": {
                             "resource": "bus",
                             "fields": "name"
@@ -1935,21 +1809,335 @@
                         }
                     },
                     {
-                        "fields": "water_in_bus",
+                        "fields": "fuel_bus",
                         "reference": {
                             "resource": "bus",
                             "fields": "name"
                         }
                     },
                     {
-                        "fields": "water_out_bus",
+                        "fields": "heat_bus",
+                        "reference": {
+                            "resource": "bus",
+                            "fields": "name"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "path": "data/elements/water_pipes.csv",
+            "profile": "tabular-data-resource",
+            "name": "water_pipes",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "encoding": "utf-8",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "name",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "type",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "carrier",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "tech",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "capacity",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "capacity_cost",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "capacity_potential",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "marginal_cost",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "carrier_cost",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "efficiency",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "annuity",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "capex",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "opex_fix",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "lifetime",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "resource_cost",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "land_requirement_factor",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "ghg_emission_factor",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "water_consumption_factor",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "from_bus",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "to_bus",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "output_parameters",
+                        "type": "object",
+                        "format": "default"
+                    },
+                    {
+                        "name": "expandable",
+                        "type": "boolean",
+                        "format": "default"
+                    },
+                    {
+                        "name": "verbose_name",
+                        "type": "string",
+                        "format": "default"
+                    }
+                ],
+                "missingValues": [
+                    ""
+                ],
+                "primaryKey": "name",
+                "foreignKeys": [
+                    {
+                        "fields": "from_bus",
                         "reference": {
                             "resource": "bus",
                             "fields": "name"
                         }
                     },
                     {
-                        "fields": "sludge_out_bus",
+                        "fields": "to_bus",
+                        "reference": {
+                            "resource": "bus",
+                            "fields": "name"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "path": "data/elements/water_pumps.csv",
+            "profile": "tabular-data-resource",
+            "name": "water_pumps",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "encoding": "utf-8",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "name",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "type",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "carrier",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "tech",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "expandable",
+                        "type": "boolean",
+                        "format": "default"
+                    },
+                    {
+                        "name": "capacity",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "capacity_cost",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "marginal_cost",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "electricity_bus",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "water_in_bus",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "water_out_bus",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "head",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "power",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "capex",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "opex_fix",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "age",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "lifetime",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "carrier_cost",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "resource_cost",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "land_requirement_factor",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "ghg_emission_factor",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "water_consumption_factor",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "land_requirement",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "ghg_emissions",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "water_footprint",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "output_parameters",
+                        "type": "object",
+                        "format": "default"
+                    },
+                    {
+                        "name": "annuity",
+                        "type": "number",
+                        "format": "default"
+                    }
+                ],
+                "missingValues": [
+                    ""
+                ],
+                "primaryKey": "name",
+                "foreignKeys": [
+                    {
+                        "fields": "electricity_bus",
+                        "reference": {
+                            "resource": "bus",
+                            "fields": "name"
+                        }
+                    },
+                    {
+                        "fields": "fuel_bus",
+                        "reference": {
+                            "resource": "bus",
+                            "fields": "name"
+                        }
+                    },
+                    {
+                        "fields": "heat_bus",
                         "reference": {
                             "resource": "bus",
                             "fields": "name"
@@ -1989,12 +2177,12 @@
                     },
                     {
                         "name": "capacity",
-                        "type": "integer",
+                        "type": "number",
                         "format": "default"
                     },
                     {
                         "name": "capacity_cost",
-                        "type": "integer",
+                        "type": "number",
                         "format": "default"
                     },
                     {
@@ -2008,13 +2196,8 @@
                         "format": "default"
                     },
                     {
-                        "name": "carrier_cost",
-                        "type": "integer",
-                        "format": "default"
-                    },
-                    {
-                        "name": "head",
-                        "type": "string",
+                        "name": "resource_cost",
+                        "type": "number",
                         "format": "default"
                     },
                     {
@@ -2034,7 +2217,7 @@
                     },
                     {
                         "name": "salinity",
-                        "type": "integer",
+                        "type": "number",
                         "format": "default"
                     },
                     {
@@ -2054,14 +2237,20 @@
                             "resource": "bus",
                             "fields": "name"
                         }
+                    },
+                    {
+                        "fields": "profile",
+                        "reference": {
+                            "resource": "profiles"
+                        }
                     }
                 ]
             }
         },
         {
-            "path": "data/elements/water_treatment_without.csv",
+            "path": "data/elements/water_treatment_with_N2.csv",
             "profile": "tabular-data-resource",
-            "name": "water_treatment_without",
+            "name": "water_treatment_with_N2",
             "format": "csv",
             "mediatype": "text/csv",
             "encoding": "utf-8",
@@ -2134,7 +2323,7 @@
                     },
                     {
                         "name": "efficiency",
-                        "type": "number",
+                        "type": "string",
                         "format": "default"
                     },
                     {
@@ -2173,6 +2362,11 @@
                         "format": "default"
                     },
                     {
+                        "name": "N2_gas_bus",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
                         "name": "expandable",
                         "type": "boolean",
                         "format": "default"
@@ -2196,14 +2390,14 @@
                         }
                     },
                     {
-                        "fields": "water_in_bus",
+                        "fields": "fuel_bus",
                         "reference": {
                             "resource": "bus",
                             "fields": "name"
                         }
                     },
                     {
-                        "fields": "water_out_bus",
+                        "fields": "heat_bus",
                         "reference": {
                             "resource": "bus",
                             "fields": "name"
@@ -2355,21 +2549,14 @@
                         }
                     },
                     {
-                        "fields": "water_in_bus",
+                        "fields": "fuel_bus",
                         "reference": {
                             "resource": "bus",
                             "fields": "name"
                         }
                     },
                     {
-                        "fields": "water_out_bus",
-                        "reference": {
-                            "resource": "bus",
-                            "fields": "name"
-                        }
-                    },
-                    {
-                        "fields": "waste_biomass_out_bus",
+                        "fields": "heat_bus",
                         "reference": {
                             "resource": "bus",
                             "fields": "name"
@@ -2521,21 +2708,14 @@
                         }
                     },
                     {
-                        "fields": "water_in_bus",
+                        "fields": "fuel_bus",
                         "reference": {
                             "resource": "bus",
                             "fields": "name"
                         }
                     },
                     {
-                        "fields": "water_out_bus",
-                        "reference": {
-                            "resource": "bus",
-                            "fields": "name"
-                        }
-                    },
-                    {
-                        "fields": "brine_out_bus",
+                        "fields": "heat_bus",
                         "reference": {
                             "resource": "bus",
                             "fields": "name"
@@ -2545,9 +2725,9 @@
             }
         },
         {
-            "path": "data/elements/water_treatment_with_N2.csv",
+            "path": "data/elements/water_treatment_without.csv",
             "profile": "tabular-data-resource",
-            "name": "water_treatment_with_N2",
+            "name": "water_treatment_without",
             "format": "csv",
             "mediatype": "text/csv",
             "encoding": "utf-8",
@@ -2620,7 +2800,7 @@
                     },
                     {
                         "name": "efficiency",
-                        "type": "number",
+                        "type": "string",
                         "format": "default"
                     },
                     {
@@ -2659,11 +2839,6 @@
                         "format": "default"
                     },
                     {
-                        "name": "N2_gas_bus",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
                         "name": "expandable",
                         "type": "boolean",
                         "format": "default"
@@ -2687,21 +2862,14 @@
                         }
                     },
                     {
-                        "fields": "water_in_bus",
+                        "fields": "fuel_bus",
                         "reference": {
                             "resource": "bus",
                             "fields": "name"
                         }
                     },
                     {
-                        "fields": "water_out_bus",
-                        "reference": {
-                            "resource": "bus",
-                            "fields": "name"
-                        }
-                    },
-                    {
-                        "fields": "N2_gas_bus",
+                        "fields": "heat_bus",
                         "reference": {
                             "resource": "bus",
                             "fields": "name"
@@ -2855,6 +3023,18 @@
                         "reference": {
                             "resource": "bus",
                             "fields": "name"
+                        }
+                    },
+                    {
+                        "fields": "windspeed",
+                        "reference": {
+                            "resource": "profiles"
+                        }
+                    },
+                    {
+                        "fields": "surface_roughness",
+                        "reference": {
+                            "resource": "profiles"
                         }
                     }
                 ]

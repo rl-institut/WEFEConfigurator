@@ -2352,10 +2352,10 @@
         "map_to": "component",
         "map_answer": {
             "Yes": [
-                ""
+                "groundwater-pump"
             ],
             "No": [
-                ""
+                "groundwater-pipe"
             ]
         }
     },
@@ -2365,36 +2365,16 @@
             "head": "float"
         }
     },
-    "3_GW.1.2": {
-        "map_to": "component",
-        "map_answer": {
-            "manual": [
-                ""
-            ],
-            "diesel": [
-                ""
-            ],
-            "electricity (grid)": [
-                ""
-            ],
-            "wind turbine": [
-                ""
-            ],
-            "photovoltaics": [
-                ""
-            ]
-        }
-    },
     "3_GW.1.3": {
         "map_to": "attribute",
         "map_answer": {
-            "capacity": "float"
+            "power": "float"
         }
     },
     "3_GW.1.4": {
         "map_to": "attribute",
         "map_answer": {
-            "flow": "float"
+            "capacity": "float"
         }
     },
     "3.3": {
@@ -2894,10 +2874,10 @@
         "map_to": "component",
         "map_answer": {
             "Yes": [
-                ""
+                "seawater-pump"
             ],
             "No": [
-                ""
+                "seawater-pipe"
             ]
         }
     },
@@ -2907,36 +2887,16 @@
             "head": "float"
         }
     },
-    "3_DS.1.2": {
-        "map_to": "component",
-        "map_answer": {
-            "manual": [
-                ""
-            ],
-            "diesel": [
-                ""
-            ],
-            "electricity (grid)": [
-                ""
-            ],
-            "wind turbine": [
-                ""
-            ],
-            "photovoltaics": [
-                ""
-            ]
-        }
-    },
     "3_DS.1.3": {
         "map_to": "attribute",
         "map_answer": {
-            "capacity": "float"
+            "power": "float"
         }
     },
     "3_DS.1.4": {
         "map_to": "attribute",
         "map_answer": {
-            "flow": "float"
+            "capacity": "float"
         }
     },
     "4_DS.1": {
@@ -3430,10 +3390,10 @@
         "map_to": "component",
         "map_answer": {
             "Yes": [
-                ""
+                "river-water-pump"
             ],
             "No": [
-                ""
+                "river-water-pipe"
             ]
         }
     },
@@ -3443,36 +3403,16 @@
             "head": "float"
         }
     },
-    "3_RC.1.2": {
-        "map_to": "component",
-        "map_answer": {
-            "manual": [
-                ""
-            ],
-            "diesel": [
-                ""
-            ],
-            "electricity (grid)": [
-                ""
-            ],
-            "wind turbine": [
-                ""
-            ],
-            "photovoltaics": [
-                ""
-            ]
-        }
-    },
     "3_RC.1.3": {
         "map_to": "attribute",
         "map_answer": {
-            "capacity": "float"
+            "power": "float"
         }
     },
     "3_RC.1.4": {
         "map_to": "attribute",
         "map_answer": {
-            "flow": "float"
+            "capacity": "float"
         }
     },
     "4_RC.1": {
@@ -3966,10 +3906,10 @@
         "map_to": "component",
         "map_answer": {
             "Yes": [
-                ""
+                "lake-water-pump"
             ],
             "No": [
-                ""
+                "lake-water-pipe"
             ]
         }
     },
@@ -3979,36 +3919,16 @@
             "head": "float"
         }
     },
-    "3_L.1.2": {
-        "map_to": "component",
-        "map_answer": {
-            "manual": [
-                ""
-            ],
-            "diesel": [
-                ""
-            ],
-            "electricity (grid)": [
-                ""
-            ],
-            "wind turbine": [
-                ""
-            ],
-            "photovoltaics": [
-                ""
-            ]
-        }
-    },
     "3_L.1.3": {
         "map_to": "attribute",
         "map_answer": {
-            "capacity": "float"
+            "power": "float"
         }
     },
     "3_L.1.4": {
         "map_to": "attribute",
         "map_answer": {
-            "flow": "float"
+            "capacity": "float"
         }
     },
     "4_L.1": {
@@ -4517,25 +4437,25 @@
                 "groundwater"
             ],
             "public tap water": [
-                "tap_water"
+                "tap-water"
             ],
             "desalinated seawater": [
                 "seawater"
             ],
             "river/creek": [
-                ""
+                "river-water"
             ],
             "lake": [
-                ""
+                "lake-water"
             ],
             "water truck": [
-                "truck_water"
+                "truck-water"
             ],
             "rainwater harvesting": [
-                ""
+                "rainwater-harvesting"
             ],
             "bottled water": [
-                "bottled_water"
+                "bottled-water"
             ],
             "other": [
                 ""
