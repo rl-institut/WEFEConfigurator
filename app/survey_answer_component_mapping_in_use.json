@@ -8587,25 +8587,33 @@
             "flush toilet": [
                 "flush_toilet",
                 "hu_waste",
-                "hf_waste"
+                "hf_waste",
+                "excess-human-feces",
+                "excess-human-urine"
             ],
             "latrine": [
                 "latrine",
                 "hu_waste",
                 "hf_waste",
-                "excess-biomass"
+                "excess-biomass",
+                "excess-human-feces",
+                "excess-human-urine"
             ],
             "dry toilet": [
                 "dry_toilet",
                 "hu_waste",
                 "hf_waste",
-                "excess-dry-feces"
+                "excess-dry-feces",
+                "excess-human-feces",
+                "excess-human-urine"
             ],
             "composting toilet": [
                 "composting_toilet",
                 "hu_waste",
                 "hf_waste",
-                "excess-compost"
+                "excess-compost",
+                "excess-human-feces",
+                "excess-human-urine"
             ],
             "open field": [
                 "open_field",
@@ -8613,7 +8621,9 @@
                 "hf_waste",
                 "au_waste",
                 "af_waste",
-                "excess-biomass"
+                "excess-biomass",
+                "excess-human-feces",
+                "excess-human-urine"
             ]
         }
     }

@@ -679,7 +679,7 @@ class ScenarioBuilder:
         """
         criterias_list = ["2"]
         for question_id, answer in survey.items():
-            print(question_id)
+            # print(question_id)
             # 2 options for answer:
             # option 1: list -> turn all TYPE_COMPONENT answers into list
             # option 2: single item (None, float, str) -> assume all TYPE_COMPONENT_ATTRIBUTE answers to be single items
@@ -743,7 +743,7 @@ class ScenarioBuilder:
 
                             # Align answer structure: Should always be single item to match attribute mapping
                             answer = answer[0] if isinstance(answer, list) else answer
-                            print(map_answer)
+                            # print(map_answer)
                             # import pdb;pdb.set_trace()
 
                             # example for opt 2: question 4.2, map_answer = {'water_metals': ['Arsenic', 'Lead', 'Mercury', 'Cadmium', 'Iron']}
