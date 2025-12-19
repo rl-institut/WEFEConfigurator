@@ -164,7 +164,36 @@
                     ""
                 ],
                 "primaryKey": "name",
-                "foreignKeys": []
+                "foreignKeys": [
+                    {
+                        "fields": "human_feces_bus",
+                        "reference": {
+                            "resource": "bus",
+                            "fields": "name"
+                        }
+                    },
+                    {
+                        "fields": "human_urine_bus",
+                        "reference": {
+                            "resource": "bus",
+                            "fields": "name"
+                        }
+                    },
+                    {
+                        "fields": "compost_out_bus",
+                        "reference": {
+                            "resource": "bus",
+                            "fields": "name"
+                        }
+                    },
+                    {
+                        "fields": "water_out_bus",
+                        "reference": {
+                            "resource": "bus",
+                            "fields": "name"
+                        }
+                    }
+                ]
             }
         },
         {
@@ -291,7 +320,36 @@
                     ""
                 ],
                 "primaryKey": "name",
-                "foreignKeys": []
+                "foreignKeys": [
+                    {
+                        "fields": "human_feces_bus",
+                        "reference": {
+                            "resource": "bus",
+                            "fields": "name"
+                        }
+                    },
+                    {
+                        "fields": "human_urine_bus",
+                        "reference": {
+                            "resource": "bus",
+                            "fields": "name"
+                        }
+                    },
+                    {
+                        "fields": "dry_feces_out_bus",
+                        "reference": {
+                            "resource": "bus",
+                            "fields": "name"
+                        }
+                    },
+                    {
+                        "fields": "water_out_bus",
+                        "reference": {
+                            "resource": "bus",
+                            "fields": "name"
+                        }
+                    }
+                ]
             }
         },
         {
@@ -611,12 +669,12 @@
             "schema": {
                 "fields": [
                     {
-                        "name": "name",
+                        "name": "type",
                         "type": "string",
                         "format": "default"
                     },
                     {
-                        "name": "type",
+                        "name": "name",
                         "type": "string",
                         "format": "default"
                     },
@@ -631,6 +689,16 @@
                         "format": "default"
                     },
                     {
+                        "name": "expandable",
+                        "type": "boolean",
+                        "format": "default"
+                    },
+                    {
+                        "name": "primary",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
                         "name": "capacity",
                         "type": "number",
                         "format": "default"
@@ -641,13 +709,28 @@
                         "format": "default"
                     },
                     {
-                        "name": "capacity_potential",
+                        "name": "marginal_cost",
                         "type": "number",
                         "format": "default"
                     },
                     {
-                        "name": "marginal_cost",
-                        "type": "number",
+                        "name": "service_water_bus",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "human_feces_bus",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "human_urine_bus",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "black_water_bus",
+                        "type": "string",
                         "format": "default"
                     },
                     {
@@ -691,33 +774,18 @@
                         "format": "default"
                     },
                     {
-                        "name": "human_feces_bus",
+                        "name": "urine_profile",
                         "type": "string",
                         "format": "default"
                     },
                     {
-                        "name": "human_urine_bus",
+                        "name": "feces_profile",
                         "type": "string",
                         "format": "default"
                     },
                     {
-                        "name": "water_in_bus",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "water_out_bus",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "expandable",
-                        "type": "boolean",
-                        "format": "default"
-                    },
-                    {
-                        "name": "verbose_name",
-                        "type": "string",
+                        "name": "output_parameters",
+                        "type": "object",
                         "format": "default"
                     }
                 ],
@@ -725,7 +793,48 @@
                     ""
                 ],
                 "primaryKey": "name",
-                "foreignKeys": []
+                "foreignKeys": [
+                    {
+                        "fields": "service_water_bus",
+                        "reference": {
+                            "resource": "bus",
+                            "fields": "name"
+                        }
+                    },
+                    {
+                        "fields": "human_feces_bus",
+                        "reference": {
+                            "resource": "bus",
+                            "fields": "name"
+                        }
+                    },
+                    {
+                        "fields": "human_urine_bus",
+                        "reference": {
+                            "resource": "bus",
+                            "fields": "name"
+                        }
+                    },
+                    {
+                        "fields": "black_water_bus",
+                        "reference": {
+                            "resource": "bus",
+                            "fields": "name"
+                        }
+                    },
+                    {
+                        "fields": "urine_profile",
+                        "reference": {
+                            "resource": "profiles"
+                        }
+                    },
+                    {
+                        "fields": "feces_profile",
+                        "reference": {
+                            "resource": "profiles"
+                        }
+                    }
+                ]
             }
         },
         {
@@ -847,7 +956,29 @@
                     ""
                 ],
                 "primaryKey": "name",
-                "foreignKeys": []
+                "foreignKeys": [
+                    {
+                        "fields": "human_feces_bus",
+                        "reference": {
+                            "resource": "bus",
+                            "fields": "name"
+                        }
+                    },
+                    {
+                        "fields": "human_urine_bus",
+                        "reference": {
+                            "resource": "bus",
+                            "fields": "name"
+                        }
+                    },
+                    {
+                        "fields": "biomass_waste_bus",
+                        "reference": {
+                            "resource": "bus",
+                            "fields": "name"
+                        }
+                    }
+                ]
             }
         },
         {
@@ -1035,7 +1166,43 @@
                     ""
                 ],
                 "primaryKey": "name",
-                "foreignKeys": []
+                "foreignKeys": [
+                    {
+                        "fields": "human_feces_bus",
+                        "reference": {
+                            "resource": "bus",
+                            "fields": "name"
+                        }
+                    },
+                    {
+                        "fields": "animal_feces_bus",
+                        "reference": {
+                            "resource": "bus",
+                            "fields": "name"
+                        }
+                    },
+                    {
+                        "fields": "human_urine_bus",
+                        "reference": {
+                            "resource": "bus",
+                            "fields": "name"
+                        }
+                    },
+                    {
+                        "fields": "animal_urine_bus",
+                        "reference": {
+                            "resource": "bus",
+                            "fields": "name"
+                        }
+                    },
+                    {
+                        "fields": "biomass_waste_bus",
+                        "reference": {
+                            "resource": "bus",
+                            "fields": "name"
+                        }
+                    }
+                ]
             }
         },
         {
@@ -1360,12 +1527,12 @@
             "schema": {
                 "fields": [
                     {
-                        "name": "type",
+                        "name": "name",
                         "type": "string",
                         "format": "default"
                     },
                     {
-                        "name": "name",
+                        "name": "type",
                         "type": "string",
                         "format": "default"
                     },
@@ -1380,16 +1547,6 @@
                         "format": "default"
                     },
                     {
-                        "name": "expandable",
-                        "type": "boolean",
-                        "format": "default"
-                    },
-                    {
-                        "name": "primary",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
                         "name": "capacity",
                         "type": "number",
                         "format": "default"
@@ -1400,28 +1557,13 @@
                         "format": "default"
                     },
                     {
+                        "name": "bus",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
                         "name": "marginal_cost",
                         "type": "number",
-                        "format": "default"
-                    },
-                    {
-                        "name": "service_water_bus",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "human_feces_bus",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "human_urine_bus",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "black_water_bus",
-                        "type": "string",
                         "format": "default"
                     },
                     {
@@ -1450,18 +1592,28 @@
                         "format": "default"
                     },
                     {
-                        "name": "urine_profile",
-                        "type": "string",
+                        "name": "indirect_water_consumption_factor",
+                        "type": "number",
                         "format": "default"
                     },
                     {
-                        "name": "feces_profile",
+                        "name": "profile",
                         "type": "string",
                         "format": "default"
                     },
                     {
                         "name": "output_parameters",
                         "type": "object",
+                        "format": "default"
+                    },
+                    {
+                        "name": "expandable",
+                        "type": "boolean",
+                        "format": "default"
+                    },
+                    {
+                        "name": "verbose_name",
+                        "type": "string",
                         "format": "default"
                     }
                 ],
@@ -1471,40 +1623,14 @@
                 "primaryKey": "name",
                 "foreignKeys": [
                     {
-                        "fields": "human_feces_bus",
+                        "fields": "bus",
                         "reference": {
                             "resource": "bus",
                             "fields": "name"
                         }
                     },
                     {
-                        "fields": "human_urine_bus",
-                        "reference": {
-                            "resource": "bus",
-                            "fields": "name"
-                        }
-                    },
-                    {
-                        "fields": "service_water_bus",
-                        "reference": {
-                            "resource": "bus",
-                            "fields": "name"
-                        }
-                    },
-                    {
-                        "fields": "black_water_bus",
-                        "reference": {
-                            "resource": "profiles"
-                        }
-                    },
-                    {
-                        "fields": "urine_profile",
-                        "reference": {
-                            "resource": "profiles"
-                        }
-                    },
-                    {
-                        "fields": "feces_profile",
+                        "fields": "profile",
                         "reference": {
                             "resource": "profiles"
                         }
@@ -1650,14 +1776,14 @@
                         }
                     },
                     {
-                        "fields": "fuel_bus",
+                        "fields": "water_in_bus",
                         "reference": {
                             "resource": "bus",
                             "fields": "name"
                         }
                     },
                     {
-                        "fields": "heat_bus",
+                        "fields": "water_out_bus",
                         "reference": {
                             "resource": "bus",
                             "fields": "name"
@@ -1809,14 +1935,21 @@
                         }
                     },
                     {
-                        "fields": "fuel_bus",
+                        "fields": "water_in_bus",
                         "reference": {
                             "resource": "bus",
                             "fields": "name"
                         }
                     },
                     {
-                        "fields": "heat_bus",
+                        "fields": "water_out_bus",
+                        "reference": {
+                            "resource": "bus",
+                            "fields": "name"
+                        }
+                    },
+                    {
+                        "fields": "sludge_out_bus",
                         "reference": {
                             "resource": "bus",
                             "fields": "name"
@@ -2130,14 +2263,14 @@
                         }
                     },
                     {
-                        "fields": "fuel_bus",
+                        "fields": "water_in_bus",
                         "reference": {
                             "resource": "bus",
                             "fields": "name"
                         }
                     },
                     {
-                        "fields": "heat_bus",
+                        "fields": "water_out_bus",
                         "reference": {
                             "resource": "bus",
                             "fields": "name"
@@ -2390,14 +2523,21 @@
                         }
                     },
                     {
-                        "fields": "fuel_bus",
+                        "fields": "water_in_bus",
                         "reference": {
                             "resource": "bus",
                             "fields": "name"
                         }
                     },
                     {
-                        "fields": "heat_bus",
+                        "fields": "water_out_bus",
+                        "reference": {
+                            "resource": "bus",
+                            "fields": "name"
+                        }
+                    },
+                    {
+                        "fields": "N2_gas_bus",
                         "reference": {
                             "resource": "bus",
                             "fields": "name"
@@ -2549,14 +2689,21 @@
                         }
                     },
                     {
-                        "fields": "fuel_bus",
+                        "fields": "water_in_bus",
                         "reference": {
                             "resource": "bus",
                             "fields": "name"
                         }
                     },
                     {
-                        "fields": "heat_bus",
+                        "fields": "water_out_bus",
+                        "reference": {
+                            "resource": "bus",
+                            "fields": "name"
+                        }
+                    },
+                    {
+                        "fields": "waste_biomass_out_bus",
                         "reference": {
                             "resource": "bus",
                             "fields": "name"
@@ -2708,14 +2855,21 @@
                         }
                     },
                     {
-                        "fields": "fuel_bus",
+                        "fields": "water_in_bus",
                         "reference": {
                             "resource": "bus",
                             "fields": "name"
                         }
                     },
                     {
-                        "fields": "heat_bus",
+                        "fields": "water_out_bus",
+                        "reference": {
+                            "resource": "bus",
+                            "fields": "name"
+                        }
+                    },
+                    {
+                        "fields": "brine_out_bus",
                         "reference": {
                             "resource": "bus",
                             "fields": "name"
@@ -2862,14 +3016,14 @@
                         }
                     },
                     {
-                        "fields": "fuel_bus",
+                        "fields": "water_in_bus",
                         "reference": {
                             "resource": "bus",
                             "fields": "name"
                         }
                     },
                     {
-                        "fields": "heat_bus",
+                        "fields": "water_out_bus",
                         "reference": {
                             "resource": "bus",
                             "fields": "name"
