@@ -257,7 +257,7 @@ class ScenarioBuilder:
             #print(drinking_water_treatment_dict)
             print("SW treatment dictionary")
             service_water_component_list = arrange_components(water_treatment_train["main_list"], service_water_component_list)
-            service_water_treatment_dict = create_component_dict(service_water_component_list, entry_bus = "water-in-bus", water_type = "service")
+            service_water_treatment_dict = create_component_dict(service_water_component_list, entry_bus = "untreated-water-bus", water_type = "service")
             for (component_type, component_name), component_attrs in service_water_treatment_dict.items():
                 # Add the component from the train
                 self.add_single_component(component_type, component_name, component_attrs)
@@ -275,7 +275,7 @@ class ScenarioBuilder:
             drinking_water_component_list = list(dict.fromkeys(drinking_water_component_list))
             print("DW treatment dictionary")
             drinking_water_component_list = arrange_components(water_treatment_train["main_list"], drinking_water_component_list)
-            drinking_water_treatment_dict = create_component_dict(drinking_water_component_list, entry_bus="groundwater-bus", water_type="drinking")
+            drinking_water_treatment_dict = create_component_dict(drinking_water_component_list, entry_bus="untreated-water-bus", water_type="drinking")
             for (component_type, component_name), component_attrs in drinking_water_treatment_dict.items():
                 # Add the component from the train
                 self.add_single_component(component_type, component_name, component_attrs)
