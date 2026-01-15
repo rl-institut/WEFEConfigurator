@@ -1,0 +1,3 @@
+name;amount;profile;type;bus
+dw_demand;1;drinking-water-demand;load;drinking-water-bus
+el_demand;1;electricity-load-profile;load;ac-elec-bus

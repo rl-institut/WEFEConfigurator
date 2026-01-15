@@ -1,0 +1,2 @@
+type;name;tech;primary;expandable;capacity;capacity_cost;capacity_minimum;capacity_potential;electricity_bus;water_in_bus;water_out_bus;brine_out_bus;specific_energy_consumption;efficiency;marginal_cost;carrier_cost;brine_disposal_cost;lifetime;capex;opex_fix;land_requirement_factor;ghg_emission_factor;water_consumption_factor
+mimo_ro;reverse_osmosis;mimo;drinking-water-bus;True;0.0;700.0;0.;+inf;ac-elec-bus;groundwater-bus;drinking-water-bus;brine-bus;1.2;0.55;0.;0.;0.0;12;1400.0;55.0;0.10;0.12;0.5

@@ -1,0 +1,4 @@
+name;type;bus;marginal_cost
+ac-electricity-excess;excess;ac-elec-bus;0.0
+excess-drinking-water;excess;drinking-water-bus;0.0
+brine-excess;excess;brine-bus;0.0

@@ -1,0 +1,2 @@
+name;type;carrier;tech;capacity;capacity_cost;bus;marginal_cost;carrier_cost;head;profile;output_parameters;expandable;salinity
+groundwater;dispatchable;water;source;0;0;groundwater-bus;0.5;0;0;;{};True;0

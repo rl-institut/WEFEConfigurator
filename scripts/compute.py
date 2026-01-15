@@ -66,7 +66,7 @@ project_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir)
 # -------------- USER INPUTS --------------
 # list of scenarios to be evaluated
 scenarios = [
-    "scenario_15"
+    # "scenario_20_wt_toilet_wwt"
     # "general_add_cost_inputs",
     # "general_basic",
     # "general_constraints",
@@ -76,9 +76,11 @@ scenarios = [
     # "wefe_reverse_osmosis",
     # "aiwa"
     # "aiwa_vivek"
-    #"aiwa_8760"
+    # "aiwa_8760"
     # "arusi_8760"
     # "arusi_24"
+    #"test_mimo_try"
+    "scenario_Tsumkwe_v1"
 ]
 # Regionalized Characterisation Factor for Available water remaining (AWARE) - might move later;
 # this parameter is needed to calculate the regionalized water scarcity footprint in moo.
@@ -101,7 +103,19 @@ custom_attributes = [
     "annuity",
 ]
 # set whether the multi-objective optimization should be performed
-moo = False
+moo = True
+
+# MOO weight factors
+# Assign weights to the different minimization objectives (cost, greenhouse gas emissions,
+# land requirements, water scarcity footprint).
+# We recommend assigning values between 0 and 1 to the weight factors, ensuring that their total sum equals 1.
+
+moo_wf = {
+    "wf_cost": 1,
+    "wf_ghg": 0,
+    "wf_lr": 0,
+    "wf_wf": 0,
+}
 
 # -------------- RUNNING THE SCENARIOS --------------
 for scenario in scenarios:
@@ -118,6 +132,7 @@ for scenario in scenarios:
         custom_attributes=custom_attributes,
         typemap=TYPEMAP,
         moo=moo,
+        moo_wf=moo_wf,
         dash_app=True,
         parameters_units=parameters_units,
         skip_preprocessing=True,
