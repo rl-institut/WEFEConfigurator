@@ -115,6 +115,10 @@ class ScenarioBuilder:
                 for chemical in chemicals_selected:
                     print(chemical)
                     combined_component_list.extend(self.mapping[f"4{suffix}.3"]["map_answer"][chemical])
+            if survey[f"criteria_5{suffix}"] and survey[f"criteria_5{suffix}"] not in (["no"], "no"):
+                odd_tech = [tech.replace(" ","_").replace("-","_") for tech in survey[f"criteria_5{suffix}"]]
+                combined_component_list.append(odd_tech)
+
             for item in combined_component_list:
                 if isinstance(item, list):
                     unique_slim_component_list.extend(item)
