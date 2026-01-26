@@ -2628,7 +2628,7 @@
             "activated carbon filter": [
                 ""
             ],
-            "UV-disinfection": [
+            "uv-disinfection": [
                 ""
             ],
             "cartridge filter": [
@@ -3144,7 +3144,7 @@
             "activated carbon filter": [
                 ""
             ],
-            "UV-disinfection": [
+            "uv-disinfection": [
                 ""
             ],
             "cartridge filter": [
@@ -3660,7 +3660,7 @@
             "activated carbon filter": [
                 ""
             ],
-            "UV-disinfection": [
+            "uv-disinfection": [
                 ""
             ],
             "cartridge filter": [
@@ -4176,7 +4176,7 @@
             "activated carbon filter": [
                 ""
             ],
-            "UV-disinfection": [
+            "uv-disinfection": [
                 ""
             ],
             "cartridge filter": [
@@ -4466,10 +4466,10 @@
         "map_to": "component",
         "map_answer": {
             "Yes": [
-                ""
+                "groundwater-pump"
             ],
             "No": [
-                ""
+                "groundwater-pipe"
             ]
         }
     },
@@ -4756,7 +4756,7 @@
             "activated carbon filter": [
                 ""
             ],
-            "UV-disinfection": [
+            "uv-disinfection": [
                 ""
             ],
             "cartridge filter": [
@@ -5002,10 +5002,10 @@
         "map_to": "component",
         "map_answer": {
             "Yes": [
-                ""
+                "seawater-pump"
             ],
             "No": [
-                ""
+                "seawater-pipe"
             ]
         }
     },
@@ -5292,7 +5292,7 @@
             "activated carbon filter": [
                 ""
             ],
-            "UV-disinfection": [
+            "uv-disinfection": [
                 ""
             ],
             "cartridge filter": [
@@ -5538,10 +5538,10 @@
         "map_to": "component",
         "map_answer": {
             "Yes": [
-                ""
+                "river-water-pump"
             ],
             "No": [
-                ""
+                "river-water-pipe"
             ]
         }
     },
@@ -5828,7 +5828,7 @@
             "activated carbon filter": [
                 ""
             ],
-            "UV-disinfection": [
+            "uv-disinfection": [
                 ""
             ],
             "cartridge filter": [
@@ -6074,10 +6074,10 @@
         "map_to": "component",
         "map_answer": {
             "Yes": [
-                ""
+                "lake-water-pump"
             ],
             "No": [
-                ""
+                "lake-water-pipe"
             ]
         }
     },
@@ -6364,7 +6364,7 @@
             "activated carbon filter": [
                 ""
             ],
-            "UV-disinfection": [
+            "uv-disinfection": [
                 ""
             ],
             "cartridge filter": [
@@ -6654,10 +6654,10 @@
         "map_to": "component",
         "map_answer": {
             "Yes": [
-                ""
+                "groundwater-pump"
             ],
             "No": [
-                ""
+                "groundwater-pipe"
             ]
         }
     },
@@ -6871,7 +6871,7 @@
             "activated carbon filter": [
                 ""
             ],
-            "UV-disinfection": [
+            "uv-disinfection": [
                 ""
             ],
             "cartridge filter": [
@@ -7117,10 +7117,10 @@
         "map_to": "component",
         "map_answer": {
             "Yes": [
-                ""
+                "seawater-pump"
             ],
             "No": [
-                ""
+                "seawater-pipe"
             ]
         }
     },
@@ -7334,7 +7334,7 @@
             "activated carbon filter": [
                 ""
             ],
-            "UV-disinfection": [
+            "uv-disinfection": [
                 ""
             ],
             "cartridge filter": [
@@ -7580,10 +7580,10 @@
         "map_to": "component",
         "map_answer": {
             "Yes": [
-                ""
+                "river-water-pump"
             ],
             "No": [
-                ""
+                "river-water-pipe"
             ]
         }
     },
@@ -7797,7 +7797,7 @@
             "activated carbon filter": [
                 ""
             ],
-            "UV-disinfection": [
+            "uv-disinfection": [
                 ""
             ],
             "cartridge filter": [
@@ -8043,10 +8043,10 @@
         "map_to": "component",
         "map_answer": {
             "Yes": [
-                ""
+                "lake-water-pump"
             ],
             "No": [
-                ""
+                "lake-water-pipe"
             ]
         }
     },
@@ -8260,7 +8260,7 @@
             "activated carbon filter": [
                 ""
             ],
-            "UV-disinfection": [
+            "uv-disinfection": [
                 ""
             ],
             "cartridge filter": [
@@ -8623,7 +8623,9 @@
                 "af_waste",
                 "excess-biomass",
                 "excess-human-feces",
-                "excess-human-urine"
+                "excess-human-urine",
+                "excess-animal-feces",
+                "excess-animal-urine"
             ]
         }
     }
