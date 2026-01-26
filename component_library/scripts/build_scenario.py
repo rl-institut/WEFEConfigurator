@@ -316,117 +316,137 @@ class ScenarioBuilder:
 
         safety_check()
 
+        def default_toilet_handling(toilet_types):
+            if "dry toilet" not in toilet_types:
+                self.add_single_component(component_type="dry_toilet")
+                self.add_single_component(component_type="hu_waste")
+                self.add_single_component(component_type="hf_waste")
+                self.add_single_component(component_type="excess-dry-feces")
+                self.add_single_component(component_type="excess-human-feces")
+                self.add_single_component(component_type="excess-human-urine")
+
+            if "open field" not in toilet_types:
+                self.add_single_component(component_type="open_field")
+                self.add_single_component(component_type="hu_waste")
+                self.add_single_component(component_type="hf_waste")
+                self.add_single_component(component_type="au_waste")
+                self.add_single_component(component_type="af_waste")
+                self.add_single_component(component_type="excess-biomass")
+                self.add_single_component(component_type="excess-human-feces")
+                self.add_single_component(component_type="excess-human-urine")
+                self.add_single_component(component_type="excess-animal-feces")
+                self.add_single_component(component_type="excess-animal-urine")
+
         wastewater_systems = survey["criteria_7"]
         population = 1000  # # survey needs to ask population, makes most of the logic implementation easier
         toilet_types = survey["criteria_7.3"]
         print(toilet_types)
 
-        if survey["criteria_7"] != ["disposal to environment without treatment"]:  # set direct disposal for not inclusion of any wastewater component
+        default_toilet_handling(toilet_types)
 
-            # black water treatment
-            if "flush toilet" in toilet_types:
-                if "constructed wetland" in wastewater_systems:
-                    component_key = self.add_single_component(
-                        component_type="constructed_wetland",
-                        component_name="black_water_cw",
-                        component_attrs={
-                            "water_in_bus": "black-water-bus",
-                            "water_out_bus": "wwtp-ip-water-bus"
-                        }
-                    )
-                    capacity = survey["criteria_7.1.1"]
-                    if capacity not in (None, "", " "):
-                        self.components[component_key].update({"capacity": capacity})
-                else:
-                    # default addition of septic system
-                    component_key = self.add_single_component(
-                        component_type="septic_system",
-                        component_name="black_water_septic",
-                        component_attrs={
-                            "water_in_bus": "black-water-bus",
-                            "water_out_bus": "wwtp-ip-water-bus"
-                        }
-                    )
-                    #self.add_single_component(component_type="excess-biomass")
-                    capacity = survey["criteria_7.1.0"]
-                    if capacity not in (None, "", " "):
-                        self.components[component_key].update({"capacity": capacity})
-
-            # grey water treatment
-
+        # black water treatment
+        if "flush toilet" in toilet_types:
             if "constructed wetland" in wastewater_systems:
                 component_key = self.add_single_component(
                     component_type="constructed_wetland",
-                    component_name="grey_water_cw",
+                    component_name="black_water_cw",
                     component_attrs={
-                        "water_in_bus": "grey-water-bus",
+                        "water_in_bus": "black-water-bus",
                         "water_out_bus": "wwtp-ip-water-bus"
                     }
                 )
                 capacity = survey["criteria_7.1.1"]
                 if capacity not in (None, "", " "):
                     self.components[component_key].update({"capacity": capacity})
-
             else:
                 # default addition of septic system
                 component_key = self.add_single_component(
                     component_type="septic_system",
-                    component_name="grey_water_septic",
+                    component_name="black_water_septic",
                     component_attrs={
-                        "water_in_bus": "grey-water-bus",
+                        "water_in_bus": "black-water-bus",
                         "water_out_bus": "wwtp-ip-water-bus"
                     }
                 )
-                #self.add_single_component(component_type="excess-biomass")
                 capacity = survey["criteria_7.1.0"]
                 if capacity not in (None, "", " "):
                     self.components[component_key].update({"capacity": capacity})
 
-            # waste water treatment plant based on population
-            if population >= 10000:
-                # centralized waste water treatment plant
-                component_key = self.add_single_component(
-                    component_type="centralized_WWTP",
-                    component_attrs={
-                        "water_in_bus": "wwtp-ip-water-bus",
-                        "water_out_bus": "wwtp-op-water-bus"
-                    }
-                )
-                #self.add_single_component(component_type="excess-biomass")
-                capacity = survey["criteria_7.1.2"]
-                if capacity not in (None, "", " "):
-                    self.components[component_key].update({"capacity": capacity})
-            else:
-                # decentralized waste water treatment plant
-                # default addition of this component
-                component_key = self.add_single_component(
-                    component_type="decentralized_WWTP",
-                    component_attrs={
-                        "water_in_bus": "wwtp-ip-water-bus",
-                        "water_out_bus": "wwtp-op-water-bus"
-                    }
-                )
-                #self.add_single_component(component_type="excess-biomass")
-                capacity = survey["criteria_7.1.3"]
-                if capacity not in (None, "", " "):
-                    self.components[component_key].update({"capacity": capacity})
+        # grey water treatment
 
-            # water recycling and reuse system
-            # default addition of this component
+        if "constructed wetland" in wastewater_systems:
             component_key = self.add_single_component(
-                component_type="water_reuse_system",
+                component_type="constructed_wetland",
+                component_name="grey_water_cw",
                 component_attrs={
-                    "water_in_bus": "wwtp-op-water-bus",
-                    "water_out_bus": "service-water-bus"
+                    "water_in_bus": "grey-water-bus",
+                    "water_out_bus": "wwtp-ip-water-bus"
+                }
+            )
+            capacity = survey["criteria_7.1.1"]
+            if capacity not in (None, "", " "):
+                self.components[component_key].update({"capacity": capacity})
+
+        else:
+            # default addition of septic system
+            component_key = self.add_single_component(
+                component_type="septic_system",
+                component_name="grey_water_septic",
+                component_attrs={
+                    "water_in_bus": "grey-water-bus",
+                    "water_out_bus": "wwtp-ip-water-bus"
                 }
             )
             self.add_single_component(component_type="hh_gw_waste")
-            capacity = survey["criteria_7.1.4"]
+            capacity = survey["criteria_7.1.0"]
+            if capacity not in (None, "", " "):
+                self.components[component_key].update({"capacity": capacity})
+
+        # waste water treatment plant based on population  #assumed that at least either of the following is present, improve in future
+        if population >= 10000:
+            # centralized waste water treatment plant
+            component_key = self.add_single_component(
+                component_type="centralized_WWTP",
+                component_attrs={
+                    "water_in_bus": "wwtp-ip-water-bus",
+                    "water_out_bus": "wwtp-op-water-bus"
+                }
+            )
+            capacity = survey["criteria_7.1.2"]
             if capacity not in (None, "", " "):
                 self.components[component_key].update({"capacity": capacity})
         else:
-             print("direct disposal")
+            # decentralized waste water treatment plant
+            # default addition of this component
+            component_key = self.add_single_component(
+                component_type="decentralized_WWTP",
+                component_attrs={
+                    "water_in_bus": "wwtp-ip-water-bus",
+                    "water_out_bus": "wwtp-op-water-bus"
+                }
+            )
+            capacity = survey["criteria_7.1.3"]
+            if capacity not in (None, "", " "):
+                self.components[component_key].update({"capacity": capacity})
 
+        # water recycling and reuse system #assumed that the reuse of water is always there
+        # default addition of this component
+        component_key = self.add_single_component(
+            component_type="water_reuse_system",
+            component_attrs={
+                "water_in_bus": "wwtp-op-water-bus",
+                "water_out_bus": "service-water-bus"
+            }
+        )
+        capacity = survey["criteria_7.1.4"]
+        if capacity not in (None, "", " "):
+            self.components[component_key].update({"capacity": capacity})
+        # add excess for service water
+        self.add_single_component(component_type="excess-service-water")
+
+        if "disposal to environment without treatment" in wastewater_systems: # set direct disposal for grey water and black water
+            self.add_single_component(component_type="greywater_disposal")
+            self.add_single_component(component_type="blackwater_disposal")
 
     def get_single_component_from_datapackage(self, dp, resource_name, component_name):
         """
