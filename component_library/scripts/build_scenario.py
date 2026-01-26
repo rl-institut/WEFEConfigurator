@@ -182,36 +182,39 @@ class ScenarioBuilder:
                 "boiling": "boiling",
                 "distillation": "distillation",
                 "activated carbon filter": "activated_carbon_filter",
-                "UV-disinfection": "uv_disinfection",
+                "uv-disinfection": "uv_disinfection",
                 "cartridge filter": "cartridge_filter",
                 "microfiltration": "microfiltration",
                 "ceramic filter": "ceramic_filter",
                 "nanofiltration": "nanofiltration",
-                "electrodialyis": "electrodialysis",
+                "electrodialysis": "electrodialysis",
                 "slow sand filter": "slow_sand_filter",
                 "water softener": "ion_exchange",
                 "chlorination": "chlorination",
             }
             for sfx in suffixes:
-                if survey[f"criteria_5{sfx}"] != ["no"] :
-                    idx = 0
-                    for answer, facade in mapping_dict.items():
-                        if answer in survey[f"criteria_5{sfx}"]:
-                            comp_key = (facade, f"{WT}_{facade}_1")
-                            if survey[f"criteria_5{sfx}.2.{idx}"] not in (None, "", " "):
-                                capacity_sums[comp_key] = capacity_sums.get(comp_key, 0.0) + survey[f"criteria_5{sfx}.2.{idx}"]
-                            if survey[f"criteria_5{sfx}.3.{idx}"] not in (None, "", " "):
-                                # Keep highest specific energy consumption
-                                if specific_energy_consumption_values.get(comp_key) is None or survey[f"criteria_5{sfx}.3.{idx}"] > specific_energy_consumption_values.get(comp_key):
-                                    specific_energy_consumption_values[comp_key] = survey[f"criteria_5{sfx}.3.{idx}"]
-                            try:
-                                if survey[f"criteria_5{sfx}.1.{idx}"] not in (None, "", " "):
-                                    # Keep lowest efficiency value
-                                    if efficiency_values.get(comp_key) is None or survey[f"criteria_5{sfx}.1.{idx}"] < efficiency_values.get(comp_key):
-                                        efficiency_values[comp_key] = survey[f"criteria_5{sfx}.1.{idx}"]
-                            except KeyError:
-                                pass
-                        idx += 1
+                if not survey[f"criteria_5{sfx}"] or survey[f"criteria_5{sfx}"] == ["no"]:
+                    continue
+                idx = 0
+                for answer, facade in mapping_dict.items():
+                    if answer in survey[f"criteria_5{sfx}"]:
+                        comp_key = (facade, f"{WT}_{facade}_1")
+                        if survey[f"criteria_5{sfx}.2.{idx}"] not in (None, "", " "):
+                            capacity_sums[comp_key] = capacity_sums.get(comp_key, 0.0) + survey[f"criteria_5{sfx}.2.{idx}"]
+                        if survey[f"criteria_5{sfx}.3.{idx}"] not in (None, "", " "):
+                            # Keep highest specific energy consumption
+                            if specific_energy_consumption_values.get(comp_key) is None or survey[
+                                f"criteria_5{sfx}.3.{idx}"] > specific_energy_consumption_values.get(comp_key):
+                                specific_energy_consumption_values[comp_key] = survey[f"criteria_5{sfx}.3.{idx}"]
+                        try:
+                            if survey[f"criteria_5{sfx}.1.{idx}"] not in (None, "", " "):
+                                # Keep lowest efficiency value
+                                if efficiency_values.get(comp_key) is None or survey[
+                                    f"criteria_5{sfx}.1.{idx}"] < efficiency_values.get(comp_key):
+                                    efficiency_values[comp_key] = survey[f"criteria_5{sfx}.1.{idx}"]
+                        except KeyError:
+                            pass
+                    idx += 1
 
             # After all suffixes processed, update component attributes once with aggregated values
             for comp_key in capacity_sums:
@@ -240,6 +243,7 @@ class ScenarioBuilder:
                     self.add_single_component(component_type="brine-excess")
 
         safety_check()
+
         if self.criterias["2"] == "Yes": # set Yes currently
             suffixes_a = ["_GWa", "_DSa", "_RCa", "_La"] # drinking water
             suffixes_b = ["_GWb", "_DSb", "_RCb", "_Lb"] # service water
