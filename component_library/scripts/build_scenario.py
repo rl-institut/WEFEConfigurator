@@ -166,6 +166,9 @@ class ScenarioBuilder:
                     components_dict[key] = {"water_in_bus": previous_out_bus,"water_out_bus": out_bus}
                     previous_out_bus = out_bus
 
+            exit_bus = "service-water-bus" if water_type.lower() == "service" else "drinking-water-bus"
+            components_dict[next(reversed(components_dict.keys()))].update({"water_out_bus":exit_bus})
+
             return components_dict
 
         def update_component_parameters(suffixes, WT):
