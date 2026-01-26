@@ -256,7 +256,7 @@ class ScenarioBuilder:
             service_water_component_list = list(dict.fromkeys(service_water_component_list))
             print("DW treatment dictionary")
             drinking_water_component_list = arrange_components(water_treatment_train["main_list"], drinking_water_component_list)
-            drinking_water_treatment_dict = create_component_dict(drinking_water_component_list, entry_bus = "water-in-bus", water_type = "drinking")
+            drinking_water_treatment_dict = create_component_dict(drinking_water_component_list, entry_bus = "untreated-water-bus", water_type = "drinking")
             for (component_type, component_name), component_attrs in drinking_water_treatment_dict.items():
                 # Add the component from the train
                 self.add_single_component(component_type, component_name, component_attrs)
@@ -264,7 +264,9 @@ class ScenarioBuilder:
                 for bus_type in ["water_in_bus", "water_out_bus"]:
                     if component_attrs.get(bus_type):  # only add if defined
                         self.add_single_bus(name=component_attrs.get(bus_type), balanced=True, carrier="water")
-            update_component_parameters(suffixes_b, "DW")
+            update_component_parameters(suffixes_a, "DW")
+            # add excess for drinking water
+            self.add_single_component(component_type="excess-drinking-water")
             #print(drinking_water_treatment_dict)
             print("SW treatment dictionary")
             service_water_component_list = arrange_components(water_treatment_train["main_list"], service_water_component_list)
@@ -277,6 +279,8 @@ class ScenarioBuilder:
                     if component_attrs.get(bus_type):  # only add if defined
                         self.add_single_bus(name=component_attrs.get(bus_type), balanced=True, carrier="water")
             update_component_parameters(suffixes_b,"SW")
+            # add excess for service water
+            self.add_single_component(component_type="excess-service-water")
             #print(service_water_treatment_dict)
         else:
             suffixes = ["_GW", "_DS", "_RC", "_L"] # all water assumed drinking water
@@ -295,6 +299,8 @@ class ScenarioBuilder:
                     if component_attrs.get(bus_type):  # only add if defined
                         self.add_single_bus(name=component_attrs.get(bus_type), balanced=True, carrier="water")
             update_component_parameters(suffixes, "DW")
+            # add excess for drinking water
+            self.add_single_component(component_type="excess-drinking-water")
             #print(drinking_water_treatment_dict)
 
         add_excess()
