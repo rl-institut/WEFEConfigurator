@@ -45,9 +45,10 @@ class SurveyAnswer(models.Model):
 
     def export(self, ignore_empty=False):
 
-        value = json.loads(self.value)
-        answer = {self.question.question_id: value}
-        if ignore_empty is True and value is None:
+        if ignore_empty is True and self.value is None:
             answer = {}
+        else:
+            value = json.loads(self.value) if self.value is not None else None
+            answer = {self.question.question_id: value}
         return answer
 
