@@ -5,10 +5,13 @@ brine-excess;excess;brine-bus;0.0
 excess-river-flow;excess;riverflow-bus;0.0
 excess-service-water;excess;service-water-bus;0.0
 excess-drinking-water;excess;drinking-water-bus;0.0
-direct_wastewater_disposal;excess;direct-disposal-wastewater-bus;0.0
+greywater_disposal;excess;grey-water-bus;100000.0
+blackwater_disposal;excess;black-water-bus;100000.0
 excess-compost;excess;compost-bus;0.0
 excess-dry-feces;excess;dry-feces-bus;0.0
 excess-biomass;excess;biomass-bus;0.0
 excess-N2;excess;N2-bus;0.0
 excess-human-feces;excess;human-feces-bus;100000.0
 excess-human-urine;excess;human-urine-bus;100000.0
+excess-animal-feces;excess;animal-feces-bus;100000.0
+excess-animal-urine;excess;animal-urine-bus;100000.0

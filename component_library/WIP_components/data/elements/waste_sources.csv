@@ -1,6 +1,6 @@
 name;type;carrier;tech;capacity;capacity_cost;bus;marginal_cost;carrier_cost;resource_cost;land_requirement_factor;ghg_emission_factor;water_consumption_factor;indirect_water_consumption_factor;profile;output_parameters;expandable;verbose_name
 hu_waste;volatile;urine;source;1000.0;0.0;human-urine-bus;0.0;0.0;0.0;0.0;0.0;0.0;0.0;human-urine-profile;{};False;Human Urine
-hf_waste;volatile;feces;source;1.0;0.0;human-feces-bus;0.0;0.0;0.0;0.0;0.0;0.0;0.0;human-feces-profile;{};False;Human Feces
-au_waste;volatile;urine;source;1000.0;0.0;animal-urine-bus;0.0;0.0;0.0;0.0;0.0;0.0;0.0;animal-urine-profile;{};False;Animal Urine
-af_waste;volatile;feces;source;1.0;0.0;animal-feces-bus;0.0;0.0;0.0;0.0;0.0;0.0;0.0;animal-feces-profile;{};False;Animal Feces
+hf_waste;volatile;feces;source;1000.0;0.0;human-feces-bus;0.0;0.0;0.0;0.0;0.0;0.0;0.0;human-feces-profile;{};False;Human Feces
+au_waste;volatile;urine;source;100.0;0.0;animal-urine-bus;0.0;0.0;0.0;0.0;0.0;0.0;0.0;animal-urine-profile;{};False;Animal Urine
+af_waste;volatile;feces;source;100.0;0.0;animal-feces-bus;0.0;0.0;0.0;0.0;0.0;0.0;0.0;animal-feces-profile;{};False;Animal Feces
 hh_gw_waste;volatile;water;source;1000.0;0.0;grey-water-bus;0.0;0.0;0.0;0.0;0.0;0.0;0.0;household-grey-water-profile;{};False;Household Grey Water
