@@ -2332,19 +2332,22 @@
                 "seawater"
             ],
             "river/creek": [
-                "surface-water"
+                "river-water"
             ],
             "lake": [
-                "surface-water"
+                "lake-water"
             ],
             "water truck": [
                 "truck-water"
             ],
             "rainwater harvesting": [
-                ""
+                "rainwater-harvesting"
             ],
             "bottled water": [
                 "bottled-water"
+            ],
+            "other": [
+                ""
             ]
         }
     },
@@ -6625,25 +6628,25 @@
                 "groundwater"
             ],
             "public tap water": [
-                "tap_water"
+                "tap-water"
             ],
             "desalinated seawater": [
                 "seawater"
             ],
             "river/creek": [
-                ""
+                "river-water"
             ],
             "lake": [
-                ""
+                "lake-water"
             ],
             "water truck": [
-                "truck_water"
+                "truck-water"
             ],
             "rainwater harvesting": [
-                ""
+                "rainwater-harvesting"
             ],
             "bottled water": [
-                "bottled_water"
+                "bottled-water"
             ],
             "other": [
                 ""
