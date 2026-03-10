@@ -33,3 +33,6 @@ N2-bus;bus;True;N2
 untreated-water-bus;bus;True;water
 river-water-bus;bus;True;water
 lake-water-bus;bus;True;water
+truck-water-bus;bus;True;water
+bottled-water-bus;bus;True;water
+rain-water-bus;bus;True;water
