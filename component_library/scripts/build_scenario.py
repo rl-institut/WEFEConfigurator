@@ -86,9 +86,6 @@ class ScenarioBuilder:
 
     def water_systems_postprocessing(self, survey):
 
-        # Strip 'criteria_' from keys locally
-        survey = {k[len("criteria_"):] if k.startswith("criteria_") else k: v for k, v in survey.items()}
-
         def safety_check():
             # --- SAFETY CLEANUP STEP ---
             # Remove any existing water-treatment components that process_survey might have added
@@ -246,6 +243,9 @@ class ScenarioBuilder:
                 }:
                     self.add_single_component(component_type="brine-excess")
 
+        # Strip 'criteria_' from keys locally
+        survey = {k.replace("criteria_", ""): v for k, v in survey.items()}
+
         safety_check()
 
         water_sources = [
@@ -345,7 +345,7 @@ class ScenarioBuilder:
     def waste_water_systems_postprocessing(self, survey):
 
         # Strip 'criteria_' from keys locally
-        survey = {k[len("criteria_"):] if k.startswith("criteria_") else k: v for k, v in survey.items()}
+        survey = {k.replace("criteria_", ""): v for k, v in survey.items()}
 
         def safety_check():
             # --- SAFETY CLEANUP STEP ---
@@ -1292,7 +1292,7 @@ if __name__=="__main__":
 
     scenario.water_systems_postprocessing(survey_answers)
     scenario.waste_water_systems_postprocessing(survey_answers)
-
+    print(scenario.components)
     # scenario.crop_systems_postprocessing()
 
     # adding the component to the datapackge from the component library based on the list of component
