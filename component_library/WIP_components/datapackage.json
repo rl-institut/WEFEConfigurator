@@ -95,6 +95,11 @@
                         "format": "default"
                     },
                     {
+                        "name": "annuity",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
                         "name": "capex",
                         "type": "number",
                         "format": "default"
@@ -247,6 +252,11 @@
                     },
                     {
                         "name": "carrier_cost",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "annuity",
                         "type": "number",
                         "format": "default"
                     },
@@ -739,6 +749,11 @@
                         "format": "default"
                     },
                     {
+                        "name": "annuity",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
                         "name": "capex",
                         "type": "number",
                         "format": "default"
@@ -888,6 +903,11 @@
                     },
                     {
                         "name": "carrier_cost",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "annuity",
                         "type": "number",
                         "format": "default"
                     },
@@ -1088,6 +1108,11 @@
                     },
                     {
                         "name": "carrier_cost",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "annuity",
                         "type": "number",
                         "format": "default"
                     },
@@ -1693,6 +1718,11 @@
                         "format": "default"
                     },
                     {
+                        "name": "annuity",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
                         "name": "capex",
                         "type": "number",
                         "format": "default"
@@ -1843,6 +1873,11 @@
                     },
                     {
                         "name": "carrier_cost",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "annuity",
                         "type": "number",
                         "format": "default"
                     },
@@ -2135,11 +2170,6 @@
                         "format": "default"
                     },
                     {
-                        "name": "expandable",
-                        "type": "boolean",
-                        "format": "default"
-                    },
-                    {
                         "name": "capacity",
                         "type": "number",
                         "format": "default"
@@ -2176,6 +2206,11 @@
                     },
                     {
                         "name": "power",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "annuity",
                         "type": "number",
                         "format": "default"
                     },
@@ -2245,8 +2280,13 @@
                         "format": "default"
                     },
                     {
-                        "name": "annuity",
-                        "type": "number",
+                        "name": "expandable",
+                        "type": "boolean",
+                        "format": "default"
+                    },
+                    {
+                        "name": "verbose_name",
+                        "type": "string",
                         "format": "default"
                     }
                 ],
@@ -2335,7 +2375,7 @@
                     },
                     {
                         "name": "profile",
-                        "type": "string",
+                        "type": "number",
                         "format": "default"
                     },
                     {
@@ -2369,12 +2409,6 @@
                         "reference": {
                             "resource": "bus",
                             "fields": "name"
-                        }
-                    },
-                    {
-                        "fields": "profile",
-                        "reference": {
-                            "resource": "profiles"
                         }
                     }
                 ]
@@ -2431,6 +2465,11 @@
                     },
                     {
                         "name": "carrier_cost",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "annuity",
                         "type": "number",
                         "format": "default"
                     },
@@ -2601,6 +2640,11 @@
                         "format": "default"
                     },
                     {
+                        "name": "annuity",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
                         "name": "capex",
                         "type": "number",
                         "format": "default"
@@ -2767,6 +2811,11 @@
                         "format": "default"
                     },
                     {
+                        "name": "annuity",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
                         "name": "capex",
                         "type": "number",
                         "format": "default"
@@ -2929,6 +2978,11 @@
                     },
                     {
                         "name": "carrier_cost",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "annuity",
                         "type": "number",
                         "format": "default"
                     },
