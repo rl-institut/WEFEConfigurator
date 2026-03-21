@@ -7,6 +7,7 @@ import pandas as pd
 import logging
 import json
 import shutil
+import copy
 
 # from app.survey.templatetags.tags_utils import has_field
 from utils import AVAILABLE_COMPONENTS, AVAILABLE_SEQUENCES, COMPONENT_TEMPLATES_PATH
@@ -307,6 +308,232 @@ class ScenarioBuilder:
                                    type_water="drinking")
 
         add_excess()
+        # ---------------------------------
+
+    def water_systems_simplification(self):
+
+        elements_dir = self.scenario_component_folder
+        dp_json_path = os.path.join(self.scenario_folder, "datapackage.json")
+        bus_path = os.path.join(elements_dir, "bus.csv")
+
+        original_water_treatment_csvs = [
+            "water_treatment_without.csv",
+            "water_treatment_with_brine.csv",
+            "water_treatment_with_biomass.csv",
+            "water_treatment_with_N2.csv",
+        ]
+
+        extra_bus_columns = ["brine_out_bus", "waste_biomass_out_bus", "N2_gas_bus"]
+
+        def modify_bus_csv():
+            df_bus = pd.read_csv(bus_path, sep=";")
+            df_bus = df_bus[~df_bus["name"].str.startswith(("DW_", "SW_"))]
+
+            bus_names = ["DW_pre_treatment_out_bus", "DW_core_treatment_out_bus"]
+
+            has_sw = False
+
+            if os.path.exists(os.path.join(elements_dir, "water_treatment_without.csv")):
+                df_water_without = pd.read_csv(os.path.join(elements_dir, "water_treatment_without.csv"), sep=";")
+                if "name" in df_water_without.columns:
+                    has_sw = df_water_without["name"].str.startswith("SW_").any()
+
+            if has_sw:
+                bus_names.extend(["SW_pre_treatment_out_bus", "SW_core_treatment_out_bus"])
+
+            simplified_buses = pd.DataFrame({"name": bus_names, "type": "bus", "balanced": True, "carrier": "water"})
+
+            df_bus = pd.concat([df_bus, simplified_buses], ignore_index=True)
+            df_bus = df_bus.drop_duplicates(subset=["name"], keep="last")
+            df_bus.to_csv(bus_path, sep=";", index=False)
+
+        def modify_water_treatment(water_treatment_csvs, extra_cols):
+
+            dfs = []
+            for csv_name in water_treatment_csvs:
+                path = os.path.join(elements_dir, csv_name)
+                if os.path.exists(path):
+                    df = pd.read_csv(path, sep=";")
+                    dfs.append(df)
+                    try:
+                        os.remove(path)
+                        print(f"Deleted {csv_name}")
+                    except OSError as e:
+                        print(f"Could not delete {csv_name}: {e}")
+
+            if not dfs:
+                print("No water treatment CSVs found.")
+                return None
+
+            merged_df = pd.concat(dfs, ignore_index=True, sort=False)
+
+            common_cols = [col for col in merged_df.columns if col not in extra_cols]
+            ordered_cols = common_cols + [col for col in extra_cols if col in merged_df.columns]
+
+            merged_df = merged_df[ordered_cols]
+
+            pre_treatment_df = merged_df[(merged_df["type"].isin(water_treatment_train["pre_treatment"])) &
+                                         (merged_df["name"].str.endswith("_1"))]
+            core_treatment_df = merged_df[(merged_df["type"].isin(water_treatment_train["core_treatment"])) &
+                                          (merged_df["name"].str.endswith("_1"))]
+            post_treatment_df = merged_df[(merged_df["type"].isin(water_treatment_train["post_treatment"])) |
+                                          (merged_df["name"].str.endswith("_2"))]
+            pre_treatment_df.to_csv(os.path.join(elements_dir, "water_pre_treatment.csv"), sep=";", index=False)
+            core_treatment_df.to_csv(os.path.join(elements_dir, "water_core_treatment.csv"), sep=";", index=False)
+            post_treatment_df.to_csv(os.path.join(elements_dir, "water_post_treatment.csv"), sep=";", index=False)
+
+            return merged_df
+#deadcode-----------------------------------------------------------------------------
+        def aggregate_component_block(df, prefix, block_name, water_in_bus, water_out_bus):
+            sub = df[df["name"].str.startswith(prefix)].copy()
+
+            if sub.empty:
+                return None
+
+            row = {}
+
+            row["name"] = f"{prefix}{block_name}"
+            row["type"] = f"water_{block_name}"
+            row["water_in_bus"] = water_in_bus
+            row["water_out_bus"] = water_out_bus
+
+            numeric_sum_cols = [
+                "capex",
+                "opex_fix",
+                "capacity_cost",
+                "specific_energy_consumption",
+                "land_requirement_factor",
+                "ghg_emission_factor",
+                "water_consumption_factor",
+            ]
+
+            for col in numeric_sum_cols:
+                if col in sub.columns:
+                    row[col] = sub[col].fillna(0).sum()
+
+            if "efficiency" in sub.columns:
+                eff = sub["efficiency"].dropna()
+                row["efficiency"] = eff.prod() if not eff.empty else None
+
+            if "lifetime" in sub.columns:
+                life = sub["lifetime"].dropna()
+                if not life.empty:
+                    if "capex" in sub.columns and sub["capex"].notna().any():
+                        weights = sub.loc[life.index, "capex"].fillna(0)
+                        if weights.sum() > 0:
+                            row["lifetime"] = (life * weights).sum() / weights.sum()
+                        else:
+                            row["lifetime"] = life.mean()
+                    else:
+                        row["lifetime"] = life.mean()
+
+            for col in sub.columns:
+                if col not in row:
+                    non_null = sub[col].dropna()
+                    row[col] = non_null.iloc[0] if not non_null.empty else None
+
+            row_df = pd.DataFrame([row])
+            row_df = row_df[[c for c in df.columns if c in row_df.columns]]  # reorder columns
+            row_df = row_df.dropna(axis=1, how="all") # drop empty columns
+            return row_df
+
+#deadcode--------------------------------------------------------------------
+
+        def modify_data_package(water_treatment_csvs, extra_bus_columns):
+
+            new_csv = [
+                ("water_pre_treatment", "water_pre_treatment.csv"),
+                ("water_core_treatment", "water_core_treatment.csv"),
+                ("water_post_treatment", "water_post_treatment.csv"),
+            ]
+
+            old_water_treatment_csvs = [f.removesuffix(".csv") for f in water_treatment_csvs]
+
+            with open(dp_json_path, "r", encoding="utf-8") as f:
+                datapackage = json.load(f)
+
+            resources = datapackage["resources"]
+            template = next(r for r in resources if r["name"] == "water_treatment_without")
+            resources = [r for r in resources if r["name"] not in old_water_treatment_csvs]
+
+            for new_name, new_path in new_csv:
+                new_resource = copy.deepcopy(template)
+                new_resource["name"] = new_name
+                new_resource["path"] = f"data/elements/{new_path}"
+
+                csv_cols = pd.read_csv(os.path.join(elements_dir,new_path), sep=";", nrows=0).columns.tolist()
+
+                for col in extra_bus_columns:
+                    if col in csv_cols:
+                        new_resource["schema"]["fields"].append({"name": col, "type": "string", "format": "default"})
+                        new_resource["schema"]["foreignKeys"].append({"fields": col, "reference": {"resource": "bus", "fields": "name"}})
+
+                resources.append(new_resource)
+
+            datapackage["resources"] = resources
+
+            with open(dp_json_path, "w", encoding="utf-8") as f:
+                json.dump(datapackage, f, indent=4, ensure_ascii=False)
+
+        # ---Main Logic & Function Calling---
+
+        merged_df = modify_water_treatment(original_water_treatment_csvs, extra_bus_columns)
+
+        # Exit simplification if no water treatment csvs are detected
+        # Modification of bus csv and datapackage json is avoided
+        if merged_df is None:
+            return
+
+        modify_bus_csv()
+        water_csv_configs = [
+            {
+                "df": pd.read_csv(os.path.join(elements_dir, "water_pre_treatment.csv"), sep=";"),
+                "block_name": "pre_treatment",
+                "csv_name": "water_pre_treatment.csv",
+                "buses": {
+                    "DW_": ("untreated-water-bus", "DW_pre_treatment_out_bus"),
+                    "SW_": ("untreated-water-bus", "SW_pre_treatment_out_bus"),
+                },
+            },
+            {
+                "df": pd.read_csv(os.path.join(elements_dir, "water_core_treatment.csv"), sep=";"),
+                "block_name": "core_treatment",
+                "csv_name": "water_core_treatment.csv",
+                "buses": {
+                    "DW_": ("DW_pre_treatment_out_bus", "DW_core_treatment_out_bus"),
+                    "SW_": ("SW_pre_treatment_out_bus", "SW_core_treatment_out_bus"),
+                },
+            },
+            {
+                "df": pd.read_csv(os.path.join(elements_dir, "water_post_treatment.csv"), sep=";"),
+                "block_name": "post_treatment",
+                "csv_name": "water_post_treatment.csv",
+                "buses": {
+                    "DW_": ("DW_core_treatment_out_bus", "drinking-water-bus"),
+                    "SW_": ("SW_core_treatment_out_bus", "service-water-bus"),
+                },
+            },
+        ]
+
+        for config in water_csv_configs:
+            reduced_parts = []
+
+            for prefix, (water_in_bus, water_out_bus) in config["buses"].items():
+                reduced_df = aggregate_component_block(
+                    config["df"],
+                    prefix=prefix,
+                    block_name=config["block_name"],
+                    water_in_bus=water_in_bus,
+                    water_out_bus=water_out_bus,
+                )
+                if reduced_df is not None:
+                    reduced_parts.append(reduced_df)
+
+            if reduced_parts:
+                reduced_block_df = pd.concat(reduced_parts, ignore_index=True)
+                reduced_block_df.to_csv(os.path.join(elements_dir, config["csv_name"]), sep=";", index=False)
+
+        modify_data_package(original_water_treatment_csvs, extra_bus_columns)
         # ---------------------------------
 
     def waste_water_systems_postprocessing(self, survey):
@@ -1251,6 +1478,11 @@ if __name__=="__main__":
 
     scenario = ScenarioBuilder(name=f"scenario_{scen_id}", overwrite=False)
 
+    # Controls whether the water treatment system is simplified.
+    # True  -> run the simplification function and use the simplified setup.
+    # False -> skip simplification and keep the full treatment trains.
+    run_water_simplification = True  # default
+
     # Parse the survey to add components to a list
     scenario.process_survey(survey_answers)
 
@@ -1267,3 +1499,7 @@ if __name__=="__main__":
     scenario.add_components()
     scenario.add_buses()
     scenario.add_sequences()
+
+    # Apply simplification only when the flag is enabled.
+    if run_water_simplification:
+        scenario.water_systems_simplification()
