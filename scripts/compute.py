@@ -66,7 +66,7 @@ project_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir)
 # -------------- USER INPUTS --------------
 # list of scenarios to be evaluated
 scenarios = [
-    "scenario_15"
+    # "scenario_15"
     # "general_add_cost_inputs",
     # "general_basic",
     # "general_constraints",
@@ -79,6 +79,7 @@ scenarios = [
     #"aiwa_8760"
     # "arusi_8760"
     # "arusi_24"
+      "scenario_37"
 ]
 # Regionalized Characterisation Factor for Available water remaining (AWARE) - might move later;
 # this parameter is needed to calculate the regionalized water scarcity footprint in moo.
@@ -94,11 +95,12 @@ custom_attributes = [
     "renewable_factor",
     "land_requirement_factor",
     "water_consumption_factor",
-    "indirect_water_consumption_factor" "land_requirement",
+    "indirect_water_consumption_factor",
+    "land_requirement",
     "water_footprint",
     "ghg_emissions",
     "resource_cost",
-    "annuity",
+    "annuity"
 ]
 # set whether the multi-objective optimization should be performed
 moo = False
@@ -120,7 +122,7 @@ for scenario in scenarios:
         moo=moo,
         dash_app=True,
         parameters_units=parameters_units,
-        skip_preprocessing=True,
+        skip_preprocessing=False,
         skip_infer_datapackage_metadata=True,
     )
     df = calculator.df_results
