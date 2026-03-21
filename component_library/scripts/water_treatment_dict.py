@@ -23,6 +23,53 @@ water_treatment_train = {
         "activated_carbon_filter", # polishing
     ],
 
+    # Front-end treatment steps that prepare raw water for the main process.
+    # These units mainly remove coarse solids, grit, particles, and unstable feed characteristics
+    # so downstream treatment is protected from clogging, fouling, and performance loss.
+
+    "pre_treatment": [
+        "intake_structure",
+        "coarse_bar_screen",
+        "fine_screen",
+        "grit_chamber",
+        "cartridge_filter",
+        "simple_oxidation",
+        "coagulation_flocculation",
+    ],
+
+    # Main treatment steps that perform the primary water-quality transformation.
+    # These units are responsible for the core removal of dissolved contaminants, salts,
+    # pathogens, nutrients, organics, or other target pollutants.
+
+    "core_treatment": [
+        "slow_sand_filter",
+        "ceramic_filter",
+        "biofiltration",
+        "microfiltration",
+        "ultrafiltration",
+        "activated_carbon_filter",
+        "adsorption",
+        "ion_exchange",
+        "nanofiltration",
+        "electrodialysis",
+        "reverse_osmosis",
+        "membrane_distillation",
+        "distillation",
+        "boiling",
+        "photocatalysis",
+        "ozonation",
+        "biological_denitrification",
+    ],
+
+    # Final polishing and disinfection steps applied after the main treatment block.
+    # These units are used to ensure microbiological safety and improve final water quality
+    # before delivery to the drinking-water or service-water bus.
+
+    "post_treatment": [
+        "uv_disinfection",
+        "chlorination",
+    ],
+
     "pollutant_trains": {
         "drinking_water": {
             "decentralized": {
