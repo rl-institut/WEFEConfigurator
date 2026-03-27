@@ -10,8 +10,7 @@ from oemof_tabular_plugins.script import compute_scenario
 from oemof.tabular import datapackage  # noqa
 
 from oemof_tabular_plugins.wefe import WEFE_TYPEMAP as TYPEMAP
-
-
+from pathlib import Path
 
 parameters_units = {
     "drinking-water-storage": "[m³]",
@@ -109,8 +108,8 @@ moo = False
 for scenario in scenarios:
     print("Running scenario with datapackage {}".format(scenario))
     # set paths for scenario and result directories
-    scenario_dir = os.path.join(project_dir, "scenarios", scenario)
-    results_path = os.path.join(project_dir, "results", scenario, "output")
+    scenario_dir = Path(os.path.join(project_dir, "scenarios", scenario))
+    results_path = Path(os.path.join(project_dir, "results", scenario, "output"))
 
     calculator = compute_scenario(
         scenario_dir,
