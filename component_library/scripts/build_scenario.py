@@ -325,18 +325,11 @@ class ScenarioBuilder:
 
         extra_bus_columns = ["brine_out_bus", "waste_biomass_out_bus", "N2_gas_bus"]
 
-        def modify_bus_csv():
+        def modify_bus_csv(has_sw):
             df_bus = pd.read_csv(bus_path, sep=";")
             df_bus = df_bus[~df_bus["name"].str.startswith(("DW_", "SW_"))]
 
             bus_names = ["DW_pre_treatment_out_bus", "DW_core_treatment_out_bus"]
-
-            has_sw = False
-
-            if os.path.exists(os.path.join(elements_dir, "water_treatment_without.csv")):
-                df_water_without = pd.read_csv(os.path.join(elements_dir, "water_treatment_without.csv"), sep=";")
-                if "name" in df_water_without.columns:
-                    has_sw = df_water_without["name"].str.startswith("SW_").any()
 
             if has_sw:
                 bus_names.extend(["SW_pre_treatment_out_bus", "SW_core_treatment_out_bus"])
@@ -348,6 +341,11 @@ class ScenarioBuilder:
             df_bus.to_csv(bus_path, sep=";", index=False)
 
         def modify_water_treatment(water_treatment_csvs, extra_cols):
+            has_sw_detected = False
+            if os.path.exists(os.path.join(elements_dir, "water_treatment_without.csv")):
+                df_water_without = pd.read_csv(os.path.join(elements_dir, "water_treatment_without.csv"), sep=";")
+                if "name" in df_water_without.columns:
+                    has_sw_detected = df_water_without["name"].str.startswith("SW_").any()
 
             dfs = []
             for csv_name in water_treatment_csvs:
@@ -363,7 +361,7 @@ class ScenarioBuilder:
 
             if not dfs:
                 print("No water treatment CSVs found.")
-                return None
+                return None, False
 
             merged_df = pd.concat(dfs, ignore_index=True, sort=False)
 
@@ -382,7 +380,7 @@ class ScenarioBuilder:
             core_treatment_df.to_csv(os.path.join(elements_dir, "water_core_treatment.csv"), sep=";", index=False)
             post_treatment_df.to_csv(os.path.join(elements_dir, "water_post_treatment.csv"), sep=";", index=False)
 
-            return merged_df
+            return merged_df, has_sw_detected
 #deadcode-----------------------------------------------------------------------------
         def aggregate_component_block(df, prefix, block_name, water_in_bus, water_out_bus):
             sub = df[df["name"].str.startswith(prefix)].copy()
@@ -477,14 +475,14 @@ class ScenarioBuilder:
 
         # ---Main Logic & Function Calling---
 
-        merged_df = modify_water_treatment(original_water_treatment_csvs, extra_bus_columns)
+        merged_df, has_sw = modify_water_treatment(original_water_treatment_csvs, extra_bus_columns)
 
         # Exit simplification if no water treatment csvs are detected
         # Modification of bus csv and datapackage json is avoided
         if merged_df is None:
             return
 
-        modify_bus_csv()
+        modify_bus_csv(has_sw)
         water_csv_configs = [
             {
                 "df": pd.read_csv(os.path.join(elements_dir, "water_pre_treatment.csv"), sep=";"),
@@ -1471,7 +1469,7 @@ if __name__=="__main__":
     repo_path = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "scenarios")
     # create_scenario_from_survey_data({}, "test_scenario", repo_path)
 
-    scen_id = 101
+    scen_id = 37
 
     with open(os.path.join(project_dir, "app", f"scenario_{scen_id}_survey_answers.json"), "r") as fp:
         survey_answers =  json.load(fp)
