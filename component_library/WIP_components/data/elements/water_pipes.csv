@@ -1,13 +1,13 @@
 name;type;carrier;tech;capacity;capacity_cost;capacity_potential;marginal_cost;carrier_cost;efficiency;annuity;capex;opex_fix;lifetime;resource_cost;land_requirement_factor;ghg_emission_factor;water_consumption_factor;from_bus;to_bus;output_parameters;expandable;verbose_name
-groundwater-pipe;conversion;water;piping;0.0;0.0;+inf;0.0;0.0;1.0;0.0;0.0;0.0;20.0;0.0;2.0;0.0;0.0;groundwater-bus;untreated-water-bus;{};True;Groundwater Pipe
-seawater-pipe;conversion;water;piping;0.0;0.0;+inf;0.0;0.0;1.0;0.0;0.0;0.0;20.0;0.0;2.0;0.0;0.0;seawater-bus;untreated-water-bus;{};True;Seawater Pipe
-lake-water-pipe;conversion;water;piping;0.0;0.0;+inf;0.0;0.0;1.0;0.0;0.0;0.0;20.0;0.0;2.0;0.0;0.0;lake-water-bus;untreated-water-bus;{};True;Lake Water Pipe
-river-water-pipe;conversion;water;piping;0.0;0.0;+inf;0.0;0.0;1.0;0.0;0.0;0.0;20.0;0.0;2.0;0.0;0.0;river-water-bus;untreated-water-bus;{};True;River/Creek Water Pipe
-tap-water-pipe_DW;conversion;water;piping;0.0;0.0;+inf;0.0;0.0;1.0;0.0;0.0;0.0;20.0;0.0;2.0;0.0;0.0;tap-water-bus;drinking-water-bus;{};True;Tap Water Pipe
-truck-water-pipe_DW;conversion;water;piping;0.0;0.0;+inf;0.0;0.0;1.0;0.0;0.0;0.0;20.0;0.0;2.0;0.0;0.0;truck-water-bus;drinking-water-bus;{};True;Water Truck Pipe
-rain-water-pipe_DW;conversion;water;piping;0.0;0.0;+inf;0.0;0.0;1.0;0.0;0.0;0.0;20.0;0.0;2.0;0.0;0.0;rain-water-bus;drinking-water-bus;{};True;River/Creek Water Pipe
-bottled-water-pipe_DW;conversion;water;piping;0.0;0.0;+inf;0.0;0.0;1.0;0.0;0.0;0.0;20.0;0.0;2.0;0.0;0.0;bottled-water-bus;drinking-water-bus;{};True;Bottled Water Pipe
-tap-water-pipe_SW;conversion;water;piping;0.0;0.0;+inf;0.0;0.0;1.0;0.0;0.0;0.0;20.0;0.0;2.0;0.0;0.0;tap-water-bus;service-water-bus;{};True;Tap Water Pipe
-truck-water-pipe_SW;conversion;water;piping;0.0;0.0;+inf;0.0;0.0;1.0;0.0;0.0;0.0;20.0;0.0;2.0;0.0;0.0;truck-water-bus;service-water-bus;{};True;Water Truck Pipe
-rain-water-pipe_SW;conversion;water;piping;0.0;0.0;+inf;0.0;0.0;1.0;0.0;0.0;0.0;20.0;0.0;2.0;0.0;0.0;rain-water-bus;service-water-bus;{};True;River/Creek Water Pipe
-bottled-water-pipe_SW;conversion;water;piping;0.0;0.0;+inf;0.0;0.0;1.0;0.0;0.0;0.0;20.0;0.0;2.0;0.0;0.0;bottled-water-bus;service-water-bus;{};True;Bottled Water Pipe
+groundwater-pipe;conversion;water;piping;0.0;0.0;inf;0.0;0.0;1.0;0.0;0.0;0.0;20.0;0.0;2.0;0.0;0.0;groundwater-bus;untreated-water-bus;{};True;Groundwater Pipe
+seawater-pipe;conversion;water;piping;0.0;0.0;inf;0.0;0.0;1.0;0.0;0.0;0.0;20.0;0.0;2.0;0.0;0.0;seawater-bus;untreated-water-bus;{};True;Seawater Pipe
+lake-water-pipe;conversion;water;piping;0.0;0.0;inf;0.0;0.0;1.0;0.0;0.0;0.0;20.0;0.0;2.0;0.0;0.0;lake-water-bus;untreated-water-bus;{};True;Lake Water Pipe
+river-water-pipe;conversion;water;piping;0.0;0.0;inf;0.0;0.0;1.0;0.0;0.0;0.0;20.0;0.0;2.0;0.0;0.0;river-water-bus;untreated-water-bus;{};True;River/Creek Water Pipe
+tap-water-pipe_DW;conversion;water;piping;0.0;0.0;inf;0.0;0.0;1.0;0.0;0.0;0.0;20.0;0.0;2.0;0.0;0.0;tap-water-bus;drinking-water-bus;{};True;Tap Water Pipe
+truck-water-pipe_DW;conversion;water;piping;0.0;0.0;inf;0.0;0.0;1.0;0.0;0.0;0.0;20.0;0.0;2.0;0.0;0.0;truck-water-bus;drinking-water-bus;{};True;Water Truck Pipe
+rain-water-pipe_DW;conversion;water;piping;0.0;0.0;inf;0.0;0.0;1.0;0.0;0.0;0.0;20.0;0.0;2.0;0.0;0.0;rain-water-bus;drinking-water-bus;{};True;River/Creek Water Pipe
+bottled-water-pipe_DW;conversion;water;piping;0.0;0.0;inf;0.0;0.0;1.0;0.0;0.0;0.0;20.0;0.0;2.0;0.0;0.0;bottled-water-bus;drinking-water-bus;{};True;Bottled Water Pipe
+tap-water-pipe_SW;conversion;water;piping;0.0;0.0;inf;0.0;0.0;1.0;0.0;0.0;0.0;20.0;0.0;2.0;0.0;0.0;tap-water-bus;service-water-bus;{};True;Tap Water Pipe
+truck-water-pipe_SW;conversion;water;piping;0.0;0.0;inf;0.0;0.0;1.0;0.0;0.0;0.0;20.0;0.0;2.0;0.0;0.0;truck-water-bus;service-water-bus;{};True;Water Truck Pipe
+rain-water-pipe_SW;conversion;water;piping;0.0;0.0;inf;0.0;0.0;1.0;0.0;0.0;0.0;20.0;0.0;2.0;0.0;0.0;rain-water-bus;service-water-bus;{};True;River/Creek Water Pipe
+bottled-water-pipe_SW;conversion;water;piping;0.0;0.0;inf;0.0;0.0;1.0;0.0;0.0;0.0;20.0;0.0;2.0;0.0;0.0;bottled-water-bus;service-water-bus;{};True;Bottled Water Pipe

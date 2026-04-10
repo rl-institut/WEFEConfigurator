@@ -652,6 +652,26 @@
                         "name": "marginal_cost",
                         "type": "number",
                         "format": "default"
+                    },
+                    {
+                        "name": "resource_cost",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "ghg_emission_factor",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "water_consumption_factor",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "indirect_water_consumption_factor",
+                        "type": "number",
+                        "format": "default"
                     }
                 ],
                 "missingValues": [
