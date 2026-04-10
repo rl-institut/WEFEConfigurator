@@ -13,6 +13,7 @@ import copy
 from utils import AVAILABLE_COMPONENTS, AVAILABLE_SEQUENCES, COMPONENT_TEMPLATES_PATH
 from analyse_survey import create_components_list
 from water_treatment_dict import water_treatment_train
+from update_country_component_library import update_component_library
 
 import weather_data
 # TODO this needs to work standalone as well as a service
@@ -398,7 +399,7 @@ class ScenarioBuilder:
             numeric_sum_cols = [
                 "capex",
                 "opex_fix",
-                "capacity_cost",
+                "annuity",
                 "specific_energy_consumption",
                 "land_requirement_factor",
                 "ghg_emission_factor",
@@ -1470,6 +1471,16 @@ if __name__=="__main__":
     # create_scenario_from_survey_data({}, "test_scenario", repo_path)
 
     scen_id = 37
+
+    # Apply country-specific parameter updates to the component library
+    #
+    # To customize:
+    # 1. Copy generic_country_params.py → {your_country}_params.py (e.g., kenya_params.py)
+    #    to: WEFEConfigurator/component_library/WIP_components/Country Specific Data/
+    # 2. Edit parameter values in {your_country}_params.py (instructions inside file)
+    # 3. Update this call: country="{your_country}" (e.g., country="kenya")
+    #
+    update_component_library(COMPONENT_TEMPLATES_PATH, country="generic_country")
 
     with open(os.path.join(project_dir, "app", f"scenario_{scen_id}_survey_answers.json"), "r") as fp:
         survey_answers =  json.load(fp)
