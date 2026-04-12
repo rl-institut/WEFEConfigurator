@@ -1,6 +1,11 @@
 """
 Generic country parameter template for WEFE component library updates.
 
+NOTE:
+Units for values in this template and the component library CSVs can be found in
+the WEFEConfigurator documentation:
+https://github.com/rl-institut/WEFEConfigurator
+
 QUICK CUSTOMIZATION GUIDE:
 1. COPY & SAVE AS: `{your_country}_params.py` (e.g., `kenya_params.py`, `germany_params.py`)
 2. PLACE IN: `WEFEConfigurator/component_library/WIP_components/Country Specific Data/`
