@@ -382,7 +382,7 @@ class ScenarioBuilder:
             post_treatment_df.to_csv(os.path.join(elements_dir, "water_post_treatment.csv"), sep=";", index=False)
 
             return merged_df, has_sw_detected
-#deadcode-----------------------------------------------------------------------------
+
         def aggregate_component_block(df, prefix, block_name, water_in_bus, water_out_bus):
             sub = df[df["name"].str.startswith(prefix)].copy()
 
@@ -408,11 +408,11 @@ class ScenarioBuilder:
 
             for col in numeric_sum_cols:
                 if col in sub.columns:
-                    row[col] = sub[col].fillna(0).sum()
+                    row[col] = sub[col].fillna(0).mean()
 
             if "efficiency" in sub.columns:
                 eff = sub["efficiency"].dropna()
-                row["efficiency"] = eff.prod() if not eff.empty else None
+                row["efficiency"] = eff.mean() if not eff.empty else None
 
             if "lifetime" in sub.columns:
                 life = sub["lifetime"].dropna()
@@ -435,8 +435,6 @@ class ScenarioBuilder:
             row_df = row_df[[c for c in df.columns if c in row_df.columns]]  # reorder columns
             row_df = row_df.dropna(axis=1, how="all") # drop empty columns
             return row_df
-
-#deadcode--------------------------------------------------------------------
 
         def modify_data_package(water_treatment_csvs, extra_bus_columns):
 
