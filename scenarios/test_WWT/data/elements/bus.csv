@@ -1,0 +1,5 @@
+name;type;balanced;carrier;verbose_name;plot
+ac-elec-bus;bus;True;electricity;AC Electricity;True
+recovered-water-bus;bus;True;water;Recovered Water;True
+diesel-bus;bus;True;energy;Diesel;True
+grey-water-bus;bus;True;water;Grey Water;True

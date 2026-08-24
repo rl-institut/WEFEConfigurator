@@ -1,0 +1,4 @@
+name;type;balanced;carrier;verbose_name;plot
+human-feces-bus;bus;True;feces;Human Feces;True
+human-urine-bus;bus;True;urine;Human Urine;True
+biomass-bus;bus;True;biomass;Biomass;True

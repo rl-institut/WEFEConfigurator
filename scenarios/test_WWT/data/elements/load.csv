@@ -1,0 +1,2 @@
+name;amount;profile;type;bus;verbose_name
+el_demand;1;electricity-load-profile;load;ac-elec-bus;AC Electricity Demand

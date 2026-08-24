@@ -1,0 +1,6 @@
+name;type;bus;marginal_cost;resource_cost;ghg_emission_factor;water_consumption_factor;indirect_water_consumption_factor;verbose_name;output_parameters
+ac-electricity-excess;excess;ac-elec-bus;0.0;0.0;0.0;0.0;0.0;Excess AC Electricity;"{""custom_attributes"": {""ghg_emission_factor"": 0.0, ""water_consumption_factor"": 0.0, ""indirect_water_consumption_factor"": 0.0, ""resource_cost"": 0.0}}"
+excess-drinking-water;excess;drinking-water-bus;0.0;0.0;0.0;0.0;0.0;Excess Drinking Water;"{""custom_attributes"": {""ghg_emission_factor"": 0.0, ""water_consumption_factor"": 0.0, ""indirect_water_consumption_factor"": 0.0, ""resource_cost"": 0.0}}"
+excess-N2-gas;excess;N2-bus;0.0;0.0;0.0;0.0;0.0;Excess Nitrogen Gas;"{""custom_attributes"": {""ghg_emission_factor"": 0.0, ""water_consumption_factor"": 0.0, ""indirect_water_consumption_factor"": 0.0, ""resource_cost"": 0.0}}"
+excess-biomass;excess;biomass-bus;0.0;0.0;0.0;0.0;0.0;Excess Biomass;"{""custom_attributes"": {""ghg_emission_factor"": 0.0, ""water_consumption_factor"": 0.0, ""indirect_water_consumption_factor"": 0.0, ""resource_cost"": 0.0}}"
+excess-brine;excess;brine-bus;0.0;0.0;0.0;0.0;0.0;Excess Brine;"{""custom_attributes"": {""ghg_emission_factor"": 0.0, ""water_consumption_factor"": 0.0, ""indirect_water_consumption_factor"": 0.0, ""resource_cost"": 0.0}}"

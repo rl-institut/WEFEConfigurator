@@ -1,0 +1,9 @@
+name;type;balanced;carrier;verbose_name;plot
+untreated-water-bus;bus;True;water;Untreated Water;True
+drinking-water-bus;bus;True;water;Drinking Water;True
+diesel-bus;bus;True;energy;Diesel;True
+ac-elec-bus;bus;True;electricity;AC Electricity;True
+groundwater-bus;bus;True;water;Groundwater;True
+N2-bus;bus;True;gas;Nitrogen Gas;True
+biomass-bus;bus;True;biomass;Biomass;True
+brine-bus;bus;True;brine;Brine;True
