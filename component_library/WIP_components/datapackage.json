@@ -699,12 +699,12 @@
             "schema": {
                 "fields": [
                     {
-                        "name": "type",
+                        "name": "name",
                         "type": "string",
                         "format": "default"
                     },
                     {
-                        "name": "name",
+                        "name": "type",
                         "type": "string",
                         "format": "default"
                     },
@@ -719,16 +719,6 @@
                         "format": "default"
                     },
                     {
-                        "name": "expandable",
-                        "type": "boolean",
-                        "format": "default"
-                    },
-                    {
-                        "name": "primary",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
                         "name": "capacity",
                         "type": "number",
                         "format": "default"
@@ -739,28 +729,13 @@
                         "format": "default"
                     },
                     {
-                        "name": "marginal_cost",
+                        "name": "capacity_potential",
                         "type": "number",
                         "format": "default"
                     },
                     {
-                        "name": "service_water_bus",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "human_feces_bus",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "human_urine_bus",
-                        "type": "string",
-                        "format": "default"
-                    },
-                    {
-                        "name": "black_water_bus",
-                        "type": "string",
+                        "name": "marginal_cost",
+                        "type": "number",
                         "format": "default"
                     },
                     {
@@ -809,18 +784,33 @@
                         "format": "default"
                     },
                     {
-                        "name": "urine_profile",
+                        "name": "service_water_bus",
                         "type": "string",
                         "format": "default"
                     },
                     {
-                        "name": "feces_profile",
+                        "name": "human_feces_bus",
                         "type": "string",
                         "format": "default"
                     },
                     {
-                        "name": "output_parameters",
-                        "type": "object",
+                        "name": "human_urine_bus",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "black_water_bus",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "expandable",
+                        "type": "boolean",
+                        "format": "default"
+                    },
+                    {
+                        "name": "verbose_name",
+                        "type": "string",
                         "format": "default"
                     }
                 ],
@@ -855,18 +845,6 @@
                         "reference": {
                             "resource": "bus",
                             "fields": "name"
-                        }
-                    },
-                    {
-                        "fields": "urine_profile",
-                        "reference": {
-                            "resource": "profiles"
-                        }
-                    },
-                    {
-                        "fields": "feces_profile",
-                        "reference": {
-                            "resource": "profiles"
                         }
                     }
                 ]
