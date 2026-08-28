@@ -10,8 +10,7 @@ from oemof_tabular_plugins.script import compute_scenario
 from oemof.tabular import datapackage  # noqa
 
 from oemof_tabular_plugins.wefe import WEFE_TYPEMAP as TYPEMAP
-
-
+from pathlib import Path
 
 parameters_units = {
     "drinking-water-storage": "[m³]",
@@ -66,6 +65,7 @@ project_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), os.pardir)
 # -------------- USER INPUTS --------------
 # list of scenarios to be evaluated
 scenarios = [
+    # "scenario_15"
     # "general_add_cost_inputs",
     # "general_basic",
     # "general_constraints",
@@ -74,10 +74,12 @@ scenarios = [
     # "wefe_pv_panel",
     # "wefe_reverse_osmosis",
     # "aiwa"
-    "aiwa_vivek"
+    # "aiwa_vivek"
     #"aiwa_8760"
     # "arusi_8760"
     # "arusi_24"
+    "scenario_37"
+    #"test_mimo_try"
 ]
 # Regionalized Characterisation Factor for Available water remaining (AWARE) - might move later;
 # this parameter is needed to calculate the regionalized water scarcity footprint in moo.
@@ -93,11 +95,12 @@ custom_attributes = [
     "renewable_factor",
     "land_requirement_factor",
     "water_consumption_factor",
-    "indirect_water_consumption_factor" "land_requirement",
+    "indirect_water_consumption_factor",
+    "land_requirement",
     "water_footprint",
     "ghg_emissions",
     "resource_cost",
-    "annuity",
+    "annuity"
 ]
 # set whether the multi-objective optimization should be performed
 moo = False
@@ -106,8 +109,8 @@ moo = False
 for scenario in scenarios:
     print("Running scenario with datapackage {}".format(scenario))
     # set paths for scenario and result directories
-    scenario_dir = os.path.join(project_dir, "scenarios", scenario)
-    results_path = os.path.join(project_dir, "results", scenario, "output")
+    scenario_dir = Path(os.path.join(project_dir, "scenarios", scenario))
+    results_path = Path(os.path.join(project_dir, "results", scenario, "output"))
 
     calculator = compute_scenario(
         scenario_dir,
@@ -119,6 +122,8 @@ for scenario in scenarios:
         moo=moo,
         dash_app=True,
         parameters_units=parameters_units,
+        skip_preprocessing=False,
+        skip_infer_datapackage_metadata=True,
     )
     df = calculator.df_results
     print(df)

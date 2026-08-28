@@ -1,0 +1,5 @@
+name;type;carrier;tech;capacity;capacity_cost;marginal_cost;electricity_bus;water_in_bus;water_out_bus;head;power;annuity;capex;opex_fix;age;lifetime;carrier_cost;resource_cost;land_requirement_factor;ghg_emission_factor;water_consumption_factor;land_requirement;ghg_emissions;water_footprint;output_parameters;expandable;verbose_name
+groundwater-pump;water-pump;water;pumping;0.0;0.0;0.0;ac-elec-bus;groundwater-bus;untreated-water-bus;0.0;0.0;0.0;400.0;15.0;0.0;20.0;0.0;0.0;2.0;0.2;0.0;0.0;0.0;0.0;{};True;Groundwater Pump
+seawater-pump;water-pump;water;pumping;0.0;0.0;0.0;ac-elec-bus;seawater-bus;untreated-water-bus;0.0;0.0;0.0;400.0;15.0;0.0;20.0;0.0;0.0;2.0;0.2;0.0;0.0;0.0;0.0;{};True;Seawater Pump
+lake-water-pump;water-pump;water;pumping;0.0;0.0;0.0;ac-elec-bus;lake-water-bus;untreated-water-bus;0.0;0.0;0.0;400.0;15.0;0.0;20.0;0.0;0.0;2.0;0.2;0.0;0.0;0.0;0.0;{};True;Lake Water Pump
+river-water-pump;water-pump;water;pumping;0.0;0.0;0.0;ac-elec-bus;river-water-bus;untreated-water-bus;0.0;0.0;0.0;400.0;15.0;0.0;20.0;0.0;0.0;2.0;0.2;0.0;0.0;0.0;0.0;{};True;River Water Pump

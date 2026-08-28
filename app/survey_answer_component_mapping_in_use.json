@@ -3,31 +3,36 @@
         "map_to": "component",
         "map_answer": {
             "photovoltaic system": [
-                "photovoltaics",
-                "inverter"
+                "pv-panel",
+                "inverter",
+                "dc-electricity-excess"
             ],
             "battery system": [
                 "battery-storage",
-                "inverter"
+                "inverter",
+                "dc-electricity-excess"
             ],
             "diesel generator": [
                 "diesel-generator",
-                "diesel"
+                "diesel",
+                "ac-electricity-excess"
             ],
             "wind turbine": [
                 "wind-turbine",
-                "wind"
+                "ac-electricity-excess"
             ],
             "hydropower": [
                 "hydro-power",
-                "river-flow"
+                "ac-electricity-excess"
             ],
             "national grid": [
-                "grid"
+                "grid",
+                "ac-electricity-excess"
             ],
             "biogas plant": [
-                "biogas-plant",
-                "biofuel"
+                "biomass-cogeneration",
+                "biogas",
+                "ac-electricity-excess"
             ]
         }
     },
@@ -84,16 +89,16 @@
         "map_to": "component",
         "map_answer": {
             "wheat": [
-                "mimo-crop"
+                "wheat"
             ],
             "rice": [
-                "mimo-crop"
+                "rice"
             ],
             "soy bean": [
-                ""
+                "soy-bean"
             ],
             "dry bean": [
-                ""
+                "dry-bean"
             ],
             "peanut": [
                 ""
@@ -193,7 +198,7 @@
     "11.1.0": {
         "map_to": "attribute",
         "map_answer": {
-            "installed_capacity": "float"
+            "capacity": "float"
         }
     },
     "11.2.0": {
@@ -209,53 +214,21 @@
         }
     },
     "11.4.0": {
-        "map_to": "component",
+        "map_to": "attribute",
         "map_answer": {
-            "surface irrigation": [
-                "surface-irrigation"
-            ],
-            "center-pivot irrigation": [
-                "center-pivot-irrigation"
-            ],
-            "irrigation sprinkler": [
-                "irrigation-sprinkler"
-            ],
-            "subsurface drip irrigation": [
-                "subsurface-drip-irrigation"
-            ],
-            "drip irrigation": [
-                "drip-irrigation"
-            ],
-            "furrow irrigation": [
-                "furrow-irrigation"
-            ],
-            "basin irrigation": [
-                "basin-irrigation"
-            ],
-            "border irrigation": [
-                "border-irrigation"
-            ],
-            "watering can": [
-                "watering-can"
-            ],
-            "smart irrigation system": [
-                "smart-irrigation"
-            ],
-            "other": [
-                ""
-            ]
+            "irrigation_tech": "string"
         }
     },
     "11.5.0": {
         "map_to": "attribute",
         "map_answer": {
-            "flow_rate": "float"
+            "irrigation_flow": "float"
         }
     },
     "11.1.1": {
         "map_to": "attribute",
         "map_answer": {
-            "installed_capacity": "float"
+            "capacity": "float"
         }
     },
     "11.2.1": {
@@ -271,47 +244,15 @@
         }
     },
     "11.4.1": {
-        "map_to": "component",
+        "map_to": "attribute",
         "map_answer": {
-            "surface irrigation": [
-                ""
-            ],
-            "center-pivot irrigation": [
-                ""
-            ],
-            "irrigation sprinkler": [
-                ""
-            ],
-            "subsurface drip irrigation": [
-                ""
-            ],
-            "drip irrigation": [
-                ""
-            ],
-            "furrow irrigation": [
-                ""
-            ],
-            "basin irrigation": [
-                ""
-            ],
-            "border irrigation": [
-                ""
-            ],
-            "watering can": [
-                ""
-            ],
-            "smart irrigation system": [
-                ""
-            ],
-            "other": [
-                ""
-            ]
+            "irrigation_tech": "string"
         }
     },
     "11.5.1": {
         "map_to": "attribute",
         "map_answer": {
-            "flow_rate": "float"
+            "irrigation_flow": "float"
         }
     },
     "11.1.2": {
@@ -2385,26 +2326,28 @@
                 "groundwater"
             ],
             "public tap water": [
-                "tap-water"
+                "tap-water", "tap-water-pipe_DW"
             ],
             "desalinated seawater": [
-                "seawater",
-                "swro"
+                "seawater"
             ],
             "river/creek": [
-                "surface-water"
+                "river-water"
             ],
             "lake": [
-                "surface-water"
+                "lake-water"
             ],
             "water truck": [
-                "truck-water"
+                "truck-water", "truck-water-pipe_DW"
             ],
             "rainwater harvesting": [
-                ""
+                "rainwater-harvesting", "rain-water-pipe_DW"
             ],
             "bottled water": [
-                "bottled-water"
+                "bottled-water", "bottled-water-pipe_DW"
+            ],
+            "other": [
+                ""
             ]
         }
     },
@@ -2412,10 +2355,10 @@
         "map_to": "component",
         "map_answer": {
             "Yes": [
-                ""
+                "groundwater-pump"
             ],
             "No": [
-                ""
+                "groundwater-pipe"
             ]
         }
     },
@@ -2425,36 +2368,16 @@
             "head": "float"
         }
     },
-    "3_GW.1.2": {
-        "map_to": "component",
-        "map_answer": {
-            "manual": [
-                ""
-            ],
-            "diesel": [
-                ""
-            ],
-            "electricity (grid)": [
-                ""
-            ],
-            "wind turbine": [
-                ""
-            ],
-            "photovoltaics": [
-                ""
-            ]
-        }
-    },
     "3_GW.1.3": {
         "map_to": "attribute",
         "map_answer": {
-            "capacity": "float"
+            "power": "float"
         }
     },
     "3_GW.1.4": {
         "map_to": "attribute",
         "map_answer": {
-            "flow": "float"
+            "capacity": "float"
         }
     },
     "3.3": {
@@ -2464,28 +2387,149 @@
         }
     },
     "4_GW.1": {
-        "map_to": "attribute",
+        "map_to": "component",
         "map_answer": {
-            "salinity": "float"
+            "salinity_selected": [
+                    "intake_structure",
+                    "coarse_bar_screen",
+                    "cartridge_filter",
+                    "coagulation_flocculation",
+                    [
+                        "slow_sand_filter",
+                        "ceramic_filter"
+                    ],
+                    "microfiltration",
+                    "ultrafiltration",
+                    "adsorption",
+                    "nanofiltration",
+                    [
+                        "electrodialysis",
+                        "reverse_osmosis"
+                    ],
+                    "membrane_distillation",
+                    "activated_carbon_filter",
+                    [
+                        "uv_disinfection",
+                        "chlorination"
+                    ]
+            ]
         }
     },
     "4_GW.2": {
         "map_to": "component",
         "map_answer": {
             "Arsenic": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "simple_oxidation",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "biofiltration"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                "adsorption",
+                [
+                    "electrodialysis",
+                    "reverse_osmosis"
+                ],
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "Lead": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "ceramic_filter"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                "adsorption",
+                "ion_exchange",
+                "nanofiltration",
+                [
+                    "electrodialysis",
+                    "reverse_osmosis"
+                ],
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "Mercury": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "ceramic_filter"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                "adsorption",
+                "ion_exchange",
+                "nanofiltration",
+                [
+                    "electrodialysis",
+                    "reverse_osmosis"
+                ],
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "Cadmium": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "ceramic_filter"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                "adsorption",
+                "ion_exchange",
+                "nanofiltration",
+                [
+                    "electrodialysis",
+                    "reverse_osmosis"
+                ],
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "Iron": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "simple_oxidation",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "biofiltration"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ]
         }
     },
@@ -2493,13 +2537,73 @@
         "map_to": "component",
         "map_answer": {
             "pesticides": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "ceramic_filter"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                [
+                    "photocatalysis",
+                    "ozonation"
+                ],
+                "biofiltration",
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "pharmaceutical_residues": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "ceramic_filter"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                [
+                    "photocatalysis",
+                    "ozonation"
+                ],
+                "biofiltration",
+                "activated_carbon_filter",
+                "membrane_distillation",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "fertilizers": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "ceramic_filter"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                "biological_denitrification",
+                "ion_exchange",
+                "nanofiltration",
+                [
+                    "electrodialysis",
+                    "reverse_osmosis"
+                ],
+                "adsorption",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ]
         }
     },
@@ -2527,7 +2631,7 @@
             "activated carbon filter": [
                 ""
             ],
-            "UV-disinfection": [
+            "uv-disinfection": [
                 ""
             ],
             "cartridge filter": [
@@ -2773,10 +2877,10 @@
         "map_to": "component",
         "map_answer": {
             "Yes": [
-                ""
+                "seawater-pump"
             ],
             "No": [
-                ""
+                "seawater-pipe"
             ]
         }
     },
@@ -2786,61 +2890,162 @@
             "head": "float"
         }
     },
-    "3_DS.1.2": {
-        "map_to": "component",
-        "map_answer": {
-            "manual": [
-                ""
-            ],
-            "diesel": [
-                ""
-            ],
-            "electricity (grid)": [
-                ""
-            ],
-            "wind turbine": [
-                ""
-            ],
-            "photovoltaics": [
-                ""
-            ]
-        }
-    },
     "3_DS.1.3": {
         "map_to": "attribute",
         "map_answer": {
-            "capacity": "float"
+            "power": "float"
         }
     },
     "3_DS.1.4": {
         "map_to": "attribute",
         "map_answer": {
-            "flow": "float"
+            "capacity": "float"
         }
     },
     "4_DS.1": {
-        "map_to": "attribute",
+        "map_to": "component",
         "map_answer": {
-            "salinity": "float"
+            "salinity_selected": [
+                    "intake_structure",
+                    "coarse_bar_screen",
+                    "cartridge_filter",
+                    "coagulation_flocculation",
+                    [
+                        "slow_sand_filter",
+                        "ceramic_filter"
+                    ],
+                    "microfiltration",
+                    "ultrafiltration",
+                    "adsorption",
+                    "nanofiltration",
+                    [
+                        "electrodialysis",
+                        "reverse_osmosis"
+                    ],
+                    "membrane_distillation",
+                    "activated_carbon_filter",
+                    [
+                        "uv_disinfection",
+                        "chlorination"
+                    ]
+            ]
         }
     },
     "4_DS.2": {
         "map_to": "component",
         "map_answer": {
             "Arsenic": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "simple_oxidation",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "biofiltration"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                "adsorption",
+                [
+                    "electrodialysis",
+                    "reverse_osmosis"
+                ],
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "Lead": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "ceramic_filter"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                "adsorption",
+                "ion_exchange",
+                "nanofiltration",
+                [
+                    "electrodialysis",
+                    "reverse_osmosis"
+                ],
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "Mercury": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "ceramic_filter"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                "adsorption",
+                "ion_exchange",
+                "nanofiltration",
+                [
+                    "electrodialysis",
+                    "reverse_osmosis"
+                ],
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "Cadmium": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "ceramic_filter"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                "adsorption",
+                "ion_exchange",
+                "nanofiltration",
+                [
+                    "electrodialysis",
+                    "reverse_osmosis"
+                ],
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "Iron": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "simple_oxidation",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "biofiltration"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ]
         }
     },
@@ -2848,13 +3053,73 @@
         "map_to": "component",
         "map_answer": {
             "pesticides": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "ceramic_filter"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                [
+                    "photocatalysis",
+                    "ozonation"
+                ],
+                "biofiltration",
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "pharmaceutical_residues": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "ceramic_filter"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                [
+                    "photocatalysis",
+                    "ozonation"
+                ],
+                "biofiltration",
+                "activated_carbon_filter",
+                "membrane_distillation",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "fertilizers": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "ceramic_filter"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                "biological_denitrification",
+                "ion_exchange",
+                "nanofiltration",
+                [
+                    "electrodialysis",
+                    "reverse_osmosis"
+                ],
+                "adsorption",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ]
         }
     },
@@ -2882,7 +3147,7 @@
             "activated carbon filter": [
                 ""
             ],
-            "UV-disinfection": [
+            "uv-disinfection": [
                 ""
             ],
             "cartridge filter": [
@@ -3128,10 +3393,10 @@
         "map_to": "component",
         "map_answer": {
             "Yes": [
-                ""
+                "river-water-pump"
             ],
             "No": [
-                ""
+                "river-water-pipe"
             ]
         }
     },
@@ -3141,61 +3406,162 @@
             "head": "float"
         }
     },
-    "3_RC.1.2": {
-        "map_to": "component",
-        "map_answer": {
-            "manual": [
-                ""
-            ],
-            "diesel": [
-                ""
-            ],
-            "electricity (grid)": [
-                ""
-            ],
-            "wind turbine": [
-                ""
-            ],
-            "photovoltaics": [
-                ""
-            ]
-        }
-    },
     "3_RC.1.3": {
         "map_to": "attribute",
         "map_answer": {
-            "capacity": "float"
+            "power": "float"
         }
     },
     "3_RC.1.4": {
         "map_to": "attribute",
         "map_answer": {
-            "flow": "float"
+            "capacity": "float"
         }
     },
     "4_RC.1": {
-        "map_to": "attribute",
+        "map_to": "component",
         "map_answer": {
-            "salinity": "float"
+            "salinity_selected": [
+                    "intake_structure",
+                    "coarse_bar_screen",
+                    "cartridge_filter",
+                    "coagulation_flocculation",
+                    [
+                        "slow_sand_filter",
+                        "ceramic_filter"
+                    ],
+                    "microfiltration",
+                    "ultrafiltration",
+                    "adsorption",
+                    "nanofiltration",
+                    [
+                        "electrodialysis",
+                        "reverse_osmosis"
+                    ],
+                    "membrane_distillation",
+                    "activated_carbon_filter",
+                    [
+                        "uv_disinfection",
+                        "chlorination"
+                    ]
+            ]
         }
     },
     "4_RC.2": {
         "map_to": "component",
         "map_answer": {
             "Arsenic": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "simple_oxidation",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "biofiltration"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                "adsorption",
+                [
+                    "electrodialysis",
+                    "reverse_osmosis"
+                ],
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "Lead": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "ceramic_filter"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                "adsorption",
+                "ion_exchange",
+                "nanofiltration",
+                [
+                    "electrodialysis",
+                    "reverse_osmosis"
+                ],
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "Mercury": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "ceramic_filter"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                "adsorption",
+                "ion_exchange",
+                "nanofiltration",
+                [
+                    "electrodialysis",
+                    "reverse_osmosis"
+                ],
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "Cadmium": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "ceramic_filter"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                "adsorption",
+                "ion_exchange",
+                "nanofiltration",
+                [
+                    "electrodialysis",
+                    "reverse_osmosis"
+                ],
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "Iron": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "simple_oxidation",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "biofiltration"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ]
         }
     },
@@ -3203,13 +3569,73 @@
         "map_to": "component",
         "map_answer": {
             "pesticides": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "ceramic_filter"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                [
+                    "photocatalysis",
+                    "ozonation"
+                ],
+                "biofiltration",
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "pharmaceutical_residues": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "ceramic_filter"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                [
+                    "photocatalysis",
+                    "ozonation"
+                ],
+                "biofiltration",
+                "activated_carbon_filter",
+                "membrane_distillation",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "fertilizers": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "ceramic_filter"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                "biological_denitrification",
+                "ion_exchange",
+                "nanofiltration",
+                [
+                    "electrodialysis",
+                    "reverse_osmosis"
+                ],
+                "adsorption",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ]
         }
     },
@@ -3237,7 +3663,7 @@
             "activated carbon filter": [
                 ""
             ],
-            "UV-disinfection": [
+            "uv-disinfection": [
                 ""
             ],
             "cartridge filter": [
@@ -3483,10 +3909,10 @@
         "map_to": "component",
         "map_answer": {
             "Yes": [
-                ""
+                "lake-water-pump"
             ],
             "No": [
-                ""
+                "lake-water-pipe"
             ]
         }
     },
@@ -3496,61 +3922,162 @@
             "head": "float"
         }
     },
-    "3_L.1.2": {
-        "map_to": "component",
-        "map_answer": {
-            "manual": [
-                ""
-            ],
-            "diesel": [
-                ""
-            ],
-            "electricity (grid)": [
-                ""
-            ],
-            "wind turbine": [
-                ""
-            ],
-            "photovoltaics": [
-                ""
-            ]
-        }
-    },
     "3_L.1.3": {
         "map_to": "attribute",
         "map_answer": {
-            "capacity": "float"
+            "power": "float"
         }
     },
     "3_L.1.4": {
         "map_to": "attribute",
         "map_answer": {
-            "flow": "float"
+            "capacity": "float"
         }
     },
     "4_L.1": {
-        "map_to": "attribute",
+        "map_to": "component",
         "map_answer": {
-            "salinity": "float"
+            "salinity_selected": [
+                    "intake_structure",
+                    "coarse_bar_screen",
+                    "cartridge_filter",
+                    "coagulation_flocculation",
+                    [
+                        "slow_sand_filter",
+                        "ceramic_filter"
+                    ],
+                    "microfiltration",
+                    "ultrafiltration",
+                    "adsorption",
+                    "nanofiltration",
+                    [
+                        "electrodialysis",
+                        "reverse_osmosis"
+                    ],
+                    "membrane_distillation",
+                    "activated_carbon_filter",
+                    [
+                        "uv_disinfection",
+                        "chlorination"
+                    ]
+            ]
         }
     },
     "4_L.2": {
         "map_to": "component",
         "map_answer": {
             "Arsenic": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "simple_oxidation",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "biofiltration"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                "adsorption",
+                [
+                    "electrodialysis",
+                    "reverse_osmosis"
+                ],
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "Lead": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "ceramic_filter"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                "adsorption",
+                "ion_exchange",
+                "nanofiltration",
+                [
+                    "electrodialysis",
+                    "reverse_osmosis"
+                ],
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "Mercury": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "ceramic_filter"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                "adsorption",
+                "ion_exchange",
+                "nanofiltration",
+                [
+                    "electrodialysis",
+                    "reverse_osmosis"
+                ],
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "Cadmium": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "ceramic_filter"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                "adsorption",
+                "ion_exchange",
+                "nanofiltration",
+                [
+                    "electrodialysis",
+                    "reverse_osmosis"
+                ],
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "Iron": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "simple_oxidation",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "biofiltration"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ]
         }
     },
@@ -3558,13 +4085,73 @@
         "map_to": "component",
         "map_answer": {
             "pesticides": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "ceramic_filter"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                [
+                    "photocatalysis",
+                    "ozonation"
+                ],
+                "biofiltration",
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "pharmaceutical_residues": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "ceramic_filter"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                [
+                    "photocatalysis",
+                    "ozonation"
+                ],
+                "biofiltration",
+                "activated_carbon_filter",
+                "membrane_distillation",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "fertilizers": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "ceramic_filter"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                "biological_denitrification",
+                "ion_exchange",
+                "nanofiltration",
+                [
+                    "electrodialysis",
+                    "reverse_osmosis"
+                ],
+                "adsorption",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ]
         }
     },
@@ -3592,7 +4179,7 @@
             "activated carbon filter": [
                 ""
             ],
-            "UV-disinfection": [
+            "uv-disinfection": [
                 ""
             ],
             "cartridge filter": [
@@ -3846,32 +4433,32 @@
         }
     },
     "3a": {
-        "bus": "service-water-bus",
+        "bus": "drinking-water-bus",
         "map_to": "component",
         "map_answer": {
               "groundwater well": [
                 "groundwater"
             ],
             "public tap water": [
-                "tap_water"
+                "tap-water", "tap-water-pipe_DW"
             ],
             "desalinated seawater": [
-                "seawater", "desalinator"
+                "seawater"
             ],
             "river/creek": [
-                ""
+                "river-water"
             ],
             "lake": [
-                ""
+                "lake-water"
             ],
             "water truck": [
-                "truck_water"
+                "truck-water", "truck-water-pipe_DW"
             ],
             "rainwater harvesting": [
-                ""
+                "rainwater-harvesting", "rain-water-pipe_DW"
             ],
             "bottled water": [
-                "bottled_water"
+                "bottled-water", "bottled-water-pipe_DW"
             ],
             "other": [
                 ""
@@ -3882,10 +4469,10 @@
         "map_to": "component",
         "map_answer": {
             "Yes": [
-                ""
+                "groundwater-pump"
             ],
             "No": [
-                ""
+                "groundwater-pipe"
             ]
         }
     },
@@ -3928,28 +4515,149 @@
         }
     },
     "4_GWa.1": {
-        "map_to": "attribute",
+        "map_to": "component",
         "map_answer": {
-            "salinity": "float"
+            "salinity_selected": [
+                    "intake_structure",
+                    "coarse_bar_screen",
+                    "cartridge_filter",
+                    "coagulation_flocculation",
+                    [
+                        "slow_sand_filter",
+                        "ceramic_filter"
+                    ],
+                    "microfiltration",
+                    "ultrafiltration",
+                    "adsorption",
+                    "nanofiltration",
+                    [
+                        "electrodialysis",
+                        "reverse_osmosis"
+                    ],
+                    "membrane_distillation",
+                    "activated_carbon_filter",
+                    [
+                        "uv_disinfection",
+                        "chlorination"
+                    ]
+            ]
         }
     },
     "4_GWa.2": {
         "map_to": "component",
         "map_answer": {
             "Arsenic": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "simple_oxidation",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "biofiltration"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                "adsorption",
+                [
+                    "electrodialysis",
+                    "reverse_osmosis"
+                ],
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "Lead": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "ceramic_filter"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                "adsorption",
+                "ion_exchange",
+                "nanofiltration",
+                [
+                    "electrodialysis",
+                    "reverse_osmosis"
+                ],
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "Mercury": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "ceramic_filter"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                "adsorption",
+                "ion_exchange",
+                "nanofiltration",
+                [
+                    "electrodialysis",
+                    "reverse_osmosis"
+                ],
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "Cadmium": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "ceramic_filter"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                "adsorption",
+                "ion_exchange",
+                "nanofiltration",
+                [
+                    "electrodialysis",
+                    "reverse_osmosis"
+                ],
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "Iron": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "simple_oxidation",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "biofiltration"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ]
         }
     },
@@ -3957,13 +4665,73 @@
         "map_to": "component",
         "map_answer": {
             "pesticides": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "ceramic_filter"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                [
+                    "photocatalysis",
+                    "ozonation"
+                ],
+                "biofiltration",
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "pharmaceutical_residues": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "ceramic_filter"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                [
+                    "photocatalysis",
+                    "ozonation"
+                ],
+                "biofiltration",
+                "activated_carbon_filter",
+                "membrane_distillation",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "fertilizers": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "ceramic_filter"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                "biological_denitrification",
+                "ion_exchange",
+                "nanofiltration",
+                [
+                    "electrodialysis",
+                    "reverse_osmosis"
+                ],
+                "adsorption",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ]
         }
     },
@@ -3991,7 +4759,7 @@
             "activated carbon filter": [
                 ""
             ],
-            "UV-disinfection": [
+            "uv-disinfection": [
                 ""
             ],
             "cartridge filter": [
@@ -4237,10 +5005,10 @@
         "map_to": "component",
         "map_answer": {
             "Yes": [
-                ""
+                "seawater-pump"
             ],
             "No": [
-                ""
+                "seawater-pipe"
             ]
         }
     },
@@ -4283,28 +5051,149 @@
         }
     },
     "4_DSa.1": {
-        "map_to": "attribute",
+        "map_to": "component",
         "map_answer": {
-            "salinity": "float"
+            "salinity_selected": [
+                    "intake_structure",
+                    "coarse_bar_screen",
+                    "cartridge_filter",
+                    "coagulation_flocculation",
+                    [
+                        "slow_sand_filter",
+                        "ceramic_filter"
+                    ],
+                    "microfiltration",
+                    "ultrafiltration",
+                    "adsorption",
+                    "nanofiltration",
+                    [
+                        "electrodialysis",
+                        "reverse_osmosis"
+                    ],
+                    "membrane_distillation",
+                    "activated_carbon_filter",
+                    [
+                        "uv_disinfection",
+                        "chlorination"
+                    ]
+            ]
         }
     },
     "4_DSa.2": {
         "map_to": "component",
         "map_answer": {
             "Arsenic": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "simple_oxidation",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "biofiltration"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                "adsorption",
+                [
+                    "electrodialysis",
+                    "reverse_osmosis"
+                ],
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "Lead": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "ceramic_filter"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                "adsorption",
+                "ion_exchange",
+                "nanofiltration",
+                [
+                    "electrodialysis",
+                    "reverse_osmosis"
+                ],
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "Mercury": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "ceramic_filter"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                "adsorption",
+                "ion_exchange",
+                "nanofiltration",
+                [
+                    "electrodialysis",
+                    "reverse_osmosis"
+                ],
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "Cadmium": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "ceramic_filter"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                "adsorption",
+                "ion_exchange",
+                "nanofiltration",
+                [
+                    "electrodialysis",
+                    "reverse_osmosis"
+                ],
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "Iron": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "simple_oxidation",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "biofiltration"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ]
         }
     },
@@ -4312,13 +5201,73 @@
         "map_to": "component",
         "map_answer": {
             "pesticides": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "ceramic_filter"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                [
+                    "photocatalysis",
+                    "ozonation"
+                ],
+                "biofiltration",
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "pharmaceutical_residues": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "ceramic_filter"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                [
+                    "photocatalysis",
+                    "ozonation"
+                ],
+                "biofiltration",
+                "activated_carbon_filter",
+                "membrane_distillation",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "fertilizers": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "ceramic_filter"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                "biological_denitrification",
+                "ion_exchange",
+                "nanofiltration",
+                [
+                    "electrodialysis",
+                    "reverse_osmosis"
+                ],
+                "adsorption",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ]
         }
     },
@@ -4346,7 +5295,7 @@
             "activated carbon filter": [
                 ""
             ],
-            "UV-disinfection": [
+            "uv-disinfection": [
                 ""
             ],
             "cartridge filter": [
@@ -4592,10 +5541,10 @@
         "map_to": "component",
         "map_answer": {
             "Yes": [
-                ""
+                "river-water-pump"
             ],
             "No": [
-                ""
+                "river-water-pipe"
             ]
         }
     },
@@ -4638,28 +5587,149 @@
         }
     },
     "4_RCa.1": {
-        "map_to": "attribute",
+        "map_to": "component",
         "map_answer": {
-            "salinity": "float"
+            "salinity_selected": [
+                    "intake_structure",
+                    "coarse_bar_screen",
+                    "cartridge_filter",
+                    "coagulation_flocculation",
+                    [
+                        "slow_sand_filter",
+                        "ceramic_filter"
+                    ],
+                    "microfiltration",
+                    "ultrafiltration",
+                    "adsorption",
+                    "nanofiltration",
+                    [
+                        "electrodialysis",
+                        "reverse_osmosis"
+                    ],
+                    "membrane_distillation",
+                    "activated_carbon_filter",
+                    [
+                        "uv_disinfection",
+                        "chlorination"
+                    ]
+            ]
         }
     },
     "4_RCa.2": {
         "map_to": "component",
         "map_answer": {
             "Arsenic": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "simple_oxidation",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "biofiltration"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                "adsorption",
+                [
+                    "electrodialysis",
+                    "reverse_osmosis"
+                ],
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "Lead": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "ceramic_filter"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                "adsorption",
+                "ion_exchange",
+                "nanofiltration",
+                [
+                    "electrodialysis",
+                    "reverse_osmosis"
+                ],
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "Mercury": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "ceramic_filter"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                "adsorption",
+                "ion_exchange",
+                "nanofiltration",
+                [
+                    "electrodialysis",
+                    "reverse_osmosis"
+                ],
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "Cadmium": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "ceramic_filter"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                "adsorption",
+                "ion_exchange",
+                "nanofiltration",
+                [
+                    "electrodialysis",
+                    "reverse_osmosis"
+                ],
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "Iron": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "simple_oxidation",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "biofiltration"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ]
         }
     },
@@ -4667,13 +5737,73 @@
         "map_to": "component",
         "map_answer": {
             "pesticides": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "ceramic_filter"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                [
+                    "photocatalysis",
+                    "ozonation"
+                ],
+                "biofiltration",
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "pharmaceutical_residues": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "ceramic_filter"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                [
+                    "photocatalysis",
+                    "ozonation"
+                ],
+                "biofiltration",
+                "activated_carbon_filter",
+                "membrane_distillation",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "fertilizers": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "ceramic_filter"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                "biological_denitrification",
+                "ion_exchange",
+                "nanofiltration",
+                [
+                    "electrodialysis",
+                    "reverse_osmosis"
+                ],
+                "adsorption",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ]
         }
     },
@@ -4701,7 +5831,7 @@
             "activated carbon filter": [
                 ""
             ],
-            "UV-disinfection": [
+            "uv-disinfection": [
                 ""
             ],
             "cartridge filter": [
@@ -4947,10 +6077,10 @@
         "map_to": "component",
         "map_answer": {
             "Yes": [
-                ""
+                "lake-water-pump"
             ],
             "No": [
-                ""
+                "lake-water-pipe"
             ]
         }
     },
@@ -4993,28 +6123,149 @@
         }
     },
     "4_La.1": {
-        "map_to": "attribute",
+        "map_to": "component",
         "map_answer": {
-            "salinity": "float"
+            "salinity_selected": [
+                    "intake_structure",
+                    "coarse_bar_screen",
+                    "cartridge_filter",
+                    "coagulation_flocculation",
+                    [
+                        "slow_sand_filter",
+                        "ceramic_filter"
+                    ],
+                    "microfiltration",
+                    "ultrafiltration",
+                    "adsorption",
+                    "nanofiltration",
+                    [
+                        "electrodialysis",
+                        "reverse_osmosis"
+                    ],
+                    "membrane_distillation",
+                    "activated_carbon_filter",
+                    [
+                        "uv_disinfection",
+                        "chlorination"
+                    ]
+            ]
         }
     },
     "4_La.2": {
         "map_to": "component",
         "map_answer": {
             "Arsenic": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "simple_oxidation",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "biofiltration"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                "adsorption",
+                [
+                    "electrodialysis",
+                    "reverse_osmosis"
+                ],
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "Lead": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "ceramic_filter"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                "adsorption",
+                "ion_exchange",
+                "nanofiltration",
+                [
+                    "electrodialysis",
+                    "reverse_osmosis"
+                ],
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "Mercury": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "ceramic_filter"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                "adsorption",
+                "ion_exchange",
+                "nanofiltration",
+                [
+                    "electrodialysis",
+                    "reverse_osmosis"
+                ],
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "Cadmium": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "ceramic_filter"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                "adsorption",
+                "ion_exchange",
+                "nanofiltration",
+                [
+                    "electrodialysis",
+                    "reverse_osmosis"
+                ],
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "Iron": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "simple_oxidation",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "biofiltration"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ]
         }
     },
@@ -5022,13 +6273,73 @@
         "map_to": "component",
         "map_answer": {
             "pesticides": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "ceramic_filter"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                [
+                    "photocatalysis",
+                    "ozonation"
+                ],
+                "biofiltration",
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "pharmaceutical_residues": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "ceramic_filter"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                [
+                    "photocatalysis",
+                    "ozonation"
+                ],
+                "biofiltration",
+                "activated_carbon_filter",
+                "membrane_distillation",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "fertilizers": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "ceramic_filter"
+                ],
+                "microfiltration",
+                "ultrafiltration",
+                "biological_denitrification",
+                "ion_exchange",
+                "nanofiltration",
+                [
+                    "electrodialysis",
+                    "reverse_osmosis"
+                ],
+                "adsorption",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ]
         }
     },
@@ -5056,7 +6367,7 @@
             "activated carbon filter": [
                 ""
             ],
-            "UV-disinfection": [
+            "uv-disinfection": [
                 ""
             ],
             "cartridge filter": [
@@ -5310,32 +6621,32 @@
         }
     },
     "3b": {
-        "bus": "drinking-water-bus",
+        "bus": "service-water-bus",
         "map_to": "component",
         "map_answer": {
               "groundwater well": [
                 "groundwater"
             ],
             "public tap water": [
-                "tap_water"
+                "tap-water", "tap-water-pipe_SW"
             ],
             "desalinated seawater": [
-                "seawater", "desalinator"
+                "seawater"
             ],
             "river/creek": [
-                ""
+                "river-water"
             ],
             "lake": [
-                ""
+                "lake-water"
             ],
             "water truck": [
-                "truck_water"
+                "truck-water", "truck-water-pipe_SW"
             ],
             "rainwater harvesting": [
-                ""
+                "rainwater-harvesting", "rain-water-pipe_SW"
             ],
             "bottled water": [
-                "bottled_water"
+                "bottled-water", "bottled-water-pipe_SW"
             ],
             "other": [
                 ""
@@ -5346,10 +6657,10 @@
         "map_to": "component",
         "map_answer": {
             "Yes": [
-                ""
+                "groundwater-pump"
             ],
             "No": [
-                ""
+                "groundwater-pipe"
             ]
         }
     },
@@ -5392,28 +6703,106 @@
         }
     },
     "4_GWb.1": {
-        "map_to": "attribute",
+        "map_to": "component",
         "map_answer": {
-            "salinity": "float"
+            "salinity_selected": [
+                    "intake_structure",
+                    "coarse_bar_screen",
+                    "cartridge_filter",
+                    "coagulation_flocculation",
+                    [
+                        "slow_sand_filter",
+                        "ceramic_filter"
+                    ],
+                    "microfiltration",
+                    "ultrafiltration",
+                    [
+                        "nanofiltration",
+                        "electrodialysis"
+                    ],
+                    "activated_carbon_filter",
+                    [
+                        "uv_disinfection",
+                        "chlorination"
+                    ]
+          ]
         }
     },
     "4_GWb.2": {
         "map_to": "component",
         "map_answer": {
             "Arsenic": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "simple_oxidation",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                "adsorption",
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "Lead": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                "microfiltration",
+                "ultrafiltration",
+                "ion_exchange",
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "Mercury": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                "microfiltration",
+                "ultrafiltration",
+                "adsorption",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "Cadmium": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                "microfiltration",
+                "ultrafiltration",
+                "ion_exchange",
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "Iron": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "simple_oxidation",
+                [
+                    "cartridge_filter",
+                    "ceramic_filter"
+                ],
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "biofiltration"
+                ],
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ]
         }
     },
@@ -5421,13 +6810,43 @@
         "map_to": "component",
         "map_answer": {
             "pesticides": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                "activated_carbon_filter",
+                "biofiltration",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "pharmaceutical_residues": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                "activated_carbon_filter",
+                "biofiltration",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "fertilizers": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                "microfiltration",
+                "ultrafiltration",
+                "biological_denitrification",
+                "ion_exchange",
+                "adsorption",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ]
         }
     },
@@ -5455,7 +6874,7 @@
             "activated carbon filter": [
                 ""
             ],
-            "UV-disinfection": [
+            "uv-disinfection": [
                 ""
             ],
             "cartridge filter": [
@@ -5701,10 +7120,10 @@
         "map_to": "component",
         "map_answer": {
             "Yes": [
-                ""
+                "seawater-pump"
             ],
             "No": [
-                ""
+                "seawater-pipe"
             ]
         }
     },
@@ -5747,28 +7166,106 @@
         }
     },
     "4_DSb.1": {
-        "map_to": "attribute",
+        "map_to": "component",
         "map_answer": {
-            "salinity": "float"
+            "salinity_selected": [
+                    "intake_structure",
+                    "coarse_bar_screen",
+                    "cartridge_filter",
+                    "coagulation_flocculation",
+                    [
+                        "slow_sand_filter",
+                        "ceramic_filter"
+                    ],
+                    "microfiltration",
+                    "ultrafiltration",
+                    [
+                        "nanofiltration",
+                        "electrodialysis"
+                    ],
+                    "activated_carbon_filter",
+                    [
+                        "uv_disinfection",
+                        "chlorination"
+                    ]
+          ]
         }
     },
     "4_DSb.2": {
         "map_to": "component",
         "map_answer": {
             "Arsenic": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "simple_oxidation",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                "adsorption",
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "Lead": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                "microfiltration",
+                "ultrafiltration",
+                "ion_exchange",
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "Mercury": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                "microfiltration",
+                "ultrafiltration",
+                "adsorption",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "Cadmium": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                "microfiltration",
+                "ultrafiltration",
+                "ion_exchange",
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "Iron": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "simple_oxidation",
+                [
+                    "cartridge_filter",
+                    "ceramic_filter"
+                ],
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "biofiltration"
+                ],
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ]
         }
     },
@@ -5776,13 +7273,43 @@
         "map_to": "component",
         "map_answer": {
             "pesticides": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                "activated_carbon_filter",
+                "biofiltration",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "pharmaceutical_residues": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                "activated_carbon_filter",
+                "biofiltration",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "fertilizers": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                "microfiltration",
+                "ultrafiltration",
+                "biological_denitrification",
+                "ion_exchange",
+                "adsorption",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ]
         }
     },
@@ -5810,7 +7337,7 @@
             "activated carbon filter": [
                 ""
             ],
-            "UV-disinfection": [
+            "uv-disinfection": [
                 ""
             ],
             "cartridge filter": [
@@ -6056,10 +7583,10 @@
         "map_to": "component",
         "map_answer": {
             "Yes": [
-                ""
+                "river-water-pump"
             ],
             "No": [
-                ""
+                "river-water-pipe"
             ]
         }
     },
@@ -6102,28 +7629,106 @@
         }
     },
     "4_RCb.1": {
-        "map_to": "attribute",
+        "map_to": "component",
         "map_answer": {
-            "salinity": "float"
+            "salinity_selected": [
+                    "intake_structure",
+                    "coarse_bar_screen",
+                    "cartridge_filter",
+                    "coagulation_flocculation",
+                    [
+                        "slow_sand_filter",
+                        "ceramic_filter"
+                    ],
+                    "microfiltration",
+                    "ultrafiltration",
+                    [
+                        "nanofiltration",
+                        "electrodialysis"
+                    ],
+                    "activated_carbon_filter",
+                    [
+                        "uv_disinfection",
+                        "chlorination"
+                    ]
+          ]
         }
     },
     "4_RCb.2": {
         "map_to": "component",
         "map_answer": {
             "Arsenic": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "simple_oxidation",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                "adsorption",
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "Lead": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                "microfiltration",
+                "ultrafiltration",
+                "ion_exchange",
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "Mercury": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                "microfiltration",
+                "ultrafiltration",
+                "adsorption",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "Cadmium": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                "microfiltration",
+                "ultrafiltration",
+                "ion_exchange",
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "Iron": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "simple_oxidation",
+                [
+                    "cartridge_filter",
+                    "ceramic_filter"
+                ],
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "biofiltration"
+                ],
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ]
         }
     },
@@ -6131,13 +7736,43 @@
         "map_to": "component",
         "map_answer": {
             "pesticides": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                "activated_carbon_filter",
+                "biofiltration",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "pharmaceutical_residues": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                "activated_carbon_filter",
+                "biofiltration",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "fertilizers": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                "microfiltration",
+                "ultrafiltration",
+                "biological_denitrification",
+                "ion_exchange",
+                "adsorption",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ]
         }
     },
@@ -6165,7 +7800,7 @@
             "activated carbon filter": [
                 ""
             ],
-            "UV-disinfection": [
+            "uv-disinfection": [
                 ""
             ],
             "cartridge filter": [
@@ -6411,10 +8046,10 @@
         "map_to": "component",
         "map_answer": {
             "Yes": [
-                ""
+                "lake-water-pump"
             ],
             "No": [
-                ""
+                "lake-water-pipe"
             ]
         }
     },
@@ -6457,28 +8092,106 @@
         }
     },
     "4_Lb.1": {
-        "map_to": "attribute",
+        "map_to": "component",
         "map_answer": {
-            "salinity": "float"
+            "salinity_selected": [
+                    "intake_structure",
+                    "coarse_bar_screen",
+                    "cartridge_filter",
+                    "coagulation_flocculation",
+                    [
+                        "slow_sand_filter",
+                        "ceramic_filter"
+                    ],
+                    "microfiltration",
+                    "ultrafiltration",
+                    [
+                        "nanofiltration",
+                        "electrodialysis"
+                    ],
+                    "activated_carbon_filter",
+                    [
+                        "uv_disinfection",
+                        "chlorination"
+                    ]
+          ]
         }
     },
     "4_Lb.2": {
         "map_to": "component",
         "map_answer": {
             "Arsenic": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "simple_oxidation",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                "adsorption",
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "Lead": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                "microfiltration",
+                "ultrafiltration",
+                "ion_exchange",
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "Mercury": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                "microfiltration",
+                "ultrafiltration",
+                "adsorption",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "Cadmium": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                "microfiltration",
+                "ultrafiltration",
+                "ion_exchange",
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "Iron": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "simple_oxidation",
+                [
+                    "cartridge_filter",
+                    "ceramic_filter"
+                ],
+                "coagulation_flocculation",
+                [
+                    "slow_sand_filter",
+                    "biofiltration"
+                ],
+                "activated_carbon_filter",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ]
         }
     },
@@ -6486,13 +8199,43 @@
         "map_to": "component",
         "map_answer": {
             "pesticides": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                "activated_carbon_filter",
+                "biofiltration",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "pharmaceutical_residues": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                "activated_carbon_filter",
+                "biofiltration",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ],
             "fertilizers": [
-                ""
+                "intake_structure",
+                "coarse_bar_screen",
+                "cartridge_filter",
+                "coagulation_flocculation",
+                "microfiltration",
+                "ultrafiltration",
+                "biological_denitrification",
+                "ion_exchange",
+                "adsorption",
+                [
+                    "uv_disinfection",
+                    "chlorination"
+                ]
             ]
         }
     },
@@ -6520,7 +8263,7 @@
             "activated carbon filter": [
                 ""
             ],
-            "UV-disinfection": [
+            "uv-disinfection": [
                 ""
             ],
             "cartridge filter": [
@@ -6844,12 +8587,48 @@
     "7.3": {
         "map_to": "component",
         "map_answer": {
-            "toilet_type": [
-                "flush toilet",
+            "flush toilet": [
+                "flush_toilet",
+                "hu_waste",
+                "hf_waste",
+                "excess-human-feces",
+                "excess-human-urine"
+            ],
+            "latrine": [
                 "latrine",
-                "dry toilet",
-                "composting toilet",
-                "open field"
+                "hu_waste",
+                "hf_waste",
+                "excess-biomass",
+                "excess-human-feces",
+                "excess-human-urine"
+            ],
+            "dry toilet": [
+                "dry_toilet",
+                "hu_waste",
+                "hf_waste",
+                "excess-dry-feces",
+                "excess-human-feces",
+                "excess-human-urine"
+            ],
+            "composting toilet": [
+                "composting_toilet",
+                "hu_waste",
+                "hf_waste",
+                "excess-compost",
+                "excess-human-feces",
+                "excess-human-urine"
+            ],
+            "open field": [
+                "open_field",
+                "hu_waste",
+                "hf_waste",
+                "au_waste",
+                "af_waste",
+                "excess-biomass",
+                "excess-human-feces",
+                "excess-human-urine",
+                "excess-animal-feces",
+                "excess-animal-urine"
             ]
         }
     }

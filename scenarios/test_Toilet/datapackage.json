@@ -1,0 +1,542 @@
+{
+    "profile": "data-package",
+    "resources": [
+        {
+            "path": "data/sequences/profiles.csv",
+            "profile": "tabular-data-resource",
+            "name": "profiles",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "encoding": "utf-8",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "human-urine-profile",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "human-feces-profile",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "animal-urine-profile",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "animal-feces-profile",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "household-grey-water-profile",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "air-temperature-profile",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "ghi-profile",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "groundwater-recharge",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "service-water-demand-profile",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "electricity-load-profile",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "drinking-water-demand",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "cf-aware-profile",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "timeindex",
+                        "type": "datetime",
+                        "format": "default"
+                    }
+                ],
+                "missingValues": [
+                    ""
+                ]
+            },
+            "dialect": {
+                "delimiter": ";",
+                "quotechar": "\"",
+                "doublequote": true,
+                "escapechar": "\n",
+                "doubleQuote": true,
+                "lineTerminator": "\r\n",
+                "quoteChar": "\"",
+                "skipInitialSpace": true,
+                "header": true,
+                "caseSensitiveHeader": false
+            }
+        },
+        {
+            "path": "data/elements/excess.csv",
+            "profile": "tabular-data-resource",
+            "name": "excess",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "encoding": "utf-8",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "name",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "type",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "bus",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "marginal_cost",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "resource_cost",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "ghg_emission_factor",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "water_consumption_factor",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "indirect_water_consumption_factor",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "verbose_name",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "output_parameters",
+                        "type": "object",
+                        "format": "default"
+                    }
+                ],
+                "missingValues": [
+                    ""
+                ],
+                "primaryKey": "name",
+                "foreignKeys": [
+                    {
+                        "fields": "bus",
+                        "reference": {
+                            "resource": "bus",
+                            "fields": "name"
+                        }
+                    }
+                ]
+            },
+            "dialect": {
+                "delimiter": ";",
+                "quotechar": "\"",
+                "doublequote": true,
+                "escapechar": "\n",
+                "doubleQuote": true,
+                "lineTerminator": "\r\n",
+                "quoteChar": "\"",
+                "skipInitialSpace": true,
+                "header": true,
+                "caseSensitiveHeader": false
+            }
+        },
+        {
+            "path": "data/elements/latr.csv",
+            "profile": "tabular-data-resource",
+            "name": "latr",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "encoding": "utf-8",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "name",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "type",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "carrier",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "tech",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "capacity",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "capacity_cost",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "capacity_potential",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "marginal_cost",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "carrier_cost",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "annuity",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "capex",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "opex_fix",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "lifetime",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "resource_cost",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "land_requirement_factor",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "ghg_emission_factor",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "water_consumption_factor",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "human_feces_bus",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "human_urine_bus",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "biomass_waste_bus",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "expandable",
+                        "type": "boolean",
+                        "format": "default"
+                    },
+                    {
+                        "name": "verbose_name",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "output_parameters",
+                        "type": "object",
+                        "format": "default"
+                    }
+                ],
+                "missingValues": [
+                    ""
+                ],
+                "primaryKey": "name",
+                "foreignKeys": [
+                    {
+                        "fields": "human_feces_bus",
+                        "reference": {
+                            "resource": "bus",
+                            "fields": "name"
+                        }
+                    },
+                    {
+                        "fields": "human_urine_bus",
+                        "reference": {
+                            "resource": "bus",
+                            "fields": "name"
+                        }
+                    },
+                    {
+                        "fields": "biomass_waste_bus",
+                        "reference": {
+                            "resource": "bus",
+                            "fields": "name"
+                        }
+                    }
+                ]
+            },
+            "dialect": {
+                "delimiter": ";",
+                "quotechar": "\"",
+                "doublequote": true,
+                "escapechar": "\n",
+                "doubleQuote": true,
+                "lineTerminator": "\r\n",
+                "quoteChar": "\"",
+                "skipInitialSpace": true,
+                "header": true,
+                "caseSensitiveHeader": false
+            }
+        },
+        {
+            "path": "data/elements/waste_sources.csv",
+            "profile": "tabular-data-resource",
+            "name": "waste_sources",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "encoding": "utf-8",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "name",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "type",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "carrier",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "tech",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "capacity",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "capacity_cost",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "bus",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "marginal_cost",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "carrier_cost",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "resource_cost",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "land_requirement_factor",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "ghg_emission_factor",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "water_consumption_factor",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "indirect_water_consumption_factor",
+                        "type": "number",
+                        "format": "default"
+                    },
+                    {
+                        "name": "profile",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "output_parameters",
+                        "type": "object",
+                        "format": "default"
+                    },
+                    {
+                        "name": "expandable",
+                        "type": "boolean",
+                        "format": "default"
+                    },
+                    {
+                        "name": "verbose_name",
+                        "type": "string",
+                        "format": "default"
+                    }
+                ],
+                "missingValues": [
+                    ""
+                ],
+                "primaryKey": "name",
+                "foreignKeys": [
+                    {
+                        "fields": "bus",
+                        "reference": {
+                            "resource": "bus",
+                            "fields": "name"
+                        }
+                    },
+                    {
+                        "fields": "profile",
+                        "reference": {
+                            "resource": "profiles"
+                        }
+                    }
+                ]
+            },
+            "dialect": {
+                "delimiter": ";",
+                "quotechar": "\"",
+                "doublequote": true,
+                "escapechar": "\n",
+                "doubleQuote": true,
+                "lineTerminator": "\r\n",
+                "quoteChar": "\"",
+                "skipInitialSpace": true,
+                "header": true,
+                "caseSensitiveHeader": false
+            }
+        },
+        {
+            "path": "data/elements/bus.csv",
+            "profile": "tabular-data-resource",
+            "name": "bus",
+            "format": "csv",
+            "mediatype": "text/csv",
+            "encoding": "utf-8",
+            "schema": {
+                "fields": [
+                    {
+                        "name": "name",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "type",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "balanced",
+                        "type": "boolean",
+                        "format": "default"
+                    },
+                    {
+                        "name": "carrier",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "verbose_name",
+                        "type": "string",
+                        "format": "default"
+                    },
+                    {
+                        "name": "plot",
+                        "type": "boolean",
+                        "format": "default"
+                    }
+                ],
+                "missingValues": [
+                    ""
+                ],
+                "primaryKey": "name",
+                "foreignKeys": []
+            },
+            "dialect": {
+                "delimiter": ";",
+                "quotechar": "\"",
+                "doublequote": true,
+                "escapechar": "\n",
+                "doubleQuote": true,
+                "lineTerminator": "\r\n",
+                "quoteChar": "\"",
+                "skipInitialSpace": true,
+                "header": true,
+                "caseSensitiveHeader": false
+            }
+        }
+    ]
+}

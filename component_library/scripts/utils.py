@@ -5,7 +5,7 @@ import pandas as pd
 # TODO here the facades should only be imported from otp, to make sure they have
 # validate_datapackage and processing_raw_inputs methods
 from oemof_industry.mimo_converter import MIMO
-from oemof_tabular_plugins.wefe.facades import PVPanel
+from oemof_tabular_plugins.wefe.facades import PVPanel, MimoCrop
 import datapackage as dp
 import tableschema
 
@@ -15,7 +15,8 @@ print(COMPONENT_TEMPLATES_PATH)
 
 COMPONENTS_TYPEMAP = {
     "apv-system": MIMO,
-    "pv_panel": PVPanel
+    "pv_panel": PVPanel,
+    "mimo-crop": MimoCrop
 }
 
 def update_typemap(typemap, component_name):

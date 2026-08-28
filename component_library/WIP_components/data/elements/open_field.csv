@@ -1,0 +1,2 @@
+name;type;carrier;tech;capacity;capacity_cost;capacity_potential;marginal_cost;carrier_cost;annuity;capex;opex_fix;lifetime;resource_cost;land_requirement_factor;ghg_emission_factor;water_consumption_factor;human_feces_bus;animal_feces_bus;human_urine_bus;animal_urine_bus;biomass_waste_bus;expandable;verbose_name
+open_field;open_field;water;toilet;0.0;0.0;inf;0.0;0.0;;;0.0;;0.0;3.0;0.8;0.0;human-feces-bus;animal-feces-bus;human-urine-bus;animal-urine-bus;biomass-bus;True;Open Field

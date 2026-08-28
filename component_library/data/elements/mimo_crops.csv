@@ -1,0 +1,3 @@
+name;type;tech;expandable;primary;capacity;capacity_minimum;capacity_potential;capacity_cost;solar_energy_bus;irrigation_bus;precipitation_bus;crop_bus;biomass_bus;capex;opex_fix;lifetime;time_profile;ghi_profile;t_air_profile;tp_profile;windspeed_profile;t_dp_profile;elevation;crop_type;sowing_date;harvest_date;has_irrigation;crop_production;biomass_production;irrigation_tech;irrigation_flow
+wheat;mimo-crop;mimo-crop;False;solar-bus;;0;;0;solar-bus;wheat-water-bus;precipitation-bus;wheat-bus;wheat-biomass-bus;;;;time;ghi;t_air;tp;windspeed;t_dp;;wheat;Jul 15;Mai 31;True;;;;
+rice;mimo-crop;mimo-crop;False;solar-bus;;0;;0;solar-bus;rice-water-bus;precipitation-bus;rice-bus;rice-biomass-bus;;;;time;ghi;t_air;tp;windspeed;t_dp;;rice;Jul 15;Mai 31;True;;;;

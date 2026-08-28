@@ -1,0 +1,9 @@
+name;type;bus;marginal_cost
+ac-electricity-excess;excess;ac-elec-bus;0.0
+excess-drinking-water;excess;drinking-water-bus;0.0
+excess-biomass;excess;biomass-bus;0.0
+brine-excess;excess;brine-bus;0.0
+excess-N2;excess;N2-bus;0.0
+excess-human-feces;excess;human-feces-bus;100000.0
+excess-human-urine;excess;human-urine-bus;100000.0
+excess-service-water;excess;service-water-bus;0.0

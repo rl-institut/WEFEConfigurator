@@ -1,0 +1,18 @@
+name;type;carrier;tech;capacity;capacity_cost;capacity_potential;marginal_cost;carrier_cost;annuity;capex;opex_fix;lifetime;specific_energy_consumption;efficiency;resource_cost;land_requirement_factor;ghg_emission_factor;water_consumption_factor;electricity_bus;water_in_bus;water_out_bus;expandable;verbose_name
+cartridge_filter;cartridge_filter;water;water-treatment;0.0;0.0;inf;0.0;0.0;0.0;1500.0;75.0;15.0;0.06;0.97;0.0;0.08;0.04;0.0;ac-elec-bus;groundwater-bus;drinking-water-bus;True;Cartridge Filter
+activated_carbon_filter;activated_carbon_filter;water;water-treatment;0.0;0.0;inf;0.0;0.0;0.0;2500.0;100.0;10.0;0.05;0.97;0.0;0.08;0.04;0.008;ac-elec-bus;groundwater-bus;drinking-water-bus;True;Activated Carbon Filter
+chlorination;chlorination;water;water-treatment;0.0;0.0;inf;0.0;0.0;0.0;700.0;70.0;15.0;0.02;;0.0;0.12;0.06;0.008;ac-elec-bus;groundwater-bus;drinking-water-bus;True;Chlorination Unit
+ceramic_filter;ceramic_filter;water;water-treatment;0.0;0.0;inf;0.0;0.0;0.0;2000.0;100.0;8.0;0.02;0.97;0.0;0.04;0.03;0.0;ac-elec-bus;groundwater-bus;drinking-water-bus;True;Ceramic Filter
+slow_sand_filter;slow_sand_filter;water;water-treatment;0.0;0.0;inf;0.0;0.0;0.0;3500.0;105.0;25.0;0.015;0.98;0.0;2.5;0.06;0.0;ac-elec-bus;groundwater-bus;drinking-water-bus;True;Slow Sand Filter
+uv_disinfection;uv_disinfection;water;water-treatment;0.0;0.0;inf;0.0;0.0;0.0;1200.0;96.0;12.0;0.06;;0.0;0.1;0.06;0.005;ac-elec-bus;groundwater-bus;drinking-water-bus;True;UV-Disinfection
+adsorption;adsorption;water;water-treatment;0.0;0.0;inf;0.0;0.0;0.0;2000.0;80.0;12.0;0.06;;0.0;0.1;0.06;0.008;ac-elec-bus;groundwater-bus;drinking-water-bus;True;Adsorption
+ion_exchange;ion_exchange;water;water-treatment;0.0;0.0;inf;0.0;0.0;0.0;3500.0;140.0;12.0;0.06;0.96;0.0;0.12;0.08;0.04;ac-elec-bus;groundwater-bus;drinking-water-bus;True;Ion Exchange
+simple_oxidation;simple_oxidation;water;water-treatment;0.0;0.0;inf;0.0;0.0;0.0;1000.0;80.0;15.0;0.07;;0.0;0.08;0.06;0.008;ac-elec-bus;groundwater-bus;drinking-water-bus;True;Simple Oxidation
+ozonation;ozonation;water;water-treatment;0.0;0.0;inf;0.0;0.0;0.0;6000.0;360.0;15.0;;;0.0;0.12;0.08;0.008;ac-elec-bus;groundwater-bus;drinking-water-bus;True;Ozonation
+photocatalysis;photocatalysis;water;water-treatment;0.0;0.0;inf;0.0;0.0;0.0;4000.0;200.0;10.0;0.12;;0.0;0.1;0.07;0.008;ac-elec-bus;groundwater-bus;drinking-water-bus;True;Photocatalysis
+intake_structure;intake_structure;water;water-treatment;0.0;0.0;inf;0.0;0.0;0.0;3000.0;90.0;40.0;0.008;0.98;0.0;0.2;0.01;0.0;ac-elec-bus;groundwater-bus;drinking-water-bus;True;Intake Structure
+coarse_bar_screen;coarse_bar_screen;water;water-treatment;0.0;0.0;inf;0.0;0.0;0.0;800.0;32.0;25.0;0.04;0.9;0.0;0.12;0.03;0.0;ac-elec-bus;groundwater-bus;drinking-water-bus;True;Coarse Bar Screen
+coagulation_flocculation;coagulation_flocculation;water;water-treatment;0.0;0.0;inf;0.0;0.0;0.0;2500.0;125.0;25.0;0.04;0.95;0.0;0.3;0.05;0.008;ac-elec-bus;groundwater-bus;drinking-water-bus;True;Coagulation Flocculation
+boiling;boiling;water;water-treatment;0.0;0.0;inf;0.0;0.0;0.0;1000.0;150.0;15.0;0.8;0.7;0.0;0.3;0.12;0.02;ac-elec-bus;groundwater-bus;drinking-water-bus;True;Boiling
+fine_screen;fine_screen;water;water-treatment;0.0;0.0;inf;0.0;0.0;0.0;800.0;25.0;25.0;0.04;0.99;0.0;0.12;0.03;0.0;ac-elec-bus;groundwater-bus;drinking-water-bus;True;Fine Screen
+grit_chamber;grit_chamber;water;water-treatment;0.0;0.0;inf;0.0;0.0;0.0;1200.0;36.0;30.0;0.015;0.98;0.0;0.2;0.03;0.0;ac-elec-bus;groundwater-bus;drinking-water-bus;True;Grit Chamber

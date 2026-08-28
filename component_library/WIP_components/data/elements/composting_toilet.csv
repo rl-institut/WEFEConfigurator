@@ -1,0 +1,2 @@
+name;type;carrier;tech;capacity;capacity_cost;capacity_potential;marginal_cost;carrier_cost;annuity;capex;opex_fix;lifetime;resource_cost;land_requirement_factor;ghg_emission_factor;water_consumption_factor;human_feces_bus;human_urine_bus;compost_out_bus;water_out_bus;expandable;verbose_name
+composting_toilet;composting_toilet;water;toilet;0.0;0.0;inf;0.0;0.0;0.0;1050.0;40.0;20.0;0.0;0.15;0.065;0.0;human-feces-bus;human-urine-bus;compost-bus;grey-water-bus;True;Composting Toilet

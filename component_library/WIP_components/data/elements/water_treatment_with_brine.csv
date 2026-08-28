@@ -1,0 +1,8 @@
+name;type;carrier;tech;capacity;capacity_cost;capacity_potential;marginal_cost;carrier_cost;annuity;capex;opex_fix;lifetime;specific_energy_consumption;efficiency;resource_cost;land_requirement_factor;ghg_emission_factor;water_consumption_factor;electricity_bus;water_in_bus;water_out_bus;brine_out_bus;expandable;verbose_name
+microfiltration;microfiltration;water;water-treatment;0.0;0.0;inf;0.0;0.0;0.0;20400.0;612.0;12.0;0.2;0.97;0.0;0.12;0.07;0.04;ac-elec-bus;groundwater-bus;drinking-water-bus;brine-bus;True;Microfiltration
+ultrafiltration;ultrafiltration;water;water-treatment;0.0;0.0;inf;0.0;0.0;0.0;22800.0;684.0;12.0;0.25;0.98;0.0;0.12;0.07;0.04;ac-elec-bus;groundwater-bus;drinking-water-bus;brine-bus;True;Ultrafiltration
+nanofiltration;nanofiltration;water;water-treatment;0.0;0.0;inf;0.0;0.0;0.0;28800.0;864.0;12.0;0.5;0.9;0.0;0.12;0.1;0.08;ac-elec-bus;groundwater-bus;drinking-water-bus;brine-bus;True;Nanofiltration
+electrodialysis;electrodialysis;water;water-treatment;0.0;0.0;inf;0.0;0.0;0.0;19200.0;576.0;15.0;0.9;0.75;0.0;0.1;0.1;0.008;ac-elec-bus;groundwater-bus;drinking-water-bus;brine-bus;True;Electrodialysis
+distillation;distillation;water;water-treatment;0.0;0.0;inf;0.0;0.0;0.0;33600.0;1680.0;20.0;0.8;0.7;0.0;0.3;0.12;0.02;ac-elec-bus;groundwater-bus;drinking-water-bus;brine-bus;True;Distillation
+membrane_distillation;membrane_distillation;water;water-treatment;0.0;0.0;inf;0.0;0.0;0.0;33600.0;1680.0;15.0;5.0;0.75;0.0;0.3;0.12;0.01;ac-elec-bus;groundwater-bus;drinking-water-bus;brine-bus;True;Membrane Distillation
+reverse_osmosis;reverse_osmosis;water;water-treatment;0.0;0.0;inf;0.0;0.0;0.0;27600.0;828.0;12.0;1.2;0.55;0.0;0.1;0.12;0.5;ac-elec-bus;groundwater-bus;drinking-water-bus;brine-bus;True;Reverse Osmosis

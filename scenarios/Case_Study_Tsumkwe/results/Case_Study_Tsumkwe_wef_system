@@ -1,0 +1,210 @@
+digraph {
+	subgraph cluster_1 {
+		color=black
+		label=Legends
+		Bus [color=lightgrey fixedsize=shape fontsize=10 height=0.3 shape=rectangle style=filled tooltip=Bus width=4.1]
+		Sink [color="#FFD6E0" fontsize=10 shape=trapezium]
+		Source [color="#A4ADFB" fontsize=10 shape=invtrapezium]
+		"Transforme
+r" [color="#7BF1A8" fontsize=10 shape=rectangle]
+		Storage [color="#90F1EF" fontsize=10 shape=rectangle style=rounded]
+	}
+	"groundwater-bus" [color=lightgrey fixedsize=shape fontsize=10 height=0.3 shape=rectangle style=filled tooltip="groundwater-bus" width=4.1]
+	"groundwate
+r" [color="#A4ADFB" fontsize=10 shape=invtrapezium]
+	"ac-elec-bus" [color=lightgrey fixedsize=shape fontsize=10 height=0.3 shape=rectangle style=filled tooltip="ac-elec-bus" width=4.1]
+	"untreated-water-bus" [color=lightgrey fixedsize=shape fontsize=10 height=0.3 shape=rectangle style=filled tooltip="untreated-water-bus" width=4.1]
+	"groundwate
+r-pump" [color="#7BF1A8" fontsize=10 shape=rectangle]
+	"diesel-bus" [color=lightgrey fixedsize=shape fontsize=10 height=0.3 shape=rectangle style=filled tooltip="diesel-bus" width=4.1]
+	"diesel-gen
+erator" [color="#7BF1A8" fontsize=10 shape=rectangle]
+	"dc-elec-bus" [color=lightgrey fixedsize=shape fontsize=10 height=0.3 shape=rectangle style=filled tooltip="dc-elec-bus" width=4.1]
+	inverter [color="#7BF1A8" fontsize=10 shape=rectangle]
+	diesel [color="#A4ADFB" fontsize=10 shape=invtrapezium]
+	"ac-electri
+city-exces
+s" [color="#FFD6E0" fontsize=10 shape=trapezium]
+	"biomass-bus" [color=lightgrey fixedsize=shape fontsize=10 height=0.3 shape=rectangle style=filled tooltip="biomass-bus" width=4.1]
+	"excess-bio
+mass" [color="#FFD6E0" fontsize=10 shape=trapezium]
+	"human-feces-bus" [color=lightgrey fixedsize=shape fontsize=10 height=0.3 shape=rectangle style=filled tooltip="human-feces-bus" width=4.1]
+	"excess-hum
+an-feces" [color="#FFD6E0" fontsize=10 shape=trapezium]
+	"human-urine-bus" [color=lightgrey fixedsize=shape fontsize=10 height=0.3 shape=rectangle style=filled tooltip="human-urine-bus" width=4.1]
+	"excess-hum
+an-urine" [color="#FFD6E0" fontsize=10 shape=trapezium]
+	"dc-electri
+city-exces
+s" [color="#FFD6E0" fontsize=10 shape=trapezium]
+	"drinking-water-bus" [color=lightgrey fixedsize=shape fontsize=10 height=0.3 shape=rectangle style=filled tooltip="drinking-water-bus" width=4.1]
+	"excess-dri
+nking-wate
+r" [color="#FFD6E0" fontsize=10 shape=trapezium]
+	"brine-bus" [color=lightgrey fixedsize=shape fontsize=10 height=0.3 shape=rectangle style=filled tooltip="brine-bus" width=4.1]
+	"brine-exce
+ss" [color="#FFD6E0" fontsize=10 shape=trapezium]
+	"dry-feces-bus" [color=lightgrey fixedsize=shape fontsize=10 height=0.3 shape=rectangle style=filled tooltip="dry-feces-bus" width=4.1]
+	"excess-dry
+-feces" [color="#FFD6E0" fontsize=10 shape=trapezium]
+	"animal-feces-bus" [color=lightgrey fixedsize=shape fontsize=10 height=0.3 shape=rectangle style=filled tooltip="animal-feces-bus" width=4.1]
+	"excess-ani
+mal-feces" [color="#FFD6E0" fontsize=10 shape=trapezium]
+	"animal-urine-bus" [color=lightgrey fixedsize=shape fontsize=10 height=0.3 shape=rectangle style=filled tooltip="animal-urine-bus" width=4.1]
+	"excess-ani
+mal-urine" [color="#FFD6E0" fontsize=10 shape=trapezium]
+	"service-water-bus" [color=lightgrey fixedsize=shape fontsize=10 height=0.3 shape=rectangle style=filled tooltip="service-water-bus" width=4.1]
+	"excess-ser
+vice-water" [color="#FFD6E0" fontsize=10 shape=trapezium]
+	"grey-water-bus" [color=lightgrey fixedsize=shape fontsize=10 height=0.3 shape=rectangle style=filled tooltip="grey-water-bus" width=4.1]
+	"greywater_
+disposal" [color="#FFD6E0" fontsize=10 shape=trapezium]
+	latrine [fontsize=10]
+	hu_waste [color="#A4ADFB" fontsize=10 shape=invtrapezium]
+	hf_waste [color="#A4ADFB" fontsize=10 shape=invtrapezium]
+	au_waste [color="#A4ADFB" fontsize=10 shape=invtrapezium]
+	af_waste [color="#A4ADFB" fontsize=10 shape=invtrapezium]
+	"hh_gw_wast
+e" [color="#A4ADFB" fontsize=10 shape=invtrapezium]
+	"pv-panel" [color="#A4ADFB" fontsize=10 shape=invtrapezium]
+	"battery-st
+orage" [color="#90F1EF" fontsize=10 shape=rectangle style=rounded]
+	"drinking-w
+ater-stora
+ge" [color="#90F1EF" fontsize=10 shape=rectangle style=rounded]
+	dw_demand [color="#FFD6E0" fontsize=10 shape=trapezium]
+	el_demand [color="#FFD6E0" fontsize=10 shape=trapezium]
+	dry_toilet [fontsize=10]
+	open_field [fontsize=10]
+	"wwtp-ip-water-bus" [color=lightgrey fixedsize=shape fontsize=10 height=0.3 shape=rectangle style=filled tooltip="wwtp-ip-water-bus" width=4.1]
+	"grey_water
+_septic" [fontsize=10]
+	"wwtp-op-water-bus" [color=lightgrey fixedsize=shape fontsize=10 height=0.3 shape=rectangle style=filled tooltip="wwtp-op-water-bus" width=4.1]
+	"decentrali
+zed_WWTP" [fontsize=10]
+	"water_reus
+e_system" [fontsize=10]
+	DW_pre_treatment_out_bus [color=lightgrey fixedsize=shape fontsize=10 height=0.3 shape=rectangle style=filled tooltip=DW_pre_treatment_out_bus width=4.1]
+	DW_core_treatment_out_bus [color=lightgrey fixedsize=shape fontsize=10 height=0.3 shape=rectangle style=filled tooltip=DW_core_treatment_out_bus width=4.1]
+	"DW_pre_tre
+atment" [fontsize=10]
+	"DW_core_tr
+eatment" [fontsize=10]
+	"DW_post_tr
+eatment" [fontsize=10]
+	"groundwate
+r" -> "groundwater-bus"
+	"groundwater-bus" -> "groundwate
+r-pump"
+	"diesel-gen
+erator" -> "ac-elec-bus"
+	inverter -> "ac-elec-bus"
+	"ac-elec-bus" -> "groundwate
+r-pump"
+	"ac-elec-bus" -> "ac-electri
+city-exces
+s"
+	"ac-elec-bus" -> el_demand
+	"ac-elec-bus" -> "grey_water
+_septic"
+	"ac-elec-bus" -> "decentrali
+zed_WWTP"
+	"ac-elec-bus" -> "water_reus
+e_system"
+	"ac-elec-bus" -> "DW_pre_tre
+atment"
+	"ac-elec-bus" -> "DW_core_tr
+eatment"
+	"ac-elec-bus" -> "DW_post_tr
+eatment"
+	"groundwate
+r-pump" -> "untreated-water-bus"
+	"untreated-water-bus" -> "DW_pre_tre
+atment"
+	diesel -> "diesel-bus"
+	"diesel-bus" -> "diesel-gen
+erator"
+	"pv-panel" -> "dc-elec-bus"
+	"battery-st
+orage" -> "dc-elec-bus"
+	"dc-elec-bus" -> inverter
+	"dc-elec-bus" -> "dc-electri
+city-exces
+s"
+	"dc-elec-bus" -> "battery-st
+orage"
+	"grey_water
+_septic" -> "biomass-bus"
+	latrine -> "biomass-bus"
+	open_field -> "biomass-bus"
+	"decentrali
+zed_WWTP" -> "biomass-bus"
+	"biomass-bus" -> "excess-bio
+mass"
+	hf_waste -> "human-feces-bus"
+	"human-feces-bus" -> "excess-hum
+an-feces"
+	"human-feces-bus" -> latrine
+	"human-feces-bus" -> dry_toilet
+	"human-feces-bus" -> open_field
+	hu_waste -> "human-urine-bus"
+	"human-urine-bus" -> "excess-hum
+an-urine"
+	"human-urine-bus" -> latrine
+	"human-urine-bus" -> dry_toilet
+	"human-urine-bus" -> open_field
+	"drinking-w
+ater-stora
+ge" -> "drinking-water-bus"
+	"DW_post_tr
+eatment" -> "drinking-water-bus"
+	"drinking-water-bus" -> "excess-dri
+nking-wate
+r"
+	"drinking-water-bus" -> "drinking-w
+ater-stora
+ge"
+	"drinking-water-bus" -> dw_demand
+	"DW_core_tr
+eatment" -> "brine-bus"
+	"brine-bus" -> "brine-exce
+ss"
+	dry_toilet -> "dry-feces-bus"
+	"dry-feces-bus" -> "excess-dry
+-feces"
+	af_waste -> "animal-feces-bus"
+	"animal-feces-bus" -> "excess-ani
+mal-feces"
+	"animal-feces-bus" -> open_field
+	au_waste -> "animal-urine-bus"
+	"animal-urine-bus" -> "excess-ani
+mal-urine"
+	"animal-urine-bus" -> open_field
+	"water_reus
+e_system" -> "service-water-bus"
+	"service-water-bus" -> "excess-ser
+vice-water"
+	dry_toilet -> "grey-water-bus"
+	"hh_gw_wast
+e" -> "grey-water-bus"
+	"grey-water-bus" -> "greywater_
+disposal"
+	"grey-water-bus" -> "grey_water
+_septic"
+	"grey_water
+_septic" -> "wwtp-ip-water-bus"
+	"wwtp-ip-water-bus" -> "decentrali
+zed_WWTP"
+	"decentrali
+zed_WWTP" -> "wwtp-op-water-bus"
+	"wwtp-op-water-bus" -> "water_reus
+e_system"
+	"DW_pre_tre
+atment" -> DW_pre_treatment_out_bus
+	DW_pre_treatment_out_bus -> "DW_core_tr
+eatment"
+	"DW_core_tr
+eatment" -> DW_core_treatment_out_bus
+	DW_core_treatment_out_bus -> "DW_post_tr
+eatment"
+}

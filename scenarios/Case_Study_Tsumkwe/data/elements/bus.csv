@@ -1,0 +1,20 @@
+name;type;balanced;carrier;verbose_name;plot
+untreated-water-bus;bus;True;water;Untreated Water Bus;True
+drinking-water-bus;bus;True;water;Drinking Water Bus;True
+animal-urine-bus;bus;True;urine;Animal Urine Bus;True
+human-urine-bus;bus;True;urine;Human Urine Bus;True
+wwtp-ip-water-bus;bus;True;water;Wastew. Treatm. Pl. Input;True
+dry-feces-bus;bus;True;dry-feces;Dry Feces Bus;True
+diesel-bus;bus;True;energy;Diesel Bus;True
+service-water-bus;bus;True;water;Service Water Bus;True
+wwtp-op-water-bus;bus;True;water;Wastew. Treatm. Pl. Output;True
+brine-bus;bus;True;water;Brine Bus;True
+animal-feces-bus;bus;True;feces;Animal Feces Bus;True
+dc-elec-bus;bus;True;electricity;DC Electricity Bus;True
+biomass-bus;bus;True;biomass;Biomass Bus;True
+groundwater-bus;bus;True;water;Groundwater Bus;True
+ac-elec-bus;bus;True;electricity;AC Electricity Bus;True
+grey-water-bus;bus;True;water;Grey Water Bus;True
+human-feces-bus;bus;True;feces;Human Feces Bus;True
+DW_pre_treatment_out_bus;bus;True;water;DW Pre-Treatment Output;True
+DW_core_treatment_out_bus;bus;True;water;DW Core-Treatment Output;True

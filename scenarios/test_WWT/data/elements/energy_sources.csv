@@ -1,0 +1,2 @@
+name;type;carrier;tech;capacity;capacity_cost;bus;marginal_cost;carrier_cost;resource_cost;land_requirement_factor;ghg_emission_factor;water_consumption_factor;indirect_water_consumption_factor;profile;output_parameters;expandable;verbose_name
+diesel;dispatchable;energy;source;504.0;0.0;diesel-bus;1.25;0.0;1.25;0.0;0.0;0.0;0.0;1;"{""custom_attributes"": {""ghg_emission_factor"": 0.0, ""land_requirement_factor"": 0.0, ""water_consumption_factor"": 0.0, ""indirect_water_consumption_factor"": 0.0, ""resource_cost"": 1.25}}";True;Diesel
