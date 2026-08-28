@@ -96,9 +96,9 @@ eatment" [fontsize=10]
 r" -> "groundwater-bus"
 	"groundwater-bus" -> "groundwate
 r-pump"
-	inverter -> "ac-elec-bus"
 	"diesel-gen
 erator" -> "ac-elec-bus"
+	inverter -> "ac-elec-bus"
 	"ac-elec-bus" -> "groundwate
 r-pump"
 	"ac-elec-bus" -> "ac-electri
@@ -136,9 +136,9 @@ orage"
 	"grey_water
 _septic" -> "biomass-bus"
 	latrine -> "biomass-bus"
+	open_field -> "biomass-bus"
 	"decentrali
 zed_WWTP" -> "biomass-bus"
-	open_field -> "biomass-bus"
 	"biomass-bus" -> "excess-bio
 mass"
 	hf_waste -> "human-feces-bus"
